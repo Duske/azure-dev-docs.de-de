@@ -71,13 +71,11 @@
       "template_folder": "_themes"
     }
   ],
-  "notification_subscribers": [
-    "douge@microsoft.com"
-  ],
+  "notification_subscribers": [],
   "sync_notification_subscribers": [],
   "branches_to_filter": [
-    "live-sxs",
-    "master-sxs"
+    "live",
+    "master"
   ],
   "continue_with_document_error": true,
   "skip_source_output_uploading": false,
