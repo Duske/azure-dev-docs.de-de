@@ -1,19 +1,19 @@
 ---
 title: Tutorials zu Azure-Datenbanken mit Node.js
 description: Tutorials zum Herstellen einer Verbindung mit und zum Verwenden von Azure-Datenbanken mit Node.js
-author: KarlErickson
+author: karlerickson
 manager: douge
 ms.devlang: nodejs
 ms.topic: article
 ms.service: azure-nodejs
 ms.date: 06/17/2017
 ms.author: karler
-ms.openlocfilehash: c60e878b4dcfcecd727efed060499ee0575f1128
-ms.sourcegitcommit: 4cc7f5e1e4601065bfcb4c2eeb7d47ad0bec61f8
+ms.openlocfilehash: 961e070d096f9e72972e3b4022da23d27f0cce4b
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68429055"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68690689"
 ---
 # <a name="tutorials-for-using-azure-databases-with-nodejs"></a>Tutorials für die Verwendung von Azure-Datenbanken mit Node.js
 

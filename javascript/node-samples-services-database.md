@@ -1,19 +1,19 @@
 ---
 title: Codebeispiele für Azure-Datenbanken mit Node.js
 description: Beispielcode, der die Verwendung von Azure-Datenbanken mit Node.js veranschaulicht
-author: KarlErickson
+author: karlerickson
 manager: douge
 ms.devlang: nodejs
 ms.topic: article
 ms.service: azure-nodejs
 ms.date: 03/20/2018
 ms.author: karler
-ms.openlocfilehash: 0b527ec2a75400f4ee479f77907f02d33b43a601
-ms.sourcegitcommit: 4cc7f5e1e4601065bfcb4c2eeb7d47ad0bec61f8
+ms.openlocfilehash: 4ab83605b582b936f8473ebaf2b38d8c4a72ad9c
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68429107"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68690939"
 ---
 # <a name="azure-databases-with-nodejs-code-samples"></a>Codebeispiele für Azure-Datenbanken mit Node.js
 

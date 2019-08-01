@@ -3,17 +3,18 @@ title: Verwenden von Spring und Azure Cosmos DB mit App Service für Linux
 description: In diesem Artikel erfahren Sie Schritt für Schritt, wie Sie Java-Web-Apps in Azure App Service für Linux erstellen, konfigurieren, bereitstellen, skalieren und Probleme behandeln.
 documentationcenter: java
 author: bmitchell287
-ms.author: brendm; joshuapa
+ms.author: brendm
+ms.reviewer: joshuapa
 ms.date: 4/24/2019
 ms.devlang: java
 ms.service: app-service, cosmos-db
 ms.topic: article
-ms.openlocfilehash: 16cbcfa99400d56692679d2ccd0ad6b962af7fb9
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: e7360067deaa9d038440978892f093dfb28db499
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68284811"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691160"
 ---
 # <a name="how-to-use-spring-and-cosmos-db-with-app-service-on-linux"></a>Verwenden von Spring und Azure Cosmos DB mit App Service für Linux
 
@@ -37,7 +38,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 - [Maven 3](http://maven.apache.org/)
 
 ## <a name="clone-the-sample-java-web-app-repository"></a>Klonen des Repositorys für die exemplarische Java-Web-App
-In dieser Übung wird die Spring-Todo-App verwendet. Hierbei handelt es sich um eine Java-Anwendung, die mit [Spring Boot](https://spring.io/projects/spring-boot), [Spring Data für Cosmos DB](https://docs.microsoft.com/azure/java/spring-framework/configure-spring-boot-starter-java-app-with-cosmos-db?view=azure-java-stable) und [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/sql-api-introduction) erstellt wurde.
+In dieser Übung wird die Spring-Todo-App verwendet. Hierbei handelt es sich um eine Java-Anwendung, die mit [Spring Boot](https://spring.io/projects/spring-boot), [Spring Data für Cosmos DB](https://docs.microsoft.com/azure/java/spring-framework/configure-spring-boot-starter-java-app-with-cosmos-db) und [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/sql-api-introduction) erstellt wurde.
 1. Klonen Sie die Spring-Todo-App, und kopieren Sie den Inhalt des Ordners **.prep**, um das Projekt zu initialisieren:
 
     Bash:

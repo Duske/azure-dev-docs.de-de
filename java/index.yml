@@ -23,27 +23,27 @@ sections:
           - href: /azure/app-service/containers/quickstart-java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
             html: <p>Bereitstellen Ihrer ersten Web-App in Azure</p>
             image:
-              src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
+              src: /media/common/i_get-started.svg
             title: Erste Schritte
-          - href: 'https://docs.microsoft.com/java/azure/spring-framework/'
+          - href: /azure/java/spring-framework/
             html: <p>Azure-Dienste mit Spring Boot</p>
             image:
-              src: 'https://docs.microsoft.com/java/docs-ref-conceptual/media/spring.svg'
+              src: /java/media/spring.svg
             title: Spring in Azure
           - href: java-azure-tools.md
             html: <p>Tools und IDEs</p>
             image:
-              src: 'https://docs.microsoft.com/media/common/i_download-install.svg'
+              src: /media/common/i_download-install.svg
             title: 'Plug-Ins für IntelliJ, Maven, Eclipse und VS Code'
           - href: jdk/index.md
             html: <p>Unterstützte JDKs</p>
             image:
-              src: 'https://docs.microsoft.com/media/common/i_download-install.svg'
+              src: /media/common/i_download-install.svg
             title: Unterstützte JDKs
           - href: /java/api/?view=azure-java
             html: <p>API-Referenz</p>
             image:
-              src: 'https://docs.microsoft.com/media/common/i_api-reference.svg'
+              src: /media/common/i_api-reference.svg
             title: Azure SDKs für Java
   - title: Leitfäden mit ersten Schritten
     items:
@@ -53,29 +53,29 @@ sections:
         columns: 3
         items:
           - image:
-              src: 'https://docs.microsoft.com/java/docs-ref-conceptual/media/spring.svg'
+              src: /java/media/spring.svg
             title: Bereitstellen einer Spring Boot-App mit Maven
-            href: 'https://docs.microsoft.com/java/azure/spring-framework/deploy-spring-boot-java-app-with-maven-plugin'
+            href: /azure/java/spring-framework/deploy-spring-boot-java-app-with-maven-plugin
           - image:
-              src: 'https://docs.microsoft.com/azure/media/index/storage.svg'
+              src: /azure/media/index/storage.svg
             title: Hochladen und Herunterladen von Blobs in und aus Storage
             href: /azure/storage/blobs/storage-quickstart-blobs-java-v10?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
           - image:
-              src: 'https://docs.microsoft.com/azure/media/index/azurefunctions.svg'
+              src: /azure/media/index/azurefunctions.svg
             title: Erstellen einer serverlosen Java-Funktion
             href: /azure/azure-functions/functions-create-first-java-maven?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
           - image:
-              src: 'https://docs.microsoft.com/javascript/azure/media/k8s_logo.svg'
+              src: /javascript/azure/media/k8s_logo.svg
             title: Bereitstellen in Kubernetes
-            href: /azure/container-service/kubernetes/container-service-deploy-spring-boot-app-on-kubernetes?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+            href: /azure/java/spring-framework/deploy-spring-boot-java-app-on-kubernetes
           - image:
-              src: 'https://docs.microsoft.com/azure/media/index/fabric.svg'
+              src: /azure/media/index/fabric.svg
             title: Microservices mit Service Fabric
             href: /azure/service-fabric/service-fabric-quickstart-java-spring-boot?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
           - image:
-              src: 'https://docs.microsoft.com/java/docs-ref-conceptual/media/jenkins_logo.svg'
+              src: /java/media/jenkins_logo.svg
             title: CI/CD in App Service mit Jenkins®
-            href: /azure/jenkins/java-deploy-webapp-tutorial?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+            href: /azure/jenkins/tutorial-jenkins-deploy-web-app-azure-app-service&bc=/azure/java/breadcrumb/toc.json
   - title: Beispiele
     items:
       - type: list

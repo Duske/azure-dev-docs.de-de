@@ -2,12 +2,13 @@
 title: Erste Schritte mit Azure und .NET
 description: Lernen Sie die erforderlichen Grundlagen von Azure und .NET kennen.
 ms.date: 09/19/2018
-ms.openlocfilehash: 2f5277987780c16e9a36d03ac2c08b1247460e73
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.topic: conceptual
+ms.openlocfilehash: 70c3dbecbd184ed8952ad343e33686bdf8ae1fd5
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68280711"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691382"
 ---
 # <a name="get-started-with-azure-and-net"></a>Erste Schritte mit Azure und .NET
 

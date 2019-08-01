@@ -3,12 +3,13 @@ title: Migrieren einer SQL Server-Datenbank zu Azure
 description: Hier erfahren Sie, wie Sie eine SQL Server-Datenbank aus einer lokalen SQL Server-Instanz zu Azure migrieren.
 ms.date: 11/15/2017
 ms.service: sql-database
-ms.openlocfilehash: e73525b5d762350e72069488306769a9d72cfea5
-ms.sourcegitcommit: 4cc7f5e1e4601065bfcb4c2eeb7d47ad0bec61f8
+ms.topic: conceptual
+ms.openlocfilehash: bfdfcf7de2530421ffebec92ba5a4067e77dec78
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68429206"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691213"
 ---
 # <a name="migrate-a-sql-server-database-to-azure"></a>Migrieren einer SQL Server-Datenbank zu Azure
 
