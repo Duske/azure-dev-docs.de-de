@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.custom: mvc
-ms.openlocfilehash: f7bb539e59b8d9d6afcf736560348748d311b49a
-ms.sourcegitcommit: 4cc7f5e1e4601065bfcb4c2eeb7d47ad0bec61f8
+ms.openlocfilehash: 3363e1a4600328e012b99bd940cf88bb47e2ee57
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68430933"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691713"
 ---
 # <a name="deploy-a-spring-boot-application-on-a-kubernetes-cluster-in-the-azure-kubernetes-service"></a>Bereitstellen einer Spring Boot-Anwendung in einem Kubernetes-Cluster in Azure Kubernetes Service
 
@@ -272,7 +272,7 @@ In diesem Tutorial wird die App mit `kubectl` bereitgestellt, dann können Sie d
    ![Kubernetes-Konfigurationswebsite][KB02]
 
 
-1. Klicken Sie auf **Deploy** (Bereitstellen), um den Container bereitzustellen.
+1. Wählen Sie **Deploy** (Bereitstellen) aus, um den Container bereitzustellen.
 
    ![Kubernetes-Schaltfläche „Deploy“][KB05]
 
@@ -280,7 +280,7 @@ In diesem Tutorial wird die App mit `kubectl` bereitgestellt, dann können Sie d
 
    ![Kubernetes-Dienste][KB06]
 
-1. Wenn Sie auf den Link für **External endpoints** (Externe Endpunkte) klicken, können Sie die in Azure ausgeführte Spring Boot-Anwendung sehen.
+1. Wenn Sie den Link für **External endpoints** (Externe Endpunkte) auswählen, können Sie die in Azure ausgeführte Spring Boot-Anwendung sehen.
 
    ![Kubernetes-Dienste][KB07]
 

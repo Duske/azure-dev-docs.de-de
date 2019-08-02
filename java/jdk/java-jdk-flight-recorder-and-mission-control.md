@@ -1,5 +1,5 @@
 ---
-title: Java Flight Recorder und Mission Control
+title: Überprüfen von Daten mit Java Flight Recorder und Mission Control
 description: Leitfaden zum Sammeln und Überprüfen von App-Daten mithilfe von Java Flight Recorder und Mission Control.
 author: bmitchell287
 manager: douge
@@ -7,13 +7,14 @@ ms.author: brendm
 ms.date: 04/09/2019
 ms.devlang: java
 ms.topic: conceptual
-ms.service: Azure
-ms.openlocfilehash: 29f144a17a1a45dc535961f97a4b0acdffd43d77
-ms.sourcegitcommit: 4cc7f5e1e4601065bfcb4c2eeb7d47ad0bec61f8
+ms.service: azure
+ms.custom: seo-java-july2019
+ms.openlocfilehash: 4e0ae7b66d625ea6aeeb5a7e40b9015e9ce59429
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68431071"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691777"
 ---
 # <a name="using-java-flight-recorder-jfr-and-mission-control"></a>Verwenden von Java Flight Recorder (JFR) und Mission Control
 
@@ -94,7 +95,7 @@ Gehen Sie wie folgt vor, um Zulu Mission Control zu installieren, eine Verbindun
         * Schreiben Sie den Pfad Ihrer JDK-Installation in die zweite Zeile. (Beispiel: `C:\Program Files\Java\jdk1.8.0_212\bin\javaw.exe`)
 
 7.  Suchen Sie die JVM-Instanz, von der Ihre Anwendung ausgeführt wird.
-    1.  Klicken Sie links oben im Zulu Mission Control-Fenster auf die Registerkarte **JVM Browser** (JVM-Browser).
+    1.  Wählen Sie links oben im Zulu Mission Control-Fenster die Registerkarte **JVM Browser** (JVM-Browser) aus.
     2.  Wählen Sie links oben das Listenelement für die JVM-Instanz aus, von der Ihre Anwendung ausgeführt wird, und erweitern Sie es.
 
     > [!div class="mx-imgBorder"]
@@ -103,7 +104,7 @@ Gehen Sie wie folgt vor, um Zulu Mission Control zu installieren, eine Verbindun
 
 8.  Starten Sie bei Bedarf eine Flight Recorder-Aufzeichnung.
     1.  Sollte von Flight Recorder angezeigt werden, dass keine Aufzeichnungen vorliegen, starten Sie eine Aufzeichnung. Klicken Sie hierzu auf der Registerkarte des JVM-Browsers mit der rechten Maustaste auf die Flight Recorder-Zeile, und wählen Sie die Option zum Starten einer **Flight Recorder-Aufzeichnung** aus.
-    2.  Wählen Sie entweder eine Aufzeichnung mit fester Dauer oder eine kontinuierliche Aufzeichnung und entweder eine Profilerstellungskonfiguration (differenziert) oder eine kontinuierliche Konfiguration (weniger Aufwand) aus, und klicken Sie auf **Fertig stellen**.
+    2.  Wählen Sie entweder eine Aufzeichnung mit fester Dauer oder eine kontinuierliche Aufzeichnung und entweder eine Profilerstellungskonfiguration (differenziert) oder eine kontinuierliche Konfiguration (weniger Aufwand) aus, und klicken Sie dann auf **Fertig stellen**.
 
     > [!div class="mx-imgBorder"]
     ![Starten einer Flight Recorder-Aufzeichnung](../media/jdk/azul-jfr-3.png)

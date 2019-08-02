@@ -1,5 +1,5 @@
 ---
-title: Bereitstellen einer Spring Boot-App mit JAR-Datei in der Cloud mit Maven und Azure
+title: Verwenden von Maven zum Bereitstellen einer Spring Boot-App mit JAR-Datei
 description: Hier erfahren Sie, wie Sie eine Spring Boot-App mithilfe des Maven-Plug-Ins für Azure-Web-Apps für Linux in der Cloud bereitstellen.
 services: app-service
 documentationcenter: java
@@ -11,12 +11,13 @@ ms.date: 12/19/2018
 ms.devlang: java
 ms.service: app-service
 ms.topic: article
-ms.openlocfilehash: 83bc65357f14b17ad60d0eb15adaac328dbc0386
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.custom: seo-java-july2019
+ms.openlocfilehash: e4aec4beb141025d49afbe200a090a40e327a12c
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68281461"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691098"
 ---
 # <a name="deploy-a-spring-boot-jar-file-web-app-to-azure-app-service-on-linux"></a>Bereitstellen einer Spring Boot-App mit JAR-Datei in Azure App Service unter Linux
 
@@ -201,6 +202,14 @@ Wenn Ihre Web-App bereitgestellt wurde, können Sie sie über das [Azure-Portal]
    ![Festlegen der URL für Ihre Web-App][AP02]
 
 Stellen Sie mit dem gleichen cURL-Befehl wie zuvor sicher, dass die Bereitstellung erfolgreich war. Verwenden Sie dabei die URL Ihrer Web-App aus dem Portal anstelle von `localhost`. Die folgende Meldung sollte angezeigt werden: **Greetings from Spring Boot!** 
+
+## <a name="clean-up-resources"></a>Bereinigen von Ressourcen
+Wenn Sie die Azure-Ressourcen nicht mehr benötigen, löschen Sie die Ressourcengruppe, um die bereitgestellten Ressourcen zu bereinigen.
+
+- Wählen Sie im Azure-Portal im linken Menü die Ressourcengruppe aus.
+- Geben Sie im Feld **Nach Name filtern** den Wert **gs-spring-boot-** ein. Die in diesem Tutorial erstellte Ressourcengruppe sollte dieses Präfix aufweisen.
+- Wählen Sie die Ressourcengruppe aus, die in diesem Tutorial erstellt wurde.
+- Wählen Sie im Menü ganz oben den Befehl zum Löschen der Ressourcengruppe aus.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
