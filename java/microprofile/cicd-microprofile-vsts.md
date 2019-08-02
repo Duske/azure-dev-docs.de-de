@@ -10,20 +10,20 @@ ms.assetid: ''
 ms.author: ruyakubu
 ms.date: 09/14/2018
 ms.devlang: Java
-ms.service: Azure DevOps
+ms.service: devops
 ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: web
-ms.openlocfilehash: 8ba4a880cb69948d396c3c81f2ddeafd54d68eb2
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 28a21bf0e1b4cb09ed4dc5e9f80f292c52eab103
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68284101"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691775"
 ---
 # <a name="cicd-for-microprofile-applications-using-azure-devops"></a>CI/CD für MicroProfile-Anwendungen mit Azure DevOps
 
-In diesem Tutorial wird beschrieben, wie Java EE-Entwickler mithilfe von Azure DevOps (früher bekannt als VSTS) mühelos einen CI/CD-Releasezyklus zum Bereitstellen ihrer [MicroProfile](http://microprofile.io)-Anwendungen in einer Azure-Web-App für Container-Instanz einrichten können.  In diesem Beispiel verwenden wir eine MicroProfile-Anwendung, die [Payara Micro](https://www.payara.fish/payara_micro) als Basisimage nutzt.   
+In diesem Tutorial wird beschrieben, wie Java EE-Entwickler mithilfe von Azure Pipelines (früher bekannt als VSTS) mühelos einen CI/CD-Releasezyklus zum Bereitstellen ihrer [MicroProfile](http://microprofile.io)-Anwendungen in einer Azure-Web-App für Container-Instanz einrichten können.  In diesem Beispiel verwenden wir eine MicroProfile-Anwendung, die [Payara Micro](https://www.payara.fish/payara_micro) als Basisimage nutzt.   
 
 ```Dockerfile
 FROM payara/micro:5.182
@@ -63,7 +63,7 @@ Jedes Mal, wenn in der Java EE-Quellanwendung Commit ausgeführt wird, führt di
 <img src="media/VSTS/Build-Triggers2.png"> 
 
 6. Klicken Sie auf die Registerkarte <strong>Aufgaben</strong>, um zur Hauptseite für die Buildpipeline zurückzukehren.
-7. Wählen Sie im Dropdownmenü <strong>Speichern und in Warteschlange einreihen&amp; die Option <strong>Speichern</strong> aus.
+7. Wählen Sie im Dropdownmenü <strong>Speichern und in Warteschlange einreihen&amp;</strong> die Option <strong>Speichern</strong> aus.
 
 
 ## <a name="create-a-docker-build-image"></a>Erstellen eines Docker-Buildimages
