@@ -13,8 +13,8 @@
           href: deploy-microprofile-to-web-app-for-containers.md
         - name: Konfigurationsquelle für Azure Key Vault
           href: configure-microprofile-with-keyvault.md
-        - name: CI/CD für MicroProfile-Anwendungen mit Azure DevOps
-          href: cicd-microprofile-vsts.md
+        - name: CI/CD für MicroProfile-Anwendungen mit Azure Pipelines
+          href: cicd-microprofile.md
     - name: Beispiele
       expanded: false
       items:
