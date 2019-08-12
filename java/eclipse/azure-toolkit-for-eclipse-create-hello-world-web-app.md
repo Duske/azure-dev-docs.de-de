@@ -47,7 +47,7 @@ Mithilfe des Open-Source-Plug-Ins [Azure-Toolkit für Eclipse](https://marketpla
 1. Melden Sie sich bei Ihrem Azure-Konto an. Klicken Sie hierzu auf **Tools** (Extras) > **Azure** > **Sign In** (Anmelden).
    ![Eclipse-Menü für die Anmeldung bei Azure][I01]
 
-1. Wählen Sie im Fenster für die Azure-Anmeldung **** die Option **Device Login** (Geräteanmeldung) aus, und klicken Sie anschließend auf **Sign in** (Anmelden). Weitere Anmeldeoptionen finden Sie [hier](azure-toolkit-for-eclipse-sign-in-instructions.md).
+1. Wählen Sie im Fenster für die Azure-Anmeldung die Option **Device Login** (Geräteanmeldung) aus, und klicken Sie anschließend auf **Sign in** (Anmelden). Weitere Anmeldeoptionen finden Sie [hier](azure-toolkit-for-eclipse-sign-in-instructions.md).
 
    ![Fenster für die Azure Anmeldung mit ausgewählter Geräteanmeldung][I02]
 
@@ -133,7 +133,7 @@ Mithilfe des Open-Source-Plug-Ins [Azure-Toolkit für Eclipse](https://marketpla
 
 ## <a name="cleaning-up-resources"></a>Bereinigen der Ressourcen
 
-1. Nachdem Sie Ihre Web-App in Azure veröffentlicht haben, können Sie sie verwalten, indem Sie im Azure-Explorer mit der rechten Maustaste darauf klicken und eine der Optionen aus dem Kontextmenü auswählen. Dort können Sie beispielsweise Ihre Web-App **** löschen, um die Ressourcen für dieses Tutorial zu bereinigen.
+1. Nachdem Sie Ihre Web-App in Azure veröffentlicht haben, können Sie sie verwalten, indem Sie im Azure-Explorer mit der rechten Maustaste darauf klicken und eine der Optionen aus dem Kontextmenü auswählen. Dort können Sie beispielsweise Ihre Web-App löschen, um die Ressourcen für dieses Tutorial zu bereinigen.
 
    ![Verwalten des App-Diensts][manage-app-service]
 
