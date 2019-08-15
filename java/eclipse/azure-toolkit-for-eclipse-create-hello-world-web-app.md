@@ -17,10 +17,10 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.openlocfilehash: 3d673abe4f4efd7330307999c7a945cd5cb37179
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.sourcegitcommit: 3d42245ecbfaeda31abba5f3f813b28f715ffd7c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "68691745"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-eclipse"></a>Erstellen einer „Hello World“-Web-App für Azure App Service mit Eclipse
@@ -47,7 +47,7 @@ Mithilfe des Open-Source-Plug-Ins [Azure-Toolkit für Eclipse](https://marketpla
 1. Melden Sie sich bei Ihrem Azure-Konto an. Klicken Sie hierzu auf **Tools** (Extras) > **Azure** > **Sign In** (Anmelden).
    ![Eclipse-Menü für die Anmeldung bei Azure][I01]
 
-1. Wählen Sie im Fenster für die Azure-Anmeldung die Option **Device Login** (Geräteanmeldung) aus, und klicken Sie anschließend auf **Sign in** (Anmelden). Weitere Anmeldeoptionen finden Sie [hier](azure-toolkit-for-eclipse-sign-in-instructions.md).
+1. Wählen Sie im Fenster für die **Azure-Anmeldung** die Option **Device Login** (Geräteanmeldung) aus, und klicken Sie anschließend auf **Sign in** (Anmelden). Weitere Anmeldeoptionen finden Sie [hier](azure-toolkit-for-eclipse-sign-in-instructions.md).
 
    ![Fenster für die Azure Anmeldung mit ausgewählter Geräteanmeldung][I02]
 
@@ -133,7 +133,7 @@ Mithilfe des Open-Source-Plug-Ins [Azure-Toolkit für Eclipse](https://marketpla
 
 ## <a name="cleaning-up-resources"></a>Bereinigen der Ressourcen
 
-1. Nachdem Sie Ihre Web-App in Azure veröffentlicht haben, können Sie sie verwalten, indem Sie im Azure-Explorer mit der rechten Maustaste darauf klicken und eine der Optionen aus dem Kontextmenü auswählen. Dort können Sie beispielsweise Ihre Web-App löschen, um die Ressourcen für dieses Tutorial zu bereinigen.
+1. Nachdem Sie Ihre Web-App in Azure veröffentlicht haben, können Sie sie verwalten, indem Sie im Azure-Explorer mit der rechten Maustaste darauf klicken und eine der Optionen aus dem Kontextmenü auswählen. Dort können Sie beispielsweise Ihre Web-App **löschen**, um die Ressourcen für dieses Tutorial zu bereinigen.
 
    ![Verwalten des App-Diensts][manage-app-service]
 

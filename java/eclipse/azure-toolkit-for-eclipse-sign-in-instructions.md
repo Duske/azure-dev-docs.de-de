@@ -15,10 +15,10 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.openlocfilehash: 239907aa110c5d23d0ffd3a9a0115e962fb3184d
-ms.sourcegitcommit: 30d4b58285422a2596dd97137fb82bba30d35388
+ms.sourcegitcommit: 3d42245ecbfaeda31abba5f3f813b28f715ffd7c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "68430619"
 ---
 # <a name="sign-in-instructions-for-the-azure-toolkit-for-eclipse"></a>Anleitung zur Anmeldung für das Azure-Toolkit für Eclipse
@@ -75,7 +75,7 @@ In diesem Abschnitt erfahren Sie, wie Sie eine Datei mit Anmeldeinformationen er
 2. Klicken Sie auf **Extras**, anschließend auf **Azure** und dann auf **Anmelden**.
    ![Der Eclipse-Befehl für Azure-Anmeldung][A01]
 
-3. Wählen Sie im Fenster für die Azure-Anmeldung **** die Option **Service Principal** (Dienstprinzipal) aus. Sollten Sie noch nicht über die Datei für die Dienstprinzipalauthentifizierung verfügen, klicken Sie auf **New** (Neu), um eine zu erstellen. Andernfalls können Sie auf **Browse** (Durchsuchen) klicken und direkt mit Schritt 8 fortfahren.
+3. In der **Azure Sign In** wählen Sie im Fenster **Dienstprinzipal**. Sollten Sie noch nicht über die Datei für die Dienstprinzipalauthentifizierung verfügen, klicken Sie auf **New** (Neu), um eine zu erstellen. Andernfalls können Sie auf **Browse** (Durchsuchen) klicken und direkt mit Schritt 8 fortfahren.
 
    ![Das Fenster für die Azure-Anmeldung mit ausgewählter Dienstprinzipaloption][A02]
 
@@ -104,7 +104,7 @@ In diesem Abschnitt erfahren Sie, wie Sie eine Datei mit Anmeldeinformationen er
 
    ![Dialogfeld für den Status der Dienstprinzipalerstellung][A05]
 
-8. Die Adresse der erstellten Datei wird im Fenster für die Azure-Anmeldung **** automatisch ausgefüllt. Klicken Sie als Nächstes auf **Sign in** (Anmelden).
+8. Die Adresse der erstellten Datei wird im Fenster für die **Azure-Anmeldung** automatisch ausgefüllt. Klicken Sie als Nächstes auf **Sign in** (Anmelden).
 
    ![Dialogfeld für Azure-Anmeldung][A06]
 
