@@ -44,11 +44,11 @@ Mithilfe des Open-Source-Plug-Ins [Azure-Toolkit für IntelliJ](https://plugins.
 
    ![Plug-In „Azure-Toolkit für IntelliJ“ im Marketplace][marketplace]
 
-2. Melden Sie sich bei Ihrem Azure-Konto an. Öffnen Sie hierzu über die Seitenleiste den **** Azure-Explorer, und klicken Sie anschließend auf der Leiste am oberen Rand auf das Symbol **** für die Azure-Anmeldung, oder navigieren Sie im IDEA-Menü zu **Tools > Azure >Azure Sign in** (Extras > Azure > Azure-Anmeldung).
+2. Melden Sie sich bei Ihrem Azure-Konto an. Öffnen Sie hierzu über die Seitenleiste den **Azure-Explorer**, und klicken Sie anschließend auf der Leiste am oberen Rand auf das Symbol für **die Azure-Anmeldung**, oder navigieren Sie im IDEA-Menü zu **Tools > Azure >Azure Sign in** (Extras > Azure > Azure-Anmeldung).
 
    ![IntelliJ-Befehl für Azure-Anmeldung][I01]
 
-3. Wählen Sie im Fenster für die Azure-Anmeldung **** die Option **Device Login** (Geräteanmeldung) aus, und klicken Sie anschließend auf **Sign in** (Anmelden). Weitere Anmeldeoptionen finden Sie [hier](azure-toolkit-for-intellij-sign-in-instructions.md).
+3. Wählen Sie im Fenster für **die Azure-Anmeldung** die Option **Device Login** (Geräteanmeldung) aus, und klicken Sie anschließend auf **Sign in** (Anmelden). Weitere Anmeldeoptionen finden Sie [hier](azure-toolkit-for-intellij-sign-in-instructions.md).
 
    ![Fenster für die Azure-Anmeldung mit ausgewählter Geräteanmeldung][I02]
 
