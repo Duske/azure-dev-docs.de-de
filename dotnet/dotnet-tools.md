@@ -2,14 +2,16 @@
 title: Tools für Azure .NET- und .NET Core-Entwickler
 description: Informationen zum Abrufen der Tools für das Verwenden der Azure .NET-Bibliotheken in einer Windows-, Linux- oder Mac-Umgebung
 ms.date: 08/11/2018
+author: CamSoper
+ms.author: casoper
 ms.custom: azure-dotnet-devcenter, azure-dotnet-devcenter-authored, azure-dotnet-devcenter-conceptual, vs-azure
 ms.topic: conceptual
-ms.openlocfilehash: 5f28c6e9cff45db78cfea845ee28180b27028037
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: be98ecf16fc592284209d10eba4ada53f49cfb6a
+ms.sourcegitcommit: 4eee7d9a484e35eb695248c011a63b27603d354b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691360"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69633084"
 ---
 # <a name="tools-for-net-and-net-core-azure-developers"></a>Tools für .NET- und .NET Core-Azure-Entwickler
 

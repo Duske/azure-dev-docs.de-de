@@ -2,13 +2,15 @@
 title: Authentifizieren bei den Azure-Bibliotheken für .NET
 description: Authentifizieren bei den Azure-Bibliotheken für .NET
 ms.date: 08/22/2018
+author: CamSoper
+ms.author: casoper
 ms.topic: conceptual
-ms.openlocfilehash: 219cae86a48344c83c3dd3efb4b7dfa018c88ac7
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: e7be5e7b7717fd2d4c546c1e100360e4f2ac78d7
+ms.sourcegitcommit: 4eee7d9a484e35eb695248c011a63b27603d354b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691315"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69633145"
 ---
 # <a name="authenticate-with-the-azure-libraries-for-net"></a>Authentifizieren bei den Azure-Bibliotheken für .NET
 

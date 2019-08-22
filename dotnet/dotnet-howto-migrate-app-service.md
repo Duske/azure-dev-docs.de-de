@@ -2,14 +2,16 @@
 title: Migrieren von .NET Web-Apps oder -Diensten zu Azure App Service
 description: Hier erfahren Sie, wie Sie eine .NET-Web-App oder einen .NET-Dienst aus einer lokalen Umgebung zu Azure App Service migrieren.
 ms.date: 08/11/2018
+author: CamSoper
+ms.author: casoper
 ms.service: app-service
 ms.topic: conceptual
-ms.openlocfilehash: d9ab2e536f7b0cd1f069d71911f24f1632cd156e
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 3fa28df0d7c10514a48eacf06a0df4f211dd5f63
+ms.sourcegitcommit: 4eee7d9a484e35eb695248c011a63b27603d354b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691148"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69633177"
 ---
 # <a name="migrate-your-net-web-app-or-service-to-azure-app-service"></a>Migrieren von .NET Web-Apps oder -Diensten zu Azure App Service 
 

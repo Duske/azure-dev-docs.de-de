@@ -2,13 +2,15 @@
 title: Azure-Tools für Visual Studio 2015
 description: Informationen zum Abrufen der Tools für das Verwenden der Azure .NET-Bibliotheken in Visual Studio 2015.
 ms.date: 10/19/2017
+author: CamSoper
+ms.author: casoper
 ms.topic: conceptual
-ms.openlocfilehash: 98849363744f52c8fa882f2dbaef263be5fd3f0c
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 96829e226a9dc2e59b7f941b9519adf9bf824b78
+ms.sourcegitcommit: 4eee7d9a484e35eb695248c011a63b27603d354b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691411"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69633079"
 ---
 # <a name="azure-tools-for-visual-studio-2015"></a>Azure-Tools für Visual Studio 2015
 

@@ -2,13 +2,15 @@
 title: Bereitstellen in Azure über die Befehlszeile mit .NET Core
 description: In diesem Artikel wird beschrieben, wie Sie eine ASP.NET Core-Anwendung mithilfe von Befehlszeilentools in einer Azure App Service-Instanz bereitstellen.
 ms.date: 06/20/2017
+author: CamSoper
+ms.author: casoper
 ms.topic: quickstart
-ms.openlocfilehash: a9fcb465cf84ef3996cb072baf55a9a3eb23907a
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 1c2f9ae75d26238514b525c7730dbcbbf49820b5
+ms.sourcegitcommit: 4eee7d9a484e35eb695248c011a63b27603d354b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691328"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69633117"
 ---
 # <a name="deploy-to-azure-from-the-command-line-with-net-core"></a>Bereitstellen in Azure über die Befehlszeile mit .NET Core
 
