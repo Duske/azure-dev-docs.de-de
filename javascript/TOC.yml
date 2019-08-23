@@ -88,8 +88,22 @@
               href: /azure/cognitive-services/speech-service/get-started?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
     - name: Anleitungen
       items:
-        - name: Bereitstellen mit Visual Studio Code
+        - name: End-to-End-Verwendung von Node.js mit VS Code
           href: node-howto-e2e.md
+        - name: Bereitstellen einer Web-App
+          href: node-howto-deploy-web-app.md
+        - name: Bereitstellen von Containern
+          href: node-howto-deploy-containers.md
+        - name: Bereitstellen über Continuous Delivery
+          href: /azure/devops/pipelines/languages/javascript?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+        - name: Integrieren in Datenbanken
+          href: node-howto-integrate-databases.md
+        - name: Schreiben von serverlosem Code
+          href: node-howto-write-serverless-code.md
+        - name: Erstellen einer statischen Website (JAMstack)
+          href: node-howto-create-static-site-jamstack.md
+        - name: Automatisieren der Überwachung
+          href: /azure/azure-monitor/learn/nodejs-quick-start?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
         - name: Erstellen einer REST-API
           href: /azure/app-service/app-service-web-tutorial-rest-api?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
     - name: Beispiele

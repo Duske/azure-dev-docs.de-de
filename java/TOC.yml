@@ -129,6 +129,10 @@
           href: /azure/service-fabric/service-fabric-tutorial-create-java-app?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
         - name: Spring Boot in App Service mit Cosmos DB
           href: /azure/app-service/containers/tutorial-java-spring-cosmosdb?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+        - name: CI/CD in App Service mit Azure Pipelines
+          href: /azure/devops/pipelines/languages/java-webapp?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+        - name: CI/CD in Azure Functions mit Azure Pipelines
+          href: /azure/devops/pipelines/languages/java-function?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
         - name: CI/CD in App Service mit Jenkins
           href: /azure/jenkins/tutorial-jenkins-deploy-web-app-azure-app-service?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
         - name: Bereitstellen für App Service mit Maven
