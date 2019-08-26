@@ -4,7 +4,7 @@
       "docset_name": "azure-dotnet",
       "build_source_folder": "dotnet",
       "build_output_subfolder": "azure-dotnet",
-      "locale": "de-DE",
+      "locale": "de-de",
       "monikers": [],
       "moniker_ranges": [],
       "open_to_public_contributors": false,
@@ -18,7 +18,21 @@
       "docset_name": "azure-go",
       "build_source_folder": "go",
       "build_output_subfolder": "azure-go",
-      "locale": "de-DE",
+      "locale": "de-de",
+      "monikers": [],
+      "moniker_ranges": [],
+      "open_to_public_contributors": false,
+      "type_mapping": {
+        "Conceptual": "Content"
+      },
+      "build_entry_point": "docs",
+      "template_folder": "_themes"
+    },
+    {
+      "docset_name": "azure-go-redirect",
+      "build_source_folder": "go-redirects",
+      "build_output_subfolder": "azure-go-redirect",
+      "locale": "de-de",
       "monikers": [],
       "moniker_ranges": [],
       "open_to_public_contributors": false,
@@ -32,7 +46,7 @@
       "docset_name": "azure-java",
       "build_source_folder": "java",
       "build_output_subfolder": "azure-java",
-      "locale": "de-DE",
+      "locale": "de-de",
       "monikers": [],
       "moniker_ranges": [],
       "open_to_public_contributors": false,
@@ -46,7 +60,7 @@
       "docset_name": "azure-javascript",
       "build_source_folder": "javascript",
       "build_output_subfolder": "azure-javascript",
-      "locale": "de-DE",
+      "locale": "de-de",
       "monikers": [],
       "moniker_ranges": [],
       "open_to_public_contributors": false,
@@ -60,7 +74,7 @@
       "docset_name": "azure-python",
       "build_source_folder": "python",
       "build_output_subfolder": "azure-python",
-      "locale": "de-DE",
+      "locale": "de-de",
       "monikers": [],
       "moniker_ranges": [],
       "open_to_public_contributors": false,
@@ -71,7 +85,13 @@
       "template_folder": "_themes"
     }
   ],
-  "notification_subscribers": [],
+  "notification_subscribers": [
+    "brendm@microsoft.com",
+    "karler@microsoft.com",
+    "kraigb@microsoft.com",
+    "Stephen.Tramer@microsoft.com",
+    "barbkess@microsoft.com"
+  ],
   "sync_notification_subscribers": [],
   "branches_to_filter": [
     "live",
@@ -84,7 +104,7 @@
   "dependent_repositories": [
     {
       "path_to_root": "_themes",
-      "url": "https://github.com/Microsoft/templates.docs.msft.de-DE",
+      "url": "https://github.com/Microsoft/templates.docs.msft.de-de",
       "branch": "master",
       "branch_mapping": {}
     },
@@ -99,5 +119,6 @@
     }
   ],
   "branch_target_mapping": {},
-  "need_generate_pdf_url_template": false
+  "need_generate_pdf_url_template": false,
+  "targets": {}
 }
