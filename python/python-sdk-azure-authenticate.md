@@ -7,12 +7,12 @@ manager: carmonm
 ms.date: 04/11/2019
 ms.topic: conceptual
 ms.devlang: python
-ms.openlocfilehash: e25a6849bd2392253ece66ba46e682cf63417886
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: c114fa9aa360f58f5688f8b70685402ba0c12db7
+ms.sourcegitcommit: f519a1ee8017850b2fa37049af3bac1ea5ca5516
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68284861"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889722"
 ---
 # <a name="authenticate-with-the-azure-management-libraries-for-python"></a>Authentifizieren bei den Azure-Verwaltungsbibliotheken für Python
 
@@ -52,7 +52,8 @@ credentials = ServicePrincipalCredentials(
 )
 ```
 
-> [HINWEIS!] Verwenden Sie zum Herstellen einer Verbindung mit einer der unabhängigen Azure-Clouds den `cloud_environment`-Parameter.
+> [!NOTE]
+> Verwenden Sie den Parameter `cloud_environment`, um eine Verbindung mit einer der Azure-Sovereign Clouds herzustellen.
 >
 > ```python
 > from azure.common.credentials import ServicePrincipalCredentials
@@ -116,7 +117,8 @@ subscription_id = '33333333-3333-3333-3333-333333333333'
 client = ComputeManagementClient(credentials, subscription_id)
 ```
 
-> [HINWEIS!] Bei Verwendung einer unabhängigen Azure-Cloud müssen Sie beim Erstellen des Verwaltungsclients auch die entsprechende Basis-URL (über die Konstanten in `msrestazure.azure_cloud`) angeben. Beispiel für Azure-Cloud in China:
+> [!NOTE]
+> Bei Verwendung einer Azure-Sovereign Cloud müssen Sie beim Erstellen des Verwaltungsclients auch die entsprechende Basis-URL (über die Konstanten in `msrestazure.azure_cloud`) angeben. Beispiel für Azure-Cloud in China:
 > ```python
 > client = ComputeManagementClient(credentials, subscription_id,
 >     base_url=AZURE_CHINA_CLOUD.endpoints.resource_manager)
