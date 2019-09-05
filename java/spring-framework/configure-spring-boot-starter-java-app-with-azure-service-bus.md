@@ -8,12 +8,12 @@ ms.date: 08/21/2019
 ms.devlang: java
 ms.service: azure-java
 ms.topic: article
-ms.openlocfilehash: f41486c7063a6b0fa26ca4055d5f10e625676e8a
-ms.sourcegitcommit: f519a1ee8017850b2fa37049af3bac1ea5ca5516
+ms.openlocfilehash: 58d8dd00deeb90b1a1b8935bcbbab471255328d4
+ms.sourcegitcommit: 9cd460ee16b637e701aa30078932878c0d0a7945
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69892374"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70181986"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-service-bus-jms"></a>Verwenden von Spring Boot-Starters für Azure Service Bus JMS
 
@@ -24,9 +24,6 @@ Azure stellt eine asynchrone Nachrichtenplattform namens [Azure Service Bus](htt
 Der Spring Boot-Starter für Azure Service Bus JMS bietet Spring-Integration in Service Bus.
 
 In diesem Artikel wird veranschaulicht, wie Spring Boot-Starter für Azure Service Bus JMS zum Senden und Empfangen von Nachrichten von `queues` und `topics` von Service Bus verwendet wird.
-
-> [!NOTE]
-> In diesem Artikel wurde die `SNAPSHOT`-Version des Starters verwendet.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -66,28 +63,11 @@ Die folgenden Voraussetzungen müssen für diesen Artikel erfüllt sein:
     <dependency>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>azure-servicebus-jms-spring-boot-starter</artifactId>
-        <version>2.1.7-SNAPSHOT</version>
+        <version>2.1.7</version>
     </dependency>
     ```
 
-    ![Fügen Sie den Abhängigkeitsabschnitt zur Datei „pom.xml“ hinzu.](./media/configure-spring-boot-starter-java-app-with-azure-service-bus/add-dependency-section.png)
-
-1. Fügen Sie die Konfiguration für [Maven-Repositorys](https://maven.apache.org/settings.html#Repositories) hinzu, um die SNAPSHOT-Version zu verwenden:
-
-    ```xml
-    <repositories>
-        <repository>
-            <id>nexus-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-            <snapshots>
-            <enabled>true</enabled>
-            <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
-    </repositories>
-    ```
-
-    ![Fügen Sie den Repositoryabschnitt zur Datei „pom.xml“ hinzu.](./media/configure-spring-boot-starter-java-app-with-azure-service-bus/add-repository-section.png)
+    ![Fügen Sie den Abhängigkeitsabschnitt zur Datei „pom.xml“ hinzu.](./media/configure-spring-boot-starter-java-app-with-azure-service-bus/add-dependency-section-new.png)
 
 1. Speichern und schließen Sie die Datei *pom.xml*.
 
@@ -121,7 +101,7 @@ In diesem Abschnitt erfahren Sie, wie Sie Ihre App so konfigurieren, dass sie en
     | `spring.jms.servicebus.connection-string` | Geben Sie die Verbindungszeichenfolge an, die Sie im Service Bus-Namespace vom Azure-Portal erhalten haben. |
     | `spring.jms.servicebus.idle-timeout`      | Legen Sie das Leerlauftimeout in Millisekunden fest. Für dieses Tutorial wird der Wert 1.800.000 empfohlen.   |
 
-3. Speichern und schließen Sie die Datei *application.properties*.
+1. Speichern und schließen Sie die Datei *application.properties*.
 
 ### <a name="use-service-bus-topic"></a>Verwenden des Service Bus-Themas
 
@@ -353,7 +333,7 @@ In diesem Abschnitt erstellen Sie die notwendigen Java-Klassen, um Nachrichten a
     mvn clean spring-boot:run
     ```
 
-3. Sobald Ihre Anwendung ausgeführt wird, können Sie sie mit *curl* testen:
+1. Sobald Ihre Anwendung ausgeführt wird, können Sie sie mit *curl* testen:
 
     ```shell
     curl -X POST localhost:8080/messages?message=hello
