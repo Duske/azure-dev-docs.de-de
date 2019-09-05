@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-nodejs
 ms.date: 08/19/2019
 ms.author: kraigb
-ms.openlocfilehash: 0917da975f29d392944ba2351e894de640182eb9
-ms.sourcegitcommit: f519a1ee8017850b2fa37049af3bac1ea5ca5516
+ms.openlocfilehash: a5ed7d5d99009593845966969217f8a5081da4c4
+ms.sourcegitcommit: 9cd460ee16b637e701aa30078932878c0d0a7945
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69892494"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70181943"
 ---
 # <a name="how-to-write-serverless-nodejs-code-on-azure"></a>Schreiben von serverlosem Node.js-Code in Azure
 
@@ -40,12 +40,14 @@ Anschließend können Sie eine Vielzahl von Ressourcen nutzen, um mehr über ser
 - Erfahren Sie mehr über die Verwendung verschiedener Trigger zum Ausführen von serverlosem Code:
 
   - [Ausführen von Code mit einem Timer](/azure/azure-functions/functions-create-scheduled-function)
-  - [Ausführen von Code beim Hochladen oder Aktualisieren von Dateien in Azure Blob Storage](/azure/storage/blobs/storage-upload-process-images?tabs=nodejsv10)
+  - [Tutorial: Hochladen von Bilddaten in die Cloud mit Azure Storage](/azure/storage/blobs/storage-upload-process-images?tabs=nodejsv10)
   - [Ausführen von Code, wenn eine Nachricht in Azure Queue Storage geschrieben wird](/azure/azure-functions/functions-create-storage-queue-triggered-function)
 
 - [Speichern von unstrukturierten Daten mit Azure Functions und Azure Cosmos DB](/azure/azure-functions/functions-integrate-store-unstructured-data-cosmosdb.md?tabs=javascript) Informationen zu anderen Datenbanken finden Sie unter [Integrieren von Azure-Datenbanken in Node.js-Apps](node-howto-integrate-databases.md).
 
-- [Lokales Codieren und Testen von Azure Functions](/azure/azure-functions/functions-develop-local) sowie [Strategien zum Testen Ihres Codes in Azure Functions](/azure/azure-functions/functions-test-a-function) und [Azure Functions-Fehlerbehandlung](/azure/azure-functions/functions-bindings-error-pages)
+- [Lokales Codieren und Testen von Azure Functions](/azure/azure-functions/functions-develop-local)
+
+- [Strategien zum Testen Ihres Codes in Azure Functions](/azure/azure-functions/functions-test-a-function) und [Azure Functions – Fehlerbehandlung](/azure/azure-functions/functions-bindings-error-pages)
 
 - [Konfigurieren der Authentifizierung mit Azure Active Directory](/azure/app-service/configure-authentication-provider-aad.md?toc=%2fazure%2fazure-functions%2ftoc.json)
 
