@@ -42,8 +42,8 @@
       "extendBreadcrumb": true,
       "disable_contribution_on_translation_quality": ["MT"],
       "feedback_system": "GitHub",
-      "feedback_github_repo": "MicrosoftDocs/azure-dev-docs",
-      "feedback_product_url": "https://github.com/Azure/azure-sdk-for-go/issues",
+      "feedback_github_repo": "MicrosoftDocs/azure-dev-docs.de-de",
+      "feedback_product_url": "https://github.com/Azure/azure-sdk-for-java/issues",
       "_op_documentIdPathDepotMapping": {
         "./": {
           "depot_name": "Azure.AzureJava",
