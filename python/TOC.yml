@@ -60,6 +60,54 @@
           href: /azure/event-grid/custom-event-quickstart?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
         - name: Queue Storage
           href: /azure/storage/queues/storage-python-how-to-use-queue-storage?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+- name: Lernprogramme
+  items:
+    - name: Bereitstellen für App Service mit VS Code
+      items:
+        - name: Einführung und Voraussetzungen
+          href: tutorial-deploy-app-service-on-linux-01.md
+        - name: Vorbereiten Ihrer App
+          href: tutorial-deploy-app-service-on-linux-02.md
+        - name: Erstellen der App Service-Instanz
+          href: tutorial-deploy-app-service-on-linux-03.md
+        - name: Konfigurieren der Startdatei
+          href: tutorial-deploy-app-service-on-linux-04.md
+        - name: Bereitstellen der App
+          href: tutorial-deploy-app-service-on-linux-05.md
+        - name: Streaming von Protokollen
+          href: tutorial-deploy-app-service-on-linux-06.md
+        - name: Bereinigen von Ressourcen
+          href: tutorial-deploy-app-service-on-linux-07.md
+    - name: Bereitstellen von Containern mit VS Code
+      items:
+        - name: Einführung und Voraussetzungen
+          href: tutorial-deploy-containers-01.md
+        - name: Bereitstellen des Containerimages
+          href: tutorial-deploy-containers-02.md
+        - name: Vornehmen von Änderungen und erneutes Bereitstellen
+          href: tutorial-deploy-containers-03.md
+        - name: Streaming von Protokollen
+          href: tutorial-deploy-containers-04.md
+        - name: Bereinigen von Ressourcen
+          href: tutorial-deploy-containers-05.md
+    - name: Bereitstellen von Azure Functions mit VS Code
+      items:
+        - name: Einführung und Voraussetzungen
+          href: tutorial-vs-code-serverless-python-01.md
+        - name: Erstellen der Python-Funktion
+          href: tutorial-vs-code-serverless-python-02.md
+        - name: Untersuchen von Codedateien
+          href: tutorial-vs-code-serverless-python-03.md
+        - name: Lokales Debuggen
+          href: tutorial-vs-code-serverless-python-04.md
+        - name: Bereitstellen in Azure
+          href: tutorial-vs-code-serverless-python-05.md
+        - name: Hinzufügen einer zweiten Funktion
+          href: tutorial-vs-code-serverless-python-06.md
+        - name: Hinzufügen einer Speicherbindung
+          href: tutorial-vs-code-serverless-python-07.md
+        - name: Bereinigen von Ressourcen
+          href: tutorial-vs-code-serverless-python-08.md
 - name: Anleitungen
   items:
     - name: Installieren des SDKs
