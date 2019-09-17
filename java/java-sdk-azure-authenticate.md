@@ -10,18 +10,19 @@ ms.topic: article
 ms.devlang: java
 ms.service: multiple
 ms.assetid: 10f457e3-578b-4655-8cd1-51339226ee7d
-ms.openlocfilehash: 80281765b53951aad39e0c5be94011411520e282
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.custom: seo-java-september2019
+ms.openlocfilehash: 1c147b4b478898fe0610abd09998b2972724f086
+ms.sourcegitcommit: cf5881235569c754c829a8f819642a6f5aed30be
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691947"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70904913"
 ---
 # <a name="authenticate-with-the-azure-libraries-for-java"></a>Authentifizieren bei den Azure-Bibliotheken für Java 
 
 ## <a name="connect-to-services-with-connection-strings"></a>Herstellen einer Verbindung mit Diensten mit Verbindungszeichenfolgen
 
-Die meisten Azure-Dienstbibliotheken verwenden eine Verbindungszeichenfolge oder einen sicheren Schlüssel für die Authentifizierung. SQL-Datenbank enthält beispielsweise Benutzernamen-und Kennwortinformationen in der JDBC-Verbindungszeichenfolge:
+Dieser Artikel zeigt das Authentifizieren bei den Azure-Bibliotheken für Java. Die meisten Azure-Dienstbibliotheken verwenden eine Verbindungszeichenfolge oder einen sicheren Schlüssel für die Authentifizierung. SQL-Datenbank enthält beispielsweise Benutzernamen-und Kennwortinformationen in der JDBC-Verbindungszeichenfolge:
 
 ```java
 String url = "jdbc:sqlserver://myazuredb.database.windows.net:1433;" + 
