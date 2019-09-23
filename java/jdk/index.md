@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.date: 04/09/2019
 ms.author: brendm
 ms.service: azure
-ms.openlocfilehash: 83dbef306087f63670c2567231eca1c4b9e5dd7f
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 6c28a599180301ac19f114f467868b5f0e46cbd1
+ms.sourcegitcommit: 4a95777874ae3a3c760365148de868f937fdfd2e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691809"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71094889"
 ---
 # <a name="java-long-term-support-for-azure-and-azure-stack"></a>Langfristiger Java-Support für Azure und Azure Stack
 
-Java-Entwickler, die mit Azure und Azure Stack arbeiten, können Java-Produktionsanwendungen mithilfe von [Azul Zulu Enterprise für Azure](https://www.azul.com/downloads/azure-only/zulu/) erstellen und ausführen, ohne dass zusätzliche Supportkosten anfallen. Sie können in Azure eine beliebige Java-Runtime verwenden. Bei Verwendung von Zulu erhalten Sie jedoch kostenlose Wartungsupdates und können Supportprobleme bei Microsoft erstellen.
+Java-Entwickler, die mit Azure und Azure Stack arbeiten, können Java-Produktionsanwendungen mithilfe von JDK-Builds von [Azul Zulu für Azure – Enterprise Edition](https://www.azul.com/downloads/azure-only/zulu/) erstellen und ausführen, ohne dass zusätzliche Supportkosten anfallen. Sie können in Azure eine beliebige Java-Runtime verwenden. Bei Verwendung von Zulu erhalten Sie jedoch kostenlose Wartungsupdates und können Supportprobleme bei Microsoft erstellen.
 
 > [!div class="nextstepaction"]
 > [Java herunterladen und installieren](java-jdk-install.md)
@@ -34,7 +34,7 @@ Java-Entwickler, die mit Azure und Azure Stack arbeiten, können Java-Produktion
 
 ## <a name="what-is-the-zulu-openjdk-for-azure"></a>Was ist Zulu OpenJDK für Azure?
 
-Bei Azul Zulu Enterprise-Builds von OpenJDK handelt es sich um eine kostenlose, plattformübergreifende und produktionsbereite Distribution von OpenJDK für Azure und Azure Stack, die von Microsoft und Azul Systems unterstützt wird. Merkmale dieser Distributionen:
+Bei Enterprise Edition-Builds von Azul Zulu für Azure von OpenJDK handelt es sich um eine kostenlose, plattformübergreifende und produktionsbereite Distribution von OpenJDK für Azure und Azure Stack, die von Microsoft und Azul Systems unterstützt wird. Merkmale dieser Distributionen:
 
 * Hundertprozentige Open-Source-Builds von OpenJDK, verpackt als JDKs (Java Development Kits), JREs (Java Runtime Environments) und monitorlose JREs. Bei diesen Binärdateien handelt es sich um vollständig kompatible und konforme kommerzielle Builds von Java Standard Edition (SE), die mit Java-Anwendungen oder -Komponenten in Azure und Azure Stack verwendet werden können.
 * Langfristiger Support – einschließlich Fehlerbehebungen, Leistungsoptimierungen und Sicherheitspatches
@@ -52,7 +52,7 @@ Bei Azul Zulu Enterprise-Builds von OpenJDK handelt es sich um eine kostenlose
 
 ## <a name="supported-java-versions-and-update-schedule"></a>Unterstützte Java-Versionen und Zeitplan für Updates
 
-Azul Systems stellt vollständig unterstützte [Zulu Enterprise-Builds von OpenJDK für Microsoft Azure](https://www.azul.com/downloads/azure-only/zulu/) bereit, der mit allen LTS-Versionen von Java (ab Java SE 7, 8 und 11) verwendet werden können. Weitere Informationen finden Sie in der [Pressemitteilung von Azul](https://www.azul.com/press_release/free-java-production-support-for-microsoft-azure-azure-stack).
+Azul Systems stellt vollständig unterstützte [Enterprise Edition-Builds von Azul Zulu für Azure](https://www.azul.com/downloads/azure-only/zulu/) bereit, die mit allen LTS-Versionen von Java (ab Java SE 7, 8 und 11) verwendet werden können. Weitere Informationen finden Sie in der [Pressemitteilung von Azul](https://www.azul.com/press_release/free-java-production-support-for-microsoft-azure-azure-stack).
 
 |Java SE mit LTS  |Support bis  |
 |---------|----------|
@@ -67,7 +67,7 @@ Azul Systems verwaltet eine [Java SE-Roadmap](https://www.azul.com/products/azul
 
 ## <a name="benefits-for-developers"></a>Vorteile für Entwickler
 
-Die Azul Zulu JDK-Releases bieten folgende Vorteile:
+Folgende Releases des Enterprise Edition-JDK von Azul Zulu für Azure sind verfügbar:
 
 1. Unterstützt von Microsoft und Azul Systems
 

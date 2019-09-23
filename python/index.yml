@@ -1,190 +1,99 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Azure für Python-Cloudentwickler
+### YamlMime:Landing
+title: Dokumentation für das Azure-SDK für Python
+summary: >
+  Erfahren Sie etwas über das Azure SDK für Python, den Einstieg in seine Verwendung und welche Vorteile es Entwicklern bietet. Erfahren Sie etwas über nützliche Azure-Features wie Anwendungshosting, Unterstützung für Open-Source-Datenbanken wie MySQL und PostgreSQL und die Arbeit mit Big Data für maschinelles Lernen und andere Anwendungen.
 metadata:
-  title: 'Azure für Python-Entwickler – Tutorials, API-Referenz'
-  description: 'In diesen Schnellstartanleitungen, Tutorials und API-Referenzen finden Sie Informationen zu Python in Azure.'
-  keywords: 'Azure, Python, SDK, API'
+  title: Azure für Python-Entwickler
+  description: Die unten aufgeführten Entwicklerressourcen enthalten Informationen zu den ersten Schritten bei der Entwicklung mit dem Azure SDK für Python.
   author: sptramer
   ms.author: sttramer
-  manager: carmonm
-  ms.date: 06/27/2019
+  ms.date: 09/10/2019
   ms.topic: landing-page
-  ms.prod: azure
-  ms.devlang: python
-sections:
-  - title: Schneller Einstieg
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: /azure/app-service/containers/quickstart-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-            image:
-              src: 'https://docs.microsoft.com/azure/media/index/app-service-web.svg'
-            title: Erstellen und Bereitstellen einer Python-Web-App in Azure
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/AzureFunctions.svg'
-            title: Verwenden Sie Visual Studio Code zum Erstellen und Bereitstellen einer serverlosen Python-App in Azure Functions.
-            href: 'https://code.visualstudio.com/docs/python/tutorial-azure-functions'
-          - image:
-              src: 'https://docs.microsoft.com/azure/python/media/AzureNotebooks.png'
-            title: Machen Sie sich mit den ersten Schritten mit Azure Machine Learning in einem Jupyter-Notebook vertraut.
-            href: /azure/notebooks/use-machine-learning-services-jupyter-notebooks?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/devops/_img/index/devopsiconpipelines96.svg'
-            title: Erstellen und Bereitstellen einer Python-App in Azure Pipelines
-            href: /azure/devops/pipelines/languages/python-webapp?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - href: /azure/cosmos-db/create-sql-api-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-            image:
-              src: 'https://docs.microsoft.com/azure/media/index/cosmosdb.svg'
-            title: Erstellen und Abfragen von Daten in einer global replizierten Datenbank in Azure mithilfe von Visual Studio Code
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/Storage.svg'
-            title: Sicheres Speichern und Abrufen von Daten in Azure
-            href: /azure/storage/blobs/storage-quickstart-blobs-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-  - title: App-Hosting
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/app-service-web.svg'
-            title: Azure-Web-Apps
-            html: 'Erstellen, Bereitstellen und Skalieren von Python-Web-Apps unter Linux'
-            href: /azure/app-service/containers/quickstart-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_kubernetes.svg'
-            title: Azure Kubernetes Service
-            html: Bereitstellen und Verwalten von Container-Apps mit Kubernetes-Orchestrierung
-            href: /azure/aks/kubernetes-walkthrough?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/virtual-machines/media/index/virtual-machines.svg'
-            title: Virtual Machines
-            html: Bedarfsorientiertes Ausführen Ihres Codes unter Verwendung von virtuellen Linux- oder Windows Server-Computern
-            href: /azure/virtual-machines/linux/quick-create-cli?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/AzureFunctions.svg'
-            title: Azure-Funktionen
-            html: Ausführen von Python-Code als serverlose Funktion
-            href: /azure/azure-functions/functions-create-first-function-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-  - title: 'Data Science, KI und Machine Learning'
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/MachineLearning.svg'
-            title: Azure Machine Learning
-            html: Entdecken von Azure-Diensten für das Vorbereiten und Trainieren von Daten und Bereitstellen von Machine Learning-Modellen
-            href: /azure/machine-learning/service?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/python/media/AzureNotebooks.png'
-            title: Azure-Notebooks
-            html: Ausführen von Data Science-Experimenten mit Python mithilfe eines vollständig verwalteten Jupyter-Notebooks
-            href: 'https://notebooks.azure.com/'
-          - image:
-              src: 'https://docs.microsoft.com/azure/virtual-machines/media/index/virtual-machines.svg'
-            title: Virtuelle Computer für Data Science
-            html: Schnelles Erstellen eines virtuellen Computers mit beliebten vorinstallierten Data Science-Tools
-            href: /azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/hdinsight/media/index/spark_r.svg'
-            title: Verteilte Datenverarbeitung
-            html: Verwenden eines verwalteten Hadoop- oder Spark-Clusters mit Azure HDInsights für umfangreiche Workloads bei der Datenverarbeitung
-            href: /azure/hdinsight/hadoop/apache-hadoop-linux-create-cluster-get-started-portal?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/i_azure-cognitive-services-color.svg'
-            title: Cognitive Services
-            html: 'Erstellen von Anwendungen mit Azure-Diensten für maschinelles Sehen, Textanalyse, Spracherkennung und vieles mehr'
-            href: /azure/cognitive-services?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-  - title: Datenlösungen
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/Storage.svg'
-            title: Storage
-            html: Sichere Speicherung von Dateien mit hochverfügbarem und skalierbarem Cloudspeicher
-            href: /azure/storage/blobs/storage-quickstart-blobs-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/cosmosdb.svg'
-            title: Cosmos DB
-            html: Speichern von Daten in einer global verteilten und skalierbaren NoSQL-Datenbank mit mehreren Modellen
-            href: /azure/cosmos-db/create-sql-api-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/RedisCache.svg'
-            title: Redis Cache
-            html: Lesen und Schreiben von Daten aus Python in einem Azure Redis Cache
-            href: /azure/redis-cache/cache-python-get-started?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/PostgreSQL.svg'
-            title: Azure Database for PostgreSQL
-            html: Erstellen einer PostgreSQL-Instanz in Azure und Herstellen einer Verbindung mithilfe von Python
-            href: /azure/postgresql/quickstart-create-server-database-portal?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/MySQL.SVG'
-            title: Azure Database for MySQL
-            html: Erstellen einer MySQL-Instanz in Azure und Herstellen einer Verbindung mithilfe von Python
-            href: /azure/mysql/quickstart-create-mysql-server-database-using-azure-portal?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/SQLDatabase.svg'
-            title: SQL-Datenbank
-            html: Einrichten eines verwalteten SQL-Servers in Azure
-            href: /azure/sql-database/sql-database-connect-query-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/EventHubs.svg'
-            title: Event Hubs
-            html: 'Gewinnen von Erkenntnissen zu Daten mit einfacher, sicherer und skalierbarer Datenerfassung in Echtzeit'
-            href: /azure/event-hubs/event-hubs-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/ServiceBus.svg'
-            title: Service Bus
-            html: Senden von Nachrichten in der Cloud über FIFO-Warteschlangen oder Themenabonnements
-            href: /azure/service-bus-messaging?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-  - title: Sicherheit und Integration
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/KeyVault.svg'
-            title: Key Vault
-            html: 'Sichern kryptografischer Schlüssel und anderer Geheimnisse, die von Cloud-Apps und -Diensten verwendet werden'
-            href: /python/api/overview/azure/key-vault
-  - title: Tools für die Entwicklung mit Python in Azure
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: /python/api?view=azure-python
-            image:
-              src: 'http://docs.microsoft.com/media/common/i_api-reference.svg'
-            title: API-Referenz zum Azure SDK für Python
-          - href: 'https://code.visualstudio.com/docs/python/python-tutorial'
-            html: Entwickeln von Python-Apps und Bereitstellen in Azure mithilfe von Visual Studio Code
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_vs-code.svg'
-            title: Visual Studio Code
-          - href: /cli/azure?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-            html: Verwalten von Azure-Ressourcen über die Befehlszeile
-            image:
-              src: 'https://docs.microsoft.com/azure/media/index/azure_dev-7.svg'
-            title: Azure-Befehlszeilenschnittstelle
-          - href: /windows/wsl/install-win10?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-            html: "Natives Ausführen von Linux-Anwendungen unter Windows\_10 mithilfe verschiedener Distributionen"
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_linux-color.svg'
-            title: Windows-Subsystem für Linux
+  ms.collection: collection
+  ms.openlocfilehash: a753597a65f959e638a4aa72b99327ea1f635aee
+  ms.sourcegitcommit: 4a95777874ae3a3c760365148de868f937fdfd2e
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 09/18/2019
+  ms.locfileid: "71094809"
+landingContent:
+- title: Erste Schritte mit dem Azure SDK für Python
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Informationen zum Azure SDK für Python
+      url: python-sdk-azure-overview.md
+  - linkListType: download
+    links:
+    - text: Installieren des SDKs
+      url: python-sdk-azure-install.md
+    - text: Verwenden von Jupyter Notebooks in Azure Notebooks
+      url: https://notebooks.azure.com/
+    - text: Python in Visual Studio Code
+      url: https://code.visualstudio.com/docs/languages/python
+  - linkListType: how-to-guide
+    links:
+    - text: Authentifizieren Ihrer Anwendung
+      url: python-sdk-azure-authenticate.md
+  - linkListType: quickstart
+    links:
+    - text: Erstellen einer serverlosen Python-App in Azure Functions mit Visual Studio Code
+      url: /azure/azure-functions/tutorial-vs-code-serverless-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: Verwenden von Azure Machine Learning-Tools in einem Jupyter Notebook
+      url: /azure/notebooks/use-machine-learning-services-jupyter-notebooks?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: Erstellen und Bereitstellen einer Python-App mit Azure Pipelines
+      url: /azure/devops/pipelines/languages/python-webapp?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+- title: Hosten von Anwendungen in Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Einführung in Azure App Service unter Linux
+      url: /azure/app-service/containers/app-service-linux-intro?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+  - linkListType: quickstart
+    links:
+    - text: Erstellen, Bereitstellen und Skalieren von Python-Web-Apps
+      url: /azure/app-service/containers/quickstart-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: Bereitstellen von Container-Apps in Azure Kubernetes Service
+      url: /azure/aks/kubernetes-walkthrough?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: Erstellen und Bereitstellen einer serverlosen Funktion in Python
+      url: /azure/azure-functions/functions-create-first-function-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+- title: Dienste für Data Science, KI und maschinelles Lernen
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Informationen zu Azure Machine Learning Service
+      url: /azure/machine-learning/service?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: Informationen zu Azure Cognitive Services
+      url: /azure/cognitive-services?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+  - linkListType: quickstart
+    links:
+    - text: Verwenden eines verwalteten Azure HDInsight-Clusters für die Datenverarbeitung
+      url: /azure/hdinsight/hadoop/apache-hadoop-linux-create-cluster-get-started-portal?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: Erstellen eines virtuellen Azure-Computers für Data Science-Aufgaben
+      url: /azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+- title: Referenz zum Azure SDK für Python
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: API-Referenz zum Azure SDK für Python
+      url: /python/api?view=azure-python
+- title: Speicher-, Messaging- und Datenbanklösungen in Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Informationen zu Speicherlösungen in Azure
+      url: /storage/common/storage-introduction?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: Skalierbares NoSQL mit Azure Cosmos DB
+      url: /azure/cosmos-db/introduction?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: Messaging zwischen Anwendungen mit Azure Service Bus
+      url: /azure/service-bus-messaging?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+  - linkListType: quickstart
+    links:
+    - text: Verwalten von Blobs in Azure Storage mit Python
+      url: /azure/storage/blobs/storage-quickstart-blobs-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: Verwenden von SQL-Abfragen für ein Azure Cosmos DB-Konto in Python
+      url: /azure/cosmos-db/create-sql-api-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: Einrichten eines verwalteten SQL-Servers in Azure
+      url: /azure/sql-database/sql-database-connect-query-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: Erfassen von Daten in Echtzeit über Azure Event Hubs
+      url: /azure/event-hubs/event-hubs-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
