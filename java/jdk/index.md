@@ -8,12 +8,13 @@ ms.topic: conceptual
 ms.date: 04/09/2019
 ms.author: brendm
 ms.service: azure
-ms.openlocfilehash: 6c28a599180301ac19f114f467868b5f0e46cbd1
-ms.sourcegitcommit: 4a95777874ae3a3c760365148de868f937fdfd2e
+ms.custom: seo-java-september2019
+ms.openlocfilehash: 51dbbc70239744c0de7a96c0545cef15bfd4013a
+ms.sourcegitcommit: 50fbde9a640468147953d62f7ae0fca4685ed5e6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71094889"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71225243"
 ---
 # <a name="java-long-term-support-for-azure-and-azure-stack"></a>Langfristiger Java-Support für Azure und Azure Stack
 
@@ -56,10 +57,10 @@ Azul Systems stellt vollständig unterstützte [Enterprise Edition-Builds von Az
 
 |Java SE mit LTS  |Support bis  |
 |---------|----------|
-|[![Java 7](../media/jdk/java-7.png)](https://www.azul.com/downloads/azure-only/zulu/#java7) |Juli 2023 |
-|[![Java 8](../media/jdk/java-8.png)](https://www.azul.com/downloads/azure-only/zulu/#java8) |März 2025|
-|[![Java 11](../media/jdk/java-11.png)](https://www.azul.com/downloads/azure-only/zulu/#java11) |September 2026|
-|[![Java 12](../media/jdk/java-12.png)]() |**VORSCHAUVERSION**|
+|[![Unterstützte Java-Version: Java 7](../media/jdk/supported-java-versions-java-7.png)](https://www.azul.com/downloads/azure-only/zulu/#java7) |Juli 2023 |
+|[![Unterstützte Java-Version: Java 8](../media/jdk/supported-java-versions-java-8.png)](https://www.azul.com/downloads/azure-only/zulu/#java8) |März 2025|
+|[![Unterstützte Java-Version: Java 11](../media/jdk/supported-java-versions-java-11.png)](https://www.azul.com/downloads/azure-only/zulu/#java11) |September 2026|
+|[![Unterstützte Java-Version: Java 12](../media/jdk/supported-java-versions-java-12.png)]() |**VORSCHAUVERSION**|
 
 Für diese JDK-Releases werden vierteljährliche Sicherheitsupdates, Fehlerbehebungen sowie wichtige Out-of-band-Updates und -Patches nach Bedarf bereitgestellt.  Dieser Support umfasst die Zurückportierung von Sicherheitsupdates sowie die Behebung von Fehlern für Java 7 und 8, die in neueren Versionen von Java (etwa in Java 11) gemeldet wurden, um die kontinuierliche Stabilität und Sicherheit von älteren Java-Versionen zu gewährleisten.  Azure-Kunden können diese Sicherheitsupdates und Fehlerbehebungen für Plattformen beziehen, ohne dass ungeplante Gebühren für Java SE-Abonnements anfallen.
 
