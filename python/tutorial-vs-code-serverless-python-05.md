@@ -8,18 +8,18 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
-ms.openlocfilehash: 0bf24a900eb0c501443b8ff353c8b07529f840be
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.openlocfilehash: da7761f568849537ac3ee06cf6ef2c4cc521b452
+ms.sourcegitcommit: d6575ac86449380b5a9c6c66aa722cb33ed53438
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019958"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71186151"
 ---
 # <a name="deploy-to-azure-functions"></a>Bereitstellen in Azure Functions
 
 [Vorheriger Schritt: Lokales Debuggen](tutorial-vs-code-serverless-python-04.md)
 
-In diesen Schritten verwenden Sie die Functions-Erweiterung, um eine Funktions-App in Azure zusammen mit anderen erforderlichen Azure-Ressourcen zu erstellen. Sie können mit einer Funktionen-App Funktionen zu logischen Einheiten gruppieren. Dies erleichtert die Verwaltung, Bereitstellung und Freigabe von Ressourcen. Außerdem sind ein Azure Storage-Konto für Daten und ein [Hostingplan](/azure/azure-functions/functions-scale.md#hosting-plan-support) erforderlich. Alle diese Ressourcen sind in einer einzelnen Ressourcengruppe angeordnet.
+In diesen Schritten verwenden Sie die Functions-Erweiterung, um eine Funktions-App in Azure zusammen mit anderen erforderlichen Azure-Ressourcen zu erstellen. Sie können mit einer Funktionen-App Funktionen zu logischen Einheiten gruppieren. Dies erleichtert die Verwaltung, Bereitstellung und Freigabe von Ressourcen. Außerdem sind ein Azure Storage-Konto für Daten und ein [Hostingplan](/azure/azure-functions/functions-scale#hosting-plan-support) erforderlich. Alle diese Ressourcen sind in einer einzelnen Ressourcengruppe angeordnet.
 
 1. Wählen Sie im Bereich **Azure: Functions**-Explorer den Befehl **Für Funktions-App bereitstellen** aus, oder öffnen Sie die Befehlspalette (**F1**), und wählen Sie den Befehl **Azure Functions: Für Funktions-App** bereitstellen aus. Auch hier befindet sich die Funktions-App dort, wo Ihr Python-Projekt in Azure ausgeführt wird.
 
@@ -30,7 +30,7 @@ In diesen Schritten verwenden Sie die Functions-Erweiterung, um eine Funktions-A
 1. Die Erweiterung führt die folgenden Aktionen aus, die Sie in Visual Studio Code-Popupmeldungen und im Fenster **Ausgabe** beobachten können (der Vorgang dauert einige Minuten):
 
     - Erstellen Sie eine Ressourcengruppe mit dem von ihnen vergebenen Namen (ohne Bindestriche).
-    - Erstellen Sie in dieser Ressourcengruppe das Speicherkonto, den Hostingplan und die Funktions-App. Standardmäßig wird ein [Verbrauchstarif](/azure/azure-functions/functions-scale.md#consumption-plan) erstellt. Um Ihre Funktionen in einem dedizierten Plan ausführen zu können, müssen Sie die [Veröffentlichung mit erweiterten Erstellungsoptionen aktivieren](/azure/azure-functions/functions-develop-vs-code.md).
+    - Erstellen Sie in dieser Ressourcengruppe das Speicherkonto, den Hostingplan und die Funktions-App. Standardmäßig wird ein [Verbrauchstarif](/azure/azure-functions/functions-scale#consumption-plan) erstellt. Um Ihre Funktionen in einem dedizierten Plan ausführen zu können, müssen Sie die [Veröffentlichung mit erweiterten Erstellungsoptionen aktivieren](/azure/azure-functions/functions-develop-vs-code).
     - Stellen Sie Ihren Code für die Funktions-App bereit.
 
     Der **Azure: Functions**-Explorer zeigt außerdem den Status an:

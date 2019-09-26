@@ -8,12 +8,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
-ms.openlocfilehash: 84971f6befb7210052ee3b144533715d0c6d1fb3
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.openlocfilehash: efa55b4c2cc916f5bbebcc795ed70d920d395362
+ms.sourcegitcommit: 4188b92d8de367cf82f22dba5d9ccb2cb6dd2899
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71020078"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71126848"
 ---
 # <a name="deploy-python-to-azure-functions-with-visual-studio-code"></a>Bereitstellen von Python für Azure Functions mit Visual Studio Code
 
@@ -42,7 +42,7 @@ Installieren Sie folgende Software:
 
 ### <a name="azure-functions-core-tools"></a>Azure Functions Core Tools
 
-Befolgen Sie die Anweisungen für Ihr Betriebssystem unter [Arbeiten mit Azure Functions Core Tools](/azure/azure-functions/functions-run-local.md#v2). Die Tools selbst sind in .NET Core geschrieben, und das Core Tools-Paket wird am besten mit dem Node.js-Paketmanager npm installiert, weshalb Sie derzeit auch für Python-Code .NET Core und Node.js installieren müssen. Sie können jedoch die .NET Core-Anforderung mithilfe von „Erweiterungsbundles“ umgehen, wie in der vorgenannten Dokumentation beschrieben. Wie auch immer, Sie müssen diese Komponenten nur einmal installieren, danach fordert Visual Studio Code Sie automatisch auf, alle Updates zu installieren.
+Befolgen Sie die Anweisungen für Ihr Betriebssystem unter [Arbeiten mit Azure Functions Core Tools](/azure/azure-functions/functions-run-local#v2). Die Tools selbst sind in .NET Core geschrieben, und das Core Tools-Paket wird am besten mit dem Node.js-Paketmanager npm installiert, weshalb Sie derzeit auch für Python-Code .NET Core und Node.js installieren müssen. Sie können jedoch die .NET Core-Anforderung mithilfe von „Erweiterungsbundles“ umgehen, wie in der vorgenannten Dokumentation beschrieben. Wie auch immer, Sie müssen diese Komponenten nur einmal installieren, danach fordert Visual Studio Code Sie automatisch auf, alle Updates zu installieren.
 
 ### <a name="sign-in-to-azure"></a>Anmelden bei Azure
 

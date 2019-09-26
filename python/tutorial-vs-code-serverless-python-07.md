@@ -8,18 +8,18 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
-ms.openlocfilehash: 8fdb78024cc6ac1df0ee961fc424878f5f634cf2
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.openlocfilehash: 4595b6a60aa83d3818b41ddd1e4f06a44bb1eec1
+ms.sourcegitcommit: d6575ac86449380b5a9c6c66aa722cb33ed53438
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019938"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71186119"
 ---
 # <a name="add-a-binding-to-write-messages-to-azure-storage"></a>Hinzufügen einer Bindung zum Schreiben von Meldungen in den Azure-Speicher
 
 [Vorheriger Schritt: Bereitstellen einer zweiten Funktion](tutorial-vs-code-serverless-python-06.md)
 
-Mit einer _Bindung_ können Sie eine Verbindung Ihres Funktionscodes mit Ressourcen wie z.B. Azure-Speicher herstellen, ohne Datenzugriffscode schreiben zu müssen. Eine Bindung wird in der Datei *function.json* definiert und kann sowohl die Eingabe als auch die Ausgabe darstellen. Eine Funktion kann mehrere Ein- und Ausgabebindungen, aber nur einen Trigger haben. Weitere Informationen finden Sie unter [Konzepte der Trigger und Bindungen in Azure Functions](/azure/azure-functions/functions-triggers-bindings.md).
+Mit einer _Bindung_ können Sie eine Verbindung Ihres Funktionscodes mit Ressourcen wie z.B. Azure-Speicher herstellen, ohne Datenzugriffscode schreiben zu müssen. Eine Bindung wird in der Datei *function.json* definiert und kann sowohl die Eingabe als auch die Ausgabe darstellen. Eine Funktion kann mehrere Ein- und Ausgabebindungen, aber nur einen Trigger haben. Weitere Informationen finden Sie unter [Konzepte der Trigger und Bindungen in Azure Functions](/azure/azure-functions/functions-triggers-bindings).
 
 In diesem Abschnitt fügen Sie der HttpExample-Funktion, die Sie zuvor in diesem Tutorial erstellt haben, eine Speicherbindung hinzu. Die Funktion verwendet diese Bindung, um mit jeder Anforderung Meldungen in den Speicher zu schreiben. Der fragliche Speicher verwendet das gleiche Standardspeicherkonto, das von der Funktions-App verwendet wird. Wenn Sie jedoch den Speicher stark nutzen möchten, sollten Sie das Erstellen eines separaten Kontos in Erwägung ziehen.
 
@@ -92,9 +92,9 @@ In diesem Abschnitt fügen Sie der HttpExample-Funktion, die Sie zuvor in diesem
 
     1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an, und navigieren Sie zu der Ressourcengruppe, die ihr Functions-Projekt enthält. Navigieren Sie in dieser Ressourcengruppe lokal zum Speicherkonto für das Projekt und dann zu **Warteschlangen**. Navigieren Sie auf dieser Seite zu „outqueue“, wo alle protokollierten Meldungen angezeigt werden sollten.
 
-    1. Navigieren Sie zu der Warteschlange, und untersuchen Sie sie mit dem in Visual Studio integrierten Azure Storage-Explorer wie unter [Verbinden von Funktionen mit Azure Storage mithilfe von Visual Studio Code](/azure/azure-functions/functions-add-output-binding-storage-queue-vs-code.md) beschrieben, insbesondere im Abschnitt [Überprüfen der Ausgabewarteschlange](/azure/azure-functions/functions-add-output-binding-storage-queue-vs-code.md#examine-the-output-queue).
+    1. Navigieren Sie zu der Warteschlange, und untersuchen Sie sie mit dem in Visual Studio integrierten Azure Storage-Explorer wie unter [Verbinden von Funktionen mit Azure Storage mithilfe von Visual Studio Code](/azure/azure-functions/functions-add-output-binding-storage-queue-vs-code) beschrieben, insbesondere im Abschnitt [Überprüfen der Ausgabewarteschlange](/azure/azure-functions/functions-add-output-binding-storage-queue-vs-code#examine-the-output-queue).
 
-    1. Verwenden Sie die Azure CLI, um die Speicherwarteschlange abzufragen, wie unter [Abfragen der Speicherwarteschlange](/azure/azure-functions/functions-add-output-binding-storage-queue-python.md#query-the-storage-queue) beschrieben.
+    1. Verwenden Sie die Azure CLI, um die Speicherwarteschlange abzufragen, wie unter [Abfragen der Speicherwarteschlange](/azure/azure-functions/functions-add-output-binding-storage-queue-python#query-the-storage-queue) beschrieben.
 
 1. Stellen Sie den Code zum Testen in der Cloud mithilfe des Befehls **Für Funktions-App bereitstellen** erneut im **Azure: Functions**-Explorer bereit. Wenn Sie dazu aufgefordert werden, wählen Sie die zuvor erstellte Funktions-App aus. Nachdem die Bereitstellung abgeschlossen ist (es dauert einige Minuten!), werden im **Ausgabe**-Fenster erneut die öffentlichen Endpunkte angezeigt, mit denen Sie die Tests wiederholen können.
 

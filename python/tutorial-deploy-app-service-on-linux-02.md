@@ -8,12 +8,12 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
-ms.openlocfilehash: a398b5483f9cbe11768752551e11be430a3b3467
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.openlocfilehash: ab1609d6d0940172d61a61a31f4dbfabc868c023
+ms.sourcegitcommit: d6575ac86449380b5a9c6c66aa722cb33ed53438
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019998"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71186131"
 ---
 # <a name="prepare-your-app"></a>Vorbereiten Ihrer App
 
@@ -44,7 +44,7 @@ In diesem Abschnitt wird die in dieser exemplarischen Vorgehensweise verwendete 
     Flask==1.1.1
     ```
 
-1. Befolgen Sie die Anweisungen im [Flask-Tutorial: Erstellen einer Projektumgebung für Flask](/docs/python/tutorial-flask.md#create-a-project-environment-for-flask), um eine virtuelle Umgebung mit installiertem Flask zu erstellen, in der die App lokal ausgeführt werden kann.
+1. Befolgen Sie die Anweisungen im [Flask-Tutorial: Erstellen einer Projektumgebung für Flask](https://code.visualstudio.com/docs/python/tutorial-flask#create-a-project-environment-for-flask), um eine virtuelle Umgebung mit installiertem Flask zu erstellen, in der die App lokal ausgeführt werden kann.
 
 1. Verwenden Sie zum Ausführen dieser App die folgenden Befehle (abhängig vom Betriebssystem). Die Umgebungsvariable FLASK_APP weist Flask an, wo das App-Objekt zu finden ist.
 
@@ -62,11 +62,11 @@ In diesem Abschnitt wird die in dieser exemplarischen Vorgehensweise verwendete 
 
 ## <a name="vs-code-flask-tutorial-sample"></a>VS Code-Beispiel für das Flask-Tutorial
 
-Laden Sie [python-sample-vscode-flask-tutorial](https://github.com/Microsoft/python-sample-vscode-flask-tutorial) herunter, oder klonen Sie diesen Code. Es handelt sich um das Ergebnis des [Flask-Tutorials](/docs/python/tutorial-flask.md).
+Laden Sie [python-sample-vscode-flask-tutorial](https://github.com/Microsoft/python-sample-vscode-flask-tutorial) herunter, oder klonen Sie diesen Code. Es handelt sich um das Ergebnis des [Flask-Tutorials](https://code.visualstudio.com/docs/python/tutorial-flask).
 
 ## <a name="vs-code-django-tutorial-sample"></a>VS Code-Beispiel für das Django-Tutorial
 
-Laden Sie [python-sample-vscode-django-tutorial](https://github.com/Microsoft/python-sample-vscode-django-tutorial) herunter, oder klonen Sie diesen Code. Es handelt sich um das Ergebnis des [Django-Tutorials](/docs/python/tutorial-django.md).
+Laden Sie [python-sample-vscode-django-tutorial](https://github.com/Microsoft/python-sample-vscode-django-tutorial) herunter, oder klonen Sie diesen Code. Es handelt sich um das Ergebnis des [Django-Tutorials](https://code.visualstudio.com/docs/python/tutorial-django).
 
 Wenn Ihre Django-App wie in diesem Beispiel eine lokale SQLite-Datenbank verwendet, müssen Sie eine vorinitialisierte und vorab aufgefüllte Kopie der Datei *db.sqlite3* in Ihr Repository einfügen. Der Grund hierfür ist, dass App Service für Linux derzeit nicht über eine Möglichkeit verfügt, den Django-Befehl `migrate` als Teil der Bereitstellung auszuführen, sodass Sie eine vorgefertigte Datenbank bereitstellen müssen. Auch dann ist die Datenbank praktisch schreibgeschützt. Das Schreiben in die Datenbank verursacht darüber hinaus Fehler.
 

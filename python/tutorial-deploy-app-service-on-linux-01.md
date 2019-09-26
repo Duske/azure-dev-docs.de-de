@@ -8,12 +8,12 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
-ms.openlocfilehash: 2007be8b9799df1b15cff76b3ef4aa1ad96cae44
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.openlocfilehash: 1b1e3d7fa1daa408584e4caf22c553d7f47bccea
+ms.sourcegitcommit: d6575ac86449380b5a9c6c66aa722cb33ed53438
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019878"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71186192"
 ---
 # <a name="deploy-to-azure-app-service-on-linux"></a>Bereitstellen in Azure App Service für Linux
 
@@ -39,7 +39,7 @@ Wenn Sie kein Azure-Abonnement haben, [registrieren Sie sich jetzt](https://azur
 Installieren Sie folgende Software:
 
 - [Visual Studio Code](https://code.visualstudio.com/).
-- Python und die [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)-Erweiterung, wie im [VS Code-Tutorial zu Python unter Voraussetzungen](https://code.visualstudio.com/docs/python/python-tutorial.md) beschrieben
+- Python und die [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)-Erweiterung, wie im [VS Code-Tutorial zu Python unter Voraussetzungen](https://code.visualstudio.com/docs/python/python-tutorial) beschrieben
 - Die [Azure App Service](vscode:extension/ms-azuretools.vscode-azureappservice)-Erweiterung, die die Interaktion mit Azure App Service innerhalb von VS Code ermöglicht. Allgemeine Informationen finden Sie im [Tutorial zur App Service-Erweiterung](https://code.visualstudio.com/tutorials/app-service-extension/getting-started) und im [GitHub-Repository vscode-azureappservice](https://github.com/Microsoft/vscode-azureappservice).
 
 ## <a name="sign-in-to-azure"></a>Anmelden bei Azure

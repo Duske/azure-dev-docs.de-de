@@ -8,12 +8,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
-ms.openlocfilehash: 9c0b3b8b4a21975a849531d5c6560a291ed4b7f2
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.openlocfilehash: 6996121fc8ecba4489e2ec920de35574f6d1c5d8
+ms.sourcegitcommit: d6575ac86449380b5a9c6c66aa722cb33ed53438
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019888"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71186176"
 ---
 # <a name="clean-up-resources"></a>Bereinigen von Ressourcen
 
@@ -29,7 +29,7 @@ Herzlichen Glückwunsch zum Absolvieren dieser exemplarische Vorgehensweise zum 
 
 Wie bereits erwähnt, können Sie mehr über die Functions-Erweiterung erfahren, indem Sie das zugehörige GitHub-Repository [vscode-azurefunctions](https://github.com/Microsoft/vscode-azurefunctions) besuchen. Beschreibungen von Problemen und sonstige Beiträge sind ebenfalls willkommen.
 
-Lesen Sie die [Einführung in Azure Functions](/azure/azure-functions/functions-overview.md), um die verschiedenen Trigger zu untersuchen, die Sie verwenden können.
+Lesen Sie die [Einführung in Azure Functions](/azure/azure-functions/functions-overview), um die verschiedenen Trigger zu untersuchen, die Sie verwenden können.
 
 Weitere Informationen zu Azure-Diensten, die Sie von Python aus verwenden können, einschließlich Datenspeicherung sowie KI und Machine Learning-Diensten, finden Sie unter [Azure für Python-Cloudentwickler](/azure/python/?view=azure-python).
 
