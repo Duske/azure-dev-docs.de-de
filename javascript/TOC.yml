@@ -7,13 +7,13 @@
         - name: App-Hosting
           items:
             - name: Statische Websites
-              href: 'https://code.visualstudio.com/tutorials/static-website/getting-started'
+              href: tutorial-vscode-static-website-node-01.md
             - name: Web-Apps und -APIs
-              href: 'https://code.visualstudio.com/tutorials/app-service-extension/getting-started'
+              href: tutorial-vscode-azure-app-service-node-01.md
             - name: Serverlos
-              href: 'https://code.visualstudio.com/tutorials/functions-extension/getting-started'
+              href: tutorial-vscode-serverless-node-01.md
             - name: Docker
-              href: 'https://code.visualstudio.com/tutorials/docker-extension/getting-started'
+              href: tutorial-vscode-docker-node-01.md
             - name: kubernetes
               href: /azure/aks/kubernetes-walkthrough?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
             - name: Virtuelle Linux-Computer
