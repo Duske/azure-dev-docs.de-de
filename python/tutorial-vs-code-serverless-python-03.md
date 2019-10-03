@@ -6,14 +6,14 @@ author: kraigb
 manager: barbkess
 ms.service: azure-functions
 ms.topic: conceptual
-ms.date: 00/02/2019
+ms.date: 09/02/2019
 ms.author: kraigb
-ms.openlocfilehash: 10deffd63eeae22155f070e117e8f935990bcf93
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.openlocfilehash: b1ed7f69656797822b17c11bcf0f2ece0caa09e2
+ms.sourcegitcommit: 86aec15e2d25b5b706092feb4271fb958c29d5fa
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71020008"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71707343"
 ---
 # <a name="examine-the-code-files"></a>Untersuchen der Codedateien
 
@@ -88,7 +88,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 Die wichtigen Teile des Codes lauten wie folgt:
 
 - Sie müssen `func` aus `azure.functions` importieren; das Importieren des Protokollierungsmoduls ist optional, wird jedoch empfohlen.
-- Die erforderliche `main`-Python-Funktion empfängt ein `func.request`-Objekt mit dem Namen `req` und gibt einen Wert vom Typ `func.HttpResponse` zurück. Weitere Informationen zu den Funktionen dieser Objekte finden Sie in den Referenzen zu [func.HttpRequest](/python/api/azure-functions/azure.functions.httprequest?view=azure-python) und [func.HttpResponse](/python/api/azure-functions/azure.functions.httpresponse?view=azure-python).
+- Die erforderliche `main`-Python-Funktion empfängt ein `func.HttpRequest`-Objekt mit dem Namen `req` und gibt einen Wert vom Typ `func.HttpResponse` zurück. Weitere Informationen zu den Funktionen dieser Objekte finden Sie in den Referenzen zu [func.HttpRequest](/python/api/azure-functions/azure.functions.httprequest?view=azure-python) und [func.HttpResponse](/python/api/azure-functions/azure.functions.httpresponse?view=azure-python).
 - Der Text von `main` verarbeitet dann die Anforderung und generiert eine Antwort. In diesem Fall sucht der Code in der URL nach einem `name`-Parameter. Wenn dies nicht gelingt, wird überprüft, ob der Anforderungstext JSON-Code enthält (mit `func.HttpRequest.get_json`) und ob der JSON-Code einen `name`-Wert enthält (mit der `get`-Methode des von `get_json` zurückgegebenen JSON-Objekts).
 - Wenn ein Name gefunden wird, gibt der Code die Zeichenfolge „Hello“ mit angefügtem Namen zurück. Andernfalls wird eine Fehlermeldung zurückgegeben.
 
