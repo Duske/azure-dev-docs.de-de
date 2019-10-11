@@ -1,5 +1,5 @@
 ---
-title: Konfigurieren einer benutzerdefinierten Startdatei für Python-Apps in Azure App Service für Linux
+title: 'Tutorial: Konfigurieren einer benutzerdefinierten Startdatei für Python-Apps in Azure App Service für Linux'
 description: 'Tutorialschritt 4: Anweisen von App Service, wie die Web-App gestartet wird'
 services: app-service
 author: kraigb
@@ -8,14 +8,15 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
-ms.openlocfilehash: 7cbeef403e038baec77e4bf03c36dc746b53096d
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.custom: seo-python-october2019
+ms.openlocfilehash: fdd3248e50020bb90cdde8a3e9c30c2895dccdae
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019868"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172204"
 ---
-# <a name="configure-a-custom-startup-file"></a>Konfigurieren einer benutzerdefinierten Startdatei
+# <a name="tutorial-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>Tutorial: Konfigurieren einer benutzerdefinierten Startdatei für Python-Apps in Azure App Service
 
 [Vorheriger Schritt: Erstellen der App Service-Instanz](tutorial-deploy-app-service-on-linux-02.md)
 

@@ -1,30 +1,26 @@
 ---
 title: Verwenden der Spring Data-JPA mit Azure PostgreSQL
-description: Erfahren Sie, wie Sie die Spring Data-JPA (Java-Persistenz-API) mit einer Azure PostgreSQL-Datenbank verwenden.
-services: postgresql
+description: Hier erfahren Sie, wie Sie die Spring Data-JPA (Java-Persistenz-API) konfigurieren und mit einer Azure Database for PostgreSQL-Datenbank verwenden.
 documentationcenter: java
 author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
 ms.author: brendm
 ms.date: 12/19/2018
 ms.devlang: java
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
-ms.topic: article
-ms.openlocfilehash: dca92f4cac26ba3e4f96f3591c3b4dfe997fbfba
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.topic: conceptual
+ms.openlocfilehash: da8feb20e4163d9280256b51f64d3148b077f7ce
+ms.sourcegitcommit: 2610f3992cb6d21a3657032074acb981d130fdad
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68281921"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71960771"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-postgresql"></a>Verwenden der Spring Data-JPA mit Azure PostgreSQL
 
 ## <a name="overview"></a>Übersicht
 
-In diesem Artikel wird die Erstellung einer Beispielanwendung veranschaulicht, die [Spring Data] verwendet, um Informationen in einer Azure [PostgreSQL]https://www.postgresql.org/ -Datenbank mithilfe der [Java-Persistenz-API (JPA)](https://docs.oracle.com/javaee/7/tutorial/persistence-intro.htm) zu speichern und abzurufen.
+In diesem Artikel wird die Erstellung einer Beispielanwendung veranschaulicht, die [Spring Data] verwendet, um Informationen in einer [Azure Database for PostgreSQL-Datenbank](/azure/postgresql/) mithilfe der [Java-Persistenz-API (JPA)](https://docs.oracle.com/javaee/7/tutorial/persistence-intro.htm) zu speichern und abzurufen.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -98,7 +94,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    ```shell
    psql --host=wingtiptoyspostgresql.postgres.database.azure.com --port=5432 --username=wingtiptoysuser@wingtiptoyspostgresql --dbname=postgres
    ```
-   Hinweis:
+   Hierbei gilt:
 
    | Parameter | BESCHREIBUNG |
    |---|---|
@@ -163,7 +159,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    spring.datasource.username=wingtiptoysuser@wingtiptoyspostgresql
    spring.datasource.password=********
     ```
-   Hinweis:
+   Hierbei gilt:
 
    | Parameter | BESCHREIBUNG |
    |---|---|

@@ -8,12 +8,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
-ms.openlocfilehash: efa55b4c2cc916f5bbebcc795ed70d920d395362
-ms.sourcegitcommit: 4188b92d8de367cf82f22dba5d9ccb2cb6dd2899
+ms.openlocfilehash: bf6dd180d5fabc04c8fe3bf09c8277bb7b22ea47
+ms.sourcegitcommit: 86aec15e2d25b5b706092feb4271fb958c29d5fa
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71126848"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71710198"
 ---
 # <a name="deploy-python-to-azure-functions-with-visual-studio-code"></a>Bereitstellen von Python für Azure Functions mit Visual Studio Code
 
@@ -39,6 +39,9 @@ Installieren Sie folgende Software:
 - [Visual Studio Code](https://code.visualstudio.com/).
 - Die [Python-Erweiterung](https://marketplace.visualstudio.com/items?itemName=ms-python.python) wie in [Erste Schritte in Python mit Visual Studio Code](https://code.visualstudio.com/docs/python/python-tutorial) beschrieben.
 - Die [Azure Functions-Erweiterung](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions). Allgemeine Informationen finden Sie im [vscode-azurefunctions-GitHub-Repository](https://github.com/Microsoft/vscode-azurefunctions).
+
+> [!NOTE]
+> Die Azure Functions-Erweiterung ist im [Azure-Tools-Erweiterungspaket](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack) enthalten.
 
 ### <a name="azure-functions-core-tools"></a>Azure Functions Core Tools
 

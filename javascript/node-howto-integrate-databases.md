@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-nodejs
 ms.date: 08/20/2019
 ms.author: kraigb
-ms.openlocfilehash: 736797aa4287909646b7dcaca430fc5b7c9f3b66
-ms.sourcegitcommit: f519a1ee8017850b2fa37049af3bac1ea5ca5516
+ms.openlocfilehash: 1861b5df8cc9a54379762fac001c5cecc2f89b1f
+ms.sourcegitcommit: 60c41faa59dbb59406eb7c1715f5708b5ed892c2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69892354"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72036080"
 ---
 # <a name="how-to-integrate-azure-databases-in-nodejs-apps"></a>Integrieren von Azure-Datenbanken in Node.js-Apps
 
@@ -25,7 +25,7 @@ Die folgende Tabelle enthält Links zu verschiedenen Artikeln zum Herstellen ein
 | **MongoDB** | [Erstellen einer Node.js- und MongoDB-Web-App](/azure/app-service-web/app-service-web-tutorial-nodejs-mongodb-app) | [Beispiele](https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&term=Mongo%20DB) |
 | **Redis Cache** | [Erstellen und Nutzen eines Redis-Cache](/azure/redis-cache/cache-nodejs-get-started) | |
 | **Azure SQL-Datenbank** | [Abfragen einer Azure SQL-Datenbank mithilfe von Node.js](/azure/sql-database/sql-database-connect-query-nodejs) | [Beispiele](https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&products=azure-sql-database) | |
-| **MySQL** | [Verwenden von Node.js zum Herstellen einer Verbindung und Abfragen von Daten](/azure/mysql/connect-nodejs.md) | |
+| **MySQL** | [Verwenden von Node.js zum Herstellen einer Verbindung und Abfragen von Daten](/azure/mysql/connect-nodejs) | |
 | **PostgreSQL** | [Verwenden von Node.js zum Herstellen einer Verbindung und Abfragen von Daten](/azure/postgresql/connect-nodejs) | |
 
 Sie können auch Azure Storage zum Speichern von Dateien (Blobs), Tabellen und Warteschlangen (Nachrichten) verwenden:

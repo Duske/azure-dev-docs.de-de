@@ -8,18 +8,19 @@ ms.topic: article
 ms.service: azure-nodejs
 ms.date: 08/20/2019
 ms.author: kraigb
-ms.openlocfilehash: aeef72d2e8b74cb7e6e30b95ed1cd12a1929ac31
-ms.sourcegitcommit: f519a1ee8017850b2fa37049af3bac1ea5ca5516
+ms.custom: seo-javascript-september2019
+ms.openlocfilehash: b35ee6c921fa9b5c01b5c89f7fa546a110bb21c2
+ms.sourcegitcommit: 945e92dae2fa4521eebdc049c65273ae6b5470ee
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69892504"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71813761"
 ---
-# <a name="how-to-deploy-nodejs-containers-to-azure"></a>Bereitstellen von Node.js-Containern in Azure
+# <a name="use-azure-to-deploy-scale-and-manage-nodejs-containers"></a>Verwenden von Azure zum Bereitstellen, Skalieren und Verwalten von Node.js-Containern
 
 Azure stellt einen stabilen Containerdienst bereit, damit Sie containerbasierte Node.js mühelos bereitstellen, skalieren und verwalten können.
 
-Befolgen Sie hierzu zunächst die einfache exemplarische Vorgehensweise unter [Bereitstellung in Azure mithilfe von Docker und Visual Studio Code](https://code.visualstudio.com/tutorials/docker-extension/getting-started). Mit Visual Studio Code können Sie Images einfach in eine Containerregistrierung hochladen (z. B. Azure Container Registry) und den Container dann in Azure App Service bereitstellen.
+Befolgen Sie hierzu zunächst die einfache exemplarische Vorgehensweise unter [Bereitstellung in Azure mithilfe von Docker und Visual Studio Code](tutorial-vscode-docker-node-01.md). Mit Visual Studio Code können Sie Images einfach in eine Containerregistrierung hochladen (z. B. Azure Container Registry) und den Container dann in Azure App Service bereitstellen.
 
 Sie können auch die folgenden Microsoft Learn-Module durchlaufen:
 
