@@ -9,16 +9,18 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: fdd3248e50020bb90cdde8a3e9c30c2895dccdae
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: 7c3c863ed333528c675cda939f52b86f53bc8380
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172204"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278943"
 ---
 # <a name="tutorial-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>Tutorial: Konfigurieren einer benutzerdefinierten Startdatei für Python-Apps in Azure App Service
 
-[Vorheriger Schritt: Erstellen der App Service-Instanz](tutorial-deploy-app-service-on-linux-02.md)
+[Vorheriger Schritt: Erstellen der App Service-Instanz](tutorial-deploy-app-service-on-linux-03.md)
+
+In diesem Artikel wird gezeigt, wie Sie eine benutzerdefinierte Startdatei für eine Python-App in einer Azure App Service-Instanz konfigurieren.
 
 Je nachdem, wie Sie Ihre App strukturiert haben, müssen Sie möglicherweise eine benutzerdefinierte Startbefehlsdatei für Ihre App erstellen, wie in der Azure-Dokumentation unter [Konfigurieren von Python-Apps für App Service für Linux](https://docs.microsoft.com/azure/app-service/containers/how-to-configure-python) beschrieben.
 
@@ -37,11 +39,11 @@ Wenn Sie eine benutzerdefinierte Startdatei benötigen, führen Sie die folgende
 
 1. Wählen Sie im Bereich **Azure: App Service**-Explorer die App Service-Instanz aus, um sie zu erweitern, klicken Sie mit der rechten Maustaste auf **Anwendungseinstellungen**, und wählen Sie **Im Portal öffnen** aus:
 
-    ![Befehl „Im Portal öffnen“ im App Service-Explorer](media/deploy-azure/open-settings-in-portal-command.png)
+    ![Öffnen der Anwendungseinstellungen im Portal im App Service-Explorer](media/deploy-azure/open-application-settings-in-portal-for-app-service.png)
 
 1. Melden Sie sich bei Bedarf beim Azure-Portal an. Wählen Sie dann auf der Seite **Konfiguration** die Option **Allgemeine Einstellungen** aus, geben Sie den Namen der Startdatei (z. B. *startup.txt*) unter **Stapeleinstellungen** > **Startbefehl** ein, und wählen Sie dann **Speichern** aus.
 
-    ![Festlegen des Namens der Startdatei im Azure-Portal](media/deploy-azure/azure-portal-startup-file.png)
+    ![Festlegen des Namens der Startbefehlsdatei im Azure-Portal](media/deploy-azure/enter-startup-file-for-app-service-in-the-azure-portal.png)
 
     > [!NOTE]
     > Anstatt eine Startbefehlsdatei zu verwenden, können Sie den Startbefehl auch direkt im Azure-Portal im Feld **Startbefehl** einfügen. Die Verwendung einer Datei ist jedoch im Allgemeinen vorzuziehen, da damit dieser Teil der Konfiguration in Ihrem Repository verbleibt und Sie dort Änderungen überwachen und die erneute Bereitstellung in einer anderen App Service-Instanz durchführen können.

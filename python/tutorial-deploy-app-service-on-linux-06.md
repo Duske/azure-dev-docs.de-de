@@ -9,20 +9,22 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: f4aac132e9c01a0c428e243e06e811357defc2aa
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: a60c8fd0202e935960f14a9ab5570f86a78fab6e
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172233"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278921"
 ---
 # <a name="tutorial-stream-logs-from-azure-app-service-into-visual-studio-code"></a>Tutorial: Streamen von Protokollen aus Azure App Service in Visual Studio Code
 
 [Vorheriger Schritt: Bereitstellen der App](tutorial-deploy-app-service-on-linux-05.md)
 
+Verwenden Sie dieses Verfahren, um Protokolle aus einer Azure App Service-Instanz in Visual Studio Code zu streamen.
+
 1. Öffnen Sie in Visual Studio Code den **Azure App Service**-Explorer, klicken Sie mit der rechten Maustaste auf die App Service-Instanz, und wählen Sie **Start streaming logs** (Streamen der Protokolle starten) aus.
 
-   ![Befehl zum Starten des Streamings der Protokolle](media/deploy-azure/start-streaming-logs-command.png)
+   ![„Start Streaming Logs“ (Streamen der Protokolle starten) im App Service-Explorer](media/deploy-azure/start-streaming-logs-in-visual-studio-code.png)
 
 1. Wenn Sie zum Aktivieren der Dateiprotokollierung und zum Neustart der Web-App aufgefordert werden, wählen Sie **Ja** aus Während des Neustarts der App wird der Fortschritt im **Ausgabefenster** in VS Code angezeigt. Das Aktivieren der Protokollierung ist ein einmaliger Vorgang.
 

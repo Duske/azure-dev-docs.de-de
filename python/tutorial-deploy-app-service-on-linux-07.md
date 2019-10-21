@@ -9,18 +9,18 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 4ffadce6a6895041efe6737b271d7ab11c830095
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: 1eeb8f66040a757809aad9df374f3d6a5f9390d2
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172471"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278900"
 ---
 # <a name="tutorial-clean-up-resources-after-deploying-to-azure-app-service-on-linux-from-visual-studio-code"></a>Tutorial: Bereinigen von Ressourcen nach der Bereitstellung in Azure App Service für Linux aus Visual Studio Code
 
 [Vorheriger Schritt: Streamen von Protokollen](tutorial-deploy-app-service-on-linux-06.md)
 
-Die von Ihnen erstellte App Service-Instanz beinhaltet einen App Service-Plan, der Kosten verursachen kann. Um die Ressourcen zu bereinigen, klicken Sie mit der rechten Maustaste auf die App Service-Instanz im **Azure App Service**-Explorer und wählen dann **Löschen** aus.
+Die von Ihnen erstellte Azure App Service-Instanz beinhaltet einen App Service-Plan, der Kosten verursachen kann. Um die Ressourcen zu bereinigen, klicken Sie mit der rechten Maustaste auf die App Service-Instanz im **Azure App Service**-Explorer und wählen dann **Löschen** aus.
 
 Sie können auch das [Azure-Portal](https://portal.azure.com) aufrufen, **Ressourcengruppen** im Navigationsbereich auf der linken Seite auswählen, die im Rahmen dieses Tutorials erstellte Ressourcengruppe auswählen und dann den Befehl **Ressourcengruppe löschen** verwenden.
 
@@ -34,7 +34,7 @@ Weitere Informationen zu Azure-Diensten, die Sie von Python aus verwenden könne
 
 Es gibt auch andere Azure-Erweiterungen für VS Code, die möglicherweise für Sie hilfreich sind. Suchen Sie einfach im Erweiterungen-Explorer nach „Azure“:
 
-![Azure-Erweiterungen für VS Code](media/deploy-containers/azure-extensions.png)
+![Azure-Erweiterungen für Visual Studio Code](media/deploy-containers/azure-extensions-for-visual-studio-code.png)
 
 Einige beliebte Erweiterungen sind:
 

@@ -9,16 +9,18 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 0f002444d2454b734821e067e65fa513619a68bf
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: 12cc4880a7001fc51b0e70f89f177390c5fd0f45
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172224"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278703"
 ---
 # <a name="tutorial-stream-logs-from-azure-app-service-for-a-container"></a>Tutorial: Streamen von Protokollen aus Azure App Service für einen Container
 
 [Vorheriger Schritt: Vornehmen von Änderungen und erneutes Bereitstellen](tutorial-deploy-containers-03.md)
+
+Verwenden Sie dieses Verfahren, um Protokolle aus einer Azure App Service-Instanz für einen Container in Visual Studio Code zu streamen.
 
 Sie können in VS Code Protokolle von der ausgeführten Website in Azure App Service anzeigen (nachverfolgen). Dabei werden sämtliche Ausgaben an der Konsole wie die von `print`-Anweisungen erfasst und an den **Ausgabebereich** von VS Code weitergeleitet.
 

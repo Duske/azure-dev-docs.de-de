@@ -9,20 +9,22 @@ ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 324a67e5eebfce8fde7a2cf88d40f15864817df5
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: cafa10a4ddc9ccc365f9054d009b58b3c9c615bf
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172440"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278607"
 ---
 # <a name="tutorial-debug-the-azure-functions-python-code-locally"></a>Tutorial: Lokales Debuggen des Azure Functions-Python-Codes
 
 [Vorheriger Schritt: Untersuchen der Codedateien](tutorial-vs-code-serverless-python-03.md)
 
+Sie können Ihren Azure Functions-Python-Code lokal in Visual Studio Code debuggen.
+
 1. Wenn Sie das Functions-Projekt erstellen, erstellt die Visual Studio Code-Erweiterung außerdem eine Startkonfiguration in `.vscode/launch.json`, die eine einzelne Konfiguration mit dem Namen **Attach to Python Functions** (Anfügen an Python-Functions) enthält. Diese Konfiguration bedeutet, dass Sie einfach F5 drücken oder den Debug-Explorer verwenden können, um das Projekt zu starten:
 
-    ![Debug-Explorer mit Functions-Startkonfiguration](media/tutorial-vs-code-serverless-python/launch-configuration.png)
+    ![Konfiguration für den Debug-Explorer zum Starten eines Python-Projekts](media/tutorial-vs-code-serverless-python/configuration-to-start-a-python-project-for-debugging.png)
 
 1. Wenn Sie den Debugger starten, wird ein Terminal geöffnet, das die Ausgabe von Azure Functions anzeigt, einschließlich einer Zusammenfassung der verfügbaren Endpunkte. Die URL ist möglicherweise anders, wenn Sie einen anderen Namen als „HttpExample“ verwendet haben:
 

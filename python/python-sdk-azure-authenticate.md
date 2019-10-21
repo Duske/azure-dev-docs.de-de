@@ -8,16 +8,16 @@ ms.date: 04/11/2019
 ms.topic: conceptual
 ms.devlang: python
 ms.custom: seo-python-october2019
-ms.openlocfilehash: cb5881ed9da546d9d9d2b639e475d5fdf815e2cd
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: afeaafb4289544b92324154d5c45d3410cbb3b02
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172395"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72279101"
 ---
-# <a name="authenticate-with-the-azure--management-libraries-for-python"></a>Authentifizieren bei den Azure-Verwaltungsbibliotheken für Python
+# <a name="authenticate-with-the-azure-management-libraries-for-python"></a>Authentifizieren bei den Azure-Verwaltungsbibliotheken für Python
 
-Wenn Sie mithilfe der Python-Verwaltungsbibliotheken Ressourcen erstellen und verwalten, stehen verschiedene Optionen zum Authentifizieren Ihrer Anwendung bei Azure zur Verfügung.
+In diesem Artikel erfahren Sie, wie Sie Ihre Anwendung bei Verwendung der Python-Verwaltungsbibliotheken authentifizieren. Sie haben mehrere Optionen zum Authentifizieren Ihrer Anwendung bei Azure.
 
 ## <a name="mgmt-auth-token"></a>Authentifizieren mit Tokenanmeldeinformationen
 

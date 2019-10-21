@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: a099e25134615fc05508cde3c0f128a3be813402
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: bb1797ef86d9a98661412ef555b4eb78a9282ad9
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172275"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278887"
 ---
 # <a name="tutorial-deploy-a-container-image-to-azure-app-service"></a>Tutorial: Bereitstellen eines Containerimages in Azure App Service
 
@@ -24,15 +24,15 @@ Mit einem Containerimage in einer Registrierung können Sie die Docker-Erweiteru
 
 1. Erweitern Sie im **Docker**-Explorer die Option **Registrierungen**, den Knoten für Ihre Registrierung (z. B. **Azure**) und dann den Knoten für den Imagenamen, bis das Image mit dem Tag `:latest` angezeigt wird.
 
-    ![Suchen eines Images im Docker-Explorer](media/deploy-containers/deploy-find-image.png)
+    ![Suchen eines Images im Docker-Explorer](media/deploy-containers/find-image-to-deploy-in-docker-explorer.png)
 
 1. Klicken Sie mit der rechten Maustaste auf das Image, und wählen Sie die Option zum **Bereitstellen des Images in Azure App Service** aus.
 
-    ![Auswählen des Menübefehls „Bereitstellen“](media/deploy-containers/deploy-menu.png)
+    ![Auswählen des Menüelements „Bereitstellen des Images in Azure App Service“](media/deploy-containers/deploy-image-to-azure-app-service-with-docker-explorer.png)
 
 1. Befolgen Sie die Anweisungen, um ein Azure-Abonnement auszuwählen, wählen Sie eine Ressourcengruppe aus (oder geben Sie sie an), geben Sie eine Region an, konfigurieren Sie einen App Service-Plan (B1 ist am günstigsten), und geben Sie einen Namen für den Standort an. In der folgenden Animation wird der Prozess veranschaulicht.
 
-    ![Animation zur Erstellung und Bereitstellung](media/deploy-containers/deploy-to-app-service.gif)
+    ![Erstellen und Bereitstellen des Images in Azure App Service](media/deploy-containers/deploy-image-to-azure-app-service.gif)
 
     Eine **Ressourcengruppe** ist eine benannte Sammlung der unterschiedlichen Ressourcen, aus denen eine App besteht. Indem Sie alle Ressourcen der App einer einzelnen Gruppe zuweisen, können Sie diese Ressourcen ganz einfach als eine Einheit verwalten. (Weitere Informationen finden Sie in der Azure-Dokumentation unter [Übersicht über Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview).)
 
@@ -44,7 +44,7 @@ Mit einem Containerimage in einer Registrierung können Sie die Docker-Erweiteru
 
 1. Nachdem der Vorgang abgeschlossen ist, **müssen** Sie der App Service-Instanz auch eine Einstellung mit dem Namen `WEBSITES_PORT` (beachten Sie den Plural „WEBSITES“) hinzufügen, um den Port anzugeben, an dem der Container lauscht. (Wenn Sie beispielsweise ein Image aus dem Tutorial [Erstellen eines Python-Containers in VS Code](https://code.visualstudio.com/docs/python/tutorial-create-container) verwenden, lautet der Port 5000 für Flask und 8000 für Django.) Wechseln Sie zum Festlegen von `WEBSITES_PORT` zum **Azure App Service**-Explorer, erweitern Sie den Knoten für die neue App Service-Instanz (Sie müssen ggf. eine Aktualisierung vornehmen), klicken Sie mit der rechten Maustaste auf **Anwendungseinstellungen**, und wählen Sie **Neue Einstellung hinzufügen** aus. Geben Sie in den Eingabeaufforderungen als Schlüssel `WEBSITES_PORT` und als Wert die Portnummer ein.
 
-    ![Kontextmenübefehl in App Service für „Neue Einstellung hinzufügen“](media/deploy-containers/add-app-service-setting.png)
+    ![Hinzufügen einer neuen Einstellung zu einer App Service-Instanz, die einen Port angibt](media/deploy-containers/add-new-setting-in-app-service-settings-explorer.png)
 
 1. Die App Service-Instanz wird automatisch neu gestartet, wenn Sie Einstellungen ändern. Sie können auch jederzeit mit der rechten Maustaste auf die App Service-Instanz klicken und dann **Neu starten** auswählen.
 

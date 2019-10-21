@@ -9,22 +9,24 @@ ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 231aefd696b3f4c91e5da8156dc339f4b355c1c7
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: 9acf6e4c0ecc5357580957e2ea9295cd89f441f0
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172181"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278555"
 ---
 # <a name="tutorial-deploy-azure-functions-in-python"></a>Tutorial: Bereitstellen von Azure Functions in Python
 
 [Vorheriger Schritt: Lokales Debuggen](tutorial-vs-code-serverless-python-04.md)
 
-In diesen Schritten verwenden Sie die Functions-Erweiterung, um eine Funktions-App in Azure zusammen mit anderen erforderlichen Azure-Ressourcen zu erstellen. Sie können mit einer Funktionen-App Funktionen zu logischen Einheiten gruppieren. Dies erleichtert die Verwaltung, Bereitstellung und Freigabe von Ressourcen. Außerdem sind ein Azure Storage-Konto für Daten und ein [Hostingplan](/azure/azure-functions/functions-scale#hosting-plan-support) erforderlich. Alle diese Ressourcen sind in einer einzelnen Ressourcengruppe angeordnet.
+In diesem Artikel verwenden Sie die Azure Functions-Erweiterung, um eine Funktions-App in Azure zusammen mit anderen erforderlichen Azure-Ressourcen zu erstellen. Sie können mit einer Funktionen-App Funktionen zu logischen Einheiten gruppieren. Dies erleichtert die Verwaltung, Bereitstellung und Freigabe von Ressourcen.
+
+Außerdem erfordert eine Funktions-App ein Azure Storage-Konto für Daten und einen [Hostingplan](/azure/azure-functions/functions-scale#hosting-plan-support). Alle diese Ressourcen sind in einer einzelnen Ressourcengruppe angeordnet.
 
 1. Wählen Sie im Bereich **Azure: Functions**-Explorer den Befehl **Für Funktions-App bereitstellen** aus, oder öffnen Sie die Befehlspalette (**F1**), und wählen Sie den Befehl **Azure Functions: Für Funktions-App** bereitstellen aus. Auch hier befindet sich die Funktions-App dort, wo Ihr Python-Projekt in Azure ausgeführt wird.
 
-    ![Befehl „Für Funktions-App bereitstellen“](media/tutorial-vs-code-serverless-python/deploy-command.png)
+    ![Bereitstellen der Python-Funktion in einer Azure-Funktions-App](media/tutorial-vs-code-serverless-python/deploy-a-python-fuction-to-azure-function-app.png)
 
 1. Wenn Sie dazu aufgefordert werden, wählen Sie **Neue Funktions-App in Azure erstellen** aus, und geben Sie einen Namen an, der in Azure eindeutig ist (in der Regel verwenden Sie Ihren persönlichen Namen oder Firmennamen zusammen mit anderen eindeutigen Bezeichnern; Sie können Buchstaben, Ziffern und Bindestriche verwenden). Wenn Sie zuvor eine Funktions-App erstellt haben, wird der zugehörige Name in dieser Liste von Optionen angezeigt.
 
@@ -36,11 +38,11 @@ In diesen Schritten verwenden Sie die Functions-Erweiterung, um eine Funktions-A
 
     Der **Azure: Functions**-Explorer zeigt außerdem den Status an:
 
-    ![Bereitstellungsstatusanzeige im Azure: Functions-Explorer](media/tutorial-vs-code-serverless-python/deploy-progress.png)
+    ![Bereitstellungsstatusanzeige im Azure: Functions-Explorer](media/tutorial-vs-code-serverless-python/deployment-progress-indicator-in-azure-function-explorer.png)
 
 1. Nach Abschluss der Bereitstellung zeigt die Azure Functions-Erweiterung eine Meldung mit Schaltflächen für drei weitere Aktionen an:
 
-    ![Meldung über eine erfolgreiche Bereitstellung mit zusätzlichen Aktionen](media/tutorial-vs-code-serverless-python/deployment-popup.png)
+    ![Meldung über eine erfolgreiche Bereitstellung mit zusätzlichen Aktionen](media/tutorial-vs-code-serverless-python/azure-functions-deployment-success-with-additional-actions.png)
 
     Informationen zum **Streamen von Protokollen** und zu **Uploadeinstellungen** finden Sie in den nächsten Abschnitten. Informationen zur **Anzeige der Ausgabe** finden Sie im folgenden Schritt 5.
 

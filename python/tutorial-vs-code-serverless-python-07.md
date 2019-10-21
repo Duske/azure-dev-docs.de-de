@@ -9,18 +9,20 @@ ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: e9f23e138dc9ddc0022199296320ff5c04e6c3d6
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: f8cfe602676c64f516f0a95ae73801b58f35076c
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172120"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278534"
 ---
 # <a name="tutorial-add-a-storage-binding-for-azure-functions-in-python"></a>Tutorial: Hinzufügen einer Speicherbindung für Azure Functions in Python
 
 [Vorheriger Schritt: Bereitstellen einer zweiten Funktion](tutorial-vs-code-serverless-python-06.md)
 
-Mit einer _Bindung_ können Sie eine Verbindung Ihres Funktionscodes mit Ressourcen wie z.B. Azure-Speicher herstellen, ohne Datenzugriffscode schreiben zu müssen. Eine Bindung wird in der Datei *function.json* definiert und kann sowohl die Eingabe als auch die Ausgabe darstellen. Eine Funktion kann mehrere Ein- und Ausgabebindungen, aber nur einen Trigger haben. Weitere Informationen finden Sie unter [Konzepte der Trigger und Bindungen in Azure Functions](/azure/azure-functions/functions-triggers-bindings).
+Sie können eine Speicherbindung für Azure Functions hinzufügen. Mit einer _Bindung_ können Sie eine Verbindung Ihres Funktionscodes mit Ressourcen wie z. B. Azure-Speicher herstellen, ohne Datenzugriffscode schreiben zu müssen.
+
+Eine Bindung wird in der Datei *function.json* definiert und kann sowohl die Eingabe als auch die Ausgabe darstellen. Eine Funktion kann mehrere Ein- und Ausgabebindungen, aber nur einen Trigger haben. Weitere Informationen finden Sie unter [Konzepte der Trigger und Bindungen in Azure Functions](/azure/azure-functions/functions-triggers-bindings).
 
 In diesem Abschnitt fügen Sie der HttpExample-Funktion, die Sie zuvor in diesem Tutorial erstellt haben, eine Speicherbindung hinzu. Die Funktion verwendet diese Bindung, um mit jeder Anforderung Meldungen in den Speicher zu schreiben. Der fragliche Speicher verwendet das gleiche Standardspeicherkonto, das von der Funktions-App verwendet wird. Wenn Sie jedoch den Speicher stark nutzen möchten, sollten Sie das Erstellen eines separaten Kontos in Erwägung ziehen.
 
@@ -28,7 +30,7 @@ In diesem Abschnitt fügen Sie der HttpExample-Funktion, die Sie zuvor in diesem
 
 1. Klicken Sie im Ordner `HttpExample` mit der rechten Maustaste auf *function.json*, und wählen Sie **Bindung hinzufügen** aus:
 
-    ![Befehl „Bindung hinzufügen“ im Visual Studio Code-Explorer](media/tutorial-vs-code-serverless-python/add-binding-command.png)
+    ![Befehl „Bindung hinzufügen“ im Visual Studio Code-Explorer](media/tutorial-vs-code-serverless-python/add-binding-command-to-azure-functions-in-visual-studio-code.png)
 
 1. Wählen Sie in den folgenden Eingabeaufforderungen in Visual Studio Code die Werte aus, oder geben Sie sie ein:
 

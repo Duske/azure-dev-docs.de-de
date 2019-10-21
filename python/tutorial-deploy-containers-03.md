@@ -9,16 +9,18 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 0c57729fd3ab1f671b2533f3e15056aec99cb6c9
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: a8ce5de518ef4eeec2140ec82ef560f3b487783e
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172449"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278696"
 ---
 # <a name="tutorial-redeploy-a-container-to-azure-app-service-after-making-changes"></a>Tutorial: Erneutes Bereitstellen eines Containers in Azure App Service, nachdem Änderungen vorgenommen wurden
 
 [Vorheriger Schritt: Bereitstellen des Images in Azure](tutorial-deploy-containers-02.md)
+
+In diesem Artikel erfahren Sie, wie Sie einen Container erneut in Azure App Service bereitstellen, nachdem Änderungen in Visual Studio Code vorgenommen wurden.
 
 Da Sie unweigerlich Änderungen an Ihrer App vornehmen, müssen Sie den Container mehrmals neu erstellen und neu bereitstellen. Glücklicherweise ist dieser Prozess ganz einfach:
 

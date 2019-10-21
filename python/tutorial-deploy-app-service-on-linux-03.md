@@ -9,22 +9,24 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 8a2a719ee578553bb2033469e64c2df34351e36e
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: 947a474f9bd6efa7fdb3c0a371f140623252aa25
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172509"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72279029"
 ---
 # <a name="tutorial-create-the-app-service-from-visual-studio-code"></a>Tutorial: Erstellen der App Service-Instanz über Visual Studio Code
 
-[Vorheriger Schritt: Vorbereiten der App](tutorial-deploy-app-service-on-linux-01.md)
+[Vorheriger Schritt: Vorbereiten der App](tutorial-deploy-app-service-on-linux-02.md)
 
-In diesem Schritt erstellen Sie die Instanz von Azure App Service, in der Sie die App bereitstellen. Führen Sie diesen Schritt aus, bevor Sie Ihren Code bereitstellen, damit Sie im nächsten Schritt ggf. eine benutzerdefinierte Startdatei konfigurieren können.
+In diesem Schritt erstellen Sie die Instanz von Azure App Service, in der Sie die App bereitstellen.
+
+Führen Sie diesen Schritt aus, bevor Sie Ihren Code bereitstellen, damit Sie im nächsten Schritt ggf. eine benutzerdefinierte Startdatei konfigurieren können.
 
 1. Wählen Sie im Bereich **Azure: App Service**-Explorer den Befehl **+** aus, um eine neue App Service-Instanz zu erstellen, oder öffnen Sie die Befehlspalette (**F1**), und wählen Sie **Azure App Service: Neue Web-App erstellen** aus. (In der App Service-Terminologie ist eine „Web-App“ ein **Host** für Web-App-Code – nicht der App-Code selbst.)
 
-    ![Erstellen einer neuen App Service-Schaltfläche im App Service-Explorer](media/deploy-azure/app-service-create-new.png)
+    ![Erstellen einer neuen App Service-Instanz im App Service-Explorer](media/deploy-azure/create-new-app-service-in-app-service-explorer.png)
 
 1. In den folgenden Eingabeaufforderungen:
 
@@ -33,15 +35,15 @@ In diesem Schritt erstellen Sie die Instanz von Azure App Service, in der Sie di
 
 1. Wenn in einer Meldung angezeigt wird, dass die neue App Service-Instanz erstellt wurde, wählen Sie **Ausgabe anzeigen** aus, um zum **Ausgabefenster** in VS Code zu wechseln. Die Ausgabe zeigt die Namen der erstellten Azure-Ressourcengruppe und des erstellten App Service-Plans sowie die URL für die App Service-Instanz an.
 
-    ![Meldung, die nach dem Erstellen der App Service-Instanz angezeigt wird](media/deploy-azure/app-service-created.png)
+    ![URL, Ressourcengruppe und App Service Plan für Ihre App Service-Instanz](media/deploy-azure/url-for-your-new-app-service-and-resource-group-and-plan.png)
 
 1. Um zu bestätigen, dass die App Service-Instanz ordnungsgemäß ausgeführt wird, erweitern Sie Ihr Abonnement im **Azure App Service**-Explorer, klicken mit der rechten Maustaste auf den App Service-Namen und wählen **Website durchsuchen** aus:
 
-    ![Befehl „Website durchsuchen“ für eine App Service-Instanz im App Service-Explorer](media/deploy-azure/browse-website-command.png)
+    ![Befehl „Website durchsuchen“ für eine App Service-Instanz im App Service-Explorer](media/deploy-azure/select-command-to-browse-website-in-app-service.png)
 
 1. Da Sie noch keinen eigenen Code für die App Service-Instanz bereitgestellt haben (erfolgt im nächsten Schritt), wird nur eine Standard-App angezeigt:
 
-    ![Standard-Python-App in App Service unter Linux](media/deploy-azure/default-python-app.png)
+    ![Standard-Python-App in App Service unter Linux](media/deploy-azure/default-python-app-on-app-service-on-linux.png)
 
 ## <a name="optional-upload-an-environment-variable-definitions-file"></a>(Optional:) Hochladen einer Umgebungsvariablen-Definitionsdatei
 
