@@ -8,12 +8,12 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: kraigb
-ms.openlocfilehash: 44e6479379fff3ddf1012cdb61cf73440cad346e
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: ad207007e1c5a781f8cc02a2d20e0a68c77892e7
+ms.sourcegitcommit: 2757d8bd0cc045b7d02f430d44de859f9de853f4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71685968"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72587641"
 ---
 # <a name="create-an-azure-storage-account"></a>Erstellen eines Azure-Speicherkontos
 
@@ -21,7 +21,7 @@ ms.locfileid: "71685968"
 
 In diesem Schritt erstellen Sie ein Azure Storage-Konto, das als einfacher Dateispeicher oder Content Delivery Network (CDN) mit einem integrierten Webserver fungiert. Durch diesen integrierten Server eignet sich Azure Storage hervorragend für das schnelle Hosting statischer Websites.
 
-1. Starten Sie Visual Studio Code in dem im vorherigen Schritt erstellten Ordner `my-react-app`, damit dieser automatisch geöffnet wird:
+1. Starten Sie Visual Studio Code in dem im vorherigen Schritt erstellten Ordner `my-static-app`, damit dieser automatisch geöffnet wird:
 
     ```bash
     code .
