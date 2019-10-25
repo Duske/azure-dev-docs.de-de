@@ -7,13 +7,13 @@ manager: barbkess
 ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.author: kraigb
-ms.openlocfilehash: 986d2a0f8999d79dfd1d856ed20a053c495a3765
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.author: buhollan
+ms.openlocfilehash: 73d27549e5ff1acb294f8e65fa610d0b46f56914
+ms.sourcegitcommit: 2757d8bd0cc045b7d02f430d44de859f9de853f4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71685942"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72587267"
 ---
 # <a name="make-changes-and-redeploy"></a>Vornehmen von Änderungen und erneutes Bereitstellen
 
@@ -21,19 +21,55 @@ ms.locfileid: "71685942"
 
 In diesem Schritt nehmen Sie eine einfache Änderung am Quellcode der App vor und stellen die Website erneut bereit, um den End-to-End-Bereitstellungsworkflow kennen zu lernen.
 
-1. Öffnen Sie in Visual Studio Code die Datei *src/app.js*, und ändern Sie Zeile 11 wie folgt:
+# <a name="angulartabangular"></a>[Angular](#tab/angular)
 
-    ```js
+1. Öffnen Sie in Visual Studio Code die Datei _src/app/app.component.html_, und ändern Sie Zeile 305 wie folgt:
+
+    ```html
+    <span>Welcome To Azure</span>
+    ```
+
+1. Führen Sie an einem Terminal oder einer Eingabeaufforderung `npm run build` aus.
+
+1. Klicken Sie in VS Code mit der rechten Maustaste auf den aktualisierten Ordner _dist/my-static-site_, und wählen Sie erneut **Deploy to Static Website** (Auf statischer Website bereitstellen) aus. Wählen Sie Ihr Storage-Konto aus, und bestätigen Sie, dass Sie die Änderungen bereitstellen möchten. (Um Probleme beim Zwischenspeichern zu vermeiden, löscht die Azure-Erweiterung vor der Bereitstellung von Änderungen automatisch alte Dateien.)
+
+1. Aktualisieren Sie nach Abschluss der Bereitstellung die Website im Browser, um die Änderungen anzuzeigen:
+
+    ![Änderungen in der App nach der erneuten Bereitstellung](media/static-website/updated-azure-app-angular.png)
+
+# <a name="reacttabreact"></a>[React](#tab/react)
+
+1. Öffnen Sie in Visual Studio Code die Datei _src/app.js_, und ändern Sie Zeile 11 wie folgt:
+
+    ```html
     <h1 className="App-title">Welcome to Azure!</h1>
     ```
 
 1. Führen Sie an einem Terminal oder einer Eingabeaufforderung `npm run build` aus.
 
-1. Klicken Sie in VS Code mit der rechten Maustaste auf den aktualisierten Ordner *build*, und wählen Sie erneut **Deploy to Static Website** (Auf statischer Website bereitstellen) aus. Wählen Sie Ihr Storage-Konto aus, und bestätigen Sie, dass Sie die Änderungen bereitstellen möchten. (Um Probleme beim Zwischenspeichern zu vermeiden, löscht die Azure-Erweiterung vor der Bereitstellung von Änderungen automatisch alte Dateien.)
+1. Klicken Sie in VS Code mit der rechten Maustaste auf den aktualisierten Ordner _build_, und wählen Sie erneut **Deploy to Static Website** (Auf statischer Website bereitstellen) aus. Wählen Sie Ihr Storage-Konto aus, und bestätigen Sie, dass Sie die Änderungen bereitstellen möchten. (Um Probleme beim Zwischenspeichern zu vermeiden, löscht die Azure-Erweiterung vor der Bereitstellung von Änderungen automatisch alte Dateien.)
 
 1. Aktualisieren Sie nach Abschluss der Bereitstellung die Website im Browser, um die Änderungen anzuzeigen:
 
-    ![Änderungen in der App nach der erneuten Bereitstellung](media/static-website/updated-azure-app.png)
+    ![Änderungen in der App nach der erneuten Bereitstellung](media/static-website/updated-azure-app-react.png)
+
+# <a name="vuetabvue"></a>[Vue](#tab/vue)
+
+1. Öffnen Sie in Visual Studio Code die Datei _src/App.vue_, und ändern Sie Zeile 11 wie folgt:
+
+    ```html
+    <HelloWorld msg="Welcome to Azure!" />
+    ```
+
+1. Führen Sie an einem Terminal oder einer Eingabeaufforderung `npm run build` aus.
+
+1. Klicken Sie in VS Code mit der rechten Maustaste auf den aktualisierten Ordner _dist_, und wählen Sie erneut **Deploy to Static Website** (Auf statischer Website bereitstellen) aus. Wählen Sie Ihr Storage-Konto aus, und bestätigen Sie, dass Sie die Änderungen bereitstellen möchten. (Um Probleme beim Zwischenspeichern zu vermeiden, löscht die Azure-Erweiterung vor der Bereitstellung von Änderungen automatisch alte Dateien.)
+
+1. Aktualisieren Sie nach Abschluss der Bereitstellung die Website im Browser, um die Änderungen anzuzeigen:
+
+    ![Änderungen in der App nach der erneuten Bereitstellung](media/static-website/updated-azure-app-vue.png)
+
+---
 
 > [!div class="nextstepaction"]
 > [Ich habe Änderungen bereitgestellt.](tutorial-vscode-static-website-node-06.md) [Es ist ein Problem aufgetreten.](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-staticwebsite&step=code-change)

@@ -4,19 +4,19 @@ description: Installieren der einzelnen Node.js- und JavaScript-Entwicklungstool
 services: multiple
 author: karlerickson
 manager: douge
-ms.service: azure-nodejs
+ms.service: app-service
 ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: article
 ms.date: 11/07/2017
 ms.author: karler
-ms.custom: seo-javascript-september2019
-ms.openlocfilehash: 801e621b361a87223a9d2b948ce2afa8c2b1a138
-ms.sourcegitcommit: 47afd94820bad5214e60b42575e2a2d91a07ff65
+ms.custom: seo-javascript-september2019, seo-javascript-october2019
+ms.openlocfilehash: d943325cae970b69629fbc71ff4d86b6c0fa0491
+ms.sourcegitcommit: 2757d8bd0cc045b7d02f430d44de859f9de853f4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72348043"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72587326"
 ---
 # <a name="azure-tools-for-javascript-developers"></a>Azure-Tools für JavaScript-Entwickler
 Die folgenden Tools werden für die Entwicklung von JavaScript-Apps in Azure empfohlen:
@@ -24,7 +24,7 @@ Die folgenden Tools werden für die Entwicklung von JavaScript-Apps in Azure emp
 ## <a name="azure-cli"></a>Azure-Befehlszeilenschnittstelle
 Die Azure CLI ist für die Verwaltung von Azure-Ressourcen über die Befehlszeile optimiert.
 
-![Befehlszeilenschnittstelle (CLI)](media/node-azure-tools/cli.png)
+![Azure CLI für die Verwaltung von Azure-Ressourcen](media/node-azure-tools/azure-cli.png)
  
 > [!div class="nextstepaction"]
 > [Installieren der Azure CLI 2.0](/cli/azure/install-az-cli2)
@@ -32,7 +32,7 @@ Die Azure CLI ist für die Verwaltung von Azure-Ressourcen über die Befehlszeil
 ## <a name="visual-studio-code"></a>Visual Studio Code
 Bearbeiten und debuggen Sie JavaScript-Apps unter allen Betriebssystemen.
 
-![Visual Studio Code](media/node-azure-tools/vs-code.png)
+![Bearbeiten von JavaScript mithilfe von Visual Studio Code](media/node-azure-tools/visual-studio-code-debug-javascript.png)
 
 > [!div class="nextstepaction"]
 > [Visual Studio Code herunterladen](https://code.visualstudio.com)

@@ -7,34 +7,38 @@ manager: barbkess
 ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.author: kraigb
-ms.openlocfilehash: 566d166a69bbbee59726b8e381bee4a24077d8c6
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.author: buhollan
+ms.openlocfilehash: b57789ca26851c27a3a68c9d095f327ea64164cf
+ms.sourcegitcommit: 2757d8bd0cc045b7d02f430d44de859f9de853f4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71685976"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72587223"
 ---
 # <a name="create-the-app"></a>Erstellen der App
 
 [Vorheriger Schritt: Einführung und Voraussetzungen](tutorial-vscode-static-website-node-01.md)
 
-In diesem Schritt erstellen Sie mit der Befehlszeilenschnittstelle (Command Linie Interface, CLI) des Hilfsprogramms React ([create-react-app](https://github.com/facebook/create-react-app)) eine einfache React-App, die in Azure bereitgestellt werden kann. Alternativ können Sie Angular, Vue, ein anderes Framework oder einen beliebigen Ordner verwenden, der einige HTML-Dateien enthält. Wenn Sie bereits eine App haben, die Sie bereitstellen möchten, können Sie diesen Teil überspringen und mit [Erstellen eines Azure Storage-Kontos](tutorial-vscode-static-website-node-03.md) fortfahren.
+In diesem Schritt verwenden Sie die Befehlszeilenschnittstelle (Command Line Interface, CLI) für [Angular](https://cli.angular.io/), [React](https://github.com/facebook/create-react-app) oder [Vue](https://cli.vuejs.org/), um eine einfache App zu erstellen, die in Azure bereitgestellt werden kann. Alternativ können Sie ein beliebiges anderes JavaScript-Framework, das statische Dateien generiert, oder einen Ordner verwenden, der HTML-, CSS- oder JavaScript-Dateien enthält. Wenn Sie bereits eine App haben, die Sie bereitstellen möchten, können Sie diesen Teil überspringen und mit [Erstellen eines Azure Storage-Kontos](tutorial-vscode-static-website-node-03.md) fortfahren.
 
-1. Führen Sie den folgenden Befehl aus, um mit dem Tool „create-react-app“ ein Gerüst für eine neue React-App namens `my-react-app` zu erstellen:
+# <a name="angulartabangular"></a>[Angular](#tab/angular)
+
+1. Erstellen Sie mit der CLI ein Gerüst für eine neue App namens „my-static-app“. Führen Sie dazu den folgenden Befehl aus:
 
     ```bash
-    npm create react-app my-react-app
+    npx @angular/cli new my-static-app
     ```
+
+    Werden Sie von der CLI zur Eingabe von Konfigurationswerten aufgefordert, drücken Sie die EINGABETASTE, um die Standardoptionen auszuwählen.
 
 1. Erstellen Sie die Anwendung, indem Sie zum neuen Ordner wechseln und `npm run build` ausführen:
 
     ```bash
-    cd my-react-app
+    cd my-static-app
     npm run build
     ```
 
-1. Sie sollten nun einen Ordner *build* im Ordner *my-react-app* haben. Der Ordner *build* enthält die HTML-, CSS- und JavaScript-Dateien, die Sie in Azure Storage bereitstellen.
+1. Sie sollten nun einen Ordner _dist_ im Ordner _my-static-app_ haben. Innerhalb des Ordners _dist_ befindet sich ein Ordner mit dem gleichen Namen wie Ihr Projekt: _my-static-app_. Der Ordner _build/my-static-app_ enthält die HTML-, CSS- und JavaScript-Dateien, die Sie in Azure Storage bereitstellen.
 
 1. Führen Sie die App mit dem folgenden Befehl aus:
 
@@ -44,9 +48,71 @@ In diesem Schritt erstellen Sie mit der Befehlszeilenschnittstelle (Command Lini
 
 1. Öffnen Sie in einem Browser [http://localhost:3000](http://localhost:3000), um zu überprüfen, ob die App ausgeführt wird:
 
-    ![Ausgeführte React-Beispiel-App](media/static-website/local-app.png)
+    ![Ausgeführte Angular-Beispiel-App](media/static-website/local-app-angular.png)
 
 1. Halten Sie den Server an, indem Sie im Terminal oder an der Eingabeaufforderung **STRG**+**C** drücken.
+
+# <a name="reacttabreact"></a>[React](#tab/react)
+
+1. Erstellen Sie mit der CLI ein Gerüst für eine neue App namens „my-static-app“. Führen Sie dazu den folgenden Befehl aus:
+
+    ```bash
+    npx create-react-app my-static-app
+    ```
+
+1. Erstellen Sie die Anwendung, indem Sie zum neuen Ordner wechseln und `npm run build` ausführen:
+
+    ```bash
+    cd my-static-app
+    npm run build
+    ```
+
+1. Sie sollten nun einen Ordner _build_ im Ordner _my-static-app_ haben. Der Ordner _build_ enthält die HTML-, CSS- und JavaScript-Dateien, die Sie in Azure Storage bereitstellen.
+
+1. Führen Sie die App mit dem folgenden Befehl aus:
+
+    ```bash
+    npm start
+    ```
+
+1. Öffnen Sie in einem Browser [http://localhost:3000](http://localhost:3000), um zu überprüfen, ob die App ausgeführt wird:
+
+    ![Ausgeführte React-Beispiel-App](media/static-website/local-app-react.png)
+
+1. Halten Sie den Server an, indem Sie im Terminal oder an der Eingabeaufforderung **STRG**+**C** drücken.
+
+# <a name="vuetabvue"></a>[Vue](#tab/vue)
+
+1. Erstellen Sie mit der CLI ein Gerüst für eine neue App namens „my-static-app“. Führen Sie dazu den folgenden Befehl aus:
+
+    ```bash
+    npx @vue/cli create my-static-app
+    ```
+
+Werden Sie von der CLI zur Eingabe von Konfigurationswerten aufgefordert, drücken Sie die EINGABETASTE, um die Standardoptionen auszuwählen.
+
+1. Erstellen Sie die Anwendung, indem Sie zum neuen Ordner wechseln und `npm run build` ausführen:
+
+    ```bash
+    cd my-static-app
+    npm run build
+    ```
+
+1. Sie sollten nun einen Ordner _dist_ im Ordner _my-static-app_ haben. Der Ordner _dist_ enthält die HTML-, CSS- und JavaScript-Dateien, die Sie in Azure Storage bereitstellen.
+
+1. Führen Sie die App mit dem folgenden Befehl aus:
+
+     ```bash
+     npm run serve
+     ```
+
+1. Öffnen Sie in einem Browser [http://localhost:8080](http://localhost:8080), um zu überprüfen, ob die App ausgeführt wird:
+
+    ![Ausgeführte Vue-Beispiel-App](media/static-website/local-app-vue.png)
+
+1. Halten Sie den Server an, indem Sie im Terminal oder an der Eingabeaufforderung **STRG**+**C** drücken.
+
+---
 
 > [!div class="nextstepaction"]
 > [Ich habe die App erstellt.](tutorial-vscode-static-website-node-03.md) [Es ist ein Problem aufgetreten.](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-staticwebsite&step=create-app)
