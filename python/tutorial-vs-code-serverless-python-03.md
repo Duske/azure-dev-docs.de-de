@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 4a8ef594b461df406846f16ad71e595b64ffee5e
-ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
+ms.openlocfilehash: f31cbb3c1ad66a97ab4bb87cdcc58c9bd815c72e
+ms.sourcegitcommit: 38fc0daead4f6ef0cf16d9f4762ad24f4dc4c3e9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72278779"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72980952"
 ---
 # <a name="tutorial-examine-the-python-code-files-in-visual-studio-code"></a>Tutorial: Untersuchen der Python-Codedateien in Visual Studio Code
 
@@ -57,7 +57,7 @@ Die `scriptFile`-Eigenschaft identifiziert die Startdatei für den Code, und die
 
 Das `bindings`-Element enthält zwei Objekte, eines zum Beschreiben eingehender Anforderungen und das andere, um die HTTP-Antwort zu beschreiben. Bei eingehenden Anforderungen (`"direction": "in"`) antwortet die Funktion auf HTTP-GET- oder -POST-Anforderungen und erfordert keine Authentifizierung. Die Antwort (`"direction": "out"`) ist eine HTTP-Antwort, die jeden Wert zurückgibt, der von der `main`-Python-Funktion zurückgegeben wird.
 
-## <a name="__initpy__"></a>\_\_init.py\_\_
+## <a name="__init__py"></a>\_\_init\_\_.py
 
 Wenn Sie eine neue Funktion erstellen, stellt Azure Functions standardmäßigen Python-Code in *\_\_init\_\_* .py bereit:
 
