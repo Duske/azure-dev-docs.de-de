@@ -8,12 +8,12 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.openlocfilehash: 705256291709c6715f90f19c220a7e3e127f923f
-ms.sourcegitcommit: 2757d8bd0cc045b7d02f430d44de859f9de853f4
+ms.openlocfilehash: 671e600471402dbd6ca71d385a238caeee889497
+ms.sourcegitcommit: 66cc8d1839dbd7cc01b33030f188e15bf5f24dae
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72587168"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916679"
 ---
 # <a name="deploy-the-website-to-azure-storage"></a>Bereitstellen der Website in Azure Storage
 
@@ -26,10 +26,6 @@ In diesem Schritt stellen Sie die in den vorherigen Schritten erstellten Dateien
 1. Wechseln Sie in Visual Studio Code zum **Azure Storage**-Explorer, erweitern Sie Ihr Abonnement, den Knoten für das Azure Storage-Konto, das Sie im vorherigen Schritt erstellt haben, und dann den Knoten **Blobcontainer**. Im Container `$web` stellen Sie Ihren App-Code bereit.
 
    ![Azure Storage-Knoten im Azure Storage-Explorer](media/static-website/storage-nodes.png)
-
-1. Wählen Sie den **Datei**-Explorer aus, klicken Sie mit der rechten Maustaste auf Ihren Ordner _dist/my-static-app_, und wählen Sie **Deploy to Static Website** (Auf statischer Website bereitstellen) aus:
-
-    ![Befehl „Deploy to Static Website“ (Auf statischer Website bereitstellen)](media/static-website/deploy-build-angular.png)
 
 1. Wählen Sie den **Datei**-Explorer aus, klicken Sie mit der rechten Maustaste auf Ihren Ordner _dist/my-static-app_, und wählen Sie **Deploy to Static Website** (Auf statischer Website bereitstellen) aus:
 
@@ -48,10 +44,6 @@ In diesem Schritt stellen Sie die in den vorherigen Schritten erstellten Dateien
 1. Wechseln Sie in Visual Studio Code zum **Azure Storage**-Explorer, erweitern Sie Ihr Abonnement, den Knoten für das Azure Storage-Konto, das Sie im vorherigen Schritt erstellt haben, und dann den Knoten **Blobcontainer**. Im Container `$web` stellen Sie Ihren App-Code bereit.
 
    ![Azure Storage-Knoten im Azure Storage-Explorer](media/static-website/storage-nodes.png)
-
-1. Wählen Sie den **Datei**-Explorer aus, klicken Sie mit der rechten Maustaste auf Ihren Ordner _build_, und wählen Sie **Deploy to Static Website** (Auf statischer Website bereitstellen) aus:
-
-    ![Befehl „Deploy to Static Website“ (Auf statischer Website bereitstellen)](media/static-website/deploy-build-react.png)
 
 1. Wählen Sie den **Datei**-Explorer aus, klicken Sie mit der rechten Maustaste auf Ihren Ordner _build_, und wählen Sie **Deploy to Static Website** (Auf statischer Website bereitstellen) aus:
 
