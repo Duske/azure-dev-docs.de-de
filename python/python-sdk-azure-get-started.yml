@@ -3,49 +3,42 @@ title: Erste Schritte bei der Cloudentwicklung mit den Azure-Bibliotheken für P
 metadata:
   title: Erste Schritte mit Azure-Bibliotheken für Python
   description: Hier finden Sie Informationen zu Azure-Cloudressourcen und erfahren, wie Sie sie verbinden und in Ihren Python-Anwendungen nutzen.
-  author: sptramer
-  ms.author: sttramer
-  manager: carmonm
+  author: kraigb
+  ms.author: kraigb
+  manager: barbkess
   audience: Developer
   level: Beginner
   nextTutorialHref: /python/api/overview/azure/?view=azure-python
   nextTutorialTitle: Referenz zum Python SDK
   displayType: two-column
   interactive: azurecli
-  ms.date: 11/30/2017
-  ms.openlocfilehash: 39dc282c9d0a2cebb0f540a446767e3a60fc1428
-  ms.sourcegitcommit: 4eee7d9a484e35eb695248c011a63b27603d354b
+  ms.date: 10/18/2019
+  ms.openlocfilehash: 32cfda14e307d0293c9ffec8b24685375cc929d0
+  ms.sourcegitcommit: 7e5392a0af419c650225cfaa10215d1e0e56ce71
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 08/20/2019
-  ms.locfileid: "69635094"
+  ms.lasthandoff: 11/04/2019
+  ms.locfileid: "73568199"
 items:
 - durationInMinutes: 1
-  content: "Dieses Handbuch veranschaulicht die Verwendung verschiedener Azure-Bibliotheken für Python.  \n"
+  content: "In diesem Leitfaden wird die Verwendung verschiedener Bibliotheken im Azure SDK für Python veranschaulicht.  \n"
 - title: Voraussetzungen
   durationInMinutes: 5
   content: >
     - Ein Azure-Konto. Falls Sie noch kein Konto haben, können Sie eine [kostenlose Testversion](https://azure.microsoft.com/free/) verwenden.
 
-    - [Python](https://www.python.org/downloads/)
+    - [Der neueste Python 3.x-Interpreter.](https://www.python.org/downloads/)
 
-    - [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart) oder [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-az-cli2).
+    - Die [Azure CLI 2.0](/azure/install-az-cli2) (lokale Verwendung) oder die [Azure Cloud Shell](/azure/cloud-shell/quickstart) (exklusive Verwendung der Cloud).
 - title: Einrichten der Authentifizierung
   durationInMinutes: 5
   content: >
-    > [!IMPORTANT]
-
-    > Diese Vorgehensweise sollte als Schnellstart für Entwickler verwendet werden. Verwenden Sie zu Produktionszwecken [ADAL](https://github.com/AzureAD/azure-activedirectory-library-for-python) oder Ihr eigenes System für Anmeldeinformationen.
-
-    > Alle Änderungen an der CLI-Konfiguration wirken sich auf die SDK-Ausführung aus.
+    Das SDK kann mithilfe Ihres aktiven CLI-Abonnements einen Client erstellen. Für die Produktion muss jedoch [ADAL](https://github.com/AzureAD/azure-activedirectory-library-for-python) oder Ihr eigenes System für Anmeldeinformationen verwendet werden.
 
 
-    Das SDK kann mithilfe Ihres aktiven CLI-Abonnements einen Client erstellen.
+    Verwenden Sie zum Definieren der aktiven Anmeldeinformationen [az login](/azure/authenticate-azure-cli).
 
-
-    Verwenden Sie zum Definieren der aktiven Anmeldeinformationen [az login](https://docs.microsoft.com/cli/azure/authenticate-azure-cli).
-
-    Bei der standardmäßigen Abonnement-ID handelt es sich um die ID, die Sie bereits besitzen. Alternativ können Sie die ID mit [az account](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli) festlegen.
+    Bei der standardmäßigen Abonnement-ID handelt es sich um die ID, die Sie bereits besitzen. Alternativ können Sie die ID mit [az account](/azure/manage-azure-subscriptions-azure-cli) festlegen.
 
 
     ```python
@@ -61,9 +54,7 @@ items:
 - title: Erstellen einer virtuellen Umgebung
   durationInMinutes: 5
   content: >
-    > [!IMPORTANT]
-
-    > Die Erstellung einer virtuellen Umgebung ist optional, wird jedoch dringend empfohlen.
+    Bei einer virtuellen Umgebung befinden sich die SDK-Bibliotheken an einem isolierten Ort für Ihr Projekt. Dadurch kann das SDK bei Bedarf durch Löschen des Umgebungsordners problemlos deinstalliert werden.
 
 
     Erstellen einer virtuellen Umgebung in Bash (Linux oder [Bash für Windows](https://msdn.microsoft.com/commandline/wsl/about)):
