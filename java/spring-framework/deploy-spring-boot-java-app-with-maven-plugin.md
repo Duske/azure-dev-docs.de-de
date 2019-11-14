@@ -12,12 +12,12 @@ ms.devlang: java
 ms.service: app-service
 ms.topic: article
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: c4af364cf6c47b23415a47974fd7eb909a371efb
-ms.sourcegitcommit: 380300c283f3df8a87c7c02635eae3596732fb72
+ms.openlocfilehash: f093e7f23a15420a60b6725e0f13d8457478ab5c
+ms.sourcegitcommit: ad1b12d9ebb6113991ce48255f5b491364490079
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73661317"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73842223"
 ---
 # <a name="deploy-a-spring-boot-jar-file-app-to-azure-app-service-with-maven-and-azure-on-linux"></a>Bereitstellen einer Spring Boot-App mit JAR-Datei in Azure App Service mit Maven und Azure unter Linux
 
@@ -57,7 +57,7 @@ In diesem Abschnitt klonen Sie eine vollständige Spring Boot-Anwendung und test
    ```
    – oder –
    ```shell
-   md ~/SpringBoot
+   mkdir ~/SpringBoot
    cd ~/SpringBoot
    ```
 
@@ -104,9 +104,13 @@ In diesem Abschnitt konfigurieren Sie das Spring Boot-Projekt `pom.xml` so, dass
    </plugin>
    ```
 
-3. Anschließend können Sie die Bereitstellung konfigurieren, den maven-Befehl `mvn azure-webapp:config` an der Eingabeaufforderung ausführen und mithilfe der **Nummer** die folgenden Optionen in der Aufforderung auswählen:
+3. Anschließend können Sie die Bereitstellung konfigurieren, den folgenden maven-Befehl an der Eingabeaufforderung ausführen und mithilfe der **Nummer** die folgenden Optionen in der Aufforderung auswählen:
     * **OS**: linux  
     * **javaVersion**: Java 8    
+    
+```cmd
+mvn azure-webapp:config
+```
 
 Wenn die Aufforderung **Confirm (Y/N)** (Bestätigen (J/N)) angezeigt wird, drücken Sie **Y**, und die Konfiguration ist abgeschlossen.
 
@@ -118,7 +122,7 @@ Wenn die Aufforderung **Confirm (Y/N)** (Bestätigen (J/N)) angezeigt wird, drü
 [INFO] Building gs-spring-boot 0.1.0
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO]
-[INFO] --- azure-webapp-maven-plugin:1.6.0:config (default-cli) @ gs-spring-boot ---
+[INFO] --- azure-webapp-maven-plugin:1.8.0:config (default-cli) @ gs-spring-boot ---
 [WARNING] The plugin may not work if you change the os of an existing webapp.
 Define value for OS(Default: Linux):
 1. linux [*]
@@ -166,7 +170,16 @@ Confirm (Y/N)? : Y
              </property>
           </appSettings>
           <!-- End of App Settings  -->
-          ...
+          <deployment>
+            <resources>
+              <resource>
+                <directory>${project.basedir}/target</directory>
+                <includes>
+                  <include>*.jar</include>
+                </includes>
+              </resource>
+            </resources>
+          </deployment>
          </configuration>
    </plugin>
    ```

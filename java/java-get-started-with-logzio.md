@@ -1,6 +1,6 @@
 ---
-title: Erste Schritte mit Logz.io für in Azure ausgeführte Java-Projekte
-description: In diesem Tutorial erfahren Sie, wie Sie Logz.io für in Azure ausgeführte Java-Projekte integrieren und konfigurieren.
+title: Erste Schritte mit Logz.io für in Azure ausgeführte Java-Apps
+description: In diesem Tutorial erfahren Sie, wie Sie Logz.io für in Azure ausgeführte Java-Apps integrieren und konfigurieren.
 author: jdubois
 manager: bborges
 ms.devlang: java
@@ -8,16 +8,16 @@ ms.topic: tutorial
 ms.service: azure
 ms.date: 11/05/2019
 ms.author: judubois
-ms.openlocfilehash: 49fd2ada98bcfdb02db3f4b79afb2f80f2d700f2
-ms.sourcegitcommit: 380300c283f3df8a87c7c02635eae3596732fb72
+ms.openlocfilehash: 263a328866d36fd60e2ab7cc9fbe8fa8af45b9d4
+ms.sourcegitcommit: 794f7f72947034944dc4a5d19baa57d905a16ab0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73661286"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73957205"
 ---
-# <a name="tutorial-getting-started-with-logzio-for-java-projects-running-on-azure"></a>Tutorial: Erste Schritte mit Logz.io für in Azure ausgeführte Java-Projekte
+# <a name="tutorial-getting-started-with-monitoring-and-logging-using-logzio-for-java-apps-running-on-azure"></a>Tutorial: Erste Schritte bei der Überwachung und Protokollierung mithilfe von Logz.io für in Azure ausgeführte Java-Apps
 
-In diesem Tutorial erfahren Sie, wie Sie eine klassische Java-Anwendung konfigurieren, um Protokolle zur Erfassung und Analyse an den Dienst [Logz.io](https://logz.io/) zu senden. Logz.io bietet eine umfassende Überwachungslösung auf der Grundlage von Elasticsearch, Logstash, Kibana und Grafana.
+In diesem Tutorial erfahren Sie, wie Sie eine klassische Java-Anwendung konfigurieren, um Protokolle zur Erfassung und Analyse an den Dienst [Logz.io](https://logz.io/) zu senden. Logz.io bietet eine umfassende Überwachungslösung auf der Grundlage von Elasticsearch, Logstash, Kibana (ELK) und Grafana.
 
 In diesem Tutorial wird davon ausgegangen, dass Sie Log4J oder Logback verwenden. Da diese beiden Bibliotheken für die Protokollierung in Java am gängigsten sind, sollte das Tutorial für die meisten in Azure ausgeführten Anwendungen funktionieren. Falls Sie Ihre Java-Anwendungen bereits mithilfe von Elastic Stack überwachen, erfahren Sie in diesem Tutorial, wie Sie die Konfiguration so ändern, dass der Logz.io-Endpunkt als Ziel verwendet wird.
 
@@ -30,7 +30,7 @@ In diesem Tutorial lernen Sie Folgendes:
 ## <a name="prerequisites"></a>Voraussetzungen
 
 * [Java Developer Kit](https://aka.ms/azure-jdks) ab Version 8
-* Ein [Logz.io](https://logz.io/)-Konto. Alternativ können Sie Logz.io über den [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/logz.logzio-elk-as-a-service-pro) erwerben.
+* Ein Logz.io-Konto aus dem [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/logz.logzio-elk-as-a-service-pro)
 * Eine vorhandene Java-Anwendung, die Log4J oder Logback verwendet.
 
 ## <a name="send-java-application-logs-to-logzio"></a>Senden von Java-Anwendungsprotokollen an Logz.io
@@ -43,7 +43,7 @@ Melden Sie sich zum Abrufen Ihres Tokens bei Ihrem Logz.io-Konto an, wählen Sie
 
 ### <a name="install-and-configure-the-logzio-library-for-log4j-or-logback"></a>Installieren und Konfigurieren der Logz.io-Bibliothek für Log4J oder Logback
 
-Die Logz.io-Java-Bibliothek steht bei Maven Central zur Verfügung und kann Ihrer Projektkonfiguration als Abhängigkeit hinzugefügt werden. Überprüfen Sie die Versionsnummer bei Maven Central, und verwenden Sie in den folgenden Konfigurationseinstellungen die neueste Version.
+Die Logz.io-Java-Bibliothek steht bei Maven Central zur Verfügung und kann Ihrer App-Konfiguration als Abhängigkeit hinzugefügt werden. Überprüfen Sie die Versionsnummer bei Maven Central, und verwenden Sie in den folgenden Konfigurationseinstellungen die neueste Version.
 
 Falls Sie Maven verwenden, fügen Sie der Datei `pom.xml` die folgende Abhängigkeit hinzu:
 
@@ -88,9 +88,9 @@ Aktualisieren Sie als Nächstes Ihre Log4J- oder Logback-Konfigurationsdatei:
 ```xml
 <Appenders>
     <LogzioAppender name="Logzio">
-        <logzioToken>{{your-logz-io-token}}</logzioToken>
+        <logzioToken><your-logz-io-token></logzioToken>
         <logzioType>java-application</logzioType>
-        <logzioUrl>https://listener-wa.logz.io:8071</logzioUrl>
+        <logzioUrl>https://<your-logz-io-listener-host>:8071</logzioUrl>
     </LogzioAppender>
 </Appenders>
 
@@ -108,8 +108,8 @@ Aktualisieren Sie als Nächstes Ihre Log4J- oder Logback-Konfigurationsdatei:
     <!-- Use shutdownHook so that we can close gracefully and finish the log drain -->
     <shutdownHook class="ch.qos.logback.core.hook.DelayingShutdownHook"/>
     <appender name="LogzioLogbackAppender" class="io.logz.logback.LogzioLogbackAppender">
-        <token>{{your-logz-io-token}}</token>
-        <logzioUrl>https://listener-wa.logz.io:8071</logzioUrl>
+        <token><your-logz-io-token></token>
+        <logzioUrl>https://<your-logz-io-listener-host>:8071</logzioUrl>
         <logzioType>java-application</logzioType>
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>INFO</level>
@@ -121,6 +121,8 @@ Aktualisieren Sie als Nächstes Ihre Log4J- oder Logback-Konfigurationsdatei:
     </root>
 </configuration>
 ```
+
+Ersetzen Sie den Platzhalter `<your-logz-io-token>` durch Ihr Zugriffstoken und den Platzhalter `<your-logz-io-listener-host>` durch den Listenerhost Ihrer Region (z. B. „listener.logz.io“). Weitere Informationen zum Ermitteln der Region Ihres Kontos finden Sie unter [Kontoregion](https://docs.logz.io/user-guide/accounts/account-region.html).
 
 Das Element `logzioType` verweist auf ein logisches Feld in Elasticsearch, das dazu dient, unterschiedliche Dokumente voneinander zu trennen. Dieser Parameter muss ordnungsgemäß konfiguriert werden, um Logz.io optimal nutzen zu können.
 
