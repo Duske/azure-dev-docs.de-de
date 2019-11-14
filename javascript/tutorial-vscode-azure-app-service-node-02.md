@@ -8,12 +8,12 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/20/2019
 ms.author: kraigb
-ms.openlocfilehash: 769ca61ef7716eaa08d45e109a9bf50e5801721c
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: 0ee7b185532b3febe8aab720e40ff10cf4b079b7
+ms.sourcegitcommit: ad1b12d9ebb6113991ce48255f5b491364490079
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686191"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73842207"
 ---
 # <a name="create-your-nodejs-application"></a>Erstellen der Node.js-Anwendung
 
@@ -26,7 +26,7 @@ Sie können auch die App aus dem [Node.js-Tutorial in Visual Studio Code](http
 1. Führen Sie an einem Terminal oder einer Eingabeaufforderung den folgenden Befehl aus, um den Express-Generator auszuführen und das Gerüst für eine neue Express-App namens „myExpressApp“ zu erstellen. (Die `--view pug --git`-Parameter weisen den Generator an, die Vorlagenengine [pug](https://pugjs.org/api/getting-started.html) (früher als Jade bezeichnet) zu verwenden und eine *.gitignore*-Datei zu erstellen.)
 
     ```bash
-    npx express-generator myExpressApp --view pug –git
+    npx express-generator myExpressApp --view pug -–git
     ```
 
 1. Installieren Sie die Abhängigkeiten der Anwendung, indem Sie den Befehl `npm install` im App-Ordner ausführen:
