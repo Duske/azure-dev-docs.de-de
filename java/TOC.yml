@@ -93,9 +93,10 @@
       items:
         - name: Übersicht
           href: java-azure-tools.md
-        - name: Java LTS (Long-Term Support)
-          href: jdk/index.md
+        - name: Java-Unterstützung
           items:
+            - name: Java LTS (Long-Term Support)
+              href: jdk/index.md
             - name: Java JDK-Installation
               href: jdk/java-jdk-install.md
             - name: Java-Docker-Images für Azure
