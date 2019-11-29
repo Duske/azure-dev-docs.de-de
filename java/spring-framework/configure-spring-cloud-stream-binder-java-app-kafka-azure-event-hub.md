@@ -4,26 +4,20 @@ description: Erfahren Sie, wie Sie eine mit Spring Boot Initializer erstellte An
 services: event-hubs
 documentationcenter: java
 author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
 ms.author: brendm
 ms.date: 12/19/2018
 ms.devlang: java
 ms.service: event-hubs
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 074c7bb28907b3c71c981f261ae69d5477c21028
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 5d1f1d40eba0f4b4a6aa2718f09124b765a06a82
+ms.sourcegitcommit: 54d34557bb83f52a215bf9020263cb9f9782b41d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68282621"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74118331"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-apache-kafka-with-azure-event-hubs"></a>Verwenden von Spring Boot Starter für Apache Kafka mit Azure Event Hubs
-
-## <a name="overview"></a>Übersicht
 
 In diesem Artikel wird beschrieben, wie Sie eine mit Spring Boot Initializer erstellte Java-basierte Spring Cloud Stream Binder-Anwendung zur Verwendung von [Apache Kafka] mit Azure Event Hubs konfigurieren.
 
@@ -46,18 +40,21 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>, und melden Sie sich an.
 
-1. Klicken Sie auf **+ Ressource erstellen**, auf **Internet der Dinge** und dann auf **Event Hubs**.
+1. Klicken Sie auf **+ Ressource erstellen** > **Internet der Dinge**, und suchen Sie nach **Event Hubs**.
+
+1. Klicken Sie auf **Create**.
 
    ![Erstellen eines Azure Event Hub-Namespaces][IMG01]
 
 1. Geben Sie auf der Seite **Namespace erstellen** die folgenden Informationen ein:
 
    * Geben Sie einen eindeutigen **Namen** ein, der als Teil des URI für Ihren Event Hub-Namespace verwendet wird. Beispiel: Wenn Sie **wingtiptoys** für **Name** eingegeben haben, lautet der URI *wingtiptoys.servicebus.windows.net*.
-   * Wählen Sie einen **Tarif** für Ihren Event Hub-Namespace aus.
+   * Tarif:
    * Geben Sie **Kafka aktivieren** für Ihren Namespace an.
    * Wählen Sie das **Abonnement** aus, das Sie für Ihren Namespace verwenden möchten.
    * Legen Sie fest, ob eine neue **Ressourcengruppe** für Ihren Namespace erstellt werden soll, oder wählen Sie eine vorhandene Ressourcengruppe aus.
    * Geben Sie den **Speicherort** für Ihren Event Hub-Namespace an.
+   * Sie können auch die **Durchsatzeinheiten** für den Namespace angeben.
 
    ![Angeben der Optionen für den Azure Event Hub-Namespace][IMG02]
 
@@ -65,23 +62,17 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 ### <a name="create-an-azure-event-hub-in-your-namespace"></a>Erstellen eines Azure Event Hubs in Ihrem Namespace
 
-1. Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>.
+Nachdem Sie Ihren Namespace bereitgestellt haben, können Sie darin einen Event Hub erstellen.
 
-1. Klicken Sie auf **Alle Ressourcen** und dann auf den von Ihnen erstellten Namespace.
+1. Navigieren Sie zum im vorherigen Schritt erstellten Namespace.
 
-   ![Auswählen des Azure Event Hub-Namespaces][IMG03]
+1. Klicken Sie auf der oberen Menüleiste auf **+ Event Hub**.
 
-1. Klicken Sie auf **Event Hubs** und dann auf **+ Event Hub**.
+1. Benennen Sie den Event Hub.
 
-   ![Hinzufügen eines neuen Azure Event Hubs][IMG04]
+1. Klicken Sie auf **Create**.
 
-1. Geben Sie auf der Seite **Event Hub erstellen** einen eindeutigen **Namen** für Ihren Event Hub ein, und klicken Sie dann auf **Erstellen**.
-
-   ![Erstellen eines Azure Event Hubs][IMG05]
-
-1. Nachdem Ihr Event Hub erstellt wurde, wird er auf der Seite **Event Hubs** aufgelistet.
-
-   ![Erstellen eines Azure Event Hubs][IMG06]
+   ![Erstellen des Event Hubs][IMG05]
 
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Erstellen einer einfachen Spring Boot-Anwendung mit Spring Initializr
 
@@ -104,8 +95,6 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 1. Nachdem Sie die oben genannten Optionen angegeben haben, klicken Sie auf **Generate Project** (Projekt generieren).
 
 1. Laden Sie das Projekt nach entsprechender Aufforderung unter einem Pfad auf dem lokalen Computer herunter.
-
-   ![Herunterladen des Spring-Projekts][SI02]
 
 1. Nachdem Sie die Dateien auf Ihrem lokalen System extrahiert haben, kann Ihre einfache Spring Boot-Anwendung bearbeitet werden.
 
@@ -229,13 +218,13 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    spring.cloud.azure.credential-file-path=my.azureauth
    spring.cloud.azure.resource-group=wingtiptoysresources
    spring.cloud.azure.region=West US
-   spring.cloud.azure.eventhub.namespace=wingtiptoysnamespace
+   spring.cloud.azure.eventhub.namespace=wingtiptoys
 
    spring.cloud.stream.bindings.input.destination=wingtiptoyshub
    spring.cloud.stream.bindings.input.group=$Default
    spring.cloud.stream.bindings.output.destination=wingtiptoyshub
    ```
-   Hinweis:
+   Hierbei gilt:
 
    |                       Feld                       |                                                                                   BESCHREIBUNG                                                                                    |
    |---------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

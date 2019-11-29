@@ -13,16 +13,14 @@ ms.devlang: java
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 46084a5bc1d98f5e8343fc20446dc0516057ce83
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 93dff9e1f12a17660b367060dd9d404127285df2
+ms.sourcegitcommit: 8be617e100ae3d3e90d56c672b1c7c110b7a588f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68282491"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74160692"
 ---
 # <a name="how-to-use-spring-data-apache-cassandra-api-with-azure-cosmos-db"></a>Verwenden der Spring Data-Apache Cassandra-API mit Azure Cosmos DB
-
-## <a name="overview"></a>Übersicht
 
 In diesem Artikel wird die Erstellung einer Beispielanwendung veranschaulicht, die [Spring Data] verwendet, um Informationen mithilfe der [Cassandra-API für Azure Cosmos DB](/azure/cosmos-db/cassandra-introduction) zu speichern und abzurufen.
 
@@ -38,7 +36,9 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 ## <a name="create-an-azure-cosmos-db-account"></a>Erstellen eines Azure Cosmos DB-Kontos
 
-### <a name="create-a-cosmos-db-account-using-the-azure-portal"></a>Erstellen eines Cosmos DB-Kontos im Azure-Portal
+Mit dem folgenden Verfahren wird ein Cosmos-Konto im Azure-Portal erstellt und konfiguriert:
+
+### <a name="create-a-cosmos-db-account-using-the-azure-portal"></a>Erstellen eines Cosmos DB-Kontos über das Azure-Portal
 
 > [!NOTE]
 > 
@@ -66,13 +66,13 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
    ![Überprüfen der Cosmos DB-Kontoeinstellungen][COSMOSDB03]
 
+Die Bereitstellung der Datenbank dauert einige Minuten.
+
 ### <a name="add-a-keyspace-to-your-azure-cosmos-db-account"></a>Hinzufügen eines Keyspace zu Ihrem Azure Cosmos DB-Konto
 
 1. Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>, und melden Sie sich an.
 
 1. Klicken Sie auf **Alle Ressourcen** und anschließend auf das Azure Cosmos DB-Konto, das Sie gerade erstellt haben.
-
-   ![Auswählen des Azure Cosmos DB-Kontos][COSMOSDB04]
 
 1. Klicken Sie auf **Daten-Explorer** und anschließend auf **New Keyspace** (Neuer Keyspace). Geben Sie einen eindeutigen Bezeichner für Ihre **Keyspace id** (Keyspace-ID) ein, und klicken Sie dann auf **OK**.
 
@@ -84,13 +84,13 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Klicken Sie auf **Alle Ressourcen** und anschließend auf das Azure Cosmos DB-Konto, das Sie gerade erstellt haben.
 
-   ![Auswählen des Azure Cosmos DB-Kontos][COSMOSDB04]
-
 1. Klicken Sie auf **Verbindungszeichenfolgen**, und kopieren Sie die Werte für **Kontaktpunkt**, **Port**, **Benutzername** und **Primäres Kennwort**. Sie verwenden diese Werte später zum Konfigurieren Ihrer Anwendung.
 
-   ![Abrufen der Cosmos DB-Verbindungseinstellungen][COSMOSDB05]
+   ![Abrufen der Cosmos DB-Verbindungseinstellungen][COSMOSDB06]
 
 ## <a name="configure-the-sample-application"></a>Konfigurieren der Beispielanwendung
+
+Mit dem folgenden Verfahren wird die Testanwendung konfiguriert:
 
 1. Öffnen Sie eine Befehlsshell, und klonen Sie das Beispielprojekt wie im folgenden Beispiel gezeigt mit einem Git-Befehl:
 
@@ -108,7 +108,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    spring.data.cassandra.username=wingtiptoyscassandra
    spring.data.cassandra.password=********
    ```
-   Hinweis:
+   Hierbei gilt:
 
    | Parameter | BESCHREIBUNG |
    |---|---|
@@ -120,6 +120,8 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 1. Speichern und schließen Sie die Datei *application.properties*.
 
 ## <a name="package-and-test-the-sample-application"></a>Verpacken und Testen der Beispielanwendung 
+
+Navigieren Sie zum Verzeichnis mit der POM-Datei, um die Anwendung zu erstellen und zu testen.
 
 1. Erstellen Sie die Beispielanwendung mit Maven. Beispiel:
 
@@ -136,9 +138,9 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 1. Erstellen Sie wie in den folgenden Beispielen dargestellt über eine Eingabeaufforderung mit `curl` neue Datensätze:
 
    ```shell
-   curl -s -d '{"name":"dog","species":"canine"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+   curl -s -d "{\"name\":\"dog\",\"species\":\"canine\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/pets
 
-   curl -s -d '{"name":"cat","species":"feline"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+   curl -s -d "{\"name\":\"cat\",\"species\":\"feline\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/pets
    ```
 
    Ihre Anwendung sollte Werte zurückgeben, die dem folgenden Beispiel ähneln:
@@ -154,7 +156,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    ```shell
    curl -s http://localhost:8080/pets
    ```
-    
+
    Ihre Anwendung sollte Werte zurückgeben, die dem folgenden Beispiel ähneln:
 
    ```json
@@ -194,3 +196,4 @@ Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure 
 [COSMOSDB03]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-03.png
 [COSMOSDB04]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-04.png
 [COSMOSDB05]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-05.png
+[COSMOSDB06]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-06.png

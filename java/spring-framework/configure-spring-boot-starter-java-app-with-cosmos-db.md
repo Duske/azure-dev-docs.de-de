@@ -12,12 +12,12 @@ ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
-ms.openlocfilehash: 07481fa72186c02d9cd3bd082ecf6e57a44671d8
-ms.sourcegitcommit: 60c41faa59dbb59406eb7c1715f5708b5ed892c2
+ms.openlocfilehash: 192550b74a35eb24620c58e86e6a55e86e5e90ab
+ms.sourcegitcommit: 54d34557bb83f52a215bf9020263cb9f9782b41d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72036067"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74118173"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a>Verwendung von Spring Boot Starter mit der SQL-API von Azure Cosmos DB
 
@@ -36,8 +36,6 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>, und klicken Sie auf **Ressource erstellen**.
 
-    ![Azure-Portal][AZ01]
-
 1. Klicken Sie auf **Datenbanken** und anschließend auf **Azure Cosmos DB**.
 
     ![Azure-Portal][AZ02]
@@ -50,13 +48,11 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
     * Wählen Sie für die API **Core (SQL)** aus.
     * Geben Sie den **Speicherort** für Ihre Datenbank an.
 
-    Wenn Sie diese Optionen angegeben haben, klicken Sie zum Erstellen Ihrer Datenbank auf **Überprüfen und erstellen**.
+    Klicken Sie nach Angabe dieser Optionen auf **Überprüfen und erstellen**, überprüfen Sie Ihre Angaben, und klicken Sie anschließend auf **Erstellen**.
 
     ![Azure-Portal][AZ03]
 
 1. Wenn Ihre Datenbank erstellt wurde, wird Sie in Ihrem Azure-**Dashboard** sowie auf den Seiten **Alle Ressourcen** und **Azure Cosmos DB** aufgeführt. Sie können in Ihrer Datenbank auf eine beliebige Stelle klicken, um die Eigenschaftenseite für Ihren Cache zu öffnen.
-
-    ![Azure-Portal][AZ04]
 
 1. Wenn die Eigenschaftenseite für Ihre Datenbank angezeigt wird, klicken Sie auf **Schlüssel**, und kopieren Sie Ihren URI sowie Ihre Zugriffsschlüssel für Ihre Datenbank. Diese Werte verwenden Sie in Ihrer Spring Boot-Anwendung.
 

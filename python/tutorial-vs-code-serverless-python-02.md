@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: b87ca4bdefafbfa3e23c9538d6c77357dc9ba99b
-ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
+ms.openlocfilehash: 4c4fab3227194884e1b9a77439efbe87099a6812
+ms.sourcegitcommit: 54d34557bb83f52a215bf9020263cb9f9782b41d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72278733"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74118093"
 ---
 # <a name="tutorial-create-a-python-function-for-azure-functions"></a>Tutorial: Erstellen einer Python-Funktion für Azure Functions
 
@@ -36,6 +36,9 @@ In diesem Artikel erstellen Sie eine Python-Funktion für Azure Functions mit Vi
     | Angeben eines Funktionsnamens | HttpExample | Der Name wird für einen Unterordner verwendet, der den Code der Funktion zusammen mit Konfigurationsdaten enthält, und definiert auch den Namen des HTTP-Endpunkts. Verwenden Sie „HttpExample“ anstelle der Standardeinstellung „HTTPTrigger“, um die Funktion selbst vom Trigger zu unterscheiden. |
     | Autorisierungsstufe | **Anonym** | Bei der anonymen Autorisierung ist die Funktion für jeden öffentlich zugänglich. |
     | Auswählen, wie Sie Ihr Projekt öffnen möchten | **In aktuellem Fenster öffnen** | Öffnet das Projekt im aktuellen Visual Studio Code-Fenster. |
+
+    > [!NOTE]
+    > Wenn sowohl Python 3.6 als auch Python 3.7 installiert ist, verwendet Visual Studio Code standardmäßig Python 3.6 für das Azure Functions-Projekt. Wenn Sie Python 3.7 verwenden möchten, müssen Sie derzeit zuerst eine Python 3.7-Umgebung erstellen und aktivieren und dann den Befehl `func init` über ein Terminal ausführen. Starten Sie anschließend von diesem Ordner aus Visual Studio Code mithilfe des Befehls `code .`.
 
 1. Nach kurzer Zeit wird eine Meldung angezeigt, dass das neue Projekt erstellt wurde. Im **Explorer** befindet sich der für die Funktion erstellte Unterordner, und Visual Studio Code öffnet die Datei *\_\_init\_\_.py*, die den Standardfunktionscode enthält:
 

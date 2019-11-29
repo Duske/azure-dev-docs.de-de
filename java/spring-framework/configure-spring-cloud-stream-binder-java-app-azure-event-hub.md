@@ -4,9 +4,6 @@ description: Erfahren Sie, wie Sie eine mit Spring Boot Initializer erstellte Ja
 services: event-hubs
 documentationcenter: java
 author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
 ms.author: brendm
 ms.date: 12/19/2018
 ms.devlang: java
@@ -14,16 +11,14 @@ ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 48dfa19177c52da4f296b3e19ae26e91b1d44c33
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 56ac71007af04d3294da811a879ebcf37f54ae73
+ms.sourcegitcommit: 54d34557bb83f52a215bf9020263cb9f9782b41d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68282701"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74118136"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>Erstellen einer Spring Cloud Stream Binder-Anwendung mit Azure Event Hubs
-
-## <a name="overview"></a>Übersicht
 
 In diesem Artikel wird beschrieben, wie Sie eine mit Spring Boot Initializer erstellte Java-basierte Spring Cloud Stream Binder-Anwendung mit Azure Event Hubs konfigurieren.
 
@@ -42,67 +37,69 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 ## <a name="create-an-azure-event-hub-using-the-azure-portal"></a>Erstellen eines Azure Event Hubs über das Azure-Portal
 
+Gehen Sie wie folgt vor, um einen Azure Event Hub zu erstellen:
+
 ### <a name="create-an-azure-event-hub-namespace"></a>Erstellen eines Azure Event Hub-Namespaces
 
 1. Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>, und melden Sie sich an.
 
-1. Klicken Sie auf **+ Ressource erstellen**, auf **Internet der Dinge** und dann auf **Event Hubs**.
+1. Klicken Sie auf **+ Ressource erstellen**, und suchen Sie nach **Event Hubs**.
+
+1. Klicken Sie auf **Create**.
 
    ![Erstellen eines Azure Event Hub-Namespaces][IMG01]
 
 1. Geben Sie auf der Seite **Namespace erstellen** die folgenden Informationen ein:
 
    * Geben Sie einen eindeutigen **Namen** ein, der als Teil des URI für Ihren Event Hub-Namespace verwendet wird. Beispiel: Wenn Sie **wingtiptoys** für **Name** eingegeben haben, lautet der URI *wingtiptoys.servicebus.windows.net*.
-   * Wählen Sie einen **Tarif** für Ihren Event Hub-Namespace aus.
+   * Tarif:
    * Wählen Sie das **Abonnement** aus, das Sie für Ihren Namespace verwenden möchten.
    * Legen Sie fest, ob eine neue **Ressourcengruppe** für Ihren Namespace erstellt werden soll, oder wählen Sie eine vorhandene Ressourcengruppe aus.
    * Geben Sie den **Speicherort** für Ihren Event Hub-Namespace an.
+   * Sie können auch die **Durchsatzeinheiten** für den Namespace angeben.
 
    ![Angeben der Optionen für den Azure Event Hub-Namespace][IMG02]
 
 1. Nachdem Sie die oben genannten Optionen angegeben haben, klicken Sie auf **Erstellen**, um den Namespace zu erstellen.
 
-### <a name="create-an-azure-event-hub-in-your-namespace"></a>Erstellen eines Azure Event Hubs in Ihrem Namespace
+## <a name="create-an-azure-event-hub-in-your-namespace"></a>Erstellen eines Azure Event Hubs in Ihrem Namespace
 
-1. Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>.
+Nachdem Sie Ihren Namespace bereitgestellt haben, können Sie darin einen Event Hub erstellen.
 
-1. Klicken Sie auf **Alle Ressourcen** und dann auf den von Ihnen erstellten Namespace.
+1. Navigieren Sie zum im vorherigen Schritt erstellten Namespace.
 
-   ![Auswählen des Azure Event Hub-Namespaces][IMG03]
+1. Klicken Sie auf der oberen Menüleiste auf **+ Event Hub**.
 
-1. Klicken Sie auf **Event Hubs** und dann auf **+ Event Hub**.
+1. Benennen Sie den Event Hub.
 
-   ![Hinzufügen eines neuen Azure Event Hubs][IMG04]
+1. Klicken Sie auf **Create**.
 
-1. Geben Sie auf der Seite **Event Hub erstellen** einen eindeutigen **Namen** für Ihren Event Hub ein, und klicken Sie dann auf **Erstellen**.
-
-   ![Erstellen eines Azure Event Hubs][IMG05]
-
-1. Nachdem Ihr Event Hub erstellt wurde, wird er auf der Seite **Event Hubs** aufgelistet.
-
-   ![Erstellen eines Azure Event Hubs][IMG06]
+   ![Erstellen des Event Hubs][IMG05]
 
 ### <a name="create-an-azure-storage-account-for-your-event-hub-checkpoints"></a>Erstellen eines Azure-Speicherkontos für Ihre Event Hub-Prüfpunkte
 
+Gehen Sie wie folgt vor, um ein Speicherkonto für Event Hub-Prüfpunkte zu erstellen:
+
 1. Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>.
 
-1. Klicken Sie auf **+ Ressource erstellen**, auf **Speicher** und dann auf **Speicherkonto**.
+1. Klicken Sie auf **+Erstellen**, auf **Speicher** und anschließend auf **Speicherkonto**.
 
-   ![Erstellen eines Azure-Speicherkontos][IMG07]
+1. Geben Sie auf der Seite **Speicherkonto erstellen** folgende Informationen ein:
 
-1. Geben Sie auf der Seite **Namespace erstellen** die folgenden Informationen ein:
-
-   * Geben Sie einen eindeutigen **Namen** ein, der als Teil des URI für Ihr Speicherkonto verwendet wird. Beispiel: Wenn Sie **wingtiptoys** für **Name** eingegeben haben, lautet der URI *wingtiptoys.core.windows.net*.
-   * Wählen Sie für **Kontoart** die Option **BLOB-Speicher** aus.
-   * Geben Sie den **Speicherort** für das Speicherkonto an.
    * Wählen Sie das **Abonnement** aus, das Sie für Ihr Speicherkonto verwenden möchten.
    * Legen Sie fest, ob eine neue **Ressourcengruppe** für Ihr Speicherkonto erstellt werden soll, oder wählen Sie eine vorhandene Ressourcengruppe aus.
+   * Geben Sie unter **Name** einen eindeutigen Namen für das Speicherkonto ein.
+   * Geben Sie den **Speicherort** für das Speicherkonto an.
 
    ![Angeben der Optionen für das Azure-Speicherkonto][IMG08]
 
-1. Nachdem Sie die oben genannten Optionen angegeben haben, klicken Sie auf **Erstellen**, um das Speicherkonto zu erstellen.
+1. Klicken Sie nach Angabe der obigen Optionen auf **Überprüfen + erstellen**, um Ihr Speicherkonto zu erstellen.
+
+1. Überprüfen Sie Ihre Angaben, und klicken Sie auf **Erstellen**.  Die Bereitstellung dauert mehrere Minuten.
 
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Erstellen einer einfachen Spring Boot-Anwendung mit Spring Initializr
+
+Gehen Sie zum Erstellen einer Spring Boot-Anwendung wie folgt vor:
 
 1. Navigieren Sie zu <https://start.spring.io/>.
 
@@ -123,8 +120,6 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 1. Nachdem Sie die oben genannten Optionen angegeben haben, klicken Sie auf **Generate Project** (Projekt generieren).
 
 1. Laden Sie das Projekt nach entsprechender Aufforderung unter einem Pfad auf dem lokalen Computer herunter.
-
-   ![Herunterladen des Spring-Projekts][SI02]
 
 1. Nachdem Sie die Dateien auf Ihrem lokalen System extrahiert haben, kann Ihre einfache Spring Boot-Anwendung bearbeitet werden.
 
@@ -245,10 +240,9 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    spring.cloud.azure.eventhub.checkpoint-storage-account=wingtiptoysstorage
    spring.cloud.stream.bindings.input.destination=wingtiptoyshub
    spring.cloud.stream.bindings.input.group=$Default
-   spring.cloud.stream.bindings.output.destination=wingtiptoyshub
    spring.cloud.stream.eventhub.bindings.input.consumer.checkpoint-mode=MANUAL
    ```
-   Hinweis:
+   Hierbei gilt:
 
    |                          Feld                           |                                                                                   BESCHREIBUNG                                                                                    |
    |----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -364,6 +358,8 @@ In diesem Abschnitt erstellen Sie die Java-Klassen, die erforderlich sind, um Er
 1. Speichern und schließen Sie die Datei *EventhubSink.java*.
 
 ## <a name="build-and-test-your-application"></a>Erstellen und Testen der Anwendung
+
+Führen Sie die folgenden Schritte aus, um Ihre Anwendung zu erstellen und zu testen:
 
 1. Öffnen Sie eine Eingabeaufforderung, und wechseln Sie zum Ordnerverzeichnis, in dem sich die Datei *pom.xml* befindet. Beispiel:
 

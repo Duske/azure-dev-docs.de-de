@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 81121490f435c7ff2e2fe8ab397fa18bab7113a3
-ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
+ms.openlocfilehash: 0aa353d741906c887723a012bb6d4abfc719a049
+ms.sourcegitcommit: 54d34557bb83f52a215bf9020263cb9f9782b41d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72278808"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74118214"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>Tutorial: Erstellen und Bereitstellen von Azure Functions serverlos in Python mit Visual Studio Code
 
@@ -38,7 +38,7 @@ Wenn Sie kein Azure-Abonnement haben, [registrieren Sie sich jetzt](https://azur
 
 Installieren Sie folgende Software:
 
-- Python 3.6.x wie für Azure Functions erforderlich. [Python 3.6.8](https://www.python.org/downloads/release/python-368/) ist die aktuelle 3.6.x-Version.
+- Python 3.7 oder Python 3.6 gemäß den Anforderungen von Azure Functions. Die neuesten kompatiblen Versionen sind [Python 3.7.5](https://www.python.org/downloads/release/python-375/) und [Python 3.6.8](https://www.python.org/downloads/release/python-368/).
 - [Visual Studio Code](https://code.visualstudio.com/).
 - Die [Python-Erweiterung](https://marketplace.visualstudio.com/items?itemName=ms-python.python) wie in [Erste Schritte in Python mit Visual Studio Code](https://code.visualstudio.com/docs/python/python-tutorial) beschrieben.
 - Die [Azure Functions-Erweiterung](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions). Allgemeine Informationen finden Sie im [vscode-azurefunctions-GitHub-Repository](https://github.com/Microsoft/vscode-azurefunctions).
