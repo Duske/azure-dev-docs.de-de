@@ -1,25 +1,20 @@
 ---
 title: Bereitstellen eines Containerimages für eine Node.js-App in Visual Studio Code
 description: 'Teil 4 des Tutorials: Bereitstellen des Images in Azure App Service'
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.author: kraigb
-ms.openlocfilehash: 60eb5be0b3d4049c7955195f3bb6bc85dd2b2498
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: b43f93ba97950c84302db2e18f69b506e44dc84e
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686018"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466540"
 ---
 # <a name="deploy-the-image-to-azure-app-service"></a>Bereitstellen des Images in Azure App Service
 
 [Vorheriger Schritt: Erstellen des App-Images](tutorial-vscode-docker-node-03.md)
 
-In diesem Schritt stellen Sie das Image, das Sie in eine Registrierung in [Azure App Service](https://azure.microsoft.com/en-us/services/app-service/) gepusht haben, direkt über Visual Studio Code bereit.
+In diesem Schritt stellen Sie das Image, das Sie in eine Registrierung in [Azure App Service](https://azure.microsoft.com/services/app-service/) gepusht haben, direkt über Visual Studio Code bereit.
 
 1. Erweitern Sie im **DOCKER**-Explorer unter **Registrierungen** die Knoten für Ihr Image, klicken Sie mit der rechten Maustaste auf `:latest`, und wählen Sie **Deploy Image to Azure App Service** (Image in Azure App Service bereitstellen) aus.
 
