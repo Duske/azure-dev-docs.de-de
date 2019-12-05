@@ -2,27 +2,23 @@
 title: Paralleles regionsübergreifendes Erstellen von virtuellen Computern | Microsoft-Dokumentation
 description: Beispielcode zum parallelen Erstellen virtueller Computer in verschiedenen Azure-Regionen mithilfe des Azure SDKs für Java
 author: rloutlaw
-manager: douge
 ms.assetid: e5a36699-2d96-4571-84f9-a6af13f3c067
-ms.service: azure
-ms.devlang: java
 ms.topic: article
 ms.date: 03/30/2017
-ms.author: brendm
 ms.reviewer: asirveda
-ms.openlocfilehash: 8aacf198657da96218ef48b4714c26c6199724fc
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 2d4cca2552e4a85ebc231531d7e55ffda6d1909f
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691788"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812282"
 ---
 # <a name="create-virtual-machines-across-multiple-regions-from-your-java-applications"></a>Erstellen virtueller Computer in mehreren Regionen über Ihre Java-Anwendungen
 
 [Dieses Beispiel](https://github.com/Azure-Samples/compute-java-create-virtual-machines-across-regions-in-parallel) erstellt virtuelle Computer parallel in verschiedenen Azure-Regionen unter Verwendung der [Azure-Verwaltungsbibliotheken für Java](https://github.com/Azure/azure-sdk-for-java).
 
 > [!IMPORTANT]
-> In dem Beispiel werden insgesamt 48 virtuelle Computer mit Ubuntu 16.04 LTS und der Größe [STANDARD_DS3_V2](http://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-sizes) in vier Regionen erstellt. Die virtuellen Computer werden durch den Beispielcode vor dem Beenden wieder gelöscht. [Überprüfen Sie Ihre Diensteinschränkungen und Kontingente](http://docs.microsoft.com/azure/azure-subscription-service-limits), bevor Sie dieses Beispiel mit der Standardanzahl von virtuellen Computern ausführen.
+> In dem Beispiel werden insgesamt 48 virtuelle Computer mit Ubuntu 16.04 LTS und der Größe [STANDARD_DS3_V2](/azure/virtual-machines/virtual-machines-windows-sizes) in vier Regionen erstellt. Die virtuellen Computer werden durch den Beispielcode vor dem Beenden wieder gelöscht. [Überprüfen Sie Ihre Diensteinschränkungen und Kontingente](/azure/azure-subscription-service-limits), bevor Sie dieses Beispiel mit der Standardanzahl von virtuellen Computern ausführen.
 
 ## <a name="run-the-sample"></a>Ausführen des Beispiels
 

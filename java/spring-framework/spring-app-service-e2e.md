@@ -2,18 +2,16 @@
 title: Bereitstellen einer Spring/Tomcat-App in App Service mit Azure Database for MySQL
 description: End-to-End-Tutorial für Java App Service mit MySQL
 author: KarlErickson
-manager: barbkess
 ms.author: karler
 ms.date: 11/12/2019
 ms.service: app-service
-ms.devlang: java
 ms.topic: article
-ms.openlocfilehash: 2f5fc593733ea1f90d87ef9fbf98d6656410fa66
-ms.sourcegitcommit: 25cef39b178a175822bf29f28fb2658bb8df8c59
+ms.openlocfilehash: aa26952b320392beb553f327920fe5bd905a0b85
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74040537"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811826"
 ---
 # <a name="deploy-a-spring-app-to-app-service-with-mysql"></a>Bereitstellen einer Spring-App in App Service mit MySQL
 

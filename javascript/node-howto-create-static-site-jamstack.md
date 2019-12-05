@@ -1,20 +1,15 @@
 ---
 title: Erstellen von statischen Websites mit Node.js, APIs und Markup
 description: In diesem Artikel wird erläutert, wie Azure zum Erstellen einer JAMstack-App (JavaScript, APIs und Markup) verwendet wird.
-author: kraigb
-manager: barbkess
-ms.devlang: nodejs
 ms.topic: article
-ms.service: azure-nodejs
 ms.date: 08/20/2019
-ms.author: kraigb
 ms.custom: seo-javascript-september2019
-ms.openlocfilehash: 5fae0fb9e7d76d33e39ec85a27c46c339b4b38f4
-ms.sourcegitcommit: 945e92dae2fa4521eebdc049c65273ae6b5470ee
+ms.openlocfilehash: 6c804185859611f4534d5fa4e62b8e2585d14aa5
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71813708"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467243"
 ---
 # <a name="build-jamstack-static-site-web-apps-on-azure-with-nodejs"></a>Erstellen von JAMstack-Web-Apps (statischen Websites) in Azure mit Node.js
 

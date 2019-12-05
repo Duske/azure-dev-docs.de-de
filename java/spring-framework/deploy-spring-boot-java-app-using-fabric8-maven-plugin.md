@@ -3,23 +3,16 @@ title: Bereitstellen einer Spring Boot-App unter Verwendung des Fabric8 Maven-Pl
 description: In diesem Tutorial werden die Schritte zum Bereitstellen einer Spring Boot-Anwendung in Microsoft Azure mit dem Fabric8-Plug-In für Apache Maven erläutert.
 services: container-service
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
-ms.author: brendm
 ms.date: 12/19/2018
-ms.devlang: java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.workload: na
-ms.openlocfilehash: 9fd6268c5c004a9f84f1f516476aea3f0f70b07d
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: dd6d926b4d4bb21e16fbb922f2daa29cd9d09301
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68281501"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811884"
 ---
 # <a name="deploy-a-spring-boot-app-using-the-fabric8-maven-plugin"></a>Bereitstellen einer Spring Boot-App unter Verwendung des Fabric8 Maven-Plug-Ins
 
@@ -142,7 +135,7 @@ Im Folgenden werden die Schritte zum Erstellen einer Spring Boot-Webanwendung un
    ```azurecli
    az group create --name=wingtiptoys-kubernetes --location=westeurope
    ```
-   Hinweis:  
+   Hierbei gilt:  
       * *wingtiptoys-kubernetes* ist ein eindeutiger Name für Ihre Ressourcengruppe.  
       * *westeurope* ist ein geeigneter geografischer Ort für Ihre Anwendung.  
 
@@ -168,7 +161,7 @@ Im Folgenden werden die Schritte zum Erstellen einer Spring Boot-Webanwendung un
    ```azurecli 
    az acs create --orchestrator-type kubernetes --resource-group wingtiptoys-kubernetes --name wingtiptoys-cluster --generate-ssh-keys --dns-prefix=wingtiptoys
    ```
-   Hinweis:  
+   Hierbei gilt:  
       * *wingtiptoys-kubernetes* ist der Name Ihrer Ressourcengruppe von weiter oben in diesem Artikel.  
       * *wingtiptoys-cluster* ist ein eindeutiger Name für Ihren Kubernetes-Cluster.
       * *wingtiptoys* ist ein eindeutiger DNS-Name für Ihre Anwendung.
@@ -254,7 +247,7 @@ Im Folgenden werden die Schritte zum Erstellen einer Spring Boot-Webanwendung un
    ```azurecli
    az acr create --admin-enabled --resource-group wingtiptoys-kubernetes --location westeurope --name wingtiptoysregistry --sku Basic
    ```
-   Hinweis:
+   Hierbei gilt:
 
    | Parameter | BESCHREIBUNG |
    |---|---|

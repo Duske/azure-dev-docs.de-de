@@ -2,20 +2,16 @@
 title: Verwalten von Pools für elastische SQL-Datenbank-Instanzen mit Java | Microsoft-Dokumentation
 description: Beispielcode zum Erstellen und Konfigurieren von Azure SQL-Datenbanken mithilfe des Azure SDKs für Java
 author: rloutlaw
-manager: douge
 ms.assetid: 9b461de8-46bc-4650-8e9e-59531f4e2a53
 ms.topic: article
-ms.service: azure
-ms.devlang: java
 ms.date: 3/30/2017
-ms.author: brendm
 ms.reviewer: asirveda
-ms.openlocfilehash: f88d72c2ae15c999c43ce08a9717a67edf47644b
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 9a30217ccd336b0fa656910c9015615a95dc193a
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691856"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812330"
 ---
 # <a name="manage-azure-sql-databases-in-elastic-pools-from-your-java-applications"></a>Verwalten von Azure SQL-Datenbanken in Pools für elastische Datenbanken über Ihre Java-Anwendungen
 

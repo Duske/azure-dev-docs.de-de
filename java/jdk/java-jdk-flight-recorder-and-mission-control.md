@@ -1,20 +1,15 @@
 ---
 title: Überprüfen von Daten mit Java Flight Recorder und Mission Control
 description: Leitfaden zum Sammeln und Überprüfen von App-Daten mithilfe von Java Flight Recorder und Mission Control.
-author: bmitchell287
-manager: douge
-ms.author: brendm
 ms.date: 04/09/2019
-ms.devlang: java
 ms.topic: conceptual
-ms.service: azure
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: c33b4586b801bda58493efdebc6e6fb6b8136992
-ms.sourcegitcommit: 50fbde9a640468147953d62f7ae0fca4685ed5e6
+ms.openlocfilehash: 14084d2fb89c8adc78a0455b8bdd2cc0b5b6ec4c
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71225232"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812249"
 ---
 # <a name="monitor-and-manage-java-workloads-with-java-flight-recorder-jfr-and-zulu-mission-control"></a>Überwachen und Verwalten von Java-Workloads mit Java Flight Recorder (JFR) und Zulu Mission Control
 

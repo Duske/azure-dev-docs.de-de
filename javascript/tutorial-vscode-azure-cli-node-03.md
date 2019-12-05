@@ -1,19 +1,14 @@
 ---
 title: Erstellen der Azure App Service-Instanz zum Hosten der App mit der Azure-Befehlszeilenschnittstelle
 description: 'Teil 3 des Tutorials: Erstellen der App Service-Instanz'
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.author: kraigb
-ms.openlocfilehash: f8349d352d275abcc8126bb9dd1794d408045b29
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: afac5aa2f610384b537c1f235b99cd29e6ff86d0
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686136"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466772"
 ---
 # <a name="create-the-app-service"></a>Erstellen der App Service-Instanz
 

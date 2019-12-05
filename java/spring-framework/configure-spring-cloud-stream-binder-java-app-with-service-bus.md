@@ -3,17 +3,15 @@ title: Verwenden von Spring Cloud Azure Stream Binder für Azure Service Bus
 description: In diesem Artikel wird die Verwendung von Spring Cloud Azure Stream Binder zum Senden und Empfangen von Nachrichten an und von Azure Service Bus veranschaulicht.
 author: seanli1988
 manager: kyliel
-ms.author: Sean.Li
+ms.author: seal
 ms.date: 08/21/2019
-ms.devlang: java
-ms.service: azure-java
 ms.topic: article
-ms.openlocfilehash: 48bb5ee53c88910528ad2ed7f06c626e0a431275
-ms.sourcegitcommit: f519a1ee8017850b2fa37049af3bac1ea5ca5516
+ms.openlocfilehash: 2d888d225a8bcf5c957da11e18ea86d09ec8e897
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69892384"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812050"
 ---
 # <a name="how-to-use-spring-cloud-azure-stream-binder-for-azure-service-bus"></a>Verwenden von Spring Cloud Azure Stream Binder für Azure Service Bus
 
@@ -268,7 +266,7 @@ In diesem Abschnitt erstellen Sie die Java-Klassen, die erforderlich sind, um Na
 
 ## <a name="clean-up-resources"></a>Bereinigen von Ressourcen
 
-Verwenden Sie das [Azure-Portal](http://ms.portal.azure.com/), um die in diesem Artikel erstellten Ressourcen zu löschen, wenn Sie sie nicht mehr benötigen, um unerwartete Gebühren zu vermeiden.
+Verwenden Sie das [Azure-Portal](https://portal.azure.com/), um die in diesem Artikel erstellten Ressourcen zu löschen, wenn Sie sie nicht mehr benötigen, um unerwartete Gebühren zu vermeiden.
 
 ## <a name="next-steps"></a>Nächste Schritte
 

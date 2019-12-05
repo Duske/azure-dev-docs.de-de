@@ -1,19 +1,14 @@
 ---
 title: Bereitstellen der Azure Functions-Anwendung in Visual Studio Code
 description: 'Teil 4 des Tutorials: Bereitstellen der Funktions-App in der Cloud.'
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.author: kraigb
-ms.openlocfilehash: 53d0dd11567084d42de71a0f737cf8b9f5fc5249
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: 690477392fffda4cd94d7271b061c195ccceb42b
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71685924"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467102"
 ---
 # <a name="deploy-the-functions-app"></a>Bereitstellen der Funktions-App
 
@@ -29,7 +24,7 @@ ms.locfileid: "71685924"
 
 1. Geben Sie an der nächsten Eingabeaufforderung einen global eindeutigen Namen für Ihre Funktions-App ein, und drücken Sie die **EINGABETASTE**. Gültige Zeichen für die Namen von Funktions-Apps sind die Buchstaben a – z, die Ziffern 0 – 9 und der Bindestrich (-).
 
-1. Wählen Sie an der nächsten Eingabeaufforderung eine Azure-[Region](https://azure.microsoft.com/en-us/regions/) in Ihrer Nähe aus.
+1. Wählen Sie an der nächsten Eingabeaufforderung eine Azure-[Region](https://azure.microsoft.com/regions/) in Ihrer Nähe aus.
 
 1. Im Bereich **Ausgabe** von VS Code für **Azure Functions** wird der Fortschritt angezeigt:
 

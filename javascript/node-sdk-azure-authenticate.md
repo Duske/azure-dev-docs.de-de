@@ -1,21 +1,16 @@
 ---
 title: Authentifizieren mit den Azure-Verwaltungsmodulen für Node.js
 description: Authentifizieren mit einem Dienstprinzipal bei den Azure-Verwaltungsmodulen für Node.js
-author: kraigb
-manager: barbkess
-ms.author: kraigb
-ms.date: 06/17/2017
 ms.topic: article
-ms.prod: azure
-ms.devlang: nodejs
-ms.openlocfilehash: 87a30973c8a295540924e41aee9c8e0af455b41f
-ms.sourcegitcommit: 380300c283f3df8a87c7c02635eae3596732fb72
+ms.date: 06/17/2017
+ms.openlocfilehash: bf368183b63dbe42dd02d8236cf7e7b73cbc1845
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73661231"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467273"
 ---
-# <a name="authenticate-with-the-azure-modules-for-nodejs"></a>Authentifizieren mit den Azure-Modulen für Node.js 
+# <a name="authenticate-with-the-azure-modules-for-nodejs"></a>Authentifizieren mit den Azure-Modulen für Node.js
 
 Für alle Dienst-APIs ist bei der Instanziierung die Authentifizierung mit einem `credentials`-Objekt erforderlich. Es gibt drei Möglichkeiten, die erforderlichen Anmeldeinformationen über das Azure SDK für Node.js zu authentifizieren und zu erstellen: 
 

@@ -1,19 +1,14 @@
 ---
 title: Erstellen einer Node.js-App zur Bereitstellung in Azure mit der Azure-Befehlszeilenschnittstelle (Azure CLI)
 description: 'Teil 2 des Tutorials: Erstellen des App-Codes.'
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.author: kraigb
-ms.openlocfilehash: a39e187db3feb165cfa469176adbcfcab2c6a886
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: dba089c58cf6413263348b7bdeb975852c2e6a2f
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686172"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467179"
 ---
 # <a name="create-the-app-code-using-express"></a>Erstellen des App-Codes mit Express
 

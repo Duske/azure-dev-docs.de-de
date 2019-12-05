@@ -3,30 +3,27 @@ title: Authentifizieren bei den Azure-Verwaltungsbibliotheken für Java
 description: Authentifizieren mit einem Dienstprinzipal bei den Azure-Verwaltungsbibliotheken für Java
 keywords: Azure, Java, SDK, API, Maven, Gradle, Authentifizierung, Active Directory, Dienstprinzipal
 author: rloutlaw
-ms.author: brendm
-manager: douge
 ms.date: 04/16/2017
 ms.topic: article
-ms.devlang: java
 ms.service: multiple
 ms.assetid: 10f457e3-578b-4655-8cd1-51339226ee7d
 ms.custom: seo-java-september2019
-ms.openlocfilehash: 373a662f8dc500ca188aba5fdde97437c3eb7d74
-ms.sourcegitcommit: ad1b12d9ebb6113991ce48255f5b491364490079
+ms.openlocfilehash: 9be02a678157292772d7c7109bf8625e8c9bb74f
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73842217"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812430"
 ---
-# <a name="authenticate-with-the-azure-libraries-for-java"></a>Authentifizieren bei den Azure-Bibliotheken für Java 
+# <a name="authenticate-with-the-azure-libraries-for-java"></a>Authentifizieren bei den Azure-Bibliotheken für Java
 
 ## <a name="connect-to-services-with-connection-strings"></a>Herstellen einer Verbindung mit Diensten mit Verbindungszeichenfolgen
 
 Dieser Artikel zeigt das Authentifizieren bei den Azure-Bibliotheken für Java. Die meisten Azure-Dienstbibliotheken verwenden eine Verbindungszeichenfolge oder einen sicheren Schlüssel für die Authentifizierung. SQL-Datenbank enthält beispielsweise Benutzernamen-und Kennwortinformationen in der JDBC-Verbindungszeichenfolge:
 
 ```java
-String url = "jdbc:sqlserver://myazuredb.database.windows.net:1433;" + 
-        "database=testjavadb;" + 
+String url = "jdbc:sqlserver://myazuredb.database.windows.net:1433;" +
+        "database=testjavadb;" +
         "user=myazdbuser;" +
         "password=myazdbpass;" +
         "encrypt=true;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
@@ -37,12 +34,12 @@ Azure Storage nutzt einen Speicherschlüssel zum Autorisieren der Anwendung:
 
 ```java
 final String storageConnection = "DefaultEndpointsProtocol=https;"
-        + "AccountName=" + storageName 
+        + "AccountName=" + storageName
         + ";AccountKey=" + storageKey
         + ";EndpointSuffix=core.windows.net";
 ```
 
-Dienstverbindungszeichenfolgen werden zum Authentifizieren bei anderen Azure-Diensten wie [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/sql-api-java-application#UseService), [Redis Cache](https://docs.microsoft.com/azure/redis-cache/cache-java-get-started) und [Service Bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-java-how-to-use-queues) verwendet. Die Verbindungszeichenfolgen können mithilfe des Azure-Portals oder der CLI abgerufen werden.  Sie können auch die Azure-Verwaltungsbibliotheken für Java zum Abfragen von Ressourcen verwenden, um Verbindungszeichenfolgen in Ihrem Code zu erstellen. 
+Dienstverbindungszeichenfolgen werden zum Authentifizieren bei anderen Azure-Diensten wie [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/sql-api-java-application#UseService), [Redis Cache](https://docs.microsoft.com/azure/redis-cache/cache-java-get-started) und [Service Bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-java-how-to-use-queues) verwendet. Die Verbindungszeichenfolgen können mithilfe des Azure-Portals oder der CLI abgerufen werden.  Sie können auch die Azure-Verwaltungsbibliotheken für Java zum Abfragen von Ressourcen verwenden, um Verbindungszeichenfolgen in Ihrem Code zu erstellen.
 
 Dieser Code verwendet beispielsweise die Verwaltungsbibliotheken, um eine Verbindungszeichenfolge für ein Speicherkonto zu erstellen:
 
@@ -76,11 +73,11 @@ import com.microsoft.azure.AzureEnvironment;
 
 // ...
 
-ApplicationTokenCredentials credentials = new ApplicationTokenCredentials(client, 
+ApplicationTokenCredentials credentials = new ApplicationTokenCredentials(client,
         tenant,
-        key, 
+        key,
         AzureEnvironment.AZURE);
-        
+
 Azure azure = Azure
         .configure()
         .withLogLevel(LogLevel.NONE)
@@ -88,9 +85,9 @@ Azure azure = Azure
         .withDefaultSubscription();
 ```
 
-`client`, `tenant` und `key` sind die gleichen Dienstprinzipalwerte, die auch bei der [dateibasierten Authentifizierung](#mgmt-file) verwendet werden. Der `AzureEnvironment.AZURE`-Wert erstellt Anmeldeinformationen für die öffentliche Azure-Cloud. Ändern Sie diesen Wert, wenn Sie auf eine andere Cloud (etwa `AzureEnvironment.AZURE_GERMANY`) zugreifen müssen.  
+`client`, `tenant` und `key` sind die gleichen Dienstprinzipalwerte, die auch bei der [dateibasierten Authentifizierung](#mgmt-file) verwendet werden. Der `AzureEnvironment.AZURE`-Wert erstellt Anmeldeinformationen für die öffentliche Azure-Cloud. Ändern Sie diesen Wert, wenn Sie auf eine andere Cloud (etwa `AzureEnvironment.AZURE_GERMANY`) zugreifen müssen.
 
- Lesen Sie die Dienstprinzipalwerte aus Umgebungsvariablen oder einem Geheimnisverwaltungsspeicher wie [Key Vault](/azure/key-vault/key-vault-whatis) ein. Legen Sie diese Werte nicht als Klartextzeichenfolgen in Ihrem Code fest, damit Anmeldeinformationen nicht versehentlich im Versionskontrollverlauf verfügbar gemacht werden.   
+ Lesen Sie die Dienstprinzipalwerte aus Umgebungsvariablen oder einem Geheimnisverwaltungsspeicher wie [Key Vault](/azure/key-vault/key-vault-whatis) ein. Legen Sie diese Werte nicht als Klartextzeichenfolgen in Ihrem Code fest, damit Anmeldeinformationen nicht versehentlich im Versionskontrollverlauf verfügbar gemacht werden.
 
 <a name="mgmt-file"></a>
 
@@ -112,7 +109,7 @@ graphURL=https\://graph.windows.net/
 
 - subscription: Verwenden Sie den *id*-Wert aus `az account show` in der Azure CLI 2.0.
 - client: Verwenden Sie den *appId*-Wert aus der Ausgabe eines Dienstprinzipals, der zum Ausführen der Anwendung erstellt wurde. Wenn kein Dienstprinzipal für Ihre App vorhanden ist, [erstellen Sie einen mit der Azure CLI 2.0](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli).
-- key: Verwenden Sie den *password*-Wert aus der CLI-Ausgabe zur Erstellung des Dienstprinzipals. 
+- key: Verwenden Sie den *password*-Wert aus der CLI-Ausgabe zur Erstellung des Dienstprinzipals.
 - tenant: Verwenden Sie den *tenant*-Wert aus der CLI-Ausgabe zur Erstellung des Dienstprinzipals.
 
 Speichern Sie diese Datei an einem sicheren Ort in Ihrem System, an dem sie vom Code gelesen werden kann. Legen Sie eine Umgebungsvariable mit dem vollständigen Pfad zur Datei in der Shell fest:
@@ -124,7 +121,7 @@ export AZURE_AUTH_LOCATION=/Users/raisa/azureauth.properties
 Erstellen Sie das Einstiegspunktobjekt `Azure`, um mit der Verwendung der Bibliotheken zu beginnen. Lesen Sie den Speicherort der Eigenschaftendatei über die Umgebungsvariable ein.
 
 ```java
-// pull in the location of the authentication properties file from the environment 
+// pull in the location of the authentication properties file from the environment
 final File credFile = new File(System.getenv("AZURE_AUTH_LOCATION"));
 
 Azure azure = Azure
@@ -133,6 +130,3 @@ Azure azure = Azure
         .authenticate(credFile)
         .withDefaultSubscription();
 ```
-
-
-

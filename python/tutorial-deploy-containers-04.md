@@ -1,20 +1,15 @@
 ---
 title: 'Tutorial: Streamen von Protokollen aus Azure App Service für einen Container in Visual Studio Code'
 description: 'Tutorialschritt 4: Anzeigen von Protokollen aus Azure App Service zum Überwachen des Verhaltens'
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
-ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 12cc4880a7001fc51b0e70f89f177390c5fd0f45
-ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
+ms.openlocfilehash: e9b54e53763b729f5042cfb0d8df438650fd362f
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72278703"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466991"
 ---
 # <a name="tutorial-stream-logs-from-azure-app-service-for-a-container"></a>Tutorial: Streamen von Protokollen aus Azure App Service für einen Container
 

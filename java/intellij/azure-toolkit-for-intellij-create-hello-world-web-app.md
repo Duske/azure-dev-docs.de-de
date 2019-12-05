@@ -5,23 +5,19 @@ services: app-service
 keywords: Java, IntelliJ, Web-App, Azure App Service, Hallo Welt, Hello World, Schnellstart
 documentationcenter: java
 author: selvasingh
-manager: douge
-editor: ''
 ms.assetid: 75ce7b36-e3ae-491d-8305-4b42ce37db4e
-ms.author: brendm
 ms.reviewer: asirveda
 ms.date: 02/01/2018
-ms.devlang: java
 ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 695622ee4de0f0e9b99255ac814bb3b5403957b8
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 21c680281de231cff7c3f2f2044c63383c5a0e4c
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691595"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811153"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-intellij"></a>Erstellen einer „Hello World“-Web-App für Azure App Service mit IntelliJ
 
@@ -44,7 +40,7 @@ Mithilfe des Open-Source-Plug-Ins [Azure-Toolkit für IntelliJ](https://plugins.
 
    ![Plug-In „Azure-Toolkit für IntelliJ“ im Marketplace][marketplace]
 
-2. Melden Sie sich bei Ihrem Azure-Konto an. Öffnen Sie hierzu über die Seitenleiste den **Azure-Explorer**, und klicken Sie anschließend auf der Leiste am oberen Rand auf das Symbol für **die Azure-Anmeldung**, oder navigieren Sie im IDEA-Menü zu **Tools > Azure >Azure Sign in** (Extras > Azure > Azure-Anmeldung).
+2. Öffnen Sie zur Anmeldung beim Azure-Konto Randleiste **Azure Explorer**, und klicken Sie dann auf die **Azure Sign In** in der Leiste oben auf (oder im Menü der IDEE **Tools/Azure/Azure-Anmeldung**).
 
    ![IntelliJ-Befehl für Azure-Anmeldung][I01]
 

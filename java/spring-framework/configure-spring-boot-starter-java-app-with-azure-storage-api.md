@@ -3,23 +3,17 @@ title: Verwenden von Spring Boot Starter mit der Azure Storage-API
 description: Erfahren Sie, wie Sie eine Spring Boot Initializer-App mit der Azure Storage-API konfigurieren.
 services: storage
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
-ms.author: brendm
 ms.date: 12/19/2018
-ms.devlang: java
 ms.service: storage
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: storage
-ms.openlocfilehash: 5524b131d1019128ef9deb8a2ebf8f68f7e7b629
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 5f61f3eb721c475b0941b2215a0a180ef00ea3d3
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68283081"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812110"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-storage-api"></a>Verwenden von Spring Boot Starter mit der Azure Storage-API
 
@@ -32,7 +26,7 @@ In diesem Artikel wird beschrieben, wie Sie eine benutzerdefinierte Anwendung mi
 Für die Durchführung der Schritte in diesem Artikel müssen folgende Voraussetzungen erfüllt sein:
 
 * Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) anwenden oder sich für ein [Kostenloses Azure-Konto](https://azure.microsoft.com/pricing/free-trial/) registrieren
-* Die [Azure-Befehlszeilenschnittstelle (CLI)](http://docs.microsoft.com/cli/azure/overview)
+* Die [Azure-Befehlszeilenschnittstelle (CLI)](/cli/azure/overview)
 * Ein unterstütztes Java Development Kit (JDK). Weitere Informationen zu den für die Entwicklung in Azure verfügbaren JDKs finden Sie unter <https://aka.ms/azure-jdks>.
 * [Maven](http://maven.apache.org/) von Apache (ab Version 3.0)
 
@@ -108,7 +102,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    ```azurecli
    az group create --name wingtiptoysresources --location westus
    ```
-   Hinweis:
+   Hierbei gilt:
 
    | Parameter | BESCHREIBUNG |
    |---|---|
@@ -134,7 +128,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    ```azurecli
    az storage account create --name wingtiptoysstorage --resource-group wingtiptoysresources --location westus --sku Standard_LRS
    ```
-   Hinweis:
+   Hierbei gilt:
 
    | Parameter | BESCHREIBUNG |
    |---|---|
@@ -164,7 +158,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    ```azurecli
    az storage account show-connection-string --name wingtiptoysstorage --resource-group wingtiptoysresources
    ```
-   Hinweis:
+   Hierbei gilt:
 
    | Parameter | BESCHREIBUNG |
    | ---|---|

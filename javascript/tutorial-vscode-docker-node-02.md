@@ -1,19 +1,14 @@
 ---
 title: Verwenden einer Containerregistrierung in Visual Studio Code
 description: 'Teil 2 des Tutorials: Verwenden einer Containerregistrierung'
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.author: kraigb
-ms.openlocfilehash: 790267333cadc1208b6a750e487f0e459e87185d
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: 7d51e8011824ec19e9530f9bc94bcb2ce07f2851
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686250"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466629"
 ---
 # <a name="use-a-container-registry"></a>Verwenden einer Containerregistrierung
 
@@ -21,7 +16,7 @@ ms.locfileid: "71686250"
 
 In diesem Schritt richten Sie eine geeignete Containerregistrierung für Ihr App-Image ein. Containerfähige Hostingdienste wie Azure App Service pullen dann die Images aus der Registrierung.
 
-In diesem Tutorial wird [Azure Container Registry](https://azure.microsoft.com/en-us/services/container-registry/) (ACR) verwendet, eine private, sichere, gehostete Registrierung für Ihre Images. Die hier gezeigten Tools und Prozesse funktionieren jedoch auch mit anderen Registrierungen wie [Docker Hub](https://hub.docker.com/).
+In diesem Tutorial wird [Azure Container Registry](https://azure.microsoft.com/services/container-registry/) (ACR) verwendet, eine private, sichere, gehostete Registrierung für Ihre Images. Die hier gezeigten Tools und Prozesse funktionieren jedoch auch mit anderen Registrierungen wie [Docker Hub](https://hub.docker.com/).
 
 ## <a name="create-an-azure-container-registry"></a>Erstellen einer Azure-Containerregistrierung
 

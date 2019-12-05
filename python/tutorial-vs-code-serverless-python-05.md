@@ -1,20 +1,15 @@
 ---
 title: 'Tutorial: Bereitstellen von Azure Functions in Python mit Visual Studio Code'
 description: 'Tutorialschritt 5: Bereitstellen von Python-Funktionscode in Azure, Streamen von Protokollen und Synchronisieren von Einstellungen zwischen einem lokalen Projekt und Azure'
-services: functions
-author: kraigb
-manager: barbkess
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
-ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 9acf6e4c0ecc5357580957e2ea9295cd89f441f0
-ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
+ms.openlocfilehash: 0c917ac707c33963187fc1a3000be9e52b21deeb
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72278555"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467004"
 ---
 # <a name="tutorial-deploy-azure-functions-in-python"></a>Tutorial: Bereitstellen von Azure Functions in Python
 

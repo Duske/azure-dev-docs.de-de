@@ -1,20 +1,15 @@
 ---
 title: 'Tutorial: Hinzufügen von Speicherbindungen für Azure Functions in Python mit Visual Studio Code'
 description: 'Tutorialschritt 7: Hinzufügen einer Bindung in Python zum Schreiben von Meldungen in Azure Storage'
-services: functions
-author: kraigb
-manager: barbkess
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
-ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: f8cfe602676c64f516f0a95ae73801b58f35076c
-ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
+ms.openlocfilehash: 8f949b0673ed39f51b3a14ffd9a6dd572176dcba
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72278534"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466820"
 ---
 # <a name="tutorial-add-a-storage-binding-for-azure-functions-in-python"></a>Tutorial: Hinzufügen einer Speicherbindung für Azure Functions in Python
 

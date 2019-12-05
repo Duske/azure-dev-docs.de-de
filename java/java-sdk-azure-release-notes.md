@@ -2,19 +2,15 @@
 title: Versionshinweise zu Azure-Verwaltungsbibliotheken für Java | Microsoft-Dokumentation
 description: Informieren Sie sich über Neuigkeiten und wichtige Änderungen in den Azure-Verwaltungsbibliotheken für Java.
 keywords: Azure, Java, API, Referenz, Hinweise, Updates, veraltet
-author: bmitchell287
-manager: douge
 ms.assetid: 1f128cf9-f747-4344-84e1-f9964709deb8
-ms.service: azure
-ms.devlang: java
 ms.topic: reference
 ms.date: 3/06/2016
-ms.openlocfilehash: 199244f27bec8ffe6956303c83da93a581680344
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 2ef32414106be2ebfe917e1a5b434ba49d5c86ba
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691907"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812369"
 ---
 # <a name="release-notes"></a>Versionsinformationen 
 
