@@ -1,19 +1,15 @@
 ---
 title: Authentifizieren bei den Azure-Verwaltungsbibliotheken für Python
 description: Authentifizieren mit einem Dienstprinzipal bei den Azure-Verwaltungsbibliotheken für Python
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.date: 04/11/2019
 ms.topic: conceptual
-ms.devlang: python
 ms.custom: seo-python-october2019
-ms.openlocfilehash: afeaafb4289544b92324154d5c45d3410cbb3b02
-ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
+ms.openlocfilehash: 93d41e76bc8fb58d70a3590e2ea3658014a8673a
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72279101"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466440"
 ---
 # <a name="authenticate-with-the-azure-management-libraries-for-python"></a>Authentifizieren bei den Azure-Verwaltungsbibliotheken für Python
 
@@ -215,9 +211,9 @@ client = get_client_from_cli_profile(ComputeManagementClient)
 
 ## <a name="mgmt-auth-legacy"></a>Authentifizieren mit Tokenanmeldeinformationen (Legacy)
 
-In der vorherigen Version des SDK war ADAL noch nicht verfügbar, und es wurde eine `UserPassCredentials`-Klasse bereitgestellt. Diese wird als veraltet betrachtet und sollte nicht mehr verwendet werden.
+In der vorherigen Version des SDK war ADAL noch nicht verfügbar, und es wurde eine `UserPassCredentials`-Klasse bereitgestellt. Diese Klasse wird als veraltet betrachtet und sollte nicht mehr verwendet werden.
 
-In diesem Beispiel wird das Szenario mit Benutzername und Kennwort gezeigt. 2FA wird dabei nicht unterstützt.
+Dieses Beispiel zeigt ein Benutzer-/Kennwortszenario, das 2FA nicht unterstützt.
 
 ```python
 from azure.common.credentials import UserPassCredentials

@@ -1,25 +1,22 @@
 ---
-title: Bereitstellen eines Java-basierten MicroProfile-Diensts in Azure-Web-App für Container
+title: Bereitstellen eines Java-MicroProfile-Diensts
+titleSuffix: Azure Web App for Containers
 description: Hier erfahren Sie, wie Sie einen MicroProfile-Dienst unter Verwendung von Docker und Azure-Web-App für Container bereitstellen.
 services: container-registry;app-service
 documentationcenter: java
 author: jonathangiles
-manager: douge
-editor: jonathangiles
-ms.assetid: ''
 ms.author: jogiles
 ms.date: 09/07/2018
-ms.devlang: java
-ms.service: container-registry;app-service
+ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 4ef47693094489baae85bc7622289d9943acb62b
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 6deaced31e9cbe6ebd1ef1eb20bd0414ab5df471
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68284021"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812191"
 ---
 # <a name="deploy-a-java-based-microprofile-service-to-azure-web-app-for-containers"></a>Bereitstellen eines Java-basierten MicroProfile-Diensts in Azure-Web-App für Container
 
@@ -37,9 +34,9 @@ In diesem Tutorial erstellen wir zunächst den Code und führen ihn lokal aus. D
 
 ## <a name="creating-an-azure-container-registry"></a>Erstellen einer Azure Container Registry-Instanz
 
-Wir erstellen die Azure Container Registry-Instanz über das [Azure-Portal](http://portal.azure.com). Für die Erstellung kann aber beispielsweise auch die Azure-Befehlszeilenschnittstelle verwendet werden. Führen Sie die folgenden Schritte aus, um eine neue Azure Container Registry-Instanz zu erstellen:
+Wir erstellen die Azure Container Registry-Instanz über das [Azure-Portal](https://portal.azure.com). Für die Erstellung kann aber beispielsweise auch die Azure-Befehlszeilenschnittstelle verwendet werden. Führen Sie die folgenden Schritte aus, um eine neue Azure Container Registry-Instanz zu erstellen:
 
-1. Melden Sie sich beim [Azure-Portal](http://portal.azure.com) an, und erstellen Sie eine neue Azure Container Registry-Ressource. Geben Sie einen Registrierungsnamen an. (Hinweis: Dieser Name muss als `docker.registry`-Eigenschaft in `pom.xml` festgelegt werden.) Ändern Sie die Standardeinstellungen nach Belieben, und klicken Sie anschließend auf „Erstellen“.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an, und erstellen Sie eine neue Azure Container Registry-Ressource. Geben Sie einen Registrierungsnamen an. (Hinweis: Dieser Name muss als `docker.registry`-Eigenschaft in `pom.xml` festgelegt werden.) Ändern Sie die Standardeinstellungen nach Belieben, und klicken Sie anschließend auf „Erstellen“.
 
 1. Wenn die Containerregistrierung aktiv ist (ungefähr 30 Sekunden nach dem Klicken auf „Erstellen“), klicken Sie auf die Containerregistrierung und anschließend im linken Menübereich auf „Zugriffsschlüssel“. Hier müssen Sie die Einstellung „Administratorbenutzer“ aktivieren, damit von unseren Computern aus auf diese Containerregistrierung zugegriffen werden kann (um Docker-Container per Push hinzuzufügen) und um den Zugriff über die Instanz von Azure-Web-App für Container zu ermöglichen, die wir in Kürze einrichten.
 
@@ -143,7 +140,7 @@ Sie haben nun Ihr Docker-Containerimage in die Azure Container Registry-Instanz 
 
 ## <a name="creating-an-azure-web-app-for-containers-instance"></a>Erstellen einer Instanz von Azure-Web-App für Container
 
-1. Kehren Sie zum [Azure-Portal](http://portal.azure.com) zurück, und erstellen Sie eine neue Instanz von Web-App für Container (unter der Überschrift „Web + Mobil“ im Menü). Ein paar Hinweise:
+1. Kehren Sie zum [Azure-Portal](https://portal.azure.com) zurück, und erstellen Sie eine neue Instanz von Web-App für Container (im Menü unter der Überschrift „Web + Mobil“). Ein paar Hinweise:
 
    1. Der hier angegebene Name ist die öffentliche URL der Web-App (auch wenn später bei Bedarf eine benutzerdefinierte Domäne hinzugefügt werden kann). Es empfiehlt sich daher, einen leicht zu merkenden Namen zu verwenden.
 

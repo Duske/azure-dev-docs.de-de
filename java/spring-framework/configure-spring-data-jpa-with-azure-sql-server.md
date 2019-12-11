@@ -3,22 +3,16 @@ title: Verwenden der Spring Data-JPA mit Azure SQL-Datenbank
 description: Erfahren Sie, wie Sie die Spring Data-JPA (Java-Persistenz-API) mit einer Azure SQL-Datenbank verwenden.
 services: sql-database
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
-ms.author: brendm
 ms.date: 12/19/2018
-ms.devlang: java
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: a344596f93a8fc24c3d8853821b8a829e8904547
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: d5c90992f4b669bf6089d0c0118496dfa33d67f1
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68281891"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811945"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-sql-database"></a>Verwenden der Spring Data-JPA mit Azure SQL-Datenbank
 
@@ -66,21 +60,17 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    - **Kennwort** und **Kennwort bestätigen**: Geben Sie das Kennwort für den Datenbankadministrator an.
    - **Standort**: Geben Sie die nächstgelegene geografische Region für Ihre Datenbank an.
 
-   ![Angeben des SQL-Servers][SQL03]
+1. Wenn Sie alle oben genannten Informationen eingegeben haben, klicken Sie auf **OK**.
 
-1. Nachdem Sie alle oben genannten Informationen eingegeben haben, klicken Sie auf **Auswählen**.
-
-1. Geben Sie für dieses Tutorial den kostengünstigsten **Tarif** an, und klicken Sie dann auf **Erstellen**.
-
-   ![Erstellen der SQL-Datenbank][SQL04]
+1. Klicken Sie auf **Überprüfen und erstellen**.
 
 ### <a name="configure-a-firewall-rule-for-your-sql-server-using-the-azure-portal"></a>Konfigurieren einer Firewallregel für den SQL-Server im Azure-Portal
+
+Nach der Erstellung der SQL-Datenbank und des SQL-Servers können Sie Sicherheitseinstellungen konfigurieren.
 
 1. Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>, und melden Sie sich an.
 
 1. Klicken Sie auf **Alle Ressourcen** und anschließend auf den SQL-Server, den Sie gerade erstellt haben.
-
-   ![Auswählen des SQL-Servers][SQL05]
 
 1. Klicken Sie im Abschnitt **Übersicht** auf **Firewalleinstellungen anzeigen**.
 
@@ -96,9 +86,12 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Klicken Sie auf **Alle Ressourcen** und anschließend auf die SQL-Datenbank, die Sie gerade erstellt haben.
 
+1. Klicken Sie auf **Verbindungszeichenfolgen**.
+
+
    ![Auswählen der SQL-Datenbank][SQL08]
 
-1. Klicken Sie auf **Verbindungszeichenfolgen** und dann auf **JDBC**, und kopieren Sie den Wert im Textfeld „JDBC“.
+1. Klicken Sie auf **JDBC**, und kopieren Sie den Wert im Textfeld „JDBC“.
 
    ![Abrufen der JDBC-Verbindungszeichenfolge][SQL09]
 
@@ -119,7 +112,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    spring.datasource.username=wingtiptoysuser@wingtiptoyssql
    spring.datasource.password=********
     ```
-   Hinweis:
+   Hierbei gilt:
 
    | Parameter | BESCHREIBUNG |
    |---|---|
@@ -140,15 +133,15 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 1. Starten Sie die Beispielanwendung. Beispiel:
 
    ```shell
-   java -jar target/spring-data-jpa-on-azure-0.1.0-SNAPSHOT.jar
+   java -jar target/spring-data-jdbc-on-azure-0.1.0-SNAPSHOT.jar
    ```
 
 1. Erstellen Sie wie in den folgenden Beispielen dargestellt über eine Eingabeaufforderung mit `curl` neue Datensätze:
 
    ```shell
-   curl -s -d '{"name":"dog","species":"canine"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+   curl -s -d "{\"name\":\"dog\",\"species\":\"canine\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/pets
 
-   curl -s -d '{"name":"cat","species":"feline"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+   curl -s -d "{\"name\":\"cat\",\"species\":\"feline\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/pets
    ```
 
    Ihre Anwendung sollte Werte zurückgeben, die dem folgenden Beispiel ähneln:

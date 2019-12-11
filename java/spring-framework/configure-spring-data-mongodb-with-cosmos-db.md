@@ -3,22 +3,16 @@ title: Verwenden der Spring Data-MongoDB-API mit Azure Cosmos DB
 description: Erfahren Sie, wie Sie die Spring Data-MongoDB-API mit Azure Cosmos DB verwenden.
 services: cosmos-db
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
-ms.author: brendm
 ms.date: 12/19/2018
-ms.devlang: java
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 77851933366e09a7d5b0d1ae87816c563bf35e6b
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 0284f89f6a37497709947649fba3b1284416a95c
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68281901"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811934"
 ---
 # <a name="how-to-use-spring-data-mongodb-api-with-azure-cosmos-db"></a>Verwenden der Spring Data-MongoDB-API mit Azure Cosmos DB
 
@@ -37,7 +31,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 ## <a name="create-an-azure-cosmos-db-account"></a>Erstellen eines Azure Cosmos DB-Kontos
 
-### <a name="create-a-cosmos-db-account-using-the-azure-portal"></a>Erstellen eines Cosmos DB-Kontos im Azure-Portal
+### <a name="create-a-cosmos-db-account-using-the-azure-portal"></a>Erstellen eines Cosmos DB-Kontos über das Azure-Portal
 
 > [!NOTE]
 > 
@@ -71,8 +65,6 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Klicken Sie auf **Alle Ressourcen** und anschließend auf das Azure Cosmos DB-Konto, das Sie gerade erstellt haben.
 
-   ![Auswählen des Azure Cosmos DB-Kontos][COSMOSDB04]
-
 1. Klicken Sie auf **Verbindungszeichenfolgen**, und kopieren Sie den Wert im Feld **Primäre Verbindungszeichenfolge**. Diesen Wert verwenden Sie später zum Konfigurieren Ihrer Anwendung.
 
    ![Abrufen der Cosmos DB-Verbindungszeichenfolge][COSMOSDB06]
@@ -93,7 +85,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    spring.data.mongodb.database=wingtiptoysmongodb
    spring.data.mongodb.uri=mongodb://wingtiptoysmongodb:AbCdEfGhIjKlMnOpQrStUvWxYz==@wingtiptoysmongodb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb
    ```
-   Hinweis:
+   Hierbei gilt:
 
    | Parameter | BESCHREIBUNG |
    |---|---|
@@ -102,7 +94,9 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Speichern und schließen Sie die Datei *application.properties*.
 
-## <a name="package-and-test-the-sample-application"></a>Verpacken und Testen der Beispielanwendung 
+## <a name="package-and-test-the-sample-application"></a>Verpacken und Testen der Beispielanwendung
+
+Navigieren Sie zum Erstellen der Anwendung zum Verzeichnis */gs-accessing-data-mongodb/complete*, das die Datei „pom.xml“ enthält.
 
 1. Erstellen Sie die Beispielanwendung mit Maven, und konfigurieren Sie Maven zum Überspringen der Tests. Beispiel:
 
@@ -113,7 +107,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 1. Starten Sie die Beispielanwendung. Beispiel:
 
    ```shell
-   java -jar target/gs-accessing-data-mongodb-0.1.0.jar
+   java -jar target/accessing-data-mongodb-0.0.1-SNAPSHOT.jar
    ```
     
    Ihre Anwendung sollte Werte zurückgeben, die dem folgenden Beispiel ähneln:

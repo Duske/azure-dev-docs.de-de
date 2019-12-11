@@ -1,25 +1,17 @@
 ---
-title: Verwalten von Speicherkonten mithilfe von Azure-Explorer für Eclipse
+title: Verwalten von Speicherkonten mit dem Azure-Explorer für Eclipse
 description: Erfahren Sie, wie Sie Ihre Azure Storage-Konten mit Azure-Explorer für Eclipse verwalten.
-services: ''
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
-ms.author: brendm
 ms.date: 02/01/2018
-ms.devlang: Java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.workload: na
-ms.openlocfilehash: aea8d501dcd6eab9c60dfb25a00a7ba75ba6c556
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 2eee5bf3546712c5f43056a9d4a2b170951ee810
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68430070"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811089"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-eclipse"></a>Verwalten von Speicherkonten mithilfe von Azure-Explorer für Eclipse
 
@@ -118,7 +110,7 @@ Weitere Informationen zu Azure Storage-Konten sowie Größen und Preisen finden 
 [Informationen zu Azure-Speicherkonten]: /azure/storage/storage-create-storage-account
 [Azure-Speicherreplikation]: /azure/storage/storage-redundancy
 [Skalierbarkeits- und Leistungsziele für Azure Storage]: /azure/storage/storage-scalability-targets
-[Benennen von Containern, BLOBs und Metadaten und Verweisen auf diese]: http://go.microsoft.com/fwlink/?LinkId=255555
+[Benennen von Containern, BLOBs und Metadaten und Verweisen auf diese]: https://go.microsoft.com/fwlink/?LinkId=255555
 
 [Größen für Windows-Speicherkonten in Azure]: /azure/virtual-machines/virtual-machines-windows-sizes
 [Größen für Linux-Speicherkonten in Azure]: /azure/virtual-machines/virtual-machines-linux-sizes
