@@ -4,17 +4,15 @@ description: Eine Zusammenfassung für Entscheidungsträger, die wissen möchten
 author: dsgrieve
 manager: maverberg
 tags: java
-ms.service: azure
-ms.devlang: java
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: dagrieve
-ms.openlocfilehash: ed9b4d7e98357486367f7e7eaacac64ff05a0ff8
-ms.sourcegitcommit: 90068e30def5dfcb4289d8530ea5914728182a15
+ms.openlocfilehash: 7daf058c2abebbf2cca85dadc4f9ffe3e8771fa1
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74250747"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812221"
 ---
 # <a name="reasons-to-move-to-java-11"></a>Argumente für die Migration zu Java 11
 
@@ -27,7 +25,7 @@ Seit Java 8 sind neue Features und Erweiterungen hinzugekommen. Es gibt beachtl
 Die Migration zu Java 11 kann schrittweise erfolgen. Code muss *keine* Java-Module verwenden, um unter Java 11 ausgeführt werden zu können. Java 11 kann zum Ausführen von Code verwendet werden, der mit JDK 8 entwickelt und erstellt wurde.
 Es gibt jedoch einige potenzielle Probleme, die hauptsächlich mit veralteten APIs und Klassenladeprogrammen sowie mit der veralteten Reflektion zusammenhängen.
 
-Ein umfassender Leitfaden für die Migration von Java 8 zu Java 11 wird in Kürze von der Java-Plattformgruppe von Microsoft veröffentlicht. Bis dahin stehen zahlreiche Leitfäden für die Migration von Java 8 zu Java 9 zur Verfügung, die Sie bei Ihren ersten Schritten unterstützen. Beispiele wären etwa [Java-Plattform, Standard-Edition: Oracle JDK 9-Migrationsleitfaden](https://docs.oracle.com/javase/9/migrate/toc.htm) und [Der Stand des Modulsystems: Kompatibilität und Migration](http://openjdk.java.net/projects/jigsaw/spec/sotms/#compatibility--migration).
+Ein umfassender Leitfaden für die Migration von Java 8 zu Java 11 wird in Kürze von der Java-Entwicklungsgruppe von Microsoft veröffentlicht. Bis dahin stehen zahlreiche Leitfäden für die Migration von Java 8 zu Java 9 zur Verfügung, die Sie bei Ihren ersten Schritten unterstützen. Beispiele wären etwa [Java-Plattform, Standard-Edition: Oracle JDK 9-Migrationsleitfaden](https://docs.oracle.com/javase/9/migrate/toc.htm) und [Der Stand des Modulsystems: Kompatibilität und Migration](http://openjdk.java.net/projects/jigsaw/spec/sotms/#compatibility--migration).
 
 ## <a name="high-level-changes-between-java-8-and-11"></a>Allgemeine Änderungen zwischen Java 8 und 11
 
@@ -66,7 +64,7 @@ Dank dieses einheitlichen Protokollierungssystems kann der Benutzer definieren, 
 
 Java Virtual Machine Tool Interface (JVMTI) wurde eine neue API zur Stichprobenentnahme für Java-Heapzuordnungen hinzugefügt. Die Stichprobenentnahme verursacht nur einen geringen Mehraufwand und kann kontinuierlich aktiviert werden. Die Heapzuordnung kann zwar mit Java Flight Recorder (JFR) überwacht werden, die Stichprobenentnahme in JFR funktioniert jedoch nur für Zuordnungen. Darüber hinaus kann es bei der JFR-Implementierung vorkommen, dass Zuordnungen nicht erkannt werden. Im Gegensatz dazu kann die Heapstichprobenentnahme in Java 11 Informationen zu aktiven und inaktiven Objekten bereitstellen.
 
-Dieses neue Feature wird zunehmend von APM-Anbietern (Application Performance Monitoring, Anwendungsleistungsüberwachung) genutzt, und die Java-Plattformgruppe untersucht das Verwendungspotenzial dieses Features in Kombination mit Azure-Leistungsüberwachungstools.
+Dieses neue Feature wird zunehmend von APM-Anbietern (Application Performance Monitoring, Anwendungsleistungsüberwachung) genutzt, und die Java-Entwicklungsgruppe untersucht das Verwendungspotenzial dieses Features in Kombination mit Azure-Leistungsüberwachungstools.
 
 #### <a name="stackwalker-9ref9"></a>StackWalker \[[9](#ref9)\]
 

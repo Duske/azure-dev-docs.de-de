@@ -1,24 +1,20 @@
 ---
 title: Azure-Tools für Python-Entwickler | Microsoft-Dokumentation
 description: IDE-Integrationen und Befehlszeilenschnittstellen für Python-Entwickler, die in Azure arbeiten.
-author: sptramer
-manager: carmonm
-ms.devlang: python
 ms.topic: conceptual
 ms.date: 06/21/2017
-ms.author: sttramer
-ms.openlocfilehash: 19f314347296c2ecaf7e41da2332ff6a018a5a06
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: c1ca9752b63baa783f078d7d26a2576fdee74e6a
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68285771"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467069"
 ---
 # <a name="azure-tools-for-python-developers"></a>Azure-Tools für Python-Entwickler
 
 ## <a name="azure-cli-20"></a>Azure CLI 2.0
 
-Die Azure 2.0 CLI stellt eine Befehlszeilenschnittstelle zum Erstellen und Konfigurieren von Azure-Ressourcen in Ihren Abonnements bereit. Die Azure CLI 2.0 eignet sich für verschiedene Plattformen und bietet Abfrage- und Filterfunktionen, die Sie direkt an Ihre bevorzugten Befehlszeilentools weiterreichen können. 
+Die Azure 2.0 CLI stellt eine Befehlszeilenschnittstelle zum Erstellen und Konfigurieren von Azure-Ressourcen in Ihren Abonnements bereit. Die Azure CLI 2.0 eignet sich für verschiedene Plattformen und bietet Abfrage- und Filterfunktionen, die Sie direkt an Ihre bevorzugten Befehlszeilentools weiterreichen können.
 
 [Installieren der Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli)
 

@@ -1,25 +1,18 @@
 ---
-title: Veröffentlichen eines Docker-Containers mit dem Azure-Toolkit für IntelliJ
+title: Veröffentlichen einer Web-App als Docker-Container
+titleSuffix: Azure Toolkit for IntelliJ
 description: Erfahren Sie, wie Sie mit dem Azure-Toolkit für IntelliJ eine Web-App in Microsoft Azure als Docker-Container veröffentlichen.
-services: ''
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
-ms.author: brendm
 ms.date: 02/01/2018
-ms.devlang: Java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.workload: na
-ms.openlocfilehash: a4518994b961294a6a9cf3dffc302da6bd52b441
-ms.sourcegitcommit: 3d42245ecbfaeda31abba5f3f813b28f715ffd7c
+ms.openlocfilehash: 0d57d691853cf16dba21cda9cea670629528c144
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68279211"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812512"
 ---
 # <a name="publish-a-web-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij"></a>Veröffentlichen einer Web-App als Docker-Container mit dem Azure-Toolkit für IntelliJ
 

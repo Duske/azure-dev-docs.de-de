@@ -1,23 +1,18 @@
 ---
-title: Verwenden von Maven zum Bereitstellen einer Spring Boot-App mit JAR-Datei
-description: Hier erfahren Sie, wie Sie eine Spring Boot-App mithilfe des Maven-Plug-Ins für Azure-Web-Apps für Linux in der Cloud bereitstellen.
+title: Bereitstellen einer Spring Boot-Web-App mit JAR-Datei in Azure App Service für Linux
+description: Hier erfahren Sie, wie Sie eine Spring Boot-App mit JAR-Datei mithilfe des Maven-Plug-Ins für Azure-Web-Apps in App Service für Linux bereitstellen.
 services: app-service
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: brborges
-ms.author: brendm
 ms.date: 12/19/2018
-ms.devlang: java
 ms.service: app-service
 ms.topic: article
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 274287a6e29bd75721758805d508ebebfcc7586a
-ms.sourcegitcommit: 8be617e100ae3d3e90d56c672b1c7c110b7a588f
+ms.openlocfilehash: c97363fa84421a73d9493b41c66e2d2dc40250cc
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74160748"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811863"
 ---
 # <a name="deploy-a-spring-boot-jar-file-app-to-azure-app-service-with-maven-and-azure-on-linux"></a>Bereitstellen einer Spring Boot-App mit JAR-Datei in Azure App Service mit Maven und Azure unter Linux
 
