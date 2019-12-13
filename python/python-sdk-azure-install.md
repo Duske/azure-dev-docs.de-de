@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie das Azure SDK für Python unter Verwend
 ms.date: 10/31/2019
 ms.topic: conceptual
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 39de0959f3d73306412c39b32a4e13766d1500e9
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: d3d162bc14f27a9b2bc3fb033dab36dcd1dfeb89
+ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466399"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74992485"
 ---
 # <a name="install-the-azure-sdk-for-python"></a>Installieren des Azure SDK für Python
 
@@ -19,7 +19,7 @@ Das Azure SDK für Python wurde mit den CPython-Versionen 2.7 und 3.5.3+ sowi
 
 ## <a name="install-sdk-libraries-using-pip"></a>Installieren von SDK-Bibliotheken mithilfe von pip
 
-Das Azure SDK für Python besteht aus einer Reihe einzelner Bibliotheken, die jeweils bestimmte Azure-Dienste bereitstellen oder mit diesen zusammenarbeiten. Sie können die einzelnen Bibliotheken installieren, indem Sie `pip install <library>` mit den Namen aus der [Liste mit den SDK-Bibliotheken](https://github.com/Azure/azure-sdk-for-python/blob/master/packages.md) verwenden. (Diese Liste enthält Links zu hilfreichen Infodateien für die jeweilige Bibliothek.)
+Das Azure SDK für Python besteht aus einer Reihe einzelner Bibliotheken, die jeweils bestimmte Azure-Dienste bereitstellen oder mit diesen zusammenarbeiten. Sie können sie jeweils mit `pip install <library>` installieren. Auf der [Seite für SDK-Veröffentlichungen](https://azure.github.io/azure-sdk/releases/latest/python.html) finden Sie spezifische Anweisungen und Dokumentationen zu jeder Bibliothek.
 
 Bei Verwendung von Azure Storage können Sie beispielsweise die Bibliothek `azure-storage-file`, `azure-storage-blob` oder `azure-storage-queue` installieren. Wenn Sie Azure Cosmos DB-Tabellen verwenden, installieren Sie `azure-cosmosdb-table`. Azure Functions wird über die Bibliothek `azure-functions` unterstützt. Und so weiter. Bibliotheken, die mit `azure-mgmt-` beginnen, stellen die API für die Bereitstellung von Azure-Ressourcen bereit.
 

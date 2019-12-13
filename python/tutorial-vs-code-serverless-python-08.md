@@ -1,15 +1,15 @@
 ---
-title: 'Tutorial: Bereinigen von Azure-Ressourcen – Azure Functions in Python'
+title: 'Tutorial: Bereinigen der mit dem Python-Code verwendeten Ressourcen in Azure Functions'
 description: 'Tutorialschritt 8: Bereinigen von Azure-Ressourcen, um laufende Gebühren zu vermeiden'
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: ddc2ab44d3d8865c89cb6cdf8368461b6e4f666a
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 441e3de83dfc56bc8c5b1b2adbcfb2042fe83355
+ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74465952"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74992440"
 ---
 # <a name="tutorial-clean-up-azure-resources-for-azure-functions"></a>Tutorial: Bereinigen von Azure-Ressourcen für Azure Functions
 

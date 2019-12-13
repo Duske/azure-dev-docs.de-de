@@ -4,12 +4,12 @@ description: In diesem Artikel wird die Verwendung von Azure Functions zum Erste
 ms.topic: article
 ms.date: 08/19/2019
 ms.custom: seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: e8caa6d540d7f3be815b05e627b82745ccf9c14f
-ms.sourcegitcommit: 9d0a6de18d9b5180c1cb485eff8e2774de48d225
+ms.openlocfilehash: d1b17e33b5ae4aa51a84ceae8005a5385c162967
+ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74540498"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74992473"
 ---
 # <a name="use-azure-functions-to-write-serverless-nodejs-code-on-azure"></a>Verwenden von Azure Functions zum Schreiben von serverlosem Node.js-Code in Azure
 

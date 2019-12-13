@@ -1,15 +1,15 @@
 ---
-title: 'Tutorial: Lokales Debuggen des Azure Functions-Python-Codes mit Visual Studio Code'
+title: 'Tutorial: Lokales Debuggen des Azure Functions-Python-Codes mit VS Code'
 description: 'Tutorialschritt 4: lokales Ausführen des VS Code-Debuggers, um Ihren Python-Code zu überprüfen'
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: b1ea7c60b8d4dca8de829a9c627811a33ea57f01
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 7dafd432289ad96664ca7c8a319b3368368adcbd
+ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74465955"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74992449"
 ---
 # <a name="tutorial-debug-the-azure-functions-python-code-locally"></a>Tutorial: Lokales Debuggen des Azure Functions-Python-Codes
 
