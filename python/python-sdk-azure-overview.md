@@ -3,12 +3,12 @@ title: Azure SDK für Python
 description: Übersicht über die Features und Funktionen des Azure SDK für Python, die Entwickler bei der effizienteren Verwendung von Azure-Diensten unterstützen.
 ms.date: 10/30/2019
 ms.topic: conceptual
-ms.openlocfilehash: fb81b743de8332d18aeb815d1ed1efa09e6e3305
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 7a70f6050890bc384bac0d58ba3f0aa2e5e553cb
+ms.sourcegitcommit: 5c65d22b5203b0c17806463d349a6ede93a99fa0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466331"
+ms.lasthandoff: 12/12/2019
+ms.locfileid: "75010587"
 ---
 # <a name="azure-sdk-for-python"></a>Azure SDK für Python
 
@@ -20,6 +20,8 @@ Ausführlichere Informationen zum Installieren von Bibliotheken sowie zum Import
 
 > [!TIP]
 > Informationen zu Änderungen am SDK finden Sie in den [SDK-Versionshinweisen](https://azure.github.io/azure-sdk/).
+
+[!INCLUDE [chrome-note](includes/chrome-note.md)]
 
 ## <a name="connect-and-use-azure-services"></a>Verbinden mit und Verwenden von Azure-Diensten
 
