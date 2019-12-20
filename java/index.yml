@@ -21,10 +21,15 @@ sections:
         columns: 2
         items:
           - href: /azure/app-service/containers/quickstart-java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
-            html: <p>Bereitstellen Ihrer ersten Web-App in Azure</p>
+            html: <p>Bereitstellen Ihrer ersten Web-App in App Service</p>
             image:
               src: /media/common/i_get-started.svg
-            title: Erste Schritte
+            title: Azure-Web-App
+          - href: 'https://docs.microsoft.com/en-us/azure/spring-cloud/'
+            html: <p>Verwalteter Dienst für Spring Cloud</p>
+            image:
+              src: /java/media/spring.svg
+            title: Azure Spring Cloud
           - href: /azure/java/spring-framework/
             html: <p>Azure-Dienste mit Spring Boot</p>
             image:
@@ -45,11 +50,6 @@ sections:
             image:
               src: /media/common/i_api-reference.svg
             title: Azure SDKs für Java
-          - href: 'https://docs.microsoft.com/en-us/azure/spring-cloud/'
-            html: <p>Azure Spring Cloud</p>
-            image:
-              src: /java/media/spring.svg
-            title: Spring Cloud-Dienste
   - title: Leitfäden mit ersten Schritten
     items:
       - type: list
@@ -62,6 +62,10 @@ sections:
             title: Bereitstellen einer Spring Boot-App mit Maven
             href: /azure/java/spring-framework/deploy-spring-boot-java-app-with-maven-plugin
           - image:
+              src: /azure/media/index/spring.svg
+            title: Microservices mit Azure Spring Cloud
+            href: /azure/spring-cloud/spring-cloud-quickstart-launch-app-portal
+          - image:
               src: /azure/media/index/storage.svg
             title: Hochladen und Herunterladen von Blobs in und aus Storage
             href: /azure/storage/blobs/storage-quickstart-blobs-java-v10?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
@@ -73,10 +77,6 @@ sections:
               src: /javascript/azure/media/k8s_logo.svg
             title: Bereitstellen in Kubernetes
             href: /azure/java/spring-framework/deploy-spring-boot-java-app-on-kubernetes
-          - image:
-              src: /azure/media/index/fabric.svg
-            title: Microservices mit Service Fabric
-            href: /azure/service-fabric/service-fabric-quickstart-java-spring-boot?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
           - image:
               src: /java/media/jenkins_logo.svg
             title: CI/CD in App Service mit Jenkins®
