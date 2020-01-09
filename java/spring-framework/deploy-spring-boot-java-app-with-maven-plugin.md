@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.service: app-service
 ms.topic: article
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: c97363fa84421a73d9493b41c66e2d2dc40250cc
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 1cca7784cd341c65f1a6e4fea37e500e7c102018
+ms.sourcegitcommit: a1f7e0f0cfd5c9d0806a7d44acdf2a54d578d8fe
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811863"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75319667"
 ---
 # <a name="deploy-a-spring-boot-jar-file-app-to-azure-app-service-with-maven-and-azure-on-linux"></a>Bereitstellen einer Spring Boot-App mit JAR-Datei in Azure App Service mit Maven und Azure unter Linux
 
@@ -161,7 +161,7 @@ In diesem Abschnitt konfigurieren Sie das Spring Boot-Projekt `pom.xml` so, dass
           <appSettings>
              <property>
                    <name>JAVA_OPTS</name>
-                   <value>-D server.port=80</value>
+                   <value>-Dserver.port=80</value>
              </property>
           </appSettings>
           <!-- End of App Settings  -->
@@ -195,7 +195,7 @@ Nachdem Sie alle Einstellungen in den vorhergehenden Abschnitten in diesem Artik
 
 Maven stellt Ihre Web-App in Azure bereit. Falls die Web-App oder der Web-App-Plan noch nicht vorhanden ist, wird sie bzw. er erstellt. Es kann einige Minuten dauern, bis die Web-App unter der URL aus der Ausgabe angezeigt wird. Navigieren Sie in einem Webbrowser zu der URL.  Daraufhin sollte die folgende Nachricht angezeigt werden: „Greetings from Spring Boot!“
 
-Wenn Ihre Web-App bereitgestellt wurde, können Sie sie über das [Azure-Portal] verwalten.
+Wenn Ihre Web-App bereitgestellt wurde, können Sie sie über das [Azure portal] verwalten.
 
 * Ihre Web-App wird unter **App Services** aufgeführt:
 
@@ -238,7 +238,7 @@ Weitere Informationen zu den verschiedenen in diesem Artikel besprochenen Techno
 
 [Azure Command-Line Interface (CLI)]: /cli/azure/overview
 [Azure for Java Developers]: /azure/java/
-[Azure-Portal]: https://portal.azure.com/
+[Azure portal]: https://portal.azure.com/
 [free Azure account]: https://azure.microsoft.com/pricing/free-trial/
 [Git]: https://github.com/
 [Working with Azure DevOps and Java]: /azure/devops/
