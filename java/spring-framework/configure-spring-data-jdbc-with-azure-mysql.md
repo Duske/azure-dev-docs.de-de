@@ -2,16 +2,16 @@
 title: Verwenden von Spring Data-JDBC mit Azure Database for MySQL
 description: Hier erfahren Sie, wie Sie Spring Data-JDBC (Java Database Connectivity) mit einer Azure Database for MySQL-Datenbank verwenden.
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 01/07/2020
 ms.service: mysql
 ms.tgt_pltfrm: multiple
 ms.topic: conceptual
-ms.openlocfilehash: 323613fa8508f4e52c602763b40f15c4d2ffbc54
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: a36484cb6858422f4d9b0e6a5c72a793f3686514
+ms.sourcegitcommit: 3b8ccf447921a55f16c25795914d9eed64c2b9cf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812005"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75755664"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-mysql"></a>Verwenden von Spring Data-JDBC mit Azure MySQL
 
@@ -46,27 +46,26 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Geben Sie Folgendes ein:
 
-   - **Servername**: Wählen Sie einen eindeutigen Namen für Ihren MySQL-Server aus. Dieser Name wird zum Erstellen eines vollqualifizierten Domänennamens (z. B. *wingtiptoysmysql.mysql.database.azure.com*) verwendet.
    - **Abonnement**: Geben Sie das Azure-Abonnement an, das Sie verwenden möchten.
    - **Ressourcengruppe**: Erstellen Sie eine neue Ressourcengruppe, oder wählen Sie eine vorhandene Ressourcengruppe aus.
-   - **Quelle auswählen**: Wählen Sie für dieses Tutorial `Blank` aus, um eine neue Datenbank zu erstellen.
-   - **Serveradministratoranmeldung**: Geben Sie den Namen des Datenbankadministrators an.
+   - **Servername**: Wählen Sie einen eindeutigen Namen für Ihren MySQL-Server aus. Dieser Name wird zum Erstellen eines vollqualifizierten Domänennamens (z. B. *wingtiptoysmysql.mysql.database.azure.com*) verwendet.
+   - **Datenquelle**: Wählen Sie für dieses Tutorial `Blank` aus, um eine neue Datenbank zu erstellen.
+   - **Administratorbenutzername**: Geben Sie den Namen des Datenbankadministrators an.
    - **Kennwort** und **Kennwort bestätigen**: Geben Sie das Kennwort für den Datenbankadministrator an.
    - **Standort**: Geben Sie die nächstgelegene geografische Region für Ihre Datenbank an.
    - **Version**: Geben Sie aktuelle Datenbankversion an.
-   - **Tarif:** Geben Sie für dieses Tutorial den kostengünstigsten Tarif an.
 
    ![Festlegen der Eigenschaften der MySQL-Datenbank][MYSQL02]
 
-1. Nachdem Sie alle oben genannten Informationen eingegeben haben, klicken Sie auf **Erstellen**.
+1. Nachdem Sie alle oben genannten Informationen eingegeben haben, klicken Sie auf **Bewerten + erstellen**.
+
+1. Überprüfen Sie die Angaben, und klicken Sie auf **Erstellen**.
 
 ### <a name="configure-a-firewall-rule-for-your-server-using-the-azure-portal"></a>Konfigurieren einer Firewallregel für Ihren Server im Azure-Portal
 
 1. Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>, und melden Sie sich an.
 
 1. Klicken Sie auf **Alle Ressourcen** und anschließend auf die Azure Database for MySQL-Ressourcen, die Sie gerade erstellt haben.
-
-   ![Auswählen der MySQL-Datenbank][MYSQL03]
 
 1. Klicken Sie auf **Verbindungssicherheit**, und erstellen Sie im Abschnitt **Firewallregeln** eine neue Regel, indem Sie einen eindeutigen Namen für die Regel angeben, den Bereich der IP-Adressen eingeben, die Zugriff auf Ihre Datenbank benötigen, und anschließend auf **Speichern** klicken.
 
@@ -77,8 +76,6 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 1. Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>, und melden Sie sich an.
 
 1. Klicken Sie auf **Alle Ressourcen** und anschließend auf die Azure Database for MySQL-Instanz, die Sie gerade erstellt haben.
-
-   ![Auswählen der MySQL-Datenbank][MYSQL03]
 
 1. Klicken Sie auf **Verbindungszeichenfolgen**, und kopieren Sie den Wert im Textfeld **JDBC**.
 
@@ -250,6 +247,5 @@ Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure 
 
 [MYSQL01]: media/configure-spring-data-jdbc-with-azure-mysql/create-mysql-01.png
 [MYSQL02]: media/configure-spring-data-jdbc-with-azure-mysql/create-mysql-02.png
-[MYSQL03]: media/configure-spring-data-jdbc-with-azure-mysql/create-mysql-03.png
 [MYSQL04]: media/configure-spring-data-jdbc-with-azure-mysql/create-mysql-04.png
 [MYSQL05]: media/configure-spring-data-jdbc-with-azure-mysql/create-mysql-05.png

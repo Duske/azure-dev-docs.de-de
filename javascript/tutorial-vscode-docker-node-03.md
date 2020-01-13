@@ -3,12 +3,12 @@ title: Erstellen eines Containerimages für eine Node.js-App in Visual Studio 
 description: 'Teil 3 des Tutorials: Erstellen eines Node.js-Anwendungsimages'
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: c3662c7d21359008bdc0cc5c3050fb2fdc7d6241
-ms.sourcegitcommit: 9d0a6de18d9b5180c1cb485eff8e2774de48d225
+ms.openlocfilehash: ae39d6604f3ffe49915f6b311953cd6829ed9369
+ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74540517"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75191087"
 ---
 # <a name="create-your-nodejs-application-image"></a>Erstellen des Node.js-Anwendungsimages
 
@@ -22,7 +22,7 @@ Falls Sie noch keine App für diese exemplarische Vorgehensweise haben, können 
 
 1. Öffnen Sie in Visual Studio Code die **Befehlspalette** (**F1**), geben Sie `add docker files to workspace` ein, und wählen Sie dann den Befehl **Docker: Add Docker files to workspace** (Docker: Docker-Dateien dem Arbeitsbereich hinzufügen) aus.
 
-1. Wählen Sie **Node.js** als Anwendungstyp aus, wenn Sie dazu aufgefordert werden, und wählen Sie dann den Port aus, an dem Ihre Anwendung lauscht.
+1. Wählen Sie **Node.js** als Anwendungstyp aus, wenn Sie dazu aufgefordert werden, antworten Sie für Docker Compose-Dateien mit **Nein**, und wählen Sie dann den Port aus, an dem Ihre Anwendung lauscht.
 
 1. Der Befehl erstellt eine `Dockerfile` und einige Konfigurationsdateien für Docker Compose sowie eine `.dockerignore`-Datei.
 
@@ -36,19 +36,7 @@ Die `Dockerfile` beschreibt die Umgebung für Ihre App, einschließlich des Spei
 > [!TIP]
 > Container im Vergleich zu Images: Ein Container ist eine Instanz eines Images.
 
-1. Öffnen Sie die **Befehlspalette** (**F1**), und führen Sie **Docker Images: Build Image** (Docker-Images: Image erstellen) aus, um das Image zu erstellen.
-
-1. Wählen Sie bei der entsprechenden Eingabeaufforderung die gerade erstellte `Dockerfile` aus, und geben Sie dann einen Namen für das Image an. Der Name muss die Zielregistrierung oder das Docker Hub-Konto enthalten:
-
-    `[registry or username]/[image name]:[tag]`
-
-    In diesem Tutorial, in dem Azure Container Registry verwendet wird, lautet der Imagename wie folgt:
-
-    `msdocsvscodereg.azurecr.io/myexpressapp:latest`
-
-    Wenn Sie Docker Hub verwenden, geben Sie Ihren Docker Hub-Benutzernamen an. Beispiel:
-
-    `fiveisprime/myexpressapp:latest`
+1. Öffnen Sie die **Befehlspalette** (**F1**), und führen Sie **Docker Images: Build Image** (Docker-Images: Image erstellen) aus, um das Image zu erstellen. VS Code verwendet das Dockerfile im aktuellen Ordner und gibt dem Image den Namen des aktuellen Ordners.
 
 1. Danach wird der Bereich **Terminal** von Visual Studio Code geöffnet, um den Befehl `docker build` auszuführen. In der Ausgabe sehen Sie auch alle Schritte bzw. Ebenen, aus denen die App-Umgebung besteht.
 
@@ -58,9 +46,31 @@ Die `Dockerfile` beschreibt die Umgebung für Ihre App, einschließlich des Spei
 
 ## <a name="push-the-image-to-a-registry"></a>Pushen des Images in eine Registrierung
 
-1. Öffnen Sie in Visual Studio Code die **Befehlspalette** (**F1**), führen Sie **Docker Images: Push** (Docker-Images: Pushen) aus, und wählen Sie dabei das Image aus, das Sie gerade erstellt haben. Im Bereich **Terminal** werden die für diesen Vorgang verwendeten `docker push`-Befehle angezeigt.
+1. Um das Image in eine Registrierung zu pushen, müssen Sie es zuerst mit dem Registrierungsnamen kennzeichnen. Klicken Sie im **DOCKER**-Explorer mit der rechten Maustaste auf das **aktuelle** Image.
 
-1. Erweitern Sie nach Abschluss des Vorgangs den Knoten **Images** im Docker-Erweiterungsexplorer, um das Image anzuzeigen.
+    ![Befehl zur Imagekennzeichnung in Visual Studio Code](media/deploy-containers/tag-command.png)
+
+1. Vervollständigen Sie in der folgenden Aufforderung die Tags, und drücken Sie die **EINGABETASTE**.
+
+    Laut Konvention wird bei der Kennzeichnung folgendes Format verwendet:
+
+    `[registry or username]/[image name]:[tag]`
+
+    Wenn Sie Azure Container Registry verwenden, sieht der Imagename in etwa wie folgt aus:
+
+    `msdocsvscodereg.azurecr.io/myexpressapp:latest`
+
+    Wenn Sie Docker Hub verwenden, geben Sie Ihren Docker Hub-Benutzernamen an. Beispiel:
+
+    `fiveisprime/myexpressapp:latest`
+
+1. Das neu gekennzeichnete Image wird jetzt in einem Knoten unter **Images** angezeigt, der den Registrierungsnamen enthält. Erweitern Sie diesen Knoten, klicken Sie mit der rechten Maustaste auf **Neueste**, und wählen Sie **Push** aus.
+
+    ![Befehl zum Pushen des Images in Visual Studio Code](media/deploy-containers/push-command.png)
+
+1. Im Bereich **Terminal** werden die für diesen Vorgang verwendeten `docker push`-Befehle angezeigt. Die Zielregistrierung wird durch die im Imagenamen angegebene Registrierung bestimmt.
+
+1. Erweitern Sie nach Abschluss des Vorgangs den Knoten **Registrierungen** im Docker-Erweiterungsexplorer, um das Image in der Registrierung anzuzeigen.
 
     ![Anzeige des gepushten Images in Azure Container Registry](media/deploy-containers/image-in-acr.png)
 

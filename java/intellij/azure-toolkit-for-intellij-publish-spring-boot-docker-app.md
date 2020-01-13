@@ -7,14 +7,14 @@ ms.date: 11/13/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: eb8458301036ffedfce98844c22aa4ef1aafb0e0
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 00d6d77c78a1b38bbeb5369301956b2cfce166a5
+ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812502"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75191130"
 ---
-# <a name="publish-a-spring-boot-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij"></a>Veröffentlichen einer Spring Boot-App als Docker-Container mit dem Azure-Toolkit für IntelliJ
+# <a name="publish-a-spring-boot-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij-deprecated"></a>Veröffentlichen einer Spring Boot-App als Docker-Container mit dem Azure-Toolkit für IntelliJ (VERALTET)
 
 [Spring Framework] ist eine Open Source-Lösung, die Java-Entwickler bei der Erstellung professioneller Anwendungen unterstützt. Eines der gängigsten Projekte, das auf dieser Plattform aufbaut, ist [Spring Boot]. Es bietet einen vereinfachten Ansatz für das Erstellen eigenständiger Java-Anwendungen.
 
@@ -110,7 +110,7 @@ IntelliJ importiert die Spring Boot-App als Projekt und zeigt nach Abschluss des
 
 ### <a name="create-a-deployment-ready-artifact"></a>Erstellen eines bereitstellungsfähigen Artefakts
 
-Zum Veröffentlichen Ihrer Spring Boot-App müssen Sie ein bereitstellungsfähiges Artefakt erstellen. Führen Sie die folgenden Schritte aus:
+Zum Veröffentlichen Ihrer Spring Boot-App müssen Sie ein bereitstellungsfähiges Artefakt erstellen. Führen Sie die folgenden Schritte durch:
 
 1. Öffnen Sie Ihr Web-App-Projekt in IntelliJ.
 

@@ -3,12 +3,12 @@ title: Verwenden einer Containerregistrierung in Visual Studio Code
 description: 'Teil 2 des Tutorials: Verwenden einer Containerregistrierung'
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 7d51e8011824ec19e9530f9bc94bcb2ce07f2851
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: c5e9ff3cd803ef4d57408199682c71e4b57f2d77
+ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466629"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75191020"
 ---
 # <a name="use-a-container-registry"></a>Verwenden einer Containerregistrierung
 
@@ -20,9 +20,13 @@ In diesem Tutorial wird [Azure Container Registry](https://azure.microsoft.com
 
 ## <a name="create-an-azure-container-registry"></a>Erstellen einer Azure-Containerregistrierung
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an, und wählen Sie dann **Ressource erstellen** > **Container** > **Containerregistrierung** aus.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an, und wählen Sie **Ressource erstellen** aus.
 
-    ![Erstellen einer Containerregistrierung im Azure-Portal](media/deploy-containers/portal-01.png)
+    ![Erstellen einer neuen Ressource im Azure-Portal](media/deploy-containers/portal-01a.png)
+
+1. Wählen Sie auf der nächsten Seite **Container** > **Containerregistrierung** aus.
+
+    ![Erstellen einer Containerregistrierung im Azure-Portal](media/deploy-containers/portal-01b.png)
 
 1. Geben Sie im angezeigten Formular **Containerregistrierung erstellen** die entsprechenden Werte ein:
 
@@ -50,6 +54,8 @@ In diesem Tutorial wird [Azure Container Registry](https://azure.microsoft.com
     ```bash
     docker login <registry_name>.azurecr.io -u <username> -p <password>
     ```
+
+    Verwenden Sie aus Sicherheitsgründen `--password-stdin` anstelle von `-p <password>`, und fügen Sie dann bei entsprechender Aufforderung das Kennwort ein.
 
 1. Öffnen Sie in Visual Studio Code den **Docker**-Explorer, und vergewissern Sie sich, dass der Registrierungsendpunkt, den Sie gerade eingerichtet haben, unter **Registrierungen** angezeigt wird:
 

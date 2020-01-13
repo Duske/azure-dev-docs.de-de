@@ -7,14 +7,14 @@ ms.date: 02/01/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 2d81c2a23a58c2dfdb036988b8831efe0c821392
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: d1e384525ec32141b945f50d1d5be7190e84b239
+ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811800"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75191047"
 ---
-# <a name="publish-a-web-app-as-a-docker-container-by-using-the-azure-toolkit-for-eclipse"></a>Veröffentlichen einer Web-App als Docker-Container mit dem Azure-Toolkit für Eclipse
+# <a name="publish-a-web-app-as-a-docker-container-by-using-the-azure-toolkit-for-eclipse-deprecated"></a>Veröffentlichen einer Web-App als Docker-Container mit dem Azure-Toolkit für Eclipse (VERALTET)
 
 Docker-Container sind eine weit verbreitete Methode zum Bereitstellen von Webanwendungen. Mithilfe von Docker-Containern können Entwickler ihre Projektdateien und Abhängigkeiten für die Bereitstellung auf einem Server in einem einzelnen Paket zusammenfassen. Mit dem Azure-Toolkit für Eclipse wird dieser Prozess für Java-Entwickler vereinfacht, indem Features vom Typ *Als Docker-Container veröffentlichen* für die Bereitstellung in Microsoft Azure hinzugefügt werden. In diesem Artikel werden die Schritte beschrieben, die zum Veröffentlichen Ihrer Anwendungen in Azure als Docker-Container erforderlich sind.
 
@@ -65,7 +65,7 @@ Docker-Container sind eine weit verbreitete Methode zum Bereitstellen von Webanw
 
    d. Auf der Registerkarte **Host-BS und Größe**: 
    * **Host OS** (Hostbetriebssystem): Geben Sie das Betriebssystem für den virtuellen Computer ein, der Ihren Host enthält.
-   * **Größe**: Geben Sie die Größe des virtuellen Computers für Ihren Host ein.
+   * **Size**: Geben Sie die Größe des virtuellen Computers für Ihren Host ein.
 
    e. Auf der Registerkarte **Ressourcengruppe**: 
    * **Neue Ressourcengruppe**: Erstellen Sie eine neue Ressourcengruppe für Ihren Host.

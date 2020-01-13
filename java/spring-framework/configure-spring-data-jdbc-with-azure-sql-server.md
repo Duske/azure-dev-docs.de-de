@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 76fe515c6f315a340d5c306edfef31cdf736ceed
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 028e54c54410caf9e81448fd8df8283532591895
+ms.sourcegitcommit: 7722fc50eeab0f97bd0ea9cb3263da87244af406
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811984"
+ms.lasthandoff: 12/26/2019
+ms.locfileid: "75492210"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-sql-database"></a>Verwenden von Spring Data-JDBC mit Azure SQL-Datenbank
 
@@ -30,7 +30,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 * [cURL](https://curl.haxx.se/) oder ein ähnliches HTTP-Hilfsprogramm zum Testen der Funktionalität
 * Einen [Git-Client](https://git-scm.com/downloads)
 
-## <a name="create-an-azure-sql-satabase"></a>Erstellen einer Azure SQL-Datenbank
+## <a name="create-an-azure-sql-database"></a>Erstellen einer Azure-SQL-Datenbank
 
 ### <a name="create-a-sql-database-server-using-the-azure-portal"></a>Erstellen eines SQL-Datenbank-Servers im Azure-Portal
 
@@ -53,20 +53,19 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
    ![Festlegen der Eigenschaften der SQL-Datenbank][SQL02]
    
-1. Klicken Sie auf **Server** und dann auf **Neuen Server erstellen**, und geben Sie die folgenden Informationen an:
+1. Klicken Sie auf **Server** und dann auf **Neu erstellen**, und geben Sie die folgenden Informationen an:
 
    - **Servername**: Wählen Sie einen eindeutigen Namen für Ihren SQL-Server aus. Dieser Name wird zum Erstellen eines vollqualifizierten Domänennamens (z. B. *wingtiptoyssql.database.windows.net*) verwendet.
    - **Serveradministratoranmeldung**: Geben Sie den Namen des Datenbankadministrators an.
    - **Kennwort** und **Kennwort bestätigen**: Geben Sie das Kennwort für den Datenbankadministrator an.
    - **Standort**: Geben Sie die nächstgelegene geografische Region für Ihre Datenbank an.
 
-   ![Angeben des SQL-Servers][SQL03]
 
-1. Nachdem Sie alle oben genannten Informationen eingegeben haben, klicken Sie auf **Auswählen**.
+1. Wenn Sie alle oben genannten Informationen eingegeben haben, klicken Sie auf **OK**.
 
-1. Geben Sie für dieses Tutorial den kostengünstigsten **Tarif** an, und klicken Sie dann auf **Erstellen**.
+1. Klicken Sie auf **Überprüfen und erstellen**.
 
-   ![Erstellen der SQL-Datenbank][SQL04]
+1. Überprüfen Sie die Einstellungen, und klicken Sie auf **Erstellen**.
 
 ### <a name="configure-a-firewall-rule-for-your-sql-server-using-the-azure-portal"></a>Konfigurieren einer Firewallregel für den SQL-Server im Azure-Portal
 
@@ -74,9 +73,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Klicken Sie auf **Alle Ressourcen** und anschließend auf den SQL-Server, den Sie gerade erstellt haben.
 
-   ![Auswählen des SQL-Servers][SQL05]
-
-1. Klicken Sie im Abschnitt **Übersicht** auf **Firewalleinstellungen anzeigen**.
+1. Klicken Sie im linken Navigationsbereich auf den Abschnitt **Übersicht** und dann auf **Serverfirewall festlegen**.
 
    ![Firewalleinstellungen anzeigen][SQL06]
 
@@ -89,8 +86,6 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 1. Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>, und melden Sie sich an.
 
 1. Klicken Sie auf **Alle Ressourcen** und anschließend auf die SQL-Datenbank, die Sie gerade erstellt haben.
-
-   ![Auswählen der SQL-Datenbank][SQL08]
 
 1. Klicken Sie auf **Verbindungszeichenfolgen** und dann auf **JDBC**, und kopieren Sie den Wert im Textfeld „JDBC“.
 

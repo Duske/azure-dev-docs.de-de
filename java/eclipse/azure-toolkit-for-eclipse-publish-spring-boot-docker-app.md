@@ -7,14 +7,14 @@ ms.date: 02/01/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: ece88bc262cf6b7c626cd50364c1133b098bb0f7
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: d11dfce0baa04fd19d54f37832bf61b785818390
+ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811836"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75191114"
 ---
-# <a name="publish-a-spring-boot-app-as-a-docker-container-by-using-the-azure-toolkit-for-eclipse"></a>Veröffentlichen einer Spring Boot-App als Docker-Container mit dem Azure-Toolkit für Eclipse
+# <a name="publish-a-spring-boot-app-as-a-docker-container-by-using-the-azure-toolkit-for-eclipse-deprecated"></a>Veröffentlichen einer Spring Boot-App als Docker-Container mit dem Azure-Toolkit für Eclipse (VERALTET)
 
 [Spring Framework] ist eine Open Source-Lösung, die Java-Entwickler bei der Erstellung professioneller Anwendungen unterstützt. Eines der gängigsten Projekte, das auf dieser Plattform aufbaut, ist [Spring Boot]. Es bietet einen vereinfachten Ansatz für das Erstellen eigenständiger Java-Anwendungen.
 
@@ -148,7 +148,7 @@ Das Docker-Repository von Spring Boot enthält ein abgeschlossenes Maven-Projekt
 
 1. Klicken Sie auf das Azure-Menü **Veröffentlichen** und anschließend auf **Publish as Docker Container** (Als Docker-Container veröffentlichen).
 
-   ![Befehl „Publish as Docker Container“ (Als Docker-Container veröffentlichen)][PU01]
+   ![Befehl zum Veröffentlichen als Docker-Container][PU01]
 
 1. Wenn das Dialogfeld **Deploying Docker Container on Azure** (Docker-Container wird in Azure bereitgestellt) angezeigt wird:
 

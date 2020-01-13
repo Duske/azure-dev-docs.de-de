@@ -7,14 +7,14 @@ ms.date: 02/01/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 0d57d691853cf16dba21cda9cea670629528c144
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 8b601f2faf1431cf393db3560077e299d2a52f4c
+ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812512"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75191057"
 ---
-# <a name="publish-a-web-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij"></a>Veröffentlichen einer Web-App als Docker-Container mit dem Azure-Toolkit für IntelliJ
+# <a name="publish-a-web-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij-deprecated"></a>Veröffentlichen einer Web-App als Docker-Container mit dem Azure-Toolkit für IntelliJ (VERALTET)
 
 Docker-Container sind eine weit verbreitete Methode zum Bereitstellen von Webanwendungen. Mithilfe von Docker-Containern können Entwickler ihre Projektdateien und Abhängigkeiten für die Bereitstellung auf einem Server in einem einzelnen Paket zusammenfassen. Mit dem Azure-Toolkit für IntelliJ wird dieser Prozess für Java-Entwickler vereinfacht, indem Features vom Typ *Als Docker-Container veröffentlichen* für die Bereitstellung in Microsoft Azure hinzugefügt werden. In diesem Artikel werden die Schritte beschrieben, die zum Veröffentlichen Ihrer Anwendungen in Azure als Docker-Container erforderlich sind.
 
@@ -69,7 +69,7 @@ Docker-Container sind eine weit verbreitete Methode zum Bereitstellen von Webanw
       
    d. Gehen Sie auf der Registerkarte **OS and Size** (Betriebssystem und Größe) wie folgt vor:      
       * **Host OS** (Hostbetriebssystem): Geben Sie das Betriebssystem für den virtuellen Computer ein, der Ihren Host enthält. 
-      * **Größe**: Geben Sie die Größe des virtuellen Computers für Ihren Host ein.   
+      * **Size**: Geben Sie die Größe des virtuellen Computers für Ihren Host ein.   
        
    e. Wählen Sie auf der Registerkarte **Ressourcengruppe** eine der folgenden Optionen:      
       * **Neue Ressourcengruppe**: Erstellen Sie eine Ressourcengruppe für Ihren Host.
@@ -88,7 +88,7 @@ Docker-Container sind eine weit verbreitete Methode zum Bereitstellen von Webanw
 
       ![Fenster „Configure log in credentials and port settings“ (Anmeldeinformationen und Porteinstellungen konfigurieren)][PUB05]
 
-6. Wählen Sie eine der folgenden Optionen:
+6. Wählen Sie eine der folgenden Optionen aus:
 
    * **Import credentials from Azure Key Vault** (Anmeldeinformationen aus Azure Key Vault importieren): Geben Sie einen zuvor gespeicherten Satz von Anmeldeinformationen an, die in Ihrem Azure-Abonnement gespeichert sind.
 

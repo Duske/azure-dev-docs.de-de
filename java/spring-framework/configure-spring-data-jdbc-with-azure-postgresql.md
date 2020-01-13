@@ -3,20 +3,18 @@ title: Verwenden von Spring Data-JDBC mit Azure PostgreSQL
 description: Erfahren Sie, wie Sie Spring Data-JDBC (Java Database Connectivity) mit einer Azure PostgreSQL-Datenbank verwenden.
 services: postgresql
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 12/26/2019
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: d7f4ddeab5c46f6070145e5aab0b273156ed38a0
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: b5abc7479a52aa84cd3f05ffb56e5c7f31d0c533
+ms.sourcegitcommit: 94ca8c28d8d3e954cf118f1f46ac905c3a470b38
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812000"
+ms.lasthandoff: 12/27/2019
+ms.locfileid: "75502370"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-postgresql"></a>Verwenden von Spring Data-JDBC mit Azure PostgreSQL
-
-## <a name="overview"></a>Übersicht
 
 In diesem Artikel wird die Erstellung einer Beispielanwendung veranschaulicht, die [Spring Data] verwendet, um Informationen in einer Azure [PostgreSQL](https://www.postgresql.org/)-Datenbank mithilfe von [Java Database Connectivity (JDBC)](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/) zu speichern und abzurufen.
 
@@ -47,19 +45,20 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Geben Sie Folgendes ein:
 
-   - **Servername**: Wählen Sie einen eindeutigen Namen für Ihren PostgreSQL-Server aus. Dieser Name wird zum Erstellen eines vollqualifizierten Domänennamens (z. B. *wingtiptoyspostgresql.postgres.database.azure.com*) verwendet.
-   - **Abonnement**: Geben Sie das Azure-Abonnement an, das Sie verwenden möchten.
    - **Ressourcengruppe**: Erstellen Sie eine neue Ressourcengruppe, oder wählen Sie eine vorhandene Ressourcengruppe aus.
-   - **Quelle auswählen**: Wählen Sie für dieses Tutorial `Blank` aus, um eine neue Datenbank zu erstellen.
+   - **Abonnement**: Geben Sie das Azure-Abonnement an, das Sie verwenden möchten.
+   - **Servername**: Wählen Sie einen eindeutigen Namen für Ihren PostgreSQL-Server aus. Dieser Name wird zum Erstellen eines vollqualifizierten Domänennamens (z. B. *wingtiptoyspostgresql.postgres.database.azure.com*) verwendet.
+   - **Quelle auswählen**: Wählen Sie für dieses Tutorial `None` aus, um eine neue Datenbank zu erstellen.
    - **Serveradministratoranmeldung**: Geben Sie den Namen des Datenbankadministrators an.
    - **Kennwort** und **Kennwort bestätigen**: Geben Sie das Kennwort für den Datenbankadministrator an.
    - **Standort**: Geben Sie die nächstgelegene geografische Region für Ihre Datenbank an.
    - **Version**: Geben Sie aktuelle Datenbankversion an.
-   - **Tarif:** Geben Sie für dieses Tutorial den kostengünstigsten Tarif an.
 
    ![Festlegen der Eigenschaften der PostgreSQL-Datenbank][POSTGRESQL02]
 
-1. Nachdem Sie alle oben genannten Informationen eingegeben haben, klicken Sie auf **Erstellen**.
+1. Nachdem Sie alle oben genannten Informationen eingegeben haben, klicken Sie auf **Bewerten und erstellen**.
+
+1. Überprüfen Sie die Angaben, und klicken Sie auf **Erstellen**.
 
 ### <a name="configure-a-firewall-rule-for-your-postgresql-database-server-using-the-azure-portal"></a>Konfigurieren einer Firewallregel für den PostgreSQL-Datenbankserver im Azure-Portal
 
@@ -67,19 +66,15 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Klicken Sie auf **Alle Ressourcen** und anschließend auf die PostgreSQL-Datenbank, die Sie gerade erstellt haben.
 
-   ![Auswählen der PostgreSQL-Datenbank][POSTGRESQL03]
-
 1. Klicken Sie auf **Verbindungssicherheit**, und erstellen Sie im Abschnitt **Firewallregeln** eine neue Regel, indem Sie einen eindeutigen Namen für die Regel angeben, den Bereich der IP-Adressen eingeben, die Zugriff auf Ihre Datenbank benötigen, und anschließend auf **Speichern** klicken.
 
-   ![Konfigurieren der Verbindungssicherheit][POSTGRESQL04]
+   ![Konfigurieren der Verbindungssicherheit][POSTGRESQL03]
 
 ### <a name="retrieve-the-connection-string-for-your-postgresql-server-using-the-azure-portal"></a>Abrufen der Verbindungszeichenfolge für den PostgreSQL-Server im Azure-Portal
 
 1. Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>, und melden Sie sich an.
 
 1. Klicken Sie auf **Alle Ressourcen** und anschließend auf die PostgreSQL-Datenbank, die Sie gerade erstellt haben.
-
-   ![Auswählen der PostgreSQL-Datenbank][POSTGRESQL03]
 
 1. Klicken Sie auf **Verbindungszeichenfolgen**, und kopieren Sie den Wert im Textfeld **JDBC**.
 
