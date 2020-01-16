@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 028e54c54410caf9e81448fd8df8283532591895
-ms.sourcegitcommit: 7722fc50eeab0f97bd0ea9cb3263da87244af406
+ms.openlocfilehash: d5e7ff3a31f8fb66b4231770c86094244752b439
+ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/26/2019
-ms.locfileid: "75492210"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022116"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-sql-database"></a>Verwenden von Spring Data-JDBC mit Azure SQL-Datenbank
 
@@ -77,7 +77,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
    ![Firewalleinstellungen anzeigen][SQL06]
 
-1. Erstellen Sie im Abschnitt **Firewalls und virtuelle Netzwerke** eine neue Regel, indem Sie einen eindeutigen Namen für die Regel angeben, den Bereich der IP-Adressen eingeben, die Zugriff auf Ihre Datenbank benötigen, und anschließend auf **Speichern** klicken.
+1. Erstellen Sie im Abschnitt **Firewalls und virtuelle Netzwerke** eine neue Regel, indem Sie einen eindeutigen Namen für die Regel angeben, den Bereich der IP-Adressen eingeben, die Zugriff auf Ihre Datenbank benötigen, und anschließend auf **Speichern** klicken. (In dieser Übung wird die IP-Adresse Ihres Entwicklungscomputers verwendet, d. h. des Clients.  Sie können sie sowohl für **Start-IP-Adresse** als auch für **End-IP-Adresse** verwenden.)
 
    ![Konfigurieren der Firewalleinstellungen][SQL07]
 
@@ -110,7 +110,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
     ```
    Hierbei gilt:
 
-   | Parameter | BESCHREIBUNG |
+   | Parameter | Beschreibung |
    |---|---|
    | `spring.datasource.url` | Eine bearbeitete Version der SQL-JDBC-Zeichenfolge, die Sie weiter oben in diesem Artikel abgerufen haben |
    | `spring.datasource.username` | Der SQL-Administratorname, den Sie weiter oben in diesem Artikel festgelegt haben, mit angefügtem gekürzten Servernamen |

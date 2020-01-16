@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.topic: conceptual
-ms.openlocfilehash: d2134ae08bdad69af1e347476e96833d375ee966
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 5748f3e51132ff003e41d61f9c10dff61b95e364
+ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811950"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022102"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-postgresql"></a>Verwenden der Spring Data-JPA mit Azure PostgreSQL
 
@@ -24,7 +24,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 * Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile] anwenden oder sich für ein [Kostenloses Azure-Konto] registrieren
 * Ein unterstütztes Java Development Kit (JDK). Weitere Informationen zu den für die Entwicklung in Azure verfügbaren JDKs finden Sie unter <https://aka.ms/azure-jdks>.
 * [Apache Maven](http://maven.apache.org/), Version 3.0 oder höher
-* [cURL](https://curl.haxx.se/) oder ein ähnliches HTTP-Hilfsprogramm zum Testen der Funktionalität
+* [cURL](https://curl.haxx.se/) oder ein ähnliches HTTP-Hilfsprogramm zum Testen der Funktionalität ein ähnliches HTTP-Hilfsprogramm zum Testen der Funktionalität
 * Das Befehlszeilenprogramm [psql](https://www.postgresql.org/docs/current/app-psql.html)
 * Einen [Git-Client](https://git-scm.com/downloads)
 
@@ -44,7 +44,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Wählen Sie **Einzelserver** oder **Hyperscale-Servergruppe** aus.
 
-1. Klicken Sie auf **Create**.
+1. Klicken Sie auf **Erstellen**.
 
 1. Geben Sie Folgendes ein:
 
@@ -69,7 +69,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Klicken Sie auf **Verbindungssicherheit**.
 
-1. Erstellen Sie eine neue Regel, indem Sie einen eindeutigen Namen für die Regel angeben. Geben Sie anschließend den Bereich der IP-Adressen ein, die Zugriff auf Ihre Datenbank benötigen, und klicken Sie dann auf **Speichern**.
+1. Erstellen Sie eine neue Regel, indem Sie einen eindeutigen Namen für die Regel angeben. Geben Sie anschließend den Bereich der IP-Adressen ein, die Zugriff auf Ihre Datenbank benötigen, und klicken Sie dann auf **Speichern**. (In dieser Übung wird die IP-Adresse Ihres Entwicklungscomputers verwendet, d. h. des Clients.  Sie können sie sowohl für **Start-IP-Adresse** als auch für **End-IP-Adresse** verwenden.)
 
    ![Auswählen der PostgreSQL-Datenbank][POSTGRESQL03]
 
@@ -90,7 +90,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    ```
    Hierbei gilt:
 
-   | Parameter | BESCHREIBUNG |
+   | Parameter | Beschreibung |
    |---|---|
    | `host` | Der vollqualifizierte PostgreSQL-Servername, den Sie weiter oben in diesem Artikel festgelegt haben |
    | `host` | Der PostgreSQL-Serverport (Standardwert: `5432`) |
@@ -106,6 +106,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    
    postgres=>
    ```
+   > Hinweis: Wenn Sie eine Fehlermeldung erhalten, dass der Server diese IP-Adresse nicht erkennt, wird die von Ihrem Client verwendete IP-Adresse im Fehler angezeigt.  Gehen Sie zurück, und weisen Sie sie wie zuvor beschrieben zu: *Konfigurieren einer Firewallregel für Ihren Server im Azure-Portal*.
 
 1. Erstellen Sie eine Datenbank mit dem Namen *mypgsqldb*, indem Sie wie im folgenden Beispiel gezeigt einen `psql`-Befehl eingeben:
 
@@ -155,7 +156,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
     ```
    Hierbei gilt:
 
-   | Parameter | BESCHREIBUNG |
+   | Parameter | Beschreibung |
    |---|---|
    | `spring.datasource.url` | Die PostgreSQL-JDBC-Zeichenfolge, die Sie weiter oben in diesem Artikel kopiert haben |
    | `spring.datasource.username` | Der PostgreSQL-Administratorname, den Sie weiter oben in diesem Artikel festgelegt haben, mit angefügtem gekürzten Servernamen |

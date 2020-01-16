@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: d5c90992f4b669bf6089d0c0118496dfa33d67f1
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: a57fbc5dc8be0848f0b68fd1a45a1478de52b419
+ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811945"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022126"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-sql-database"></a>Verwenden der Spring Data-JPA mit Azure SQL-Datenbank
 
@@ -32,7 +32,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 ## <a name="create-an-azure-sql-database"></a>Erstellen einer Azure-SQL-Datenbank
 
-### <a name="create-a-sql-database-server-using-the-azure-portal"></a>Erstellen eines Azure SQL-Datenbank-Servers im Azure-Portal
+### <a name="create-a-sql-database-server-using-the-azure-portal"></a>Erstellen eines SQL-Datenbank-Servers im Azure-Portal
 
 > [!NOTE]
 > 
@@ -76,7 +76,7 @@ Nach der Erstellung der SQL-Datenbank und des SQL-Servers können Sie Sicherheit
 
    ![Firewalleinstellungen anzeigen][SQL06]
 
-1. Erstellen Sie im Abschnitt **Firewalls und virtuelle Netzwerke** eine neue Regel, indem Sie einen eindeutigen Namen für die Regel angeben, den Bereich der IP-Adressen eingeben, die Zugriff auf Ihre Datenbank benötigen, und anschließend auf **Speichern** klicken.
+1. Erstellen Sie im Abschnitt **Firewalls und virtuelle Netzwerke** eine neue Regel, indem Sie einen eindeutigen Namen für die Regel angeben, den Bereich der IP-Adressen eingeben, die Zugriff auf Ihre Datenbank benötigen, und anschließend auf **Speichern** klicken. (In dieser Übung wird die IP-Adresse Ihres Entwicklungscomputers verwendet, d. h. des Clients.  Sie können sie sowohl für **Start-IP-Adresse** als auch für **End-IP-Adresse** verwenden.)
 
    ![Konfigurieren der Firewalleinstellungen][SQL07]
 
@@ -114,7 +114,7 @@ Nach der Erstellung der SQL-Datenbank und des SQL-Servers können Sie Sicherheit
     ```
    Hierbei gilt:
 
-   | Parameter | BESCHREIBUNG |
+   | Parameter | Beschreibung |
    |---|---|
    | `spring.datasource.url` | Eine bearbeitete Version der SQL-JDBC-Zeichenfolge, die Sie weiter oben in diesem Artikel abgerufen haben |
    | `spring.datasource.username` | Der SQL-Administratorname, den Sie weiter oben in diesem Artikel festgelegt haben, mit angefügtem gekürzten Servernamen |

@@ -6,12 +6,12 @@ ms.date: 01/07/2020
 ms.service: mysql
 ms.tgt_pltfrm: multiple
 ms.topic: conceptual
-ms.openlocfilehash: a36484cb6858422f4d9b0e6a5c72a793f3686514
-ms.sourcegitcommit: 3b8ccf447921a55f16c25795914d9eed64c2b9cf
+ms.openlocfilehash: 7a6550be633b29d97d55b8db2f50b2c57d0ba30d
+ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75755664"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022083"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-mysql"></a>Verwenden von Spring Data-JDBC mit Azure MySQL
 
@@ -67,7 +67,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Klicken Sie auf **Alle Ressourcen** und anschließend auf die Azure Database for MySQL-Ressourcen, die Sie gerade erstellt haben.
 
-1. Klicken Sie auf **Verbindungssicherheit**, und erstellen Sie im Abschnitt **Firewallregeln** eine neue Regel, indem Sie einen eindeutigen Namen für die Regel angeben, den Bereich der IP-Adressen eingeben, die Zugriff auf Ihre Datenbank benötigen, und anschließend auf **Speichern** klicken.
+1. Klicken Sie auf **Verbindungssicherheit**, und erstellen Sie im Abschnitt **Firewallregeln** eine neue Regel, indem Sie einen eindeutigen Namen für die Regel angeben, den Bereich der IP-Adressen eingeben, die Zugriff auf Ihre Datenbank benötigen, und anschließend auf **Speichern** klicken. (In dieser Übung wird die IP-Adresse Ihres Entwicklungscomputers verwendet, d. h. des Clients.  Sie können sie sowohl für **Start-IP-Adresse** als auch für **End-IP-Adresse** verwenden.)
 
    ![Konfigurieren der Verbindungssicherheit][MYSQL04]
 
@@ -90,7 +90,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    ```
    Hierbei gilt:
 
-   | Parameter | BESCHREIBUNG |
+   | Parameter | Beschreibung |
    |---|---|
    | `host` | Der vollqualifizierte MySQL-Servername, den Sie weiter oben in diesem Artikel festgelegt haben |
    | `user` | Der MySQL-Administratorname, den Sie weiter oben in diesem Artikel festgelegt haben, mit angefügtem gekürzten Servernamen |
@@ -113,6 +113,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    
    mysql>
    ```
+   > Hinweis: Wenn Sie eine Fehlermeldung erhalten, dass der Server diese IP-Adresse nicht erkennt, wird die von Ihrem Client verwendete IP-Adresse in der Fehlermeldung angezeigt.  Gehen Sie zurück, und weisen Sie sie wie zuvor beschrieben zu: *Konfigurieren einer Firewallregel für Ihren Server im Azure-Portal*.
 
 1. Erstellen Sie eine Datenbank mit dem Namen *mysqldb*, indem Sie wie im folgenden Beispiel gezeigt einen `mysql`-Befehl eingeben:
 
@@ -167,7 +168,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
     ```
    Hierbei gilt:
 
-   | Parameter | BESCHREIBUNG |
+   | Parameter | Beschreibung |
    |---|---|
    | `spring.datasource.url` | Die MySQL-JDBC-Zeichenfolge, die Sie weiter oben in diesem Artikel kopiert haben, mit hinzugefügter Zeitzone |
    | `spring.datasource.username` | Der MySQL-Administratorname, den Sie weiter oben in diesem Artikel festgelegt haben, mit angefügtem gekürzten Servernamen |
@@ -192,9 +193,9 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 1. Erstellen Sie wie in den folgenden Beispielen dargestellt über eine Eingabeaufforderung mit `curl` neue Datensätze:
 
    ```shell
-   curl -s -d '{"name":"dog","species":"canine"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+   curl -s -d "{\"name\":\"dog\",\"species\":\"canine\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/pets
 
-   curl -s -d '{"name":"cat","species":"feline"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+   curl -s -d "{\"name\":\"cat\",\"species\":\"feline\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/pets
    ```
 
    Ihre Anwendung sollte Werte zurückgeben, die dem folgenden Beispiel ähneln:

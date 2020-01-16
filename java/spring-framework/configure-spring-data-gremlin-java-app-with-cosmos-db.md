@@ -3,17 +3,17 @@ title: Verwenden von Spring Data Gremlin Starter mit der SQL-API von Azure Cosmo
 description: Hier erfahren Sie, wie eine mit dem Spring Boot-Initialisierer erstellte Anwendung mit der SQL-API von Azure Cosmos DB konfiguriert wird.
 services: cosmos-db
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 01/10/2020
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
-ms.openlocfilehash: b5e6b3866b9b1e6a326547c053c628a282d9aaf3
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 61bf7d78edf2fcdc755d90588fe1c839d319f823
+ms.sourcegitcommit: ac68fb174d606c7af2bfa79fe32b8ca7b73c86a1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812096"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75946755"
 ---
 # <a name="how-to-use-the-spring-data-gremlin-starter-with-the-azure-cosmos-db-sql-api"></a>Verwenden von Spring Data Gremlin Starter mit der SQL-API von Azure Cosmos DB
 
@@ -42,29 +42,27 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>, und klicken Sie auf **+Ressource erstellen**.
 
-   ![Erstellen einer Ressource][AZ01]
-
 1. Klicken Sie auf **Datenbanken** und anschließend auf **Azure Cosmos DB**.
 
    ![Erstellen von Azure Cosmos DB][AZ02]
 
 1. Geben Sie auf der Seite **Azure Cosmos DB** die folgenden Informationen ein:
 
-   * Geben Sie eine eindeutige **ID** ein, die als Teil des Gremlin-URIs für Ihre Datenbank verwendet wird. Wenn Sie für die **ID** also beispielsweise **wingtiptoysdata** eingegeben haben, lautet der Gremlin-URI *wingtiptoysdata.gremlin.cosmosdb.azure.com*.
-   * Wählen Sie **Gremlin (Diagramm)** für die API aus.
-   * Wählen Sie das **Abonnement**, das Sie für Ihre Datenbank verwenden möchten.
+   * Wählen Sie das **Abonnement** aus, das Sie für Ihre Datenbank verwenden möchten.
    * Legen Sie fest, ob eine neue **Ressourcengruppe** für Ihre Datenbank erstellt werden soll, oder wählen Sie eine vorhandene Ressourcengruppe aus.
+   * Geben Sie einen eindeutigen Wert für **Kontoname** ein, der als Teil des Gremlin-URIs für Ihre Datenbank verwendet wird. Wenn Sie für **Kontoname** also beispielsweise **wingtiptoysdata** eingegeben haben, lautet der Gremlin-URI *wingtiptoysdata.gremlin.cosmosdb.azure.com*.
+   * Wählen Sie **Gremlin (Diagramm)** für die API aus.
    * Geben Sie den **Speicherort** für Ihre Datenbank an.
    
-   Wenn Sie diese Optionen angegeben haben, klicken Sie zum Erstellen Ihrer Datenbank auf **Erstellen**.
+Klicken Sie nach Angabe dieser Optionen auf **Überprüfen + erstellen**.
 
    ![Angeben von Optionen für Azure Cosmos DB][AZ03]
 
-1. Wenn Ihre Datenbank erstellt wurde, wird Sie in Ihrem Azure-**Dashboard** sowie auf den Seiten **Alle Ressourcen** und **Azure Cosmos DB** aufgeführt. Sie können in Ihrer Datenbank auf eine beliebige Stelle klicken, um die Eigenschaftenseite für Ihren Cache zu öffnen.
+Überprüfen Sie die Angaben, und klicken Sie anschließend auf **Erstellen**, um Ihre Datenbank zu erstellen.
 
-   ![Alle Ressourcen][AZ04]
+1. Klicken Sie nach der Erstellung der Datenbank auf **Zu Ressource wechseln**. Sie wird auf Ihrem Azure-**Dashboard** sowie auf den Seiten **Alle Ressourcen** und **Azure Cosmos DB** aufgeführt. Sie können in Ihrer Datenbank auf eine beliebige Stelle klicken, um die Eigenschaftenseite für Ihren Cache zu öffnen.
 
-1. Wenn die Eigenschaftenseite für Ihre Datenbank angezeigt wird, klicken Sie auf **Zugriffsschlüssel**, und kopieren Sie Ihren URI sowie Ihre Zugriffsschlüssel für Ihre Datenbank. Diese Werte verwenden Sie in Ihrer Spring Boot-Anwendung.
+1. Wenn die Eigenschaftenseite für Ihre Datenbank angezeigt wird, klicken Sie auf **Schlüssel**, und kopieren Sie Ihren URI sowie Ihre Zugriffsschlüssel für Ihre Datenbank. Diese Werte verwenden Sie in Ihrer Spring Boot-Anwendung.
 
    ![Zugriffsschlüssel][AZ05]
 
@@ -77,9 +75,10 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 1. Wenn **Diagramm hinzufügen** angezeigt wird, geben Sie folgende Informationen ein:
 
    * Geben Sie eine eindeutige **Datenbank-ID** für Ihre Datenbank an.
-   * Geben Sie eine eindeutige **Diagramm-ID** für Ihr Diagramm an.
    * Sie können Ihre **Speicherkapazität** angeben oder die Standardeinstellung übernehmen.
-   * Geben Sie Ihren **Durchsatz** an. Für dieses Beispiel können Sie 400 Anforderungseinheiten (Request Units, RUs) auswählen.
+   * Geben Sie eine eindeutige **Diagramm-ID** für Ihr Diagramm an.
+   * Geben Sie einen **Partitionsschlüssel** an. Weitere Informationen finden Sie unter [Verwenden eines partitionierten Graph in Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/graph-partitioning).
+Klicken Sie auf **OK**.
    
    Wenn Sie diese Optionen angegeben haben, klicken Sie auf **OK**, um das Diagramm zu erstellen.
 
@@ -104,8 +103,6 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Laden Sie das Projekt nach entsprechender Aufforderung unter einem Pfad auf dem lokalen Computer herunter.
 
-   ![Herunterladen eines benutzerdefinierten Spring Boot-Projekts][SI02]
-
 1. Nachdem Sie die Dateien auf Ihrem lokalen System extrahiert haben, kann Ihre einfache Spring Boot-Anwendung bearbeitet werden.
 
    ![Dateien eines benutzerdefinierten Spring Boot-Projekts][SI03]
@@ -119,8 +116,6 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    Oder
 
    `/users/example/home/wingtiptoysdata/pom.xml`
-
-   ![Suchen der Datei „pom.xml“][PM01]
 
 1. Öffnen Sie die Datei *pom.xml* in einem Text-Editor, und fügen Sie Spring Data Gremlin Starter der Liste mit `<dependencies>` hinzu:
 
@@ -161,7 +156,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    
    Hierbei gilt:
    
-   | Feld | BESCHREIBUNG |
+   | Feld | Beschreibung |
    |---|---|
    | `endpoint` | Gibt den Gremlin-URI für Ihre Datenbank an. Dieser wird von der eindeutigen **ID** abgeleitet, die Sie zuvor in diesem Tutorial beim Erstellen Ihrer Azure Cosmos DB-Instanz angegeben haben. |
    | `port` | Gibt den TCP/IP-Port an (**443** für HTTPS). |
@@ -558,23 +553,19 @@ Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure 
 
 <!-- IMG List -->
 
-[AZ01]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/AZ01.png
 [AZ02]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/AZ02.png
 [AZ03]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/AZ03.png
-[AZ04]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/AZ04.png
 [AZ05]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/AZ05.png
 [AZ06]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/AZ06.png
 [AZ07]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/AZ07.png
 [AZ08]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/AZ08.png
 
 [SI01]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/SI01.png
-[SI02]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/SI02.png
 [SI03]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/SI03.png
 
 [RE01]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/RE01.png
 [RE02]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/RE02.png
 
-[PM01]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/PM01.png
 [PM02]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/PM02.png
 
 [JV01]: ./media/configure-spring-data-gremlin-java-app-with-cosmos-db/JV01.png

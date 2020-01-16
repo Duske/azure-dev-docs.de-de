@@ -7,12 +7,12 @@ ms.date: 12/26/2019
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: b5abc7479a52aa84cd3f05ffb56e5c7f31d0c533
-ms.sourcegitcommit: 94ca8c28d8d3e954cf118f1f46ac905c3a470b38
+ms.openlocfilehash: 956867a355ffdd64dbeac8e85df4d0ced4362d16
+ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/27/2019
-ms.locfileid: "75502370"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022104"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-postgresql"></a>Verwenden von Spring Data-JDBC mit Azure PostgreSQL
 
@@ -66,7 +66,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Klicken Sie auf **Alle Ressourcen** und anschließend auf die PostgreSQL-Datenbank, die Sie gerade erstellt haben.
 
-1. Klicken Sie auf **Verbindungssicherheit**, und erstellen Sie im Abschnitt **Firewallregeln** eine neue Regel, indem Sie einen eindeutigen Namen für die Regel angeben, den Bereich der IP-Adressen eingeben, die Zugriff auf Ihre Datenbank benötigen, und anschließend auf **Speichern** klicken.
+1. Klicken Sie auf **Verbindungssicherheit**, und erstellen Sie im Abschnitt **Firewallregeln** eine neue Regel, indem Sie einen eindeutigen Namen für die Regel angeben, den Bereich der IP-Adressen eingeben, die Zugriff auf Ihre Datenbank benötigen, und anschließend auf **Speichern** klicken. (In dieser Übung wird die IP-Adresse Ihres Entwicklungscomputers verwendet, d. h. des Clients.  Sie können sie sowohl für **Start-IP-Adresse** als auch für **End-IP-Adresse** verwenden.)
 
    ![Konfigurieren der Verbindungssicherheit][POSTGRESQL03]
 
@@ -89,7 +89,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    ```
    Hierbei gilt:
 
-   | Parameter | BESCHREIBUNG |
+   | Parameter | Beschreibung |
    |---|---|
    | `host` | Der vollqualifizierte PostgreSQL-Servername, den Sie weiter oben in diesem Artikel festgelegt haben |
    | `host` | Der PostgreSQL-Serverport (Standardwert: `5432`) |
@@ -105,6 +105,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    
    postgres=>
    ```
+   > Hinweis: Wenn Sie eine Fehlermeldung erhalten, dass der Server diese IP-Adresse nicht erkennt, wird die von Ihrem Client verwendete IP-Adresse im Fehler angezeigt.  Gehen Sie zurück, und weisen Sie sie wie zuvor beschrieben zu: *Konfigurieren einer Firewallregel für Ihren Server im Azure-Portal*.
 
 1. Erstellen Sie eine Datenbank mit dem Namen *mypgsqldb*, indem Sie wie im folgenden Beispiel gezeigt einen `psql`-Befehl eingeben:
 
@@ -154,7 +155,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
     ```
    Hierbei gilt:
 
-   | Parameter | BESCHREIBUNG |
+   | Parameter | Beschreibung |
    |---|---|
    | `spring.datasource.url` | Die PostgreSQL-JDBC-Zeichenfolge, die Sie weiter oben in diesem Artikel kopiert haben |
    | `spring.datasource.username` | Der PostgreSQL-Administratorname, den Sie weiter oben in diesem Artikel festgelegt haben, mit angefügtem gekürzten Servernamen |
