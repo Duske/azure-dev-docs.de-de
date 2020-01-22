@@ -126,7 +126,7 @@
       items:
         - name: Muster und bewährte Methoden
           href: java-sdk-azure-concepts.md
-    - name: Lernprogramme
+    - name: Tutorials
       items:
         - name: Bereitstellen von Microservices in Service Fabric
           href: /azure/service-fabric/service-fabric-tutorial-create-java-app?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
@@ -152,8 +152,16 @@
       items:
         - name: Hinzufügen des Stammzertifikats
           href: java-sdk-add-certificate-ca-store.md
-        - name: Authentifizieren
+        - name: Authenticate
           href: java-sdk-azure-authenticate.md
+        - name: Migrieren von Java zu Azure
+          items:
+            - name: Übersicht
+              href: migration-overview.md
+            - name: Tomcat zu Azure App Service
+              href: migrate-tomcat-to-tomcat-app-service.md
+            - name: Tomcat zu Containern in AKS
+              href: migrate-tomcat-to-containers-on-azure-kubernetes-service.md
     - name: Codebeispiele
       items:
         - name: Service Fabric
