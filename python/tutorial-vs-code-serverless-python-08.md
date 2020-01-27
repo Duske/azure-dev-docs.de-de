@@ -2,24 +2,26 @@
 title: 'Tutorial: Bereinigen der mit dem Python-Code verwendeten Ressourcen in Azure Functions'
 description: 'Tutorialschritt 8: Bereinigen von Azure-Ressourcen, um laufende Gebühren zu vermeiden'
 ms.topic: conceptual
-ms.date: 09/12/2019
+ms.date: 01/15/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 441e3de83dfc56bc8c5b1b2adbcfb2042fe83355
-ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
+ms.openlocfilehash: 264c09a8d84c7115bb0a56d0455d576187695db0
+ms.sourcegitcommit: a8073315f751631ab983618fa9f812eb95d8b2dc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74992440"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76125253"
 ---
 # <a name="tutorial-clean-up-azure-resources-for-azure-functions"></a>Tutorial: Bereinigen von Azure-Ressourcen für Azure Functions
 
 [Vorheriger Schritt: Hinzufügen einer Speicherbindung](tutorial-vs-code-serverless-python-07.md)
 
-In diesem Artikel erfahren Sie, wie Sie die in diesem Tutorial erstellten Azure-Ressourcen entfernen. Die mit Visual Studio Code erstellte Azure-Funktions-App enthält Ressourcen, die minimale Kosten verursachen können.
+In diesem Artikel erfahren Sie, wie Sie die in diesem Tutorial erstellten Azure-Ressourcen entfernen. Die mit Visual Studio Code erstellte Azure-Funktions-App enthält Ressourcen, die minimale Kosten verursachen können. (Weitere Informationen finden Sie unter [Azure Functions – Preise](https://azure.microsoft.com/pricing/details/functions/).)
 
-Um die Ressourcen zu bereinigen, klicken Sie mit der rechten Maustaste auf die Funktions-App im **Azure: Functions**-Explorer, und wählen Sie **Funktions-App löschen** aus. Weitere Informationen finden Sie unter [Azure Functions – Preise](https://azure.microsoft.com/pricing/details/functions/).
+Die beste Möglichkeit zur Bereinigung von Ressourcen ist das Löschen der Ressourcengruppe, die alle einzelnen Ressourcen dieses Tutorials enthält. Zu den Ressourcen gehören die Funktions-App, das Speicherkonto und der zugrunde liegende App Service-Plan.
 
-Sie können auch das [Azure-Portal](https://portal.azure.com) aufrufen, **Ressourcengruppen** im Navigationsbereich auf der linken Seite auswählen, die im Rahmen dieses Tutorials erstellte Ressourcengruppe auswählen und dann den Befehl **Ressourcengruppe löschen** verwenden.
+[!INCLUDE [delete-resource-group](includes/delete-resource-group.md)]
+
+In Visual Studio Code stellen Sie ggf. fest, dass das Kontextmenü der Funktions-App im **Azure Functions**-Explorer über den Befehl **Funktions-App löschen** verfügt. Mit dem Befehl wird aber nur die Funktions-App gelöscht, während die anderen Ressourcen erhalten bleiben. Dies kann dazu führen, dass laufende Kosten anfallen.
 
 ## <a name="next-steps"></a>Nächste Schritte
 

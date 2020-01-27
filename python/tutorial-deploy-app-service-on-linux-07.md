@@ -4,20 +4,20 @@ description: 'Tutorialschritt 7: Bereinigen von Azure-Ressourcen'
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 5a890ae2db4f9aa9bd3ca09364467adb022beed8
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 8145b33ae52427d55c9b3de9fcf6fb20467b7ba9
+ms.sourcegitcommit: a8073315f751631ab983618fa9f812eb95d8b2dc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466054"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76125263"
 ---
 # <a name="tutorial-clean-up-resources-after-deploying-to-azure-app-service-on-linux-from-visual-studio-code"></a>Tutorial: Bereinigen von Ressourcen nach der Bereitstellung in Azure App Service für Linux aus Visual Studio Code
 
 [Vorheriger Schritt: Streamen von Protokollen](tutorial-deploy-app-service-on-linux-06.md)
 
-Die von Ihnen erstellte Azure App Service-Instanz beinhaltet einen App Service-Plan, der Kosten verursachen kann. Um die Ressourcen zu bereinigen, klicken Sie mit der rechten Maustaste auf die App Service-Instanz im **Azure App Service**-Explorer und wählen dann **Löschen** aus.
+Die von Ihnen erstellte Azure App Service-Instanz beinhaltet einen App Service-Plan, der Kosten verursachen kann. Löschen Sie die Ressourcengruppe, in der alle Ressourcen enthalten sind, um diese Kosten zu vermeiden.
 
-Sie können auch das [Azure-Portal](https://portal.azure.com) aufrufen, **Ressourcengruppen** im Navigationsbereich auf der linken Seite auswählen, die im Rahmen dieses Tutorials erstellte Ressourcengruppe auswählen und dann den Befehl **Ressourcengruppe löschen** verwenden.
+[!INCLUDE [delete-resource-group](includes/delete-resource-group.md)]
 
 ## <a name="next-steps"></a>Nächste Schritte
 
