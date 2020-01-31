@@ -1,18 +1,14 @@
 ---
 title: Authentifizierung mit dem Azure SDK für Go
 description: Hier erfahren Sie, welche Authentifizierungsmethoden im Azure SDK für Go zur Verfügung stehen und wie Sie sie verwenden.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.date: 09/05/2018
 ms.topic: conceptual
-ms.devlang: go
-ms.openlocfilehash: 34a3995b4eb5cc9012ca03b11fa8199460b9f9d4
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: b4bf09dbb3f59c77c2914ae9c9091dc0af31b093
+ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68292073"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76871977"
 ---
 # <a name="authentication-methods-in-the-azure-sdk-for-go"></a>Authentifizierungsmethoden im Azure SDK für Go
 
@@ -68,7 +64,7 @@ Sind für einen Authentifizierungstyp keine Werte festgelegt oder wird der Authe
 Die folgende Tabelle gibt Aufschluss über die Umgebungsvariablen, die für die einzelnen Authentifizierungsarten festgelegt werden müssen, die von der umgebungsbasierten Authentifizierung unterstützt werden.
 
 
-|  Authentifizierungsart   |     Umgebungsvariable     |                                                                                                     BESCHREIBUNG                                                                                                      |
+|  Authentifizierungsart   |     Umgebungsvariable     |                                                                                                     Beschreibung                                                                                                      |
 |------------------------|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Clientanmeldeinformationen** |      `AZURE_TENANT_ID`       |                                                                    Die ID für den Active Directory-Mandanten, zu dem der Dienstprinzipal gehört.                                                                     |
 |                        |      `AZURE_CLIENT_ID`       |                                                                                       Der Name oder die ID des Dienstprinzipals.                                                                                       |
@@ -85,7 +81,7 @@ Die folgende Tabelle gibt Aufschluss über die Umgebungsvariablen, die für die 
 
 Wenn Sie eine Verbindung mit einem Cloud- oder Verwaltungsendpunkt herstellen möchten, bei dem es sich nicht um die standardmäßige öffentliche Azure-Cloud handelt, legen Sie die folgenden Umgebungsvariablen fest. Diese werden häufig bei Verwendung von Azure Stack, bei Verwendung einer Cloud in einer anderen geografischen Region oder bei Verwendung des klassischen Bereitstellungsmodells festgelegt.
 
-| Umgebungsvariable | BESCHREIBUNG  |
+| Umgebungsvariable | Beschreibung  |
 |----------------------|--------------|
 | `AZURE_ENVIRONMENT` | Der Name der Cloudumgebung, mit der eine Verbindung hergestellt werden soll. |
 | `AZURE_AD_RESOURCE` | Die Active Directory-Ressourcen-ID, die beim Herstellen einer Verbindung mit dem Verwaltungsendpunkt als URI verwendet wird |
@@ -101,7 +97,7 @@ authorizer, err := auth.NewAuthorizerFromEnvironment()
 
 Für die Authentifizierung in Azure Stack müssen Sie die folgenden Variablen festlegen:
 
-| Umgebungsvariable | BESCHREIBUNG  |
+| Umgebungsvariable | Beschreibung  |
 |----------------------|--------------|
 | `AZURE_AD_ENDPOINT` | Active Directory-Endpunkt |
 | `AZURE_AD_RESOURCE` | Active Directory-Ressourcen-ID |

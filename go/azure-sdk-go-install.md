@@ -1,18 +1,14 @@
 ---
 title: Installieren des Azure SDK für Go
 description: Es wird beschrieben, wie Sie das Azure SDK für Go installieren und konfigurieren und das Vendoring dafür durchführen.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.date: 03/14/2018
 ms.topic: conceptual
-ms.devlang: go
-ms.openlocfilehash: e7a4449ed29239e7cb08902cee299d74102a72bf
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: daf725a59042038e682c852a50080972d33a497e
+ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68291937"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76871880"
 ---
 # <a name="install-the-azure-sdk-for-go"></a>Installieren des Azure SDK für Go
 
@@ -47,7 +43,7 @@ version = "14.0.0"
 Importieren Sie beliebige Dienste, mit denen Sie interagieren, und die erforderlichen `autorest`-Module, um Azure-Dienste in Ihrem Go-Code zu nutzen.
 Sie erhalten eine vollständige Liste mit den verfügbaren Modulen von GoDoc für [verfügbare Dienste](https://godoc.org/github.com/Azure/azure-sdk-for-go) und [AutoRest-Pakete](https://godoc.org/github.com/Azure/go-autorest). Die am häufigsten verwendeten Pakete, die Sie für `go-autorest` benötigen, sind:
 
-| Paket | BESCHREIBUNG |
+| Paket | Beschreibung |
 |---------|-------------|
 | [github.com/Azure/go-autorest/autorest][autorest] | Objekte zur Verarbeitung der Dienstclientauthentifizierung |
 | [github.com/Azure/go-autorest/autorest/azure][autorest/azure] | Konstanten für Interaktionen mit Azure-Diensten |

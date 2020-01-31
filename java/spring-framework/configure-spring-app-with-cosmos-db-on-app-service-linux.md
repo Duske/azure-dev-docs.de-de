@@ -6,12 +6,12 @@ ms.reviewer: joshuapa
 ms.date: 4/24/2019
 ms.service: cosmos-db
 ms.topic: article
-ms.openlocfilehash: ab49d2c05477d6f2674cd410cf3b9fbeda357bf8
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 53bc7d9ebd03fb122d58dd52145876e698dc751f
+ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812171"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76872165"
 ---
 # <a name="how-to-use-spring-and-cosmos-db-with-app-service-on-linux"></a>Verwenden von Spring und Azure Cosmos DB mit App Service für Linux
 
@@ -27,7 +27,7 @@ Dabei wird die Verwendung folgender Komponenten veranschaulicht:
 
 Für die Durchführung der Schritte in diesem Artikel müssen folgende Voraussetzungen erfüllt sein:
 
-- Sie benötigen ein Azure-Abonnement, um eine Java-Web-App in der Cloud bereitstellen zu können. Falls Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) aktivieren oder sich für ein [kostenloses Azure-Konto]((https://azure.microsoft.com/pricing/free-trial/)) registrieren.
+- Sie benötigen ein Azure-Abonnement, um eine Java-Web-App in der Cloud bereitstellen zu können. Falls Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) aktivieren oder sich für ein [kostenloses Azure-Konto](https://azure.microsoft.com/pricing/free-trial/) registrieren.
 - [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
 - [Java 8 JDK](https://docs.microsoft.com/azure/java/jdk/java-jdk-install)
 - [Maven 3](http://maven.apache.org/)

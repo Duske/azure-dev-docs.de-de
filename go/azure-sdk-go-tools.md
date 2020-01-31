@@ -1,18 +1,14 @@
 ---
 title: Tools für Entwickler, die das Azure SDK für Go nutzen
 description: Tools zur Verwendung mit dem Azure SDK für Go und Azure-Diensten
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.date: 09/05/2018
 ms.topic: conceptual
-ms.devlang: go
-ms.openlocfilehash: 9db908f6da697e4e522064cff830d87278b70b8e
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: b08a578c3e5ceb7381cc1643b2967405b292376e
+ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68291801"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76872039"
 ---
 # <a name="tools-for-developers-using-the-azure-sdk-for-go"></a>Tools für Entwickler, die das Azure SDK für Go nutzen
 

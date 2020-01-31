@@ -3,12 +3,12 @@ title: Azure SDK für Python
 description: Übersicht über die Features und Funktionen des Azure SDK für Python, die Entwickler bei der effizienteren Verwendung von Azure-Diensten unterstützen.
 ms.date: 10/30/2019
 ms.topic: conceptual
-ms.openlocfilehash: 83a9541330f270e51ffa5ed8952a93dee8ff132f
-ms.sourcegitcommit: ac68fb174d606c7af2bfa79fe32b8ca7b73c86a1
+ms.openlocfilehash: 17ab0cea512bb47a448492422a789f50a283ca9e
+ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75946701"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76872054"
 ---
 # <a name="azure-sdk-for-python"></a>Azure SDK für Python
 
@@ -60,8 +60,10 @@ Die Core-Bibliothek wird aktuell von folgenden Bibliotheken verwendet:
 
 - `azure-storage-blob`
 - `azure-storage-queue`
+- `azure-storage-file-share`
 - `azure-keyvault-keys`
 - `azure-keyvault-secrets`
+- `azure-identity`
 
 ## <a name="manage-azure-resources"></a>Verwalten von Azure-Ressourcen
 

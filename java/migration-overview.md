@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: fbf1faabbefcb987cf398a45005eb480ec16b27d
-ms.sourcegitcommit: 3585b1b5148e0f8eb950037345bafe6a4f6be854
+ms.openlocfilehash: d32c38d763901152135b965484362031dfac7f0a
+ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76288589"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76825794"
 ---
 # <a name="migrate-java-applications-to-azure"></a>Migrieren von Java-Anwendungen zu Azure
 
@@ -129,9 +129,9 @@ Ermitteln Sie in den folgenden Zeilen Ihren Java-Anwendungstyp und die Spalten, 
 
 |Ziel&nbsp;→<br><br>Anwendungstyp&nbsp;&nbsp;↓|App<br>Dienst<br>Java SE|App<br>Dienst<br>Tomcat|App<br>Dienst<br>WildFly|Azure<br>Spring<br>Cloud|AKS|Virtual Machines|
 |---|---|---|---|---|---|---|
-| Spring Boot-/<br>JAR-Anwendungen | Geplant | Geplant        | Geplant | Geplant | Geplant        | Geplant |
-| Spring Cloud/<br>Microservices   | –     | –            | –     | Geplant | Geplant        | Geplant |
-| Webanwendungen<br>unter Tomcat     | –     | [Verfügbar][2] | –     | –     | [Verfügbar][3] | Geplant |
+| Spring Boot-/<br>JAR-Anwendungen | [Verfügbar][5] | Geplant        | Geplant | Geplant | Geplant        | Geplant |
+| Spring Cloud/<br>Microservices   | –            | –            | –     | Geplant | Geplant        | Geplant |
+| Webanwendungen<br>unter Tomcat     | –            | [Verfügbar][2] | –     | –     | [Verfügbar][3] | Geplant |
 
 **Java EE-Anwendungen**
 
@@ -139,12 +139,14 @@ Ermitteln Sie anhand der unten angegebenen Zeilen den Typ Ihrer Java EE-Anwendun
 
 |Ziel&nbsp;→<br><br>App-Server&nbsp;↓|App<br>Dienst<br>Java SE|App<br>Dienst<br>Tomcat|App<br>Dienst<br>WildFly|Azure<br>Spring<br>Cloud|AKS|Virtual Machines|
 |---|---|---|---|---|---|---|
-| WildFly/<br>JBoss AS | – | – | Geplant | – | Geplant | Geplant |
-| WebLogic              | – | – | Geplant | – | Geplant | Geplant |
-| WebSphere             | – | – | Geplant | – | Geplant | Geplant |
-| JBoss EAP             | – | – | Geplant | – | –     | Geplant |
+| WildFly/<br>JBoss AS | – | – | Geplant | – | Geplant | Geplant        |
+| WebLogic              | – | – | Geplant | – | Geplant | [Verfügbar][4] |
+| WebSphere             | – | – | Geplant | – | Geplant | Geplant        |
+| JBoss EAP             | – | – | Geplant | – | –     | Geplant        |
 
 <!-- reference links, for use with tables -->
 [1]: media/migration-overview/logo_azure.svg
 [2]: migrate-tomcat-to-tomcat-app-service.md
 [3]: migrate-tomcat-to-containers-on-azure-kubernetes-service.md
+[4]: migrate-weblogic-to-virtual-machines.md
+[5]: migrate-java-se-to-java-se-app-service.md

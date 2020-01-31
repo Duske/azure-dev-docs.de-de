@@ -1,20 +1,14 @@
 ---
 title: Erste Schritte mit den Azure-Modulen für Node.js
 description: Erste Schritte mit der Authentifizierung und Ressourcenverwaltung mit Azure-Modulen für Node.js
-author: karlerickson
-manager: douge
-ms.author: karler
 ms.date: 06/17/2017
 ms.topic: conceptual
-ms.prod: azure
-ms.devlang: nodejs
-ms.service: azure-nodejs
-ms.openlocfilehash: 3ba92eae7d6d287cec668dbd1bfcac8e52b04017
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 66aface16b4281c541f0f40a3f0f6cbc12be8f89
+ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68690839"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76872125"
 ---
 # <a name="get-started-with-the-azure-modules-for-nodejs"></a>Erste Schritte mit den Azure-Modulen für Node.js
 

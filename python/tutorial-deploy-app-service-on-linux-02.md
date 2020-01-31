@@ -4,12 +4,12 @@ description: 'Tutorialschritt 2: Einrichten der Anwendung'
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: e504e78ae660719c60827db46d4801f5f5c4b3ce
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: d77da775a112185f7ccb81805272c5c70a2aecb3
+ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466211"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76825774"
 ---
 # <a name="tutorial-prepare-your-app-for-deployment-to-azure-app-service"></a>Tutorial: Vorbereiten Ihrer App für die Bereitstellung in Azure App Service
 
@@ -47,12 +47,16 @@ In diesem Abschnitt wird die in dieser exemplarischen Vorgehensweise verwendete 
 1. Verwenden Sie zum Ausführen dieser App die folgenden Befehle (abhängig vom Betriebssystem). Die Umgebungsvariable FLASK_APP weist Flask an, wo das App-Objekt zu finden ist.
 
     ```ps
-    set FLASK_APP=hello:myapp
-    flask run
+    $env:FLASK_APP = "hello:myapp"
     ```
 
     ```bash
     export FLASK_APP=hello:myapp
+    flask run
+    ```
+
+    ```cmd
+    set FLASK_APP=hello:myapp
     flask run
     ```
 
