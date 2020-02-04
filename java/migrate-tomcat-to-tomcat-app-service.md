@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: ce1c54f0f4b28c5c0a2e11f4afc53f1dd59899c5
-ms.sourcegitcommit: 3585b1b5148e0f8eb950037345bafe6a4f6be854
+ms.openlocfilehash: f9611415264ce0c00a077d8988ef0fc9f7d97f66
+ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76288599"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76825874"
 ---
 # <a name="migrate-tomcat-applications-to-tomcat-on-azure-app-service"></a>Migrieren von Tomcat-Anwendungen zu Tomcat unter Azure App Service
 
@@ -21,34 +21,15 @@ In diesem Leitfaden wird beschrieben, was Sie beachten sollten, wenn Sie eine vo
 Falls Sie keine Anforderungen der Migrationsvorbereitung erfüllen können, helfen Ihnen die Informationen in den folgenden relevanten Migrationsleitfäden weiter:
 
 * [Migrieren von Tomcat-Anwendungen zu Containern unter Azure Kubernetes Service](migrate-tomcat-to-containers-on-azure-kubernetes-service.md)
-* Migrieren von Tomcat-Anwendungen zu Azure Virtual Machines (in Kürze verfügbar)
+* Migrieren von Tomcat-Anwendungen zu Azure Virtual Machines (geplant)
 
 ## <a name="pre-migration-steps"></a>Schritte zur Migrationsvorbereitung
 
-* [Wechseln zu einer unterstützten Plattform](#switch-to-a-supported-platform)
-* [Bestand: Externe Ressourcen](#inventory-external-resources)
-* [Bestand: Geheimnisse](#inventory-secrets)
-* [Bestand: Dauerhafte Nutzung](#inventory-persistence-usage)
-* [Sonderfälle](#special-cases)
-
 ### <a name="switch-to-a-supported-platform"></a>Wechseln zu einer unterstützten Plattform
 
-App Service verfügt über bestimmte Versionen von Tomcat für bestimmte Versionen von Java. Migrieren Sie Ihre Anwendung zur Sicherstellung der Kompatibilität zu einer der unterstützten Versionen von Tomcat und Java in der aktuellen Umgebung, bevor Sie mit der Ausführung der restlichen Schritte beginnen. Achten Sie darauf, dass Sie die sich ergebende Konfiguration umfassend testen. Verwenden Sie für diese Tests [Red Hat Enterprise Linux 8](https://portal.azure.com/#create/RedHat.RedHatEnterpriseLinux80-ARM) als Betriebssystem.
+App Service verfügt über bestimmte Versionen von Tomcat für bestimmte Versionen von Java. Migrieren Sie Ihre Anwendung zur Sicherstellung der Kompatibilität zu einer der unterstützten Versionen von Tomcat und Java in der aktuellen Umgebung, bevor Sie mit der Ausführung der restlichen Schritte beginnen. Achten Sie darauf, dass Sie die sich ergebende Konfiguration umfassend testen. Verwenden Sie für diese Tests das neueste stabile Release Ihrer Linux-Distribution.
 
-#### <a name="java"></a>Java
-
-> [!NOTE]
-> Diese Überprüfung ist besonders wichtig, wenn Ihr aktueller Server auf einem nicht unterstützten JDK (z. B. Oracle JDK oder IBM OpenJ9) ausgeführt wird.
-
-Melden Sie sich an Ihrem Produktionsserver an, und führen Sie den folgenden Befehl aus, um Ihre aktuelle Java-Version zu ermitteln:
-
-```bash
-java -version
-```
-
-Laden Sie zum Ermitteln der aktuellen Version, die von Azure App Service verwendet wird, [Zulu 8](https://www.azul.com/downloads/zulu-community/?&version=java-8-lts&os=&os=linux&architecture=x86-64-bit&package=jdk) (bei Nutzung der Java 8 Runtime) bzw. [Zulu 11](https://www.azul.com/downloads/zulu-community/?&version=java-11-lts&os=&os=linux&architecture=x86-64-bit&package=jdk) (bei Nutzung der Java 11 Runtime) herunter.
-
-#### <a name="tomcat"></a>Tomcat
+[!INCLUDE [note-obtain-your-current-java-version](includes/migration/note-obtain-your-current-java-version.md)]
 
 Melden Sie sich an Ihrem Produktionsserver an, und führen Sie den folgenden Befehl aus, um Ihre aktuelle Tomcat-Version zu ermitteln:
 
@@ -61,6 +42,8 @@ Laden Sie [Tomcat 8.5](https://tomcat.apache.org/download-80.cgi#8.5.50) oder [
 [!INCLUDE [inventory-external-resources](includes/migration/inventory-external-resources.md)]
 
 [!INCLUDE [inventory-secrets](includes/migration/inventory-secrets.md)]
+
+[!INCLUDE [inventory-certificates](includes/migration/inventory-certificates.md)]
 
 [!INCLUDE [inventory-persistence-usage](includes/migration/inventory-persistence-usage.md)]
 
@@ -123,7 +106,7 @@ Bei Verwendung von [AccessLogValve](https://tomcat.apache.org/tomcat-8.5-doc/api
 
 ## <a name="migration"></a>Migration
 
-### <a name="parametrize-the-configuration"></a>Parametrisieren der Konfiguration
+### <a name="parameterize-the-configuration"></a>Parametrisieren der Konfiguration
 
 Bei der Migrationsvorbereitung haben Sie in *server.xml*- und *context.xml*-Dateien ggf. Geheimnisse und externe Abhängigkeiten identifiziert, z. B. Datenquellen. Ersetzen Sie für alle auf diese Weise identifizierten Elemente den Benutzernamen, das Kennwort, die Verbindungszeichenfolge und die URL durch eine Umgebungsvariable.
 
@@ -164,7 +147,7 @@ Erstellen Sie anschließend den App Service Plan. Weitere Informationen finden S
 
 ### <a name="create-and-deploy-web-apps"></a>Erstellen und Bereitstellen von Web-Apps
 
-Sie müssen für jede WAR-Datei, die auf Ihrem Tomcat-Server bereitgestellt wird, unter Ihrem App Service-Plan eine Web-App erstellen.
+Sie müssen für jede WAR-Datei, die auf Ihrem Tomcat-Server bereitgestellt wird, eine Web-App in Ihrem App Service-Plan erstellen (und eine Version von Tomcat als Laufzeitstapel auswählen).
 
 > [!NOTE]
 > Es ist zwar möglich, für eine Web-App mehrere WAR-Dateien bereitzustellen, aber dies entspricht nicht der empfohlenen Vorgehensweise. Die Bereitstellung mehrerer WAR-Dateien für eine Web-App verhindert, dass jede Anwendung gemäß ihren jeweiligen Nutzungsanforderungen skaliert werden kann. Darüber hinaus wird hierdurch die Komplexität nachfolgender Bereitstellungspipelines erhöht. Wenn mehrere Anwendungen unter einer einzelnen URL verfügbar sein sollen, sollten Sie den Einsatz einer Routinglösung, z. B. [Azure Application Gateway](/azure/application-gateway/), erwägen.
@@ -191,11 +174,9 @@ Wenn für Ihre Anwendung bestimmte Runtimeoptionen benötigt werden, sollten Sie
 
 Verwenden Sie die Anwendungseinstellungen, um die spezifischen Geheimnisse für Ihre Anwendung zu speichern. Falls Sie die gleichen Geheimnisse für mehrere Anwendungen nutzen möchten oder differenzierte Zugriffsrichtlinien und Überwachungsfunktionen benötigen, sollten Sie stattdessen [Azure Key Vault nutzen](/azure/app-service/containers/configure-language-java#use-keyvault-references).
 
-### <a name="configure-custom-domain-and-ssl"></a>Konfigurieren der benutzerdefinierten Domäne und der Nutzung von SSL
+[!INCLUDE [configure-custom-domain-and-ssl](includes/migration/configure-custom-domain-and-ssl.md)]
 
-Wenn Ihre Anwendung in einer benutzerdefinierten Domäne sichtbar ist, müssen Sie Ihre [Webanwendung zuordnen](/azure/app-service/app-service-web-tutorial-custom-domain).
-
-Anschließend müssen Sie [das SSL-Zertifikat für diese Domäne an Ihre App Service-Web-App binden](/azure/app-service/app-service-web-tutorial-custom-ssl).
+[!INCLUDE [import-backend-certificates](includes/migration/import-backend-certificates.md)]
 
 ### <a name="migrate-data-sources-libraries-and-jndi-resources"></a>Migrieren von Datenquellen, Bibliotheken und JNDI-Ressourcen
 
@@ -214,14 +195,7 @@ Wenn Sie den vorherigen Abschnitt abgeschlossen haben, sollten Sie unter */home/
 
 Schließen Sie die Migration ab, indem Sie alle zusätzlichen Konfigurationen kopieren (z. B. [realms](https://tomcat.apache.org/tomcat-8.5-doc/config/realm.html), [JASPIC](https://tomcat.apache.org/tomcat-8.5-doc/config/jaspic.html)).
 
-### <a name="migrate-scheduled-jobs"></a>Migrieren von geplanten Aufträgen
-
-Erwägen Sie für die Ausführung von geplanten Aufträgen in Azure die Verwendung von [Azure Functions mit einem Zeitgebertrigger](/azure/azure-functions/functions-bindings-timer). Hierbei ist es nicht erforderlich, den eigentlichen Auftragscode in eine Funktion zu migrieren. Für die Funktion kann einfach eine URL in Ihrer Anwendung aufgerufen werden, um den Auftrag auszulösen.
-
-Alternativ können Sie eine [Logik-App](/azure/logic-apps/logic-apps-overview) mit einem [Wiederholungstrigger](/azure/logic-apps/tutorial-build-schedule-recurring-logic-app-workflow#add-the-recurrence-trigger) erstellen, um die URL aufzurufen, ohne außerhalb Ihrer Anwendung Code schreiben zu müssen.
-
-> [!NOTE]
-> Zur Verhinderung einer missbräuchlichen Nutzung müssen Sie ggf. sicherstellen, dass für den Endpunkt zum Aufrufen des Auftrags Anmeldeinformationen benötigt werden. In diesem Fall müssen die Anmeldeinformationen von der Triggerfunktion bereitgestellt werden.
+[!INCLUDE [migrate-scheduled-jobs](includes/migration/migrate-scheduled-jobs.md)]
 
 ### <a name="restart-and-smoke-test"></a>Neustarten und Durchführen des Buildüberprüfungstests
 

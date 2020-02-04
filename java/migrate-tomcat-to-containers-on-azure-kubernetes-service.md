@@ -5,24 +5,18 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: da516609aaf976db929664bf0402a48f378034d3
-ms.sourcegitcommit: 3585b1b5148e0f8eb950037345bafe6a4f6be854
+ms.openlocfilehash: dbcf1f0989208f960f31fec13a65477d87b1a042
+ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76288609"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76825817"
 ---
 # <a name="migrate-tomcat-applications-to-containers-on-azure-kubernetes-service"></a>Migrieren von Tomcat-Anwendungen zu Containern unter Azure Kubernetes Service
 
 In diesem Leitfaden wird beschrieben, was Sie beachten sollten, wenn Sie eine vorhandene Tomcat-Anwendung für die Ausführung unter Azure Kubernetes Service (AKS) migrieren möchten.
 
 ## <a name="pre-migration-steps"></a>Schritte zur Migrationsvorbereitung
-
-* [Bestand: Externe Ressourcen](#inventory-external-resources)
-* [Bestand: Geheimnisse](#inventory-secrets)
-* [Bestand: Dauerhafte Nutzung](#inventory-persistence-usage)
-* [Sonderfälle](#special-cases)
-* [Direktes Testen](#in-place-testing)
 
 [!INCLUDE [inventory-external-resources](includes/migration/inventory-external-resources.md)]
 
@@ -43,7 +37,7 @@ Die integrierten [PersistentManager](https://tomcat.apache.org/tomcat-8.5-doc/co
 
 Falls das Erzielen von Sitzungspersistenz erforderlich ist, müssen Sie eine andere `PersistentManager`-Implementierung verwenden, bei der in einen externen Datenspeicher geschrieben wird, z. B. Pivotal-Sitzungs-Manager mit Redis Cache. Weitere Informationen finden Sie unter [Verwenden von Redis als Sitzungscache mit Tomcat](/azure/app-service/containers/configure-language-java#use-redis-as-a-session-cache-with-tomcat).
 
-### <a name="special-cases"></a>Sonderfälle
+### <a name="special-cases"></a>Spezialfälle
 
 Für bestimmte Produktionsszenarien sind unter Umständen zusätzliche Änderungen erforderlich, oder es gelten zusätzliche Einschränkungen. Szenarien dieser Art treten zwar meist nicht sehr häufig auf, aber Sie sollten trotzdem sicherstellen, dass sie für Ihre Anwendung entweder nicht zutreffen oder korrekt behoben werden.
 
@@ -75,7 +69,7 @@ Bei Verwendung von [AccessLogValve](https://tomcat.apache.org/tomcat-9.0-doc/api
 
 Migrieren Sie Ihre Anwendung vor der Erstellung von Containerimages zu dem JDK und der Tomcat-Instanz, das bzw. die Sie unter AKS nutzen möchten. Führen Sie für Ihre Anwendung gründliche Tests durch, um die Kompatibilität und Leistung sicherzustellen.
 
-### <a name="parametrize-the-configuration"></a>Parametrisieren der Konfiguration
+### <a name="parameterize-the-configuration"></a>Parametrisieren der Konfiguration
 
 Bei der Migrationsvorbereitung haben Sie in *server.xml*- und *context.xml*-Dateien ggf. Geheimnisse und externe Abhängigkeiten identifiziert, z. B. Datenquellen. Ersetzen Sie für alle hierbei identifizierten Elemente den Benutzernamen, das Kennwort, die Verbindungszeichenfolge und die URL durch eine Umgebungsvariable.
 
@@ -107,7 +101,7 @@ In diesem Fall können Sie die Änderungen vornehmen, die im folgenden Beispiel 
 
 ## <a name="migration"></a>Migration
 
-Mit Ausnahme des ersten Schritts („Bereitstellen von Containerregistrierung und AKS“) empfehlen wir Ihnen, für jede Anwendung (WAR-Datei), die migriert werden soll, die unten angegebenen Schritte auszuführen.
+Wir empfehlen Ihnen, für jede zu migrierende Anwendung (WAR-Datei) die unten angegebenen Schritte auszuführen (mit Ausnahme des ersten Schritts „Bereitstellen von Containerregistrierung und AKS“).
 
 > [!NOTE]
 > Einige Tomcat-Bereitstellungen verfügen ggf. über mehrere Anwendungen, die auf einem einzelnen Tomcat-Server ausgeführt werden. Falls dies für Ihre Bereitstellung zutrifft, empfehlen wir Ihnen dringend, jede Anwendung in einem separaten Pod auszuführen. Auf diese Weise können Sie die Ressourcenverwendung für jede Anwendung optimieren und gleichzeitig die Komplexität und Kopplung minimieren.
@@ -128,7 +122,7 @@ Klonen Sie das [GitHub-Repository für die Schnellstartanleitung für Tomcat in 
 
 #### <a name="open-ports-for-clustering-if-needed"></a>Öffnen von Ports für das Clustering (falls erforderlich)
 
-Wenn Sie das [Tomcat-Clustering](https://tomcat.apache.org/tomcat-9.0-doc/cluster-howto.html) unter AKS nutzen möchten, sollten Sie sicherstellen, dass in der Dockerfile die erforderlichen Portbereiche verfügbar gemacht werden. Achten Sie zum Angeben der Server-IP-Adresse in `server.xml` darauf, einen Wert aus einer Variablen zu verwenden, für die beim Starten des Containers die Initialisierung auf die IP-Adresse des Pods durchgeführt wird.
+Wenn Sie das [Tomcat-Clustering](https://tomcat.apache.org/tomcat-9.0-doc/cluster-howto.html) unter AKS nutzen möchten, sollten Sie sicherstellen, dass in der Dockerfile die erforderlichen Portbereiche verfügbar gemacht werden. Achten Sie beim Angeben der Server-IP-Adresse in *server.xml* darauf, einen Wert aus einer Variablen zu verwenden, für die beim Starten des Containers die Initialisierung auf die IP-Adresse des Pods durchgeführt wird.
 
 Alternativ kann der Sitzungszustand auch [an einem anderen Ort dauerhaft gespeichert werden](#identify-session-persistence-mechanism), damit er für alle Replikate verfügbar ist.
 
@@ -218,7 +212,7 @@ Binden Sie [externalisierte Parameter als Umgebungsvariablen](https://kubernetes
 
 Konfigurieren Sie ein oder mehrere [persistente Volumes](/azure/aks/azure-disks-dynamic-pv), wenn für Ihre Anwendung nicht flüchtiger Speicher benötigt wird.
 
-Es kann ratsam sein, [ein persistentes Volume mit Azure Files zu erstellen](/azure/aks/azure-files-dynamic-pv), das im Tomcat-Protokollverzeichnis ( */tomcat_logs*) bereitgestellt wird. Die Protokolle können dann zentral aufbewahrt werden.
+Es kann ratsam sein, ein persistentes Volume mit Azure Files zu erstellen, das im Tomcat-Protokollverzeichnis ( */tomcat_logs*) bereitgestellt wird. Die Protokolle können dann zentral aufbewahrt werden. Weitere Informationen finden Sie unter [Dynamisches Erstellen und Verwenden eines persistenten Volumes mit Azure Files in Azure Kubernetes Service (AKS)](/azure/aks/azure-files-dynamic-pv).
 
 ### <a name="configure-keyvault-flexvolume"></a>Konfigurieren von KeyVault FlexVolume
 

@@ -11,7 +11,7 @@
           items:
             - name: Azure Storage
               href: configure-spring-boot-starter-java-app-with-azure-storage.md
-            - name: Azure Key Vault
+            - name: Azure-Schlüsseltresor
               href: configure-spring-boot-starter-java-app-with-azure-key-vault.md
             - name: Azure App Insights
               href: configure-spring-boot-java-applicationinsights.md
@@ -20,6 +20,8 @@
         - name: Spring Data
           expanded: true
           items:
+            - name: Entwicklerleitfaden zu Azure Cosmos DB
+              href: how-to-guides-spring-data-cosmosdb.md
             - name: Azure Cosmos DB-Starter
               href: configure-spring-boot-starter-java-app-with-cosmos-db.md
             - name: Azure Cosmos DB mit App Service für Linux
@@ -60,7 +62,7 @@
               href: getting-started-with-spring-cloud-function-in-azure.md
             - name: Azure-Servicebus
               href: configure-spring-cloud-stream-binder-java-app-with-service-bus.md
-    - name: Lernprogramme
+    - name: Tutorials
       items:
         - name: Bereitstellen für App Service mit Maven
           href: deploy-spring-boot-java-app-with-maven-plugin.md
