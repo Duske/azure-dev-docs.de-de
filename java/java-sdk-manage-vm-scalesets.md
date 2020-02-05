@@ -6,12 +6,12 @@ ms.assetid: b55923b7-d60a-460d-b77c-af5fac67f1cc
 ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
-ms.openlocfilehash: bd956502c6cd5910f6c22844840aeec6cb1ec8aa
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 092bb328c4d7e68da9c75a43eaa9c31173d79864
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812292"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002533"
 ---
 # <a name="manage-azure-virtual-machine-scale-sets-from-your-java-applications"></a>Verwalten von Azure-VM-Skalierungsgruppen über Ihre Java-Anwendungen
 
@@ -19,7 +19,7 @@ ms.locfileid: "74812292"
 
 ## <a name="run-the-sample"></a>Ausführen des Beispiels
 
-Erstellen Sie eine [Authentifizierungsdatei](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md), und legen Sie die Umgebungsvariable `AZURE_AUTH_LOCATION` mit dem vollständigen Pfad zur Datei auf Ihrem Computer fest. Führen Sie anschließend Folgendes aus:
+Erstellen Sie eine [Authentifizierungsdatei](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md), und legen Sie die Umgebungsvariable `AZURE_AUTH_LOCATION` mit dem vollständigen Pfad zur Datei auf Ihrem Computer fest. Führen Sie dann Folgendes aus:
 
 ```
 git clone https://github.com/Azure-Samples/compute-java-manage-virtual-machine-scale-sets.git
@@ -226,11 +226,11 @@ Der [Beispielcode](https://github.com/Azure-Samples/compute-java-manage-virtual-
    
 | Im Beispiel verwendete Klasse | Notizen
 |-------|-------|
-| [VirtualMachineScaleSet](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._virtual_machine_scale_set) | Dient zum Abfragen, Starten, Beenden, Aktualisieren und Löschen aller virtuellen Computer in der Skalierungsgruppe.
-| [VirtualMachineScaleSetVM](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._virtual_machine_scale_set_v_m) | Wird aus `virtualMachineScaleSet.virtualMachines().get()` oder `list()` abgerufen und ermöglicht das Abfragen, Starten, Beenden, Konfigurieren und Löschen virtueller Computer in der Skalierungsgruppe.
-| [VirtualMachineScaleSetNetworkInterface](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._virtual_machine_scale_set_network_interface) | Von `virtualMachineScaleSet.listNetworkInterfaces()` zurückgegebene, schreibgeschützte Darstellung einer Netzwerkschnittstelle eines virtuellen Computers in einer Skalierungsgruppe.
-| [VirtualMachineScaleSetSkuTypes](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._virtual_machine_scale_set_sku_types) | Klasse von statischen Feldern zum Festlegen des [VM-Skalierungsgruppentarifs](https://azure.microsoft.com/pricing/details/virtual-machine-scale-sets/linux/), der die Menge an Ressourcen definiert, die Skalierungsgruppenmitglieder beanspruchen können.
-| [VirtualMachineScaleSetNicIpConfiguration](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._virtual_machine_scale_set_nic_i_p_configuration) | Dient zum Abfragen der IP-Konfiguration, die einer Netzwerkschnittstelle eines virtuellen Computers in einer Skalierungsgruppe zugeordnet ist.
+| [VirtualMachineScaleSet](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.virtualmachinescaleset) | Dient zum Abfragen, Starten, Beenden, Aktualisieren und Löschen aller virtuellen Computer in der Skalierungsgruppe.
+| [VirtualMachineScaleSetVM](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.virtualmachinescalesetvm) | Wird aus `virtualMachineScaleSet.virtualMachines().get()` oder `list()` abgerufen und ermöglicht das Abfragen, Starten, Beenden, Konfigurieren und Löschen virtueller Computer in der Skalierungsgruppe.
+| [VirtualMachineScaleSetNetworkInterface](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network.virtualmachinescalesetnetworkinterface) | Von `virtualMachineScaleSet.listNetworkInterfaces()` zurückgegebene, schreibgeschützte Darstellung einer Netzwerkschnittstelle eines virtuellen Computers in einer Skalierungsgruppe.
+| [VirtualMachineScaleSetSkuTypes](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.virtualmachinescalesetskutypes) | Klasse von statischen Feldern zum Festlegen des [VM-Skalierungsgruppentarifs](https://azure.microsoft.com/pricing/details/virtual-machine-scale-sets/linux/), der die Menge an Ressourcen definiert, die Skalierungsgruppenmitglieder beanspruchen können.
+| [VirtualMachineScaleSetNicIpConfiguration](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network.virtualmachinescalesetnicipconfiguration) | Dient zum Abfragen der IP-Konfiguration, die einer Netzwerkschnittstelle eines virtuellen Computers in einer Skalierungsgruppe zugeordnet ist.
 
 ## <a name="next-steps"></a>Nächste Schritte
 

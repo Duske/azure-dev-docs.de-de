@@ -6,12 +6,12 @@ ms.assetid: 49be8b66-3b56-4c10-8f14-9d326d815cb4
 ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
-ms.openlocfilehash: b1eeaa139e7642220524a76869fd8713044f9df5
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 88298088099ed61c97eb6cb4a900c2ce55f5c3f0
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812318"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002428"
 ---
 # <a name="manage-azure-storage-accounts-from-your-java-applications"></a>Verwalten von Azure-Speicherkonten über Ihre Java-Anwendungen
 
@@ -19,7 +19,7 @@ ms.locfileid: "74812318"
 
 ## <a name="run-the-sample"></a>Ausführen des Beispiels
 
-Erstellen Sie eine [Authentifizierungsdatei](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md), und legen Sie die Umgebungsvariable `AZURE_AUTH_LOCATION` mit dem vollständigen Pfad zur Datei auf Ihrem Computer fest. Führen Sie anschließend Folgendes aus:
+Erstellen Sie eine [Authentifizierungsdatei](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md), und legen Sie die Umgebungsvariable `AZURE_AUTH_LOCATION` mit dem vollständigen Pfad zur Datei auf Ihrem Computer fest. Führen Sie dann Folgendes aus:
 
 ```
 git clone https://github.com/Azure-Samples/storage-java-manage-storage-accounts.git
@@ -43,7 +43,7 @@ StorageAccount storageAccount = azure.storageAccounts().define(storageAccountNam
                     .create();
 ```
 
-Der bereitgestellte Speichername muss in Azure eindeutig sein und darf nur Kleinbuchstaben und Ziffern enthalten. Das für dieses Konto verwendete Leistungs- und Replikationsstandardprofil lautet [Standard_GRS](https://docs.microsoft.com/azure/storage/storage-redundancy#geo-redundant-storage).
+Der bereitgestellte Speichername muss in Azure eindeutig sein und darf nur Kleinbuchstaben und Ziffern enthalten. Das für dieses Konto verwendete Leistungs- und Replikationsstandardprofil lautet [Standard_GRS](https://docs.microsoft.com/azure/storage/common/storage-redundancy-grs).
 
 ## <a name="list-keys-in-a-storage-account"></a>Auflisten von Schlüsseln in einem Speicherkonto
 ```java
@@ -75,7 +75,7 @@ for (StorageAccount sa : accounts) {
 }
 ```
 
-Unter [com.microsoft.azure.management.storage.StorageAccount](https://docs.microsoft.com/java/api/com.microsoft.azure.management.storage._storage_account) finden Sie eine Reihe nützlicher Methoden zum Überprüfen der Konfiguration eines Speicherkontos.
+Unter [com.microsoft.azure.management.storage.StorageAccount](https://docs.microsoft.com/java/api/com.microsoft.azure.management.storage.storageaccount) finden Sie eine Reihe nützlicher Methoden zum Überprüfen der Konfiguration eines Speicherkontos.
 
 ## <a name="delete-a-storage-account"></a>Löschen von Speicherkonten
 ```java
@@ -100,8 +100,8 @@ Der [Beispielcode auf GitHub](https://github.com/Azure-Samples/storage-java-mana
 
 | Im Beispiel verwendete Klasse | Notizen
 |-------|-------|
-| [StorageAccount](https://docs.microsoft.com/java/api/com.microsoft.azure.management.storage._storage_account)  | Darstellung eines Azure-Speicherkontos. Verwenden Sie die Methoden in der Klasse, um Informationen zum Speicherkonto abzurufen.
-| [StorageAccountKey](https://docs.microsoft.com/java/api/com.microsoft.azure.management.storage._storage_account_key) | `StorageAccount.getKeys()` gibt die Speicherkontoschlüssel zurück. Verwenden Sie die `regenerateKey`-Methoden in `StorageAccount`, um die Schlüssel zu aktualisieren.
+| [StorageAccount](https://docs.microsoft.com/java/api/com.microsoft.azure.management.storage.storageaccount)  | Darstellung eines Azure-Speicherkontos. Verwenden Sie die Methoden in der Klasse, um Informationen zum Speicherkonto abzurufen.
+| [StorageAccountKey](https://docs.microsoft.com/java/api/com.microsoft.azure.management.storage.storageaccountkey) | `StorageAccount.getKeys()` gibt die Speicherkontoschlüssel zurück. Verwenden Sie die `regenerateKey`-Methoden in `StorageAccount`, um die Schlüssel zu aktualisieren.
 
 ## <a name="next-steps"></a>Nächste Schritte
 

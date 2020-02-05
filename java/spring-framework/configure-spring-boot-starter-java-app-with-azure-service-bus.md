@@ -6,12 +6,12 @@ manager: kyliel
 ms.author: seal
 ms.date: 08/21/2019
 ms.topic: article
-ms.openlocfilehash: b64095bc2971bf9d9a7308bebdb91617538796c4
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 17baf4899bd47b15bc60d02b853605c422d3c82b
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812125"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002313"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-service-bus-jms"></a>Verwenden von Spring Boot-Starters für Azure Service Bus JMS
 
@@ -27,7 +27,7 @@ In diesem Artikel wird veranschaulicht, wie Spring Boot-Starter für Azure Servi
 
 Die folgenden Voraussetzungen müssen für diesen Artikel erfüllt sein:
 
-1. Wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/) aktivieren oder sich für ein [kostenloses Konto](https://azure.microsoft.comfree/) registrieren.
+1. Wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/) aktivieren oder sich für ein [kostenloses Konto](https://azure.microsoft.com/free/) registrieren.
 
 1. Sie benötigen ein unterstütztes Java Development Kit (JDK) der Version 8 oder höher. Weitere Informationen zu den für die Entwicklung in Azure verfügbaren JDKs finden Sie unter <https://aka.ms/azure-jdks>.
 
@@ -94,7 +94,7 @@ In diesem Abschnitt erfahren Sie, wie Sie Ihre App so konfigurieren, dass sie en
 
     **Feldbeschreibungen**
 
-    | Feld                                     | BESCHREIBUNG                                                                                     |
+    | Feld                                     | Beschreibung                                                                                     |
     |-------------------------------------------|-------------------------------------------------------------------------------------------------|
     | `spring.jms.servicebus.connection-string` | Geben Sie die Verbindungszeichenfolge an, die Sie im Service Bus-Namespace vom Azure-Portal erhalten haben. |
     | `spring.jms.servicebus.idle-timeout`      | Legen Sie das Leerlauftimeout in Millisekunden fest. Für dieses Tutorial wird der Wert 1.800.000 empfohlen.   |
@@ -123,7 +123,7 @@ In diesem Abschnitt erfahren Sie, wie Sie Ihre App so konfigurieren, dass sie en
 
     **Feldbeschreibungen**
 
-    | Feld                                     | BESCHREIBUNG                                                                                       |
+    | Feld                                     | Beschreibung                                                                                       |
     |-------------------------------------------|---------------------------------------------------------------------------------------------------|
     | `spring.jms.servicebus.connection-string` | Geben Sie die Verbindungszeichenfolge an, die Sie im Service Bus-Namespace vom Azure-Portal erhalten haben.   |
     | `spring.jms.servicebus.topic-client-id`   | Geben Sie die JMS-Client-ID an, wenn Sie ein Azure Service Bus-Thema mit einem dauerhaften Abonnement verwenden. |

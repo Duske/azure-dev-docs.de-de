@@ -6,12 +6,12 @@ ms.assetid: 88629aee-6279-433e-a08b-4f8e290446d0
 ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
-ms.openlocfilehash: a4ea556fa9fa43575d56d041e0d177ed834555cb
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: c1b8145fd2e7085f524329f958c43797df6c6b1a
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812308"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002411"
 ---
 # <a name="manage-azure-virtual-machines-from-your-java-applications"></a>Verwalten von virtuellen Azure-Computern über Ihre Java-Anwendungen
 
@@ -19,7 +19,7 @@ In [diesem Beispiel](https://github.com/Azure-Samples/compute-java-manage-vm/) w
 
 ## <a name="run-the-sample"></a>Ausführen des Beispiels
 
-Erstellen Sie eine [Authentifizierungsdatei](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md), und legen Sie die Umgebungsvariable `AZURE_AUTH_LOCATION` mit dem vollständigen Pfad zur Datei auf Ihrem Computer fest. Führen Sie anschließend Folgendes aus:
+Erstellen Sie eine [Authentifizierungsdatei](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md), und legen Sie die Umgebungsvariable `AZURE_AUTH_LOCATION` mit dem vollständigen Pfad zur Datei auf Ihrem Computer fest. Führen Sie dann Folgendes aus:
 
 ```
 git clone https://github.com/Azure-Samples/compute-java-manage-vm.git
@@ -29,7 +29,7 @@ mvn clean compile exec:java
 
 Sehen Sie sich das [vollständige Codebeispiel auf GitHub](https://github.com/Azure-Samples/compute-java-manage-vm/blob/master/src/main/java/com/microsoft/azure/management/compute/samples/ManageVirtualMachine.java) an.
 
-## <a name="authenticate-with-azure"></a>Authentifizierung über Azure
+## <a name="authenticate-with-azure"></a>Authentifizieren über Azure
 
 [!INCLUDE [auth-include](includes/java-auth-include.md)]
 
@@ -61,7 +61,7 @@ VirtualMachine windowsVM = azure.virtualMachines().define(windowsVmName)
             .create();
 ```
 
-Dieser Code:   
+Für diesen Code gilt Folgendes:   
 
 0. definiert ein Creatable-Objekt vom Typ `Disk` mit einer Größe von 50 GB und einem zufälligen Namen zur Verwendung mit einem virtuellen Computer.
 0. verwendet die Kette `azure.virtualMachines().define()..create()` zum Erstellen des virtuellen Windows Server 2012-Computers. Die API erstellt das im vorherigen Schritt definierte `Disk`-Element zum gleichen Zeitpunkt wie den virtuellen Computer. An den virtuellen Computer wird zudem über `withNewDataDisk(10)` ein 10-GB-Datenträger angefügt.
@@ -152,12 +152,12 @@ Das Beispiel protokolliert Informationen zu beiden virtuellen Computern und lös
 
 | Im Beispiel verwendete Klasse | Notizen
 |-------|-------|
-| [VirtualMachine](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._virtual_machine) | Abfragen von Eigenschaften und Verwalten des Status virtueller Computer. Wird in Listenform (mit `azure.virtualMachines().list()`) oder nach Name oder ID (mit `azure.virtualMachines().getByResourceGroup()`) abgerufen.
-| [VirtualMachineSizeTypes](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._virtual_machine_size_types) | Klasse mit statischen Werten, die den [Optionen für die Größe virtueller Computer](https://azure.microsoft.com/pricing/details/virtual-machines/linux/) entsprechen. Diese werden von der `withSize()`-Methode zum Definieren der dem virtuellen Computer zugeordneten Ressourcen verwendet.
-| [Datenträger](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._disk) | Erstellen eines Datenträgers mit `withData()` zum Speichern von Daten oder eines Betriebssystemimages mit der entsprechenden `withLinux`- oder `withWindows`-Methode (beim Definieren des Datenträgers). Anfügen von Datenträgern an virtuelle Computer zum Zeitpunkt der Erstellung (`using withNewDataDisk` oder `withExistingDataDisk`) oder nach der Erstellung mit `update()..apply()` für das VirtualMachine-Objekt.
-| [DiskSkuTypes](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._disk_sku_types) | Klasse mit statischen Werten zum Definieren eines Datenträgers mit dem Tarif Standard oder Storage [Premium](https://docs.microsoft.com/azure/storage/storage-premium-storage).
-| [KnownLinuxVirtualMachineImage](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._known_linux_virtual_machine_image) | Klasse mit einem Satz von Optionen für virtuelle Linux-Computer zur Verwendung mit der `withPopularLinuxImage()`-Methode, wenn Sie einen virtuellen Computer definieren.
-| [KnownWindowsVirtualMachineImage](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._known_windows_virtual_machine_image) | Klasse mit einem Satz von Optionen für Windows-VM-Images zur Verwendung mit der `withPopularWindowsImage()`-Methode, wenn Sie einen virtuellen Computer definieren.
+| [VirtualMachine](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.virtualmachine) | Dient zum Abfragen der Eigenschaften sowie zum Verwalten des Zustands virtueller Computer. Wird in Listenform (mit `azure.virtualMachines().list()`) oder nach Name oder ID (mit `azure.virtualMachines().getByResourceGroup()`) abgerufen.
+| [VirtualMachineSizeTypes](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.virtualmachinesizetypes) | Klasse mit statischen Werten, die den [Optionen für die Größe virtueller Computer](https://azure.microsoft.com/pricing/details/virtual-machines/linux/) entsprechen. Diese werden von der `withSize()`-Methode zum Definieren der dem virtuellen Computer zugeordneten Ressourcen verwendet.
+| [Datenträger](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.disk) | Erstellen eines Datenträgers mit `withData()` zum Speichern von Daten oder eines Betriebssystemimages mit der entsprechenden `withLinux`- oder `withWindows`-Methode (beim Definieren des Datenträgers). Anfügen von Datenträgern an virtuelle Computer zum Zeitpunkt der Erstellung (`using withNewDataDisk` oder `withExistingDataDisk`) oder nach der Erstellung mit `update()..apply()` für das VirtualMachine-Objekt.
+| [DiskSkuTypes](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.diskskutypes) | Klasse mit statischen Werten zum Definieren eines Datenträgers mit dem Tarif Standard oder Storage [Premium](https://docs.microsoft.com/azure/storage/storage-premium-storage).
+| [KnownLinuxVirtualMachineImage](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.knownlinuxvirtualmachineimage) | Klasse mit einem Satz von Optionen für virtuelle Linux-Computer zur Verwendung mit der `withPopularLinuxImage()`-Methode, wenn Sie einen virtuellen Computer definieren.
+| [KnownWindowsVirtualMachineImage](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.knownwindowsvirtualmachineimage) | Klasse mit einem Satz von Optionen für Windows-VM-Images zur Verwendung mit der `withPopularWindowsImage()`-Methode, wenn Sie einen virtuellen Computer definieren.
 
 ## <a name="next-steps"></a>Nächste Schritte
 

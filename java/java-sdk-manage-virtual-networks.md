@@ -6,12 +6,12 @@ ms.assetid: 92736911-3df6-46e7-b751-25bb36bf89b9
 ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
-ms.openlocfilehash: 9f66434c67cabd08304faecb56e51107a2aeb8ee
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 3c537d7d7030ea46bdbc7d6873819ea8e12f03b3
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812302"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002357"
 ---
 # <a name="create-and-manage-azure-virtual-networks-from-your-java-apps"></a>Erstellen und Verwalten von virtuellen Azure-Netzwerken über Ihre Java-Apps
 
@@ -19,7 +19,7 @@ In [diesem Beispiel](https://github.com/Azure-Samples/network-java-manage-virtua
 
 ## <a name="run-the-sample"></a>Ausführen des Beispiels
 
-Erstellen Sie eine [Authentifizierungsdatei](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md), und legen Sie die Umgebungsvariable `AZURE_AUTH_LOCATION` mit dem vollständigen Pfad zur Datei auf Ihrem Computer fest. Führen Sie anschließend Folgendes aus:
+Erstellen Sie eine [Authentifizierungsdatei](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md), und legen Sie die Umgebungsvariable `AZURE_AUTH_LOCATION` mit dem vollständigen Pfad zur Datei auf Ihrem Computer fest. Führen Sie dann Folgendes aus:
 
 ```
 git clone https://github.com/Azure-Samples/network-java-manage-virtual-network.git
@@ -173,9 +173,9 @@ In diesem Beispiel wird ein virtuelles Netzwerk mit zwei Subnetzen und einem vir
 
 | Im Beispiel verwendete Klasse | Notizen
 |-------|-------|
-| [Netzwerk](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._network) | Lokale Objektdarstellung des über `azure.networks().define()...create()` erstellten virtuellen Netzwerks. Aktualisieren Sie mit der `update()...apply()`-Fluent-Kette ein vorhandenes virtuelles Netzwerk.
-| [Subnetz](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._subnet) | Erstellen Sie Subnetze im virtuellen Netzwerk, wenn Sie das Netzwerk mit `withSubnet()` definieren oder aktualisieren. Rufen Sie Objektdarstellungen eines Subnetzes über `Network.subnets().get()` oder `Network.subnets().entrySet()` ab. Diese Objekte enthalten Methoden zum Abfragen der Subnetzeigenschaften.
-| [NetworkSecurityGroup](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._network_security_group) | Wird mit der `azure.networkSecurityGroups().define()...create()`-Fluent-Kette erstellt und dann durch Aktualisieren oder Erstellen von Subnetzen in einem virtuellen Netzwerk auf Subnetze angewendet. 
+| [Network](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network.network) | Lokale Objektdarstellung des über `azure.networks().define()...create()` erstellten virtuellen Netzwerks. Aktualisieren Sie mit der `update()...apply()`-Fluent-Kette ein vorhandenes virtuelles Netzwerk.
+| [Subnetz](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network.subnet) | Erstellen Sie Subnetze im virtuellen Netzwerk, wenn Sie das Netzwerk mit `withSubnet()` definieren oder aktualisieren. Rufen Sie Objektdarstellungen eines Subnetzes über `Network.subnets().get()` oder `Network.subnets().entrySet()` ab. Diese Objekte enthalten Methoden zum Abfragen der Subnetzeigenschaften.
+| [NetworkSecurityGroup](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network.networksecuritygroup) | Wird mit der `azure.networkSecurityGroups().define()...create()`-Fluent-Kette erstellt und dann durch Aktualisieren oder Erstellen von Subnetzen in einem virtuellen Netzwerk auf Subnetze angewendet. 
 
 ## <a name="next-steps"></a>Nächste Schritte
 

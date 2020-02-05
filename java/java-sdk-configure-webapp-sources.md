@@ -5,12 +5,12 @@ author: rloutlaw
 ms.assetid: 833e9c78-1e50-4c23-a611-f73a2f0c2983
 ms.topic: article
 ms.date: 03/30/2017
-ms.openlocfilehash: 8ed90b7fff9c973481af1603e14fdb5858d5b9e0
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: e8cda5ca26b57e7c64d577fb5542295c930f5623
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812343"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002462"
 ---
 # <a name="configure-azure-app-service-deployment-sources-from-your-java-applications"></a>Konfigurieren von Azure App Service-Bereitstellungsquellen über Ihre Java-Anwendungen
 
@@ -18,7 +18,7 @@ ms.locfileid: "74812343"
 
 ## <a name="run-the-sample"></a>Ausführen des Beispiels
 
-Erstellen Sie eine [Authentifizierungsdatei](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md), und legen Sie die Umgebungsvariable `AZURE_AUTH_LOCATION` mit dem vollständigen Pfad zur Datei auf Ihrem Computer fest. Führen Sie anschließend Folgendes aus:
+Erstellen Sie eine [Authentifizierungsdatei](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md), und legen Sie die Umgebungsvariable `AZURE_AUTH_LOCATION` mit dem vollständigen Pfad zur Datei auf Ihrem Computer fest. Führen Sie dann Folgendes aus:
 
 ```
 git clone https://github.com/Azure-Samples/app-service-java-configure-deployment-sources-for-web-apps.git
@@ -153,12 +153,12 @@ Die vierte Anwendung stellt den Code immer dann in Ihrer Hauptverzweigung bereit
 
 | Im Beispiel verwendete Klasse | Notizen
 |-------|-------|
-| [WebApp](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice._web_app) | Erstellt mithilfe der Fluent-Kette `azure.webApps().define()....create()`. Erstellt eine App Service-Web-App und alle erforderlichen Ressourcen. Die meisten Methoden fragen Konfigurationsdetails vom Objekt ab. Verbmethoden wie `restart()` ändern hingegen den Zustand der Web-App.
-| [WebContainer](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice._web_container) | Klasse mit statischen öffentlichen Feldern, die beim Definieren einer in einem Java-Webcontainer ausgeführten Web-App als Parameter für `withWebContainer()` verwendet werden. Verfügt über Optionen für Tomcat- und Jetty-Versionen.
-| [PublishingProfile](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice._publishing_profile) | Wird über ein WebApp-Objekt mithilfe der Methode `getPublishingProfile()` abgerufen. Enthält FTP- und Git-Bereitstellungsinformationen – einschließlich Benutzername und Kennwort für die Bereitstellung (unabhängig von den Anmeldeinformationen für das Azure-Konto oder für den Dienstprinzipal).
-| [AppServicePlan](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice._app_service_plan) | Wird von `azure.appServices().appServicePlans().getByResourceGroup()` zurückgegeben. Mit den verfügbaren Methoden können Sie die Kapazität, den Tarif und die Anzahl von Web-Apps überprüfen, die unter dem Plan ausgeführt werden.
-| [AppServicePricingTier](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice._app_service_pricing_tier) | Klasse mit statischen öffentlichen Feldern, die App Service-Ebenen darstellen. Dient zum Definieren eines Plantarifs – entweder inline im Zuge der App-Erstellung mit `withPricingTier()` oder direkt beim Definieren eines Plans über `azure.appServices().appServicePlans().define()`.
-| [JavaVersion](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice._java_version) | Klasse mit statischen öffentlichen Feldern, die von App Service unterstützte Java-Versionen darstellen. Wird beim Erstellen einer neuen Web-App im Rahmen der Kette `define()...create()` mit `withJavaVersion()` verwendet.
+| [WebApp](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice.webapp) | Erstellt mithilfe der Fluent-Kette `azure.webApps().define()....create()`. Erstellt eine App Service-Web-App und alle erforderlichen Ressourcen. Die meisten Methoden fragen Konfigurationsdetails vom Objekt ab. Verbmethoden wie `restart()` ändern hingegen den Zustand der Web-App.
+| [WebContainer](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice.webcontainer) | Klasse mit statischen öffentlichen Feldern, die beim Definieren einer in einem Java-Webcontainer ausgeführten Web-App als Parameter für `withWebContainer()` verwendet werden. Verfügt über Optionen für Tomcat- und Jetty-Versionen.
+| [PublishingProfile](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice.publishingprofile) | Wird über ein WebApp-Objekt mithilfe der Methode `getPublishingProfile()` abgerufen. Enthält FTP- und Git-Bereitstellungsinformationen – einschließlich Benutzername und Kennwort für die Bereitstellung (unabhängig von den Anmeldeinformationen für das Azure-Konto oder für den Dienstprinzipal).
+| [AppServicePlan](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice.appserviceplan) | Wird von `azure.appServices().appServicePlans().getByResourceGroup()` zurückgegeben. Mit den verfügbaren Methoden können Sie die Kapazität, den Tarif und die Anzahl von Web-Apps überprüfen, die unter dem Plan ausgeführt werden.
+| [AppServicePricingTier](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice.PricingTier) | Klasse mit statischen öffentlichen Feldern, die App Service-Ebenen darstellen. Dient zum Definieren eines Plantarifs – entweder inline im Zuge der App-Erstellung mit `withPricingTier()` oder direkt beim Definieren eines Plans über `azure.appServices().appServicePlans().define()`.
+| [JavaVersion](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice.javaversion) | Klasse mit statischen öffentlichen Feldern, die von App Service unterstützte Java-Versionen darstellen. Wird beim Erstellen einer neuen Web-App im Rahmen der Kette `define()...create()` mit `withJavaVersion()` verwendet.
 
 ## <a name="next-steps"></a>Nächste Schritte
 

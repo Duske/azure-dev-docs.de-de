@@ -6,12 +6,12 @@ manager: kyliel
 ms.author: seal
 ms.date: 08/21/2019
 ms.topic: article
-ms.openlocfilehash: 2d888d225a8bcf5c957da11e18ea86d09ec8e897
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 8c62a68ff2a9912d88361adc6ef3b8dc2ea29c98
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812050"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002286"
 ---
 # <a name="how-to-use-spring-cloud-azure-stream-binder-for-azure-service-bus"></a>Verwenden von Spring Cloud Azure Stream Binder für Azure Service Bus
 
@@ -25,7 +25,7 @@ In diesem Artikel wird veranschaulicht, wie Spring Cloud Stream Binder zum Sende
 
 Die folgenden Voraussetzungen müssen für diesen Artikel erfüllt sein:
 
-1. Wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/) aktivieren oder sich für ein [kostenloses Konto](https://azure.microsoft.comfree/) registrieren.
+1. Wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/) aktivieren oder sich für ein [kostenloses Konto](https://azure.microsoft.com/free/) registrieren.
 
 1. Sie benötigen ein unterstütztes Java Development Kit (JDK) der Version 8 oder höher. Weitere Informationen zu den für die Entwicklung in Azure verfügbaren JDKs finden Sie unter <https://aka.ms/azure-jdks>.
 
@@ -119,7 +119,7 @@ Sie können Ihre App entweder basierend auf der Verbindungszeichenfolge oder auf
 
     **<a name="fd">Feldbeschreibungen</a>**
 
-    |                                        Feld                                   |                                                                                   BESCHREIBUNG                                                                                    |
+    |                                        Feld                                   |                                                                                   Beschreibung                                                                                    |
     |--------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
     |               `spring.cloud.azure.servicebus.connection-string`                |                                        Geben Sie die Verbindungszeichenfolge an, die Sie im Service Bus-Namespace vom Azure-Portal erhalten haben.                                   |
     |               `spring.cloud.stream.bindings.input.destination`                 |                            Geben Sie Service Bus-Warteschlange oder das Service Bus-Thema an, das Sie in diesem Tutorial verwendet haben.                         |
