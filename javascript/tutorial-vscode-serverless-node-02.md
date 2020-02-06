@@ -3,18 +3,18 @@ title: Erstellen der Azure Functions-Anwendung in Visual Studio Code
 description: 'Teil 2 des Tutorials: Erstellen der Azure Functions-App'
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 5b2e46cde8740020cc2ad7a1b50ac9b4687d17d3
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 6c0adc93899eb9480008774fe35f3aa3b2ab5842
+ms.sourcegitcommit: d9f585bea70b01ba6657a75ea245d8519d4a5aad
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467135"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76967237"
 ---
 # <a name="create-the-local-functions-app"></a>Erstellen der lokalen Funktions-App
 
 [Vorheriger Schritt: Einführung und Voraussetzungen](tutorial-vscode-serverless-node-01.md)
 
-In diesem Schritt erstellen Sie eine lokale Azure Functions-Anwendung, die eine Funktion mit einem HTTP-Trigger enthält. Eine Azure Functions-App kann viele Funktionen mit unterschiedlichen Triggern enthalten. Der HTTP-Trigger behandelt insbesondere eingehenden HTTP-Datenverkehr.
+In diesem Schritt erstellen Sie eine lokale Azure Functions-Anwendung, die eine Funktion mit einem [HTTP-Trigger](https://docs.microsoft.com/azure/azure-functions/functions-reference-node#http-triggers-and-bindings) enthält. Eine Azure Functions-App kann viele Funktionen mit [unterschiedlichen Triggern](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings) enthalten. Der HTTP-Trigger behandelt insbesondere eingehenden HTTP-Datenverkehr.
 
 1. Führen Sie an einem Terminal oder einer Eingabeaufforderung Visual Studio Code in einem geeigneten Ordner für das Projekt aus:
 
@@ -45,7 +45,7 @@ In diesem Schritt erstellen Sie eine lokale Azure Functions-Anwendung, die eine
 
 1. Nach einigen Augenblicken ist VS Code mit der Erstellung des Projekts fertig. Sie haben nun einen für die Funktion benannten Ordner *HttpExample*, der drei Dateien enthält:
 
-    | Dateiname | BESCHREIBUNG |
+    | Dateiname | Beschreibung |
     | --- | --- |
     | *index.js* |  Der Quellcode, der auf die HTTP-Anforderung antwortet. |
     | *functions.json* | Die [Bindungskonfiguration](/azure/azure-functions/functions-triggers-bindings) für den HTTP-Trigger. |

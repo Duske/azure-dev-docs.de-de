@@ -4,12 +4,12 @@ description: In diesem Artikel wird die Verwendung von Azure Functions zum Erste
 ms.topic: article
 ms.date: 08/19/2019
 ms.custom: seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: d1b17e33b5ae4aa51a84ceae8005a5385c162967
-ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
+ms.openlocfilehash: ae6a4cebef39976af4d9a30534d394d37d86a0c8
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74992473"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002494"
 ---
 # <a name="use-azure-functions-to-write-serverless-nodejs-code-on-azure"></a>Verwenden von Azure Functions zum Schreiben von serverlosem Node.js-Code in Azure
 
@@ -39,13 +39,13 @@ Anschließend können Sie eine Vielzahl von Ressourcen nutzen, um mehr über ser
   - [Tutorial: Hochladen von Bilddaten in die Cloud mit Azure Storage](/azure/storage/blobs/storage-upload-process-images?tabs=nodejsv10)
   - [Ausführen von Code, wenn eine Nachricht in Azure Queue Storage geschrieben wird](/azure/azure-functions/functions-create-storage-queue-triggered-function)
 
-- [Speichern von unstrukturierten Daten mit Azure Functions und Azure Cosmos DB](/azure/azure-functions/functions-integrate-store-unstructured-data-cosmosdb.md?tabs=javascript) Informationen zu anderen Datenbanken finden Sie unter [Integrieren von Azure-Datenbanken in Node.js-Apps](node-howto-integrate-databases.md).
+- [Speichern von unstrukturierten Daten mit Azure Functions und Azure Cosmos DB](/azure/azure-functions/functions-integrate-store-unstructured-data-cosmosdb?tabs=javascript) Informationen zu anderen Datenbanken finden Sie unter [Integrieren von Azure-Datenbanken in Node.js-Apps](node-howto-integrate-databases.md).
 
 - [Lokales Codieren und Testen von Azure Functions](/azure/azure-functions/functions-develop-local)
 
 - [Strategien zum Testen Ihres Codes in Azure Functions](/azure/azure-functions/functions-test-a-function) und [Azure Functions – Fehlerbehandlung](/azure/azure-functions/functions-bindings-error-pages)
 
-- [Konfigurieren der Authentifizierung mit Azure Active Directory](/azure/app-service/configure-authentication-provider-aad.md?toc=%2fazure%2fazure-functions%2ftoc.json)
+- [Konfigurieren der Authentifizierung mit Azure Active Directory](/azure/app-service/configure-authentication-provider-aad?toc=%2fazure%2fazure-functions%2ftoc.json)
 
 - [Einrichten von Continuous Deployment in Azure Pipelines](/azure/azure-functions/functions-how-to-azure-devops)
 
