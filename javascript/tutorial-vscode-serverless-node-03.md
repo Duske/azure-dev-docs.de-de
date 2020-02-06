@@ -3,12 +3,12 @@ title: Lokale Ausführung der Azure Functions-Anwendung in Visual Studio Code
 description: 'Teil 3 des Tutorials: Lokales Ausführen der App, um sie zu testen.'
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 2a7cb5e5c433c90d74cd3b7771ce90529f617fcb
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: d5af3cbe6fd138bc8aeeb36a60ea05f2a6460f8f
+ms.sourcegitcommit: d9f585bea70b01ba6657a75ea245d8519d4a5aad
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466572"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76967228"
 ---
 # <a name="test-the-function-locally"></a>Lokales Testen der Funktion
 
@@ -20,7 +20,7 @@ Beim Erstellen der Funktions-App wurde dem Projekt von der Azure Functions-Erwe
 
 1. Drücken Sie in Visual Studio Code **F5** (oder verwenden Sie den Menübefehl **Debuggen** > **Debuggen starten**), um den Debugger zu starten und an den Azure Functions-Host anzufügen. (Dieser Befehl verwendet automatisch die einzige von Azure Functions erstellte Debugkonfiguration.)
 
-1. Die Ausgabe der Functions Core Tools wird in VS Code im Bereich **Terminal** angezeigt. Nachdem der Host gestartet wurde, drücken Sie die **STRG-Taste**, und klicken Sie gleichzeitig auf die lokale URL in der Ausgabe, um den Browser zu öffnen und die Funktion auszuführen:
+1. Die Ausgabe der Functions Core Tools wird in VS Code im Bereich **Terminal** angezeigt. Nachdem der Host gestartet wurde, drücken Sie die **ALT-Taste**, und klicken Sie gleichzeitig auf die lokale URL in der Ausgabe, um den Browser zu öffnen und die Funktion auszuführen:
 
     ![Ausgabe im VS Code-Bereich „Terminal“ beim lokalen Debuggen](media/functions-extension/local-test-output.png)
 

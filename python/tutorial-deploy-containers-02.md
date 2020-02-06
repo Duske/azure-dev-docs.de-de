@@ -4,12 +4,12 @@ description: 'Tutorialschritt 2: Bereitstellen des eigentlichen Docker-Images i
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 0039b2cc9e612d7e03398e772183fe6eb81313f2
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 446653a4de98954ae75caa38c9cb2ae04ec071c4
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467043"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002372"
 ---
 # <a name="tutorial-deploy-a-container-image-to-azure-app-service"></a>Tutorial: Bereitstellen eines Containerimages in Azure App Service
 
@@ -37,7 +37,7 @@ Mit einem Containerimage in einer Registrierung können Sie die Docker-Erweiteru
 
 1. Das Erstellen der App Service-Instanz dauert einige Minuten. Sie können den Fortschritt im Ausgabebereich von VS Code anzeigen.
 
-1. Nachdem der Vorgang abgeschlossen ist, **müssen** Sie der App Service-Instanz auch eine Einstellung mit dem Namen `WEBSITES_PORT` (beachten Sie den Plural „WEBSITES“) hinzufügen, um den Port anzugeben, an dem der Container lauscht. (Wenn Sie beispielsweise ein Image aus dem Tutorial [Erstellen eines Python-Containers in VS Code](https://code.visualstudio.com/docs/python/tutorial-create-container) verwenden, lautet der Port 5000 für Flask und 8000 für Django.) Wechseln Sie zum Festlegen von `WEBSITES_PORT` zum **Azure App Service**-Explorer, erweitern Sie den Knoten für die neue App Service-Instanz (Sie müssen ggf. eine Aktualisierung vornehmen), klicken Sie mit der rechten Maustaste auf **Anwendungseinstellungen**, und wählen Sie **Neue Einstellung hinzufügen** aus. Geben Sie in den Eingabeaufforderungen als Schlüssel `WEBSITES_PORT` und als Wert die Portnummer ein.
+1. Nachdem der Vorgang abgeschlossen ist, **müssen** Sie der App Service-Instanz auch eine Einstellung mit dem Namen `WEBSITES_PORT` (beachten Sie den Plural „WEBSITES“) hinzufügen, um den Port anzugeben, an dem der Container lauscht. (Wenn Sie beispielsweise ein Image aus dem Tutorial [Erstellen eines Python-Containers in VS Code](https://code.visualstudio.com/docs/python/tutorial-create-containers) verwenden, lautet der Port 5000 für Flask und 8000 für Django.) Wechseln Sie zum Festlegen von `WEBSITES_PORT` zum **Azure App Service**-Explorer, erweitern Sie den Knoten für die neue App Service-Instanz (Sie müssen ggf. eine Aktualisierung vornehmen), klicken Sie mit der rechten Maustaste auf **Anwendungseinstellungen**, und wählen Sie **Neue Einstellung hinzufügen** aus. Geben Sie in den Eingabeaufforderungen als Schlüssel `WEBSITES_PORT` und als Wert die Portnummer ein.
 
     ![Hinzufügen einer neuen Einstellung zu einer App Service-Instanz, die einen Port angibt](media/deploy-containers/add-new-setting-in-app-service-settings-explorer.png)
 

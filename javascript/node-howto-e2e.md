@@ -4,12 +4,12 @@ description: Enthält ein umfassendes End-to-End-Tutorial zur Vorgehensweise bei
 ms.topic: article
 ms.date: 06/25/2017
 ms.custom: seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: 98b154a78702fa5c5a0808170c8227ce7910459b
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: b8841e5259a49b45db1f526330e0238d1bd0d050
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467382"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002521"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>Entwickeln und Bereitstellen einer Node.js-Container-App mit Visual Studio Code und Azure
 
@@ -354,7 +354,7 @@ Nachdem Sie die App für Docker erstellt und per Push an DockerHub übermittelt 
     ```
 
     > [!NOTE]
-    > Wenn Sie anstelle der Verwendung eines benutzerdefinierten Containers eine Git-Bereitstellung vorziehen, helfen Ihnen die Informationen im Artikel [Erstellen einer Node.js-Web-App in Azure](/azure/app-service-web/app-service-web-get-started-nodejs#configure-to-use-nodejs) weiter.
+    > Wenn Sie anstelle der Verwendung eines benutzerdefinierten Containers eine Git-Bereitstellung vorziehen, helfen Ihnen die Informationen im Artikel [Erstellen einer Node.js-Web-App in Azure](/azure/app-service-web/app-service-web-get-started-nodejs) weiter.
 
 1. Legen Sie die Web-App als Standard-Webinstanz fest:
 

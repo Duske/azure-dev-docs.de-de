@@ -4,12 +4,12 @@ description: 'Tutorialschritt 7: Hinzufügen einer Bindung in Python zum Schrei
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 9547912dc8f952e60d97efb2617f65f9fad67678
-ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
+ms.openlocfilehash: 34ee80b2fac2f66e37e67fd45ca366b97d3f52dd
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74992482"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002078"
 ---
 # <a name="tutorial-add-a-storage-binding-for-azure-functions-in-python"></a>Tutorial: Hinzufügen einer Speicherbindung für Azure Functions in Python
 
@@ -92,7 +92,7 @@ In diesem Abschnitt fügen Sie der HttpExample-Funktion, die Sie zuvor in diesem
 
     1. Navigieren Sie zu der Warteschlange, und untersuchen Sie sie mit dem in Visual Studio integrierten Azure Storage-Explorer wie unter [Verbinden von Funktionen mit Azure Storage mithilfe von Visual Studio Code](/azure/azure-functions/functions-add-output-binding-storage-queue-vs-code) beschrieben, insbesondere im Abschnitt [Überprüfen der Ausgabewarteschlange](/azure/azure-functions/functions-add-output-binding-storage-queue-vs-code#examine-the-output-queue).
 
-    1. Verwenden Sie die Azure CLI, um die Speicherwarteschlange abzufragen, wie unter [Abfragen der Speicherwarteschlange](/azure/azure-functions/functions-add-output-binding-storage-queue-python#query-the-storage-queue) beschrieben.
+    1. Verwenden Sie die Azure CLI, um die Speicherwarteschlange abzufragen, wie unter [Abfragen der Speicherwarteschlange](/azure/azure-functions/functions-add-output-binding-storage-queue-python) beschrieben.
 
 1. Stellen Sie den Code zum Testen in der Cloud mithilfe des Befehls **Für Funktions-App bereitstellen** erneut im **Azure: Functions**-Explorer bereit. Wenn Sie dazu aufgefordert werden, wählen Sie die zuvor erstellte Funktions-App aus. Nachdem die Bereitstellung abgeschlossen ist (es dauert einige Minuten!), werden im **Ausgabe**-Fenster erneut die öffentlichen Endpunkte angezeigt, mit denen Sie die Tests wiederholen können.
 
