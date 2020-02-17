@@ -3,12 +3,12 @@ title: Lokale Ausführung der Azure Functions-Anwendung in Visual Studio Code
 description: 'Teil 3 des Tutorials: Lokales Ausführen der App, um sie zu testen.'
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: d5af3cbe6fd138bc8aeeb36a60ea05f2a6460f8f
-ms.sourcegitcommit: d9f585bea70b01ba6657a75ea245d8519d4a5aad
+ms.openlocfilehash: fd2255fa3a085f979e5893d6178063ee8686ea08
+ms.sourcegitcommit: 20634277152d72a35ad9b35fa1203608740d1145
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76967228"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77144045"
 ---
 # <a name="test-the-function-locally"></a>Lokales Testen der Funktion
 
@@ -31,6 +31,10 @@ Beim Erstellen der Funktions-App wurde dem Projekt von der Azure Functions-Erwe
 1. Bei der lokalen Ausführung Ihrer Funktion können Sie Breakpoints für verschiedene Teile des Codes festlegen. (Weitere Informationen zu Breakpoints und zum Debuggen in VS Code finden Sie unter [Debuggen](https://code.visualstudio.com/docs/editor/debugging).) Öffnen Sie die Datei *index.js*, und klicken Sie dann im Editor-Fenster auf den Rand links neben Zeile 11. Es erscheint ein kleiner roter Punkt, der einen Breakpoint anzeigt. Entfernen Sie nun das `?name=`-Argument aus der URL im Browser. Wenn der Browser die Anforderung sendet, hält VS Code den Funktionscode an diesem Breakpoint an:
 
     ![An einem Breakpoint angehaltene Ausführung in VS Code](media/functions-extension/debugging-breakpoint.png)
+
+> [!Note]
+>
+> Wenn bei diesem Vorgang ein Ausführungsrichtlinienfehler auftritt, deinstallieren Sie `azure-functions-core-tools@3` mit npm, und installieren Sie anschließend das Paket mithilfe von Chocolatey in einem Terminal mit erhöhten Rechten.
 
 > [!div class="nextstepaction"]
 > [Ich habe die Funktions-App lokal ausgeführt.](tutorial-vscode-serverless-node-04.md) [Es ist ein Problem aufgetreten.](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azurefunctions&step=run-app)

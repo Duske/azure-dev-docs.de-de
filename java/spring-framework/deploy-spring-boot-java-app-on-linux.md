@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: a98575021be229ed067ce424cd101721c98f9ea4
-ms.sourcegitcommit: 3b8ccf447921a55f16c25795914d9eed64c2b9cf
+ms.openlocfilehash: b6c8e138c9d738b56d237180e618268cb71284e3
+ms.sourcegitcommit: 20634277152d72a35ad9b35fa1203608740d1145
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75755689"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77144075"
 ---
 # <a name="deploy-a-spring-boot-application-on-azure-app-service-for-container"></a>Bereitstellen einer Spring Boot-Anwendung in Azure App Service für Container
 
@@ -223,7 +223,7 @@ Klicken Sie nach Abschluss der Bereitstellung auf **Zu Ressource wechseln**.  Au
 >
 > 4. Klicken Sie im Navigationsbereich auf der linken Seite auf **Konfiguration**.
 >
-> 5. Fügen Sie im Abschnitt **App-Einstellungen** eine neue Einstellung mit dem Namen **PORT** hinzu, und geben Sie Ihre benutzerdefinierte Portnummer für den Wert ein.
+> 5. Fügen Sie im Abschnitt **Anwendungseinstellungen** eine neue Einstellung mit dem Namen **WEBSITES_PORT** hinzu, und geben Sie Ihre benutzerdefinierte Portnummer für den Wert ein.
 >
 > 6. Klicken Sie auf **OK**. Klicken Sie anschließend auf **Speichern**.
 >
