@@ -32,7 +32,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Geben Sie an, dass Sie ein **Maven**-Projekt mit **Java** generieren möchten, und geben Sie die Namen für **Gruppe** und **Artefakt** für Ihre Anwendung ein.
 
-1. Fügen Sie Abhängigkeiten für den Abschnitt **Spring Web** hinzu, und aktivieren Sie das Kontrollkästchen für **Web**. Scrollen Sie dann nach unten zum Abschnitt **NoSQL**, und aktivieren Sie das Kontrollkästchen für **Spring Data Reactive Redis**. 
+1. Fügen Sie Abhängigkeiten für den Abschnitt **Spring Web** hinzu, und aktivieren Sie das Kontrollkästchen für **Web**. Scrollen Sie dann nach unten zum Abschnitt **NoSQL**, und aktivieren Sie das Kontrollkästchen für **Spring Data Reactive Redis** (Spring Data Redis (reaktiv)). 
 1. Klicken Sie am unteren Seitenrand auf die Schaltfläche **Projekt generieren**.
 
    ![Grundlegende Spring Initializr-Optionen][SI01]
