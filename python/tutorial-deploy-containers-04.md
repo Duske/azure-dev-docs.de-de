@@ -1,17 +1,17 @@
 ---
-title: 'Tutorial: Streamen von Protokollen aus Azure App Service für einen Container in Visual Studio Code'
+title: 'Schritt 4: Streamen von Protokollen aus Azure App Service für einen Container in Visual Studio Code'
 description: 'Tutorialschritt 4: Anzeigen von Protokollen aus Azure App Service zum Überwachen des Verhaltens'
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: e9b54e53763b729f5042cfb0d8df438650fd362f
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 4f448945c0e1d1eda7870eb633d644535da7be0e
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466991"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422225"
 ---
-# <a name="tutorial-stream-logs-from-azure-app-service-for-a-container"></a>Tutorial: Streamen von Protokollen aus Azure App Service für einen Container
+# <a name="4-stream-logs-from-azure-app-service-for-a-container"></a>4: Streamen von Protokollen aus Azure App Service für einen Container
 
 [Vorheriger Schritt: Vornehmen von Änderungen und erneutes Bereitstellen](tutorial-deploy-containers-03.md)
 
@@ -39,6 +39,6 @@ Sie können in VS Code Protokolle von der ausgeführten Website in Azure App Ser
 1. Navigieren Sie in der App, um weitere Ausgaben für verschiedene HTTP-Anforderungen anzuzeigen.
 
 > [!div class="nextstepaction"]
-> [Die Protokolle werden angezeigt.](tutorial-deploy-containers-05.md)
+> [Die Protokolle werden angezeigt: Fahren Sie mit Schritt 5 fort. >>>](tutorial-deploy-containers-05.md)
 
 [Ich bin auf ein Problem gestoßen](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-containers&step=04-stream-logs)

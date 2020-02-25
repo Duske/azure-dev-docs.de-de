@@ -4,20 +4,20 @@ description: 'Teil 2 des Tutorials: Erstellen der Beispiel-App'
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.openlocfilehash: b236f64f04be0c0b8faa74eb67ce22f96ec595aa
-ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
+ms.openlocfilehash: 69c0e7d6f43829546e5f23ec63a4ac35b71d7e78
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76825844"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422523"
 ---
 # <a name="create-the-app"></a>Erstellen der App
 
 [Vorheriger Schritt: Einführung und Voraussetzungen](tutorial-vscode-static-website-node-01.md)
 
-In diesem Schritt verwenden Sie die Befehlszeilenschnittstelle (Command Line Interface, CLI) für [Angular](https://cli.angular.io/), [React](https://github.com/facebook/create-react-app) oder [Vue](https://cli.vuejs.org/), um eine einfache App zu erstellen, die in Azure bereitgestellt werden kann. Alternativ können Sie ein beliebiges anderes JavaScript-Framework, das statische Dateien generiert, oder einen Ordner verwenden, der HTML-, CSS- oder JavaScript-Dateien enthält. Wenn Sie bereits eine App haben, die Sie bereitstellen möchten, können Sie diesen Teil überspringen und mit [Erstellen eines Azure Storage-Kontos](tutorial-vscode-static-website-node-03.md) fortfahren.
+In diesem Schritt verwenden Sie die Befehlszeilenschnittstelle (Command Line Interface, CLI) für [Angular](https://cli.angular.io/), [React](https://github.com/facebook/create-react-app), [Vue](https://cli.vuejs.org/) oder [Svelte](https://github.com/sveltejs/template), um eine einfache App zu erstellen, die in Azure bereitgestellt werden kann. Alternativ können Sie ein beliebiges anderes JavaScript-Framework, das statische Dateien generiert, oder einen Ordner verwenden, der HTML-, CSS- oder JavaScript-Dateien enthält. Wenn Sie bereits eine App haben, die Sie bereitstellen möchten, können Sie diesen Teil überspringen und mit [Erstellen eines Azure Storage-Kontos](tutorial-vscode-static-website-node-03.md) fortfahren.
 
-# <a name="angulartabangular"></a>[Angular](#tab/angular)
+# <a name="angular"></a>[Angular](#tab/angular)
 
 1. Erstellen Sie mit der CLI ein Gerüst für eine neue App namens „my-static-app“. Führen Sie dazu den folgenden Befehl aus:
 
@@ -48,7 +48,7 @@ In diesem Schritt verwenden Sie die Befehlszeilenschnittstelle (Command Line Int
 
 1. Halten Sie den Server an, indem Sie im Terminal oder an der Eingabeaufforderung **STRG**+**C** drücken.
 
-# <a name="reacttabreact"></a>[React](#tab/react)
+# <a name="react"></a>[React](#tab/react)
 
 1. Erstellen Sie mit der CLI ein Gerüst für eine neue App namens „my-static-app“. Führen Sie dazu den folgenden Befehl aus:
 
@@ -77,7 +77,7 @@ In diesem Schritt verwenden Sie die Befehlszeilenschnittstelle (Command Line Int
 
 1. Halten Sie den Server an, indem Sie im Terminal oder an der Eingabeaufforderung **STRG**+**C** drücken.
 
-# <a name="vuetabvue"></a>[Vue](#tab/vue)
+# <a name="vue"></a>[Vue](#tab/vue)
 
 1. Erstellen Sie mit der CLI ein Gerüst für eine neue App namens „my-static-app“. Führen Sie dazu den folgenden Befehl aus:
 
@@ -105,6 +105,41 @@ Werden Sie von der CLI zur Eingabe von Konfigurationswerten aufgefordert, drück
 1. Öffnen Sie in einem Browser [http://localhost:8080](http://localhost:8080), um zu überprüfen, ob die App ausgeführt wird:
 
     ![Ausgeführte Vue-Beispiel-App](media/static-website/local-app-vue.png)
+
+1. Halten Sie den Server an, indem Sie im Terminal oder an der Eingabeaufforderung **STRG**+**C** drücken.
+
+# <a name="svelte"></a>[Svelte](#tab/svelte)
+
+1. Erstellen Sie mit der CLI ein Gerüst für eine neue App namens „my-static-app“. Führen Sie dazu den folgenden Befehl aus:
+
+    ```bash
+    npx degit sveltejs/template my-static-app
+    ```
+
+1. Wechseln Sie anschließend zum neuen Ordner, und führen Sie den Befehl `npm install` aus:
+
+    ```bash
+    cd my-static-app
+    npm install
+    ```
+
+1. Erstellen Sie die Anwendung mit dem Befehl `npm run build`:
+
+    ```bash
+    npm run build
+    ```
+
+1. Der Ordner _public_ sollte jetzt den Ordner _build_ enthalten. Der Ordner _build_ enthält die HTML-, CSS- und JavaScript-Dateien, die Sie in Azure Storage bereitstellen.
+
+1. Führen Sie die App mit dem folgenden Befehl aus:
+
+     ```bash
+     npm run dev
+     ```
+
+1. Öffnen Sie in einem Browser [http://localhost:5000](http://localhost:5000), um zu überprüfen, ob die App ausgeführt wird:
+
+    ![Ausgeführte Vue-Beispiel-App](media/static-website/local-app-svelte.png)
 
 1. Halten Sie den Server an, indem Sie im Terminal oder an der Eingabeaufforderung **STRG**+**C** drücken.
 

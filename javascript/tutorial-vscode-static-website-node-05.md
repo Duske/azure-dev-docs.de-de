@@ -4,12 +4,12 @@ description: 'Teil 5 des Tutorials: Vornehmen von Änderungen und erneutes Bere
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.openlocfilehash: 0db773cdea2e288dc461479c3753b94c9a286e82
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: d0f6be1d57c9d378a4428a5a05da0428314f76c0
+ms.sourcegitcommit: aceed8548ad4529a81d83eb15a095edc8607cac5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466644"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77440952"
 ---
 # <a name="make-changes-and-redeploy"></a>Vornehmen von Änderungen und erneutes Bereitstellen
 
@@ -17,7 +17,7 @@ ms.locfileid: "74466644"
 
 In diesem Schritt nehmen Sie eine einfache Änderung am Quellcode der App vor und stellen die Website erneut bereit, um den End-to-End-Bereitstellungsworkflow kennen zu lernen.
 
-# <a name="angulartabangular"></a>[Angular](#tab/angular)
+# <a name="angular"></a>[Angular](#tab/angular)
 
 1. Öffnen Sie in Visual Studio Code die Datei _src/app/app.component.html_, und ändern Sie Zeile 305 wie folgt:
 
@@ -33,7 +33,7 @@ In diesem Schritt nehmen Sie eine einfache Änderung am Quellcode der App vor un
 
     ![Änderungen in der App nach der erneuten Bereitstellung](media/static-website/updated-azure-app-angular.png)
 
-# <a name="reacttabreact"></a>[React](#tab/react)
+# <a name="react"></a>[React](#tab/react)
 
 1. Öffnen Sie in Visual Studio Code die Datei _src/app.js_, und ändern Sie Zeile 11 wie folgt:
 
@@ -49,7 +49,7 @@ In diesem Schritt nehmen Sie eine einfache Änderung am Quellcode der App vor un
 
     ![Änderungen in der App nach der erneuten Bereitstellung](media/static-website/updated-azure-app-react.png)
 
-# <a name="vuetabvue"></a>[Vue](#tab/vue)
+# <a name="vue"></a>[Vue](#tab/vue)
 
 1. Öffnen Sie in Visual Studio Code die Datei _src/App.vue_, und ändern Sie Zeile 11 wie folgt:
 
@@ -64,6 +64,37 @@ In diesem Schritt nehmen Sie eine einfache Änderung am Quellcode der App vor un
 1. Aktualisieren Sie nach Abschluss der Bereitstellung die Website im Browser, um die Änderungen anzuzeigen:
 
     ![Änderungen in der App nach der erneuten Bereitstellung](media/static-website/updated-azure-app-vue.png)
+
+# <a name="svelte"></a>[Svelte](#tab/svelte)
+
+1. Öffnen Sie in Visual Studio Code die Datei _src/main.js_, und ändern Sie Zeile 6 wie folgt:
+
+    ```js
+    import App from './App.svelte';
+
+    const app = new App({
+        target: document.body,
+        props: {
+            name: 'Welcome to Azure!'
+        }
+    });
+
+    export default app;
+    ```
+
+2. Öffnen Sie nun die Datei _src/App.svelte_, und ändern Sie Zeile 6 wie folgt:
+
+    ```html
+    <h1>{name}</h1>
+    ```
+
+1. Führen Sie an einem Terminal oder einer Eingabeaufforderung `npm run build` aus.
+
+1. Klicken Sie in VS Code mit der rechten Maustaste auf den aktualisierten Ordner _public_, und wählen Sie erneut **Deploy to Static Website** (Auf statischer Website bereitstellen) aus. Wählen Sie Ihr Storage-Konto aus, und bestätigen Sie, dass Sie die Änderungen bereitstellen möchten. (Um Probleme beim Zwischenspeichern zu vermeiden, löscht die Azure-Erweiterung vor der Bereitstellung von Änderungen automatisch alte Dateien.)
+
+1. Aktualisieren Sie nach Abschluss der Bereitstellung die Website im Browser, um die Änderungen anzuzeigen:
+
+    ![Änderungen in der App nach der erneuten Bereitstellung](media/static-website/updated-azure-app-svelte.png)
 
 ---
 

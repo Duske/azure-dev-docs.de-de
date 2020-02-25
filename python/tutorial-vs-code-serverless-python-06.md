@@ -1,17 +1,17 @@
 ---
-title: 'Tutorial: Hinzufügen einer zweiten Python-Funktion zu Azure Functions mit VS Code'
+title: 'Schritt 6: Hinzufügen einer zweiten Python-Funktion zu Azure Functions mit VS Code'
 description: 'Tutorialschritt 6: Erweitern eines Azure Functions-Projekts durch Hinzufügen einer zweiten Funktion'
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 12cd3625d3eec63a2ba3de4d55dbd957fbf0fb34
-ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
+ms.openlocfilehash: 45a17a403073110fec03c077d6009e26928d2310
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74992427"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422153"
 ---
-# <a name="tutorial-add-a-second-python-function-to-azure-functions"></a>Tutorial: Hinzufügen einer zweiten Python-Funktion zu Azure Functions
+# <a name="6-add-a-second-python-function-to-azure-functions"></a>6: Hinzufügen einer zweiten Python-Funktion zu Azure Functions
 
 [Vorheriger Schritt: Bereitstellen in Azure](tutorial-vs-code-serverless-python-05.md)
 
@@ -119,6 +119,6 @@ Nach der ersten Bereitstellung können Sie Änderungen am Code vornehmen, z. B.
 1. Nachdem die Bereitstellung abgeschlossen ist (es dauert einige Minuten!), werden im **Ausgabe**-Fenster die öffentlichen Endpunkte angezeigt, mit denen Sie die Tests wiederholen können.
 
 > [!div class="nextstepaction"]
-> [Ich habe eine zweite Funktion hinzugefügt.](tutorial-vs-code-serverless-python-07.md)
+> [Ich habe eine zweite Funktion hinzugefügt: Fahren Sie mit Schritt 7 fort. >>>](tutorial-vs-code-serverless-python-07.md)
 
 [Ich bin auf ein Problem gestoßen](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=06-second-function)

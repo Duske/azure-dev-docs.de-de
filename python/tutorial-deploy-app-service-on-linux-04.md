@@ -1,17 +1,17 @@
 ---
-title: 'Tutorial: Konfigurieren einer benutzerdefinierten Startdatei für Python-Apps in Azure App Service für Linux'
+title: 'Schritt 4: Konfigurieren einer benutzerdefinierten Startdatei für Python-Apps in Azure App Service für Linux'
 description: 'Tutorialschritt 4: Anweisen von App Service, wie die Web-App gestartet wird'
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: e18d58a5caf18103063fabfa3101988399bbb722
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: d744b4a270c89b7feb826353366ba021345eac85
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467049"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422480"
 ---
-# <a name="tutorial-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>Tutorial: Konfigurieren einer benutzerdefinierten Startdatei für Python-Apps in Azure App Service
+# <a name="4-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>4: Konfigurieren einer benutzerdefinierten Startdatei für Python-Apps in Azure App Service
 
 [Vorheriger Schritt: Erstellen der App Service-Instanz](tutorial-deploy-app-service-on-linux-03.md)
 
@@ -88,6 +88,6 @@ Standardmäßig geht der App Service für Linux-Container davon aus, dass die St
     ```
 
 > [!div class="nextstepaction"]
-> [Ich habe meine Startdatei konfiguriert.](tutorial-deploy-app-service-on-linux-05.md)
+> [Ich habe meine Startdatei konfiguriert: Fahren Sie mit Schritt 5 fort. >>>](tutorial-deploy-app-service-on-linux-05.md)
 
 [Ich bin auf ein Problem gestoßen](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=04-startup-command)

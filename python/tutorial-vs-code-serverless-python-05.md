@@ -1,17 +1,17 @@
 ---
-title: 'Tutorial: Bereitstellen von Azure Functions in Python mit VS Code'
+title: 'Schritt 5: Bereitstellen von Azure Functions in Python mit VS Code'
 description: 'Tutorialschritt 5: Bereitstellen von Python-Funktionscode in Azure, Streamen von Protokollen und Synchronisieren von Einstellungen zwischen einem lokalen Projekt und Azure'
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 07af40c402104f07844c2cbe0d84c38c86f2fca2
-ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
+ms.openlocfilehash: 94f142bdaba07b272f840684057811fdc7fafde8
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74992507"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422200"
 ---
-# <a name="tutorial-deploy-azure-functions-in-python"></a>Tutorial: Bereitstellen von Azure Functions in Python
+# <a name="5-deploy-azure-functions-in-python"></a>5: Bereitstellen von Azure Functions in Python
 
 [Vorheriger Schritt: Lokales Debuggen](tutorial-vs-code-serverless-python-04.md)
 
@@ -41,7 +41,7 @@ Außerdem erfordert eine Funktions-App ein Azure Storage-Konto für Daten und ei
 
     Informationen zum **Streamen von Protokollen** und zu **Uploadeinstellungen** finden Sie in den nächsten Abschnitten. Informationen zur **Anzeige der Ausgabe** finden Sie im folgenden Schritt 5.
 
-1. Nach der Bereitstellung wird im Fenster **Ausgabe** auch der öffentliche Endpunkt in Azure angezeigt:
+1. Nach der Bereitstellung wird im **Ausgabefenster** auch der öffentliche Endpunkt in Azure angezeigt (die URL Ihres spezifischen Endpunkts stimmt mit dem Namen überein, den Sie für die Funktions-App angegeben haben):
 
     ```output
     HTTP Trigger Urls:
@@ -70,6 +70,6 @@ Beim Hochladen von Einstellungen werden alle vorhandenen Einstellungen aktualisi
 Um alle Änderungen zu übernehmen, die Sie über das Portal oder den **Azure-Explorer** in der Datei *local.settings.json* vornehmen, klicken Sie mit der rechten Maustaste auf den Knoten **Anwendungseinstellungen** und wählen den Befehl **Download Remote Settings** (Remoteeinstellungen herunterladen) aus. Sie können auch die Befehlspalette verwenden, um den Befehl **Azure Functions: Remoteeinstellungen herunterladen** auszuwählen.
 
 > [!div class="nextstepaction"]
-> [Ich habe die Funktionen bereitgestellt.](tutorial-vs-code-serverless-python-06.md)
+> [Ich habe die Funktionen bereitgestellt: Fahren Sie mit Schritt 6 fort. >>>](tutorial-vs-code-serverless-python-06.md)
 
 [Ich bin auf ein Problem gestoßen](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=05-deploy)

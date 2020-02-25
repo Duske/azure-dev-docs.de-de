@@ -1,17 +1,17 @@
 ---
-title: 'Tutorial: Streamen von Protokollen aus Azure App Service in VS Code'
+title: 'Schritt 6: Streamen von Protokollen aus Azure App Service in VS Code'
 description: 'Tutorialschritt 6: Streamen von App-Protokollen in Visual Studio Code'
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 56cbd468771af8d60fce20d88b8c984f95d4b9b9
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: f2e19a52b673ddcef927165191d610776e06a32f
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466068"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422424"
 ---
-# <a name="tutorial-stream-logs-from-azure-app-service-into-visual-studio-code"></a>Tutorial: Streamen von Protokollen aus Azure App Service in Visual Studio Code
+# <a name="6-stream-logs-from-azure-app-service-into-visual-studio-code"></a>6: Streamen von Protokollen aus Azure App Service in Visual Studio Code
 
 [Vorheriger Schritt: Bereitstellen der App](tutorial-deploy-app-service-on-linux-05.md)
 
@@ -28,6 +28,6 @@ Verwenden Sie dieses Verfahren, um Protokolle aus einer Azure App Service-Instan
 1. Um das Streamen der Protokolle zu beenden (ohne die Protokollierung zu deaktivieren), klicken Sie mit der rechten Maustaste auf die App im **Azure App Service**-Explorer, und wählen Sie **Streamingprotokolle beenden** aus.
 
 > [!div class="nextstepaction"]
-> [Die Protokolle werden angezeigt.](tutorial-deploy-app-service-on-linux-07.md)
+> [Die Protokolle werden angezeigt: Fahren Sie mit Schritt 7 fort. >>>](tutorial-deploy-app-service-on-linux-07.md)
 
 [Ich bin auf ein Problem gestoßen](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=06-stream-logs)

@@ -1,17 +1,17 @@
 ---
-title: 'Tutorial: Hinzufügen einer Speicherbindung für Azure Functions in Python mit VS Code'
+title: 'Schritt 7: Hinzufügen einer Speicherbindung für Azure Functions in Python mit VS Code'
 description: 'Tutorialschritt 7: Hinzufügen einer Bindung in Python zum Schreiben von Meldungen in Azure Storage'
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 34ee80b2fac2f66e37e67fd45ca366b97d3f52dd
-ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
+ms.openlocfilehash: 2203104d53387254284e75e322367f2e7142bfad
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77002078"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422179"
 ---
-# <a name="tutorial-add-a-storage-binding-for-azure-functions-in-python"></a>Tutorial: Hinzufügen einer Speicherbindung für Azure Functions in Python
+# <a name="7-add-a-storage-binding-for-azure-functions-in-python"></a>7: Hinzufügen einer Speicherbindung für Azure Functions in Python
 
 [Vorheriger Schritt: Bereitstellen einer zweiten Funktion](tutorial-vs-code-serverless-python-06.md)
 
@@ -97,6 +97,6 @@ In diesem Abschnitt fügen Sie der HttpExample-Funktion, die Sie zuvor in diesem
 1. Stellen Sie den Code zum Testen in der Cloud mithilfe des Befehls **Für Funktions-App bereitstellen** erneut im **Azure: Functions**-Explorer bereit. Wenn Sie dazu aufgefordert werden, wählen Sie die zuvor erstellte Funktions-App aus. Nachdem die Bereitstellung abgeschlossen ist (es dauert einige Minuten!), werden im **Ausgabe**-Fenster erneut die öffentlichen Endpunkte angezeigt, mit denen Sie die Tests wiederholen können.
 
 > [!div class="nextstepaction"]
-> [Ich habe eine Speicherbindung hinzugefügt.](tutorial-vs-code-serverless-python-08.md)
+> [Ich habe eine Speicherbindung hinzugefügt: Fahren Sie mit Schritt 8 fort. >>>](tutorial-vs-code-serverless-python-08.md)
 
 [Ich bin auf ein Problem gestoßen](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=07-storage-binding)

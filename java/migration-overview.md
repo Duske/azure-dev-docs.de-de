@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: d32c38d763901152135b965484362031dfac7f0a
-ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
+ms.openlocfilehash: 7025393f45a32a42fcd2ae3dafee6274a4ba3cbc
+ms.sourcegitcommit: aceed8548ad4529a81d83eb15a095edc8607cac5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76825794"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77440855"
 ---
 # <a name="migrate-java-applications-to-azure"></a>Migrieren von Java-Anwendungen zu Azure
 
@@ -48,7 +48,7 @@ Webanwendungen werden in Archiven mit der Erweiterung *.war* (WAR-Dateien) angeo
 
 ### <a name="java-ee-applications"></a>Java EE-Anwendungen
 
-Java EE-Anwendungen (auch als J2EE-Anwendungen oder neuerdings als JakartaEE-Anwendungen bezeichnet) können einige, alle oder keine Elemente von Webanwendungen enthalten. Darüber hinaus können sie auch viele zusätzliche Komponenten enthalten und nutzen, die über die [Java EE-Spezifikation](https://en.wikipedia.org/wiki/Java_Platform,_Enterprise_Edition) definiert sind.
+Java EE-Anwendungen (auch als J2EE-Anwendungen oder neuerdings als Jakarta EE-Anwendungen bezeichnet) können einige, alle oder keine Elemente von Webanwendungen enthalten. Darüber hinaus können sie auch viele zusätzliche Komponenten enthalten und nutzen, die über die [Java EE-Spezifikation](https://en.wikipedia.org/wiki/Java_Platform,_Enterprise_Edition) definiert sind.
 
 Java EE-Anwendungen können in Archiven mit der Erweiterung *.ear* (EAR-Dateien) oder *.war* (WAR-Dateien) angeordnet werden.
 

@@ -1,17 +1,17 @@
 ---
-title: 'Tutorial: Erneutes Bereitstellen eines Containers in Azure App Service, nachdem Änderungen in Visual Studio Code vorgenommen wurden'
+title: 'Schritt 3: Erneutes Bereitstellen eines Containers in Azure App Service, nachdem Änderungen in Visual Studio Code vorgenommen wurden'
 description: 'Tutorialschritt 3: einfache Schritte zum erneuten Erstellen und Bereitstellen eines Containerimages'
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 88c5b608316f7dec601625fbf5962b9b888a4662
-ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
+ms.openlocfilehash: f0e6eb808e25f3bb48eb2c849310747945e0d7f9
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77002301"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422398"
 ---
-# <a name="tutorial-redeploy-a-container-to-azure-app-service-after-making-changes"></a>Tutorial: Erneutes Bereitstellen eines Containers in Azure App Service, nachdem Änderungen vorgenommen wurden
+# <a name="2-redeploy-a-container-to-azure-app-service-after-making-changes"></a>2: Erneutes Bereitstellen eines Containers in Azure App Service, nachdem Änderungen vorgenommen wurden
 
 [Vorheriger Schritt: Bereitstellen des Images in Azure](tutorial-deploy-containers-02.md)
 
@@ -30,6 +30,6 @@ Da Sie unweigerlich Änderungen an Ihrer App vornehmen, müssen Sie den Containe
 1. Navigieren Sie nach ungefähr 15–20 Sekunden erneut zu der App Service-URL, um die Änderungen zu überprüfen.
 
 > [!div class="nextstepaction"]
-> [Ich habe Änderungen vorgenommen und eine erneute Bereitstellung durchgeführt.](tutorial-deploy-containers-04.md)
+> [Ich habe Änderungen vorgenommen und eine erneute Bereitstellung durchgeführt: Fahren Sie mit Schritt 4 fort. >>>](tutorial-deploy-containers-04.md)
 
 [Ich bin auf ein Problem gestoßen](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-containers&step=03-make-changes-redeploy)

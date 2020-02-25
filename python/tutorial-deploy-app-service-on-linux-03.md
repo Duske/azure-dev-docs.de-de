@@ -1,17 +1,17 @@
 ---
-title: 'Tutorial: Erstellen der App Service-Instanz über Visual Studio Code'
+title: 'Schritt 3: Erstellen der App Service-Instanz über Visual Studio Code'
 description: 'Tutorialschritt 3: Erstellen der App Service-Instanz über die VS Code-Erweiterung'
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: b64adc1604698de74f4f318b805dd8c289c8fff8
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: dea4ace359c8d072af8ab9ed33451bc8077249b7
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466218"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422465"
 ---
-# <a name="tutorial-create-the-app-service-from-visual-studio-code"></a>Tutorial: Erstellen der App Service-Instanz über Visual Studio Code
+# <a name="3-create-the-app-service-from-visual-studio-code"></a>3: Erstellen der App Service-Instanz über Visual Studio Code
 
 [Vorheriger Schritt: Vorbereiten der App](tutorial-deploy-app-service-on-linux-02.md)
 
@@ -53,6 +53,6 @@ Wenn Sie über eine Umgebungsvariablen-Definitionsdatei verfügen, können Sie d
 1. Wenn Sie Einstellungen direkt im Azure-Portal festlegen, können Sie diese in einer Definitionsdatei speichern, indem Sie mit der rechten Maustaste auf den Knoten **Anwendungseinstellungen** klicken und **Download Remote Settings** (Remoteeinstellungen herunterladen) auswählen. Dadurch wird sichergestellt, dass diese Einstellungen auch in Ihrem Repository und nicht nur im Portal verfügbar sind.
 
 > [!div class="nextstepaction"]
-> [Ich habe die App Service-Instanz erstellt.](tutorial-deploy-app-service-on-linux-04.md)
+> [Ich habe die App Service-Instanz erstellt: Fahren Sie mit Schritt 4 fort. >>>](tutorial-deploy-app-service-on-linux-04.md)
 
 [Ich bin auf ein Problem gestoßen](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=03-create-app-service)

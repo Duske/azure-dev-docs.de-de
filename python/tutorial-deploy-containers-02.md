@@ -1,17 +1,17 @@
 ---
-title: 'Tutorial: Bereitstellen eines Containerimages in Azure App Service mit Visual Studio Code'
+title: 'Schritt 2: Bereitstellen eines Containerimages in Azure App Service mit Visual Studio Code'
 description: 'Tutorialschritt 2: Bereitstellen des eigentlichen Docker-Images in Azure App Service aus einer Containerregistrierung'
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 446653a4de98954ae75caa38c9cb2ae04ec071c4
-ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
+ms.openlocfilehash: 8005ba428d99051d9b5b86ed4f5222c1cd9ba673
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77002372"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422407"
 ---
-# <a name="tutorial-deploy-a-container-image-to-azure-app-service"></a>Tutorial: Bereitstellen eines Containerimages in Azure App Service
+# <a name="2-deploy-a-container-image-to-azure-app-service"></a>2: Bereitstellen eines Containerimages in Azure App Service
 
 [Vorheriger Schritt: Voraussetzungen](tutorial-deploy-containers-01.md)
 
@@ -46,6 +46,6 @@ Mit einem Containerimage in einer Registrierung können Sie die Docker-Erweiteru
 1. Nachdem der Dienst neu gestartet wurde, navigieren Sie unter `http://<name>.azurewebsites.net` zu der Website. Sie können auch **STRG** (bzw. **Cmd** unter macOS) gedrückt halten, während Sie im Ausgabebereich auf die URL klicken oder mit der rechten Maustaste auf die App Service-Instanz im **Azure App Service**-Explorer klicken und dann **Website durchsuchen** auswählen.
 
 > [!div class="nextstepaction"]
-> [Ich habe das Image bereitgestellt.](tutorial-deploy-containers-03.md)
+> [Ich habe das Image bereitgestellt: Fahren Sie mit Schritt 3 fort. >>>](tutorial-deploy-containers-03.md)
 
 [Ich bin auf ein Problem gestoßen](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-containers&step=02-deploy-container)

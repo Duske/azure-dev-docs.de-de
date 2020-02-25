@@ -4,12 +4,12 @@ description: 'Tutorialschritt 1: Einführung und Voraussetzungen'
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 94c6339c57746c84865a370a721fd94dfd30f625
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 60189f960087688c68876935ba3407811bbec7c6
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466084"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422445"
 ---
 # <a name="tutorial-deploy-docker-containers-to-azure-app-service-with-visual-studio-code"></a>Tutorial: Bereitstellen von Docker-Containern in Azure App Service mit Visual Studio Code
 
@@ -30,6 +30,6 @@ Wenn Sie Probleme mit einem der Schritte in diesem Tutorial haben, würden wir u
 [!INCLUDE [azure-sign-in](includes/azure-sign-in.md)]
 
 > [!div class="nextstepaction"]
-> [Ich habe mich bei Azure angemeldet.](tutorial-deploy-containers-02.md)
+> [Ich habe mich bei Azure angemeldet: Fahren Sie mit Schritt 2 fort. >>>](tutorial-deploy-containers-02.md)
 
 [Ich bin auf ein Problem gestoßen](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-containers&step=01-verify-prerequisites)

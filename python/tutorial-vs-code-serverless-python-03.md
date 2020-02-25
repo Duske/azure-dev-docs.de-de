@@ -1,17 +1,17 @@
 ---
-title: 'Tutorial: Untersuchen der Python-Codedateien für Azure Functions in VS Code'
+title: 'Schritt 3: Untersuchen der Python-Codedateien für Azure Functions in VS Code'
 description: 'Tutorialschritt 3: Grundlegendes zum Python-Vorlagencode, der von Azure Functions bereitgestellt wird'
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 253bc4384f896c9114f2f1113cdf0ee2f290819d
-ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
+ms.openlocfilehash: 77dc4cb44158ded1dd5c6d1e19afb48272177a12
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74992495"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422218"
 ---
-# <a name="tutorial-examine-the-python-code-files-in-visual-studio-code"></a>Tutorial: Untersuchen der Python-Codedateien in Visual Studio Code
+# <a name="3-examine-the-python-code-files-in-visual-studio-code"></a>3: Untersuchen der Python-Codedateien in Visual Studio Code
 
 [Vorheriger Schritt: Erstellen der Funktion](tutorial-vs-code-serverless-python-02.md)
 
@@ -91,6 +91,6 @@ Die wichtigen Teile des Codes lauten wie folgt:
 - Wenn ein Name gefunden wird, gibt der Code die Zeichenfolge „Hello“ mit angefügtem Namen zurück. Andernfalls wird eine Fehlermeldung zurückgegeben.
 
 > [!div class="nextstepaction"]
-> [Ich habe die Codedateien untersucht.](tutorial-vs-code-serverless-python-04.md)
+> [Ich habe die Codedateien untersucht: Fahren Sie mit Schritt 4 fort. >>>](tutorial-vs-code-serverless-python-04.md)
 
 [Ich bin auf ein Problem gestoßen](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=03-examine-code-files)

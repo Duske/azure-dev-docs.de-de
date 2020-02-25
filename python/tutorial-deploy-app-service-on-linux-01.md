@@ -4,12 +4,12 @@ description: 'Tutorialschritt 1: Einführung, Voraussetzungen und Anmeldung bei
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: d5eed3d2b1aeea92b3681ada006b3723e67f70c4
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 8995c31203b2cbd096820832beb3d6a7d165f132
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466277"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422491"
 ---
 # <a name="tutorial-deploy-python-apps-to-azure-app-service-on-linux-from-visual-studio-code"></a>Tutorial: Bereitstellen von Python-Apps in Azure App Service für Linux aus Visual Studio Code
 
@@ -34,7 +34,7 @@ Wenn Sie kein Azure-Abonnement haben, [registrieren Sie sich jetzt](https://azur
 
 Installieren Sie folgende Software:
 
-- [Visual Studio Code](https://code.visualstudio.com/).
+- [Visual Studio Code](https://code.visualstudio.com/)
 - Python und die [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)-Erweiterung, wie im [VS Code-Tutorial zu Python unter Voraussetzungen](https://code.visualstudio.com/docs/python/python-tutorial) beschrieben
 - Die [Azure App Service](vscode:extension/ms-azuretools.vscode-azureappservice)-Erweiterung, die die Interaktion mit Azure App Service innerhalb von VS Code ermöglicht. Allgemeine Informationen finden Sie im [Tutorial zur App Service-Erweiterung](https://code.visualstudio.com/tutorials/app-service-extension/getting-started) und im [GitHub-Repository vscode-azureappservice](https://github.com/Microsoft/vscode-azureappservice).
 
@@ -43,6 +43,6 @@ Installieren Sie folgende Software:
 [!INCLUDE [azure-sign-in](includes/azure-sign-in.md)]
 
 > [!div class="nextstepaction"]
-> [Ich habe mich bei Azure angemeldet.](tutorial-deploy-app-service-on-linux-02.md)
+> [Ich habe mich bei Azure angemeldet: Fahren Sie mit Schritt 2 fort. >>>](tutorial-deploy-app-service-on-linux-02.md)
 
 [Ich bin auf ein Problem gestoßen](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=01-verify-prerequisites)

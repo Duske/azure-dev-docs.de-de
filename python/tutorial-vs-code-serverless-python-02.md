@@ -1,17 +1,17 @@
 ---
-title: 'Tutorial: Erstellen einer Python-Funktion für Azure Functions mit VS Code'
+title: 'Schritt 2: Erstellen einer Python-Funktion für Azure Functions mit VS Code'
 description: 'Tutorialschritt 2: Verwenden der Azure Functions-Erweiterung für VS Code'
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 49ab6b150f14268b6d52ac48524f66e6e520e547
-ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
+ms.openlocfilehash: 3d33213d00c2b20d3a712c5cf9ca6888d25ebb8a
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74992517"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422168"
 ---
-# <a name="tutorial-create-a-python-function-for-azure-functions"></a>Tutorial: Erstellen einer Python-Funktion für Azure Functions
+# <a name="2-create-a-python-function-for-azure-functions"></a>2: Erstellen einer Python-Funktion für Azure Functions
 
 [Vorheriger Schritt: Voraussetzungen](tutorial-vs-code-serverless-python-01.md)
 
@@ -23,7 +23,7 @@ In diesem Artikel erstellen Sie eine Python-Funktion für Azure Functions mit Vi
 
 1. In den folgenden Eingabeaufforderungen:
 
-    | Prompt | Wert | BESCHREIBUNG |
+    | Prompt | value | Beschreibung |
     | --- | --- | --- |
     | Angeben eines Ordners für das Projekt | Aktuell geöffneter Ordner | Der Ordner, in dem das Projekt erstellt wird. Sie sollten das Projekt in einem Unterordner erstellen. |
     | Auswählen einer Sprache für Ihr Funktions-App-Projekt | **Python** | Die Sprache, die für die Funktion verwendet werden soll, die die für den Code verwendete Vorlage bestimmt. |
@@ -50,6 +50,6 @@ In diesem Artikel erstellen Sie eine Python-Funktion für Azure Functions mit Vi
 > ![Erstellen von Funktionen mithilfe von „Neue Funktion“ im Azure Functions-Explorer](media/tutorial-vs-code-serverless-python/create-new-functions-in-azure-functions-explorer.png)
 
 > [!div class="nextstepaction"]
-> [Ich habe die Funktion erstellt.](tutorial-vs-code-serverless-python-03.md)
+> [Ich habe die Funktion erstellt: Fahren Sie mit Schritt 3 fort. >>>](tutorial-vs-code-serverless-python-03.md)
 
 [Ich bin auf ein Problem gestoßen](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=02-create-function)

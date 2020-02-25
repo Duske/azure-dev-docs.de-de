@@ -1,17 +1,17 @@
 ---
-title: 'Tutorial: Lokales Debuggen des Azure Functions-Python-Codes mit VS Code'
+title: 'Schritt 4: Lokales Debuggen des Azure Functions-Python-Codes mit VS Code'
 description: 'Tutorialschritt 4: lokales Ausführen des VS Code-Debuggers, um Ihren Python-Code zu überprüfen'
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: ffd5d433166c44edd8c021fd29cb7e43395df7ff
-ms.sourcegitcommit: ac68fb174d606c7af2bfa79fe32b8ca7b73c86a1
+ms.openlocfilehash: ddb6cd0b1c1cac308e7e7e8da5b658cda277586a
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75946683"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422142"
 ---
-# <a name="tutorial-debug-the-azure-functions-python-code-locally"></a>Tutorial: Lokales Debuggen des Azure Functions-Python-Codes
+# <a name="4-debug-the-azure-functions-python-code-locally"></a>4: Lokales Debuggen des Azure Functions-Python-Codes
 
 [Vorheriger Schritt: Untersuchen der Codedateien](tutorial-vs-code-serverless-python-03.md)
 
@@ -59,6 +59,6 @@ Sie können Ihren Azure Functions-Python-Code lokal in Visual Studio Code debugg
 1. Wenn Sie die Funktion gründlich lokal getestet haben, stoppen Sie den Debugger (mit dem Menübefehl **Debuggen** > **Debuggen stoppen** oder dem Befehl **Trennen** in der Debugsymbolleiste).
 
 > [!div class="nextstepaction"]
-> [Ich habe den Debugger lokal ausgeführt.](tutorial-vs-code-serverless-python-05.md)
+> [Ich habe den Debugger lokal ausgeführt: Fahren Sie mit Schritt 5 fort. >>>](tutorial-vs-code-serverless-python-05.md)
 
 [Ich bin auf ein Problem gestoßen](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=04-test-debug)
