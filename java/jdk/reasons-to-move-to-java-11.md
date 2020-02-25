@@ -1,18 +1,19 @@
 ---
 title: Argumente für die Migration zu Java 11
+titleSuffix: Azure
 description: Eine Zusammenfassung für Entscheidungsträger, die wissen möchten, welche Vorteile eine Migration von Java 8 zu Java 11 hat.
 author: dsgrieve
-manager: maverberg
+manager: maverbur
 tags: java
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: dagrieve
-ms.openlocfilehash: 7daf058c2abebbf2cca85dadc4f9ffe3e8771fa1
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: c0a2f46f8a3249f6c9580e823e102a86291e15e7
+ms.sourcegitcommit: aceed8548ad4529a81d83eb15a095edc8607cac5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812221"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77440927"
 ---
 # <a name="reasons-to-move-to-java-11"></a>Argumente für die Migration zu Java 11
 
@@ -25,13 +26,13 @@ Seit Java 8 sind neue Features und Erweiterungen hinzugekommen. Es gibt beachtl
 Die Migration zu Java 11 kann schrittweise erfolgen. Code muss *keine* Java-Module verwenden, um unter Java 11 ausgeführt werden zu können. Java 11 kann zum Ausführen von Code verwendet werden, der mit JDK 8 entwickelt und erstellt wurde.
 Es gibt jedoch einige potenzielle Probleme, die hauptsächlich mit veralteten APIs und Klassenladeprogrammen sowie mit der veralteten Reflektion zusammenhängen.
 
-Ein umfassender Leitfaden für die Migration von Java 8 zu Java 11 wird in Kürze von der Java-Entwicklungsgruppe von Microsoft veröffentlicht. Bis dahin stehen zahlreiche Leitfäden für die Migration von Java 8 zu Java 9 zur Verfügung, die Sie bei Ihren ersten Schritten unterstützen. Beispiele wären etwa [Java-Plattform, Standard-Edition: Oracle JDK 9-Migrationsleitfaden](https://docs.oracle.com/javase/9/migrate/toc.htm) und [Der Stand des Modulsystems: Kompatibilität und Migration](http://openjdk.java.net/projects/jigsaw/spec/sotms/#compatibility--migration).
+Die Microsoft Java Engineering Group hat eine Anleitung für die [Umstellung von Java 8 auf Java 11](./transition-from-java-8-to-java-11.md) bereitgestellt. [Java-Plattform, Standard-Edition: Oracle JDK 9-Migrationsleitfaden](https://docs.oracle.com/javase/9/migrate/toc.htm) und [Der Stand des Modulsystems: Kompatibilität und Migration](http://openjdk.java.net/projects/jigsaw/spec/sotms/#compatibility--migration) sind weitere hilfreiche Leitfäden. 
 
 ## <a name="high-level-changes-between-java-8-and-11"></a>Allgemeine Änderungen zwischen Java 8 und 11
 
 In diesem Abschnitt sind nicht alle Änderungen aufgeführt, die in den Java-Versionen 9 \[[1](#ref1)\], 10 \[[2](#ref2)\] und 11 \[[3](#ref3)\] vorgenommen wurden. Vielmehr werden Änderungen mit Auswirkungen auf die Leistung, Diagnose und Produktivität hervorgehoben.
 
-### <a name="modules-4ref4"></a>Module \[[4](#ref4)\]
+### <a name="modules-4"></a>Module \[[4](#ref4)\]
 
 Module dienen zur Behandlung von Problemen bei der Konfiguration und Kapselung, die in umfangreichen, am *Klassenpfad* ausgeführten Anwendungen schwierig zu bewältigen sind. Bei einem *Modul* handelt es sich um eine selbstbeschreibende Sammlung von Java-Klassen und -Schnittstellen sowie von zugehörigen Ressourcen.
 
@@ -46,31 +47,31 @@ Eine Anwendung kann weiterhin den *Klassenpfad* verwenden und muss nicht auf Mod
 
 ### <a name="profiling-and-diagnostics"></a>Profilerstellung und Diagnose
 
-#### <a name="java-flight-recorder-5ref5"></a>Java Flight Recorder \[[5](#ref5)\]
+#### <a name="java-flight-recorder-5"></a>Java Flight Recorder \[[5](#ref5)\]
 
 Java Flight Recorder (JFR) sammelt Diagnose- und Profilerstellungsdaten einer aktiven Java-Anwendung. JFR hat nur minimale Auswirkungen auf die aktive Java-Anwendung. Die gesammelten Daten können dann mit Java Mission Control (JMC) und anderen Tools analysiert werden. In Java 8 waren JFR und JMC kommerzielle Features. In Java 11 stehen sie dagegen als Open-Source-Features zur Verfügung.
 
-#### <a name="java-mission-control-6ref6"></a>Java Mission Control \[[6](#ref6)\]
+#### <a name="java-mission-control-6"></a>Java Mission Control \[[6](#ref6)\]
 
 Java Mission Control (JMC) ist eine Open-Source-Lösung in Java und bietet eine grafische Darstellung der von Java Flight Recorder (JFR) gesammelten Daten.
 11. Neben allgemeinen Informationen zur aktiven Anwendung kann der Benutzer mit JMC auch Detailinformationen anzeigen. JFR und JMC können zur Diagnose von Runtimeproblemen wie Speicherverlusten, GC-Overhead, „heißen“ Methoden, Threadengpässen und blockierenden Eingaben/Ausgaben verwendet werden.
 
-#### <a name="unified-logging-7ref7"></a>Einheitliche Protokollierung \[[7](#ref7)\]
+#### <a name="unified-logging-7"></a>Einheitliche Protokollierung \[[7](#ref7)\]
 
 Java 11 verfügt über ein gemeinsames Protokollierungssystem für alle JVM-Komponenten.
 Dank dieses einheitlichen Protokollierungssystems kann der Benutzer definieren, welche Komponenten in welchem Umfang protokolliert werden sollen. Diese differenzierte Protokollierung ist hilfreich für die Ursachenanalyse bei JVM-Abstürzen sowie für die Diagnose von Leistungsproblemen in einer Produktionsumgebung.
 
-#### <a name="low-overhead-heap-profiling-8ref8"></a>Heapprofilerstellung mit geringem Mehraufwand \[[8](#ref8)\]
+#### <a name="low-overhead-heap-profiling-8"></a>Heapprofilerstellung mit geringem Mehraufwand \[[8](#ref8)\]
 
 Java Virtual Machine Tool Interface (JVMTI) wurde eine neue API zur Stichprobenentnahme für Java-Heapzuordnungen hinzugefügt. Die Stichprobenentnahme verursacht nur einen geringen Mehraufwand und kann kontinuierlich aktiviert werden. Die Heapzuordnung kann zwar mit Java Flight Recorder (JFR) überwacht werden, die Stichprobenentnahme in JFR funktioniert jedoch nur für Zuordnungen. Darüber hinaus kann es bei der JFR-Implementierung vorkommen, dass Zuordnungen nicht erkannt werden. Im Gegensatz dazu kann die Heapstichprobenentnahme in Java 11 Informationen zu aktiven und inaktiven Objekten bereitstellen.
 
 Dieses neue Feature wird zunehmend von APM-Anbietern (Application Performance Monitoring, Anwendungsleistungsüberwachung) genutzt, und die Java-Entwicklungsgruppe untersucht das Verwendungspotenzial dieses Features in Kombination mit Azure-Leistungsüberwachungstools.
 
-#### <a name="stackwalker-9ref9"></a>StackWalker \[[9](#ref9)\]
+#### <a name="stackwalker-9"></a>StackWalker \[[9](#ref9)\]
 
 Bei der Protokollierung wird häufig eine Momentaufnahme des Stapels für den aktuellen Thread abgerufen. Die Frage ist jedoch, wie viel von der Stapelüberwachung protokolliert werden soll (falls überhaupt). Es kann beispielsweise sein, dass die Stapelüberwachung nur für eine bestimmte Ausnahme einer Methode von Interesse ist. Die in Java 9 hinzugefügte StackWalker-Klasse liefert eine Momentaufnahme des Stapels und bietet Methoden, mit denen Programmierer die Nutzung der Stapelüberwachung präzise steuern können.
 
-### <a name="garbage-collection-10ref10"></a>Garbage Collection \[[10](#ref10)\]
+### <a name="garbage-collection-10"></a>Garbage Collection \[[10](#ref10)\]
 
 In Java 11 stehen folgende Garbage Collectors zur Verfügung: seriell, parallel, Garbage-First und Epsilon. Der Standard-Garbage Collector in Java 11 ist der Garbage-First-Garbage Collector (G1GC).
 
@@ -88,12 +89,12 @@ Der Standard-Garbage Collector in Java 11 ist der G1-Garbage Collector (G1GC)
 
 Der parallele Garbage Collector ist der Standard-Garbage Collector in Java 8. Bei dem parallelen GC handelt es sich um einen Durchsatz-Garbage Collector, der mehrere Threads verwendet, um die Garbage Collection zu beschleunigen.
 
-#### <a name="epsilon-11ref11"></a>Epsilon \[[11](#ref11)\]
+#### <a name="epsilon-11"></a>Epsilon \[[11](#ref11)\]
 
 Der Epsilon-Garbage Collector kümmert sich um Zuordnungen, gibt aber keinen Arbeitsspeicher frei. Ist der Heap erschöpft, wird JVM heruntergefahren.
 Epsilon eignet sich für kurzlebige Dienste sowie für Anwendungen ohne „Datenmüll“.
 
-#### <a name="improvements-for-docker-containers-12ref12"></a>Verbesserungen für Docker-Container \[[12](#ref12)\]
+#### <a name="improvements-for-docker-containers-12"></a>Verbesserungen für Docker-Container \[[12](#ref12)\]
 
 Vor Java 10 wurden für einen Container festgelegte Arbeitsspeicher- und CPU-Einschränkungen von JVM nicht erkannt. In Java 8 legt JVM beispielsweise die maximale Heapgröße standardmäßig auf ¼ des physischen Speichers des zugrunde liegenden Hosts fest. Ab Java 10 verwendet JVM von Containersteuerungsgruppen (cgroups) festgelegte Einschränkungen, um Arbeitsspeicher- und CPU-Limits festzulegen (siehe Hinweis weiter unten).
 Die standardmäßige maximale Heapgröße beträgt zum Beispiel ¼ des Container-Arbeitsspeicherlimits (also beispielsweise 500 MB für „-m2G“).
@@ -105,7 +106,7 @@ Diese Unterstützung ist standardmäßig aktiviert und steht nur auf Linux-basie
 > [!NOTE]
 > Der Großteil der Arbeit der Containersteuerungsgruppen wurde im Zuge von „jdk8u191“ zu Java 8 zurückportiert. Weitere Verbesserungen werden allerdings nicht unbedingt zu Java 8 zurückportiert.
 
-#### <a name="multi-release-jar-files-13ref13"></a>JAR-Dateien mit mehreren Releases \[[13](#ref13)\]
+#### <a name="multi-release-jar-files-13"></a>JAR-Dateien mit mehreren Releases \[[13](#ref13)\]
 
 In Java 11 kann eine JAR-Datei mit mehreren Java-releasespezifischen Versionen von Klassendateien erstellt werden. Dank JAR-Dateien mit mehreren Releases können Bibliotheksentwickler mehrere Versionen von Java unterstützen, ohne mehrere Versionen von JAR-Dateien bereitstellen zu müssen. Nutzer dieser Bibliotheken müssen dank JAR-Dateien mit mehreren Releases keine passenden spezifischen JAR-Dateien für spezifische Runtimeziele mehr verwenden.
 
@@ -134,7 +135,7 @@ Die folgenden Änderungen an den Kernbibliotheken haben Auswirkungen auf die Lei
 
 -   **JEP 321: HTTP-Client (Standard)** \[[22](#ref22)\] – Stellt eine neue HTTP-Client-API bereit, die HTTP/2 und WebSocket implementiert und die Legacy-API „HttpURLConnection“ ersetzen kann.
 
-## <a name="references"></a>Referenzen
+## <a name="references"></a>References
 
 <a id="ref1">\[1\]</a> Oracle Corporation, Versionshinweise für Java Development Kit 9 (online). Verfügbar unter https://www.oracle.com/technetwork/java/javase/9u-relnotes-3704429.html.
 (Zugriff am 13. November 2019)
