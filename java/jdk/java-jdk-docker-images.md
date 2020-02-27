@@ -4,14 +4,14 @@ description: Hier erfahren Sie, wie Sie Docker-Images mit einem Java Development
 ms.date: 04/09/2019
 ms.topic: conceptual
 ms.custom: seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: d7647757f371baa0b6fd21bd51d6629c6e1e0e10
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: b3a046563fa51efae32fd45e6154901539a8f4c8
+ms.sourcegitcommit: 6ffa53b933da524e09911b164bba8515722bfa91
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812256"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77629367"
 ---
-# <a name="use-docker-with-a-java-development-kit-jdk-for-azure"></a>Verwenden von Docker mit einem Java Development Kit (JDK) für Azure 
+# <a name="use-docker-with-a-java-development-kit-jdk-for-azure"></a>Verwenden von Docker mit einem Java Development Kit (JDK) für Azure
 
 Dieser Artikel beschreibt die Verwendung von Docker mit einem Java Development Kit (JDK) für Azure. Vorgefertigte Docker-Images für Java 7, 8 und 11 sind über [Docker Hub](https://hub.docker.com/_/microsoft-java-se) verfügbar.
 
@@ -19,14 +19,14 @@ Auf Docker Hub stehen zertifizierte Docker-Containerimages für das Zulu JDK, di
 
 * [JDK](https://hub.docker.com/_/microsoft-java-jdk)
 * [JRE](https://hub.docker.com/_/microsoft-java-jre)
-* [Monitorlose JRE](https://hub.docker.com/_/microsoft-java-jre-headless)
+* [JRE (monitorlos)](https://hub.docker.com/_/microsoft-java-jre-headless)
 
 ## <a name="running-a-docker-image"></a>Ausführen eines Docker-Images
 
 Docker-Images können wie im folgenden Beispiel gezeigt mit der Syntax `$ docker run mcr.microsoft.com/java/jdk:tag java` ausgeführt werden:
 
 ```cli
-docker run mcr.microsoft.com/java/jdk:8u212-zulu-alpine java -version 
+docker run mcr.microsoft.com/java/jdk:8-zulu-alpine java -version
 ```
 
 ## <a name="creating-a-docker-image"></a>Erstellen eines Docker-Images
@@ -36,7 +36,7 @@ Sie können wie in den folgenden Beispielen gezeigt unter Verwendung der offizie
 ### <a name="create-a-docker-file"></a>Erstellen einer Docker-Datei
 
 ```cli
-FROM mcr.microsoft.com/java/jdk:8u212-zulu-alpine 
+FROM mcr.microsoft.com/java/jdk:8-zulu-alpine
   
 RUN echo $' \
   

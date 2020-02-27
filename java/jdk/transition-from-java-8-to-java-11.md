@@ -10,12 +10,12 @@ ms.devlang: java
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: dagrieve
-ms.openlocfilehash: a5e36d535cba39728d28c1f2aa64985863103ee6
-ms.sourcegitcommit: aceed8548ad4529a81d83eb15a095edc8607cac5
+ms.openlocfilehash: 21b302225f8b28099e36622ae5e32a84c947a58a
+ms.sourcegitcommit: c34647aee3b9a72fa0ee6aeac2dfa1e36d67c7ef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77441086"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77504550"
 ---
 # <a name="transition-from-java-8-to-java-11"></a>Umstellung von Java 8 auf Java 11
 
@@ -26,7 +26,7 @@ Die allgemeinen Lösungsansätze sind die versuchte Ausführung unter Java 11 o
 
 Der Aufwand für die Umstellung auf Java 11 lohnt sich. Seit Java 8 wurden neue Features hinzugefügt und Erweiterungen durchgeführt. Diese Features und Erweiterungen sorgen für eine Verbesserung in Bezug auf den Start, die Leistung und die Speicherauslastung und ermöglichen eine bessere Integration in Container. Darüber hinaus wurde die API erweitert und geändert, um die Entwicklerproduktivität zu verbessern. 
 
-In diesem Dokument werden die Tools zum Untersuchen des Codes beschrieben. Außerdem werden Probleme behandelt, die ggf. auftreten können, und es werden Empfehlungen zur Behebung angegeben. Es ist auch ratsam, andere Leitfäden zu lesen, z. B. den [Oracle JDK-Migrationsleitfaden](https://docs.oracle.com/en/java/javase/11/migrate/index.htm). Es wird hier nicht beschrieben, wie vorhandener Code [modular](http://openjdk.java.net/projects/jigsaw) gemacht wird.  
+In diesem Dokument werden die Tools zum Untersuchen des Codes beschrieben. Außerdem werden Probleme behandelt, die ggf. auftreten können, und es werden Empfehlungen zur Behebung angegeben. Es ist auch ratsam, andere Leitfäden zu lesen, z. B. den [Oracle JDK-Migrationsleitfaden](https://docs.oracle.com/en/java/javase/11/migrate/index.html). Es wird hier nicht beschrieben, wie vorhandener Code [modular](http://openjdk.java.net/projects/jigsaw) gemacht wird.  
 
 
 ## <a name="the-toolbox"></a>Toolbox
@@ -125,7 +125,7 @@ Wenn ein Problem im Code behoben werden muss, sollten Sie dies durchführen, abe
 ### <a name="check-command-line-options"></a>Überprüfen der Befehlszeilenoptionen
 
 Führen Sie vor der Ausführung unter Java 11 einen schnellen Scanvorgang für die Befehlszeilenoptionen durch. 
-[Optionen, die entfernt wurden](#unrecognized options), führen zur Beendigung der Java Virtual Machine (JVM). Diese Überprüfung ist besonders wichtig, wenn Sie GC-Protokollierungsoptionen nutzen, da sich diese gegenüber Java 8 stark geändert haben. Das Tool [JaCoLine](https://jacoline.dev/about) eignet sich gut zum Erkennen von Problemen mit den Befehlszeilenoptionen. 
+[Optionen, die entfernt wurden](#unrecognized-options), führen zur Beendigung der Java Virtual Machine (JVM). Diese Überprüfung ist besonders wichtig, wenn Sie GC-Protokollierungsoptionen nutzen, da sich diese gegenüber Java 8 stark geändert haben. Das Tool [JaCoLine](https://jacoline.dev/about) eignet sich gut zum Erkennen von Problemen mit den Befehlszeilenoptionen. 
 
 ### <a name="check-third-party-libraries"></a>Überprüfen der Drittanbieterbibliotheken
 
