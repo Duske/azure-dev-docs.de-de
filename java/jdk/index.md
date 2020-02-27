@@ -4,12 +4,12 @@ description: Downloads und Anweisung des Azure-Supports für die Entwicklung und
 ms.topic: conceptual
 ms.date: 04/09/2019
 ms.custom: seo-java-september2019
-ms.openlocfilehash: 3e0bb0e457d79f337c36b0c5649f471061a2a162
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 5a54b81e1df649eea6716682059744a28ecff200
+ms.sourcegitcommit: 6ffa53b933da524e09911b164bba8515722bfa91
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812269"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77629407"
 ---
 # <a name="java-long-term-support-for-azure-and-azure-stack"></a>Langfristiger Java-Support für Azure und Azure Stack
 
@@ -20,13 +20,13 @@ Java-Entwickler, die mit Azure und Azure Stack arbeiten, können Java-Produktion
 
 ## <a name="long-term-support-lts"></a>Langfristiger Support (Long-Term Support, LTS)
 
-* [Java 11](https://www.azul.com/downloads/azure-only/zulu/#java11)
-* [Java 8](https://www.azul.com/downloads/azure-only/zulu/#java8)
-* [Java 7](https://www.azul.com/downloads/azure-only/zulu/#java7)
+* [Java 11](https://www.azul.com/downloads/azure-only/zulu/?&version=java-11-lts)
+* [Java 8](https://www.azul.com/downloads/azure-only/zulu/?&version=java-8-lts)
+* [Java 7](https://www.azul.com/downloads/azure-only/zulu/?&version=java-7-lts)
 
 ## <a name="technical-preview"></a>Technische Vorschauversion
 
-* [Java 12](https://www.azul.com/downloads/azure-only/zulu/#java12)
+* [Java 13](https://www.azul.com/downloads/azure-only/zulu/?&version=java-13)
 
 ## <a name="what-is-the-zulu-openjdk-for-azure"></a>Was ist Zulu OpenJDK für Azure?
 
@@ -52,10 +52,10 @@ Azul Systems stellt vollständig unterstützte [Enterprise Edition-Builds von Az
 
 |Java SE mit LTS  |Support bis  |
 |---------|----------|
-|[![Unterstützte Java-Version: Java 7](../media/jdk/supported-java-versions-java-7.png)](https://www.azul.com/downloads/azure-only/zulu/#java7) |Juli 2023 |
-|[![Unterstützte Java-Version: Java 8](../media/jdk/supported-java-versions-java-8.png)](https://www.azul.com/downloads/azure-only/zulu/#java8) |März 2025|
-|[![Unterstützte Java-Version: Java 11](../media/jdk/supported-java-versions-java-11.png)](https://www.azul.com/downloads/azure-only/zulu/#java11) |September 2026|
-|[![Unterstützte Java-Version: Java 12](../media/jdk/supported-java-versions-java-12.png)]() |**VORSCHAUVERSION**|
+|[![Unterstützte Java-Version: Java 7](../media/jdk/supported-java-versions-java-7.png)](https://www.azul.com/downloads/azure-only/zulu/?&version=java-7-lts) |Juli 2023 |
+|[![Unterstützte Java-Version: Java 8](../media/jdk/supported-java-versions-java-8.png)](https://www.azul.com/downloads/azure-only/zulu/?&version=java-8-lts) |März 2025|
+|[![Unterstützte Java-Version: Java 11](../media/jdk/supported-java-versions-java-11.png)](https://www.azul.com/downloads/azure-only/zulu/?&version=java-11-lts) |September 2026|
+|[![Unterstützte Java-Version: Java 13](../media/jdk/supported-java-versions-java-13.png)](https://www.azul.com/downloads/azure-only/zulu/?&version=java-13) |**VORSCHAUVERSION**|
 
 Für diese JDK-Releases werden vierteljährliche Sicherheitsupdates, Fehlerbehebungen sowie wichtige Out-of-band-Updates und -Patches nach Bedarf bereitgestellt.  Dieser Support umfasst die Zurückportierung von Sicherheitsupdates sowie die Behebung von Fehlern für Java 7 und 8, die in neueren Versionen von Java (etwa in Java 11) gemeldet wurden, um die kontinuierliche Stabilität und Sicherheit von älteren Java-Versionen zu gewährleisten.  Azure-Kunden können diese Sicherheitsupdates und Fehlerbehebungen für Plattformen beziehen, ohne dass ungeplante Gebühren für Java SE-Abonnements anfallen.
 
@@ -127,7 +127,7 @@ Folgende Releases des Enterprise Edition-JDK von Azul Zulu für Azure sind verf�
 
 Java-Entwickler können wie gewohnt ihre eigenen Java-Runtimes (einschließlich Oracle JDK und Red Hat JDK) in Azure verwenden und dabei die sichere Infrastruktur und die umfangreichen Dienste nutzen. Die Produktionsedition von Oracle Java SE ist ebenfalls für Java-Entwickler verfügbar, um Java-Workloads auf virtuellen Windows- oder Linux-Computern in Azure ausführen zu können.
 
-## <a name="use-for-local-development"></a>Verwendung für lokale Entwicklung 
+## <a name="use-for-local-development"></a>Verwendung für lokale Entwicklung
 
 Entwickler können Java-JDKs für Azure und Azure Stack zur Verwendung in lokalen Entwicklungsumgebungen [herunterladen](https://www.azul.com/downloads/azure-only/zulu/). Downloads sind für Windows, Linux und MacOS verfügbar. Unter Linux können Entwickler Pakete auch über die Paket-Manager [yum](https://www.azul.com/downloads/azure-only/zulu/#yum-repo) und [apt](https://www.azul.com/downloads/azure-only/zulu/#apt-repo) abrufen.
 
