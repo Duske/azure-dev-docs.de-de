@@ -4,16 +4,16 @@ description: Hier erfahren Sie, wie Sie das Azure SDK für Python unter Verwend
 ms.date: 10/31/2019
 ms.topic: conceptual
 ms.custom: seo-python-october2019
-ms.openlocfilehash: de36effc1787c83d137f84f8e0d670c97c71cdcf
-ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
+ms.openlocfilehash: c244280703400a3dabd150c10e66550dbc064abc
+ms.sourcegitcommit: c34647aee3b9a72fa0ee6aeac2dfa1e36d67c7ef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77422505"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77504557"
 ---
 # <a name="install-the-azure-sdk-for-python"></a>Installieren des Azure SDK für Python
 
-Das Azure SDK für Python bietet eine API, über die Sie von Python-Code aus mit Azure interagieren können. Abhängig von Ihren Anforderungen können Sie entweder einzelne Bibliotheken aus dem SDK oder aber alle Bibliotheken auf einmal installieren.
+Das Azure SDK für Python bietet eine API, über die Sie von Python-Code aus mit Azure interagieren können. Abhängig von Ihren Anforderungen installieren Sie einzelne Bibliotheken aus dem SDK.
 
 Das Azure SDK für Python wurde mit den CPython-Versionen 2.7 und 3.5.3+ sowie mit PyPy 5.4+ getestet und wird von diesen unterstützt. Entwickler verwenden das SDK auch mit anderen Interpretern wie IronPython und Jython, dabei kann es jedoch vereinzelt zu Problemen und Inkompatibilitäten kommen. Wenn Sie einen Python-Interpreter benötigen, installieren Sie die neueste Version, die unter [python.org/downloads](https://www.python.org/downloads) zur Verfügung steht.
 

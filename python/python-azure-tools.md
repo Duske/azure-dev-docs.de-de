@@ -1,34 +1,44 @@
 ---
-title: Azure-Tools für Python-Entwickler | Microsoft-Dokumentation
+title: Azure-Tools für Python-Entwickler
 description: IDE-Integrationen und Befehlszeilenschnittstellen für Python-Entwickler, die in Azure arbeiten.
 ms.topic: conceptual
-ms.date: 06/21/2017
-ms.openlocfilehash: c1ca9752b63baa783f078d7d26a2576fdee74e6a
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.date: 02/19/2020
+ms.openlocfilehash: 2cf9e2cad7cfb69a50da09438f448e6d2676faaa
+ms.sourcegitcommit: c34647aee3b9a72fa0ee6aeac2dfa1e36d67c7ef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467069"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77504425"
 ---
 # <a name="azure-tools-for-python-developers"></a>Azure-Tools für Python-Entwickler
 
-## <a name="azure-cli-20"></a>Azure CLI 2.0
-
-Die Azure 2.0 CLI stellt eine Befehlszeilenschnittstelle zum Erstellen und Konfigurieren von Azure-Ressourcen in Ihren Abonnements bereit. Die Azure CLI 2.0 eignet sich für verschiedene Plattformen und bietet Abfrage- und Filterfunktionen, die Sie direkt an Ihre bevorzugten Befehlszeilentools weiterreichen können.
-
-[Installieren der Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli)
-
 ## <a name="visual-studio-code"></a>Visual Studio Code
-Python wird in Visual Studio Code durch Erweiterungen vollständig unterstützt. Beliebte Erweiterungen im Marketplace können für Codevervollständigung, Linting, Debugging, Codeformatierung, Codeausschnitte und vieles mehr verwendet werden.
 
-[Installieren von Visual Studio Code und Erweiterungen](https://code.visualstudio.com/docs/languages/python)
+Python wird in Visual Studio Code durch die beliebte Python-Erweiterung vollständig unterstützt.
 
-## <a name="python-tools-for-visual-studio-extension"></a>Python-Tools für Visual Studio-Erweiterungen
-Visual Studio unter Windows bietet über die Entwicklungs- und Data Science-Workloads für Python (Visual Studio 2017) und die kostenlose Erweiterung „Python Tools für Visual Studio“ (Visual Studio 2015 und ältere Versionen) Open Source-Unterstützung für Python. 
+[Visual Studio Code und die Python-Erweiterung installieren](https://code.visualstudio.com/docs/languages/python)
+
+## <a name="azure-sdk-for-python"></a>Azure SDK für Python
+
+Das Azure SDK für Python bietet eine API, über die Sie von Python-Code aus mit Azure interagieren können.
+
+[Bibliotheken des Azure SDK für Python installieren](python-sdk-azure-install.md)
+
+## <a name="azure-command-line-interface-cli"></a>Azure-Befehlszeilenschnittstelle (CLI)
+
+Die plattformübergreifende Azure CLI stellt eine Befehlszeilenschnittstelle zum Erstellen und Konfigurieren von Azure-Ressourcen in Ihren Abonnements bereit. Die Azure CLI bietet Abfrage- und Filterfunktionen, sodass Sie Ausgaben direkt an andere Befehlszeilentools weiterreichen können. (Die Azure CLI selbst ist in Python geschrieben und verwendet das Azure SDK für Python.)
+
+[Installieren der Azure-Befehlszeilenschnittstelle](/cli/azure/install-azure-cli)
+
+## <a name="azure-powershell"></a>Azure PowerShell
+
+Azure PowerShell bietet wie die Azure CLI PowerShell-Befehle zum Erstellen und Konfigurieren von Azure-Ressourcen und kann mit der vollständigen Suite allgemeiner PowerShell-Funktionen verwendet werden.
+
+[Installieren von Azure PowerShell](/powershell/azure/install-az-ps)
+
+## <a name="visual-studio"></a>Visual Studio
+
+Visual Studio unter Windows bietet über die Entwicklungs- und Data Science-Workloads für Python (Visual Studio 2017 und höher) und die kostenlose Erweiterung „Python Tools für Visual Studio“ (Visual Studio 2015 und ältere Versionen) Open-Source-Unterstützung für Python. Visual Studio wird üblicherweise von Entwicklern verwendet, die sowohl mit Python als auch mit C++ arbeiten, da die Anwendung eine erstklassige sprachübergreifende Entwicklungs- und Debuggingunterstützung bietet.
 
 [Installieren der Python-Unterstützung in Visual Studio](https://docs.microsoft.com/visualstudio/python/installation)
 
-## <a name="azure-notebooks-preview"></a>Azure Notebooks (Vorschauversion)
-Azure Notebooks ist ein gehosteter Dienst für Jupyter-Notebooks, für den keine Installation erforderlich ist. Er ermöglicht den schnellen Einstieg in die Prototyperstellung, Data Science, akademische Forschung oder Programmierung von Python, R und F#. Sie können Code, Markdown, Bilder, Videos und Graphen in einem einzigen Format kombinieren.
-
-[Erste Schritte mit Azure Notebooks](https://notebooks.azure.com/)

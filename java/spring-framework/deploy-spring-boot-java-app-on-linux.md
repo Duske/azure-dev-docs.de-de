@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: 9288f680f5eb92046ada7ce420d64de2e5301fcc
-ms.sourcegitcommit: aceed8548ad4529a81d83eb15a095edc8607cac5
+ms.openlocfilehash: 5d0e196a6d0c65a6bf8f159f880b0890341a9fc3
+ms.sourcegitcommit: c34647aee3b9a72fa0ee6aeac2dfa1e36d67c7ef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77440973"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77504449"
 ---
 # <a name="deploy-a-spring-boot-application-on-azure-app-service-for-container"></a>Bereitstellen einer Spring Boot-Anwendung in Azure App Service für Container
 
@@ -126,7 +126,7 @@ Die folgende Anleitung führt Sie durch die Verwendung des Azure-Portals zur Ers
 
 Geben Sie das Basisimage (in diesem Fall `openjdk:8-jre-alpine`) unter `<from>/<image>` an. Geben Sie den Namen des endgültigen Images, das auf der Grundlage des Basisimages erstellt werden soll, unter `<to>/<image>` an.  
 
-Das `{docker.image.prefix}`-Element für die Authentifizierung ist der **Anmeldeserver** auf der zuvor gezeigten Registrierungsseite. `{project.artifactId}` ist der Name und die Versionsnummer der JAR-Datei aus dem ersten Mavin-Build des Projekts.
+Das `{docker.image.prefix}`-Element für die Authentifizierung ist der **Anmeldeserver** auf der zuvor gezeigten Registrierungsseite. `{project.artifactId}` ist der Name und die Versionsnummer der JAR-Datei aus dem ersten Maven-Build des Projekts.
 
 Geben Sie den Benutzernamen und das Kennwort aus dem Registrierungsbereich im Knoten `<to>/<auth>` an. Beispiel:
 
