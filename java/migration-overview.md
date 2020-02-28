@@ -32,25 +32,25 @@ Diese Anwendungstypen werden in den folgenden Abschnitten beschrieben.
 
 Viele neuere Anwendungen werden direkt über die Befehlszeile aufgerufen. Mit diesen Anwendungen werden auch weiterhin Webanforderungen verarbeitet. Aber anstatt den Anwendungsserver für die Verarbeitung von HTTP-Anforderungen zu nutzen, werden die HTTP-Kommunikation und alle anderen Abhängigkeiten direkt in das Anwendungspaket eingebunden. Anwendungen dieser Art werden häufig mit Frameworks erstellt, z. B. Spring Boot, Dropwizard, Micronaut, MicroProfile, Vert.x und anderen.
 
-Diese Anwendungen werden in Archiven mit der Erweiterung *.jar* (JAR-Dateien) angeordnet.
+Diese Anwendungen werden in Archiven mit der Erweiterung *.jar* (JAR-Dateien) gepackt.
 
 ### <a name="spring-cloud--microservices"></a>Spring Cloud/Microservices
 
 Der Microservice-Architekturstil ist ein Ansatz für die Entwicklung einer einzelnen Anwendung als Suite mit kleineren Diensten, die jeweils als eigener Prozess ausgeführt werden und mit einfachen Mechanismen kommunizieren, z. B. häufig mit einer HTTP-Ressourcen-API. Diese Dienste basieren auf den Geschäftsfunktionen und können über vollständig automatisierte Prozesse unabhängig voneinander bereitgestellt werden. Der Aufwand für die zentralisierte Verwaltung dieser Dienste ist minimal. Sie können in verschiedenen Programmiersprachen erstellt werden, und der Einsatz unterschiedlicher Speichertechnologien ist möglich. Dienste dieser Art werden häufig mit Frameworks, z. B. Spring Cloud, erstellt.
 
-Die Dienste werden in mehreren Anwendungen mit der Erweiterung *.jar* (JAR-Dateien) angeordnet.
+Die Dienste werden in mehreren Anwendungen mit der Erweiterung *.jar* (JAR-Dateien) gepackt.
 
 ### <a name="web-applications"></a>Webanwendungen
 
-Webanwendungen werden in einem [Servlet](https://en.wikipedia.org/wiki/Java_servlet)-Container ausgeführt. In einigen Fällen werden Servlet-APIs direkt genutzt. Häufig kommen aber auch zusätzliche Frameworks zum Einsatz, in die Servlet-APIs eingekapselt sind, z. B. Apache Struts, Spring MVC, JavaServer Faces (JSF) und andere.
+Webanwendungen werden in einem [Servlet](https://en.wikipedia.org/wiki/Java_servlet)-Container ausgeführt. In einigen Fällen werden Servlet-APIs direkt genutzt. Häufig kommen aber auch zusätzliche Frameworks zum Einsatz, in denen Servlet-APIs gekapselt sind, z. B. Apache Struts, Spring MVC, JavaServer Faces (JSF) und andere.
 
-Webanwendungen werden in Archiven mit der Erweiterung *.war* (WAR-Dateien) angeordnet.
+Webanwendungen werden in Archiven mit der Erweiterung *.war* (WAR-Dateien) gepackt.
 
 ### <a name="java-ee-applications"></a>Java EE-Anwendungen
 
 Java EE-Anwendungen (auch als J2EE-Anwendungen oder neuerdings als Jakarta EE-Anwendungen bezeichnet) können einige, alle oder keine Elemente von Webanwendungen enthalten. Darüber hinaus können sie auch viele zusätzliche Komponenten enthalten und nutzen, die über die [Java EE-Spezifikation](https://en.wikipedia.org/wiki/Java_Platform,_Enterprise_Edition) definiert sind.
 
-Java EE-Anwendungen können in Archiven mit der Erweiterung *.ear* (EAR-Dateien) oder *.war* (WAR-Dateien) angeordnet werden.
+Java EE-Anwendungen können in Archiven mit der Erweiterung *.ear* (EAR-Dateien) oder *.war* (WAR-Dateien) gepackt werden.
 
 Java EE-Anwendungen müssen auf Java EE-konformen Anwendungsservern (z. B. WebLogic, WebSphere, WildFly, GlassFish, Payara und andere) bereitgestellt werden.
 
@@ -58,9 +58,9 @@ Anwendungen, die nur auf den Features der Java EE-Spezifikation basieren (also v
 
 ### <a name="batch--scheduled-jobs"></a>Batchaufträge/Geplante Aufträge
 
-Für einige Anwendungen ist vorgesehen, dass sie nur kurz ausgeführt werden, eine bestimmte Workload ausführen und dann beendet werden, anstatt auf Anforderungen oder Benutzereingaben zu warten. Diese Aufträge müssen unter Umständen nur einmal oder in regelmäßigen geplanten Intervallen ausgeführt werden. In lokalen Umgebungen werden diese Aufträge häufig über das crontab-Element eines Servers aufgerufen.
+Für einige Anwendungen ist vorgesehen, dass sie nur kurz ausgeführt werden, eine bestimmte Workload ausführen und dann beendet werden, anstatt auf Anforderungen oder Benutzereingaben zu warten. Diese Aufträge müssen teils nur einmal, teils aber auch in regelmäßigen geplanten Intervallen ausgeführt werden. In lokalen Umgebungen werden diese Aufträge häufig über das crontab-Element eines Servers aufgerufen.
 
-Diese Anwendungen werden in Archiven mit der Erweiterung *.jar* (JAR-Dateien) angeordnet.
+Diese Anwendungen werden in Archiven mit der Erweiterung *.jar* (JAR-Dateien) gepackt.
 
 > [!NOTE]
 > Wenn für Ihre Anwendung ein Planer (z. B. Spring Batch oder Quartz) zum Ausführen von geplanten Aufgaben genutzt wird, empfehlen wir Ihnen dringend eine Vorgehensweise, bei der diese Aufgaben außerhalb der Anwendung ausgeführt werden. Wenn Ihre Anwendung auf mehrere Instanzen in der Cloud skaliert wird, wird derselbe Auftrag mehr als einmal ausgeführt. Falls für Ihren Planungsmechanismus die lokale Zeitzone des Hosts genutzt wird, kann es außerdem zu unerwünschtem Verhalten kommen, wenn Sie Ihre Anwendung regionsübergreifend skalieren.
@@ -69,9 +69,9 @@ Diese Anwendungen werden in Archiven mit der Erweiterung *.jar* (JAR-Dateien) an
 
 In den folgenden Abschnitten wird veranschaulicht, welche Dienstziele Ihre Anwendungsanforderungen erfüllen und welche Zuständigkeiten damit verbunden sind.
 
-### <a name="feature-grid"></a>Funktionsraster
+### <a name="feature-grid"></a>Matrixübersicht
 
-Ermitteln Sie anhand des folgenden Rasters die Ziele, die die von Ihnen benötigten Anwendungstypen und Features unterstützen.
+Ermitteln Sie anhand der folgenden Übersicht die Ziele, die die von Ihnen benötigten Anwendungstypen und Features unterstützen.
 
 |   |App<br>Dienst<br>Java SE|App<br>Dienst<br>Tomcat|App<br>Dienst<br>WildFly|Azure<br>Spring<br>Cloud|AKS|Virtual Machines|
 |---|---|---|---|---|---|---|
@@ -84,14 +84,14 @@ Ermitteln Sie anhand des folgenden Rasters die Ziele, die die von Ihnen benötig
 | Clustering auf Anwendungsserverebene                               |        |        |        |        |&#x2714;|&#x2714;|
 | Batchaufträge/Geplante Aufträge                                            |        |        |        |&#x2714;|&#x2714;|&#x2714;|
 
-### <a name="ongoing-responsibility-grid"></a>Raster zu laufenden Zuständigkeiten
+### <a name="ongoing-responsibility-grid"></a>Übersicht zu laufenden Zuständigkeiten
 
-Ermitteln Sie anhand des folgenden Rasters, welche Zuständigkeiten sich nach der Migration in Bezug auf die einzelnen Ziele für Ihr Team ergeben.
+Ermitteln Sie anhand der folgenden Übersicht, welche Zuständigkeiten sich nach der Migration in Bezug auf die einzelnen Ziele für Ihr Team ergeben.
 
 Für Ihr Team gilt eine fortlaufende Zuständigkeit für die Aufgaben, die mit „&#x1F449;“ gekennzeichnet sind. Wir empfehlen Ihnen, zur Erfüllung dieser Zuständigkeiten einen stabilen, stark automatisierten Prozess zu implementieren. 
 
 > [!NOTE]
-> Hinweis: Es handelt sich hierbei nicht um eine umfassende Liste mit Zuständigkeiten.
+> Hinweis: Die Liste mit den Zuständigkeiten erhebt keinen Anspruch auf Vollständigkeit.
 
 |   | App Service | Azure Spring Cloud | AKS | Virtual Machines |
 |---|---|---|---|---|
@@ -121,7 +121,7 @@ Dokumentieren Sie die Hardware der aktuellen Produktionsserver sowie die durchsc
 
 ## <a name="migration-guidance"></a>Hinweise zur Migration
 
-Verwenden Sie die folgenden Raster, um Informationen zur Migration nach Anwendungstyp und gewünschtem Azure-Dienstziel zu erhalten.
+Verwenden Sie die folgenden Übersichten, um Informationen zur Migration nach Anwendungstyp und gewünschtem Azure-Dienstziel zu erhalten.
 
 **Java-Anwendungen**
 
