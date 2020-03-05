@@ -3,12 +3,12 @@ title: Erste Schritte mit den Azure-Modulen für Node.js
 description: Erste Schritte mit der Authentifizierung und Ressourcenverwaltung mit Azure-Modulen für Node.js
 ms.date: 06/17/2017
 ms.topic: conceptual
-ms.openlocfilehash: ecd256b28e666368d3b15a97a198aacc82a0f823
-ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
+ms.openlocfilehash: 600c10c052a3aa95eb4dc04de0166a6974ede060
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77002274"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709897"
 ---
 # <a name="get-started-with-the-azure-modules-for-nodejs"></a>Erste Schritte mit den Azure-Modulen für Node.js
 
@@ -38,7 +38,7 @@ Die Node.js-Anwendung benötigt Lese- und Schreibberechtigungen in Ihrem Azure-A
 
 [Erstellen Sie einen Dienstprinzipal mithilfe der Azure CLI 2.0](/cli/azure/create-an-azure-service-principal-azure-cli), und erfassen Sie die Ausgabe. Geben Sie im Kennwortargument anstelle von `MY_SECURE_PASSWORD` ein [sicheres Kennwort](/azure/active-directory/active-directory-passwords-policy) an.
 
-```azurecli-interactive
+```azurecli
 az ad sp create-for-rbac --name AzureNodeTest --password MY_SECURE_PASSWORD
 ```
 
@@ -62,7 +62,7 @@ export AZURE_TENANT XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 
 Rufen Sie mit [az account show](/cli/azure/account#az-account-show) die ID für Ihr Abonnement ab.
 
-```azurecli-interactive
+```azurecli
 az account show
 ```
 
@@ -181,7 +181,7 @@ node createVM.js
 
 Rufen Sie nach der Ausführung des Codes die IP des neuen virtuellen Computers ab, und melden Sie sich per SSH mithilfe des Werts für `adminPass` aus Ihrem Code an.
 
-```azurecli-interactive
+```azurecli
 az vm list-ip-addresses --name newLinuxVM
 ```
 
@@ -248,7 +248,7 @@ node uploadFile.js
 
 Löschen Sie die Ressourcengruppe, um die in diesem Leitfahren erstellten Ressourcen zu entfernen.
 
-```azurecli-interactive
+```azurecli
 az group delete --name myResourceGroup
 ```
 
