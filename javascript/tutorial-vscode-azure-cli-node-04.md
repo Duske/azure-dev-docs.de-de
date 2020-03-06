@@ -3,12 +3,12 @@ title: Bereitstellen des App-Codes in Azure App Service mit der Azure-Befehlsz
 description: 'Teil 4 des Tutorials: Bereitstellen der Website'
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 4911ccdf4003b44359d40c58d1b924e6bf88c829
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 668d055a56eae2eb365884a41fcc515aae5fb229
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467177"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709797"
 ---
 # <a name="deploy-the-app-to-app-service"></a>Bereitstellen der App in App Service
 
@@ -26,23 +26,23 @@ In diesem Schritt stellen Sie den Code Ihrer Node.js-App in Azure App Service 
 
 1. Führen Sie die folgenden Befehle aus, um Anmeldeinformationen für die Bereitstellung in Azure einzurichten. Ersetzen Sie dabei `username` und `pPassword` durch Ihre Anmeldeinformationen. Bei erfolgreicher Ausführung des Befehls wird eine JSON-Ausgabe angezeigt.
 
-    ```bash
+    ```azurecli
     az webapp deployment user set --user-name <username> --password <password>
     ```
 
 1. Führen Sie den folgenden Befehl aus, um den Git-Endpunkt abzurufen, an den Sie den App-Code pushen möchten. Ersetzen Sie dabei `<your_app_name>` durch den Namen, den Sie im vorherigen Schritt beim Erstellen der App Service-Instanz verwendet haben:
 
-    ```bash
+    ```azurecli
     az webapp deployment source config-local-git --name <your_app_name>
     ```
 
     Die Ausgabe des Befehls sieht in etwa wie folgt aus:
 
-    ```output
+    <pre>
     {
       "url": "https://username@msdocs-node-cli.scm.azurewebsites.net/msdocs-node-cli.git"
     }
-    ```
+    </pre>
 
 1. Führen Sie den folgenden Befehl aus, um einen neuen Remotespeicherort in Git mit dem Namen `azure` festzulegen. Verwenden Sie dazu die URL aus dem vorherigen Schritt *ohne den Benutzernamen*. Wenn Sie das Beispiel im vorherigen Schritt verwenden, lautet der Befehl wie folgt:
 
@@ -63,7 +63,7 @@ In diesem Schritt stellen Sie den Code Ihrer Node.js-App in Azure App Service 
 > [!TIP]
 > Wenn der Fehler `Object #<eventemitter> has no method 'hrtime'` auftritt, müssen Sie wahrscheinlich die Version der Node-Runtime für die Website festlegen. Mit dem folgenden Befehl wird die Website angewiesen, die Node-Version `6.9.1` zu verwenden. Falls Ihre Website eine andere oder höhere Node-Version erfordert, geben Sie die Version mit der vollständigen Semantik `major.minor.patch` an.
 >
-> ```bash
+> ```azurecli
 > az webapp config appsettings set --name <your_app_name> --settings
 > ```
 

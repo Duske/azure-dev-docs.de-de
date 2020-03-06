@@ -4,12 +4,12 @@ description: 'Tutorialschritt 5: Bereitstellen von Python-Funktionscode in Azur
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 94f142bdaba07b272f840684057811fdc7fafde8
-ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
+ms.openlocfilehash: 425fb745cec74672cfabc6c3c5eab96821a43224
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77422200"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709757"
 ---
 # <a name="5-deploy-azure-functions-in-python"></a>5: Bereitstellen von Azure Functions in Python
 
@@ -43,10 +43,11 @@ Außerdem erfordert eine Funktions-App ein Azure Storage-Konto für Daten und ei
 
 1. Nach der Bereitstellung wird im **Ausgabefenster** auch der öffentliche Endpunkt in Azure angezeigt (die URL Ihres spezifischen Endpunkts stimmt mit dem Namen überein, den Sie für die Funktions-App angegeben haben):
 
-    ```output
+    <pre>
     HTTP Trigger Urls:
-      HttpExample: https://vscode-azure-functions.azurewebsites.net/api/HttpExample
-    ```
+
+          HttpExample: https://vscode-azure-functions.azurewebsites.net/api/HttpExample
+    </pre>
 
     Verwenden Sie diesen Endpunkt, um die gleichen Tests auszuführen, die Sie lokal durchgeführt haben, und verwenden Sie dabei URL-Parameter und/oder Anforderungen mit JSON-Daten im Anforderungstext. Die Ergebnisse des öffentlichen Endpunkts sollten mit den Ergebnissen des lokalen Endpunkts, den Sie zuvor in [Teil 4](tutorial-vs-code-serverless-python-04.md) getestet haben, identisch sein.
 
@@ -56,7 +57,7 @@ Die Unterstützung für das Streamen von Protokollen befindet sich zurzeit in de
 
 Derzeit sind diese Befehle jedoch noch nicht funktionstüchtig. Das Protokollstreaming ist stattdessen in einem Browser verfügbar, indem Sie den folgenden Befehl ausführen und dabei `<app_name>` durch den Namen Ihrer Functions-App in Azure ersetzen:
 
-```bash
+```
 # Replace <app_name> with the name of your Functions app on Azure
 func azure functionapp logstream <app_name> --browser
 ```
