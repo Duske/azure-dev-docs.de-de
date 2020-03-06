@@ -3,12 +3,12 @@ title: Streamen von Protokollen aus Azure App Service in Visual Studio Code
 description: 'Teil 4 des Tutorials: Anzeigen oder Anfügen von Protokollen.'
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: cc140d7751f9b014f1a16065fd4c65b481c7d1ae
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 4048fd1d5d288d88cadf0a865c2c5b0ddd517daf
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466817"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709807"
 ---
 # <a name="stream-logs-from-azure-app-service"></a>Streamen von Protokollen aus Azure App Service
 
@@ -26,11 +26,11 @@ In diesem Schritt erfahren Sie, wie Sie eine von der ausgeführten Website gener
 
 1. Nachdem die App neu gestartet wurde, wird das Fenster **Ausgabe** in VS Code mit einer Verbindung mit dem Protokollstream geöffnet, der die Ausgabe zeigt.
 
-    ```bash
+    <pre>
     Connecting to log-streaming service...
     2019-09-20 17:33:51.428 INFO  - Container msdocs-vscode-node_2 for site msdocs-vscode-node initialized successfully.
     2019-09-20 17:33:56.500 INFO  - Container logs
-    ```
+    </pre>
 
 1. Aktualisieren Sie die Webseite im Browser einige Male, um die zusätzliche Protokollausgabe anzuzeigen.
 

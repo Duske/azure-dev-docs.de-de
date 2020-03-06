@@ -3,12 +3,12 @@ title: Bereitstellen von Azure Functions in Node.js in Visual Studio Code
 description: 'Teil 1 des Tutorials: Einführung und Voraussetzungen.'
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: a4e60d45f5bddb358e596fc3b9e7db72e7e2f9eb
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 8a6dc30c90ba056070e69e40ed1534a176ae21aa
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466623"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709847"
 ---
 # <a name="deploy-azure-functions-from-visual-studio-code"></a>Bereitstellen von Azure Functions in Visual Studio Code
 
@@ -17,9 +17,9 @@ In diesem Tutorial verwenden Sie Visual Studio Code und die Azure Functions-E
 ## <a name="prerequisites"></a>Voraussetzungen
 
 - Ein [Azure-Abonnement](#azure-subscription).
-- [Visual Studio Code](https://code.visualstudio.com/).
+- [Visual Studio Code](https://code.visualstudio.com/)
 - Die [Azure Functions-Erweiterung](vscode:extension/ms-azuretools.vscode-azurefunctions).
-- [Node.js und npm](https://nodejs.org/en/download), Node.js-Paket-Manager.
+- [Node.js und npm](https://nodejs.org/en/download), Node.js-Paket-Manager
 
 > <a class="tutorial-install-extension-btn" href="vscode:extension/ms-azuretools.vscode-azurefunctions">Installieren der Azure Functions-Erweiterung</a>
 
@@ -41,7 +41,7 @@ Um das lokale Debuggen zu aktivieren, müssen Sie die [Azure Functions Core To
 
 1. Wählen Sie zum Überprüfen der Installation in VS Code den Menübefehl **Terminal** > **Neues Terminal** aus, und führen Sie dann den Befehl `func` aus. Die Ausgabe des Befehls sollte in etwa wie folgt aussehen (mit Nutzungsinformationen).
 
-    ```output
+    <pre>
                       %%%%%%
                      %%%%%%
                 @   %%%%%%    @
@@ -56,7 +56,7 @@ Um das lokale Debuggen zu aktivieren, müssen Sie die [Azure Functions Core To
 
     Azure Functions Core Tools (2.4.419 Commit hash: c9c1724d002bd90b2e6b41393915ea3a26bcf0ce)
     Function Runtime Version: 2.0.12332.0
-    ```
+    </pre>
 
 > [!div class="nextstepaction"]
 > [Ich habe die Voraussetzungen installiert.](tutorial-vscode-serverless-node-02.md) [Es ist ein Problem aufgetreten.](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azurefunctions&step=getting-started)

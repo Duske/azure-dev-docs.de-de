@@ -4,12 +4,12 @@ description: 'Tutorialschritt 1: Einführung und Voraussetzungen'
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 3056ccaa6d0cc8e5f2e15c6b7511172f59644936
-ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
+ms.openlocfilehash: b9aecefc05db95aa121e496c9c993a5bba373ef7
+ms.sourcegitcommit: a9ec05f964009409fe6e54b95c9d548f805a518e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77422186"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78215333"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>Tutorial: Erstellen und Bereitstellen von Azure Functions serverlos in Python mit Visual Studio Code
 
@@ -35,8 +35,8 @@ Befolgen Sie zum Installieren von Azure Functions Core Tools die Anweisungen fü
 
 Verwenden Sie bei der Installation von Node.js die Standardoptionen, und wählen Sie *nicht* die Option zur automatischen Installation der erforderlichen Tools aus.  Verwenden Sie darüber hinaus unbedingt die Option `-g` mit den `npm install`-Befehlen, damit die Core Tools für nachfolgende Befehle verfügbar sind.
 
-    > [!TIP]
-    > The Core Tools are written in .NET Core, and the Core Tools package is best installed using the Node.js package manager, npm, which is why you need to install .NET Core and Node.js at present, even for working with Azure Functions in Python. You can, however bypass the .NET Core requirement using "extension bundles" as described in the aforementioned documentation. Whatever the case, you need install these components only once, after which Visual Studio Code automatically prompts you to install any updates.
+> [!TIP]
+> Core Tools sind in .NET Core geschrieben, und das Core Tools-Paket wird am besten mit dem Node.js-Paket-Manager npm installiert, weshalb Sie derzeit auch für Azure Functions in Python .NET Core und Node.js installieren müssen. Sie können jedoch die .NET Core-Anforderung mithilfe von „Erweiterungsbundles“ umgehen, wie in der vorgenannten Dokumentation beschrieben. Wie auch immer, Sie müssen diese Komponenten nur einmal installieren, danach fordert Visual Studio Code Sie automatisch auf, alle Updates zu installieren.
 
 ### <a name="visual-studio-code-python-and-the-azure-functions-extension"></a>Visual Studio Code, Python und die Azure Functions-Erweiterung
 

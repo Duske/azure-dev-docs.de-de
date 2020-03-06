@@ -3,12 +3,12 @@ title: Bereinigen der Ressourcen nach dem Bereitstellen einer Node.js-App in Azu
 description: 'Teil 7 des Tutorials: Bereinigen der Ressourcen'
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 7998eb641090b252455613a46ae41e45e5cd1c1d
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 183539b8e2f0246bd812e5fa364a885b75626819
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466750"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709857"
 ---
 # <a name="clean-up-resources"></a>Bereinigen von Ressourcen
 
@@ -16,7 +16,7 @@ ms.locfileid: "74466750"
 
 Die von Ihnen erstellte App Service-Instanz beinhaltet einen App Service-Plan, der Kosten verursachen kann. Führen Sie zum Bereinigen der Ressourcen den folgenden Befehl an einem Terminal oder einer Eingabeaufforderung aus:
 
-```bash
+```azurecli
 az group delete --name myResourceGroup
 ```
 

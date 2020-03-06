@@ -3,12 +3,12 @@ title: Erstellen der Azure App Service-Instanz zum Hosten der App mit der Azur
 description: 'Teil 3 des Tutorials: Erstellen der App Service-Instanz'
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: afac5aa2f610384b537c1f235b99cd29e6ff86d0
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 827bcde79336304f424a283ccbdc4a4282a50bf7
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466772"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709887"
 ---
 # <a name="create-the-app-service"></a>Erstellen der App Service-Instanz
 
@@ -18,7 +18,7 @@ In diesem Schritt erstellen Sie mithilfe der Azure-Befehlszeilenschnittstelle (A
 
 1. Geben Sie an einem Terminal oder einer Eingabeaufforderung den folgenden Befehl ein, um eine **Ressourcengruppe** für die App Service-Instanz zu erstellen. Bei einer Ressourcengruppe handelt es sich im Wesentlichen um eine benannte Sammlung der Ressourcen einer App in Azure, z. B. eine Website, eine Datenbank, Azure Functions usw.
 
-    ```bash
+    ```azurecli
     az group create --name myResourceGroup --location westus
     ```
 
@@ -28,13 +28,13 @@ In diesem Schritt erstellen Sie mithilfe der Azure-Befehlszeilenschnittstelle (A
 
 1. Führen Sie den folgenden Befehl aus, um die Standardressourcengruppe und -region für nachfolgende Befehle festzulegen. Auf diese Weise müssen Sie die Werte nicht jedes Mal angeben. (Bei diesem Befehl wird bei erfolgreicher Ausführung keine Ausgabe angezeigt.)
 
-    ```bash
+    ```azurecli
     az configure --defaults group=myResourceGroup location=westus
     ```
 
 1. Führen Sie den folgenden Befehl aus, um einen **App Service-Plan** zu erstellen, der die zugrunde liegende VM festlegt, die von der App Service-Instanz verwendet wird:
 
-    ```bash
+    ```azurecli
     az appservice plan create --name myPlan --sku F1
     ```
 
@@ -42,7 +42,7 @@ In diesem Schritt erstellen Sie mithilfe der Azure-Befehlszeilenschnittstelle (A
 
 1. Führen Sie den folgenden Befehl aus, um die App Service-Instanz zu erstellen. Ersetzen Sie dabei `<your_app_name>` durch einen eindeutigen Namen, aus dem die URL erstellt wird (`http://<your_app_name>.azurewebsites.net`). Der PowerShell-Befehl sieht etwas anders aus. Das Argument `--runtime "node|6.9"` weist Azure an, die Node-Version 6.9.x auf dem Server zu verwenden.
 
-    ```bash
+    ```azurecli
     az webapp create --name <your_app_name> --plan myPlan --runtime "node|6.9"
     ```
 
@@ -57,7 +57,7 @@ In diesem Schritt erstellen Sie mithilfe der Azure-Befehlszeilenschnittstelle (A
 
 1. Führen Sie den folgenden Befehl aus, um die neu erstellte App Service-Instanz in einem Browser zu öffnen. Ersetzen Sie `<your_app_name>` dabei wieder durch den Namen, den Sie verwendet haben:
 
-    ```bash
+    ```azurecli
     az webapp browse --name <your_app_name>
     ```
 
