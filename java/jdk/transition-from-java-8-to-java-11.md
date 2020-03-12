@@ -10,12 +10,12 @@ ms.devlang: java
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: dagrieve
-ms.openlocfilehash: 21b302225f8b28099e36622ae5e32a84c947a58a
-ms.sourcegitcommit: c34647aee3b9a72fa0ee6aeac2dfa1e36d67c7ef
+ms.openlocfilehash: 528b111e945bb68bd18c849847522a070259c0f3
+ms.sourcegitcommit: f1e3c72c38376b15f5313d4bfe5fefdbfc022dc9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77504550"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79022297"
 ---
 # <a name="transition-from-java-8-to-java-11"></a>Umstellung von Java 8 auf Java 11
 
@@ -246,7 +246,7 @@ Sie können dieses Problem beheben, indem Sie `--patch-module <module-name>=<pat
 
 ##### <a name="noclassdeffounderror-caused-by-using-java-ee-or-corba-modules"></a>NoClassDefFoundError aufgrund der Verwendung von Java EE- oder CORBA-Modulen
 
-Wenn die Anwendung unter Java 8 ausgeführt wird, aber den Fehler `java.lang.NoClassDefFoundError` oder `java.lang.ClassNotFoundError` ausgibt, ist die Wahrscheinlichkeit hoch, dass die Anwendung ein Paket aus einem Java EE- oder CORBA-Modul verwendet. Diese Module wurden in Java 9 als veraltet gekennzeichnet und [in Java 11 entfernt](https://openjdk.java.net/jeps/320). 
+Wenn die Anwendung unter Java 8 ausgeführt wird, aber den Fehler `java.lang.NoClassDefFoundError` oder `java.lang.ClassNotFoundException` ausgibt, ist die Wahrscheinlichkeit hoch, dass die Anwendung ein Paket aus einem Java EE- oder CORBA-Modul verwendet. Diese Module wurden in Java 9 als veraltet gekennzeichnet und [in Java 11 entfernt](https://openjdk.java.net/jeps/320). 
 
 Fügen Sie Ihrem Projekt eine Runtimeabhängigkeit hinzu, um das Problem zu beheben.
 

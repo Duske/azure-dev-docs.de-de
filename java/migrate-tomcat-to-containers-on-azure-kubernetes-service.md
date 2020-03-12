@@ -5,18 +5,18 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: dbcf1f0989208f960f31fec13a65477d87b1a042
-ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
+ms.openlocfilehash: fafe7b16b14f43f6fe97090de8964c4e78796bda
+ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76825817"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78893741"
 ---
 # <a name="migrate-tomcat-applications-to-containers-on-azure-kubernetes-service"></a>Migrieren von Tomcat-Anwendungen zu Containern unter Azure Kubernetes Service
 
 In diesem Leitfaden wird beschrieben, was Sie beachten sollten, wenn Sie eine vorhandene Tomcat-Anwendung für die Ausführung unter Azure Kubernetes Service (AKS) migrieren möchten.
 
-## <a name="pre-migration-steps"></a>Schritte zur Migrationsvorbereitung
+## <a name="pre-migration"></a>Vor der Migration
 
 [!INCLUDE [inventory-external-resources](includes/migration/inventory-external-resources.md)]
 
@@ -224,26 +224,26 @@ Sie müssen das Startskript ändern (*startup.sh* im GitHub-Repository für [Tom
 
 Definieren Sie zum Ausführen von geplanten Aufträgen in Ihrem AKS-Cluster je nach Bedarf [Cron-Aufträge](https://kubernetes.io/docs/tasks/job/automated-tasks-with-cron-jobs/).
 
-## <a name="post-migration-steps"></a>Schritte nach der Migration
+## <a name="post-migration"></a>Nach der Migration
 
 Nachdem Sie Ihre Anwendung zu AKS migriert haben, sollten Sie sich vergewissern, dass sie wie erwartet funktioniert. Als Nächstes können Sie sich über unsere Empfehlungen informieren, mit denen Sie Ihre Anwendung cloudnativer gestalten können.
 
-1. Erwägen Sie, [einen DNS-Namen der IP-Adresse hinzuzufügen](/azure/aks/ingress-static-ip#configure-a-dns-name), die Ihrem Eingangscontroller oder dem Lastenausgleichsmodul der Anwendung zugeordnet ist.
+* Erwägen Sie, [einen DNS-Namen der IP-Adresse hinzuzufügen](/azure/aks/ingress-static-ip#configure-a-dns-name), die Ihrem Eingangscontroller oder dem Lastenausgleichsmodul der Anwendung zugeordnet ist.
 
-1. Erwägen Sie, [HELM-Diagramme für Ihre Anwendung hinzuzufügen](https://helm.sh/docs/topics/charts/). Mit einem Helm-Diagramm können Sie Ihre Anwendungsbereitstellung parametrisieren, damit diese von unterschiedlichen Kunden genutzt werden kann.
+* Erwägen Sie, [HELM-Diagramme für Ihre Anwendung hinzuzufügen](https://helm.sh/docs/topics/charts/). Mit einem Helm-Diagramm können Sie Ihre Anwendungsbereitstellung parametrisieren, damit diese von unterschiedlichen Kunden genutzt werden kann.
 
-1. Entwerfen und implementieren Sie eine DevOps-Strategie. Sie können [Bereitstellungen automatisieren und mit Azure Pipelines testen](/azure/devops/pipelines/ecosystems/kubernetes/aks-template), um die Zuverlässigkeit sicherzustellen, während gleichzeitig die Entwicklungsgeschwindigkeit erhöht wird.
+* Entwerfen und implementieren Sie eine DevOps-Strategie. Sie können [Bereitstellungen automatisieren und mit Azure Pipelines testen](/azure/devops/pipelines/ecosystems/kubernetes/aks-template), um die Zuverlässigkeit sicherzustellen, während gleichzeitig die Entwicklungsgeschwindigkeit erhöht wird.
 
-1. Aktivieren Sie die [Azure-Überwachung für den Cluster](/azure/azure-monitor/insights/container-insights-enable-existing-clusters), um das Sammeln von Containerprotokollen, Nachverfolgen der Nutzung und andere Optionen zu ermöglichen.
+* Aktivieren Sie die [Azure-Überwachung für den Cluster](/azure/azure-monitor/insights/container-insights-enable-existing-clusters), um das Sammeln von Containerprotokollen, Nachverfolgen der Nutzung und andere Optionen zu ermöglichen.
 
-1. Erwägen Sie, anwendungsspezifische Metriken über Prometheus verfügbar zu machen. Prometheus ist ein Open-Source-Framework für Metriken, das von der Kubernetes-Community viel genutzt wird. Sie können die [Erfassung von Prometheus-Metriken in Azure Monitor](/azure/azure-monitor/insights/container-insights-prometheus-integration) konfigurieren, anstatt Ihren eigenen Prometheus-Server zu hosten. So ermöglichen Sie die Aggregation von Metriken aus Ihren Anwendungen und die automatisierte Reaktion auf anomale Bedingungen bzw. deren Eskalation.
+* Erwägen Sie, anwendungsspezifische Metriken über Prometheus verfügbar zu machen. Prometheus ist ein Open-Source-Framework für Metriken, das von der Kubernetes-Community viel genutzt wird. Sie können die [Erfassung von Prometheus-Metriken in Azure Monitor](/azure/azure-monitor/insights/container-insights-prometheus-integration) konfigurieren, anstatt Ihren eigenen Prometheus-Server zu hosten. So ermöglichen Sie die Aggregation von Metriken aus Ihren Anwendungen und die automatisierte Reaktion auf anomale Bedingungen bzw. deren Eskalation.
 
-1. Entwerfen und implementieren Sie eine Strategie für Geschäftskontinuität und Notfallwiederherstellung. Bei unternehmenskritischen Anwendungen sollten Sie erwägen, eine [Bereitstellungsarchitektur mit mehreren Regionen](/azure/aks/operator-best-practices-multi-region) zu verwenden.
+* Entwerfen und implementieren Sie eine Strategie für Geschäftskontinuität und Notfallwiederherstellung. Bei unternehmenskritischen Anwendungen sollten Sie erwägen, eine [Bereitstellungsarchitektur mit mehreren Regionen](/azure/aks/operator-best-practices-multi-region) zu verwenden.
 
-1. Informieren Sie sich über die [Richtlinie zur Unterstützung der Kubernetes-Version](/azure/aks/supported-kubernetes-versions#kubernetes-version-support-policy). Wir sind dafür verantwortlich, [Ihren AKS-Cluster zu aktualisieren und auf dem neuesten Stand zu halten](/azure/aks/upgrade-cluster), damit sichergestellt ist, dass immer eine unterstützte Version ausgeführt wird.
+* Informieren Sie sich über die [Richtlinie zur Unterstützung der Kubernetes-Version](/azure/aks/supported-kubernetes-versions#kubernetes-version-support-policy). Wir sind dafür verantwortlich, [Ihren AKS-Cluster zu aktualisieren und auf dem neuesten Stand zu halten](/azure/aks/upgrade-cluster), damit sichergestellt ist, dass immer eine unterstützte Version ausgeführt wird.
 
-1. Sorgen Sie dafür, dass alle Teammitglieder, die für die Clusterverwaltung und Anwendungsentwicklung zuständig sind, über die entsprechenden [bewährten Methoden für AKS](/azure/aks/best-practices) informiert sind.
+* Sorgen Sie dafür, dass alle Teammitglieder, die für die Clusterverwaltung und Anwendungsentwicklung zuständig sind, über die entsprechenden [bewährten Methoden für AKS](/azure/aks/best-practices) informiert sind.
 
-1. Sehen Sie sich die Elemente in der Datei *logging.properties* an. Erwägen Sie, einen Teil der Protokollierungsausgabe zu entfernen bzw. zu reduzieren, um die Leistung zu verbessern.
+* Sehen Sie sich die Elemente in der Datei *logging.properties* an. Erwägen Sie, einen Teil der Protokollierungsausgabe zu entfernen bzw. zu reduzieren, um die Leistung zu verbessern.
 
-1. Sie haben auch die Möglichkeit, [die Größe des Codecaches zu überwachen](https://docs.oracle.com/javase/8/embedded/develop-apps-platforms/codecache.htm) und der Variablen `JAVA_OPTS` in der Dockerfile die Parameter `-XX:InitialCodeCacheSize` und `-XX:ReservedCodeCacheSize` hinzuzufügen, um die Leistung weiter zu optimieren.
+* Sie haben auch die Möglichkeit, [die Größe des Codecaches zu überwachen](https://docs.oracle.com/javase/8/embedded/develop-apps-platforms/codecache.htm) und der Variablen `JAVA_OPTS` in der Dockerfile die Parameter `-XX:InitialCodeCacheSize` und `-XX:ReservedCodeCacheSize` hinzuzufügen, um die Leistung weiter zu optimieren.
