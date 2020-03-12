@@ -3,12 +3,12 @@ title: Erstellen der Azure Functions-Anwendung in Visual Studio Code
 description: 'Teil 2 des Tutorials: Erstellen der Azure Functions-App'
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 6c0adc93899eb9480008774fe35f3aa3b2ab5842
-ms.sourcegitcommit: d9f585bea70b01ba6657a75ea245d8519d4a5aad
+ms.openlocfilehash: fb7b5f3bab0dbde0a04671126ad7aa8e5be16ba0
+ms.sourcegitcommit: 21ddeb9bd9abd419d143dc2ca8a7c821a1758cf9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76967237"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79089962"
 ---
 # <a name="create-the-local-functions-app"></a>Erstellen der lokalen Funktions-App
 
@@ -45,10 +45,10 @@ In diesem Schritt erstellen Sie eine lokale Azure Functions-Anwendung, die eine
 
 1. Nach einigen Augenblicken ist VS Code mit der Erstellung des Projekts fertig. Sie haben nun einen für die Funktion benannten Ordner *HttpExample*, der drei Dateien enthält:
 
-    | Dateiname | Beschreibung |
+    | Dateiname | BESCHREIBUNG |
     | --- | --- |
     | *index.js* |  Der Quellcode, der auf die HTTP-Anforderung antwortet. |
-    | *functions.json* | Die [Bindungskonfiguration](/azure/azure-functions/functions-triggers-bindings) für den HTTP-Trigger. |
+    | *function.json* | Die [Bindungskonfiguration](/azure/azure-functions/functions-triggers-bindings) für den HTTP-Trigger. |
     | *sample.dat* | Eine Platzhalterdatendatei, die zeigt, dass der Ordner weitere Dateien enthalten kann. Sie können diese Datei ggf. löschen, da sie in diesem Tutorial nicht verwendet wird. |
 
     ![Ergebnis der Erstellung einer Funktions-App](media/functions-extension/create-function-app-results.png)
