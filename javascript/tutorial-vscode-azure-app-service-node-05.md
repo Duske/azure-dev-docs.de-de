@@ -1,24 +1,22 @@
 ---
 title: Bereinigen der Ressourcen nach dem Bereitstellen in Azure App Service in Visual Studio Code
 description: 'Teil 5 des Tutorials: Bereinigen der Ressourcen'
-author: kraigb
-manager: barbkess
 ms.topic: conceptual
-ms.date: 09/20/2019
-ms.openlocfilehash: d7ce42ab0807a9331d8c3021ff0d3007381f3bc1
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.date: 03/04/2020
+ms.openlocfilehash: 1c3b277270bf6f8f7cb5884b7bb56ce2c9b3368c
+ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467191"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78894214"
 ---
 # <a name="clean-up-resources"></a>Bereinigen von Ressourcen
 
 [Vorheriger Schritt: Streamen von Protokollen](tutorial-vscode-azure-app-service-node-04.md)
 
-Die von Ihnen erstellte App Service-Instanz beinhaltet einen App Service-Plan, der Kosten verursachen kann. Um die Ressourcen zu bereinigen, klicken Sie mit der rechten Maustaste auf die App Service-Instanz im **Azure App Service**-Explorer und wählen dann **Löschen** aus.
+Die von Ihnen erstellte App Service-Instanz enthält einen zugrunde liegenden App Service-Plan, der im Free-Tarif ausgeführt wird. Daher fallen hierfür keine laufenden Kosten an.
 
-Sie können auch das [Azure-Portal](https://portal.azure.com) aufrufen, **Ressourcengruppen** im Navigationsbereich auf der linken Seite auswählen, die im Rahmen dieses Tutorials erstellte Ressourcengruppe auswählen und dann den Befehl **Ressourcengruppe löschen** verwenden.
+Gehen Sie wie folgt vor, wenn Sie die Ressourcen bereinigen möchten: Wählen Sie im [Azure-Portal](https://portal.azure.com) die Option **Ressourcengruppen** und dann die Ressourcengruppe aus, die in diesem Tutorial erstellt wurde (z. B. `AppServiceTutorial-rg`), und verwenden Sie anschließend den Befehl **Ressourcengruppe löschen**.
 
 ## <a name="next-steps"></a>Nächste Schritte
 

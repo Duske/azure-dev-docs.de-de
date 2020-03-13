@@ -2,34 +2,30 @@
 title: Bereitstellen von Node.js-Apps in Azure App Service in Visual Studio Code
 description: 'Teil 1 des Tutorials: Einführung und Voraussetzungen.'
 ms.topic: conceptual
-ms.date: 09/20/2019
-ms.openlocfilehash: a02cb282722447516b034869fa8b614ddb45dc5f
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.date: 03/04/2020
+ms.openlocfilehash: 12436e88786b26ed3a87dcb7ac7cb4b9e30c3fb2
+ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467213"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78894311"
 ---
 # <a name="deploy-to-azure-app-service-using-visual-studio-code"></a>Bereitstellen in Azure App Service mit Visual Studio Code
 
-In diesem Tutorial stellen Sie eine Node.js-Anwendung mithilfe der [App Service-Erweiterung](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) in Azure App Service für Linux bereit.
+In diesem Tutorial stellen Sie eine Node.js-Anwendung mithilfe der [App Service-Erweiterung](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) in Azure App Service bereit (unter Linux oder Windows).
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-- Ein [Azure-Abonnement](#azure-subscription).
-- [Visual Studio Code](https://code.visualstudio.com/).
-- [Azure App Service-Erweiterung](vscode:extension/ms-azuretools.vscode-azureappservice)
+- Ein Azure-Konto mit einem aktiven Abonnement. [Erstellen Sie ein kostenloses Konto.](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-appservice-extension&mktingSource=vscode-tutorial-appservice-extension)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Azure App Service-Erweiterung](vscode:extension/ms-azuretools.vscode-azureappservice) für VS Code (installiert aus VS Code)
 - [Node.js und npm](https://nodejs.org/en/download), Node.js-Paket-Manager
 
 > <a class="tutorial-install-extension-btn" href="vscode:extension/ms-azuretools.vscode-azureappservice">Installieren der Azure App Service-Erweiterung</a>
-
-### <a name="azure-subscription"></a>Azure-Abonnement
-
-Wenn Sie kein Azure-Abonnement haben, [registrieren Sie sich jetzt](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-appservice-extension&mktingSource=vscode-tutorial-appservice-extension) für ein kostenloses Konto mit 200 USD in Form einer Azure-Gutschrift, um eine beliebige Kombination von Diensten auszuprobieren.
 
 ## <a name="sign-in-to-azure"></a>Anmelden bei Azure
 
 [!INCLUDE [azure-sign-in](includes/azure-sign-in.md)]
 
 > [!div class="nextstepaction"]
-> [Ich habe die Azure-Erweiterung installiert.](tutorial-vscode-azure-app-service-node-02.md) [Es ist ein Problem aufgetreten.](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azureappservice&step=getting-started)
+> [Ich habe die Azure-Erweiterung installiert](tutorial-vscode-azure-app-service-node-02.md) [Es ist ein Problem aufgetreten](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azureappservice&step=getting-started)

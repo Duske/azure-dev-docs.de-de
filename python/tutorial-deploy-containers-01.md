@@ -4,12 +4,12 @@ description: 'Tutorialschritt 1: Einführung und Voraussetzungen'
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 60189f960087688c68876935ba3407811bbec7c6
-ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
+ms.openlocfilehash: b01c45d1f61e021bb025dec4980a7a10eae6185b
+ms.sourcegitcommit: 21ddeb9bd9abd419d143dc2ca8a7c821a1758cf9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77422445"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79089970"
 ---
 # <a name="tutorial-deploy-docker-containers-to-azure-app-service-with-visual-studio-code"></a>Tutorial: Bereitstellen von Docker-Containern in Azure App Service mit Visual Studio Code
 
@@ -21,7 +21,7 @@ Wenn Sie Probleme mit einem der Schritte in diesem Tutorial haben, würden wir u
 
 - Ein [Azure-Konto](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-docker-extension&mktingSource=vscode-tutorial-docker-extension)
 - [Visual Studio Code](https://code.visualstudio.com/)
-- Ein geeigneter Container, der in eine Containerregistrierung hochgeladen wurde. Details zum Erstellen eines Containers mit einer Python-Web-App und zum Hinzufügen des Containers zu einer Registrierung sowie weitere Informationen finden Sie unter [Erstellen eines Containers](https://code.visualstudio.com/docs/python/tutorial-create-containers).
+- Ein geeigneter Container, der in eine Containerregistrierung hochgeladen wurde. Details zur Erstellung eines Containers mit einer Python-Web-App finden Sie unter [Python in Containern](https://code.visualstudio.com/docs/containers/quickstart-python).
 - Die [Azure App Service-Erweiterung für VS Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice).
 - Die [Docker-Erweiterung für VS Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker).
 

@@ -1,37 +1,42 @@
 ---
 title: Erstellen der Azure App Service-Instanz in Visual Studio Code
-description: 'Teil 2 des Tutorials: Erstellen der Node.js-App'
+description: 'Teil 2 des Tutorials: Erstellen und lokales Ausführen der Node.js-App'
 ms.topic: conceptual
-ms.date: 09/20/2019
-ms.openlocfilehash: 96c786b7cc8112c36c0aff06761417a97e30bf44
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.date: 03/04/2020
+ms.openlocfilehash: b2935554fb337d5f5db1a71e016638869f9d1dc4
+ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466798"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78893644"
 ---
-# <a name="create-your-nodejs-application"></a>Erstellen der Node.js-Anwendung
+# <a name="create-and-run-a-local-nodejs-app"></a>Erstellen und Ausführen einer lokalen Node.js-App
 
 [Vorheriger Schritt: Einführung und Voraussetzungen](tutorial-vscode-azure-app-service-node-01.md)
 
-In diesem Schritt erstellen Sie mit dem Express-Anwendungsgenerator eine einfache Node.js-App, die Sie dann in Azure bereitstellen können.
+In diesem Schritt erstellen Sie mit dem Express-Anwendungsgenerator eine einfache Node.js-App. Sie führen die App anschließend lokal aus.
 
-Sie können auch die App aus dem [Node.js-Tutorial in Visual Studio Code](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial) verwenden. Fahren Sie in diesem Fall direkt mit [Bereitstellen der App](tutorial-vscode-azure-app-service-node-03.md) fort.
+1. Navigieren Sie in einem Terminal oder an einer Eingabeaufforderung zu einem Speicherort, an dem Sie den App-Ordner erstellen möchten.
 
-1. Führen Sie an einem Terminal oder einer Eingabeaufforderung den folgenden Befehl aus, um den Express-Generator auszuführen und das Gerüst für eine neue Express-App namens „myExpressApp“ zu erstellen. (Die `--view pug --git`-Parameter weisen den Generator an, die Vorlagenengine [pug](https://pugjs.org/api/getting-started.html) (früher als Jade bezeichnet) zu verwenden und eine *.gitignore*-Datei zu erstellen.)
+1. Führen Sie den folgenden Befehl aus, um mit dem Express-Generator eine neue Express-App mit dem Namen *expressApp1* zu erstellen. (Die `--view pug --git`-Parameter weisen den Generator an, die Vorlagenengine [pug](https://pugjs.org/api/getting-started.html) (früher als Jade bezeichnet) zu verwenden und eine *.gitignore*-Datei zu erstellen.)
 
     ```bash
-    npx express-generator myExpressApp --view pug -–git
+    npx express-generator expressApp1 --view pug -–git
     ```
 
-1. Installieren Sie die Abhängigkeiten der Anwendung, indem Sie den Befehl `npm install` im App-Ordner ausführen:
+1. Navigieren Sie zum App-Ordner:
 
     ```bash
-    cd myExpressApp
+    cd expressApp1
+    ```
+
+1. Installieren Sie die Abhängigkeiten der Anwendung:
+
+    ```bash
     npm install
     ```
 
-1. Führen Sie `npm start` aus, um den Server zu starten:
+1. Starten Sie den Server:
 
     ```bash
     npm start
@@ -41,5 +46,7 @@ Sie können auch die App aus dem [Node.js-Tutorial in Visual Studio Code](http
 
     ![Ausführen der Express-Anwendung](media/deploy-azure/express.png)
 
+1. Drücken Sie im Terminal **STRG**+**C**, um den Server zu beenden.
+
 > [!div class="nextstepaction"]
-> [Ich habe die Node.js-App erstellt.](tutorial-vscode-azure-app-service-node-03.md) [Es ist ein Problem aufgetreten.](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azureappservice&step=create-app)
+> [Ich habe die Node.js-App erstellt](tutorial-vscode-azure-app-service-node-03.md) [Es ist ein Problem aufgetreten](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azureappservice&step=create-app)
