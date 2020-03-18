@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: 5d0e196a6d0c65a6bf8f159f880b0890341a9fc3
-ms.sourcegitcommit: c34647aee3b9a72fa0ee6aeac2dfa1e36d67c7ef
+ms.openlocfilehash: 943f4c5d859ed31bc7a28b8056855ed4cd2c2a98
+ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77504449"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78893705"
 ---
 # <a name="deploy-a-spring-boot-application-on-azure-app-service-for-container"></a>Bereitstellen einer Spring Boot-Anwendung in Azure App Service für Container
 
@@ -215,7 +215,7 @@ Klicken Sie nach Abschluss der Bereitstellung auf **Zu Ressource wechseln**.  Au
 
 > [!NOTE]
 >
-> Azure ordnet dem eingebetteten Tomcat-Server, der an dem Standardport 80 oder 8080 ausgeführt wird, automatisch Internetanforderungen zu. Wenn Sie Ihren eingebetteten Tomcat-Server jedoch so konfiguriert haben, dass er an einem benutzerdefinierten Port ausgeführt wird, müssen Sie eine Umgebungsvariable zu Ihrer Web-App hinzufügen, die den Port für Ihren eingebetteten Tomcat-Server definiert. Führen Sie dazu die folgenden Schritte aus:
+> Azure ordnet dem eingebetteten Tomcat-Server, der an Port 80 ausgeführt wird, automatisch Internetanforderungen zu. Wenn Sie Ihren eingebetteten Tomcat-Server aber so konfiguriert haben, dass er an Port 8080 oder einem benutzerdefinierten Port ausgeführt wird, müssen Sie Ihrer Web-App eine Umgebungsvariable hinzufügen, die den Port für Ihren eingebetteten Tomcat-Server definiert. Führen Sie dazu die folgenden Schritte aus:
 >
 > 1. Navigieren Sie zum [Azure portal], und melden Sie sich an.
 > 
