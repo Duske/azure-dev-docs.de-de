@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 7480d66235eec092a7a2cb7c43187ab92f2cdd90
-ms.sourcegitcommit: 86aec15e2d25b5b706092feb4271fb958c29d5fa
+ms.openlocfilehash: 39238e72cf9f7048fb6000c3203a170dbe9567ea
+ms.sourcegitcommit: 21ddeb9bd9abd419d143dc2ca8a7c821a1758cf9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71710208"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79128479"
 ---
 Herzlichen Glückwunsch! Sie haben diese exemplarische Vorgehensweise erfolgreich abgeschlossen! Sehen Sie sich als Nächstes die anderen Azure-Erweiterungen an.
 
@@ -16,4 +16,11 @@ Herzlichen Glückwunsch! Sie haben diese exemplarische Vorgehensweise erfolgreic
 
 Installieren Sie das [Node für Azure-Erweiterungspaket](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack), um alle Azure-Erweiterungen gleichzeitig zu installieren.
 
-Weitere Informationen zur Verwendung von Azure mit Node.js finden Sie im [Azure Developer Center für Node.js](https://docs.microsoft.com/azure/javascript).
+Weitere Informationen zur Verwendung von Azure mit Node.js finden Sie unter den unten angegebenen Ressourcen:
+
+* [Azure für Node.js: Developer Center](https://docs.microsoft.com/azure/javascript).
+* [Azure Cosmos DB-Bindungen für Azure Functions 2.x](https://docs.microsoft.com/azure/azure-functions/functions-bindings-cosmosdb-v2?tabs=javascript)
+* [JavaScript-Entwicklerhandbuch für Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-reference-node)
+* [Blogbeitrag: Erstellen einer CRUD-Anwendung mit Azure Functions und MongoDB: Dev.to](https://dev.to/azure/ezra-s-potluck-day-4-of-25daysofserverless-challenge-4pd6)
+* [Video: Umstellen Ihrer API auf „Serverlos“ mit Azure Functions: YouTube](https://youtu.be/89WXgaY-NqY)
+* [Offizieller YouTube-Kanal: Azure Functions](https://www.youtube.com/channel/UCtUYj6As_XFkOooUFnsJbYg)

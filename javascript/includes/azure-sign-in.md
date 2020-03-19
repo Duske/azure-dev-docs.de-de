@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: c9d46571c22c9bee49352dd4c1f492b2c9ff60a8
-ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
+ms.openlocfilehash: e58e36b140c1512600497bffbbd149334904981f
+ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77709831"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78894306"
 ---
-Nachdem Sie die Azure-Erweiterung installiert haben, melden Sie sich bei Ihrem Azure-Konto an, indem Sie zum **Azure**-Explorer navigieren, **Bei Azure anmelden** auswählen und dann den Anweisungen folgen. (Wenn Sie mehrere Azure-Erweiterungen installiert haben, wählen Sie die Erweiterung für den Bereich aus, in dem Sie arbeiten, z. B. App Service, Functions usw.)
+Nachdem Sie die Azure-Erweiterung in VS Code installiert haben, melden Sie sich bei Ihrem Azure-Konto an, indem Sie zum **Azure**-Explorer navigieren, **Bei Azure anmelden** auswählen und dann den Anweisungen folgen. (Wenn Sie mehrere Azure-Erweiterungen installiert haben, wählen Sie die Erweiterung für den Bereich aus, in dem Sie arbeiten, z. B. App Service, Functions usw.)
 
 ![Anmelden bei Azure über VS Code](../media/deploy-azure/azure-sign-in.png)
 
@@ -19,14 +19,25 @@ Vergewissern Sie sich nach der Anmeldung, dass die E-Mail-Adresse Ihres Azure-Ko
 > [!NOTE]
 > Wenn der Fehler **Abonnement mit dem Namen [Abonnement-ID] nicht gefunden** auftritt, kann dies daran liegen, dass Sie sich hinter einem Proxy befinden und die Azure-API nicht erreichen können. Konfigurieren Sie die Umgebungsvariablen `HTTP_PROXY` und `HTTPS_PROXY` in Ihrem Terminal mit Ihren Proxyinformationen:
 >
+> # <a name="bash"></a>[Bash](#tab/bash)
+>
 > ```bash
-> # MacOS/Linux
 > export HTTPS_PROXY=https://username:password@proxy:8080
 > export HTTP_PROXY=http://username:password@proxy:8080
 > ```
 >
+> # <a name="powershell"></a>[PowerShell](#tab/powershell)
+>
+> ```powershell
+> $env: HTTPS_PROXY = "https://username:password@proxy:8080"
+> $env: HTTP_PROXY = "http://username:password@proxy:8080"
+> ```
+>
+> # <a name="cmd"></a>[Cmd](#tab/cmd)
+>
 > ```cmd
-> # Windows
 > set HTTPS_PROXY=https://username:password@proxy:8080
 > set HTTP_PROXY=http://username:password@proxy:8080
 > ```
+>
+> ---

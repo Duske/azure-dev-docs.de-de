@@ -9,11 +9,11 @@ ms.service: multiple
 ms.assetid: f452468b-7aae-4944-abad-0b1aaf19170d
 ms.custom: seo-java-july2019, seo-java-september2019
 ms.openlocfilehash: 2bf2630c5fef6c399e2642e1ae153630f48874a9
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.sourcegitcommit: 1586dacf8ea29f24f3bc9ccbf0eb07638b5596d2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812423"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79318166"
 ---
 # <a name="patterns-and-best-practices-for-development-with-the-azure-libraries-for-java"></a>Muster und bewährte Methoden für die Entwicklung mit den Azure-Bibliotheken für Java 
 
@@ -53,7 +53,7 @@ SqlServer sqlServer = azure.sqlServers().define(sqlServerName)
 
 Jede Ressourcensammlung verfügt über eine `list()`-Methode, um jede Instanz der Ressource in Ihrem aktuellen Abonnement zurückzugeben. `azure.sqlServers().list()` gibt beispielsweise alle SQL-Datenbanken im Abonnement zurück.
 
-Verwenden Sie die Methode `listByResourceGroup(String groupname)`, um die zurückgegebene Liste auf eine bestimmte [Azure-Ressourcengruppe](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups) einzugrenzen.  
+Verwenden Sie die `listByResourceGroup(String groupname)`-Methode, um die zurückgegebene Liste auf eine bestimmte [Azure-Ressourcengruppe](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups) einzugrenzen.  
 
 Die zurückgegebene `PagedList<T>`-Sammlung kann genau wie ein normales `List<T>`-Element durchsucht und durchlaufen werden:
 
@@ -126,7 +126,7 @@ Die `Creatable<T>`-Ressourcen werden in Ihrem Abonnement generiert, wenn in Azur
 CreatedResources<VirtualMachine> virtualMachine = azure.virtualMachines().create(vmCreatable);
 ```
 
-Durch die Übergabe von `Creatable<T>` an Aufrufe von `create()` wird anstelle eines einzelnen Ressourcenobjekts ein `CreatedResources`-Objekt zurückgegeben.  Das `CreatedResources<T>`-Objekt ermöglicht den Zugriff auf alle Ressourcen, die durch den Aufruf `create()` erstellt wurden (nicht nur auf die typisierte Ressource aus dem Aufruf). So greifen Sie auf die in Azure erstellte öffentliche IP-Adresse für den virtuellen Computer zu, der im obigen Beispiel erstellt wurde:
+Durch die Übergabe von `Creatable<T>` an Aufrufe von `create()` wird anstelle eines einzelnen Ressourcenobjekts ein `CreatedResources`-Objekt zurückgegeben.  Das `CreatedResources<T>`-Objekt ermöglicht den Zugriff auf alle Ressourcen, die durch den Aufruf `create()` erstellt wurden (nicht nur auf die typisierte Ressource aus dem Aufruf). So greifen Sie auf die in Azure erstellte öffentliche IP-Adresse für den virtuellen Computer zu, der im obigen Beispiel erstellt wurde
 
 ```java
 PublicIPAddress pip = (PublicIPAddress) virtualMachine.createdRelatedResource(publicIPAddressCreatable.key());

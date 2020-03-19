@@ -6,18 +6,18 @@ ms.author: karler
 ms.date: 11/12/2019
 ms.service: app-service
 ms.topic: article
-ms.openlocfilehash: 47f318708fbe786b2fd0b58dc7d68cdd5c975856
-ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
+ms.openlocfilehash: 4daf41e1cf13d57a42230cd8ed6af4a2258e5e01
+ms.sourcegitcommit: 9f9f5c51472dbdd7b9304b02364ed136dcf81f1c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76872135"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79139299"
 ---
 # <a name="deploy-a-spring-app-to-app-service-with-mysql"></a>Bereitstellen einer Spring-App in App Service mit MySQL
 
 In diesem Tutorial erfahren Sie Schritt für Schritt, wie Sie Java-Web-Apps in App Service Linux erstellen, konfigurieren, bereitstellen, skalieren und Probleme behandeln.
 
-Dieses Tutorial basiert auf der beliebten Beispiel-App „Spring PetClinic“. In diesem Thema testen Sie eine HSQLDB-Version der App lokal und stellen sie dann in [Azure App Service](/azure/app-service/containers) bereit. Anschließend werden Sie eine Version konfigurieren und bereitstellen, die [Azure Database for MySQL](/azure/mysql) verwendet. Schließlich erfahren Sie, wie Sie auf die App-Protokolle zugreifen und durch das Erhöhen der Anzahl der Mitarbeiter, die Ihre App ausführen, eine Erweiterung vornehmen.
+Dieses Tutorial basiert auf der beliebten Beispiel-App „Spring PetClinic“. In diesem Thema testen Sie eine HSQLDB-Version der App lokal und stellen sie dann in [Azure App Service](/azure/app-service/containers) bereit. Anschließend werden Sie eine Version konfigurieren und bereitstellen, die [Azure Database for MySQL](/azure/mysql) verwendet. Schließlich erfahren Sie, wie Sie auf die App-Protokolle zugreifen und durch das Erhöhen der Anzahl der Mitarbeiter, die Ihre App ausführen, eine Aufskalierung vornehmen.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -115,7 +115,7 @@ export REGION=<region>
 
 Maven verwendet diese Werte, um die Azure-Ressourcen mit den von Ihnen angegebenen Namen zu erstellen. Durch die Verwendung von Umgebungsvariablen können Sie Ihre Kontogeheimnisse aus Ihren Projektdateien heraushalten.
 
-Aktualisieren Sie als nächstes die Datei *pom.xml*, um Maven für eine Azure-Bereitstellung zu konfigurieren. Fügen Sie nach dem zuvor hinzugefügten `<plugin>`-Element den folgenden XML-Code hinzu. Ändern Sie, falls notwendig, `1.7.0` in die aktuelle Version des [Maven-Plug-Ins für Azure App Service](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme).
+Aktualisieren Sie als nächstes die Datei *pom.xml*, um Maven für eine Azure-Bereitstellung zu konfigurieren. Fügen Sie nach dem zuvor hinzugefügten `<plugin>`-Element den folgenden XML-Code hinzu. Ändern Sie, falls notwendig, `1.9.0` in die aktuelle Version des [Maven-Plug-Ins für Azure App Service](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme).
 
 ```xml
 <plugin>
@@ -230,13 +230,13 @@ Aktualisieren Sie anschließend die Datei *pom.xml*, um MySQL als aktive Konfigu
 </profile>
 ```
 
-Aktualisieren Sie als nächstes die Datei *pom.xml*, um Maven für eine Azure-Bereitstellung und MySQL-Verwendung zu konfigurieren. Fügen Sie nach dem zuvor hinzugefügten `<plugin>`-Element den folgenden XML-Code hinzu. Ändern Sie, falls notwendig, `1.7.0` in die aktuelle Version des [Maven-Plug-Ins für Azure App Service](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme).
+Aktualisieren Sie als nächstes die Datei *pom.xml*, um Maven für eine Azure-Bereitstellung und MySQL-Verwendung zu konfigurieren. Fügen Sie nach dem zuvor hinzugefügten `<plugin>`-Element den folgenden XML-Code hinzu. Ändern Sie, falls notwendig, `1.9.0` in die aktuelle Version des [Maven-Plug-Ins für Azure App Service](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme).
 
 ```xml
 <plugin>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-webapp-maven-plugin</artifactId>
-    <version>1.7.0</version>
+    <version>1.9.0</version>
     <configuration>
 
         <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>
@@ -300,9 +300,9 @@ Wenn Sie mit dem Anzeigen der Protokolle fertig sind, wählen Sie STRG + C, um d
 
 Der Protokollstream ist auch unter `https://<app-name>.scm.azurewebsites.net/api/logstream`verfügbar.
 
-## <a name="scale-out"></a>Horizontales Skalieren
+## <a name="scale-out"></a>Aufskalieren
 
-Zur Bewältigung eines höheren Datenverkehrsaufkommens für Ihre App können Sie mithilfe des folgenden Befehls eine Erweiterung auf mehrere Instanzen durchführen.
+Zur Bewältigung eines höheren Datenverkehrsaufkommens für Ihre App können Sie mithilfe des folgenden Befehls eine Aufskalierung auf mehrere Instanzen durchführen.
 
 ```azurecli
 az appservice plan update --number-of-workers 2 \
