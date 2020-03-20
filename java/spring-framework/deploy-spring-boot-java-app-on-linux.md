@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: 943f4c5d859ed31bc7a28b8056855ed4cd2c2a98
-ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
+ms.openlocfilehash: 03aa4ec91b8c39ccdd774a99d2e4c3af39b997b6
+ms.sourcegitcommit: 0cf7703a8b26469bb58840853ce9135b5adf4417
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78893705"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79510610"
 ---
 # <a name="deploy-a-spring-boot-application-on-azure-app-service-for-container"></a>Bereitstellen einer Spring Boot-Anwendung in Azure App Service für Container
 
@@ -124,11 +124,11 @@ Die folgende Anleitung führt Sie durch die Verwendung des Azure-Portals zur Ers
 
 1. Fügen Sie [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) der Sammlung `<plugins>` in der Datei *pom.xml* hinzu.  In diesem Beispiel wird Version 1.8.0 verwendet. 
 
-Geben Sie das Basisimage (in diesem Fall `openjdk:8-jre-alpine`) unter `<from>/<image>` an. Geben Sie den Namen des endgültigen Images, das auf der Grundlage des Basisimages erstellt werden soll, unter `<to>/<image>` an.  
+   Geben Sie das Basisimage (in diesem Fall `mcr.microsoft.com/java/jre:8-zulu-alpine`) unter `<from>/<image>` an. Geben Sie den Namen des endgültigen Images, das auf der Grundlage des Basisimages erstellt werden soll, unter `<to>/<image>` an.  
 
-Das `{docker.image.prefix}`-Element für die Authentifizierung ist der **Anmeldeserver** auf der zuvor gezeigten Registrierungsseite. `{project.artifactId}` ist der Name und die Versionsnummer der JAR-Datei aus dem ersten Maven-Build des Projekts.
+   Das `{docker.image.prefix}`-Element für die Authentifizierung ist der **Anmeldeserver** auf der zuvor gezeigten Registrierungsseite. `{project.artifactId}` ist der Name und die Versionsnummer der JAR-Datei aus dem ersten Maven-Build des Projekts.
 
-Geben Sie den Benutzernamen und das Kennwort aus dem Registrierungsbereich im Knoten `<to>/<auth>` an. Beispiel:
+   Geben Sie den Benutzernamen und das Kennwort aus dem Registrierungsbereich im Knoten `<to>/<auth>` an. Beispiel:
 
    ```xml
    <plugin>
@@ -137,7 +137,7 @@ Geben Sie den Benutzernamen und das Kennwort aus dem Registrierungsbereich im Kn
      <version>1.8.0</version>
      <configuration>
         <from>
-            <image>openjdk:8-jre-alpine</image>
+            <image>mcr.microsoft.com/java/jre:8-zulu-alpine</image>
         </from>
         <to>
             <image>${docker.image.prefix}/${project.artifactId}</image>
@@ -165,7 +165,7 @@ Geben Sie den Benutzernamen und das Kennwort aus dem Registrierungsbereich im Kn
 
 1. Navigieren Sie zum [Azure portal], und melden Sie sich an.
 
-2. Klicken Sie auf das Menüsymbol für **+ Ressource erstellen** und dann auf **Web** und **Web-App für Container**.
+2. Klicken Sie auf das Menüsymbol für **+ Ressource erstellen** > **Compute** > **Web-App für Container**.
    
    ![Erstellen einer neuen Web-App im Azure-Portal][LX01]
 
@@ -258,7 +258,7 @@ Weitere Informationen zu Spring und Azure finden Sie im Dokumentationscenter zu 
 > [!div class="nextstepaction"]
 > [Spring Framework in Azure](/azure/java/spring-framework)
 
-### <a name="additional-resources"></a>Weitere Ressourcen
+### <a name="additional-resources"></a>Zusätzliche Ressourcen
 
 Weitere Informationen zur Verwendung von Spring Boot-Anwendungen in Azure finden Sie in den folgenden Artikeln:
 

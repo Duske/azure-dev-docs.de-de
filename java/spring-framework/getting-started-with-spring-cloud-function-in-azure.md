@@ -9,12 +9,12 @@ ms.date: 07/17/2019
 ms.service: azure-functions
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 12ca26bae42c17395c70448ffc5bf3f01dde9b8e
-ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
+ms.openlocfilehash: 621fa4c79511149ef18a60fd4143490773e49271
+ms.sourcegitcommit: 1586dacf8ea29f24f3bc9ccbf0eb07638b5596d2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76872145"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79313260"
 ---
 # <a name="getting-started-with-spring-cloud-function-in-azure"></a>Einstieg in Spring Cloud Function in Azure
 
@@ -64,7 +64,7 @@ Sie sollten diese Eigenschaften direkt am oberen Rand der Datei *pom.xml* änder
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <azure.functions.maven.plugin.version>1.4.0</azure.functions.maven.plugin.version>
+    <azure.functions.maven.plugin.version>1.4.1</azure.functions.maven.plugin.version>
     <azure.functions.java.library.version>1.3.0</azure.functions.java.library.version>
     <functionAppName>my-spring-function</functionAppName>
     <functionAppRegion>westus</functionAppRegion>
@@ -326,6 +326,10 @@ Im Folgenden finden Sie einen Screenshot der cURL-Anforderung am oberen und der 
 ## <a name="deploy-the-function-to-azure-functions"></a>Bereitstellen der Funktion in Azure Functions
 
 Jetzt veröffentlichen Sie die Azure-Funktion in der Produktionsumgebung. Beachten Sie, dass die Eigenschaften `<functionAppName>`, `<functionAppRegion>` und `<functionResourceGroup>`, die Sie in der Datei *pom.xml* definiert haben, zum Konfigurieren der Funktion verwendet werden.
+
+> [!NOTE]
+> Das Maven-Plug-In muss über Azure authentifiziert werden. Haben Sie die Azure CLI installiert, verwenden Sie `az login`, bevor Sie fortfahren.
+> [Hier](https://github.com/microsoft/azure-maven-plugins/wiki/Authentication) finden Sie weitere Authentifizierungsoptionen.
 
 Führen Sie Maven aus, um die Funktion automatisch bereitzustellen:
 

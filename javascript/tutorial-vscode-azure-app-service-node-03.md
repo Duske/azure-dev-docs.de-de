@@ -3,12 +3,12 @@ title: Bereitstellen von Node.js-Apps in Azure App Service in Visual Studio 
 description: 'Teil 3 des Tutorials: Bereitstellen der Website'
 ms.topic: conceptual
 ms.date: 03/04/2020
-ms.openlocfilehash: 1a8b4a37fa823b631e6b4849cf7cff6ac2ba26f3
-ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
+ms.openlocfilehash: 7e7a6c765b79878ca3ddc86bd16349694cb7ded6
+ms.sourcegitcommit: 0cf7703a8b26469bb58840853ce9135b5adf4417
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78894276"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79510598"
 ---
 # <a name="deploy-the-app-to-azure"></a>Bereitstellen der Anwendung in Azure
 
@@ -36,6 +36,7 @@ In diesem Schritt stellen Sie Ihre Node.js-App in Azure bereit, indem Sie die Gi
 
 1. Gehen Sie bei den Aufforderungen wie folgt vor:
 
+    - Wählen Sie das Konto für Ihr **Abonnement** aus.
     - Geben Sie für **Geben Sie einen global eindeutigen Namen ein** einen Namen ein, der in Azure eindeutig ist. Verwenden Sie nur alphanumerische Zeichen („A - Z“, „a - z“ und „0 - 9“) und Bindestriche („-“).
     - Wählen Sie **Neue Ressourcengruppe erstellen** aus, und geben Sie einen Namen ein, z. B. `AppServiceTutorial-rg`.
     - Wählen Sie ein Betriebssystem (Windows oder Linux) aus.
@@ -68,7 +69,7 @@ In diesem Schritt stellen Sie Ihre Node.js-App in Azure bereit, indem Sie die Gi
 
     ![Symbol „In Web-App bereitstellen“](media/deploy-azure/deploy.png)
 
-1. Wählen Sie für die Aufforderungen den Ordner *expressApp1* und dann den Namen der Web-App aus, die Sie weiter oben erstellt haben.
+1. Wählen Sie für die Aufforderungen den Ordner *expressApp1*, dann erneut das **Abonnementkonto** und anschließend den Namen der Web-App aus, die Sie weiter oben erstellt haben.
 
 1. Wählen Sie bei der Bereitstellung unter Linux **Ja** aus, wenn Sie aufgefordert werden, Ihre Konfiguration für die Ausführung von `npm install` auf dem Zielserver zu aktualisieren.
 
