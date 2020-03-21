@@ -3,12 +3,6 @@
   items:
     - name: Erste Schritte
       href: azure-toolkit-for-eclipse-create-hello-world-web-app.md
-    - name: Lernprogramme
-      items:
-        - name: Bereitstellen von Containern in virtuellen Azure-Computern
-          href: azure-toolkit-for-eclipse-publish-as-docker-container.md
-        - name: Veröffentlichen einer Spring Boot-App als Docker-Container
-          href: azure-toolkit-for-eclipse-publish-spring-boot-docker-app.md
     - name: Vorgehensweise
       items:
         - name: Installieren des Toolkits

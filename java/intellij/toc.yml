@@ -3,14 +3,10 @@
   items:
     - name: Erste Schritte
       href: azure-toolkit-for-intellij-create-hello-world-web-app.md
-    - name: Lernprogramme
+    - name: Tutorials
       items:
         - name: Bereitstellen einer Web-App in einem Linux-Container
           href: azure-toolkit-for-intellij-hello-world-web-app-linux.md
-        - name: Veröffentlichen einer Web-App als Docker-Container
-          href: azure-toolkit-for-intellij-publish-as-docker-container.md
-        - name: Veröffentlichen einer Spring Boot-App als Docker-Container
-          href: azure-toolkit-for-intellij-publish-spring-boot-docker-app.md
     - name: Vorgehensweise
       items:
         - name: Anmelden bei Ihrem Azure-Konto
