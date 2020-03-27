@@ -3,16 +3,22 @@ title: Bereitstellen von Node.js-Apps in Azure App Service in Visual Studio 
 description: 'Teil 1 des Tutorials: Einführung und Voraussetzungen.'
 ms.topic: conceptual
 ms.date: 03/04/2020
-ms.openlocfilehash: 12436e88786b26ed3a87dcb7ac7cb4b9e30c3fb2
-ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
+ms.openlocfilehash: 10170b412190b01663529075f683ac5db27215e1
+ms.sourcegitcommit: a87e7a56a5aba9e13171e663ecb948266084c46a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78894311"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80122968"
 ---
 # <a name="deploy-to-azure-app-service-using-visual-studio-code"></a>Bereitstellen in Azure App Service mit Visual Studio Code
 
 In diesem Tutorial stellen Sie eine Node.js-Anwendung mithilfe der [App Service-Erweiterung](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) in Azure App Service bereit (unter Linux oder Windows).
+
+## <a name="walkthrough-video"></a>Video mit exemplarischer Vorgehensweise
+
+Dieses Video enthält eine umfassende exemplarische Vorgehensweise für den Inhalt dieses Artikels.
+
+> [!VIDEO https://channel9.msdn.com/Shows/Docs-Azure/Quickstart-Create-a-Nodejs-app-in-Azure/player]
 
 ## <a name="prerequisites"></a>Voraussetzungen
 

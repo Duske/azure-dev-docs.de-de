@@ -3,26 +3,21 @@ title: Installieren des Azul Zulu JDK für Azure und Azure Stack
 description: Hier erfahren Sie, wie Sie die Azul Zulu Java Development Kits (JDKs) für die Azure-Entwicklung mit Windows, Linux und Mac installieren.
 ms.date: 04/19/2019
 ms.topic: conceptual
-ms.openlocfilehash: dad5665285b15650212ab2410c3965c9f38b727d
-ms.sourcegitcommit: 6ffa53b933da524e09911b164bba8515722bfa91
+ms.openlocfilehash: f5425bd94a0094fb16649bd3a8069599e30cdba7
+ms.sourcegitcommit: efa585ecdcf1cc54a6f0b664fb83cd4f0ccc7b2c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77629384"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "79990415"
 ---
 # <a name="install-the-jdk-for-azure-and-azure-stack"></a>Installieren des JDK für Azure und Azure Stack
 
 Bei Enterprise Edition-JDK-Builds von Azul Zulu für Azure handelt es sich um eine kostenlose, plattformübergreifende und produktionsbereite Distribution von OpenJDK für Azure und Azure Stack, die von Microsoft und Azul Systems unterstützt wird. Sie enthält alle Komponenten, die zum Erstellen und Ausführen von Java SE-Anwendungen benötigt werden.
 
-Es stehen [mehrere unterstützte Downloadpakettypen für die jeweiligen Clientbetriebssysteme](https://www.azul.com/downloads/azure-only/zulu/) zur Verfügung. Für die folgenden Plattformen können Sie auch ein VM-Image aus dem Azure Marketplace-Katalog beziehen:
-
-* [Azul Zulu: Java 8 unter Ubuntu 18.04](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu8-ubuntu-1804)
-* [Azul Zulu: Java 8 unter Windows Server 2019](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu8-windows-2019)
-* [Azul Zulu: Java 11 unter Ubuntu 18.04](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu11-ubuntu-1804)
-* [Azul Zulu: Java 11 unter Windows Server 2019](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu11-windows-2019)
+Es stehen [mehrere unterstützte Downloadpakettypen für die jeweiligen Clientbetriebssysteme](https://www.azul.com/downloads/azure-only/zulu/) zur Verfügung. Sie können auch [VM-Images aus dem Azure Marketplace-Katalog beziehen](#get-virtual-machine-images-from-the-azure-marketplace-gallery).
 
 > [!NOTE]
-> Diese Anweisungen beziehen sich auf die Java 8-Version (64 Bit) des JDK. Die Java Runtime Environment (JRE) wird von Azul auch als eigenständige Installation angeboten. Die JRE ist in der JDK-Installation enthalten.
+> Die folgenden Anweisungen beziehen sich auf die Java 8-Version (64 Bit) des JDK. Die Java Runtime Environment (JRE) wird von Azul auch als eigenständige Installation angeboten. Die JRE ist in der JDK-Installation enthalten.
 >
 > Auf der [Azure-Downloadseite von Azul](https://www.azul.com/downloads/azure-only/zulu/) stehen auch Java 11-Pakete zur Verfügung.
 
@@ -82,6 +77,15 @@ openjdk version "1.8.0_242"
 OpenJDK Runtime Environment (Zulu 8.44.0.11-linux64)-Microsoft-Azure-restricted (build 1.8.0_242-b20)
 OpenJDK 64-Bit Server VM (Zulu 8.44.0.11-linux64)-Microsoft-Azure-restricted (build 25.242-b20, mixed mode)
 ```
+
+## <a name="get-virtual-machine-images-from-the-azure-marketplace-gallery"></a>Beziehen von VM-Images aus dem Azure Marketplace-Katalog
+
+Sie können ein VM-Image für die folgenden Plattformen beziehen:
+
+* [Azul Zulu: Java 8 unter Ubuntu 18.04](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu8-ubuntu-1804)
+* [Azul Zulu: Java 8 unter Windows Server 2019](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu8-windows-2019)
+* [Azul Zulu: Java 11 unter Ubuntu 18.04](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu11-ubuntu-1804)
+* [Azul Zulu: Java 11 unter Windows Server 2019](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu11-windows-2019)
 
 ## <a name="download-and-install-the-azul-zulu-for-azure---enterprise-edition-jdks-from-a-yum-repository"></a>Herunterladen und Installieren von Enterprise Edition-JDK-Builds von Azul Zulu für Azure aus einem Yum-Repository
 

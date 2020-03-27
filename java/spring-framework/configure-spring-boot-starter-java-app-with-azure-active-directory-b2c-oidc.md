@@ -11,12 +11,12 @@ ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: b554af8f375d3b054a4391a35c0b457944b4bad1
-ms.sourcegitcommit: 9f9f5c51472dbdd7b9304b02364ed136dcf81f1c
+ms.openlocfilehash: a795f7ffea218f4f117a9935adac4f2bb74af9f3
+ms.sourcegitcommit: efa585ecdcf1cc54a6f0b664fb83cd4f0ccc7b2c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79139333"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "79990496"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>Tutorial: Schützen einer Java-Web-App mithilfe von Spring Boot Starter für Azure Active Directory B2C
 
@@ -84,15 +84,15 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
    ![Hinzufügen einer neuen App-Registrierung](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c1-n.png)
 
-2. Geben Sie unter **Name** Ihren Anwendungsnamen ein, fügen Sie `http://localhost:8080/home` ins Feld **Antwort-URL**, und erfassen Sie Ihre **Anwendungs-ID** als `${your-client-id}`. Klicken Sie anschließend auf **Speichern**.
+2. Geben Sie unter **Name** den Namen Ihrer Anwendung an, und fügen Sie `http://localhost:8080/home` als **Umleitungs-URI** hinzu. Klicken Sie auf **Speichern**.  Erfassen Sie die **Anwendungs-ID** als `${your-client-id}`.  
 
-   ![Hinzufügen der Antwort-URL Ihrer Anwendung](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c2-n.png)
+   ![Hinzufügen des Umleitungs-URIs der Anwendung](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c2-n.png)
 
-3. Wählen Sie in Ihrer Anwendung **Schlüssel** aus, klicken Sie zum Generieren von `${your-client-secret}` auf **Schlüssel generieren**, und klicken Sie dann auf **Speichern**.
-
-4. Wählen Sie auf der linken Seite **Benutzerflows** aus, und klicken Sie dann auf **Neuer Benutzerflow**.
+3. Wählen Sie in Ihrer Anwendung **Zertifikate & Geheimnisse** aus, klicken Sie zum Generieren von `${your-client-secret}` auf **Schlüssel generieren**, und klicken Sie dann auf **Speichern**.
 
    ![Erstellen eines Benutzerflows](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c3-n.png)
+
+4. Wählen Sie auf der linken Seite **Benutzerflows** aus, und klicken Sie dann auf **Neuer Benutzerflow**.
 
 5. Wählen Sie **Registrieren und Anmelden**, **Profilbearbeitung** und **Kennwortzurücksetzung** aus, um entsprechende Benutzerflows zu erstellen. Geben Sie unter **Name** einen Namen für den Benutzerflow und unter **Benutzerattribute und Ansprüche** die entsprechenden Werte ein, und klicken Sie auf **Erstellen**.
 
@@ -135,7 +135,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
          tenant: ${your-tenant-name}
          client-id: ${your-client-id}
          client-secret: ${your-client-secret}
-         reply-url: ${your-reply-url-from-aad} # should be absolute url.
+         reply-url: ${your-redirect-uri-from-aad} # should be absolute url.
          logout-success-url: ${you-logout-success-url}
          user-flows:
            sign-up-or-sign-in: ${your-sign-up-or-in-user-flow}
@@ -149,7 +149,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    | `azure.activedirectory.b2c.tenant` | Enthält den zuvor erfassten AD B2C-Wert für `${your-tenant-name`. |
    | `azure.activedirectory.b2c.client-id` | Enthält den Wert für `${your-client-id}` aus der zuvor erstellten Anwendung. |
    | `azure.activedirectory.b2c.client-secret` | Enthält den Wert für `${your-client-secret}` aus der zuvor erstellten Anwendung. |
-   | `azure.activedirectory.b2c.reply-url` | Enthält eine **Antwort-URL** aus der zuvor erstellten Anwendung. |
+   | `azure.activedirectory.b2c.reply-url` | Enthält einen **Weiterleitungs-URI** aus der zuvor erstellten Anwendung. |
    | `azure.activedirectory.b2c.logout-success-url` | Geben Sie die URL an, wenn Ihre Anwendung erfolgreich abgemeldet wurde. |
    | `azure.activedirectory.b2c.user-flows` | Enthält den Namen der zuvor erstellten Benutzerflows.
 

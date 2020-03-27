@@ -1,5 +1,5 @@
 ---
-title: Bereitstellen einer Spring Boot-Web-App in Azure App Service für Container
+title: Bereitstellen einer Spring Boot-Web-App für Linux in Azure App Service
 description: In diesem Tutorial werden die Schritte zum Bereitstellen einer Spring Boot-Anwendung als Linux-Webanwendung in Microsoft Azure erläutert.
 services: azure app service
 documentationcenter: java
@@ -9,14 +9,14 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: 03aa4ec91b8c39ccdd774a99d2e4c3af39b997b6
-ms.sourcegitcommit: 0cf7703a8b26469bb58840853ce9135b5adf4417
+ms.openlocfilehash: fb8e49ce59c363276a0ed615b3da29ca8d02f09e
+ms.sourcegitcommit: efa585ecdcf1cc54a6f0b664fb83cd4f0ccc7b2c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79510610"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "79990489"
 ---
-# <a name="deploy-a-spring-boot-application-on-azure-app-service-for-container"></a>Bereitstellen einer Spring Boot-Anwendung in Azure App Service für Container
+# <a name="deploy-a-spring-boot-application-to-linux-on-azure-app-service"></a>Bereitstellen einer Spring Boot-Anwendung für Linux in Azure App Service
 
 In diesem Tutorial wird die Verwendung von [Docker] zum Packen Ihrer [Spring Boot]-Anwendung in Container und zum Bereitstellen Ihres eigenen Docker-Images für einen Linux-Host in [Azure App Service](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-intro) erläutert.
 
@@ -34,46 +34,46 @@ Zur Durchführung der Schritte in diesem Tutorial benötigen Sie Folgendes:
 > [!NOTE]
 >
 > Aufgrund der Virtualisierungsanforderungen dieses Tutorials können Sie die Schritte in diesem Artikel nicht auf einem virtuellen Computer ausführen; Sie müssen einen physischen Computer mit aktivierten Virtualisierungsfunktionen verwenden.
->
 
 ## <a name="create-the-spring-boot-on-docker-getting-started-web-app"></a>Erstellen der Web-App für erste Schritte mit Spring Boot in Docker
 
 Die folgende Anleitung führt Sie durch die erforderlichen Schritte für das Erstellen einer einfachen Spring Boot-Webanwendung und das lokale Testen.
 
 1. Öffnen Sie eine Eingabeaufforderung, erstellen Sie ein lokales Verzeichnis zum Speichern Ihrer Anwendung, und wechseln Sie in dieses Verzeichnis. Beispiel:
-   ```
-   md C:\SpringBoot
-   cd C:\SpringBoot
-   ```
-   – oder –
-   ```
+
+   ```bash
    md /users/robert/SpringBoot
    cd /users/robert/SpringBoot
    ```
 
 1. Klonen Sie das Beispielprojekt [Spring Boot on Docker Getting Started] in das Verzeichnis, das Sie gerade erstellt haben. Beispiel:
-   ```
+
+   ```bash
    git clone https://github.com/spring-guides/gs-spring-boot-docker.git
    ```
 
 1. Wechseln Sie in das Verzeichnis mit dem abgeschlossenen Projekt. Beispiel:
-   ```
+
+   ```bash
    cd gs-spring-boot-docker/complete
    ```
 
 1. Erstellen Sie die JAR-Datei mit Maven. Beispiel:
-   ```
+
+   ```bash
    mvn package
    ```
 
 1. Wechseln Sie nach dem Erstellen der Web-App in das Verzeichnis `target` mit der JAR-Datei, und starten Sie die Web-App. Beispiel:
-   ```
+
+   ```bash
    cd target
    java -jar gs-spring-boot-docker-0.1.0.jar --server.port=80
    ```
 
 1. Testen Sie die Web-App, indem Sie sie lokal mit einem Webbrowser durchsuchen. Wenn beispielsweise cURL verfügbar ist und Sie den Tomcat-Server so konfiguriert haben, dass er an Port 80 ausgeführt wird:
-   ```
+
+   ```bash
    curl http://localhost
    ```
 
@@ -88,14 +88,13 @@ Die folgende Anleitung führt Sie durch die Verwendung des Azure-Portals zur Ers
 > [!NOTE]
 >
 > Wenn Sie statt des Azure-Portals die Azure CLI verwenden möchten, führen Sie die Schritte unter [Erstellen einer privaten Docker-Containerregistrierung mit Azure-CLI-2.0](/azure/container-registry/container-registry-get-started-azure-cli) aus.
->
 
 1. Navigieren Sie zum [Azure portal], und melden Sie sich an.
 
    Nachdem Sie sich im Azure-Portal bei Ihrem Konto angemeldet haben, führen Sie die Schritte im Artikel [Erstellen einer privaten Docker-Containerregistrierung im Azure-Portal] aus, die im Folgenden aus Gründen der Zweckmäßigkeit umschrieben werden.
 
 1. Klicken Sie auf das Menüsymbol für **+ Neu**, auf **Container** und anschließend auf **Azure Container Registry**.
-   
+
    ![Erstellen einer neuen Azure-Containerregistrierung][AR01]
 
 1. Wenn die Seite **Containerregistrierung erstellen** angezeigt wird, geben Sie Werte für **Registrierungsname**, **Abonnement**, **Ressourcengruppe** und **Standort** ein. Wählen Sie **Aktivieren** für **Administratorbenutzer**. Klicken Sie dann auf **Erstellen**.
@@ -122,7 +121,7 @@ Die folgende Anleitung führt Sie durch die Verwendung des Azure-Portals zur Ers
    </properties>
    ```
 
-1. Fügen Sie [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) der Sammlung `<plugins>` in der Datei *pom.xml* hinzu.  In diesem Beispiel wird Version 1.8.0 verwendet. 
+1. Fügen Sie [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) der Sammlung `<plugins>` in der Datei *pom.xml* hinzu.  In diesem Beispiel wird Version 1.8.0 verwendet.
 
    Geben Sie das Basisimage (in diesem Fall `mcr.microsoft.com/java/jre:8-zulu-alpine`) unter `<from>/<image>` an. Geben Sie den Namen des endgültigen Images, das auf der Grundlage des Basisimages erstellt werden soll, unter `<to>/<image>` an.  
 
@@ -152,7 +151,7 @@ Die folgende Anleitung führt Sie durch die Verwendung des Azure-Portals zur Ers
 
 1. Navigieren Sie zu dem abgeschlossenen Projektverzeichnis für Ihre Spring Boot-Anwendung, und führen Sie den folgenden Befehl aus, um die Anwendung erneut zu erstellen und den Container in die Azure-Containerregistrierung zu übertragen:
 
-   ```cmd
+   ```bash
    mvn compile jib:build
    ```
 
@@ -198,15 +197,15 @@ Die folgende Anleitung führt Sie durch die Verwendung des Azure-Portals zur Ers
    * **Image**: Wählen Sie das zuvor erstellte Image aus, etwa *gs-spring-boot-docker*.
 
    * **Tag:** Wählen Sie das Tag für das Image aus, etwa *latest*.
-   
+
    * **Startbefehl**: Lassen Sie dieses Feld leer, da das Image bereits den Startbefehl enthält.
-   
+
    Nachdem Sie alle oben genannten Informationen eingegeben haben, klicken Sie auf **Bewerten + erstellen**.
 
    ![Konfigurieren von Einstellungen für Web-Apps][LX02-A]
 
    * Klicken Sie auf **Überprüfen + erstellen**.
-   
+
 Prüfen Sie die Informationen, und klicken Sie auf **Erstellen**.
 
 Klicken Sie nach Abschluss der Bereitstellung auf **Zu Ressource wechseln**.  Auf der Bereitstellungsseite wird die URL für den Zugriff auf die Anwendung angezeigt.
@@ -218,17 +217,16 @@ Klicken Sie nach Abschluss der Bereitstellung auf **Zu Ressource wechseln**.  Au
 > Azure ordnet dem eingebetteten Tomcat-Server, der an Port 80 ausgeführt wird, automatisch Internetanforderungen zu. Wenn Sie Ihren eingebetteten Tomcat-Server aber so konfiguriert haben, dass er an Port 8080 oder einem benutzerdefinierten Port ausgeführt wird, müssen Sie Ihrer Web-App eine Umgebungsvariable hinzufügen, die den Port für Ihren eingebetteten Tomcat-Server definiert. Führen Sie dazu die folgenden Schritte aus:
 >
 > 1. Navigieren Sie zum [Azure portal], und melden Sie sich an.
-> 
+>
 > 2. Klicken Sie auf das Symbol für **Web-Apps**, und wählen Sie auf der Seite **App Services** Ihre Web-App aus.
 >
-> 4. Klicken Sie im Navigationsbereich auf der linken Seite auf **Konfiguration**.
+> 3. Klicken Sie im Navigationsbereich auf der linken Seite auf **Konfiguration**.
 >
-> 5. Fügen Sie im Abschnitt **Anwendungseinstellungen** eine neue Einstellung mit dem Namen **WEBSITES_PORT** hinzu, und geben Sie Ihre benutzerdefinierte Portnummer für den Wert ein.
+> 4. Fügen Sie im Abschnitt **Anwendungseinstellungen** eine neue Einstellung mit dem Namen **WEBSITES_PORT** hinzu, und geben Sie Ihre benutzerdefinierte Portnummer für den Wert ein.
 >
-> 6. Klicken Sie auf **OK**. Klicken Sie anschließend auf **Speichern**.
+> 5. Klicken Sie auf **OK**. Klicken Sie anschließend auf **Speichern**.
 >
 > ![Speichern einer benutzerdefinierten Portnummer im Azure-Portal][LX03]
->
 
 <!--
 ##  OPTIONAL: Configure the embedded Tomcat server to run on a different port
