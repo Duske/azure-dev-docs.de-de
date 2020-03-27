@@ -157,6 +157,8 @@
           href: java-sdk-add-certificate-ca-store.md
         - name: Authenticate
           href: java-sdk-azure-authenticate.md
+        - name: Konfigurieren der Protokollierung
+          href: java-sdk-azure-log.md
         - name: Migrieren von Java zu Azure
           items:
             - name: Übersicht
