@@ -3,12 +3,12 @@ title: Erstellen eines Containerimages für eine Node.js-App in Visual Studio 
 description: 'Teil 3 des Tutorials: Erstellen eines Node.js-Anwendungsimages'
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: ae39d6604f3ffe49915f6b311953cd6829ed9369
-ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
+ms.openlocfilehash: 47e9440852f8a3443147e3d03b5c833d8da0c36b
+ms.sourcegitcommit: a65fa8dbb168bd39e225a293d9ee73d18ece1864
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75191087"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80362784"
 ---
 # <a name="create-your-nodejs-application-image"></a>Erstellen des Node.js-Anwendungsimages
 
@@ -16,7 +16,7 @@ ms.locfileid: "75191087"
 
 In diesem Schritt verwenden Sie die Docker-Erweiterung in Visual Studio Code, um die erforderlichen Dateien zum Erstellen eines Images für Ihre App hinzuzufügen, das Image zu erstellen und es in eine Registrierung zu pushen.
 
-Falls Sie noch keine App für diese exemplarische Vorgehensweise haben, können Sie eine App aus dem [Node.js-Tutorial in Visual Studio Code](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial) verwenden.
+Falls Sie noch keine App für diese exemplarische Vorgehensweise haben, können Sie eine App aus dem [Node.js-Tutorial in Visual Studio Code](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial#_an-express-application) verwenden.
 
 ## <a name="add-docker-files"></a>Hinzufügen von Docker-Dateien
 

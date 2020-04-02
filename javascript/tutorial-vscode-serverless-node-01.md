@@ -3,16 +3,22 @@ title: Bereitstellen von Azure Functions in Node.js in Visual Studio Code
 description: 'Teil 1 des Tutorials: Einführung und Voraussetzungen.'
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 8a6dc30c90ba056070e69e40ed1534a176ae21aa
-ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
+ms.openlocfilehash: 915ab0cb07fe6f4cf74d812c022d5e0e9d266177
+ms.sourcegitcommit: 1bd9ec6a4115e9162e33b76a933869788e6ab702
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77709847"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80439154"
 ---
 # <a name="deploy-azure-functions-from-visual-studio-code"></a>Bereitstellen von Azure Functions in Visual Studio Code
 
-In diesem Tutorial verwenden Sie Visual Studio Code und die Azure Functions-Erweiterung, um eine in JavaScript geschriebene Azure Functions-Anwendung zu erstellen und bereitzustellen. 
+In diesem Tutorial verwenden Sie Visual Studio Code und die Azure Functions-Erweiterung, um eine in JavaScript geschriebene Azure Functions-Anwendung zu erstellen und bereitzustellen.
+
+## <a name="walkthrough-video"></a>Video mit exemplarischer Vorgehensweise
+
+Dieses Video enthält eine umfassende exemplarische Vorgehensweise für den Inhalt dieses Artikels.
+
+> [!VIDEO https://channel9.msdn.com/Shows/Docs-Azure/Deploy-Azure-Functions-from-Visual-Studio-Code/player]
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
