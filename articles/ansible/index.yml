@@ -1,0 +1,93 @@
+### YamlMime:Landing
+title: Dokumentation zu Ansible in Azure
+summary: Hier erfahren Sie, wie Sie Ansible zum Automatisieren von Cloudbereitstellung, Konfigurationsverwaltung und Anwendungsbereitstellungen verwenden.
+metadata:
+  title: Dokumentation zu Ansible in Azure
+  description: Hier erfahren Sie, wie Sie Ansible zum Automatisieren von Cloudbereitstellung, Konfigurationsverwaltung und Anwendungsbereitstellungen verwenden.
+  services: azure
+  ms.service: ansible
+  ms.topic: landing-page
+  author: TomArcherMsft
+  ms.author: tarcher
+  ms.date: 04/03/2020
+  ms.openlocfilehash: d0880d656bede1b8ad9da64694ee2b8bd4a25588
+  ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 04/06/2020
+  ms.locfileid: "80741858"
+landingContent:
+- title: Informationen zu Ansible in Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Informationen zu Ansible in Azure
+      url: overview.md
+  - linkListType: reference
+    links:
+    - text: Releases und Features
+      url: module-version-matrix.md
+    - text: Alle Module für Azure
+      url: https://docs.ansible.com/ansible/latest/modules/list_of_cloud_modules#azure
+- title: Installieren und Konfigurieren von Ansible
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Bereitstellen einer Ansible-Lösungsvorlage in CentOS
+      url: solution-template-deploy.md
+    - text: Installieren von Ansible auf virtuellen Linux-Computern
+      url: install-on-linux-vm.md
+    - text: Ausführen von Playbooks in Cloud Shell
+      url: cloudshell-run-playbook.md
+  - linkListType: tutorial
+    links:
+    - text: Konfigurieren eines dynamischen Bestands
+      url: dynamic-inventory-configure.md
+  - linkListType: download
+    links:
+    - text: Visual Studio Code-Erweiterung für Ansible
+      url: https://marketplace.visualstudio.com/items?itemName=vscoss.vscode-ansible
+- title: Verwalten virtueller Computer
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Konfigurieren von virtuellen Linux-Computern
+      url: vm-configure.md
+    - text: Verwalten von virtuellen Linux-Computern
+      url: vm-manage.md
+    - text: Erstellen über Shared Image Gallery
+      url: vm-configure-from-azure-shared-image-gallery.md
+- title: Verwalten von Virtual Machine Scale Sets
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Konfigurieren von VM-Skalierungsgruppen
+      url: vm-scale-set-configure.md
+    - text: Bereitstellen von Anwendungen in VM-Skalierungsgruppen
+      url: vm-scale-set-deploy-app.md
+    - text: Automatisches Skalieren von VM-Skalierungsgruppen
+      url: vm-scale-set-auto-scale.md
+    - text: Aktualisieren eines benutzerdefinierten Images
+      url: vm-scale-set-update-image.md
+    - text: Erstellen über Shared Image Gallery
+      url: vm-configure-from-azure-shared-image-gallery.md
+- title: Verwalten virtueller Netzwerke
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Konfigurieren des Peerings
+      url: virtual-network-peering-configure.md
+    - text: Konfigurieren von Routingtabellen
+      url: route-table-configure.md
+- title: Verwalten von AKS
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Konfigurieren von AKS-Clustern
+      url: aks-configure-clusters.md
+    - text: Konfigurieren von Azure CNI-Netzwerken
+      url: aks-configure-cni-networking.md
+    - text: Konfigurieren von Kubenet-Netzwerken
+      url: aks-configure-kubenet-networking.md
+    - text: Konfigurieren von RBAC-Rollen in AKS-Clustern
+      url: aks-configure-rbac.md

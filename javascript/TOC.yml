@@ -14,7 +14,7 @@
               href: tutorial-vscode-serverless-node-01.md
             - name: Docker
               href: tutorial-vscode-docker-node-01.md
-            - name: kubernetes
+            - name: Kubernetes
               href: /azure/aks/kubernetes-walkthrough?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
             - name: Virtuelle Linux-Computer
               href: /azure/virtual-machines/linux/quick-create-cli?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
@@ -84,7 +84,7 @@
               href: /azure/cognitive-services/Computer-vision/Quickstarts/node-analyze?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
             - name: Spracherkennung
               href: /azure/cognitive-services/speech-service/get-started?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
-    - name: Lernprogramme
+    - name: Tutorials
       items:
         - name: Bereitstellen von Azure Functions mit VS Code
           items:
@@ -116,16 +116,18 @@
               href: tutorial-vscode-docker-node-01.md
             - name: Verwenden einer Containerregistrierung
               href: tutorial-vscode-docker-node-02.md
-            - name: Erstellen des App-Images
+            - name: Erstellen einer lokalen Node.js-App
               href: tutorial-vscode-docker-node-03.md
-            - name: Bereitstellen des App-Images
+            - name: Erstellen des App-Images
               href: tutorial-vscode-docker-node-04.md
-            - name: Vornehmen von Änderungen und erneutes Bereitstellen
+            - name: Bereitstellen des App-Images
               href: tutorial-vscode-docker-node-05.md
-            - name: Streaming von Protokollen
+            - name: Vornehmen von Änderungen und erneutes Bereitstellen
               href: tutorial-vscode-docker-node-06.md
-            - name: Bereinigen von Ressourcen
+            - name: Streaming von Protokollen
               href: tutorial-vscode-docker-node-07.md
+            - name: Bereinigen von Ressourcen
+              href: tutorial-vscode-docker-node-08.md
         - name: Bereitstellen von App Service mit der Azure CLI
           items:
             - name: Einführung und Voraussetzungen
