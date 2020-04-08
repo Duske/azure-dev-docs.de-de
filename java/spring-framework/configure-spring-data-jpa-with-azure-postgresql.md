@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.topic: conceptual
-ms.openlocfilehash: e968f6a86cc8616b0ae79e5d55756acea76040a6
-ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
+ms.openlocfilehash: 162e99db4f079c3e6e3c7a63591632ec9922231d
+ms.sourcegitcommit: 3b76a0aa1683f28bcb42cd4d506426b48e5b0397
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77422547"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80537189"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-postgresql"></a>Verwenden der Spring Data-JPA mit Azure PostgreSQL
 
@@ -156,7 +156,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
     ```
    Hierbei gilt:
 
-   | Parameter | Beschreibung |
+   | Parameter | BESCHREIBUNG |
    |---|---|
    | `spring.datasource.url` | Die PostgreSQL-JDBC-Zeichenfolge, die Sie weiter oben in diesem Artikel kopiert haben |
    | `spring.datasource.username` | Der PostgreSQL-Administratorname, den Sie weiter oben in diesem Artikel festgelegt haben, mit angefügtem gekürzten Servernamen |
@@ -164,7 +164,11 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Speichern und schließen Sie die Datei *application.properties*.
 
-## <a name="package-and-test-the-sample-application"></a>Verpacken und Testen der Beispielanwendung 
+> [!NOTE]
+> Die erste Eigenschaft der Datei *application.properties* lautet `spring.jpa.hibernate.ddl-auto=create`. Dabei handelt es sich um eine Hibernate-Eigenschaft, die das Datenbankschema beim Anwendungsstart automatisch löscht und neu erstellt.
+> Diese Konfiguration ist bei der Entwicklung und beim Testen nützlich, sollte aber nicht in der Produktion verwendet werden.
+
+## <a name="package-and-test-the-sample-application"></a>Verpacken und Testen der Beispielanwendung
 
 1. Erstellen Sie die Beispielanwendung mit Maven. Beispiel:
 

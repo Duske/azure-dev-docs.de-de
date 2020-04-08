@@ -6,12 +6,12 @@ ms.date: 11/27/2019
 ms.service: mysql
 ms.tgt_pltfrm: multiple
 ms.topic: conceptual
-ms.openlocfilehash: 927cc72a526651be71a7983a298ca2c6718f4546
-ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
+ms.openlocfilehash: 58863eb3d6193833e0d8506b90abe7223b87d661
+ms.sourcegitcommit: 3b76a0aa1683f28bcb42cd4d506426b48e5b0397
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022087"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80537221"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-database-for-mysql"></a>Verwenden von Spring Data-JPA mit Azure Database for MySQL
 
@@ -86,7 +86,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    ```
    Hierbei gilt:
 
-   | Parameter | Beschreibung |
+   | Parameter | BESCHREIBUNG |
    |---|---|
    | `host` | Der vollqualifizierte MySQL-Servername, den Sie weiter oben in diesem Artikel festgelegt haben |
    | `user` | Der MySQL-Administratorname, den Sie weiter oben in diesem Artikel festgelegt haben, mit angefügtem gekürzten Servernamen |
@@ -166,7 +166,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
     ```
    Hierbei gilt:
 
-   | Parameter | Beschreibung |
+   | Parameter | BESCHREIBUNG |
    |---|---|
    | `spring.jpa.database-platform` | Die JPA-Datenbankplattform |
    | `spring.datasource.url` | Die MySQL-JDBC-Zeichenfolge, die Sie weiter oben in diesem Artikel kopiert haben |
@@ -175,7 +175,11 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Speichern und schließen Sie die Datei *application.properties*.
 
-## <a name="package-and-test-the-sample-application"></a>Verpacken und Testen der Beispielanwendung 
+> [!NOTE]
+> Die erste Eigenschaft der Datei *application.properties* lautet `spring.jpa.hibernate.ddl-auto=create`. Dabei handelt es sich um eine Hibernate-Eigenschaft, die das Datenbankschema beim Anwendungsstart automatisch löscht und neu erstellt.
+> Diese Konfiguration ist bei der Entwicklung und beim Testen nützlich, sollte aber nicht in der Produktion verwendet werden.
+
+## <a name="package-and-test-the-sample-application"></a>Verpacken und Testen der Beispielanwendung
 
 1. Erstellen Sie die Beispielanwendung mit Maven. Beispiel:
 

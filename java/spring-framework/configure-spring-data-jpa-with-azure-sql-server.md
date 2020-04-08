@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: a57fbc5dc8be0848f0b68fd1a45a1478de52b419
-ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
+ms.openlocfilehash: 180eac30a5aaeb10abe09904c578463bfe5a71da
+ms.sourcegitcommit: 3b76a0aa1683f28bcb42cd4d506426b48e5b0397
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022126"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80537199"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-sql-database"></a>Verwenden der Spring Data-JPA mit Azure SQL-Datenbank
 
@@ -114,7 +114,7 @@ Nach der Erstellung der SQL-Datenbank und des SQL-Servers können Sie Sicherheit
     ```
    Hierbei gilt:
 
-   | Parameter | Beschreibung |
+   | Parameter | BESCHREIBUNG |
    |---|---|
    | `spring.datasource.url` | Eine bearbeitete Version der SQL-JDBC-Zeichenfolge, die Sie weiter oben in diesem Artikel abgerufen haben |
    | `spring.datasource.username` | Der SQL-Administratorname, den Sie weiter oben in diesem Artikel festgelegt haben, mit angefügtem gekürzten Servernamen |
@@ -122,7 +122,11 @@ Nach der Erstellung der SQL-Datenbank und des SQL-Servers können Sie Sicherheit
 
 1. Speichern und schließen Sie die Datei *application.properties*.
 
-## <a name="package-and-test-the-sample-application"></a>Verpacken und Testen der Beispielanwendung 
+> [!NOTE]
+> Die erste Eigenschaft der Datei *application.properties* lautet `spring.jpa.hibernate.ddl-auto=create`. Dabei handelt es sich um eine Hibernate-Eigenschaft, die das Datenbankschema beim Anwendungsstart automatisch löscht und neu erstellt.
+> Diese Konfiguration ist bei der Entwicklung und beim Testen nützlich, sollte aber nicht in der Produktion verwendet werden.
+
+## <a name="package-and-test-the-sample-application"></a>Verpacken und Testen der Beispielanwendung
 
 1. Erstellen Sie die Beispielanwendung mit Maven. Beispiel:
 

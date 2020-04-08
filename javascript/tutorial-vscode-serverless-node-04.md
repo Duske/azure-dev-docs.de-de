@@ -3,12 +3,12 @@ title: Bereitstellen der Azure Functions-Anwendung in Visual Studio Code
 description: 'Teil 4 des Tutorials: Bereitstellen der Funktions-App in der Cloud.'
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 8cb80b25e224d6f4552ec165779cda35f990ad6a
-ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
+ms.openlocfilehash: 78f6f044397cc29f22949525e4e7e860d5c101f9
+ms.sourcegitcommit: 56be0c2bf65c699a0ef3f15f240856219b5d299b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77422535"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80329927"
 ---
 # <a name="deploy-the-functions-app"></a>Bereitstellen der Funktions-App
 
