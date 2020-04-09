@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: fafe7b16b14f43f6fe97090de8964c4e78796bda
-ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
+ms.openlocfilehash: a27c009fd656ea925f7709908178738eeea8ac0a
+ms.sourcegitcommit: 2e4167c9e47cea3f2e7dc2607884b2e0d4214556
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78893741"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80809211"
 ---
 # <a name="migrate-tomcat-applications-to-containers-on-azure-kubernetes-service"></a>Migrieren von Tomcat-Anwendungen zu Containern unter Azure Kubernetes Service
 
@@ -33,7 +33,7 @@ Für Dateien, für die von Ihrer Anwendung häufige Schreib- und Lesevorgänge d
 
 Untersuchen Sie die *context.xml*-Dateien in Ihrer Anwendung und der Tomcat-Konfiguration, um den verwendeten Manager für Sitzungspersistenz zu ermitteln. Suchen Sie nach dem `<Manager>`-Element, und notieren Sie sich den Wert des `className`-Attributs.
 
-Die integrierten [PersistentManager](https://tomcat.apache.org/tomcat-8.5-doc/config/manager.html)-Implementierungen von Tomcat, z. B. [StandardManager](https://tomcat.apache.org/tomcat-8.5-doc/config/manager.html#Standard_Implementation) oder [FileStore](https://tomcat.apache.org/tomcat-8.5-doc/config/manager.html#Nested_Components), sind nicht für die Nutzung mit einer verteilten skalierten Plattform wie Kubernetes konzipiert. AKS nimmt ggf. einen Lastenausgleich zwischen verschiedenen Pods vor und kann für Pods jederzeit einen transparenten Neustart durchführen. Das dauerhafte Speichern eines veränderlichen Zustands in einem Dateisystem ist daher nicht zu empfehlen.
+Die integrierten [PersistentManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html)-Implementierungen von Tomcat, z. B. [StandardManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Standard_Implementation) oder [FileStore](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Nested_Components), sind nicht für die Nutzung mit einer verteilten skalierten Plattform wie Kubernetes konzipiert. AKS nimmt ggf. einen Lastenausgleich zwischen verschiedenen Pods vor und kann für Pods jederzeit einen transparenten Neustart durchführen. Das dauerhafte Speichern eines veränderlichen Zustands in einem Dateisystem ist daher nicht zu empfehlen.
 
 Falls das Erzielen von Sitzungspersistenz erforderlich ist, müssen Sie eine andere `PersistentManager`-Implementierung verwenden, bei der in einen externen Datenspeicher geschrieben wird, z. B. Pivotal-Sitzungs-Manager mit Redis Cache. Weitere Informationen finden Sie unter [Verwenden von Redis als Sitzungscache mit Tomcat](/azure/app-service/containers/configure-language-java#use-redis-as-a-session-cache-with-tomcat).
 
@@ -162,6 +162,8 @@ Beispiel:
 </GlobalNamingResources>
 ```
 
+[!INCLUDE[Tomcat datasource additional instructions](includes/migration/tomcat-datasource-additional-instructions.md)]
+
 ### <a name="build-and-push-the-image"></a>Erstellen und Pushen des Images
 
 Die einfachste Möglichkeit zum Erstellen und Hochladen des Images in Azure Container Registry (ACR) zur Verwendung durch AKS ist die Nutzung des Befehls `az acr build`. Für diesen Befehl ist es nicht erforderlich, dass Docker auf Ihrem Computer installiert ist. Wenn Sie im aktuellen Verzeichnis beispielsweise über die obige Dockerfile und das Anwendungspaket *petclinic.war* verfügen, können Sie das Containerimage in ACR in nur einem Schritt erstellen:
@@ -228,7 +230,7 @@ Definieren Sie zum Ausführen von geplanten Aufträgen in Ihrem AKS-Cluster je n
 
 Nachdem Sie Ihre Anwendung zu AKS migriert haben, sollten Sie sich vergewissern, dass sie wie erwartet funktioniert. Als Nächstes können Sie sich über unsere Empfehlungen informieren, mit denen Sie Ihre Anwendung cloudnativer gestalten können.
 
-* Erwägen Sie, [einen DNS-Namen der IP-Adresse hinzuzufügen](/azure/aks/ingress-static-ip#configure-a-dns-name), die Ihrem Eingangscontroller oder dem Lastenausgleichsmodul der Anwendung zugeordnet ist.
+* Erwägen Sie, [einen DNS-Namen der IP-Adresse hinzuzufügen](/azure/aks/ingress-static-ip#create-an-ingress-controller), die Ihrem Eingangscontroller oder dem Lastenausgleichsmodul der Anwendung zugeordnet ist.
 
 * Erwägen Sie, [HELM-Diagramme für Ihre Anwendung hinzuzufügen](https://helm.sh/docs/topics/charts/). Mit einem Helm-Diagramm können Sie Ihre Anwendungsbereitstellung parametrisieren, damit diese von unterschiedlichen Kunden genutzt werden kann.
 

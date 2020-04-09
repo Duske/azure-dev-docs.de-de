@@ -1,0 +1,48 @@
+- name: Dokumentation zu Chef Software in Azure
+  href: ./index.yml
+- name: Übersicht
+  items:
+    - name: Informationen zu Chef in Azure
+      href: ./overview.md
+    - name: Informationen zu Habitat in Azure
+      href: ./habitat-overview.md
+    - name: Informationen zu InSpec in Azure
+      href: ./inspec-overview.md
+- name: Schnellstarts
+  expanded: true
+  items:
+    - name: Chef
+      expanded: true
+      items:
+        - name: Installieren von Chef mit dem Azure-Portal
+          href: ./client-install-from-azure-portal.md
+- name: Tutorials
+  items:
+    - name: Chef
+      items:
+        - name: Erstellen eines virtuellen Windows-Computers
+          href: ./windows-vm-configure.md
+- name: Verweis
+  items:
+    - name: Chef-Erweiterung für Azure
+      href: 'https://docs.chef.io/azure_portal.html#azure-chef-extension'
+- name: Ressourcen
+  items:
+    - name: Chef Automate
+      items:
+        - name: Übersicht über Chef Automate
+          href: 'https://docs.chef.io/chef_automate.html'
+        - name: Installationshandbuch für Chef Automate
+          href: 'https://docs.chef.io/install_chef_automate.html'
+        - name: Chef Automate im Azure Marketplace
+          href: 'https://azuremarketplace.microsoft.com/en-us/marketplace/apps/chef-software.chef-automate'
+    - name: Neuigkeiten zu Chef Software
+      items:
+        - name: Chef Software-Blog
+          href: 'https://blog.chef.io/'
+- name: Tools
+  items:
+    - name: Chef-Erweiterung für Azure DevOps Services
+      href: 'https://marketplace.visualstudio.com/items?itemName=chef-software.vsts-chef-tasks'
+    - name: Habitat-Erweiterung für Azure DevOps Services
+      href: 'https://marketplace.visualstudio.com/items?itemName=chef-software.vsts-habitat-tasks'

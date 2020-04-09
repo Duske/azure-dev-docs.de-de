@@ -2,16 +2,16 @@
 author: mriem
 ms.author: manriem
 ms.date: 2/28/2020
-ms.openlocfilehash: e76f43988c408bfd1d2400ef3d28363e7827d0f9
-ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
+ms.openlocfilehash: ab1cd8d8671b12c44a06ae01268364741f7138f6
+ms.sourcegitcommit: 2e4167c9e47cea3f2e7dc2607884b2e0d4214556
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78897656"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80813788"
 ---
 ### <a name="recommendations"></a>Empfehlungen
 
-* Erwägen Sie, einen DNS-Namen der IP-Adresse hinzuzufügen, die Ihrem Eingangscontroller oder dem Lastenausgleichsmodul der Anwendung zugeordnet ist. Weitere Informationen finden Sie im Abschnitt [Konfigurieren des DNS-Namens](/azure/aks/ingress-static-ip#configure-a-dns-name) unter [Erstellen eines Eingangscontrollers mit einer statischen öffentlichen IP-Adresse in AKS](/azure/aks/ingress-static-ip).
+* Erwägen Sie, einen DNS-Namen der IP-Adresse hinzuzufügen, die Ihrem Eingangscontroller oder dem Lastenausgleichsmodul der Anwendung zugeordnet ist. Weitere Informationen finden Sie im Abschnitt [Konfigurieren des DNS-Namens](/azure/aks/ingress-static-ip#create-an-ingress-controller) unter [Erstellen eines Eingangscontrollers mit einer statischen öffentlichen IP-Adresse in AKS](/azure/aks/ingress-static-ip).
 
 * Erwägen Sie, [HELM-Diagramme ](https://helm.sh/docs/topics/charts/) für Ihre Anwendung hinzuzufügen. Mit einem Helm-Diagramm können Sie Ihre Anwendungsbereitstellung parametrisieren, damit diese von unterschiedlichen Kunden genutzt werden kann.
 

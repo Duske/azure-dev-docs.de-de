@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.openlocfilehash: 9eef2c48b076ae0fc84aea16bb3e5b7bba17d744
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 5ba844a66be0eb1acaac2cdf5b132ab422c9a954
+ms.sourcegitcommit: 951fc116a9519577b5d35b6fb584abee6ae72b0f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812075"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80612022"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>Erstellen einer Spring Cloud Stream Binder-Anwendung mit Azure Event Hubs
 
@@ -41,7 +41,7 @@ Gehen Sie wie folgt vor, um einen Azure Event Hub zu erstellen:
 
 1. Klicken Sie auf **+ Ressource erstellen**, und suchen Sie nach **Event Hubs**.
 
-1. Klicken Sie auf **Create**.
+1. Klicken Sie auf **Erstellen**.
 
    ![Erstellen eines Azure Event Hub-Namespaces][IMG01]
 
@@ -68,7 +68,7 @@ Nachdem Sie Ihren Namespace bereitgestellt haben, können Sie darin einen Event 
 
 1. Benennen Sie den Event Hub.
 
-1. Klicken Sie auf **Create**.
+1. Klicken Sie auf **Erstellen**.
 
    ![Erstellen des Event Hubs][IMG05]
 
@@ -237,6 +237,7 @@ Gehen Sie zum Erstellen einer Spring Boot-Anwendung wie folgt vor:
    spring.cloud.stream.bindings.input.destination=wingtiptoyshub
    spring.cloud.stream.bindings.input.group=$Default
    spring.cloud.stream.eventhub.bindings.input.consumer.checkpoint-mode=MANUAL
+   spring.cloud.stream.bindings.output.destination=wingtiptoyshub
    ```
    Hierbei gilt:
 

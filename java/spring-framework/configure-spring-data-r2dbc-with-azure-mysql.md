@@ -7,12 +7,12 @@ ms.service: mysql
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.author: judubois
-ms.openlocfilehash: f5c9f3d0cccad7f6e1a8b5ab199f841925f416cc
-ms.sourcegitcommit: a65fa8dbb168bd39e225a293d9ee73d18ece1864
+ms.openlocfilehash: 32008e4ddbf2663050dd1241e1d028e66ffb7dab
+ms.sourcegitcommit: 951fc116a9519577b5d35b6fb584abee6ae72b0f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80366750"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80611913"
 ---
 # <a name="how-to-use-spring-data-r2dbc-with-azure-mysql"></a>Verwenden von Spring Data R2DBC mit Azure MySQL
 
@@ -45,7 +45,7 @@ Ersetzen Sie die Platzhalter durch die folgenden Werte, die in diesem Thema verw
 - `<YOUR_DATABASE_NAME>`: Der Name Ihrer MySQL Server-Instanz. Er muss innerhalb von Azure eindeutig sein.
 - `<YOUR_AZURE_REGION>`: Die von Ihnen verwendete Azure-Region. Sie können den Standardwert `eastus` verwenden. Es wird jedoch empfohlen, eine Region zu konfigurieren, die in Ihrer Nähe liegt. Die vollständige Liste der verfügbaren Regionen können Sie mit `az account list-locations` abrufen.
 - `<YOUR_MYSQL_PASSWORD>`: Das Kennwort Ihres MySQL-Datenbankservers. Das Kennwort muss mindestens acht Zeichen lang sein und Zeichen aus drei der folgenden Kategorien enthalten: Großbuchstaben des englischen Alphabets, Kleinbuchstaben des englischen Alphabets, Ziffern (0–9) und nicht alphanumerische Zeichen (!, $, #, % usw.).
-- `<YOUR_LOCAL_IP_ADDRESS>`: Die IP-Adresse Ihres lokalen Computers, auf dem Sie die Spring Boot-Anwendung ausführen. Sie können sie ganz einfach ermitteln, indem Sie im Browser zu [http://ipv4.icanhazip.com](http://ipv4.icanhazip.com) navigieren.
+- `<YOUR_LOCAL_IP_ADDRESS>`: Die IP-Adresse Ihres lokalen Computers, auf dem Sie die Spring Boot-Anwendung ausführen. Sie können sie ganz einfach ermitteln, indem Sie im Browser zu [http://whatismyip.akamai.com/](http://whatismyip.akamai.com/) navigieren.
 
 Erstellen Sie als Nächstes eine Ressourcengruppe.
 

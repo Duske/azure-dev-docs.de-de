@@ -1,0 +1,51 @@
+### YamlMime:Landing
+title: Dokumentation zu Chef Software in Azure
+summary: Erfahren Sie, wie Sie Azure-Ressourcen mithilfe von Chef Software-Produkten bereitstellen und verwalten.
+metadata:
+  title: Dokumentation zu Chef Software in Azure
+  description: Erfahren Sie, wie Sie Azure-Ressourcen mithilfe von Chef Software-Produkten bereitstellen und verwalten.
+  services: azure
+  ms.service: chef
+  ms.topic: landing-page
+  author: TomArcherMsft
+  ms.author: tarcher
+  ms.date: 09/17/2019
+  ms.openlocfilehash: a969cf384592ad92bd5a2cf1280db725f723a0f3
+  ms.sourcegitcommit: a32ca0946275165ce24216c6fa243ec21d6c9193
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 04/08/2020
+  ms.locfileid: "80893179"
+landingContent:
+- title: Informationen zu Chef Software in Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Informationen zu Chef in Azure
+      url: overview.md
+    - text: Informationen zu Habitat in Azure
+      url: habitat-overview.md
+    - text: Informationen zu InSpec in Azure
+      url: inspec-overview.md
+  - linkListType: architecture
+    links:
+    - text: Chef-Erweiterung für Azure
+      url: https://docs.chef.io/azure_portal.html#azure-chef-extension
+- title: Installieren und Konfigurieren von Chef Software-Produkten
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Installieren von Chef mit dem Azure-Portal
+      url: client-install-from-azure-portal.md
+  - linkListType: download
+    links:
+    - text: Chef-Erweiterung für Azure DevOps Services
+      url: https://marketplace.visualstudio.com/items?itemName=chef-software.vsts-chef-tasks
+    - text: Habitat-Erweiterung für Azure DevOps Services
+      url: https://marketplace.visualstudio.com/items?itemName=chef-software.vsts-habitat-tasks
+- title: Verwalten virtueller Computer
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Erstellen eines virtuellen Windows-Computers
+      url: windows-vm-configure.md
