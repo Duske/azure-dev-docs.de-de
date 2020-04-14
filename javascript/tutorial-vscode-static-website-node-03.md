@@ -3,12 +3,12 @@ title: Erstellen eines Azure Storage-Kontos für eine statische Node.js-Website
 description: 'Teil 3 des Tutorials: Erstellen eines Azure Storage-Kontos'
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 42badfc649d7cc43eb1a58ab20c8ff639eff5354
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 4adca67f850497777abce7d550e39532e59257d9
+ms.sourcegitcommit: a32ca0946275165ce24216c6fa243ec21d6c9193
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466506"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80890841"
 ---
 # <a name="create-an-azure-storage-account"></a>Erstellen eines Azure-Speicherkontos
 
@@ -28,17 +28,19 @@ In diesem Schritt erstellen Sie ein Azure Storage-Konto, das als einfacher Date
 
 1. Geben Sie an der Eingabeaufforderung „Enter the name of the new storage account“ (Geben Sie den Namen des neuen Speicherkontos ein) einen global eindeutigen Namen für Ihr Storage-Konto ein, und drücken Sie die EINGABETASTE. Gültige Zeichen für App-Namen sind die Buchstaben a – z und die Ziffern 0 – 9.
 
-1. Wählen Sie an der Eingabeaufforderung „Ressourcengruppe auswählen“ die Option **Neue Ressourcengruppe erstellen** aus, und übernehmen Sie den Standardnamen.
-
-1. Wählen Sie an der Eingabeaufforderung „Standort auswählen“ eine [Region](https://azure.microsoft.com/regions/) in Ihrer Nähe aus.
+    > [!NOTE]
+    > Dadurch werden ein Speicherkonto und eine Ressourcengruppe mit dem gleichen Namen erstellt. Das Speicherkonto wird automatisch in der Region „USA, Westen“ platziert. Wenn Sie die Ressourcengruppe und den Standort angeben möchten, wählen Sie im Kontextmenü die Option „Speicherkonto erstellen (erweitert)“ aus.
 
 1. Während der Erstellung des Storage-Kontos wird der Fortschritt im Bereich **Ausgabe** von VS Code angezeigt:
 
-1. Klicken Sie nach der Erstellung des Storage-Kontos mit der rechten Maustaste auf das Konto, und wählen Sie **Configure Static Website** (Statische Website konfigurieren) aus. Wenn Sie das Hosting statischer Websites aktivieren, verarbeitet Azure Storage automatisch Ihr Indexdokument und alle anderen statischen Ressourcen.
+    ![VS Code-Ausgabefenster ](media/static-website/output-storage.png)
 
-    ![Speicherkonto erstellen](media/static-website/configure-static-website.png)
+1. Nach Abschluss der Speicherkontoerstellung wird eine Meldung mit dem Hinweis angezeigt, dass das Hosten statischer Websites für das Speicherkonto aktiviert wurde.
 
-1. Geben Sie sowohl für den Namen des Indexdokuments als auch den Namen des 404-Fehlerdokuments *index.html* ein, wenn Sie dazu aufgefordert werden. Wir verwenden *index.html* für das Fehlerdokument, da moderne Single-Page-Apps (SPAs) wie React, Angular und Vue Fehler auf dem Client behandeln. Verwenden Sie für klassische statische Websites eine benutzerdefinierte 404-Fehlerseite.
+    ![Erstellen eines Speicherkontos](media/static-website/static-website-enabled-notification.png)
+
+    > [!IMPORTANT]
+    > Wir verwenden *index.html* für das Fehlerdokument, da moderne Single-Page-Apps (SPAs) wie React, Angular und Vue Routenfehler im Client behandeln. Verwenden Sie für klassische statische Websites eine benutzerdefinierte 404-Fehlerseite.
 
 > [!div class="nextstepaction"]
-> [Ich habe einen Speichercontainer erstellt.](tutorial-vscode-static-website-node-04.md) [Es ist ein Problem aufgetreten.](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-staticwebsite&step=create-storage)
+> [Ich habe einen Speichercontainer erstellt.](tutorial-vscode-static-website-node-04.md) [Bei mir ist ein Problem aufgetreten.](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-staticwebsite&step=create-storage)

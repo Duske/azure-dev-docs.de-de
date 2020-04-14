@@ -1,26 +1,30 @@
 ---
-title: Bereinigen der Ressourcen nach dem Bereitstellen einer Node.js-Container-App in Visual Studio Code
-description: 'Teil 6 des Tutorials: Bereinigen der Ressourcen'
+title: Streamen von Protokollen aus einer Node.js-Container-App in Visual Studio Code
+description: 'Teil 7 des Tutorials: Streamen von Protokollen in Visual Studio Code'
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 7c235cff8b5685880fc63d7e50587980502c7e8d
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 10ccf13cddfc7bb1ed7f226629072cb9baeea3a1
+ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467121"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80740640"
 ---
-# <a name="clean-up-resources"></a>Bereinigen von Ressourcen
+# <a name="stream-logs-into-visual-studio-code"></a>Streamen von Protokollen in Visual Studio Code
 
-[Vorheriger Schritt: Streamen von Protokollen](tutorial-vscode-docker-node-05.md)
+[Vorheriger Schritt: Vornehmen von Änderungen und erneutes Bereitstellen](tutorial-vscode-docker-node-06.md)
 
-Die von Ihnen erstellte App Service-Instanz für den Container beinhaltet einen App Service-Plan, der Kosten verursachen kann. Um die Ressourcen zu bereinigen, klicken Sie mit der rechten Maustaste auf die App Service-Instanz im **Azure App Service**-Explorer und wählen dann **Löschen** aus.
+In diesem Schritt erfahren Sie, wie Sie eine von der ausgeführten Website generierte Ausgabe durch Aufrufe von `console.log` anzeigen oder „am Ende anfügen“. Diese Ausgabe wird im Fenster **Ausgabe** in Visual Studio Code angezeigt.
 
-Sie können auch das [Azure-Portal](https://portal.azure.com) aufrufen, **Ressourcengruppen** im Navigationsbereich auf der linken Seite auswählen, die im Rahmen dieses Tutorials erstellte Ressourcengruppe auswählen und dann den Befehl **Ressourcengruppe löschen** verwenden.
+1. Klicken Sie im **Azure App Service**-Explorer mit der rechten Maustaste auf den Knoten der App, und wählen Sie **Start streaming logs** (Streamen der Protokolle starten) aus.
 
-## <a name="next-steps"></a>Nächste Schritte
+    ![Anzeigen von Streamingprotokollen](media/deploy-containers/stream-logs-command.png)
 
-[!INCLUDE [tutorial-next-steps](includes/tutorial-next-steps.md)]
+1. Wenn Sie dazu aufgefordert werden, aktivieren Sie die Protokollierung, und starten Sie die Anwendung neu.
+
+    ![Eingabeaufforderung zum Aktivieren der Protokollierung und Neustarten](media/deploy-azure/enable-restart.png)
+
+1. Nachdem die App neu gestartet wurde, wird der Bereich **Ausgabe** in Visual Studio Code mit einer Verbindung mit dem Protokollstream geöffnet, der mit der Meldung `Starting Live Log Stream` beginnt.
 
 > [!div class="nextstepaction"]
-> [Ich bin fertig.](node-howto-deploy-containers.md) [Es ist ein Problem aufgetreten.](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-docker-extension&step=clean-up-resources)
+> [Ich sehe die Protokolle.](tutorial-vscode-docker-node-08.md) [Es ist ein Problem aufgetreten.](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-docker-extension&step=tailing-logs)

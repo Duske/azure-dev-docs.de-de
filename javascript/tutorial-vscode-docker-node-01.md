@@ -3,23 +3,29 @@ title: Bereitstellen von Docker-Containern in Azure App Service in Visual Stu
 description: 'Teil 1 des Tutorials: Einführung und Voraussetzungen.'
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 98ebb6bd857216cb395eb8cc62faa3d6ee30e3eb
-ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
+ms.openlocfilehash: 1a14010d362ed3858d319a141fd24e5ea1b0e714
+ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77709832"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80740568"
 ---
 # <a name="deploy-containers-to-azure-app-service"></a>Bereitstellen von Containern in Azure App Service
 
 In diesem Tutorial verwenden Sie Visual Studio Code, um eine Node.js-Containeranwendung mithilfe von Docker zu erstellen, das Containerimage in eine Registrierung zu pushen und das Image dann in Azure App Service bereitzustellen.
 
+## <a name="walkthrough-video"></a>Video mit exemplarischer Vorgehensweise
+
+Dieses Video enthält eine umfassende exemplarische Vorgehensweise für den Inhalt dieses Artikels.
+
+> [!VIDEO https://channel9.msdn.com/Shows/Docs-Azure/Deploy-containers-to-Azure-App-Service/player]
+
 ## <a name="prerequisites"></a>Voraussetzungen
 
 - Ein [Azure-Abonnement](#azure-subscription).
 - [Visual Studio Code](https://code.visualstudio.com/)
-- [Docker-Erweiterung](vscode:extension/ms-azuretools.vscode-docker)
-- [Azure App Service-Erweiterung](vscode:extension/ms-azuretools.vscode-azureappservice)
+- Die [Docker-Erweiterung](vscode:extension/ms-azuretools.vscode-docker).
+- Die [Azure App Service-Erweiterung](vscode:extension/ms-azuretools.vscode-azureappservice).
 - [Node.js und npm](https://nodejs.org/en/download), Node.js-Paket-Manager
 - [Docker](https://www.docker.com/community-edition)
 

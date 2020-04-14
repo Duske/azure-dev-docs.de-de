@@ -5,23 +5,23 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: a6212433e10de774924d49e508cb010251d60b02
-ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
+ms.openlocfilehash: 6e14e8a18f87b67eb0ecb5ce08541058a964c988
+ms.sourcegitcommit: 951fc116a9519577b5d35b6fb584abee6ae72b0f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78893753"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80612102"
 ---
 # <a name="migrate-tomcat-applications-to-tomcat-on-azure-app-service"></a>Migrieren von Tomcat-Anwendungen zu Tomcat unter Azure App Service
 
-In diesem Leitfaden wird beschrieben, was Sie beachten sollten, wenn Sie eine vorhandene Tomcat-Anwendung für die Ausführung unter Azure App Service mit Tomcat 8.5 oder 9.0 migrieren möchten.
+In diesem Leitfaden erfahren Sie, was Sie beachten sollten, wenn Sie eine vorhandene Tomcat-Anwendung für die Ausführung unter Azure App Service mit Tomcat 9.0 migrieren möchten.
 
 ## <a name="before-you-start"></a>Vorbereitung
 
 Falls Sie keine Anforderungen der Migrationsvorbereitung erfüllen können, helfen Ihnen die Informationen in den folgenden relevanten Migrationsleitfäden weiter:
 
 * [Migrieren von Tomcat-Anwendungen zu Containern unter Azure Kubernetes Service](migrate-tomcat-to-containers-on-azure-kubernetes-service.md)
-* Migrieren von Tomcat-Anwendungen zu Azure Virtual Machines (geplant)
+* Migrieren von Tomcat-Anwendungen zu Azure Virtual Machines (Leitfaden geplant)
 
 ## <a name="pre-migration"></a>Vor der Migration
 
@@ -37,7 +37,7 @@ Melden Sie sich an Ihrem Produktionsserver an, und führen Sie den folgenden Bef
 ${CATALINA_HOME}/bin/version.sh
 ```
 
-Laden Sie [Tomcat 8.5](https://tomcat.apache.org/download-80.cgi#8.5.50) oder [Tomcat 9](https://tomcat.apache.org/download-90.cgi) herunter, um die von Azure App Service verwendete aktuelle Version zu ermitteln. Dies hängt davon ab, welche Version Sie in Azure App Service nutzen möchten.
+Laden Sie [Tomcat 9](https://tomcat.apache.org/download-90.cgi) herunter, um die aktuelle, von Azure App Service verwendete Version zu erhalten. Dies hängt davon ab, welche Version Sie in Azure App Service nutzen möchten.
 
 [!INCLUDE [inventory-external-resources](includes/migration/inventory-external-resources.md)]
 
@@ -56,7 +56,7 @@ Für Dateien, für die von Ihrer Anwendung häufige Schreib- und Lesevorgänge d
 
 Untersuchen Sie die *context.xml*-Dateien in Ihrer Anwendung und der Tomcat-Konfiguration, um den verwendeten Manager für Sitzungspersistenz zu ermitteln. Suchen Sie nach dem `<Manager>`-Element, und notieren Sie sich den Wert des `className`-Attributs.
 
-Die integrierten [PersistentManager](https://tomcat.apache.org/tomcat-8.5-doc/config/manager.html)-Implementierungen von Tomcat, z. B. [StandardManager](https://tomcat.apache.org/tomcat-8.5-doc/config/manager.html#Standard_Implementation) oder [FileStore](https://tomcat.apache.org/tomcat-8.5-doc/config/manager.html#Nested_Components), sind nicht für die Nutzung mit einer verteilten skalierten Plattform wie App Service konzipiert. Da App Service ggf. einen Lastenausgleich zwischen verschiedenen Instanzen vornimmt und für Instanzen jederzeit einen transparenten Neustart durchführen kann, ist das dauerhafte Speichern eines veränderlichen Zustands in einem Dateisystem nicht zu empfehlen.
+Die integrierten [PersistentManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html)-Implementierungen von Tomcat, z. B. [StandardManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Standard_Implementation) oder [FileStore](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Nested_Components), sind nicht für die Nutzung mit einer verteilten skalierten Plattform wie App Service konzipiert. Da App Service ggf. einen Lastenausgleich zwischen verschiedenen Instanzen vornimmt und für Instanzen jederzeit einen transparenten Neustart durchführen kann, ist das dauerhafte Speichern eines veränderlichen Zustands in einem Dateisystem nicht zu empfehlen.
 
 Falls das Erzielen von Sitzungspersistenz erforderlich ist, müssen Sie eine andere `PersistentManager`-Implementierung verwenden, bei der in einen externen Datenspeicher geschrieben wird, z. B. Pivotal-Sitzungs-Manager mit Redis Cache. Weitere Informationen finden Sie unter [Verwenden von Redis als Sitzungscache mit Tomcat](/azure/app-service/containers/configure-language-java#use-redis-as-a-session-cache-with-tomcat).
 
@@ -76,7 +76,7 @@ Wenn Ihre Anwendung Code mit Abhängigkeiten vom Hostbetriebssystem enthält, m�
 
 #### <a name="determine-whether-tomcat-clustering-is-used"></a>Ermitteln, ob das Tomcat-Clustering genutzt wird
 
-Das [Tomcat-Clustering](https://tomcat.apache.org/tomcat-8.5-doc/cluster-howto.html) wird für Azure App Service nicht unterstützt. Stattdessen können Sie die Skalierung und den Lastenausgleich mit Azure App Service und ohne Tomcat-spezifische Funktionen konfigurieren und verwalten. Sie können den Sitzungszustand an einem alternativen Speicherort speichern, um ihn für Replikate übergreifend verfügbar zu machen. Weitere Informationen finden Sie unter [Identifizieren eines Mechanismus für Sitzungspersistenz](#identify-session-persistence-mechanism).
+Das [Tomcat-Clustering](https://tomcat.apache.org/tomcat-9.0-doc/cluster-howto.html) wird für Azure App Service nicht unterstützt. Stattdessen können Sie die Skalierung und den Lastenausgleich mit Azure App Service und ohne Tomcat-spezifische Funktionen konfigurieren und verwalten. Sie können den Sitzungszustand an einem alternativen Speicherort speichern, um ihn für Replikate übergreifend verfügbar zu machen. Weitere Informationen finden Sie unter [Identifizieren eines Mechanismus für Sitzungspersistenz](#identify-session-persistence-mechanism).
 
 Suchen Sie für die Ermittlung, ob für Ihre Anwendung das Clustering verwendet wird, in der *server.xml*-Datei in den Elementen `<Host>` oder `<Engine>` nach dem `<Cluster>`-Element.
 
@@ -92,17 +92,17 @@ Suchen Sie in der Datei *server.xml* Ihrer Tomcat-Konfiguration nach `<Connector
 
 #### <a name="determine-whether-memoryrealm-is-used"></a>Ermitteln, ob MemoryRealm genutzt wird
 
-Für [MemoryRealm](https://tomcat.apache.org/tomcat-8.5-doc/api/org/apache/catalina/realm/MemoryRealm.html) wird eine persistente XML-Datei benötigt. Unter Azure App Service müssen Sie diese Datei in das Verzeichnis */home* bzw. ein zugehöriges Unterverzeichnis oder in bereitgestellten Speicher hochladen. Hierbei müssen Sie den Parameter `pathName` entsprechend ändern.
+Für [MemoryRealm](https://tomcat.apache.org/tomcat-9.0-doc/api/org/apache/catalina/realm/MemoryRealm.html) wird eine persistente XML-Datei benötigt. Unter Azure App Service müssen Sie diese Datei in das Verzeichnis */home* bzw. ein zugehöriges Unterverzeichnis oder in bereitgestellten Speicher hochladen. Hierbei müssen Sie den Parameter `pathName` entsprechend ändern.
 
 Gehen Sie wie folgt vor, um zu ermitteln, ob `MemoryRealm` derzeit verwendet wird: Untersuchen Sie Ihre *server.xml*- und *context.xml*-Dateien, und suchen Sie nach `<Realm>`-Elementen, für die das `className`-Attribut auf `org.apache.catalina.realm.MemoryRealm` festgelegt ist.
 
 #### <a name="determine-whether-ssl-session-tracking-is-used"></a>Ermitteln, ob die SSL-Sitzungsverfolgung genutzt wird
 
-App Service führt die Sitzungsabladung außerhalb der Tomcat-Runtime durch. Aus diesem Grund können Sie die [SSL-Sitzungsverfolgung](https://tomcat.apache.org/tomcat-8.5-doc/servletapi/javax/servlet/SessionTrackingMode.html#SSL) nicht verwenden. Verwenden Sie stattdessen einen anderen Modus für die Sitzungsverfolgung (`COOKIE` oder `URL`). Vermeiden Sie die Verwendung von App Service, wenn Sie die SSL-Sitzungsverfolgung benötigen.
+App Service führt die Sitzungsabladung außerhalb der Tomcat-Runtime durch. Aus diesem Grund können Sie die [SSL-Sitzungsverfolgung](https://tomcat.apache.org/tomcat-9.0-doc/servletapi/javax/servlet/SessionTrackingMode.html#SSL) nicht verwenden. Verwenden Sie stattdessen einen anderen Modus für die Sitzungsverfolgung (`COOKIE` oder `URL`). Vermeiden Sie die Verwendung von App Service, wenn Sie die SSL-Sitzungsverfolgung benötigen.
 
 #### <a name="determine-whether-accesslogvalve-is-used"></a>Ermitteln, ob AccessLogValve genutzt wird
 
-Bei Verwendung von [AccessLogValve](https://tomcat.apache.org/tomcat-8.5-doc/api/org/apache/catalina/valves/AccessLogValve.html) sollten Sie den Parameter `directory` auf `/home/LogFiles` oder ein zugehöriges Unterverzeichnis festlegen.
+Bei Verwendung von [AccessLogValve](https://tomcat.apache.org/tomcat-9.0-doc/api/org/apache/catalina/valves/AccessLogValve.html) sollten Sie den Parameter `directory` auf `/home/LogFiles` oder ein zugehöriges Unterverzeichnis festlegen.
 
 ## <a name="migration"></a>Migration
 
@@ -180,7 +180,9 @@ Verwenden Sie die Anwendungseinstellungen, um die spezifischen Geheimnisse für 
 
 ### <a name="migrate-data-sources-libraries-and-jndi-resources"></a>Migrieren von Datenquellen, Bibliotheken und JNDI-Ressourcen
 
-Führen Sie [diese Schritte zum Migrieren von Datenquellen](/azure/app-service/containers/configure-language-java#tomcat) aus.
+Informationen zu den Konfigurationsschritten für Datenquellen finden Sie unter [Konfigurieren einer Linux-Java-App für Azure App Service](/azure/app-service/containers/configure-language-java) im Abschnitt [Datenquellen](/azure/app-service/containers/configure-language-java#data-sources).
+
+[!INCLUDE[Tomcat datasource additional instructions](includes/migration/tomcat-datasource-additional-instructions.md)]
 
 Migrieren Sie alle zusätzlichen Klassenpfadabhängigkeiten auf Serverebene, indem Sie [die gleichen Schritte wie für die JAR-Dateien der Datenquelle](/azure/app-service/containers/configure-language-java#finalize-configuration) ausführen.
 
@@ -193,7 +195,7 @@ Migrieren Sie alle zusätzlichen [freigegebenen JDNI-Ressourcen auf Serverebene]
 
 Wenn Sie den vorherigen Abschnitt abgeschlossen haben, sollten Sie unter */home/tomcat/conf* über Ihre anpassbare Serverkonfiguration verfügen.
 
-Schließen Sie die Migration ab, indem Sie alle zusätzlichen Konfigurationen kopieren (z. B. [realms](https://tomcat.apache.org/tomcat-8.5-doc/config/realm.html), [JASPIC](https://tomcat.apache.org/tomcat-8.5-doc/config/jaspic.html)).
+Schließen Sie die Migration ab, indem Sie alle zusätzlichen Konfigurationen kopieren (beispielsweise [realms](https://tomcat.apache.org/tomcat-9.0-doc/config/realm.html) und [JASPIC](https://tomcat.apache.org/tomcat-9.0-doc/config/jaspic.html)).
 
 [!INCLUDE [migrate-scheduled-jobs](includes/migration/migrate-scheduled-jobs.md)]
 

@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 01/22/2019
-ms.openlocfilehash: 2846dc10ff782568d596daee4baa8ecbd1195729
-ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
+ms.openlocfilehash: 91292d50f49bde2b76084f8a09119ae74a20f72f
+ms.sourcegitcommit: 951fc116a9519577b5d35b6fb584abee6ae72b0f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78894197"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80612113"
 ---
 # <a name="migrate-executable-jar-web-applications-to-java-se-on-azure-app-service"></a>Migrieren von ausführbaren JAR-Webanwendungen zu Java SE unter Azure App Service
 
@@ -20,8 +20,8 @@ In diesem Leitfaden wird beschrieben, was Sie beachten sollten, wenn Sie eine vo
 
 Falls Sie keine Anforderungen der Migrationsvorbereitung erfüllen können, helfen Ihnen die Informationen in den folgenden relevanten Migrationsleitfäden weiter:
 
-* Migrieren von ausführbaren JAR-Anwendungen zu Containern unter Azure Kubernetes Service (geplant)
-* Migrieren von ausführbaren JAR-Anwendungen zu Azure Virtual Machines (geplant)
+* Migrieren ausführbarer JAR-Anwendungen zu Containern in Azure Kubernetes Service (Leitfaden geplant)
+* Migrieren ausführbarer JAR-Anwendungen zu Azure Virtual Machines (Leitfaden geplant)
 
 ## <a name="pre-migration"></a>Vor der Migration
 
@@ -39,7 +39,7 @@ Identifizieren Sie externe Ressourcen, z. B. Datenquellen, JMS-Nachrichtenbroke
 
 Identifizieren Sie für jede SQL-Datenbank die Verbindungszeichenfolge.
 
-Für eine Spring Boot-Anwendung werden Verbindungszeichenfolgen normalerweise in Konfigurationsdateien angezeigt. 
+Für eine Spring Boot-Anwendung werden Verbindungszeichenfolgen normalerweise in Konfigurationsdateien angezeigt.
 
 Hier ist ein Beispiel aus der Datei *application.properties* angegeben:
 
@@ -57,6 +57,8 @@ spring:
     mongodb:
       uri: mongodb://mongouser:deepsecret@mongoserver.contoso.com:27017
 ```
+
+Weitere Informationen finden Sie in der Spring-Dokumentation unter [JPA-Repositorys](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.repositories) bzw. unter [JDBC-Repositorys](https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/#jdbc.repositories).
 
 #### <a name="jms-message-brokers"></a>JMS-Nachrichtenbroker
 
@@ -143,7 +145,7 @@ App Service unterstützt nur einen einzelnen HTTP-Endpunkt für einen einzelnen 
 
 ### <a name="parameterize-the-configuration"></a>Parametrisieren der Konfiguration
 
-Stellen Sie sicher, dass alle externen Ressourcenkoordinaten (z. B. Datenbank-Verbindungszeichenfolgen) und andere anpassbare Einstellungen aus Umgebungsvariablen ausgelesen werden können. Wenn Sie eine Spring Boot-Anwendung migrieren, sollten alle Konfigurationseinstellungen bereits [externalisierbar](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-external-config) sein.
+Stellen Sie sicher, dass alle externen Ressourcenkoordinaten (z. B. Datenbank-Verbindungszeichenfolgen) und andere anpassbare Einstellungen aus Umgebungsvariablen ausgelesen werden können. Wenn Sie eine Spring Boot-Anwendung migrieren, sollten alle Konfigurationseinstellungen bereits externalisierbar sein. Weitere Informationen finden Sie in der Spring Boot-Dokumentation unter [Externalisierte Konfiguration](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-external-config).
 
 Hier ist ein Beispiel angegeben, in dem aus der Datei *application.properties* auf die Umgebungsvariable `SERVICEBUS_CONNECTION_STRING` verwiesen wird:
 

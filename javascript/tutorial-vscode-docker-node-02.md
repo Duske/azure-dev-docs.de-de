@@ -3,12 +3,12 @@ title: Verwenden einer Containerregistrierung in Visual Studio Code
 description: 'Teil 2 des Tutorials: Verwenden einer Containerregistrierung'
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: c5e9ff3cd803ef4d57408199682c71e4b57f2d77
-ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
+ms.openlocfilehash: e6dde135a2e6482284488fb83d9f811b02249c4d
+ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75191020"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80740549"
 ---
 # <a name="use-a-container-registry"></a>Verwenden einer Containerregistrierung
 
@@ -20,46 +20,38 @@ In diesem Tutorial wird [Azure Container Registry](https://azure.microsoft.com
 
 ## <a name="create-an-azure-container-registry"></a>Erstellen einer Azure-Containerregistrierung
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an, und wählen Sie **Ressource erstellen** aus.
+1. Drücken Sie in Visual Studio Code <kbd>F1</kbd>, um die **Befehlspalette** zu öffnen.
 
-    ![Erstellen einer neuen Ressource im Azure-Portal](media/deploy-containers/portal-01a.png)
+1. Geben Sie „registry“ in das Suchfeld ein, und wählen Sie **Azure Container Registry: Registrierung erstellen** aus.
 
-1. Wählen Sie auf der nächsten Seite **Container** > **Containerregistrierung** aus.
+   ![Docker-Explorer in VS Code](media/deploy-containers/docker-create-registry.jpg)
 
-    ![Erstellen einer Containerregistrierung im Azure-Portal](media/deploy-containers/portal-01b.png)
-
-1. Geben Sie im angezeigten Formular **Containerregistrierung erstellen** die entsprechenden Werte ein:
+1. Geben Sie für die Eingabeaufforderungen die folgenden Werte ein:
 
     - Der **Registrierungsname** muss innerhalb von Azure eindeutig sein und aus 5 bis 50 alphanumerischen Zeichen bestehen.
-    - Wählen Sie unter **Abonnement** Ihr Abonnement aus.
+    - Wählen Sie unter **SKU** die Option **Basic** aus.
     - Die **Ressourcengruppe** muss nur innerhalb Ihres Abonnements eindeutig sein.
     - Wählen Sie unter **Standort** eine Region in Ihrer Nähe aus.
-    - Wählen Sie unter **Administratorbenutzer** die Option **Aktivieren** aus.
-    - Wählen Sie unter **SKU** die Option **Basic** aus.
 
-    ![Werte für das Containerregistrierungsformular](media/deploy-containers/portal-02.png)
+    Visual Studio Code beginnt mit der Registrierungserstellung in Azure. Nach Abschluss der Erstellung wird eine Benachrichtigung wie die folgende angezeigt, um die erfolgreiche Erstellung der Registrierung zu bestätigen:
 
-1. Wählen Sie **Erstellen** aus, um die Registrierung zu erstellen.
+   ![Bestätigung der Registrierungserstellung in Visual Studio Code](media/deploy-containers/registry-created.jpg)
 
-1. Nachdem die Registrierung erstellt wurde, öffnen Sie die Benachrichtigungen im Portal, und wählen Sie **Zu Ressource wechseln** für die Registrierung aus:
+1. Öffnen Sie den **Docker-Explorer**, und vergewissern Sie sich, dass der Registrierungsendpunkt, den Sie gerade eingerichtet haben, unter **Registrierungen** angezeigt wird:
 
-    ![Öffnen der neu erstellten Registrierungsressource](media/deploy-containers/portal-03.png)
+   ![Überprüfen, ob die Registrierung im Docker-Explorer angezeigt wird](media/deploy-containers/docker-explorer-registry.jpg)
 
-1. Wählen Sie auf der Registrierungsseite die Option **Zugriffsschlüssel** aus, und notieren Sie die Administratoranmeldeinformationen:
+## <a name="sign-in-to-azure-container-registry"></a>Anmelden bei Azure Container Registry
 
-    ![Anmeldeinformationen für die Registrierung im Azure-Portal](media/deploy-containers/portal-04.png)
+Ihre Azure-Registrierungen werden zwar in der Docker-Erweiterung angezeigt, Images können jedoch erst nach der Anmeldung bei Azure Container Registry (ACR) dorthin gepusht werden.
 
-1. Melden Sie sich an einer Eingabeaufforderung oder einem Terminal mit dem folgenden Befehl bei Docker an. Ersetzen Sie dabei `<registry_name>` durch den Namen Ihrer Registrierung sowie `<username>` und `<password>` durch die Werte, die im Azure-Portal für den Administratorbenutzer angezeigt werden:
+1. Drücken Sie <kbd>STRG+`</kbd>, um das **integrierte Terminal** in VS Code zu öffnen.
+
+1. Führen Sie den folgenden Azure CLI-Befehl aus, um sich bei ACR anzumelden. Ersetzen Sie „<your-registry-name>“ durch den Namen der Registrierung, die Sie eben erstellt haben.
 
     ```bash
-    docker login <registry_name>.azurecr.io -u <username> -p <password>
+    az acr login --name <your-registry-name>
     ```
-
-    Verwenden Sie aus Sicherheitsgründen `--password-stdin` anstelle von `-p <password>`, und fügen Sie dann bei entsprechender Aufforderung das Kennwort ein.
-
-1. Öffnen Sie in Visual Studio Code den **Docker**-Explorer, und vergewissern Sie sich, dass der Registrierungsendpunkt, den Sie gerade eingerichtet haben, unter **Registrierungen** angezeigt wird:
-
-    ![Überprüfen, ob die Registrierung im Docker-Explorer angezeigt wird](media/deploy-containers/registries.png)
 
 > [!div class="nextstepaction"]
 > [Ich habe eine Registrierung erstellt.](tutorial-vscode-docker-node-03.md) [Es ist ein Problem aufgetreten.](https://www.research.net/r/PWZWZ52?tutorial=docker-extension&step=create-registry)

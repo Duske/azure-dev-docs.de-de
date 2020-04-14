@@ -1,30 +1,30 @@
 ---
-title: Streamen von Protokollen aus einer Node.js-Container-App in Visual Studio Code
-description: 'Teil 5 des Tutorials: Streamen von Protokollen in Visual Studio Code'
+title: Erneutes Bereitstellen eines Containers in Azure App Service, nachdem Änderungen in Visual Studio Code vorgenommen wurden
+description: 'Schritt 6 des Tutorials: Einfache Schritte zum erneuten Erstellen und Bereitstellen eines Containerimages.'
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 2ac930996bd910014565c4e329bec93015bd2a3a
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 7920bc9ddb2b9b7cc06f936fb97400a5c1d9dd7d
+ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466519"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80740645"
 ---
-# <a name="stream-logs-into-visual-studio-code"></a>Streamen von Protokollen in Visual Studio Code
+# <a name="make-changes-and-redeploy"></a>Vornehmen von Änderungen und erneutes Bereitstellen
 
-[Vorheriger Schritt: Vornehmen von Änderungen und erneutes Bereitstellen](tutorial-vscode-docker-node-05.md)
+[Vorheriger Schritt: Bereitstellen des App-Images](tutorial-vscode-docker-node-05.md)
 
-In diesem Schritt erfahren Sie, wie Sie eine von der ausgeführten Website generierte Ausgabe durch Aufrufe von `console.log` anzeigen oder „am Ende anfügen“. Diese Ausgabe wird im Fenster **Ausgabe** in Visual Studio Code angezeigt.
+Da Sie unweigerlich Änderungen an Ihrer App vornehmen, müssen Sie den Container mehrmals neu erstellen und neu bereitstellen. Glücklicherweise ist dieser Prozess ganz einfach:
 
-1. Klicken Sie im **Azure App Service**-Explorer mit der rechten Maustaste auf den Knoten der App, und wählen Sie **Start streaming logs** (Streamen der Protokolle starten) aus.
+1. Nehmen Sie lokal Änderungen an Ihrer Anwendung vor, und testen Sie sie.
 
-    ![Anzeigen von Streamingprotokollen](media/deploy-containers/stream-logs-command.png)
+1. Öffnen Sie in Visual Studio Code die **Befehlspalette** (**F1**), und führen Sie **Docker Images: Build Image** (Docker-Images: Image erstellen) aus, um das Image neu zu erstellen. Wenn Sie nur App-Code ändern, sollte der Build nur einige Sekunden dauern.
 
-1. Wenn Sie dazu aufgefordert werden, aktivieren Sie die Protokollierung, und starten Sie die Anwendung neu.
+1. Um das Image in die Registrierung zu pushen, öffnen Sie erneut die **Befehlspalette** (**F1**), führen Sie **Docker Images: Push** (Docker-Images: Pushen) aus, und wählen Sie dabei das Image aus, das Sie gerade erstellt haben. Da eine Änderung des App-Codes klein ist, muss wieder nur diese Ebene gepusht werden. Der Prozess dauert daher in der Regel nur wenige Sekunden.
 
-    ![Eingabeaufforderung zum Aktivieren der Protokollierung und Neustarten](media/deploy-azure/enable-restart.png)
+1. Wählen Sie im Bereich **Azure: App Service**-Explorer die entsprechende App Service-Instanz aus, klicken Sie mit der rechten Maustaste darauf, und wählen Sie **Neu starten** aus. Beim Neustarten einer App Service-Instanz wird automatisch das neueste Containerimage aus der Registrierung gepullt.
 
-1. Nachdem die App neu gestartet wurde, wird der Bereich **Ausgabe** in Visual Studio Code mit einer Verbindung mit dem Protokollstream geöffnet, der mit der Meldung `Starting Live Log Stream` beginnt.
+1. Navigieren Sie nach ungefähr 15–20 Sekunden erneut zu der App Service-URL, um die Änderungen zu überprüfen.
 
 > [!div class="nextstepaction"]
-> [Ich sehe die Protokolle.](tutorial-vscode-docker-node-07.md) [Es ist ein Problem aufgetreten.](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-docker-extension&step=tailing-logs)
+> [Ich sehe die Änderungen.](tutorial-vscode-docker-node-07.md) [Bei mir ist ein Problem aufgetreten.](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-docker-extension&step=deploy-changes)
