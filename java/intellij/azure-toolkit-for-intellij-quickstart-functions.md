@@ -64,7 +64,7 @@ In diesem Abschnitt wird mithilfe des Azure-Toolkits für IntelliJ ein lokales A
 
 ## <a name="run-the-function-app-locally"></a>Lokales Ausführen der Funktions-App
 
-1. Navigieren Sie zu `src/main/java/org/example/functions/Function.java`, um den generierten Code anzuzeigen. Neben Zeile *17* befindet sich die grüne Schaltfläche *Ausführen*. Klicken Sie darauf, und wählen Sie *Run 'azure-function-example'* ('azure-function-example' ausführen) aus. Daraufhin wird Ihre Funktions-App lokal mit einigen Protokollen ausgeführt.
+1. Navigieren Sie zu `src/main/java/org/example/functions/Function.java`, um den generierten Code anzuzeigen. Neben Zeile *17* befindet sich die grüne Schaltfläche *Ausführen*. Klicken Sie darauf, und wählen Sie *Run 'azure-function-example'* („azure-function-example“ ausführen) aus. Daraufhin wird Ihre Funktions-App lokal mit einigen Protokollen ausgeführt.
 
     ![Lokales Ausführen der Funktions-App](media/azure-toolkit-for-intellij-quickstart-functions/local-run-functions-project.png)
 
