@@ -9,57 +9,115 @@ metadata:
   author: barbkess
   ms.author: barbkess
   manager: barbkess
-  ms.date: 04/08/2020
-  ms.openlocfilehash: 52290f4acd28cc40c4dffe8c2c85a1c5786a43c5
-  ms.sourcegitcommit: 295cf6efadb1ba8e443e71e4e6b6ea6897eb697a
+  ms.date: 04/15/2020
+  ms.openlocfilehash: be83122125d07c0bfb69c7c44a3a0fee0c069fb3
+  ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 04/14/2020
-  ms.locfileid: "81275894"
-tools:
-  title: Languages
+  ms.lasthandoff: 04/22/2020
+  ms.locfileid: "81743553"
+productDirectory:
   items:
   - title: Python
     imageSrc: https://docs.microsoft.com/media/logos/logo_python.svg
-    url: https://docs.microsoft.com/azure/developer/python/
-  - title: .NET
-    imageSrc: https://docs.microsoft.com/azure/media/index/net-logo.svg
-    url: https://docs.microsoft.com/dotnet/azure/
+    links:
+    - url: https://docs.microsoft.com/en-us/azure/developer/python/tutorial-vs-code-serverless-python-01
+      text: Bereitstellen serverloser Python-Apps in Azure Functions
+    - url: https://docs.microsoft.com/azure/developer/python/tutorial-deploy-app-service-on-linux-01
+      text: Bereitstellen von Python-Apps in Azure App Service
+    - url: https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-python
+      text: Verwalten von Speicherblobs mit dem Azure SDK für Python
+    - url: https://docs.microsoft.com/azure/sql-database/sql-database-connect-query-python
+      text: Abfragen einer Azure SQL-Datenbank mithilfe von Python
+    - url: https://docs.microsoft.com/azure/data-factory/quickstart-create-data-factory-python
+      text: Erstellen einer Azure Data Factory mithilfe von Python
+    - url: https://docs.microsoft.com/azure/developer/python/
+      text: Weitere Infos finden Sie im Python Developer Center.
   - title: JavaScript
     imageSrc: https://docs.microsoft.com/media/logos/logo_js.svg
-    url: https://docs.microsoft.com/azure/javascript/
+    links:
+    - url: https://docs.microsoft.com/azure/javascript/tutorial-vscode-static-website-node-01?tabs=bash
+      text: Erstellen und Bereitstellen einer statischen Website
+    - url: https://docs.microsoft.com/azure/javascript/tutorial-vscode-azure-app-service-node-01?tabs=bash
+      text: Bereitstellen einer Node.js-App in Azure App Service
+    - url: https://docs.microsoft.com/azure/javascript/tutorial-vscode-serverless-node-01?tabs=bash
+      text: Bereitstellen einer Azure Functions-Anwendung
+    - url: https://docs.microsoft.com/azure/javascript/tutorial-vscode-docker-node-01?tabs=bash
+      text: Bereitstellen einer Node.js-App mithilfe von Docker-Containern
+    - url: https://docs.microsoft.com/azure/cosmos-db/create-mongodb-nodejs?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+      text: Migrieren einer MongoDB-Web-App zu Azure Cosmos DB
+    - url: https://docs.microsoft.com/azure/javascript/
+      text: Weitere Infos finden Sie im Entwicklercenter für JavaScript.
   - title: Java
     imageSrc: https://docs.microsoft.com/media/logos/logo_java.svg
-    url: https://docs.microsoft.com/azure/java/
-  - title: Go
-    imageSrc: https://docs.microsoft.com/media/logos/logo_Go-lightblue.svg
-    url: https://docs.microsoft.com/azure/developer/go/
+    links:
+    - url: https://docs.microsoft.com/azure/developer/java/fundamentals/java-jdk-install
+      text: Installieren des JDK für Azure und Azure Stack
+    - url: https://docs.microsoft.com/azure/spring-cloud/spring-cloud-quickstart-launch-app-portal
+      text: Bereitstellen einer Azure Spring Cloud-App über das Azure-Portal
+    - url: https://docs.microsoft.com/azure/app-service/app-service-web-get-started-java
+      text: Erstellen einer Java-App in Azure App Service
+    - url: https://docs.microsoft.com/azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory
+      text: Verwenden von Spring Boot Starter für Azure Active Directory
+    - url: https://docs.microsoft.com/azure/developer/java/migration/migration-overview
+      text: Migrieren von Java-Anwendungen zu Azure
+    - url: https://docs.microsoft.com/azure/developer/java/
+      text: Weitere Infos finden Sie im Java Developer Center.
+  - title: .NET
+    imageSrc: https://docs.microsoft.com/azure/media/index/net-logo.svg
+    links:
+    - url: https://docs.microsoft.com/dotnet/azure/sdk/
+      text: Azure SDK für .NET
+    - url: https://docs.microsoft.com/dotnet/azure/intro
+      text: Einführung in Azure und .NET
+    - url: https://docs.microsoft.com/azure/app-service/app-service-web-get-started-dotnet
+      text: Bereitstellen einer ASP.NET-Web-App
+    - url: https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio
+      text: Erstellen einer serverlosen Funktion
+    - url: https://docs.microsoft.com/visualstudio/containers/container-tools?view=vs-2019
+      text: ASP.NET Core und Docker
+    - url: https://docs.microsoft.com/dotnet/azure/
+      text: Weitere Infos finden Sie im .NET Developer Center.
+  - title: Azure PowerShell
+    imageSrc: https://docs.microsoft.com/media/logos/logo_powershell.svg
+    links:
+    - url: https://docs.microsoft.com/powershell/azure/new-azureps-module-az
+      text: Was ist das neue Az-Modul?
+    - url: https://docs.microsoft.com/powershell/azure/migrate-from-azurerm-to-az
+      text: Migrieren von AzureRM zu Az
+    - url: https://docs.microsoft.com/powershell/azure/install-az-ps
+      text: Installieren
+    - url: https://docs.microsoft.com/powershell/azure/authenticate-azureps
+      text: Anmelden
+    - url: https://docs.microsoft.com/powershell/azure/context-persistence
+      text: Speichern der Kontexte für Anmeldeinformationen
+    - url: https://docs.microsoft.com/powershell/azure/
+      text: Weitere Informationen finden Sie im Azure PowerShell Developer Center.
+  - title: Azure-Befehlszeilenschnittstelle
+    imageSrc: https://docs.microsoft.com/media/logos/logo_CLIgeneric.svg
+    links:
+    - url: https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest
+      text: Erste Schritte
+    - url: https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest
+      text: Installieren
+    - url: https://docs.microsoft.com/cli/azure/authenticate-azure-cli?view=azure-cli-latest
+      text: Anmeldung
+    - url: https://docs.microsoft.com/en-us/cli/azure/query-azure-cli?view=azure-cli-latest
+      text: Ausführen einer Abfrage für die Ausgabe eines CLI-Befehls
+    - url: https://docs.microsoft.com/en-us/cli/azure/azure-cli-vm-tutorial?view=azure-cli-latest
+      text: Erstellen eines virtuellen Computers
+    - url: https://docs.microsoft.com/cli/azure/
+      text: Weitere Infos finden Sie im Azure CLI Developer Center.
 additionalContent:
   sections:
-  - title: Entwicklungstools
+  - title: Tools
     items:
-    - title: REST-API
-      url: https://docs.microsoft.com/rest/api/
     - title: Azure-Erweiterungen für Visual Studio Code
+      summary: Verwenden Sie über Erweiterungen Azure direkt in Visual Studio Code.
       url: https://code.visualstudio.com/docs/azure/extensions
-    - title: .NET SDK
-      url: https://docs.microsoft.com/dotnet/azure/sdk/
-    - title: Python SDK
-      url: https://docs.microsoft.com/python/api/?view=azure-python
-    - title: JavaScript SDK
-      url: https://docs.microsoft.com/javascript/api/
-    - title: Java-SDK
-      url: https://docs.microsoft.com/java/api/
-    - title: Spring in Azure
-      url: https://docs.microsoft.com/azure/java/spring-framework/
-  - title: DevOps-Tools
-    items:
-    - title: Azure PowerShell
-      summary: Verwenden Sie Azure PowerShell-Cmdlets, um Azure-Ressourcen direkt über die PowerShell-Befehlszeile zu verwalten.
-      url: https://docs.microsoft.com/powershell/azure/
-    - title: Azure-Befehlszeilenschnittstelle
-      summary: Verwenden Sie die Azure CLI zum Erstellen und Verwalten von Ressourcen über die Befehlszeile.
-      url: https://docs.microsoft.com/cli/azure/
+    - title: REST-API
+      summary: Nutzen Sie REST-APIs, um über HTTP-Vorgänge auf die Ressourcen Ihrer Dienste zuzugreifen.
+      url: https://docs.microsoft.com/rest/api/
     - title: ARM-Vorlagen
       summary: Verwenden Sie Azure Resource Manager-Vorlagen, um Ihr Projekt mit JSON-Dateien zu definieren und zu konfigurieren.
       url: https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/
@@ -86,7 +144,7 @@ additionalContent:
       url: https://docs.microsoft.com/java/api/overview/azure/maven/README
     - title: Azure Toolkit für IntelliJ
       summary: Verwenden Sie das Azure-Toolkit für IntelliJ, um Azure-Anwendungen in der IntelliJ-IDE zu erstellen, zu entwickeln, zu testen und bereitzustellen.
-      url: https://docs.microsoft.com/azure/java/intellij/
+      url: https://docs.microsoft.com/azure/developer/java/intellij/
     - title: Azure-Toolkit für Eclipse
       summary: Verwenden Sie das Azure-Toolkit für Eclipse, um Azure-Anwendungen in der Eclipse-IDE zu erstellen, zu entwickeln, zu testen und bereitzustellen.
-      url: https://docs.microsoft.com/azure/java/eclipse/
+      url: https://docs.microsoft.com/azure/developer/java/eclipse/
