@@ -1,0 +1,37 @@
+### YamlMime:Landing
+title: Dokumentation zum Azure SDK für Java
+summary: Cloudentwicklung mit Java in Azure
+metadata:
+  title: Dokumentation zum Azure SDK für Java
+  description: Cloudentwicklung mit Java in Azure
+  ms.date: 04/03/2020
+  ms.topic: landing-page
+  ms.openlocfilehash: 2380696b801927bc842278b1b8604825feda0984
+  ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 04/21/2020
+  ms.locfileid: "81675146"
+landingContent:
+- title: Azure für Java-Cloudentwickler
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Azure-Entwicklung mithilfe von Java
+      url: java-sdk-azure-get-started.md
+  - linkListType: reference
+    links:
+    - text: Java-API-Browser
+      url: /java/api/?view=azure-java
+  - linkListType: how-to-guide
+    links:
+    - text: Hinzufügen des Stammzertifikats
+      url: java-sdk-add-certificate-ca-store.md
+    - text: Authenticate
+      url: java-sdk-azure-authenticate.md
+    - text: Konfigurieren der Protokollierung
+      url: java-sdk-azure-log.md
+  - linkListType: learn
+    links:
+    - text: Muster und bewährte Methoden
+      url: java-sdk-azure-concepts.md

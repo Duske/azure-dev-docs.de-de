@@ -1,0 +1,21 @@
+- name: Dokumentation zur Migration von Java zu Azure
+  href: index.yml
+  items:
+    - name: Übersicht
+      href: migration-overview.md
+    - name: Spring zu Azure App Service
+      href: migrate-java-se-to-java-se-app-service.md
+    - name: Tomcat zu Azure App Service
+      href: migrate-tomcat-to-tomcat-app-service.md
+    - name: Tomcat zu Containern in AKS
+      href: migrate-tomcat-to-containers-on-azure-kubernetes-service.md
+    - name: WebLogic zu Azure Virtual Machines
+      href: migrate-weblogic-to-virtual-machines.md
+    - name: WildFly zu WildFly in AKS
+      href: migrate-wildfly-to-wildfly-on-azure-kubernetes-service.md
+    - name: WebLogic zu WildFly in AKS
+      href: migrate-weblogic-to-wildfly-on-azure-kubernetes-service.md
+    - name: WebSphere zu WildFly in AKS
+      href: migrate-websphere-to-wildfly-on-azure-kubernetes-service.md
+    - name: JBoss EAP zu WildFly in AKS
+      href: migrate-jboss-eap-to-wildfly-on-azure-kubernetes-service.md
