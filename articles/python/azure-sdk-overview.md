@@ -3,12 +3,12 @@ title: Azure SDK für Python
 description: Übersicht über die Features und Funktionen des Azure SDK für Python, das Entwicklern zu mehr Produktivität beim Bereitstellen, Verwenden und Verwalten von Azure-Ressourcen verhilft.
 ms.date: 03/17/2020
 ms.topic: conceptual
-ms.openlocfilehash: a7fa744884972c6e25ac85b69c6b8317d7cb5190
-ms.sourcegitcommit: 1bd9ec6a4115e9162e33b76a933869788e6ab702
+ms.openlocfilehash: 3d24a512420610f37285a03fe6a39d81e97510ee
+ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80441675"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82026113"
 ---
 # <a name="azure-sdk-for-python"></a>Azure SDK für Python
 
@@ -91,7 +91,7 @@ from azure.storage.blob import BlobClient
 Verwenden Sie abschließend die API der Bibliothek, um eine Verbindung herzustellen und die Daten hochzuladen. In diesem Beispiel sind die Verbindungszeichenfolge und der Containername bereits in Ihrem Speicherkonto angegeben. Der Blobname ist der Name, den Sie den hochgeladenen Daten zuweisen:
 
 ```python
-blob = BlobClient.from_connection_string("my_connection_string", container="mycontainer", blob="my_blob")
+blob = BlobClient.from_connection_string("my_connection_string", container_name="mycontainer", blob_name="my_blob")
 
 with open("./SampleSource.txt", "rb") as data:
     blob.upload_blob(data)

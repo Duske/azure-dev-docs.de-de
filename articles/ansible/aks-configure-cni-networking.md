@@ -4,18 +4,18 @@ description: Es wird beschrieben, wie Sie Ansible zum Konfigurieren von kubenet-
 keywords: Ansible, Azure, DevOps, Bash, Cloud Shell, Playbook, AKS, Container, Kubernetes
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: 315ad861a9de7ff147f954f6b6d664242679c70c
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: 6be7056a89b0ac0327ffc5ba39b77c31c23bb0fe
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741398"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743908"
 ---
 # <a name="tutorial-configure-azure-cni-networking-in-azure-kubernetes-service-aks-using-ansible"></a>Tutorial: Konfigurieren von Azure CNI-Netzwerken in Azure Kubernetes Service (AKS) mit Ansible
 
-[!INCLUDE [ansible-28-note.md](../../includes/ansible-28-note.md)]
+[!INCLUDE [ansible-28-note.md](includes/ansible-28-note.md)]
 
-[!INCLUDE [open-source-devops-intro-aks.md](../../includes/open-source-devops-intro-aks.md)]
+[!INCLUDE [open-source-devops-intro-aks.md](../includes/open-source-devops-intro-aks.md)]
 
 Mit AKS können Sie einen Cluster bereitstellen, indem Sie die folgenden Netzwerkmodelle verwenden:
 
@@ -24,7 +24,7 @@ Mit AKS können Sie einen Cluster bereitstellen, indem Sie die folgenden Netzwer
 
 Weitere Informationen zu Netzwerken für Ihre Anwendungen in AKS finden Sie im Artikel zu den [Netzwerkkonzepten für Anwendungen in AKS](/azure/aks/concepts-network).
 
-[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+[!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
 > [!div class="checklist"]
 >
@@ -33,9 +33,9 @@ Weitere Informationen zu Netzwerken für Ihre Anwendungen in AKS finden Sie im A
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [open-source-devops-prereqs-create-service-principal.md](../../includes/open-source-devops-prereqs-create-service-principal.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)] 
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [open-source-devops-prereqs-create-service-principal.md](../includes/open-source-devops-prereqs-create-service-principal.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)] 
 
 ## <a name="create-a-virtual-network-and-subnet"></a>Erstellen eines virtuellen Netzwerks und des Subnetzes
 

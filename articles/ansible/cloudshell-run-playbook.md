@@ -4,12 +4,12 @@ description: In dieser Schnellstartanleitung wird beschrieben, wie Sie verschied
 keywords: Ansible, Azure, DevOps, Bash, CloudShell, Playbook, Bash
 ms.topic: quickstart
 ms.date: 04/30/2019
-ms.openlocfilehash: b5c136d0eb6f3c226625c8a6d6c9200f6c283101
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: e5da7532b3bed43190509168827ac88f5b7b10be
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741318"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743765"
 ---
 # <a name="quickstart-run-ansible-playbooks-via-bash-in-azure-cloud-shell"></a>Schnellstart: Ausführen von Ansible-Playbooks per Bash in Azure Cloud Shell
 
@@ -17,9 +17,9 @@ Azure Cloud Shell ist eine interaktive, über den Browser zugängliche Shell fü
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 - **Konfigurieren von Azure Cloud Shell**: Wenn Sie mit Azure Cloud Shell noch nicht vertraut sind, helfen Ihnen die Informationen unter [Schnellstart für Bash in Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart) weiter.
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [cloud-shell-try-it.md](../includes/cloud-shell-try-it.md)]
 
 ## <a name="automatic-credential-configuration"></a>Automatische Konfiguration von Anmeldeinformationen
 
@@ -42,7 +42,7 @@ export AZURE_SUBSCRIPTION_ID=<your-subscription-id>
 ## <a name="verify-the-configuration"></a>Überprüfen der Konfiguration
 Erstellen Sie mit Ansible eine Azure-Ressourcengruppe, um zu überprüfen, ob die Konfiguration erfolgreich war.
 
-[!INCLUDE [create-resource-group-with-ansible.md](../../includes/ansible-snippet-create-resource-group.md)]
+[!INCLUDE [create-resource-group-with-ansible.md](includes/ansible-snippet-create-resource-group.md)]
 
 ## <a name="next-steps"></a>Nächste Schritte
 

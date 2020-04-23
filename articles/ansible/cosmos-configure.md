@@ -4,20 +4,20 @@ description: Es wird beschrieben, wie Sie Ansible zum Erstellen und Konfiguriere
 keywords: Ansible, Azure, DevOps, Bash, Playbook, Cosmos DB, Datenbank
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: 8c898e3cb0747a442d50b7241ebfcf401148817e
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: 471b53e71683311a99a811dbc14e4439a81f5948
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741228"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743359"
 ---
 # <a name="tutorial-configure-azure-cosmos-db-accounts-using-ansible"></a>Tutorial: Konfigurieren von Azure Cosmos DB-Konten mit Ansible
 
-[!INCLUDE [ansible-28-note.md](../../includes/ansible-28-note.md)]
+[!INCLUDE [ansible-28-note.md](includes/ansible-28-note.md)]
 
 [Azure Cosmos DB](/azure/cosmos-db/) ist ein Datenbankdienst, der mehrere Datenbanktypen unterstützt. Zu diesen Datenbanktypen gehören „Dokument“, „Schlüssel/Wert“, „breite Spalten“ und „Graph“. Ansible ermöglicht die Automatisierung der Bereitstellung und Konfiguration von Ressourcen in Ihrer Umgebung.
 
-[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+[!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
 > [!div class="checklist"]
 >
@@ -27,9 +27,9 @@ ms.locfileid: "80741228"
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [open-source-devops-prereqs-create-service-principal.md](../../includes/open-source-devops-prereqs-create-service-principal.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [open-source-devops-prereqs-create-service-principal.md](../includes/open-source-devops-prereqs-create-service-principal.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 
 ## <a name="create-a-random-postfix"></a>Erstellen eines zufälligen Postfix
 
