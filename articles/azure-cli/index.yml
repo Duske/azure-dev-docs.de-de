@@ -1,0 +1,116 @@
+### YamlMime:Landing
+title: Dokumentation zur Azure-Befehlszeilenschnittstelle (Azure CLI)
+summary: "Die Azure-Befehlszeilenschnittstelle (Command-Line Interface, CLI) setzt sich aus Befehlen zum Erstellen und Verwalten von Azure-Ressourcen zusammen.  \nDie Azure CLI ist in allen Azure-Diensten verfügbar und soll die schnelle Verwendung von Azure ermöglichen. Der Fokus liegt dabei auf der Automatisierung.\n"
+metadata:
+  title: Übersicht über die Azure CLI
+  description: Anweisungen für die Installation der Azure CLI und für die ersten Schritte
+  ms.topic: landing-page
+  ms.collection: collection
+  author: dbradish-microsoft
+  ms.author: dbradish
+  ms.date: 09/09/2019
+  ms.openlocfilehash: 804cf4efdcf88674f67f0d5e2afd2619ba1b892a
+  ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 04/22/2020
+  ms.locfileid: "82031352"
+landingContent:
+- title: Installieren der Azure CLI
+  linkLists:
+  - linkListType: download
+    links:
+    - text: Übersicht über die Installation
+      url: install-azure-cli.md
+    - text: Installieren für Windows
+      url: install-azure-cli-windows.md
+    - text: Installieren für macOS
+      url: install-azure-cli-macos.md
+    - text: Installieren unter Linux mit apt
+      url: install-azure-cli-apt.md
+    - text: Installieren unter Linux mit yum
+      url: install-azure-cli-yum.md
+    - text: Installieren unter Linux mit zypper
+      url: install-azure-cli-zypper.md
+    - text: Installieren unter Linux ohne Paket-Manager
+      url: install-azure-cli-linux.md
+    - text: Ausführen in Docker
+      url: run-azure-cli-docker.md
+    - text: Ausführen in Azure Cloud Shell
+      url: https://shell.azure.com
+- title: Informationen zu den Features der Azure CLI
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Erste Schritte mit Azure CLI 2.0
+      url: get-started-with-azure-cli.md
+    - text: Dienste, die von der Azure CLI verwaltet werden können
+      url: azure-services-the-azure-cli-can-manage.md
+    - text: Beliebte Artikel zur Azure CLI
+      url: popular-articles-using-the-azure-cli.md
+  - linkListType: how-to-guide
+    links:
+    - text: Anmeldemethoden
+      url: authenticate-azure-cli.md
+    - text: Erstellen eines Dienstprinzipals
+      url: create-an-azure-service-principal-azure-cli.md
+    - text: Abfragen der Ergebnisse von CLI-Befehlen
+      url: query-azure-cli.md
+- title: Verwenden der Azure CLI zum Verwalten von Cloudressourcen
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Bereitstellen einer Webanwendung über GitHub
+      url: /azure/app-service/scripts/cli-deploy-github?toc=%2fcli%2fazure%2ftoc.json
+    - text: Erstellen einer Postgres SQL-Datenbank
+      url: /azure/postgresql/quickstart-create-server-up-azure-cli?toc=%2fcli%2fazure%2ftoc.json
+    - text: Erstellen eines Kubernetes-Clusters
+      url: /azure/aks/kubernetes-walkthrough?toc=%2fcli%2fazure%2ftoc.json
+  - linkListType: learn
+    links:
+    - text: Verwalten von virtuellen Computern mit der Azure CLI
+      url: /learn/modules/manage-virtual-machines-with-azure-cli
+    - text: Steuern der Azure-Dienste mit der Befehlszeilenschnittstelle
+      url: /learn/modules/control-azure-services-with-cli
+    - text: Herstellen einer Verbindung zwischen einer Anwendung und Azure Storage
+      url: /learn/modules/connect-an-app-to-azure-storage
+  - linkListType: tutorial
+    links:
+    - text: Erstellen von virtuellen Computern im gleichen Subnetz mit der Azure CLI
+      url: azure-cli-vm-tutorial.yml
+- title: Azure CLI-Erweiterungen
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Informationen zu CLI-Erweiterungen
+      url: azure-cli-extensions-overview.md
+  - linkListType: reference
+    links:
+    - text: Verfügbare Erweiterungen
+      url: azure-cli-extensions-list.md
+- title: Azure CLI-Referenz
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Vollständige Befehlsreferenz
+      url: /cli/azure/reference-index
+    - text: Ausgabeformate
+      url: format-output-azure-cli.md
+    - text: Konfigurationseinstellungen
+      url: azure-cli-configuration.md
+    - text: Versionshinweise
+      url: release-notes-azure-cli.md
+    - text: JMESPath-Abfragesprache
+      url: http://jmespath.org/
+    - text: OData-Abfragefilter
+      url: https://www.odata.org/getting-started/basic-tutorial/#queryData
+- title: Abgeben von Feedback und Anfordern von Support
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Anfordern eines neuen Features
+      url: https://github.com/Azure/azure-cli/issues/new?template=Feature_request.md
+    - text: Melden eines Produktfehlers
+      url: https://github.com/Azure/azure-cli/issues/new?template=Bug_report.md
+    - text: Hilfe aus der Community
+      url: https://stackoverflow.com/questions/tagged/azure-cli

@@ -8,12 +8,12 @@ author: tomarchermsft
 manager: gwallace
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: 1cbbca8b4a9e9bfc1ac1c02c087045d4170e97b4
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: 2a1a3439679f4162b4ec874137a332758e4915c5
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741708"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743204"
 ---
 # <a name="quickstart-manage-linux-virtual-machines-in-azure-using-ansible"></a>Schnellstart: Verwalten von virtuellen Linux-Computern in Azure mithilfe von Ansible
 
@@ -21,8 +21,8 @@ Ansible ermöglicht die Automatisierung der Bereitstellung und Konfiguration von
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-[!INCLUDE [open-source-devops-prereqs-azure-sub.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-sub.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 
 ## <a name="stop-a-virtual-machine"></a>Dient zum Beenden eines virtuellen Computers.
 

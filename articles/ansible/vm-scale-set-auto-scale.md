@@ -4,22 +4,22 @@ description: Hier erfahren Sie, wie Sie Ansible verwenden, um VM-Skalierungsgrup
 keywords: ansible, azure, devops, bash, playbook, skalieren, autoskalierung, virtueller computer, vm-skalierungsgruppen, vmss
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: 8c8aab0a96fe30d08c0f673f9e5bc5fb47b2b409
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: f50ac83b03d957e0d6649a5803ee90982a532935
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741698"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743878"
 ---
 # <a name="tutorial-autoscale-virtual-machine-scale-sets-in-azure-using-ansible"></a>Tutorial: Automatisches Skalieren von VM-Skalierungsgruppen in Azure mit Ansible
 
-[!INCLUDE [ansible-27-note.md](../../includes/ansible-27-note.md)]
+[!INCLUDE [ansible-27-note.md](includes/ansible-27-note.md)]
 
-[!INCLUDE [open-source-devops-intro-vm-scale-set.md](../../includes/open-source-devops-intro-vm-scale-set.md)]
+[!INCLUDE [open-source-devops-intro-vm-scale-set.md](../includes/open-source-devops-intro-vm-scale-set.md)]
 
 Das Feature zur automatischen Anpassung der Anzahl von VM-Instanzen heißt [Autoskalierung](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview). Der Vorteil der Autoskalierung besteht in der Verringerung des Verwaltungsaufwands im Zusammenhang mit der Leistungsüberwachung und -optimierung für Ihre Anwendung. Die Autoskalierung kann bedarfsbasiert oder nach einem definierten Zeitplan konfiguriert werden. Mit Ansible können Sie Autoskalierungsregeln angeben, um eine angemessene Leistung für eine positive Kundenerfahrung zu definieren.
 
-[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+[!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
 > [!div class="checklist"]
 >
@@ -31,9 +31,9 @@ Das Feature zur automatischen Anpassung der Anzahl von VM-Instanzen heißt [Auto
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)] 
-[!INCLUDE [ansible-prereqs-vm-scale-set.md](../../includes/ansible-prereqs-vm-scale-set.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)] 
+[!INCLUDE [ansible-prereqs-vm-scale-set.md](includes/ansible-prereqs-vm-scale-set.md)]
 
 ## <a name="autoscale-based-on-a-schedule"></a>Automatisches Skalieren nach Zeitplan
 

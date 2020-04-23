@@ -4,20 +4,20 @@ description: Hier erfahren Sie, wie Sie mit Ansible eine Azure Application Gatew
 keywords: Ansible, Azure, DevOps, Bash, Playbook, Application Gateway, Lastenausgleich, Webdatenverkehr
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: 7fa2a8574bfa3f4848df4cce29887ac2bbc67942
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: 3ff9a43513a2ee34964e6e82447e3398469db8f8
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741448"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743720"
 ---
 # <a name="tutorial-manage-web-traffic-with-azure-application-gateway-using-ansible"></a>Tutorial: Verwalten von Webdatenverkehr per Azure Application Gateway mit Ansible
 
-[!INCLUDE [ansible-27-note.md](../../includes/ansible-27-note.md)]
+[!INCLUDE [ansible-27-note.md](includes/ansible-27-note.md)]
 
 [Azure Application Gateway](/azure/application-gateway/overview) ist ein Lastenausgleich für Webdatenverkehr, mit dem Sie eingehenden Datenverkehr für Ihre Webanwendungen verwalten können. Basierend auf der IP-Quelladresse und dem Quellport wird Datenverkehr von herkömmlichen Lastenausgleichsmodulen an eine IP-Zieladresse und einen Zielport weitergeleitet. Bei Verwendung von Application Gateway können Sie präziser steuern, wohin Datenverkehr basierend auf der URL geleitet werden kann. Sie können beispielsweise Folgendes definieren: Wenn `images` der Pfad der URL ist, wird Datenverkehr an eine bestimmte Gruppe von Servern (als Pool bezeichnet) geleitet, die für Images konfiguriert sind.
 
-[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+[!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
 > [!div class="checklist"]
 >
@@ -27,8 +27,8 @@ ms.locfileid: "80741448"
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 
 ## <a name="create-a-resource-group"></a>Erstellen einer Ressourcengruppe
 

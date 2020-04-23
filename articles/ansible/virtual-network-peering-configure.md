@@ -4,22 +4,22 @@ description: Es wird beschrieben, wie Sie Ansible zum Verbinden von virtuellen N
 keywords: Ansible, Azure, DevOps, Bash, Playbook, Netzwerk, Peering
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: 78699a005d721b46a88a26452f5db68438793d34
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: 2b5af7546900c45dde7eea0e1d57370d2ffc3991
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741768"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743884"
 ---
 # <a name="tutorial-configure-azure-virtual-network-peering-using-ansible"></a>Tutorial: Konfigurieren des Azure-VNET-Peerings mit Ansible
 
-[!INCLUDE [ansible-28-note.md](../../includes/ansible-28-note.md)]
+[!INCLUDE [ansible-28-note.md](includes/ansible-28-note.md)]
 
 Das [Peering virtueller Netzwerke (VNET-Peering)](/azure/virtual-network/virtual-network-peering-overview) ermöglicht das nahtlose Verbinden von zwei virtuellen Azure-Netzwerken. Nach dem Peering werden die beiden virtuellen Netzwerke für Verbindungszwecke als einzelnes Element angezeigt. 
 
 Datenverkehr wird zwischen virtuellen Computern in demselben virtuellen Netzwerk über private IP-Adressen weitergeleitet. Auf ähnliche Weise wird Datenverkehr zwischen VMs in einem virtuellen Netzwerk mit Peering über die Microsoft-Backboneinfrastruktur weitergeleitet. So können VMs verschiedener virtueller Netzwerke miteinander kommunizieren.
 
-[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+[!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
 > [!div class="checklist"]
 >
@@ -29,8 +29,8 @@ Datenverkehr wird zwischen virtuellen Computern in demselben virtuellen Netzwerk
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 
 ## <a name="create-two-resource-groups"></a>Erstellen von zwei Ressourcengruppen
 

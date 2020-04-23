@@ -8,12 +8,12 @@ author: tomarchermsft
 manager: gwallace
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: 6c346ad30be953550dfd679d60bf2c5ce6f3d8c7
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: 4f577b9841375d63bfc88249da88e554c1464bde
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741128"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743590"
 ---
 # <a name="quickstart-install-ansible-on-linux-virtual-machines-in-azure"></a>Schnellstart: Installieren von Ansible auf virtuellen Linux-Computern in Azure
 
@@ -21,8 +21,8 @@ Ansible ermöglicht die Automatisierung der Bereitstellung und Konfiguration von
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-[!INCLUDE [open-source-devops-prereqs-azure-sub.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [open-source-devops-prereqs-create-sp.md](../../includes/open-source-devops-prereqs-create-service-principal.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-sub.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [open-source-devops-prereqs-create-sp.md](../includes/open-source-devops-prereqs-create-service-principal.md)]
 - **Zugriff auf Linux oder einen virtuellen Linux-Computer:** Falls Sie keinen Linux-Computer besitzen, erstellen Sie einen [virtuellen Linux-Computer](/azure/virtual-network/quick-create-cli).
 
 ## <a name="install-ansible-on-an-azure-linux-virtual-machine"></a>Installieren von Ansible auf einem virtuellen Azure Linux-Computer
@@ -159,7 +159,7 @@ In diesem Abschnitt exportieren Sie die Werte für den Dienstprinzipal, um Ihre 
 
 Erstellen Sie mit Ansible eine Azure-Ressourcengruppe, um zu überprüfen, ob die Konfiguration erfolgreich war.
 
-[!INCLUDE [create-resource-group-with-ansible.md](../../includes/ansible-snippet-create-resource-group.md)]
+[!INCLUDE [create-resource-group-with-ansible.md](includes/ansible-snippet-create-resource-group.md)]
 
 ## <a name="next-steps"></a>Nächste Schritte
 

@@ -4,20 +4,20 @@ description: Es wird beschrieben, wie Sie eine App in Azure App Service hochskal
 keywords: Ansible, Azure, DevOps, Bash, Playbook, Azure App Service, Web-App, skalieren, Java
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: 32dbeafe891c92001b137a5802df0adbbd93552f
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: beb9009fa02742ce39b15da9be60895acfbcd3cc
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741438"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743686"
 ---
 # <a name="tutorial-scale-apps-in-azure-app-service-using-ansible"></a>Tutorial: Skalieren von Apps in Azure App Service mit Ansible
 
-[!INCLUDE [ansible-27-note.md](../../includes/ansible-27-note.md)]
+[!INCLUDE [ansible-27-note.md](includes/ansible-27-note.md)]
 
-[!INCLUDE [open-source-devops-intro-app-service.md](../../includes/open-source-devops-intro-app-service.md)]
+[!INCLUDE [open-source-devops-intro-app-service.md](../includes/open-source-devops-intro-app-service.md)]
 
-[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+[!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
 > [!div class="checklist"]
 >
@@ -26,8 +26,8 @@ ms.locfileid: "80741438"
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 - **Azure App Service-App**: [Konfigurieren Sie eine App in Azure App Service mit Ansible](azure-web-apps-configure.md), falls Sie nicht über eine Azure App Service-App verfügen.
 
 ## <a name="scale-up-an-app"></a>Hochskalieren einer App

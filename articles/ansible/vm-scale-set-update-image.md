@@ -4,22 +4,22 @@ description: Informationen zum Verwenden von Ansible zum Aktualisieren von VM-Sk
 keywords: ansible, azure, devops, bash, playbook, vm, vm-skalierungsgruppen, vmss
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: a80df95b0977a4c93fc91a188ce4b69afda80169
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: ae25012346c7d6fbc65c43fad6b3b228eedc9e7c
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80740958"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743822"
 ---
 # <a name="tutorial-update-the-custom-image-of-azure-virtual-machine-scale-sets-using-ansible"></a>Tutorial: Aktualisieren des benutzerdefinierten Image von Skalierungsgruppen für virtuelle Azure-Computer mit Ansible
 
-[!INCLUDE [ansible-27-note.md](../../includes/ansible-28-note.md)]
+[!INCLUDE [ansible-27-note.md](includes/ansible-28-note.md)]
 
-[!INCLUDE [open-source-devops-intro-vm-scale-set.md](../../includes/open-source-devops-intro-vm-scale-set.md)]
+[!INCLUDE [open-source-devops-intro-vm-scale-set.md](../includes/open-source-devops-intro-vm-scale-set.md)]
 
 Nach der Bereitstellung eines virtuellen Computers konfigurieren Sie ihn mit der für Ihre App erforderlichen Software. Anstatt diese Konfigurationsaufgabe für jeden virtuellen Computer durchzuführen, können Sie ein benutzerdefiniertes Image erstellen. Ein benutzerdefiniertes Image ist eine Momentaufnahme eines vorhandenen virtuellen Computers, welche die gesamte installierte Software enthält. Beim [Konfigurieren einer Skalierungsgruppe](./vm-scale-set-configure.md) geben Sie das Image an, das für die virtuellen Computer dieser Skalierungsgruppe verwendet werden soll. Durch die Verwendung eines benutzerdefinierten Images wird jede VM-Instanz für Ihre App identisch konfiguriert. Bisweilen müssen Sie das benutzerdefinierte Image Ihrer Skalierungsgruppe aktualisieren. Um diese Aufgabe geht es in diesem Tutorial.
 
-[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+[!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
 > [!div class="checklist"]
 >
@@ -30,8 +30,8 @@ Nach der Bereitstellung eines virtuellen Computers konfigurieren Sie ihn mit der
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 
 ## <a name="configure-two-vms"></a>Konfigurieren von zwei virtuellen Computern
 

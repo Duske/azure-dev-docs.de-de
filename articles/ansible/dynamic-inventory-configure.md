@@ -4,18 +4,18 @@ description: Hier erfahren Sie, wie Sie Ihre dynamischen Azure-Bestände mithilf
 keywords: Ansible, Azure, DevOps, Bash, CloudShell, dynamischer Bestand
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: 1cb20a44c8a3a6a733d152282b04116a4684917c
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: 31966012fb5178fe76a6eadfbd9830a5cc17ebe2
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741198"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743389"
 ---
 # <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>Tutorial: Konfigurieren von dynamischen Beständen Ihrer Azure-Ressourcen mit Ansible
 
 Mit Ansible können Bestandsinformationen aus verschiedenen Quellen (einschließlich Cloudquellen wie Azure) in einen *dynamischen Bestand* abgerufen werden. 
 
-[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+[!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
 > [!div class="checklist"]
 >
@@ -26,9 +26,9 @@ Mit Ansible können Bestandsinformationen aus verschiedenen Quellen (einschließ
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [open-source-devops-prereqs-create-service-principal.md](../../includes/open-source-devops-prereqs-create-service-principal.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [open-source-devops-prereqs-create-service-principal.md](../includes/open-source-devops-prereqs-create-service-principal.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 
 ## <a name="create-the-test-vms"></a>Erstellen der virtuellen Testcomputer
 
