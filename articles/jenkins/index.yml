@@ -1,0 +1,109 @@
+### YamlMime:Landing
+title: Dokumentation zu Jenkins in Azure
+summary: Erfahren Sie, wie Sie Continuous Integration und Continuous Delivery in Azure mithilfe von Jenkins automatisieren können.
+metadata:
+  title: Dokumentation zu Jenkins in Azure
+  description: Erfahren Sie, wie Sie Continuous Integration und Continuous Delivery in Azure mithilfe von Jenkins automatisieren können.
+  services: azure
+  ms.service: jenkins
+  ms.topic: landing-page
+  author: TomArcherMsft
+  ms.author: tarcher
+  ms.date: 02/24/2020
+  ms.openlocfilehash: 82e0f99795f46347970b3a73d9c0b78787d05cd6
+  ms.sourcegitcommit: 9ff9b51ab21c93bfd61e480c6ff8e39c9d4bf02e
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 04/27/2020
+  ms.locfileid: "82172346"
+landingContent:
+- title: Informationen zu Jenkins in Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Informationen zu Jenkins in Azure
+      url: overview.md
+  - linkListType: reference
+    links:
+    - text: Jenkins-Plug-Ins für Azure
+      url: plug-ins-for-azure.md
+  - linkListType: architecture
+    links:
+    - text: Jenkins-Architektur
+      url: /azure/architecture/reference-architectures/jenkins/
+- title: Jenkins installieren und konfigurieren können
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Erstellen eines Jenkins-Servers
+      url: configure-on-linux-vm.md
+  - linkListType: download
+    links:
+    - text: Beispielaufträge und -skripts
+      url: https://github.com/azure/jenkins
+- title: Skalieren mithilfe von Jenkins und Azure
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Skalieren mit Azure Container Instances
+      url: azure-container-instances-as-jenkins-build-agent.md
+    - text: Skalierung mit Azure-VM-Agents
+      url: scale-deployments-using-vm-agents.md
+- title: CI/CD in Azure Functions
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Bereitstellen in Azure Functions
+      url: deploy-to-azure-functions.md
+- title: CI/CD in AKS
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Bereitstellung aus GitHub in AKS
+      url: deploy-from-github-to-aks.md
+    - text: Bereitstellen in AKS mit Blau/Grün-Muster
+      url: deploy-to-aks-using-blue-green-deployment-pattern.md
+    - text: Bereitstellen mithilfe des Azure Dev Spaces-Plug-Ins
+      url: azure-dev-spaces-and-aks.md
+- title: CI/CD in App Service
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Erstellen von Azure-Ressourcen in einem Pipelineauftrag
+      url: deploy-to-azure-app-service-using-azure-cli.md
+    - text: Bereitstellen aus GitHub in App Service
+      url: deploy-from-github-to-azure-app-service.md
+  - linkListType: how-to-guide
+    links:
+    - text: Bereitstellen mithilfe des App Service-Plug-Ins
+      url: deploy-to-azure-app-service-using-plugin.md
+- title: CI/CD in Azure DevOps
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Bereitstellen auf einem virtuellen Linux-Computer mit Azure DevOps Services
+      url: deploy-to-linux-vm-using-azure-devops-services.md
+- title: CI/CD in Azure Storage
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Verwenden von Azure Storage mit einer Jenkins-C/I-Lösung
+      url: azure-storage-blobs-as-build-artifact-repository.md
+- title: CI/CD in Linux-VMs
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Erstellen einer Entwicklungsinfrastruktur auf einem virtuellen Linux-Computer
+      url: pipeline-with-github-and-docker.md
+- title: CI/CD in Service Fabric
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Erstellen und Bereitstellen einer Azure Service Fabric-App
+      url: deploy-to-service-fabric-cluster.md
+- title: CI/CD in Azure Spring Cloud
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Bereitstellen in Azure Spring Cloud mit der Azure-Befehlszeilenschnittstelle
+      url: deploy-to-azure-spring-cloud-using-azure-cli.md

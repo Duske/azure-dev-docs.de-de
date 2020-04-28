@@ -3,19 +3,20 @@ title: 'Tutorial: Konfigurieren von kubenet-Netzwerken in Azure Kubernetes Servi
 description: Es wird beschrieben, wie Sie Ansible zum Konfigurieren von kubenet-Netzwerken im AKS-Cluster (Azure Kubernetes Service) konfigurieren.
 keywords: Ansible, Azure, DevOps, Bash, Cloud Shell, Playbook, AKS, Container, Kubernetes
 ms.topic: tutorial
+ms.custom: fasttrack-edit
 ms.date: 10/23/2019
-ms.openlocfilehash: 1f15710de9ab6f2d058b72096f0265541c131d9f
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: 7d1dc7b381c02c84b2da89c5c90d822e86a3cd1b
+ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741688"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82026123"
 ---
 # <a name="tutorial-configure-kubenet-networking-in-azure-kubernetes-service-aks-using-ansible"></a>Tutorial: Konfigurieren von kubenet-Netzwerken in Azure Kubernetes Service (AKS) mit Ansible
 
-[!INCLUDE [ansible-28-note.md](../../includes/ansible-28-note.md)]
+[!INCLUDE [ansible-28-note.md](includes/ansible-28-note.md)]
 
-[!INCLUDE [open-source-devops-intro-aks.md](../../includes/open-source-devops-intro-aks.md)]
+[!INCLUDE [open-source-devops-intro-aks.md](../includes/open-source-devops-intro-aks.md)]
 
 Mit AKS können Sie einen Cluster bereitstellen, indem Sie die folgenden Netzwerkmodelle verwenden:
 
@@ -24,7 +25,7 @@ Mit AKS können Sie einen Cluster bereitstellen, indem Sie die folgenden Netzwer
 
 Weitere Informationen zu Netzwerken für Ihre Anwendungen in AKS finden Sie im Artikel zu den [Netzwerkkonzepten für Anwendungen in AKS](/azure/aks/concepts-network).
 
-[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+[!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
 > [!div class="checklist"]
 >
@@ -33,9 +34,9 @@ Weitere Informationen zu Netzwerken für Ihre Anwendungen in AKS finden Sie im A
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [open-source-devops-prereqs-create-service-principal.md](../../includes/open-source-devops-prereqs-create-service-principal.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [open-source-devops-prereqs-create-service-principal.md](../includes/open-source-devops-prereqs-create-service-principal.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 
 ## <a name="create-a-virtual-network-and-subnet"></a>Erstellen eines virtuellen Netzwerks und des Subnetzes
 
@@ -106,9 +107,9 @@ Hier sind einige wichtige Hinweise aufgeführt, die Sie beim Arbeiten mit dem Be
 - Verwenden Sie das Modul `azure_rm_aks_version`, um nach der unterstützten Version zu suchen.
 - Bei `vnet_subnet_id` handelt es sich um das Subnetz, das im vorherigen Abschnitt erstellt wurde.
 - Mit `network_profile` werden die Eigenschaften für das kubenet-Netzwerk-Plug-In definiert.
-- Mit `service_cidr` werden interne Dienste im AKS-Cluster einer IP-Adresse zugewiesen. Dieser IP-Adressbereich muss ein Adressraum sein, der nicht an einer anderen Stelle in Ihrem Netzwerk verwendet wird. 
+- Mit `service_cidr` werden interne Dienste im AKS-Cluster einer IP-Adresse zugewiesen. Dieser IP-Adressbereich muss ein Adressraum sein, der nicht außerhalb der AKS-Cluster verwendet wird. Jedoch können Sie die gleiche Dienst-CIDR für mehrere AKS-Cluster verwenden. 
 - Die Adresse `dns_service_ip` sollte die „.10“-Adresse Ihres Dienst-IP-Adressbereichs sein.
-- `pod_cidr` sollte ein großer Adressraum sein, der nicht an einer anderen Stelle in Ihrer Netzwerkumgebung verwendet wird. Dieser Adressbereich muss groß genug für die Anzahl von Knoten sein, auf die Sie voraussichtlich hochskalieren möchten. Sie können diesen Adressbereich nicht mehr ändern, nachdem der Cluster bereitgestellt wurde.
+- `pod_cidr` sollte ein großer Adressraum sein, der nicht an einer anderen Stelle in Ihrer Netzwerkumgebung verwendet wird. Dieser Adressbereich muss groß genug für die Anzahl von Knoten sein, auf die Sie voraussichtlich hochskalieren möchten. Sie können diesen Adressbereich nicht mehr ändern, nachdem der Cluster bereitgestellt wurde. Wie auch bei der Dienst-CIDR sollte dieser IP-Bereich nicht außerhalb des AKS-Clusters verwendet werden, er kann jedoch clusterübergreifend ohne Bedenken erneut verwendet werden.
 - Mit dem Pod-IP-Adressbereich wird jedem Knoten im Cluster ein „/24“-Adressraum zugewiesen. Im folgenden Beispiel wird mit `pod_cidr` von 192.168.0.0/16 dem ersten Knoten 192.168.0.0/24, dem zweiten Knoten 192.168.1.0/24 und dem dritten Knoten 192.168.2.0/24 zugewiesen.
 - Beim Skalieren oder Upgraden des Clusters weist Azure weiterhin jedem neuen Knoten einen Pod-IP-Adressbereich zu.
 - Das Playbook lädt `ssh_key` aus `~/.ssh/id_rsa.pub`. Verwenden Sie bei etwaigen Änderungen das einzeilige Format, und beginnen Sie die Zeile mit „ssh-rsa“ (ohne Anführungszeichen).
