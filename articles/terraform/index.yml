@@ -1,0 +1,86 @@
+### YamlMime:Landing
+title: Dokumentation zu Terraform in Azure
+summary: Hier erfahren Sie, wie Sie mithilfe von Terraform zuverlässig virtuelle Computer und andere Infrastrukturkomponenten in Azure bereitstellen.
+metadata:
+  title: 'Dokumentation zu Terraform in Azure: Tutorials, Beispiele, Referenz und Ressourcen'
+  description: Hier erfahren Sie, wie Sie mithilfe von Terraform zuverlässig virtuelle Computer und andere Infrastrukturkomponenten in Azure bereitstellen.
+  ms.service: terraform
+  author: TomArcherMsft
+  ms.author: tarcher
+  ms.topic: landing-page
+  ms.date: 04/26/2020
+  ms.openlocfilehash: 12cf2a2ebe78b6cc41d85f483aae39fb65904a1a
+  ms.sourcegitcommit: 9ff9b51ab21c93bfd61e480c6ff8e39c9d4bf02e
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 04/27/2020
+  ms.locfileid: "82172316"
+landingContent:
+- title: Informationen zu Terraform in Azure
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Informationen zu Terraform in Azure
+      url: overview.md
+  - linkListType: architecture
+    links:
+    - text: Azure-Anbieter für Terraform
+      url: https://aka.ms/terraform
+- title: Installieren und Konfigurieren von Terraform
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Installieren und Konfigurieren von Terraform
+      url: install-configure.md
+    - text: Installieren der Terraform-Erweiterung für Visual Studio Code
+      url: configure-vs-code-extension-for-terraform.md
+    - text: Erstellen einer Terraform-Basisvorlage mithilfe von Yeoman
+      url: create-a-base-template-using-yeoman.md
+    - text: Testen von Terraform-Modulen mit Terratest
+      url: test-modules-using-terratest.md
+- title: Verwalten von AKS
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Erstellen eines Kubernetes-Clusters mit AKS
+      url: create-k8s-cluster-with-tf-and-aks.md
+    - text: Erstellen eines Kubernetes-Clusters mit Application Gateway
+      url: create-k8s-cluster-with-aks-applicationgateway-ingress.md
+- title: Verwalten der Infrastruktur
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Erstellen eines virtuellen Linux-Computers
+      url: create-linux-virtual-machine-with-infrastructure.md
+  - linkListType: tutorial
+    links:
+    - text: Erstellen eines VM-Clusters mit Terraform-Modulen
+      url: create-vm-cluster-module.md
+    - text: Erstellen eines VM-Clusters mit Terraform und HCL
+      url: create-vm-cluster-with-infrastructure.md
+    - text: Bereitstellen einer VM-Skalierungsgruppe mit Infrastruktur
+      url: create-vm-scaleset-network-disks-hcl.md
+    - text: Bereitstellen einer VM-Skalierungsgruppe auf der Grundlage eines benutzerdefinierten Packer-Images
+      url: create-vm-scaleset-network-disks-using-packer-hcl.md
+- title: Verwalten von Netzwerken
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: 1. Erstellen einer Hub-Spoke-Topologie
+      url: hub-spoke-introduction.md
+    - text: 2. Erstellen eines lokalen virtuellen Netzwerks
+      url: hub-spoke-on-prem.md
+    - text: 3. Erstellen eines virtuellen Hub-Netzwerks
+      url: hub-spoke-hub-network.md
+    - text: 4. Erstellen einer virtuellen Hub-Netzwerkappliance
+      url: hub-spoke-hub-nva.md
+    - text: 5. Erstellen eines Spoke-Netzwerks
+      url: hub-spoke-spoke-network.md
+    - text: 6. Überprüfen der Netzwerkkonnektivität für die Topologie
+      url: hub-spoke-validation.md
+- title: Verwalten von Datenbanken
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Bereitstellen einer Azure Cosmos DB-Instanz
+      url: deploy-azure-cosmos-db-to-azure-container-instances.md
