@@ -8,12 +8,12 @@ ms.date: 12/20/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: c6ee9137d94c5cb840d93cdc2c6e2375bbefd1e3
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 9048fe69be5f12b19b547e275fd801733849a87f
+ms.sourcegitcommit: 858b061ed9ac883821a0485054b8076e2e719821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81670946"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82209823"
 ---
 # <a name="deploy-a-hello-world-web-app-to-a-linux-container-in-the-cloud-using-the-azure-toolkit-for-eclipse"></a>Bereitstellen einer Web-App vom Typ „Hallo Welt“ in einem Linux-Container in der Cloud mit dem Azure-Toolkit für Eclipse
 
@@ -33,7 +33,7 @@ In diesem Artikel werden die Schritte zum Erstellen einer einfachen „Hallo Wel
 
 ## <a name="create-a-new-web-app-project"></a>Erstellen eines neuen Web-App-Projekts
 
-1. Starten Sie Eclipse, und melden Sie sich beim Azure-Konto an, indem Sie die Schritte im Artikel [Anleitung zur Anmeldung für das Azure-Toolkit für Eclipse](/azure/developer/java/eclipse/sign-in-instructions) befolgen.
+1. Starten Sie Eclipse, und melden Sie sich beim Azure-Konto an, indem Sie die Schritte im Artikel [Anleitung zur Anmeldung für das Azure-Toolkit für Eclipse](/azure/developer/java/toolkit-for-eclipse/sign-in-instructions) befolgen.
 
 1. Klicken Sie auf das Menü **Datei** und dann auf **Neu** und **Dynamisches Webprojekt**.
    

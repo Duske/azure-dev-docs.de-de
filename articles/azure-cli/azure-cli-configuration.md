@@ -8,12 +8,12 @@ ms.date: 06/11/2018
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: ff5f9f5a5add52bc05009a42aeb00855eb2703fa
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.openlocfilehash: fd37b633100d92a4126910a3fb9e8ad25b11423c
+ms.sourcegitcommit: 858b061ed9ac883821a0485054b8076e2e719821
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82030842"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82209783"
 ---
 # <a name="azure-cli-configuration"></a>Azure CLI-Konfiguration
 
@@ -86,7 +86,7 @@ Wenn Sie einen Standardwert angeben, wird dieses Argument von keinem Befehl mehr
 |---------|-----------|------|------------|
 | __core__ | output | Zeichenfolge | Das Standardausgabeformat. Mögliche Optionen: `json`, `jsonc`, `tsv` oder `table`. |
 | | disable\_confirm\_prompt | boolean | Dient zum Aktivieren/Deaktivieren von Bestätigungsaufforderungen. |
-| | collect\_telemetry | boolean | Erlaubt Microsoft das Sammeln anonymer Daten zur Verwendung der CLI. Informationen zum Datenschutz finden Sie in den [Nutzungsbedingungen für die Azure CLI](https://aka.ms/AzureCliLegal). |
+| | collect\_telemetry | boolean | Erlaubt Microsoft das Sammeln anonymer Daten zur Verwendung der CLI. Informationen zum Datenschutz finden Sie in den [Nutzungsbedingungen für die Azure CLI](https://github.com/Azure/azure-cli/blob/dev/LICENSE). |
 | __logging__ | enable\_log\_file | boolean | Dient zum Aktivieren/Deaktivieren der Protokollierung. |
 | | log\_dir | Zeichenfolge | Das Verzeichnis, in das Protokolle geschrieben werden sollen. Standardmäßig ist dieser Wert auf `${AZURE_CONFIG_DIR}/logs` festgelegt. |
 | __storage__ | connection\_string | Zeichenfolge | Die Standardverbindungszeichenfolge für `az storage`-Befehle. |
