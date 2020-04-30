@@ -5,12 +5,12 @@ keywords: Azure, Java, API, Referenz, Hinweise, Updates, veraltet
 ms.assetid: 1f128cf9-f747-4344-84e1-f9964709deb8
 ms.topic: reference
 ms.date: 3/06/2016
-ms.openlocfilehash: 2475d31deb25bd446c858484b0b2b9cb2b5816a8
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 69c2c29935f9333dd1d31b26b0941e0446ca5504
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81671936"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82105201"
 ---
 # <a name="release-notes"></a>Versionsinformationen 
 
@@ -20,7 +20,6 @@ Version 1.3.0 ist abwärtskompatibel mit vorherigen Versionen zur Verwendung von
 
 Für diese Dienste sind wichtige Änderungen aus Vorschauversionen mit der Anmerkung @Beta versehen.
 
-Wenn Sie Ihren Code zu 1.3.0 migrieren möchten, können Sie Ihren vorhandenen Code anhand [dieser Hinweise](https://github.com/Azure/azure-sdk-for-java/blob/master/notes/prepare-for-1.3.0.md) für die Version 1.3 vorbereiten.
 
 ### <a name="generally-available-in-v13"></a>Allgemein verfügbar in V1.3
 

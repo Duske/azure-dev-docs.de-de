@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie Ihre dynamischen Azure-Bestände mithilf
 keywords: Ansible, Azure, DevOps, Bash, CloudShell, dynamischer Bestand
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: 31966012fb5178fe76a6eadfbd9830a5cc17ebe2
-ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
+ms.openlocfilehash: c777ee18663507b6e8d658a7ba027d99f9645cc9
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81743389"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82104691"
 ---
 # <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>Tutorial: Konfigurieren von dynamischen Beständen Ihrer Azure-Ressourcen mit Ansible
 
@@ -87,7 +87,7 @@ Nachdem Sie Ihre virtuellen Computer definiert (und markiert) haben, können Sie
 
 ### <a name="using-ansible-version--28"></a>Verwendung einer früheren Version als Ansible 2.8
 
-Unter Ansible wird ein Python-Skript mit dem Namen [azure_rm.py](https://github.com/ansible/ansible/blob/devel/contrib/inventory/azure_rm.py) bereitgestellt, mit dem ein dynamischer Bestand Ihrer Azure-Ressourcen generiert wird. Die folgende Anleitung zeigt Schritt für Schritt, wie Sie unter Verwendung des Skripts `azure_rm.py` eine Verbindung mit Ihren beiden virtuellen Azure-Testcomputern herstellen:
+Unter Ansible wird ein Python-Skript mit dem Namen [azure_rm.py](https://github.com/ansible/ansible/blob/stable-2.9/contrib/inventory/azure_rm.py) bereitgestellt, mit dem ein dynamischer Bestand Ihrer Azure-Ressourcen generiert wird. Die folgende Anleitung zeigt Schritt für Schritt, wie Sie unter Verwendung des Skripts `azure_rm.py` eine Verbindung mit Ihren beiden virtuellen Azure-Testcomputern herstellen:
 
 1. Rufen Sie mithilfe des GNU-Befehls `wget` das Skript `azure_rm.py` ab:
 
@@ -124,7 +124,7 @@ Unter Ansible wird ein Python-Skript mit dem Namen [azure_rm.py](https://github.
 
 ### <a name="ansible-version--28"></a>Ansible-Version >= 2.8
 
-Ab Ansible 2.8 wird ein [Azure-Plug-In für dynamische Bestände](https://github.com/ansible/ansible/blob/devel/lib/ansible/plugins/inventory/azure_rm.py) bereitgestellt. In den folgenden Schritten wird die Nutzung des Plug-Ins beschrieben:
+Ab Ansible 2.8 wird ein [Azure-Plug-In für dynamische Bestände](https://github.com/ansible/ansible/blob/stable-2.9/lib/ansible/plugins/inventory/azure_rm.py) bereitgestellt. In den folgenden Schritten wird die Nutzung des Plug-Ins beschrieben:
 
 1. Für das Bestands-Plug-In ist eine Konfigurationsdatei erforderlich. Die Konfigurationsdatei muss auf `azure_rm` enden und als Erweiterung entweder `yml` oder `yaml` aufweisen. Speichern Sie das folgende Playbook für dieses Tutorialbeispiel als `myazure_rm.yml`:
 

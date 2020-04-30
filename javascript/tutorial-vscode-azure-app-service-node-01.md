@@ -3,12 +3,12 @@ title: Bereitstellen von Node.js-Apps in Azure App Service in Visual Studio 
 description: 'Teil 1 des Tutorials: Einführung und Voraussetzungen.'
 ms.topic: conceptual
 ms.date: 03/04/2020
-ms.openlocfilehash: 10170b412190b01663529075f683ac5db27215e1
-ms.sourcegitcommit: a87e7a56a5aba9e13171e663ecb948266084c46a
+ms.openlocfilehash: 07f53cb5ca9c72219b6eec89e9dfe47823143dac
+ms.sourcegitcommit: e6cdb0ce11a8272195a0072c7c91cc9b7e89b0b6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80122968"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82138791"
 ---
 # <a name="deploy-to-azure-app-service-using-visual-studio-code"></a>Bereitstellen in Azure App Service mit Visual Studio Code
 
@@ -24,10 +24,10 @@ Dieses Video enthält eine umfassende exemplarische Vorgehensweise für den Inha
 
 - Ein Azure-Konto mit einem aktiven Abonnement. [Erstellen Sie ein kostenloses Konto.](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-appservice-extension&mktingSource=vscode-tutorial-appservice-extension)
 - [Visual Studio Code](https://code.visualstudio.com/)
-- [Azure App Service-Erweiterung](vscode:extension/ms-azuretools.vscode-azureappservice) für VS Code (installiert aus VS Code)
+- [Azure App Service-Erweiterung](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) für VS Code (installiert aus VS Code)
 - [Node.js und npm](https://nodejs.org/en/download), Node.js-Paket-Manager
 
-> <a class="tutorial-install-extension-btn" href="vscode:extension/ms-azuretools.vscode-azureappservice">Installieren der Azure App Service-Erweiterung</a>
+> <a class="tutorial-install-extension-btn" href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice">Installieren der Azure App Service-Erweiterung</a>
 
 ## <a name="sign-in-to-azure"></a>Anmelden bei Azure
 

@@ -3,12 +3,12 @@ title: Bereitstellen einer statischen Node.js-Website in Azure in Visual Studio
 description: 'Teil 1 des Tutorials: Einführung und Voraussetzungen.'
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 4795d3a80be1ffa7516f64fa5563d4960f58a31b
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.openlocfilehash: c63ff76f3572a7815b385b08b05e223eb681fbbe
+ms.sourcegitcommit: e6cdb0ce11a8272195a0072c7c91cc9b7e89b0b6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82026163"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82138766"
 ---
 # <a name="deploy-a-static-website-to-azure-from-visual-studio-code"></a>Bereitstellen einer statischen Website in Azure in Visual Studio Code
 
@@ -30,7 +30,7 @@ Dieses Video enthält eine umfassende exemplarische Vorgehensweise für den Inha
 - Die [Azure Storage-Erweiterung](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestorage).
 - [Node.js und npm](https://nodejs.org/en/download), Node.js-Paket-Manager (Diese werden nur zum Generieren eines Beispielprojekts verwendet. Sie müssen Node.js nicht installieren, wenn Sie bereits App-Code haben.)
 
-> <a class="tutorial-install-extension-btn" href="vscode:extension/ms-azuretools.vscode-azurestorage">Installieren der Azure Storage-Erweiterung</a>
+> <a class="tutorial-install-extension-btn" href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestorage">Installieren der Azure Storage-Erweiterung</a>
 
 ### <a name="azure-subscription"></a>Azure-Abonnement
 
