@@ -3,12 +3,12 @@ title: Erstellen der Azure App Service-Instanz in Visual Studio Code
 description: 'Teil 2 des Tutorials: Erstellen und lokales Ausführen der Node.js-App'
 ms.topic: conceptual
 ms.date: 03/04/2020
-ms.openlocfilehash: b2935554fb337d5f5db1a71e016638869f9d1dc4
-ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
+ms.openlocfilehash: 86d3801b31f1a0c5fb988940a7c9f550a991f0d2
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78893644"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82105191"
 ---
 # <a name="create-and-run-a-local-nodejs-app"></a>Erstellen und Ausführen einer lokalen Node.js-App
 
@@ -42,7 +42,7 @@ In diesem Schritt erstellen Sie mit dem Express-Anwendungsgenerator eine einfach
     npm start
     ```
 
-1. Testen Sie die App, indem Sie [http://localhost:3000](http://localhost:3000) in einem Browser öffnen. Die Website sollte wie folgt angezeigt werden:
+1. Testen Sie die App, indem Sie `http://localhost:3000` in einem Browser öffnen. Die Website sollte wie folgt angezeigt werden:
 
     ![Ausführen der Express-Anwendung](media/deploy-azure/express.png)
 

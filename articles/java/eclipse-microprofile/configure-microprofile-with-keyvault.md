@@ -10,12 +10,12 @@ ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: c147bcafec87342b799f884ddc59c7c902a80a2e
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: e68df202d49b7215eb4bdbff7a42e0900499484c
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81670266"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82105181"
 ---
 # <a name="configure-microprofile-with-azure-key-vault"></a>Konfigurieren von MicroProfile mit Azure Key Vault
 
@@ -125,7 +125,7 @@ Dieses Beispiel basiert auf einer auf GitHub verfügbaren Beispielanwendung, der
 
 1. Führen Sie den Server mit `mvn clean package payara-micro:start` aus.
 
-1. Greifen Sie in Ihrem Webbrowser auf [http://localhost:8080/keyvault-configsource/api/config](http://localhost:8080/keyvault-configsource/api/config) zu. Daraufhin sollte eine einfache Antwort angezeigt werden, die deutlich macht, dass Werte aus Azure Key Vault gelesen werden.
+1. Greifen Sie in Ihrem Webbrowser auf `http://localhost:8080/keyvault-configsource/api/config` zu. Daraufhin sollte eine einfache Antwort angezeigt werden, die deutlich macht, dass Werte aus Azure Key Vault gelesen werden.
 
 ## <a name="summary"></a>Zusammenfassung
 

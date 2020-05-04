@@ -4,12 +4,12 @@ description: 'Teil 2 des Tutorials: Erstellen der Beispiel-App'
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.openlocfilehash: 69c0e7d6f43829546e5f23ec63a4ac35b71d7e78
-ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
+ms.openlocfilehash: 81593d61126b34f002513deb02d9bf634a7e9dd6
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77422523"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82105131"
 ---
 # <a name="create-the-app"></a>Erstellen der App
 
@@ -42,7 +42,7 @@ In diesem Schritt verwenden Sie die Befehlszeilenschnittstelle (Command Line Int
     npm start
     ```
 
-1. Öffnen Sie in einem Browser [http://localhost:4200](http://localhost:4200), um zu überprüfen, ob die App ausgeführt wird:
+1. Öffnen Sie in einem Browser `http://localhost:4200`, um zu überprüfen, ob die App ausgeführt wird:
 
     ![Ausgeführte Angular-Beispiel-App](media/static-website/local-app-angular.png)
 
@@ -71,7 +71,7 @@ In diesem Schritt verwenden Sie die Befehlszeilenschnittstelle (Command Line Int
     npm start
     ```
 
-1. Öffnen Sie in einem Browser [http://localhost:3000](http://localhost:3000), um zu überprüfen, ob die App ausgeführt wird:
+1. Öffnen Sie in einem Browser `http://localhost:3000`, um zu überprüfen, ob die App ausgeführt wird:
 
     ![Ausgeführte React-Beispiel-App](media/static-website/local-app-react.png)
 
@@ -102,7 +102,7 @@ Werden Sie von der CLI zur Eingabe von Konfigurationswerten aufgefordert, drück
      npm run serve
      ```
 
-1. Öffnen Sie in einem Browser [http://localhost:8080](http://localhost:8080), um zu überprüfen, ob die App ausgeführt wird:
+1. Öffnen Sie in einem Browser `http://localhost:8080`, um zu überprüfen, ob die App ausgeführt wird:
 
     ![Ausgeführte Vue-Beispiel-App](media/static-website/local-app-vue.png)
 
@@ -137,7 +137,7 @@ Werden Sie von der CLI zur Eingabe von Konfigurationswerten aufgefordert, drück
      npm run dev
      ```
 
-1. Öffnen Sie in einem Browser [http://localhost:5000](http://localhost:5000), um zu überprüfen, ob die App ausgeführt wird:
+1. Öffnen Sie in einem Browser `http://localhost:5000`, um zu überprüfen, ob die App ausgeführt wird:
 
     ![Ausgeführte Vue-Beispiel-App](media/static-website/local-app-svelte.png)
 

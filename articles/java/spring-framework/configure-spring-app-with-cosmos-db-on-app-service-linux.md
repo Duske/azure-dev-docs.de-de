@@ -6,12 +6,12 @@ ms.reviewer: joshuapa
 ms.date: 4/24/2019
 ms.service: cosmos-db
 ms.topic: article
-ms.openlocfilehash: 4c1f415b5d664986e00f6cf8b12d63b214b55088
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 5e5dfdf4aab983678195827d33451fbe626100c0
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81673806"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82104921"
 ---
 # <a name="how-to-use-spring-and-cosmos-db-with-app-service-on-linux"></a>Verwenden von Spring und Azure Cosmos DB mit App Service für Linux
 
@@ -136,7 +136,7 @@ set REGION=<put-your-REGION-here>
     mvn package spring-boot:run
     ```
 
-4. Nachdem die Anwendung gestartet wurde, können Sie die Bereitstellung überprüfen, indem Sie unter [http://localhost:8080/](http://localhost:8080/) auf die Spring-Todo-App zugreifen.
+4. Nachdem die Anwendung gestartet wurde, können Sie die Bereitstellung überprüfen, indem Sie unter `http://localhost:8080/` auf die Spring-Todo-App zugreifen.
 
  ![Lokal ausgeführte Spring-App][SCDB01]
 

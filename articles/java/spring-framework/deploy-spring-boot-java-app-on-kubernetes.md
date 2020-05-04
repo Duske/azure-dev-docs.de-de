@@ -9,12 +9,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: mvc
-ms.openlocfilehash: f88ad0bf2103db2bb63a4e230ea730493f4865c7
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 783197c2a98ef76d1a30126144cb44ebdf474fdc
+ms.sourcegitcommit: 9ff9b51ab21c93bfd61e480c6ff8e39c9d4bf02e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81668786"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82166692"
 ---
 # <a name="deploy-spring-boot-application-to-the-azure-kubernetes-service"></a>Bereitstellen von Spring Boot-Anwendungen in Azure Kubernetes Service
 
@@ -118,7 +118,7 @@ Im Folgenden werden die Schritte zum Erstellen einer Spring Boot-Webanwendung un
    ```xml
    <properties>
       <docker.image.prefix>wingtiptoysregistry.azurecr.io</docker.image.prefix>
-      <jib-maven-plugin.version>2.1.0</jib-maven-plugin.version>
+      <jib-maven-plugin.version>2.2.0</jib-maven-plugin.version>
       <java.version>1.8</java.version>
    </properties>
    ```
@@ -143,7 +143,7 @@ Im Folgenden werden die Schritte zum Erstellen einer Spring Boot-Webanwendung un
 1. Navigieren Sie zum Verzeichnis des abgeschlossenen Projekts für Ihre Spring Boot-Anwendung, und führen Sie den folgenden Befehl aus, um das Image zu erstellen und per Push in die Registrierung zu übertragen:
 
    ```cmd
-   mvn compile jib:build
+   az acr login && mvn compile jib:build
    ```
 
 > [!NOTE]
@@ -153,38 +153,13 @@ Im Folgenden werden die Schritte zum Erstellen einer Spring Boot-Webanwendung un
 
 ## <a name="create-a-kubernetes-cluster-on-aks-using-the-azure-cli"></a>Erstellen eines Kubernetes-Clusters in AKS über die Azure-Befehlszeilenschnittstelle
 
-1. Erstellen Sie einen Kubernetes-Cluster in Azure Kubernetes Service. Mit dem folgenden Befehl wird ein *Kubernetes*-Cluster in der Ressourcengruppe *wingtiptoys-kubernetes* mit *wingtiptoys-akscluster* als Clustername und *wingtiptoys-kubernetes* als DNS-Präfix erstellt:
+1. Erstellen Sie einen Kubernetes-Cluster in Azure Kubernetes Service. Mit dem folgenden Befehl wird ein *Kubernetes*-Cluster in der Ressourcengruppe *wingtiptoys-kubernetes* mit *wingtiptoys-akscluster* als Clustername, `wingtiptoysregistry` als angefügter Azure Container Registry-Instanz (ACR) und *wingtiptoys-kubernetes* als DNS-Präfix erstellt:
    ```azurecli
    az aks create --resource-group=wingtiptoys-kubernetes --name=wingtiptoys-akscluster \ 
+    --attach-acr wingtiptoysregistry \
     --dns-name-prefix=wingtiptoys-kubernetes --generate-ssh-keys
    ```
    Die Ausführung des Befehls kann eine Weile dauern.
-
-1. Wenn Sie Azure Container Registry (ACR) zusammen mit Azure Kubernetes Service (AKS) verwenden, müssen Sie Azure Kubernetes Service Pullzugriff auf Azure Container Registry gewähren. Azure generiert beim Erstellen einer Azure Kubernetes Service-Instanz einen Standarddienstprinzipal. Führen Sie die folgenden Skripts in Bash oder Powershell aus, um AKS Zugriff auf ACR zu gewähren. Ausführlichere Informationen finden Sie unter [Authentifizieren per Azure Container Registry über Azure Kubernetes Service].
-
-```bash
-   # Get the id of the service principal configured for AKS
-   CLIENT_ID=$(az.cmd aks show -g wingtiptoys-kubernetes -n wingtiptoys-akscluster --query "servicePrincipalProfile.clientId" --output tsv)
-   
-   # Get the ACR registry resource id
-   ACR_ID=$(az.cmd acr show -g wingtiptoys-kubernetes -n wingtiptoysregistry --query "id" --output tsv)
-   
-   # Create role assignment
-   az.cmd role assignment create --assignee $CLIENT_ID --role acrpull --scope $ACR_ID
-```
-
-  – oder –
-
-```PowerShell
-   # Get the id of the service principal configured for AKS
-   $CLIENT_ID = az aks show -g wingtiptoys-kubernetes -n wingtiptoys-akscluster --query "servicePrincipalProfile.clientId" --output tsv
-   
-   # Get the ACR registry resource id
-   $ACR_ID = az acr show -g wingtiptoys-kubernetes -n wingtiptoysregistry --query "id" --output tsv
-   
-   # Create role assignment
-   az role assignment create --assignee $CLIENT_ID --role acrpull --scope $ACR_ID
-```
 
 1. Installieren Sie `kubectl` über die Azure-Befehlszeilenschnittstelle. Linux-Benutzer müssen diesem Befehl möglicherweise das Präfix `sudo` voranstellen, da er die Kubernetes-Befehlszeilenschnittstelle in `/usr/local/bin` bereitstellt.
    ```azurecli
@@ -246,6 +221,18 @@ In diesem Tutorial wird die App mit `kubectl` bereitgestellt, dann können Sie d
    ```
    az aks browse --resource-group=wingtiptoys-kubernetes --name=wingtiptoys-akscluster
    ```
+   
+
+> [!IMPORTANT]
+> Wenn Ihr AKS-Cluster RBAC verwendet, muss ein *ClusterRoleBinding*-Element erstellt werden, bevor Sie ordnungsgemäß auf das Dashboard zugreifen können. Das Kubernetes-Dashboard wird standardmäßig mit minimalem Lesezugriff bereitgestellt und zeigt RBAC-Zugriffsfehler an. Das Kubernetes-Dashboard unterstützt derzeit keine vom Benutzer bereitgestellten Anmeldeinformationen für die Ermittlung der Zugriffsebene, sondern verwendet die dem Dienstkonto zugewiesenen Rollen. Ein Clusteradministrator kann zusätzlichen Zugriff auf das Dienstkonto *kubernetes-dashboard* gewähren, dies kann jedoch ein Vektor für Berechtigungsausweitung sein. Sie können auch Azure Active Directory-Authentifizierung integrieren, um differenziertere Zugriffsmöglichkeiten zu bieten.
+> 
+> Verwenden Sie den Befehl [kubectl create clusterrolebinding], um eine Bindung zu erstellen. Im folgenden Beispiel wird das Erstellen einer Bindung gezeigt. Diese Beispielbindung wendet jedoch keine zusätzlichen Authentifizierungskomponenten an und kann daher zu unsicherer Verwendung führen. Das Kubernetes-Dashboard steht allen Personen zur Verfügung, die Zugriff auf die URL haben. Machen Sie das Kubernetes-Dashboard nicht öffentlich verfügbar.
+>
+> ```console
+> kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard
+> ```
+> 
+> Weitere Informationen zur Verwendung der unterschiedlichen Authentifizierungsmethoden finden Sie im Wiki des Kubernetes-Dashboards unter [Dashboard-Authentifizierung].
 
 1. Nachdem die Kubernetes-Konfigurationswebsite im Browser geöffnet wurde, klicken Sie auf den Link zum **Bereitstellen einer Container-App**:
 
@@ -320,7 +307,8 @@ Weitere Beispiele zur Vorgehensweise bei der Verwendung benutzerdefinierter Dock
 Weitere Informationen zum iterativen Ausführen und Debuggen von Containern mit Azure Dev Spaces direkt in Azure Kubernetes Service (AKS) finden Sie unter [Erste Schritte in Azure Dev Spaces mit Java].
 
 <!-- URL List -->
-
+[kubectl-create-clusterrolebinding]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-clusterrolebinding-em-
+[Dashboard-Authentifizierung]: https://github.com/kubernetes/dashboard/wiki/Access-control
 [Azure-Befehlszeilenschnittstelle (CLI)]: /cli/azure/overview
 [Azure Kubernetes Service (AKS)]: https://azure.microsoft.com/services/kubernetes-service/
 [Azure für Java-Entwickler]: /azure/developer/java/
@@ -346,7 +334,7 @@ Weitere Informationen zum iterativen Ausführen und Debuggen von Containern mit 
 <!-- http://www.oracle.com/technetwork/java/javase/downloads/ -->
 
 <!-- Newly added -->
-[Authentifizieren per Azure Container Registry über Azure Kubernetes Service]: /azure/container-registry/container-registry-auth-aks/
+[Authenticate with Azure Container Registry from Azure Kubernetes Service]: /azure/container-registry/container-registry-auth-aks/
 [Visual Studio Code-Tutorials für Java]: https://code.visualstudio.com/docs/java/java-kubernetes/
 [Erste Schritte in Azure Dev Spaces mit Java]: /azure/dev-spaces/get-started-java
 <!-- IMG List -->

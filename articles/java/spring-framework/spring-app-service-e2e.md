@@ -6,12 +6,12 @@ ms.author: karler
 ms.date: 11/12/2019
 ms.service: app-service
 ms.topic: article
-ms.openlocfilehash: 4424cdb3f8ee01a10f892d38b84a42c820e95266
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.openlocfilehash: 229def19340c722949308a021c2e021615ce65ec
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82026103"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82105120"
 ---
 # <a name="deploy-a-spring-app-to-app-service-with-mysql"></a>Bereitstellen einer Spring-App in App Service mit MySQL
 
@@ -144,13 +144,13 @@ ${TOMCAT_HOME}/bin/catalina.sh run
 ```
 ---
 
-Sie können nun in Ihrem Browser zu [http://localhost:8080](http://localhost:8080) navigieren, um die ausgeführte App zu sehen und ein Gefühl dafür zu bekommen, wie sie funktioniert. Wenn Sie fertig sind, wählen Sie an der Bash-Eingabeaufforderung STRG + C, um Tomcat anzuhalten.
+Sie können nun in Ihrem Browser zu `http://localhost:8080` navigieren, um die ausgeführte App in Aktion zu sehen und ein Gefühl dafür zu bekommen, wie sie funktioniert. Wenn Sie fertig sind, wählen Sie an der Bash-Eingabeaufforderung STRG + C, um Tomcat anzuhalten.
 
 ## <a name="deploy-to-azure-app-service"></a>Bereitstellung in Azure App Service
 
 Nachdem Sie nun gesehen haben, wie sie lokal ausgeführt wird, stellen wir die App in Azure bereit.
 
-Legen Sie zunächst die folgenden Umgebungsvariablen fest. Verwenden Sie für `REGION` `Central US` oder andere Regionen, die sie [hier](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=app-service) finden.
+Legen Sie zunächst die folgenden Umgebungsvariablen fest. Verwenden Sie für `REGION` `West US 2` oder andere Regionen, die sie [hier](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=app-service) finden.
 
 # <a name="bash"></a>[Bash](#tab/bash)
 
@@ -468,7 +468,7 @@ mvn cargo:deploy
 ```
 ---
 
-Sie können die App jetzt lokal unter [http://localhost:8080](http://localhost:8080) anzeigen. Die App sieht aus und verhält sich wie zuvor, verwendet aber Azure Database for MySQL anstelle von HSQLDB. Wenn Sie fertig sind, wählen Sie an der Bash-Eingabeaufforderung STRG + C, um Tomcat anzuhalten.
+Sie können die App jetzt lokal unter `http://localhost:8080` anzeigen. Die App sieht aus und verhält sich wie zuvor, verwendet aber Azure Database for MySQL anstelle von HSQLDB. Wenn Sie fertig sind, wählen Sie an der Bash-Eingabeaufforderung STRG + C, um Tomcat anzuhalten.
 
 Stellen Sie die App schließlich in App Service bereit.
 

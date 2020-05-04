@@ -11,12 +11,12 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: d24300d02df1fdd079c7ba3c5f2ef3370db3c5e8
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 6ec30d83352984181caff4984769ff62d07e4164
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81670576"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82105111"
 ---
 # <a name="deploy-a-java-based-microprofile-service-to-azure-web-app-for-containers"></a>Bereitstellen eines Java-basierten MicroProfile-Diensts in Azure-Web-App für Container
 
@@ -127,7 +127,7 @@ Damit kennen Sie den gesamten Code, der zum Erstellen eines Microservice mit Mic
 
 1. Führen Sie `docker run -it --rm -p 8080:8080 <docker.registry>/<docker.name>:latest` aus. (Beispiel: `docker run -it --rm -p 8080:8080 jogilescr.azurecr.io/samples/docker-helloworld:latest`, wenn `docker.registry` auf `jogilescr.azurecr.io` und `docker.name` auf `samples/docker-helloworld` festgelegt ist.)
 
-1. Greifen Sie in Ihrem Webbrowser auf [http://localhost:8080/microprofile/api/helloworld](http://localhost:8080/microprofile/api/helloworld) und [http://localhost:8080/health](http://localhost:8080/health) zu. Wenn Sie die erwartete Antwort „Hello, world!“ (und integritätsbezogene Informationen für den Endpunkt [/health](http://localhost:8080/health)) sehen, haben Sie die MicroProfile-Anwendung erfolgreich auf Ihrem lokalen Computer bereitgestellt.
+1. Versuchen Sie, in Ihrem Webbrowser zu `http://localhost:8080/microprofile/api/helloworld` und `http://localhost:8080/health` zu navigieren. Wenn Sie die erwartete Antwort „Hello, world!“ (und integritätsbezogene Informationen für den Endpunkt `/health`) sehen, haben Sie die MicroProfile-Anwendung erfolgreich auf Ihrem lokalen Computer bereitgestellt.
 
 ## <a name="pushing-to-the-azure-container-registry"></a>Ausführen von Pushvorgängen an die Azure Container Registry-Instanz
 

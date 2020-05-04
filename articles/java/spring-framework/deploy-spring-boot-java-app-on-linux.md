@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: 5e6204d773ee8e140832361ad587e850e36b75f6
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 570b33614f32ef80e11ddf9d2c6774513248416e
+ms.sourcegitcommit: 9ff9b51ab21c93bfd61e480c6ff8e39c9d4bf02e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81668816"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82166676"
 ---
 # <a name="deploy-a-spring-boot-application-to-linux-on-azure-app-service"></a>Bereitstellen einer Spring Boot-Anwendung für Linux in Azure App Service
 
@@ -97,15 +97,11 @@ Die folgende Anleitung führt Sie durch die Verwendung des Azure-Portals zur Ers
 
    ![Erstellen einer neuen Azure-Containerregistrierung][AR01]
 
-1. Wenn die Seite **Containerregistrierung erstellen** angezeigt wird, geben Sie Werte für **Registrierungsname**, **Abonnement**, **Ressourcengruppe** und **Standort** ein. Wählen Sie **Aktivieren** für **Administratorbenutzer**. Klicken Sie dann auf **Erstellen**.
+1. Wenn die Seite **Containerregistrierung erstellen** angezeigt wird, geben Sie Werte für **Registrierungsname**, **Abonnement**, **Ressourcengruppe** und **Standort** ein. Klicken Sie dann auf **Erstellen**.
 
    ![Konfigurieren der Einstellungen für die Azure-Containerregistrierung][AR03]
 
-1. Navigieren Sie nach der Erstellung der Containerregistrierung im Azure-Portal zu Ihrer Containerregistrierung, und klicken Sie auf **Zugriffsschlüssel**. Notieren Sie sich den Benutzernamen und das Kennwort für die nächsten Schritte.
-
-   ![Zugriffsschlüssel für die Azure-Containerregistrierung][AR04]
-
-## <a name="configure-maven-to-use-your-azure-container-registry-access-keys"></a>Konfigurieren von Maven für die Verwendung Ihrer Zugriffsschlüssel für die Azure-Containerregistrierung
+## <a name="configure-maven-to-build-image-to-your-azure-container-registry"></a>Konfigurieren von Maven für die Erstellung eines Images für Ihre Azure Container Registry-Instanz
 
 1. Navigieren Sie zu dem abgeschlossenen Projektverzeichnis für Ihre Spring Boot-Anwendung (z. B. „*C:\SpringBoot\gs-spring-boot-docker\complete*“ oder „ */users/robert/SpringBoot/gs-spring-boot-docker/complete*“), und öffnen Sie die Datei *pom.xml* mit einem Texteditor.
 
@@ -113,37 +109,29 @@ Die folgende Anleitung führt Sie durch die Verwendung des Azure-Portals zur Ers
 
    ```xml
    <properties>
-      <jib-maven-plugin.version>1.7.0</jib-maven-plugin.version>
+      <jib-maven-plugin.version>2.2.0</jib-maven-plugin.version>
       <docker.image.prefix>wingtiptoysregistry.azurecr.io</docker.image.prefix>
       <java.version>1.8</java.version>
-      <username>wingtiptoysregistry</username>
-      <password>{put your Azure Container Registry access key here}</password>
    </properties>
    ```
 
-1. Fügen Sie [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) der Sammlung `<plugins>` in der Datei *pom.xml* hinzu.  In diesem Beispiel wird Version 1.8.0 verwendet.
+1. Fügen Sie [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) der Sammlung `<plugins>` in der Datei *pom.xml* hinzu.  In diesem Beispiel wird Version 2.2.0 verwendet.
 
    Geben Sie das Basisimage (in diesem Fall `mcr.microsoft.com/java/jre:8-zulu-alpine`) unter `<from>/<image>` an. Geben Sie den Namen des endgültigen Images, das auf der Grundlage des Basisimages erstellt werden soll, unter `<to>/<image>` an.  
 
    Das `{docker.image.prefix}`-Element für die Authentifizierung ist der **Anmeldeserver** auf der zuvor gezeigten Registrierungsseite. `{project.artifactId}` ist der Name und die Versionsnummer der JAR-Datei aus dem ersten Maven-Build des Projekts.
 
-   Geben Sie den Benutzernamen und das Kennwort aus dem Registrierungsbereich im Knoten `<to>/<auth>` an. Beispiel:
-
    ```xml
    <plugin>
      <artifactId>jib-maven-plugin</artifactId>
      <groupId>com.google.cloud.tools</groupId>
-     <version>1.8.0</version>
+     <version>${jib-maven-plugin.version}</version>
      <configuration>
         <from>
             <image>mcr.microsoft.com/java/jre:8-zulu-alpine</image>
         </from>
         <to>
             <image>${docker.image.prefix}/${project.artifactId}</image>
-            <auth>
-               <username>${username}</username>
-               <password>${password}</password>
-            </auth>
         </to>
      </configuration>
    </plugin>
@@ -152,12 +140,12 @@ Die folgende Anleitung führt Sie durch die Verwendung des Azure-Portals zur Ers
 1. Navigieren Sie zu dem abgeschlossenen Projektverzeichnis für Ihre Spring Boot-Anwendung, und führen Sie den folgenden Befehl aus, um die Anwendung erneut zu erstellen und den Container in die Azure-Containerregistrierung zu übertragen:
 
    ```bash
-   mvn compile jib:build
+   az acr login -n wingtiptoysregistry && mvn compile jib:build
    ```
 
 > [!NOTE]
->
-> Wenn Sie Jib zum Pushen Ihres Images an Azure Container Registry verwenden, berücksichtigt das Image *Dockerfile* nicht. Ausführliche Informationen finden Sie in [diesem Dokument](https://cloudplatform.googleblog.com/2018/07/introducing-jib-build-java-docker-images-better.html).
+> 1. Mit dem Befehl `az acr login ...` wird versucht, die Anmeldung bei Azure Container Registry durchzuführen. Andernfalls müssen Sie `<username>` und `<password>` für „jib-maven-plugin“ angeben. Weitere Informationen finden Sie unter [Authentifizierungsmethoden](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin#authentication-methods) in Jib.
+> 2. Wenn Sie Jib zum Pushen Ihres Images an Azure Container Registry verwenden, berücksichtigt das Image *Dockerfile* nicht. Ausführliche Informationen finden Sie in [diesem Dokument](https://cloudplatform.googleblog.com/2018/07/introducing-jib-build-java-docker-images-better.html).
 >
 
 ## <a name="create-a-web-app-on-linux-on-azure-app-service-using-your-container-image"></a>Erstellen einer Web-App unter Linux in Azure App Service über Ihr Containerimage
@@ -300,7 +288,6 @@ Weitere Beispiele zur Vorgehensweise bei der Verwendung benutzerdefinierter Dock
 [SB02]: media/deploy-spring-boot-java-app-on-linux/SB02.png
 [AR01]: media/deploy-spring-boot-java-app-on-linux/AR01.png
 [AR03]: media/deploy-spring-boot-java-app-on-linux/AR03.png
-[AR04]: media/deploy-spring-boot-java-app-on-linux/AR04.png
 [LX01]: media/deploy-spring-boot-java-app-on-linux/LX01.png
 [LX02]: media/deploy-spring-boot-java-app-on-linux/LX02.png
 [LX02-A]: media/deploy-spring-boot-java-app-on-linux/LX02-A.png

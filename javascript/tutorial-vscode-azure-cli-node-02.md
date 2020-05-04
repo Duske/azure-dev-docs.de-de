@@ -3,12 +3,12 @@ title: Erstellen einer Node.js-App zur Bereitstellung in Azure mit der Azure-Bef
 description: 'Teil 2 des Tutorials: Erstellen des App-Codes.'
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: dba089c58cf6413263348b7bdeb975852c2e6a2f
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 160b543abee59bdd7504aa356a3b11eb7bde3da8
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467179"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82105161"
 ---
 # <a name="create-the-app-code-using-express"></a>Erstellen des App-Codes mit Express
 
@@ -35,7 +35,7 @@ In diesem Schritt erstellen Sie mithilfe des [Express-Generators](https://expres
     npm start
     ```
 
-1. Öffnen Sie in einem Browser [http://localhost:3000](http://localhost:3000), um die ausgeführte App anzuzeigen:
+1. Öffnen Sie in einem Browser `http://localhost:3000`, um die ausgeführte App anzuzeigen:
 
     ![Lokales Ausführen der Express-App](media/azure-cli/local-app.png)
 

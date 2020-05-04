@@ -4,12 +4,12 @@ ms.service: app-service
 ms.topic: include
 ms.date: 03/31/2020
 ms.author: buhollan
-ms.openlocfilehash: 6cb841a9cf9563c3b7b3db86d907eac757c5d31d
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.openlocfilehash: c95177d6b4cb101b764acd8f8dad54f937a495eb
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82072665"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82109844"
 ---
 1. Navigieren Sie in einer Terminaleingabeaufforderung zu einem Speicherort, an dem Sie den App-Ordner erstellen möchten.
 
@@ -37,7 +37,7 @@ ms.locfileid: "82072665"
     npm start
     ```
 
-1. Testen Sie die App, indem Sie einem Browser öffnen und zu [http://localhost:3000](http://localhost:3000) navigieren. Die Website sollte wie hier dargestellt aussehen:
+1. Testen Sie die App, indem Sie einen Browser öffnen und zu `http://localhost:3000` navigieren. Die Website sollte wie hier dargestellt aussehen:
 
     ![Ausführen der Express-Anwendung](../media/deploy-azure/express.png)
 

@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 5c0dddfc8f6ef4b631c3ee999a3f8742921c1b9a
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 2df574104376ec1900c7dc5cbd4f0a49ef1f4732
+ms.sourcegitcommit: e6cdb0ce11a8272195a0072c7c91cc9b7e89b0b6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81669856"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82138736"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a>Verwenden von Spring Boot Starter für Azure Key Vault
 
@@ -122,32 +122,16 @@ Mit dem folgenden Verfahren wird der Schlüsseltresor erstellt und initialisiert
    }
    ```
 
-2. Erstellen Sie einen Azure-Dienstprinzipal auf der Grundlage Ihrer Anwendungsregistrierung. Beispiel:
-   ```shell
-   az ad sp create-for-rbac --name "vgeduser"
-   ```
-   Hierbei gilt:
-
-   | Parameter | BESCHREIBUNG |
-   |---|---|
-   | `name` | Gibt den Namen für den Azure-Dienstprinzipal an. |
-
-   Die Azure-Befehlszeilenschnittstelle gibt eine JSON-Statusmeldung mit der App-ID (*appId*) und dem Kennwort (*password*) zurück. Diese Werte werden später als Client-ID und Clientkennwort verwendet. Beispiel:
-
-   ```json
-   {
-     "appId": "iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii",
-     "displayName": "vgeduser",
-     "name": "http://vgeduser",
-     "password": "pppppppp-pppp-pppp-pppp-pppppppppppp",
-     "tenant": "tttttttt-tttt-tttt-tttt-tttttttttttt"
-   }
-   ```
-
-3. Erstellen Sie in der Ressourcengruppe einen neuen Schlüsseltresor. Beispiel:
+2. Erstellen Sie in der Ressourcengruppe einen neuen Schlüsseltresor. Beispiel:
 
    ```azurecli
-   az keyvault create --name vgedkeyvault --resource-group vged-rg2 --location westus --enabled-for-deployment true --enabled-for-disk-encryption true --enabled-for-template-deployment true --sku standard --query properties.vaultUri
+   az keyvault create --resource-group vged-rg2 \
+       --name vgedkeyvault \
+       --enabled-for-deployment true \
+       --enabled-for-disk-encryption true \
+       --enabled-for-template-deployment true \
+       --sku standard --query properties.vaultUri \
+       --location westus
    ```
 
    Hierbei gilt:
@@ -155,56 +139,25 @@ Mit dem folgenden Verfahren wird der Schlüsseltresor erstellt und initialisiert
    | Parameter | BESCHREIBUNG |
    |---|---|
    | `name` | Gibt einen eindeutigen Namen für Ihren Schlüsseltresor an. |
-   | `location` | Gibt die [Azure-Region](https://azure.microsoft.com/regions/) an, in der Ihre Ressourcengruppe gehostet wird. |
    | `enabled-for-deployment` | Gibt die [Bereitstellungsoption für den Schlüsseltresor](/cli/azure/keyvault) an. |
    | `enabled-for-disk-encryption` | Gibt die [Verschlüsselungsoption für den Schlüsseltresor](/cli/azure/keyvault) an. |
    | `enabled-for-template-deployment` | Gibt die [Verschlüsselungsoption für den Schlüsseltresor](/cli/azure/keyvault) an. |
    | `sku` | Gibt die [SKU-Option für den Schlüsseltresor](/cli/azure/keyvault) an. |
    | `query` | Gibt einen Wert an, der aus der Antwort abgerufen werden soll. Hierbei handelt es sich um den Schlüsseltresor-URI, den Sie im Rahmen dieses Tutorials benötigen. |
+   | `location` | Gibt die [Azure-Region](https://azure.microsoft.com/regions/) an, in der Ihre Ressourcengruppe gehostet wird. |
 
    Die Azure-Befehlszeilenschnittstelle zeigt den URI für den Schlüsseltresor an. Dieser wird später verwendet. Beispiel:  
 
-   ```azurecli
+   ```output
    "https://vgedkeyvault.vault.azure.net"
-
    ```
 
-4. Legen Sie die Zugriffsrichtlinie für den zuvor erstellten Azure-Dienstprinzipal fest. Beispiel:
+3. Speichern Sie ein Geheimnis in Ihrem neuen Schlüsseltresor. Beispiel:
 
    ```azurecli
-   az keyvault set-policy --name vgedkeyvault --secret-permission set get list delete --spn "iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii"
-   ```
-
-   Hierbei gilt:
-
-   | Parameter | BESCHREIBUNG |
-   |---|---|
-   | `name` | Gibt den Schlüsseltresornamen von vorhin an. |
-   | `secret-permission` | Gibt die [Sicherheitsrichtlinien](/cli/azure/keyvault) für Ihren Schlüsseltresor an. |
-   | `spn` | Gibt die GUID für Ihre Anwendungsregistrierung von vorhin an. |
-
-   Die Azure-Befehlszeilenschnittstelle zeigt die Ergebnisse der Sicherheitsrichtlinienerstellung an. Beispiel:  
-
-   ```json
-   {
-     "id": "/subscriptions/ssssssss-ssss-ssss-ssss-ssssssssssss/...",
-     "location": "westus",
-     "name": "vgedkeyvault",
-     "properties": {
-       ...
-       ... (A long list of values will be displayed here.)
-       ...
-     },
-     "resourceGroup": "vged-rg2",
-     "tags": {},
-     "type": "Microsoft.KeyVault/vaults"
-   }
-   ```
-
-5. Speichern Sie ein Geheimnis in Ihrem neuen Schlüsseltresor. Beispiel:
-
-   ```azurecli
-   az keyvault secret set --vault-name "vgedkeyvault" --name "connectionString" --value "jdbc:sqlserver://SERVER.database.windows.net:1433;database=DATABASE;"
+   az keyvault secret set --vault-name "vgedkeyvault" \
+       --name "connectionString" \
+       --value "jdbc:sqlserver://SERVER.database.windows.net:1433;database=DATABASE;"
    ```
 
    Hierbei gilt:
@@ -250,8 +203,7 @@ Gehen Sie wie folgt vor, um Ihre Anwendung zu konfigurieren und zu kompilieren:
 
    ```yaml
    azure.keyvault.uri=https://vgedkeyvault.vault.azure.net/
-   azure.keyvault.client-id=iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii
-   azure.keyvault.client-key=pppppppp-pppp-pppp-pppp-pppppppppppp
+   azure.keyvault.enabled=true
    ```
 
    Hierbei gilt:
@@ -259,10 +211,8 @@ Gehen Sie wie folgt vor, um Ihre Anwendung zu konfigurieren und zu kompilieren:
    |          Parameter          |                                 BESCHREIBUNG                                 |
    |-----------------------------|-----------------------------------------------------------------------------|
    |    `azure.keyvault.uri`     |           Gibt den URI von der Erstellung Ihres Schlüsseltresors an.           |
-   | `azure.keyvault.client-id`  |  Gibt die GUID *appId* von der Erstellung Ihres Dienstprinzipals an.   |
-   | `azure.keyvault.client-key` | Gibt die GUID *password* von der Erstellung Ihres Dienstprinzipals an. |
-
-
+    
+    
 4. Navigieren Sie zur Quellcode-Hauptdatei Ihres Projekts. Beispiel: */src/main/java/com/vged/secrets*.
 
 5. Öffnen Sie die Java-Hauptdatei der Anwendung in einem Text-Editor (z. B. *SecretsApplication.java*), und fügen Sie in der Datei die folgenden Zeilen hinzu:
@@ -274,8 +224,11 @@ Gehen Sie wie folgt vor, um Ihre Anwendung zu konfigurieren und zu kompilieren:
    import org.springframework.boot.autoconfigure.SpringBootApplication;
    import org.springframework.beans.factory.annotation.Value;
    import org.springframework.boot.CommandLineRunner;
-
+   import org.springframework.web.bind.annotation.GetMapping;
+   import org.springframework.web.bind.annotation.RestController;
+   
    @SpringBootApplication
+   @RestController
    public class SecretsApplication implements CommandLineRunner {
 
       @Value("${connectionString}")
@@ -284,39 +237,104 @@ Gehen Sie wie folgt vor, um Ihre Anwendung zu konfigurieren und zu kompilieren:
       public static void main(String[] args) {
          SpringApplication.run(SecretsApplication.class, args);
       }
-
+   
+      @GetMapping("get")
+      public String get() {
+         return connectionString;
+      }
+   
       public void run(String... varl) throws Exception {
          System.out.println(String.format("\nConnection String stored in Azure Key Vault:\n%s\n",connectionString));
       }
    }
    ```
-   Dieses Codebeispiel ruft die Verbindungszeichenfolge aus dem Schlüsseltresor ab und zeigt sie in der Befehlszeile an.
+   Dieses Codebeispiel ruft die Verbindungszeichenfolge aus dem Schlüsseltresor ab und zeigt sie unter der URL `https://{your-appservice-name}.azurewebsites.net/get` an.
 
 6. Speichern und schließen Sie die Java-Datei.
 
-## <a name="build-and-test-your-app"></a>Erstellen und Testen der App
+7. Deaktivieren Sie den Test, und erstellen Sie die JAR-Datei mit Maven.
+    
+   ```bash
+   mvn clean package -Dmaven.test.skip=true
+   ```
 
-Gehen Sie zum Testen Ihrer Anwendung wie folgt vor:
+## <a name="configure-maven-plugin-for-azure-app-service"></a>Konfigurieren des Maven-Plug-Ins für Azure App Service
 
-1. Navigieren Sie zum Verzeichnis mit der Datei *pom.xml* für Ihre Spring Boot-App:
+In diesem Abschnitt wird beschrieben, wie Sie Ihr Spring Boot-Projekt so konfigurieren, dass Ihre App unter Azure App Service bereitgestellt werden kann.
 
-1. Erstellen Sie Ihre Spring Boot-Anwendung mit Maven. Beispiel:
+1.  Folgen Sie dem Link zu [Konfigurieren des Maven-Plug-Ins für Azure App Service].
+    
+    Mit diesem Link wird eine neue Azure App Service-Instanz erstellt. Wenn Sie Ihre App auf einer vorhandenen Instanz bereitstellen möchten, können Sie die Bereitstellung mit dem Befehl `mvn azure-webapp:config` erneut konfigurieren und dabei die entsprechenden Informationen angeben.
+    
+    ```bash
+    [INFO] Scanning for projects...                                                     
+    [INFO]                                                                              
+    [INFO] ----------------------< com.wingtiptoys:secrets >-----------------------     
+    [INFO] Building secrets 0.0.1-SNAPSHOT                                              
+    [INFO] --------------------------------[ jar ]---------------------------------     
+    [INFO]                                                                              
+    [INFO] --- azure-webapp-maven-plugin:1.9.0:config (default-cli) @ secrets ---       
+    Please choose which part to config                                                  
+    1. Application                                                                      
+    2. Runtime                                                                          
+    3. DeploymentSlot                                                                   
+    Enter index to use: 1                                                              
+    Define value for appName(Default: ********):                                      
+    Define value for resourceGroup(Default: ********):                                 
+    Define value for region(Default: ********):                                           
+    Define value for pricingTier(Default: P1v2):                                        
+    1. b1                                                                               
+    2. b2                                                                               
+    3. b3                                                                               
+    4. d1                                                                               
+    5. f1                                                                               
+    6. p1v2 [*]                                                                         
+    7. p2v2                                                                             
+    8. p3v2                                                                             
+    9. s1                                                                               
+    10. s2                                                                              
+    11. s3                                                                              
+    Enter index to use:                                                                 
+    Please confirm webapp properties                                                                                                          
+    ```
+    
+    Es ist auch möglich, den Abschnitt `<configuration>` von `<azure-webapp-maven-plugin>` direkt in *pom.xml* zu bearbeiten. Ändern Sie die Werte `<resourceGroup>`,`<appName>` und `<region>` gemäß Ihrer jeweiligen App Service-Instanz.
+
+2. Weisen Sie App Service die Identität zu, und notieren Sie sich die `principalId` für den nächsten Schritt.
+
+   ```bash
+   az webapp identity assign --name your-appservice-name \
+      --resource-group vged-rg2
+   ```
+   
+3. Gewähren Sie die Berechtigung für MSI.
+
+   ```bash
+   az keyvault set-policy --name vgedkeyvault \
+       --object-id your-managed-identity-objectId \
+       --secret-permissions get list
+   ```
+
+## <a name="deploy-the-app-to-azure-and-run-app-service"></a>Bereitstellen der App in Azure und Ausführen von App Service
+
+Sie können Ihre Web-App nun in Azure bereitstellen. Führen Sie dazu die folgenden Schritte aus:
+
+1. Erstellen Sie die JAR-Datei mit Maven neu, falls Sie Änderungen an der Datei *pom.xml* vorgenommen haben.
 
    ```bash
    mvn clean package
    ```
-
-   Maven zeigt die Ergebnisse des Buildvorgangs an.
-
-   ![Buildstatus der Spring Boot-Anwendung][build-application-01]
-
-1. Führen Sie Ihre Spring Boot-Anwendung mit Maven aus. Die Anwendung zeigt die Verbindungszeichenfolge aus Ihrem Schlüsseltresor an. Beispiel:
+   
+2. Stellen Sie Ihre App mit Maven unter Azure bereit.
 
    ```bash
-   mvn spring-boot:run
+   mvn azure-webapp:deploy
    ```
+   
+3. Starten Sie Ihre App Service-Instanz neu.
 
-   ![Spring Boot-Laufzeitmeldung][build-application-02]
+4. Navigieren Sie im Browser zur URL `https://{your-appservice-name}.azurewebsites.net/get`, um Ihre Verbindungszeichenfolge (`connectionString`) zu erhalten.
+   
 
 ## <a name="summary"></a>Zusammenfassung
 
@@ -345,6 +363,8 @@ Weitere Informationen zur Verwendung von Spring Boot-Anwendungen in Azure finden
 
 Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure für Java-Entwickler] und [Working with Azure DevOps and Java] (Arbeiten mit Azure DevOps und Java).
 
+Weitere Informationen zur Verwendung von verwalteten Identitäten für App Service finden Sie unter [Verwenden von verwalteten Identitäten für App Service].
+
 <!-- URL List -->
 
 [Dokumentation zu Key Vault]: /azure/key-vault/
@@ -356,6 +376,8 @@ Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure 
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/
+[Verwenden von verwalteten Identitäten für App Service]: /azure/app-service/overview-managed-identity
+[Konfigurieren des Maven-Plug-Ins für Azure App Service]: /azure/developer/java/spring-framework/deploy-spring-boot-java-app-with-maven-plugin#configure-maven-plugin-for-azure-app-service
 
 <!-- IMG List -->
 
