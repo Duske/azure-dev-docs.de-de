@@ -4,10 +4,10 @@ description: Stellen Sie mithilfe des Azure SDK für Go einen virtuellen Compute
 ms.date: 09/05/2018
 ms.topic: quickstart
 ms.openlocfilehash: d339681fc4eed55046f5a7c8fa45fffc948fa3bc
-ms.sourcegitcommit: 31f6d047f244f1e447faed6d503afcbc529bd28c
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/26/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80319767"
 ---
 # <a name="quickstart-deploy-an-azure-virtual-machine-from-a-template-with-the-azure-sdk-for-go"></a>Schnellstart: Bereitstellen eines virtuellen Azure-Computers über eine Vorlage mit dem Azure SDK für Go
@@ -68,7 +68,7 @@ Bereinigen Sie die Ressourcen, die für diesen Schnellstart erstellt wurden, ind
 az group delete -n GoVMQuickstart
 ```
 
-Löschen Sie außerdem den erstellten Dienstprinzipal. Die Datei `quickstart.auth` enthält einen JSON-Schlüssel für `clientId`. Kopieren Sie diesen Wert in die Umgebungsvariable`CLIENT_ID_VALUE`, und führen Sie den folgenden Azure CLI-Befehl aus:
+Löschen Sie außerdem den erstellten Dienstprinzipal. Die Datei `quickstart.auth` enthält einen JSON-Schlüssel für `clientId`. Kopieren Sie diesen Wert in die Umgebungsvariable`CLIENT_ID_VALUE`{2}{3}, und führen Sie den folgenden Azure CLI-Befehl aus:
 
 ```azurecli-interactive
 az ad sp delete --id ${CLIENT_ID_VALUE}
@@ -135,7 +135,7 @@ func init() {
 }
 ```
 
-Als Erstes wird [auth.NewAuthorizerFromFile](https://godoc.org/github.com/Azure/go-autorest/autorest/azure/auth#NewAuthorizerFromFile) aufgerufen, um die Authentifizierungsinformationen aus der Datei unter `AZURE_AUTH_LOCATION` zu laden. Anschließend wird diese Datei manuell von der `readJSON`-Funktion (hier ausgelassen) geladen, um die beiden zum Ausführen des restlichen Programms erforderlichen Werte zu pullen: Die Abonnement-ID des Clients und das Geheimnis des Dienstprinzipals, das auch als Kennwort des virtuellen Computers verwendet wird.
+Als Erstes wird [auth.NewAuthorizerFromFile](https://godoc.org/github.com/Azure/go-autorest/autorest/azure/auth#NewAuthorizerFromFile) aufgerufen, um die Authentifizierungsinformationen aus der Datei unter `AZURE_AUTH_LOCATION` zu laden. Danach wird diese Datei manuell durch die (hier weggelassene) Funktion `readJSON` geladen, um die beiden Werte abzurufen, die zum Ausführen des restlichen Programms benötigt werden: die Abonnement-ID des Clients und das Geheimnis des Dienstprinzipals, das auch für das Kennwort des virtuellen Computers verwendet wird.
 
 > [!WARNING]
 > Der Einfachheit halber wird das Dienstprinzipalkennwort in dieser Schnellstartanleitung wiederverwendet. In einer Produktionsumgebung darf ein Kennwort für den Zugriff auf Ihre Azure-Ressourcen __niemals__ wiederverwendet werden.
@@ -260,7 +260,7 @@ Der größte Unterschied ist der Rückgabewert der `deploymentsClient.CreateOrUp
 }
 ```
 
-In diesem Beispiel warten Sie am besten, bis der Vorgang abgeschlossen ist. Wenn auf einen Wert vom Typ „Future“ gewartet werden soll, benötigen Sie sowohl ein [context-Objekt](https://blog.golang.org/context) als auch den Client, der den Wert vom Typ `Future` erstellt hat. Es gibt hier zwei mögliche Fehlerquellen: Ein auf Clientseite verursachter Fehler, wenn versucht wird, die Methode aufzurufen, und eine Fehlerantwort vom Server. Letztere wird als Teil des Aufrufs `deploymentFuture.Result` zurückgegeben.
+In diesem Beispiel warten Sie am besten, bis der Vorgang abgeschlossen ist. Wenn auf einen Wert vom Typ „Future“ gewartet werden soll, benötigen Sie sowohl ein [context-Objekt](https://blog.golang.org/context) als auch den Client, der den Wert vom Typ `Future` erstellt hat. Hierbei gibt es zwei mögliche Fehlerquellen: Ein auf Clientseite verursachter Fehler, wenn versucht wird, die Methode aufzurufen, und eine Fehlerantwort vom Server. Letztere wird als Teil des Aufrufs `deploymentFuture.Result` zurückgegeben.
 
 ### <a name="get-the-assigned-ip-address"></a>Abrufen der zugewiesenen IP-Adresse
 

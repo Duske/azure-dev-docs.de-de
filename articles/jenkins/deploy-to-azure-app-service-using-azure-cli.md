@@ -5,13 +5,13 @@ keywords: Jenkins, Azure, DevOps, App Service, CLI
 ms.topic: tutorial
 ms.date: 04/25/2020
 ms.openlocfilehash: 03eb896717350a242fb2f504a4da9b57ecc8a209
-ms.sourcegitcommit: 9ff9b51ab21c93bfd61e480c6ff8e39c9d4bf02e
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82169886"
 ---
-# <a name="tutorial-deploy-to-azure-app-service-with-jenkins-and-the-azure-cli"></a>Tutorial: Durchführen der Bereitstellung für Azure App Service mit Jenkins und der Azure CLI
+# <a name="tutorial-deploy-to-azure-app-service-with-jenkins-and-the-azure-cli"></a>Tutorial: Bereitstellen an Azure App Service mit Jenkins und der Azure CLI
 
 Für die Bereitstellung einer Java-Web-App in Azure können Sie die Azure CLI in einer [Jenkins-Pipeline](https://jenkins.io/doc/book/pipeline/) nutzen. In diesem Tutorial führen Sie die folgenden Aufgaben aus:
 
@@ -164,7 +164,7 @@ az webapp config set \
 
 Gehen Sie wie unten angegeben vor, um zu überprüfen, ob die Bereitstellung der WAR-Datei für Ihre Web-App erfolgreich war. 
 
-1. Öffnen Sie einen Webbrowser:
+1. öffnen Sie einen Webbrowser:
 
 1. Navigieren Sie zu `http://&lt;app_name>.azurewebsites.net/api/calculator/ping`.
 

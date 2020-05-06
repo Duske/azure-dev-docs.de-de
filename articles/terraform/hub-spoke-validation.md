@@ -4,10 +4,10 @@ description: Es wird beschrieben, wie Sie eine Hub-Spoke-Netzwerktopologie über
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.openlocfilehash: e061fc882962b33261fe68a6f9d4c2d78172a871
-ms.sourcegitcommit: 9ff9b51ab21c93bfd61e480c6ff8e39c9d4bf02e
+ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82170896"
 ---
 # <a name="tutorial-validate-a-hub-and-spoke-network-in-azure-using-terraform"></a>Tutorial: Überprüfen eines Hub-and-Spoke-Netzwerks in Azure mit Terraform

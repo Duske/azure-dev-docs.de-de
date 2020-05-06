@@ -84,7 +84,7 @@
               href: /azure/cognitive-services/Computer-vision/Quickstarts/node-analyze?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
             - name: Spracherkennung
               href: /azure/cognitive-services/speech-service/get-started?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
-    - name: Tutorials
+    - name: Lernprogramme
       items:
         - name: Bereitstellen von Azure Functions mit VS Code
           items:

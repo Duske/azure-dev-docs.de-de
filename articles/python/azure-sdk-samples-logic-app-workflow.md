@@ -4,10 +4,10 @@ description: Erstellen eines Logik-App-Workflows
 ms.topic: conceptual
 ms.date: 6/15/2017
 ms.openlocfilehash: e561d57427b4a8e52f1d13bf3a0ff36fc0ed047c
-ms.sourcegitcommit: 1bd9ec6a4115e9162e33b76a933869788e6ab702
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80441655"
 ---
 # <a name="create-a-logic-app-workflow"></a>Erstellen eines Logik-App-Workflows

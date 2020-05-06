@@ -5,10 +5,10 @@ keywords: Azure DevOps Terraform VM virtueller Computer Cluster Modul Registrier
 ms.topic: tutorial
 ms.date: 03/09/2020
 ms.openlocfilehash: b3b6c99afc47f7cf83d8f712ea0e0444faf08104
-ms.sourcegitcommit: 9ff9b51ab21c93bfd61e480c6ff8e39c9d4bf02e
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82171276"
 ---
 # <a name="tutorial-create-an-azure-vm-cluster-with-terraform-using-the-module-registry"></a>Tutorial: Erstellen eines Azure-VM-Clusters mit Terraform mithilfe der Modulregistrierung

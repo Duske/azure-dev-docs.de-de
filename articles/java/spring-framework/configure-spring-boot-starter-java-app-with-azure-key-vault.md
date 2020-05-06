@@ -9,10 +9,10 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.openlocfilehash: 2df574104376ec1900c7dc5cbd4f0a49ef1f4732
-ms.sourcegitcommit: e6cdb0ce11a8272195a0072c7c91cc9b7e89b0b6
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/24/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82138736"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a>Verwenden von Spring Boot Starter für Azure Key Vault

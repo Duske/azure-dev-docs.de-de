@@ -16,7 +16,7 @@
       items:
         - name: Installieren von Chef mit dem Azure-Portal
           href: ./client-install-from-azure-portal.md
-- name: Tutorials
+- name: Lernprogramme
   items:
     - name: Chef
       items:

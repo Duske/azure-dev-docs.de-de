@@ -10,10 +10,10 @@ ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
 ms.openlocfilehash: aaf9969030512668b22c1b5bbfbd2a9a7d7ae47d
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82030962"
 ---
 # <a name="azure-services-the-azure-cli-can-manage"></a>Azure-Dienste, die von der Azure CLI verwaltet werden können
@@ -81,7 +81,7 @@ Azure CLI-Referenzen sind für Folgendes verfügbar:
 ||[Load Balancer](/azure/load-balancer/)
 ||[Traffic Manager](/azure/traffic-manager/)
 ||[Virtual Network](/azure/virtual-network/)
-|[Security](/cli/azure/popular-articles-using-the-azure-cli?#security)|[Azure Active Directory (AD)](/azure/active-directory/)
+|[Sicherheit](/cli/azure/popular-articles-using-the-azure-cli?#security)|[Azure Active Directory (AD)](/azure/active-directory/)
 ||[Schlüsseltresor](/azure/key-vault/)
 |[Storage](/cli/azure/popular-articles-using-the-azure-cli?#storage)|[Azure Backup](/azure/backup/)
 ||[Azure Data Lake-Speicher](/azure/storage/blobs/data-lake-storage-introduction/)

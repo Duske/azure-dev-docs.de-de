@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 90ac4162e1a6032bcb1f3cfab7f249e4538314f7
-ms.sourcegitcommit: 1bd9ec6a4115e9162e33b76a933869788e6ab702
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80441475"
 ---
 Nachdem Sie die Azure-Erweiterung installiert haben, melden Sie sich bei Ihrem Azure-Konto an, indem Sie zum **Azure**-Explorer navigieren, **Bei Azure anmelden** auswählen und dann den Anweisungen folgen. (Wenn Sie mehrere Azure-Erweiterungen installiert haben, wählen Sie die Erweiterung für den Bereich aus, in dem Sie arbeiten, z. B. App Service, Functions usw.)

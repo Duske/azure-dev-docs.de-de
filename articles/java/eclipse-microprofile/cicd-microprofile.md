@@ -11,10 +11,10 @@ ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: web
 ms.openlocfilehash: cdd704626b51105f93c19378511f4a267cb56649
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81670296"
 ---
 # <a name="cicd-for-microprofile-apps-using-azure-pipelines"></a>CI/CD für MicroProfile-Apps mit Azure Pipelines
@@ -85,7 +85,7 @@ Azure Pipelines verwendet eine Dockerfile-Datei mit einem Basisimage von Payara 
    
 1. Füllen Sie das Dialogfeld **Dienstverbindung für Docker-Registrierung hinzufügen** wie folgt aus:
    
-   |Feld|Wert|
+   |Feld|value|
    |---|---|
    |**Registrierungstyp**|Wählen Sie **Azure Container Registry** aus.|
    |**Verbindungsname**|Geben Sie einen Namen für die Verbindung ein.|
@@ -149,7 +149,7 @@ Eine Continuous Releasepipeline in Azure Pipelines löst die Bereitstellung in e
    
 1. Füllen Sie im rechten Bereich das Formular wie folgt aus:
    
-   |Feld|Wert|
+   |Feld|value|
    |---|---|
    |**Azure-Abonnement**|Wählen Sie in der Dropdownliste Ihr Azure-Abonnement aus.|
    |**App-Typ**|Wählen Sie aus dem Dropdown **Web-App für Container (Linux)** aus.|
@@ -169,7 +169,7 @@ Fügen Sie Umgebungsvariablen hinzu, und definieren Sie diese, um während der B
 
 1. Wählen Sie die Registerkarte **Variablen** aus, und wählen Sie dann **Hinzufügen** aus, um die folgenden Variablen für Ihre Containerregistrierungs-URL, den Benutzernamen und das Kennwort hinzuzufügen. 
    
-   |Name|Wert|
+   |Name|value|
    |---|---|
    |*registry.url*|Geben Sie Ihre Containerregistrierungs-URL ein. Beispiel: *https:\//mymicroprofileregistry.azure.io*|
    |*registry.username*|Geben Sie den Benutzernamen für die Registrierung ein.|
@@ -183,7 +183,7 @@ Fügen Sie Umgebungsvariablen hinzu, und definieren Sie diese, um während der B
    
 1. Wählen Sie im Popup **App-Einstellungen** den Befehl **Hinzufügen** aus, um die App-Einstellungsvariablen zu definieren und zuzuweisen:
    
-   |Name|Wert|
+   |Name|value|
    |---|---|
    |*DOCKER_REGISTRY_SERVER_URL*|*$(registry.url)*|
    |*DOCKER_REGISTRY_SERVER_USERNAME*|*$(registry.username)*|

@@ -4,10 +4,10 @@ description: Hier erfahren Sie, welche Authentifizierungsmethoden im Azure SDK f
 ms.date: 09/05/2018
 ms.topic: conceptual
 ms.openlocfilehash: b4bf09dbb3f59c77c2914ae9c9091dc0af31b093
-ms.sourcegitcommit: 31f6d047f244f1e447faed6d503afcbc529bd28c
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/26/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80319677"
 ---
 # <a name="authentication-methods-in-the-azure-sdk-for-go"></a>Authentifizierungsmethoden im Azure SDK für Go
@@ -136,7 +136,7 @@ Weitere Informationen zur Verwendung von Dienstprinzipalen sowie zur Verwaltung 
 
 Wenn sich Benutzer interaktiv anmelden sollen, empfiehlt sich die Verwendung der Gerätetokenauthentifizierung. Bei diesem Authentifizierungsablauf wird ein Token an den Benutzer übergeben, das dieser auf einer Anmeldewebsite von Microsoft einfügt, auf der er sich bei einem AAD-Konto (Azure Active Directory) authentifiziert. Im Gegensatz zur Standardauthentifizierung mit Benutzername/Kennwort unterstützt diese Authentifizierungsmethode Konten mit aktivierter mehrstufiger Authentifizierung.
 
-Erstellen Sie zur Verwendung der Gerätetokenauthentifizierung mithilfe der Funktion [NewDeviceFlowConfig](https://godoc.org/github.com/Azure/go-autorest/autorest/azure/auth#NewDeviceFlowConfig) ein Authorizer-Objekt vom Typ [DeviceFlowConfig](https://godoc.org/github.com/Azure/go-autorest/autorest/azure/auth#DeviceFlowConfig). Rufen Sie [Authorizer](https://godoc.org/github.com/Azure/go-autorest/autorest/azure/auth#DeviceFlowConfig.Authorizer) für das resultierende Objekt auf, um den Authentifizierungsprozess zu starten. Die Geräteauthentifizierung blockiert die Programmausführung, bis der gesamte Authentifizierungsablauf abgeschlossen ist.
+Erstellen Sie zur Verwendung der Gerätetokenauthentifizierung mithilfe der Funktion [NewDeviceFlowConfig](https://godoc.org/github.com/Azure/go-autorest/autorest/azure/auth#DeviceFlowConfig) ein Authorizer-Objekt vom Typ [DeviceFlowConfig](https://godoc.org/github.com/Azure/go-autorest/autorest/azure/auth#NewDeviceFlowConfig). Rufen Sie [Authorizer](https://godoc.org/github.com/Azure/go-autorest/autorest/azure/auth#DeviceFlowConfig.Authorizer) für das resultierende Objekt auf, um den Authentifizierungsprozess zu starten. Die Geräteauthentifizierung blockiert die Programmausführung, bis der gesamte Authentifizierungsablauf abgeschlossen ist.
 
 ```go
 import "github.com/Azure/go-autorest/autorest/azure/auth"

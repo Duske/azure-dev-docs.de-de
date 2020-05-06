@@ -22,7 +22,7 @@
       href: quickstarts-messaging.md
     - name: Sicherheit und Integration
       href: quickstarts-security-integration.md
-- name: Tutorials
+- name: Lernprogramme
   items:
     - name: Bereitstellen für App Service mit VS Code
       items:
@@ -70,11 +70,11 @@
           href: tutorial-vs-code-serverless-python-07.md
         - name: 8. Bereinigen der Ressourcen
           href: tutorial-vs-code-serverless-python-08.md
-- name: Anleitungen
+- name: Gewusst-wie-Anleitungen
   items:
     - name: Installieren des SDKs
       href: azure-sdk-install.md
-    - name: Authentifizierung
+    - name: Authentication
       href: azure-sdk-authenticate.md
     - name: Vorgangskonfiguration
       href: azure-sdk-operation-config.md

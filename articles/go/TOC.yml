@@ -7,7 +7,7 @@ items:
         href: azure-sdk-install.md
       - name: Tools
         href: azure-sdk-tools.md
-      - name: Authentifizierung
+      - name: Authentication
         href: azure-sdk-authorization.md
   - name: Schnellstarts
     items:

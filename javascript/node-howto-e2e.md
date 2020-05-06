@@ -5,10 +5,10 @@ ms.topic: article
 ms.date: 06/25/2017
 ms.custom: seo-javascript-september2019, seo-javascript-october2019
 ms.openlocfilehash: b8841e5259a49b45db1f526330e0238d1bd0d050
-ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
+ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "77002521"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>Entwickeln und Bereitstellen einer Node.js-Container-App mit Visual Studio Code und Azure
@@ -401,7 +401,7 @@ Sie können zwar einen MongoDB-Server oder eine Replikatgruppe konfigurieren und
 
     ![Demo-App nach Verbindungsherstellung mit einer Datenbank](./media/node-howto-e2e/finish-demo-walkthrough.png)
 
-Bei Bedarf können Sie zurück zur Cosmos DB-Instanz wechseln und den reservierten Durchsatz, der für die MongoDB-Instanz benötigt wird, zentral hochskalieren (oder zentral herunterskalieren). So profitieren Sie von dem zusätzlichen Datenverkehr, ohne dass Sie Elemente der Infrastruktur manuell verwalten müssen.
+Bei Bedarf können Sie zurück zur Cosmos DB-Instanz wechseln und den reservierten Durchsatz, der für die MongoDB-Instanz benötigt wird, hochskalieren (oder herunterskalieren). So profitieren Sie von dem zusätzlichen Datenverkehr, ohne dass Sie Elemente der Infrastruktur manuell verwalten müssen.
 
 Außerdem indiziert Cosmos DB automatisch jedes einzelne Dokument und jede Eigenschaft für Sie. Sie müssen dann keine Profile für langsame Abfragen erstellen und Ihre Indizes nicht manuell optimieren. Führen Sie die Bereitstellung und Skalierung einfach nach Bedarf durch, und überlassen Sie Cosmos DB den Rest.
 
@@ -480,7 +480,7 @@ az webapp config hostname add --hostname <DOMAIN>
 
 ## <a name="scaling-up-and-out"></a>Zentrales Hochskalieren und horizontales Hochskalieren
 
-Unter Umständen erreicht Ihre Web-App nach einiger Zeit eine so große Beliebtheit, dass ihre zugeordneten Ressourcen (CPU und RAM) nicht mehr ausreichen, um den vermehrten Datenverkehr und die Betriebsanforderungen zu bewältigen. Der App Service-Plan, den Sie weiter oben erstellt haben (**B1**), verfügt über einen CPU-Kern und 1,75 GB RAM. Dadurch kann er einfach überladen werden. Der Plan **B2** verfügt über doppelt so hohe RAM- und CPU-Werte. Wenn Sie merken, dass einer der Werte für Ihre App nicht mehr ausreicht, können Sie den zugrunde liegenden virtuellen Computer also zentral hochskalieren, indem Sie den folgenden Befehl ausführen:
+Unter Umständen erreicht Ihre Web-App nach einiger Zeit eine so große Beliebtheit, dass ihre zugeordneten Ressourcen (CPU und RAM) nicht mehr ausreichen, um den vermehrten Datenverkehr und die Betriebsanforderungen zu bewältigen. Der App Service-Plan, den Sie weiter oben erstellt haben (**B1**), verfügt über einen CPU-Kern und 1,75 GB RAM. Dadurch kann er einfach überladen werden. Der Plan **B2** verfügt über doppelt so hohe RAM- und CPU-Werte. Wenn Sie merken, dass einer der Werte für Ihre App nicht mehr ausreicht, können Sie den zugrunde liegenden virtuellen Computer also hochskalieren, indem Sie den folgenden Befehl ausführen:
 
 ```shell
 az appservice plan update -n nina-demo-plan --sku B2
@@ -491,13 +491,13 @@ az appservice plan update -n nina-demo-plan --sku B2
 
 Nach kurzer Zeit wird Ihre Web-App zu der angeforderten Hardware migriert, und die zugeordneten Ressourcen können genutzt werden. Sie können nicht nur zentral hochskalieren, sondern auch zentral herunterskalieren, indem Sie den gleichen Befehl wie oben ausführen. Geben Sie hierbei aber die Option `--sku` an, damit weniger Ressourcen zu einem geringeren Preis bereitgestellt werden.
 
-Zusätzlich zum zentralen Hochskalieren der Spezifikationen für den virtuellen Computer können Sie Ihre Web-App auch *horizontal hochskalieren* (sofern die Web-App zustandslos ist), indem Sie weitere zugrunde liegende VM-Instanzen hinzufügen. Der weiter oben erstellte App Service-Plan enthält nur einen virtuellen Computer (einen *Worker*). Daher wird der gesamte eingehende Datenverkehr letztendlich durch die Grenzwerte der verfügbaren Ressourcen dieser einen Instanz begrenzt. Wenn Sie eine zweite VM-Instanz hinzufügen möchten, können Sie den gleichen Befehl wie oben ausführen und nun anstelle der SKU die Anzahl von virtuellen Workercomputern horizontal hochskalieren.
+Zusätzlich zum Hochskalieren der Spezifikationen für den virtuellen Computer können Sie Ihre Web-App auch *aufskalieren* (sofern die Web-App zustandslos ist), indem Sie weitere zugrunde liegende VM-Instanzen hinzufügen. Der weiter oben erstellte App Service-Plan enthält nur einen virtuellen Computer (einen *Worker*). Daher wird der gesamte eingehende Datenverkehr letztendlich durch die Grenzwerte der verfügbaren Ressourcen dieser einen Instanz begrenzt. Wenn Sie eine zweite VM-Instanz hinzufügen möchten, können Sie den gleichen Befehl wie oben ausführen und nun die Anzahl von virtuellen Workercomputern aufskalieren, statt die SKU hochzuskalieren.
 
 ```shell
 az appservice plan update -n nina-demo-plan --number-of-workers 2
 ```
 
-Wenn Sie eine Web-App auf diese Weise horizontal hochskalieren, wird für den eingehenden Datenverkehr auf transparente Weise für alle Instanzen ein Lastenausgleich durchgeführt. So können Sie Ihre Kapazität sofort erhöhen, ohne dass Sie Code ändern oder sich Gedanken zur erforderlichen Infrastruktur machen müssen.
+Wenn Sie eine Web-App auf diese Weise aufskalieren, wird für den eingehenden Datenverkehr auf transparente Weise für alle Instanzen ein Lastenausgleich durchgeführt. So können Sie Ihre Kapazität sofort erhöhen, ohne dass Sie Code ändern oder sich Gedanken zur erforderlichen Infrastruktur machen müssen.
 
 Die Verwendung von zustandslosen Web-Apps wird als bewährte Methode angesehen. Sie machen die Möglichkeit zum Skalieren (zentral hoch, zentral herunter, horizontal hoch) vollständig deterministisch, da kein einzelner virtueller Computer bzw. keine App-Instanz einen Zustand aufweist, der für den korrekten Betrieb erforderlich ist.
 

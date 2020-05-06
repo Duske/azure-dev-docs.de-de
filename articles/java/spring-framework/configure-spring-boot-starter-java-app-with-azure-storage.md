@@ -8,10 +8,10 @@ ms.service: storage
 ms.topic: article
 ms.workload: storage
 ms.openlocfilehash: e9546d2e65d198fe9ab92e5d588df8797fd97e16
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81669236"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>Verwenden von Spring Boot Starter für Azure Storage

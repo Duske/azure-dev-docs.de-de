@@ -7,10 +7,10 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.openlocfilehash: 89e40ebd28ffc792430ba73b192a1aec1a7c49c3
-ms.sourcegitcommit: 858b061ed9ac883821a0485054b8076e2e719821
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82209803"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-eclipse"></a>Verwalten virtueller Computer mit dem Azure-Explorer für Eclipse
@@ -39,15 +39,15 @@ Gehen Sie folgendermaßen vor, um einen virtuellen Computer mit dem Azure-Explor
 
 4. Geben Sie im Fenster **Virtuelles Computerimage auswählen** die folgenden Informationen ein:
 
-   * **Standort**: Der Standort, an dem Ihre VM erstellt wird (z. B. *USA, Westen*).
+   * **Standort:** gibt den Standort an, an dem Ihr virtueller Computer erstellt wird (z.B. *USA, Westen*).
 
-   * **Herausgeber**: Der Herausgeber, der das zum Erstellen der VM verwendete Image erstellt hat (z. B. *Microsoft*).
+   * **Herausgeber:** gibt den Herausgeber an, der das Image zum Erstellen des virtuellen Computers erstellt hat (z.B. *Microsoft*).
 
-   * **Angebot**: Das zu verwendende VM-Angebot des ausgewählten Herausgebers (z. B. *JDK*).
+   * **Angebot:** gibt an, welches Angebot eines virtuellen Computers für den ausgewählten Herausgeber verwendet werden soll (z.B. *JDK*).
 
-   * **SKU**: Die zu verwendende SKU (Stock Keeping Unit) des ausgewählten Angebots (z. B. *JDK_8*).
+   * **SKU:** gibt die zu verwendende SKU (Stock-Keeping Unit, Artikelnummer) aus dem ausgewählten Angebot an (z.B. *JDK_8*).
 
-   * **Versionsnummer**: Die zu verwendende Version der ausgewählten SKU.
+   * **Versionsnummer:** gibt an, welche Version der ausgewählten SKU verwendet werden soll.
 
    ![Fenster „Virtuelles Computerimage auswählen“][CR03]
 
@@ -55,13 +55,13 @@ Gehen Sie folgendermaßen vor, um einen virtuellen Computer mit dem Azure-Explor
 
 6. Geben Sie im Fenster **Grundlegende Einstellungen des virtuellen Computers** die folgenden Informationen ein:
 
-   * **Name des virtuellen Computers**: Der Name Ihrer neuen VM. Der Name muss mit einem Buchstaben beginnen und darf nur Buchstaben, Ziffern und Bindestriche enthalten.
+   * **Name des virtuellen Computers:** gibt den Namen Ihres virtuellen Computers an. Dieser muss mit einem Buchstaben beginnen und darf nur Buchstaben, Ziffern und Bindestriche enthalten.
 
-   * **Size**: Die Anzahl von Kernen und der Arbeitsspeicher, die der VM zugeordnet werden sollen.
+   * **Größe:** gibt die Anzahl der Kerne und den Speicher an, die dem virtuellen Computer zugeordnet werden sollen
 
-   * **Benutzername**: Das Administratorkonto, das für die Verwaltung Ihrer VM erstellt werden soll.
+   * **Benutzername:** gibt das Administratorkonto an, das für die Verwaltung Ihres virtuellen Computer erstellt werden soll
 
-   * **Kennwort** und **Bestätigen**: Das Kennwort für Ihr Administratorkonto.
+   * **Kennwort** und **Bestätigen**: geben das Kennwort für Ihr Administratorkonto an
 
    ![Fenster „Grundlegende Einstellungen des virtuellen Computers“][CR04]
 
@@ -69,25 +69,25 @@ Gehen Sie folgendermaßen vor, um einen virtuellen Computer mit dem Azure-Explor
 
 8. Geben Sie im Fenster **Neues Speicherkonto erstellen** die folgenden Informationen ein:
 
-   * **Ressourcengruppe**: Die Ressourcengruppe für Ihre VM. Wählen Sie eine der folgenden Optionen aus:
-     * **Neue erstellen**: Gibt an, dass Sie eine neue Ressourcengruppe erstellen möchten.
-     * **Vorhandene verwenden**: Gibt an, dass Sie eine Ressourcengruppe auswählen möchten, die Ihrem Azure-Konto bereits zugeordnet ist.
+   * **Ressourcengruppe:** Geben Sie die Ressourcengruppe für Ihren virtuellen Computer an. Wählen Sie eine der folgenden Optionen aus:
+     * **Neu erstellen:** gibt an, dass Sie eine neue Ressourcengruppe erstellen möchten.
+     * **Vorhandene verwenden:** gibt an, dass Sie eine Ressourcengruppe auswählen möchten, die Ihrem Azure-Konto bereits zugeordnet ist.
 
        ![Dialogfeld „Neues Speicherkonto erstellen“][CR05]
 
-   * **Speicherkonto**: Das Speicherkonto, das zum Speichern der VM verwendet werden soll. Sie können ein vorhandenes Speicherkonto auswählen oder ein neues erstellen.
+   * **Speicherkonto:** gibt das Speicherkonto an, das zum Speichern des virtuellen Computers verwendet werden soll. Sie können ein vorhandenes Speicherkonto auswählen oder ein neues erstellen.
 
-   * **Virtuelles Netzwerk** und **Subnetz**: Das virtuelle Netzwerk und das Subnetz, mit denen Ihre VM eine Verbindung herstellt. Sie können ein vorhandenes Netzwerk und Subnetz verwenden oder ein neues Netzwerk und Subnetz erstellen. Wenn Sie **Neu erstellen** auswählen, wird das folgende Dialogfeld angezeigt:
+   * **Virtuelles Netzwerk** und **Subnetz**: geben das virtuelle Netzwerk und das Subnetz an, mit dem der virtuelle Computer eine Verbindung herstellen soll. Sie können ein vorhandenes Netzwerk und Subnetz verwenden oder ein neues Netzwerk und Subnetz erstellen. Wenn Sie **Neu erstellen** auswählen, wird das folgende Dialogfeld angezeigt:
 
       ![Dialogfeld „Neues virtuelles Netzwerk erstellen“][CR06]
 
 9. Geben Sie im Fenster **Zugeordnete Ressourcen** die folgenden Informationen ein:
 
-   * **Öffentliche IP-Adresse:** Eine externe IP-Adresse für Ihre VM. Sie können eine neue IP-Adresse erstellen oder **(Keine)** auswählen, wenn Ihr virtueller Computer nicht über eine öffentliche IP-Adresse verfügt.
+   * **Öffentliche IP-Adresse:** gibt eine externe IP-Adresse für den virtuellen Computer an. Sie können eine neue IP-Adresse erstellen oder **(Keine)** auswählen, wenn Ihr virtueller Computer nicht über eine öffentliche IP-Adresse verfügt.
 
-   * **Netzwerksicherheitsgruppe**: Eine optionale Netzwerkfirewall für Ihre VM. Sie können eine vorhandene Firewall auswählen oder **(Keine)** auswählen, wenn Ihr virtueller Computer keine Netzwerkfirewall verwendet.
+   * **Netzwerksicherheitsgruppe:** gibt eine optionale Netzwerkfirewall für den virtuellen Computer an. Sie können eine vorhandene Firewall auswählen oder **(Keine)** auswählen, wenn Ihr virtueller Computer keine Netzwerkfirewall verwendet.
 
-   * **Verfügbarkeitsgruppe**: Eine optionale Verfügbarkeitsgruppe, der Ihre VM angehören kann. Sie können eine vorhandene Verfügbarkeitsgruppe auswählen, eine neue erstellen oder **(Keine)** auswählen, wenn Ihr virtueller Computer keiner Verfügbarkeitsgruppe angehören soll.
+   * **Verfügbarkeitsgruppe:** gibt eine optionale Verfügbarkeitsgruppe an, der Ihr virtueller Computer angehören kann. Sie können eine vorhandene Verfügbarkeitsgruppe auswählen, eine neue erstellen oder **(Keine)** auswählen, wenn Ihr virtueller Computer keiner Verfügbarkeitsgruppe angehören soll.
 
    ![Fenster „Zugeordnete Ressourcen“][CR07]
 

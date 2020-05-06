@@ -8,10 +8,10 @@ ms.service: cache
 ms.tgt_pltfrm: cache-redis
 ms.topic: conceptual
 ms.openlocfilehash: ece597db7475d371c54664d61498d6a89f8c76cb
-ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82104831"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-redis-in-the-cloud-with-azure-redis-cache"></a>Konfigurieren einer Spring Boot Initializer-App für die Verwendung von Redis in der Cloud mit Azure Redis Cache
@@ -104,7 +104,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
    > [!NOTE] 
    > 
-   > Wenn Sie einen anderen SSL-fähigen Redis-Client als Jedis verwendet haben, geben Sie in Ihrer Datei *application.properties* an, dass Sie SSL verwenden möchten, und verwenden Sie Port 6380. Beispiel:
+   > Wenn Sie einen anderen SSL-fähigen Redis-Client als Jedis verwendet haben, geben Sie in Ihrer Datei *application.properties* an, dass Sie SSL verwenden möchten, und verwenden Sie Port 6380. Beispiel: 
    > 
    > ```yaml
    > # Specify the DNS URI of your Redis cache.

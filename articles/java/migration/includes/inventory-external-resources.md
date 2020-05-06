@@ -3,10 +3,10 @@ author: yevster
 ms.author: yebronsh
 ms.date: 1/20/2020
 ms.openlocfilehash: 4b5b73eee66c4a5c9eb28b79804e0dc610f639d6
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81671626"
 ---
 ### <a name="inventory-external-resources"></a>Bestand: Externe Ressourcen
@@ -15,15 +15,15 @@ Externe Ressourcen, z. B. Datenquellen, JMS-Nachrichtenbroker und andere, werde
 
 #### <a name="inside-your-application"></a>Innerhalb Ihrer Anwendung
 
-Untersuchen Sie die Datei *META-INF/context.xml*. Suchen Sie im `<Context>`-Element nach `<Resource>`-Elementen.
+Untersuchen Sie die Datei *META-INF/context.xml*. Suchen Sie im `<Resource>`-Element nach `<Context>`-Elementen.
 
 #### <a name="on-the-application-servers"></a>Auf den Anwendungsservern
 
 Untersuchen Sie die Dateien *$CATALINA_BASE/conf/context.xml* und *$CATALINA_BASE/conf/server.xml* sowie die *XML*-Dateien, die in Verzeichnissen der Art *$CATALINA_BASE/conf/[Engine-Name]/[Hostname]* enthalten sind.
 
-In *context.xml*-Dateien werden JNDI-Ressourcen im `<Context>`-Element der obersten Ebene mithilfe von `<Resource>`-Elementen beschrieben.
+In *context.xml*-Dateien werden JNDI-Ressourcen im `<Resource>`-Element der obersten Ebene mithilfe von `<Context>`-Elementen beschrieben.
 
-In *server.xml*-Dateien werden JNDI-Ressourcen im `<GlobalNamingResources>`-Element mithilfe von `<Resource>`-Elementen beschrieben.
+In *server.xml*-Dateien werden JNDI-Ressourcen im `<Resource>`-Element mithilfe von `<GlobalNamingResources>`-Elementen beschrieben.
 
 #### <a name="datasources"></a>Datenquellen
 

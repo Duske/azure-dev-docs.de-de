@@ -5,10 +5,10 @@ keywords: Azure, Chef, Devops, virtuelle Computer, Übersicht, Automatisieren
 ms.date: 02/22/2020
 ms.topic: article
 ms.openlocfilehash: 94cfe5d57673db151d53133fb8b2ef66c5629b93
-ms.sourcegitcommit: a32ca0946275165ce24216c6fa243ec21d6c9193
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80892989"
 ---
 # <a name="using-chef-with-azure"></a>Verwenden von Chef mit Azure

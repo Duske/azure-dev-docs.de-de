@@ -7,10 +7,10 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.openlocfilehash: 131cc95ce3b927ffc26ea7b08367b65dd434c0e4
-ms.sourcegitcommit: 858b061ed9ac883821a0485054b8076e2e719821
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82209763"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-eclipse"></a>Verwalten von Speicherkonten mithilfe von Azure-Explorer für Eclipse
@@ -35,21 +35,21 @@ Gehen Sie folgendermaßen vor, um ein Speicherkonto mit dem Azure-Explorer zu er
 
    ![Dialogfeld „Neues Speicherkonto erstellen“][CS02]
 
-   * **Name**: Der Name für das neue Speicherkonto.
+   * **Name:** Geben Sie den Namen des neuen Speicherkontos an.
 
-   * **Abonnement**: Das Azure-Abonnement, das Sie für das neue Speicherkonto verwenden möchten.
+   * **Abonnement:** Wählen Sie das Azure-Abonnement aus, das Sie für das neue Speicherkonto verwenden möchten.
 
-   * **Ressourcengruppe**: Die Ressourcengruppe für Ihre VM. Wählen Sie eine der folgenden Optionen aus:
-      * **Neue erstellen**: Gibt an, dass Sie eine neue Ressourcengruppe erstellen möchten.
-      * **Vorhandene verwenden**: Gibt an, dass Sie in einer Liste von Ressourcengruppen, die Ihrem Azure-Konto zugeordnet sind, eine Auswahl treffen möchten.
+   * **Ressourcengruppe:** Geben Sie die Ressourcengruppe für Ihren virtuellen Computer an. Wählen Sie eine der folgenden Optionen aus:
+      * **Create New**: Gibt an, dass Sie eine neue Ressourcengruppe erstellen möchten.
+      * **Vorhandene verwenden:** Geben Sie an, dass Sie in einer Liste von Ressourcengruppen, die Ihrem Azure-Konto zugeordnet sind, eine Auswahl treffen möchten.
 
-   * **Region**: Der Standort, an dem Ihr Speicherkonto erstellt wird (z. B. „USA, Westen“).
+   * **Standort:** Geben Sie den Standort an, an dem Ihr Speicherkonto erstellt wird, z.B. „USA, Westen“.
 
-   * **Kontoart**: Der Typ des zu erstellenden Speicherkontos (z. B. „Blob Storage“). Weitere Informationen finden Sie unter [Informationen zu Azure-Speicherkonten].
+   * **Kontoart:** Geben Sie den Typ des zu erstellenden Speicherkontos an (z.B. „Blob Storage“). Weitere Informationen finden Sie unter [Informationen zu Azure-Speicherkonten].
 
-   * **Leistung**: Das zu verwendende Speicherkontoangebot des ausgewählten Herausgebers (z. B. „Premium“). Weitere Informationen finden Sie unter [Skalierbarkeits- und Leistungsziele für Azure Storage].
+   * **Leistung:** Geben Sie an, welches Speicherkontoangebot vom ausgewählten Herausgeber verwendet werden soll (z.B. „Premium“). Weitere Informationen finden Sie unter [Skalierbarkeits- und Leistungsziele für Azure Storage].
 
-   * **Replikation**: Die Replikation für das Speicherkonto (z. B. „Zonenredundant“). Weitere Informationen finden Sie unter [Azure-Speicherreplikation].
+   * **Replikation**: Gibt die Replikation des Speicherkontos an (z.B. „zonenredundant“). Weitere Informationen finden Sie unter [Azure-Speicherreplikation].
 
 1. Nachdem Sie alle vorhergehenden Optionen angegeben haben, klicken Sie auf **Erstellen**.
 

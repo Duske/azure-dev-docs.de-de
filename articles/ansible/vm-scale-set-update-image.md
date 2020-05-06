@@ -5,10 +5,10 @@ keywords: ansible, azure, devops, bash, playbook, vm, vm-skalierungsgruppen, vms
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.openlocfilehash: ae25012346c7d6fbc65c43fad6b3b228eedc9e7c
-ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81743822"
 ---
 # <a name="tutorial-update-the-custom-image-of-azure-virtual-machine-scale-sets-using-ansible"></a>Tutorial: Aktualisieren des benutzerdefinierten Image von Skalierungsgruppen für virtuelle Azure-Computer mit Ansible

@@ -5,10 +5,10 @@ keywords: Ansible, Rollen, Matrix, Version, Azure, DevOps
 ms.topic: reference
 ms.date: 10/14/2019
 ms.openlocfilehash: 54e27c7570ba1cdbce7355740181d68a2f3efbac
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/06/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80741648"
 ---
 # <a name="ansible-module-and-version-matrix"></a>Matrix der Ansible-Module und -Versionen
@@ -167,7 +167,7 @@ Diese Module sind in dem offiziellen Release von Ansible oder aus den folgenden 
 | azure_rm_servicebussaspolicy                | -            | -                           | -            | -            | Ja          | Ja          | Ja          |
 | azure_rm_servicebustopic                    | -            | -                           | -            | -            | Ja          | Ja          | Ja          |
 | azure_rm_servicebustopicsubscription        | -            | -                           | -            | -            | Ja          | Ja          | Ja          |
-| **Security**                    |           |                          |                          |                             |           |           |           |
+| **Sicherheit**                    |           |                          |                          |                             |           |           |           |
 | azure_rm_keyvault                           | -            | Ja                         | Ja          | Ja          | Ja          | Ja          | Ja          |
 | azure_rm_keyvault_info                     | -            | -                           | -              | -          | Ja          | Ja          | Ja          |
 | azure_rm_keyvaultkey                        | -            | Ja                         | Ja          | Ja          | Ja          | Ja          | Ja          |

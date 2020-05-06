@@ -5,10 +5,10 @@ keywords: Azure, Chef, Devops, Client, Installation, Portal
 ms.date: 02/22/2020
 ms.topic: article
 ms.openlocfilehash: b5dd158bd06511bf440228d4ae0948596bca0612
-ms.sourcegitcommit: a32ca0946275165ce24216c6fa243ec21d6c9193
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80892899"
 ---
 # <a name="install-the-chef-client-from-the-azure-portal"></a>Installieren des Chef-Clients aus dem Azure-Portal
@@ -16,7 +16,7 @@ Im Azure-Portal können Sie einem Linux- oder Windows-Computer direkt die Chef-C
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-- **Azure-Abonnement**: Wenn Sie kein Azure-Abonnement besitzen, können Sie ein [kostenloses Konto](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) erstellen, bevor Sie beginnen.
+- **Azure-Abonnement:** Wenn Sie über kein Azure-Abonnement verfügen, können Sie ein [kostenloses Konto](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) erstellen, bevor Sie beginnen.
 
 - **Chef**: Wenn Sie nicht über ein aktives Chef-Konto verfügen, melden Sie sich für eine [kostenlose Testversion von Hosted Chef](https://manage.chef.io/signup) an. Um die Anweisungen in diesem Artikel zu befolgen, benötigen Sie die folgenden Werte aus Ihrem Chef-Konto:
   - organization_validation-Schlüssel
