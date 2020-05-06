@@ -4,10 +4,10 @@ description: Eine Liste mit Azure-Dokumentationsartikeln zu den ersten Schritten
 ms.date: 04/09/2020
 ms.topic: conceptual
 ms.openlocfilehash: d8663f6dbf78f44eb24cf19a2ed8376604cfc489
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81673666"
 ---
 # <a name="directories-for-java-apps-on-azure"></a>Verzeichnisse für Java-Apps in Azure

@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.openlocfilehash: fd37b633100d92a4126910a3fb9e8ad25b11423c
-ms.sourcegitcommit: 858b061ed9ac883821a0485054b8076e2e719821
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82209783"
 ---
 # <a name="azure-cli-configuration"></a>Azure CLI-Konfiguration
@@ -60,8 +60,8 @@ Konfigurationsdateien sind im INI-Dateiformat geschrieben. Dieses Dateiformat wi
 
 Bei booleschen Werten wird die Groß-/Kleinschreibung nicht beachtet, und sie werden durch folgende Werte dargestellt:
 
-* __True__: 1, yes, true, on
-* __False__: 0, no, false, off
+* __True:__ 1, yes, true, on
+* __False:__ 0, no, false, off
 
 Das folgende Beispiel zeigt eine CLI-Konfigurationsdatei, die sämtliche Bestätigungsaufforderungen deaktiviert und eine Protokollierung im Verzeichnis `/var/log/azure` einrichtet.
 
@@ -84,22 +84,22 @@ Wenn Sie einen Standardwert angeben, wird dieses Argument von keinem Befehl mehr
 
 | `Section` | Name      | type | BESCHREIBUNG|
 |---------|-----------|------|------------|
-| __core__ | output | Zeichenfolge | Das Standardausgabeformat. Mögliche Optionen: `json`, `jsonc`, `tsv` oder `table`. |
+| __core__ | output | string | Das Standardausgabeformat. Mögliche Optionen: `json`, `jsonc`, `tsv` oder `table`. |
 | | disable\_confirm\_prompt | boolean | Dient zum Aktivieren/Deaktivieren von Bestätigungsaufforderungen. |
 | | collect\_telemetry | boolean | Erlaubt Microsoft das Sammeln anonymer Daten zur Verwendung der CLI. Informationen zum Datenschutz finden Sie in den [Nutzungsbedingungen für die Azure CLI](https://github.com/Azure/azure-cli/blob/dev/LICENSE). |
 | __logging__ | enable\_log\_file | boolean | Dient zum Aktivieren/Deaktivieren der Protokollierung. |
-| | log\_dir | Zeichenfolge | Das Verzeichnis, in das Protokolle geschrieben werden sollen. Standardmäßig ist dieser Wert auf `${AZURE_CONFIG_DIR}/logs` festgelegt. |
-| __storage__ | connection\_string | Zeichenfolge | Die Standardverbindungszeichenfolge für `az storage`-Befehle. |
-| | account | Zeichenfolge | Der Standardkontoname für `az storage`-Befehle. |
-| | Schlüssel | Zeichenfolge | Der Standardkontoschlüssel für `az storage`-Befehle. |
-| | sas\_token | Zeichenfolge | Das Standard-SAS-Token für `az storage`-Befehle. |
-| __batchai__ | storage\_account | Zeichenfolge | Das Standardspeicherkonto für `az batchai`-Befehle. |
-| | storage\_key | Zeichenfolge | Der Standardspeicherschlüssel für `az batchai`-Befehle. |
-| __batch__ | account | Zeichenfolge | Der Azure Batch-Standardkontoname für `az batch`-Befehle. |
-| | access\_key | Zeichenfolge | Der Standardzugriffsschlüssel für `az batch`-Befehle. Wird nur für die `aad`-Autorisierung verwendet. |
-| | endpoint | Zeichenfolge | Der Standardendpunkt für `az batch`-Befehle, mit dem eine Verbindung hergestellt werden soll. |
-| | auth\_mode | Zeichenfolge | Der Autorisierungsmodus für `az batch`-Befehle. Kann `shared_key` oder `aad` sein. |
-| __cloud__ | name | Zeichenfolge | Die Standardcloud für alle `az`-Befehle.  Die möglichen Werte sind `AzureCloud` (Standard) oder `AzureChinaCloud`, `AzureUSGovernment`, `AzureGermanCloud`. Zum Ändern von Clouds können Sie den Befehl `az cloud set –name` verwenden.  Ein Beispiel finden Sie unter [Verwalten von Clouds mit der Azure CLI](manage-clouds-azure-cli.md). |
+| | log\_dir | string | Das Verzeichnis, in das Protokolle geschrieben werden sollen. Standardmäßig ist dieser Wert auf `${AZURE_CONFIG_DIR}/logs` festgelegt. |
+| __storage__ | connection\_string | string | Die Standardverbindungszeichenfolge für `az storage`-Befehle. |
+| | account | string | Der Standardkontoname für `az storage`-Befehle. |
+| | Schlüssel | string | Der Standardkontoschlüssel für `az storage`-Befehle. |
+| | sas\_token | string | Das Standard-SAS-Token für `az storage`-Befehle. |
+| __batchai__ | storage\_account | string | Das Standardspeicherkonto für `az batchai`-Befehle. |
+| | storage\_key | string | Der Standardspeicherschlüssel für `az batchai`-Befehle. |
+| __batch__ | account | string | Der Azure Batch-Standardkontoname für `az batch`-Befehle. |
+| | access\_key | string | Der Standardzugriffsschlüssel für `az batch`-Befehle. Wird nur für die `aad`-Autorisierung verwendet. |
+| | endpoint | string | Der Standardendpunkt für `az batch`-Befehle, mit dem eine Verbindung hergestellt werden soll. |
+| | auth\_mode | string | Der Autorisierungsmodus für `az batch`-Befehle. Kann `shared_key` oder `aad` sein. |
+| __cloud__ | name | string | Die Standardcloud für alle `az`-Befehle.  Die möglichen Werte sind `AzureCloud` (Standard) oder `AzureChinaCloud`, `AzureUSGovernment`, `AzureGermanCloud`. Zum Ändern von Clouds können Sie den Befehl `az cloud set –name` verwenden.  Ein Beispiel finden Sie unter [Verwalten von Clouds mit der Azure CLI](manage-clouds-azure-cli.md). |
 
 > [!NOTE]
 > In Ihrer Konfigurationsdatei begegnen Ihnen möglicherweise noch andere Werte, diese werden jedoch direkt über CLI-Befehle verwaltet (einschließlich `az configure`). Abgesehen von den in der obigen Tabelle aufgeführten Werten sollten Sie keine anderen Werte selbst ändern.

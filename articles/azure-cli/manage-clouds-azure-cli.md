@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.openlocfilehash: 8e24a4740d97ddf67f81e60fef9217a4e72daab0
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82031222"
 ---
 # <a name="select-clouds-with-the-azure-cli"></a>Auswählen von Clouds mit der Azure CLI
@@ -38,7 +38,7 @@ True        AzureCloud         latest
             AzureGermanCloud   latest
 ```
 
-Für die derzeit aktive Cloud ist in der Spalte `IsActive` der Wert `True` angegeben. Es kann immer nur eine Cloud aktiv sein. Ausführlichere Informationen zu einer Cloud (einschließlich der Endpunkte, die sie für Azure-Dienste verwendet) erhalten Sie mit dem Befehl `cloud show`:
+Für die derzeit aktive Cloud ist in der Spalte `True` der Wert `IsActive` angegeben. Es kann immer nur eine Cloud aktiv sein. Ausführlichere Informationen zu einer Cloud (einschließlich der Endpunkte, die sie für Azure-Dienste verwendet) erhalten Sie mit dem Befehl `cloud show`:
 
 ```azurecli-interactive
 az cloud show --name AzureChinaCloud --output json

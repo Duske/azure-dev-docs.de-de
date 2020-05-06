@@ -23,7 +23,7 @@
         - name: Verwalten von virtuellen Linux-Computern
           href: vm-manage.md
           maintainContext: true
-- name: Tutorials
+- name: Lernprogramme
   items:
     - name: Azure Application Gateway
       items:

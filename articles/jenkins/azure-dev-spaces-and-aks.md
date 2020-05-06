@@ -5,10 +5,10 @@ keywords: Jenkins, Azure, DevOps, Azure Dev Spaces, AKS, Azure Kubernetes Servic
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.openlocfilehash: 427b53642b4159a82dba699c631da8948a6b744b
-ms.sourcegitcommit: 9ff9b51ab21c93bfd61e480c6ff8e39c9d4bf02e
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82170286"
 ---
 # <a name="tutorial-use-azure-dev-spaces-with-azure-kubernetes-service"></a>Tutorial: Verwenden von Azure Dev Spaces mit Azure Kubernetes Service

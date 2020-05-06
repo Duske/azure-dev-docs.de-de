@@ -7,10 +7,10 @@ ms.date: 12/19/2018
 ms.service: event-hubs
 ms.topic: article
 ms.openlocfilehash: 1141c54e613003f6fcc9396b11528765eaf3f8ad
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81669596"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-apache-kafka-with-azure-event-hubs"></a>Verwenden von Spring Boot Starter für Apache Kafka mit Azure Event Hubs
@@ -348,7 +348,7 @@ In diesem Abschnitt erstellen Sie die Java-Klassen, die erforderlich sind, um Er
    ```shell
    curl -X POST -H "Content-Type: text/plain" -d "hello" http://localhost:8080/messages
    ```
-   In den Protokollen Ihrer Anwendung sollte „hello“ angezeigt werden. Beispiel:
+   In den Protokollen Ihrer Anwendung sollte „hello“ angezeigt werden. Beispiel: 
 
    ```shell
    [http-nio-8080-exec-2] INFO org.apache.kafka.common.utils.AppInfoParser - Kafka version : 1.0.2

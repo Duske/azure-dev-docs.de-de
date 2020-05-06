@@ -4,10 +4,10 @@ description: 'Teil 2 des Tutorials: Verwenden einer Containerregistrierung'
 ms.topic: conceptual
 ms.date: 09/20/2019
 ms.openlocfilehash: 01e35f12e83a7e53d6d5b78c4fcf156d9a5b53f0
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82026173"
 ---
 # <a name="use-a-container-registry"></a>Verwenden einer Containerregistrierung

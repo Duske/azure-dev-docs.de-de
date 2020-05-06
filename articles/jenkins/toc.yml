@@ -9,7 +9,7 @@
   items:
     - name: Erstellen eines Jenkins-Servers
       href: configure-on-linux-vm.md
-- name: Tutorials
+- name: Lernprogramme
   items:
     - name: Konfigurieren
       items:

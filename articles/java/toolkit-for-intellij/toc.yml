@@ -5,7 +5,7 @@
       href: create-hello-world-web-app.md
     - name: 'Erste Schritte: Functions'
       href: quickstart-functions.md
-    - name: Tutorials
+    - name: Lernprogramme
       expanded: true
       items:
         - name: Bereitstellen einer Web-App in einem Linux-Container

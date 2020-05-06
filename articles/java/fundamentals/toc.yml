@@ -38,7 +38,7 @@
       href: /azure/jenkins/
     - name: Azure DevOps
       href: /azure/devops/java/
-    - name: Tutorials
+    - name: Lernprogramme
       expanded: true
       items:
         - name: Überwachen und Protokollieren mithilfe von Logz.io

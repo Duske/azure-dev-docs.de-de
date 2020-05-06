@@ -6,10 +6,10 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 01/22/2019
 ms.openlocfilehash: 9576a3831afb00b10b9bec3531c2dbc1dc60f29f
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81672186"
 ---
 # <a name="migrate-executable-jar-web-applications-to-java-se-on-azure-app-service"></a>Migrieren von ausführbaren JAR-Webanwendungen zu Java SE unter Azure App Service
@@ -147,7 +147,7 @@ App Service unterstützt nur einen einzelnen HTTP-Endpunkt für einen einzelnen 
 
 Stellen Sie sicher, dass alle externen Ressourcenkoordinaten (z. B. Datenbank-Verbindungszeichenfolgen) und andere anpassbare Einstellungen aus Umgebungsvariablen ausgelesen werden können. Wenn Sie eine Spring Boot-Anwendung migrieren, sollten alle Konfigurationseinstellungen bereits externalisierbar sein. Weitere Informationen finden Sie in der Spring Boot-Dokumentation unter [Externalisierte Konfiguration](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-external-config).
 
-Hier ist ein Beispiel angegeben, in dem aus der Datei *application.properties* auf die Umgebungsvariable `SERVICEBUS_CONNECTION_STRING` verwiesen wird:
+Hier ist ein Beispiel angegeben, in dem aus der Datei `SERVICEBUS_CONNECTION_STRING`application.properties*auf die Umgebungsvariable* verwiesen wird:
 
 ```properties
 spring.jms.servicebus.connection-string=${SERVICEBUS_CONNECTION_STRING}
@@ -195,7 +195,7 @@ Wenn für Ihre Anwendung bestimmte Runtimeoptionen benötigt werden, sollten Sie
 Führen Sie [diese Schritte zum Migrieren von Verbindungseinstellungen und anderen Einstellungen](/azure/app-service/containers/configure-language-java#spring-boot-1) aus.
 
 > [!NOTE]
-> Für alle Spring Boot-Anwendungseinstellungen, die im Abschnitt [Parametrisieren der Konfiguration](#parameterize-the-configuration) mit Variablen parametrisiert wurden, müssen diese Umgebungsvariablen in der Anwendungskonfiguration definiert werden. Alle Spring Boot-Anwendungseinstellungen, die nicht explizit mit Umgebungsvariablen parametrisiert wurden, können hierdurch per Anwendungskonfiguration weiterhin außer Kraft gesetzt werden. Beispiel:
+> Für alle Spring Boot-Anwendungseinstellungen, die im Abschnitt [Parametrisieren der Konfiguration](#parameterize-the-configuration) mit Variablen parametrisiert wurden, müssen diese Umgebungsvariablen in der Anwendungskonfiguration definiert werden. Alle Spring Boot-Anwendungseinstellungen, die nicht explizit mit Umgebungsvariablen parametrisiert wurden, können hierdurch per Anwendungskonfiguration weiterhin außer Kraft gesetzt werden. Beispiel: 
 
   ```properties
   spring.jms.servicebus.connection-string=${CUSTOMCONNSTR_SERVICE_BUS}

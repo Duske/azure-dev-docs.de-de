@@ -7,10 +7,10 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.openlocfilehash: 48e1381761311a4ed9b5bd6f764af6f19f008fc1
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81670016"
 ---
 # <a name="spring-boot-starters-for-azure"></a>Spring Boot Starter für Azure
@@ -40,7 +40,7 @@ Für Azure stehen aktuell folgende Spring Boot Starter-Optionen zur Verfügung:
 <a name="azure-support"></a>
 ## <a name="azure-support"></a>Azure-Support
 
-Dieser Spring Boot Starter bietet Unterstützung für die automatische Konfiguration für Azure-Dienste, z. B.: Service Bus, Storage, Active Directory, Cosmos DB, Key Vault usw.
+Diese Spring Boot Starter-Option bietet Unterstützung für die automatische Konfiguration von Azure-Diensten wie Service Bus, Storage, Active Directory, Cosmos DB und Key Vault.
 
 Verwendungsbeispiele für die verschiedenen Azure-Features, die von dieser Starter-Option bereitgestellt werden, finden Sie hier:
 
