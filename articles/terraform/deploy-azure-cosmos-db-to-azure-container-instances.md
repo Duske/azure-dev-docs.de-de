@@ -4,10 +4,10 @@ description: Es wird beschrieben, wie Sie eine einfache Terraform-Konfiguration 
 ms.topic: tutorial
 ms.date: 04/26/2020
 ms.openlocfilehash: 88bcb862389a4cbfc611f7beab797e7601c49258
-ms.sourcegitcommit: 9ff9b51ab21c93bfd61e480c6ff8e39c9d4bf02e
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82171016"
 ---
 # <a name="tutorial-deploy-an-azure-cosmos-db-to-azure-container-instances"></a>Tutorial: Bereitstellen einer Azure Cosmos DB-Instanz für Azure Container Instances

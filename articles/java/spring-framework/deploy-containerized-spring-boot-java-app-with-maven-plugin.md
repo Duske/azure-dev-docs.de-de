@@ -10,10 +10,10 @@ ms.topic: article
 ms.workload: web
 ms.custom: seo-java-july2019, seo-java-august2019
 ms.openlocfilehash: b926b0bd1cb401f12f927abfea112e6004988812
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81668396"
 ---
 # <a name="use-maven-for-azure-web-apps-to-deploy-a-containerized-spring-boot-app-to-azure"></a>Bereitstellen einer containerbasierten Spring Boot-App in Azure mithilfe von Maven für Azure-Web-Apps
@@ -83,7 +83,7 @@ In diesem Abschnitt klonen Sie eine containerbasierte Spring Boot-Anwendung und 
    curl http://localhost:8080
    ```
 
-1. Die folgende Meldung sollte angezeigt werden: **Hello Docker World!**
+1. Es sollte die folgende Meldung angezeigt werden: **Hello Docker World**.
 
 ## <a name="create-an-azure-service-principal"></a>Erstellen eines Azure-Dienstprinzipals
 
@@ -163,7 +163,7 @@ In diesem Abschnitt verwenden Sie die Werte Ihres Azure-Dienstprinzipals zum Kon
 
 3. Speichern und schließen Sie die Datei *settings.xml*.
 
-## <a name="optional-deploy-your-local-docker-file-to-docker-hub"></a>OPTIONAL: Bereitstellen der lokalen Docker-Datei in Docker Hub
+## <a name="optional-deploy-your-local-docker-file-to-docker-hub"></a>OPTIONAL: Bereitstellen der lokalen Docker-Datei auf Docker Hub
 
 Wenn Sie ein Docker-Konto besitzen, können Sie das Docker-Containerimage lokal erstellen und per Push an Docker Hub übertragen. Führen Sie dazu die folgenden Schritte aus:
 

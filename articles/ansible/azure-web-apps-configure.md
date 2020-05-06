@@ -5,10 +5,10 @@ keywords: Ansible, Azure, DevOps, Bash, Playbook, Azure App Service, Web-App, Ja
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.openlocfilehash: 59113376d1f15d902553daa0c00bc7de56999d9d
-ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81743696"
 ---
 # <a name="tutorial-configure-apps-in-azure-app-service-using-ansible"></a>Tutorial: Konfigurieren von Apps in Azure App Service mit Ansible

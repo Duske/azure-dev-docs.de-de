@@ -5,10 +5,10 @@ keywords: Jenkins, Azure, DevOps, virtueller Computer, CI/CD, Azure DevOps Servi
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.openlocfilehash: 213acfa152d5bd066f2cdac51204b3eac56307eb
-ms.sourcegitcommit: 9ff9b51ab21c93bfd61e480c6ff8e39c9d4bf02e
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82169856"
 ---
 # <a name="tutorial-deploy-to-linux-virtual-machine-using-jenkins-and-azure-devops-services"></a>Tutorial: Bereitstellen eines virtuellen Linux-Computers mit Jenkins und Azure DevOps Services

@@ -6,10 +6,10 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
 ms.openlocfilehash: c6586f0ba2e651445e95fa3606daa35ee566df87
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81673476"
 ---
 # <a name="migrate-tomcat-applications-to-tomcat-on-azure-app-service"></a>Migrieren von Tomcat-Anwendungen zu Tomcat unter Azure App Service
@@ -78,7 +78,7 @@ Wenn Ihre Anwendung Code mit Abhängigkeiten vom Hostbetriebssystem enthält, m�
 
 Das [Tomcat-Clustering](https://tomcat.apache.org/tomcat-9.0-doc/cluster-howto.html) wird für Azure App Service nicht unterstützt. Stattdessen können Sie die Skalierung und den Lastenausgleich mit Azure App Service und ohne Tomcat-spezifische Funktionen konfigurieren und verwalten. Sie können den Sitzungszustand an einem alternativen Speicherort speichern, um ihn für Replikate übergreifend verfügbar zu machen. Weitere Informationen finden Sie unter [Identifizieren eines Mechanismus für Sitzungspersistenz](#identify-session-persistence-mechanism).
 
-Suchen Sie für die Ermittlung, ob für Ihre Anwendung das Clustering verwendet wird, in der *server.xml*-Datei in den Elementen `<Host>` oder `<Engine>` nach dem `<Cluster>`-Element.
+Suchen Sie für die Ermittlung, ob für Ihre Anwendung das Clustering verwendet wird, in der `<Cluster>`server.xml`<Host>`-Datei in den Elementen `<Engine>` oder *nach dem*-Element.
 
 #### <a name="identify-all-outside-processesdaemons-running-on-the-production-servers"></a>Ermitteln aller externen Prozesse/Daemons, die auf den Produktionsservern ausgeführt werden
 
@@ -88,7 +88,7 @@ Sie müssen die Migration zu einem anderen Ort durchführen oder alle Prozesse b
 
 App Service unterstützt nur jeweils einen HTTP-Connector. Wenn für Ihre Anwendung zusätzliche Connectors erforderlich sind, z. B. der AJP-Connector, sollten Sie App Service nicht verwenden.
 
-Suchen Sie in der Datei *server.xml* Ihrer Tomcat-Konfiguration nach `<Connector>`-Elementen, um die von Ihrer Anwendung genutzten HTTP-Connectors zu ermitteln.
+Suchen Sie in der Datei `<Connector>`server.xml*Ihrer Tomcat-Konfiguration nach*-Elementen, um die von Ihrer Anwendung genutzten HTTP-Connectors zu ermitteln.
 
 #### <a name="determine-whether-memoryrealm-is-used"></a>Ermitteln, ob MemoryRealm genutzt wird
 
@@ -180,7 +180,7 @@ Verwenden Sie die Anwendungseinstellungen, um die spezifischen Geheimnisse für 
 
 ### <a name="migrate-data-sources-libraries-and-jndi-resources"></a>Migrieren von Datenquellen, Bibliotheken und JNDI-Ressourcen
 
-Informationen zu den Konfigurationsschritten für Datenquellen finden Sie unter [Konfigurieren einer Linux-Java-App für Azure App Service](/azure/app-service/containers/configure-language-java) im Abschnitt [Datenquellen](/azure/app-service/containers/configure-language-java#data-sources).
+Informationen zu den Konfigurationsschritten für Datenquellen finden Sie unter [Konfigurieren einer Linux-Java-App für Azure App Service](/azure/app-service/containers/configure-language-java#data-sources) im Abschnitt [Datenquellen](/azure/app-service/containers/configure-language-java).
 
 [!INCLUDE[Tomcat datasource additional instructions](includes/tomcat-datasource-additional-instructions.md)]
 

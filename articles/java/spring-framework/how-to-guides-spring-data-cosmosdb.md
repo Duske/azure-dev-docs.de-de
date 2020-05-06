@@ -6,10 +6,10 @@ ms.author: kuthapar
 ms.topic: conceptual
 ms.date: 1/9/2019
 ms.openlocfilehash: 838fb4efa79f5d3ef8a97977a0d239a809e2506d
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81674286"
 ---
 # <a name="spring-data-azure-cosmos-db-developers-guide"></a>Entwicklerhandbuch zu Spring Data Azure Cosmos DB
@@ -46,7 +46,7 @@ public interface ReactiveSampleRepository extends ReactiveCosmosRepository<Sampl
 }
 ```
 
-Abhängig von der Verwendung müssen Sie beide Repositorys separat in der Klasse `Configuration` aktivieren. Beispiel:
+Abhängig von der Verwendung müssen Sie beide Repositorys separat in der Klasse `Configuration` aktivieren. Beispiel: 
 
 ```java
 @Configuration
@@ -221,7 +221,7 @@ public CosmosDBConfig getConfig() {
 
 Version 2.2.x des Spring Data Cosmos DB SDK unterstützt Antwortdiagnosezeichenfolgen und Abfragemetriken.
 
-Legen Sie zum Aktivieren von Abfragemetriken in der Datei `application.properties` das Flag `populateQueryMetrics` auf **true** fest. Erweitern Sie dann die Schnittstelle `ResponseDiagnosticsProcessor`, und implementieren Sie die Methode `processResponseDiagnostics`, um die Diagnoseinformationen zu protokollieren. Übergeben Sie schließlich eine Instanz der Implementierung an die Methode `CosmosDbConfig.setResponseDiagnosticsProcessor`. Der folgende Code zeigt eine Beispielimplementierung:
+Legen Sie zum Aktivieren von Abfragemetriken in der Datei `populateQueryMetrics` das Flag **auf**true`application.properties` fest. Erweitern Sie dann die Schnittstelle `ResponseDiagnosticsProcessor`, und implementieren Sie die Methode `processResponseDiagnostics`, um die Diagnoseinformationen zu protokollieren. Übergeben Sie schließlich eine Instanz der Implementierung an die Methode `CosmosDbConfig.setResponseDiagnosticsProcessor`. Der folgende Code zeigt eine Beispielimplementierung:
 
 ```java
 @Configuration

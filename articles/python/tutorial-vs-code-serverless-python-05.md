@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
 ms.openlocfilehash: 425fb745cec74672cfabc6c3c5eab96821a43224
-ms.sourcegitcommit: 1bd9ec6a4115e9162e33b76a933869788e6ab702
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80441165"
 ---
 # <a name="5-deploy-azure-functions-in-python"></a>5: Bereitstellen von Azure Functions in Python

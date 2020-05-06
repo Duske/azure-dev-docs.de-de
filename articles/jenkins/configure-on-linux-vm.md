@@ -5,10 +5,10 @@ keywords: Jenkins, Azure, DevOps, Portal, Linux, virtueller Computer, Lösungsvo
 ms.topic: quickstart
 ms.date: 03/03/2020
 ms.openlocfilehash: 2ea038dad2294784804f45026ea26198a9b12d79
-ms.sourcegitcommit: 9ff9b51ab21c93bfd61e480c6ff8e39c9d4bf02e
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82170336"
 ---
 # <a name="quickstart-create-a-jenkins-server-on-an-azure-linux-vm"></a>Schnellstart: Erstellen eines Jenkins-Servers auf einem virtuellen Azure-Linux-Computer

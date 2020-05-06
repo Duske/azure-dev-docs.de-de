@@ -4,10 +4,10 @@ description: 'Teil 5 des Tutorials: Bereitstellen des Images in Azure App Ser
 ms.topic: conceptual
 ms.date: 09/20/2019
 ms.openlocfilehash: 487110258ed3302e781cfa24a5ae9f518ebb3bda
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/06/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80740667"
 ---
 # <a name="deploy-the-image-to-azure-app-service"></a>Bereitstellen des Images in Azure App Service
@@ -50,7 +50,7 @@ Damit Sie Ihr Image für eine Webanwendung bereitstellen können, müssen Sie f�
 
     ![Ausgabe bei erfolgreicher Bereitstellung](media/deploy-containers/deploy-output.png)
 
-1. Um die bereitgestellte Website aufzurufen, **klicken** Sie bei gedrückter **STRG-TASTE** auf die URL im Bereich **Ausgabe**. Die neue App Service-Instanz wird auch in Visual Studio Code im **AZURE**-Explorer im Abschnitt **APP SERVICE** angezeigt. Dort können Sie mit der rechten Maustaste auf die Website klicken und **Website durchsuchen** auswählen.
+1. Um die bereitgestellte Website aufzurufen, **klicken** Sie bei gedrückter+**STRG-TASTE** auf die URL im Bereich **Ausgabe**. Die neue App Service-Instanz wird auch in Visual Studio Code im **AZURE**-Explorer im Abschnitt **APP SERVICE** angezeigt. Dort können Sie mit der rechten Maustaste auf die Website klicken und **Website durchsuchen** auswählen.
 
 > [!div class="nextstepaction"]
 > [Ich habe meine Website in Azure bereitgestellt](tutorial-vscode-docker-node-06.md) [Es ist ein Problem aufgetreten](https://www.research.net/r/PWZWZ52?tutorial=docker-extension&step=deploy-app)

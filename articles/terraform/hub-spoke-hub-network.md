@@ -4,10 +4,10 @@ description: Es wird beschrieben, wie Sie ein virtuelles Hubnetzwerk in Azure er
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.openlocfilehash: 00e8e16588c86f85c4d5a0613de6e94efd2ec6fc
-ms.sourcegitcommit: 9ff9b51ab21c93bfd61e480c6ff8e39c9d4bf02e
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82171006"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-in-azure-by-using-terraform"></a>Tutorial: Erstellen eines virtuellen Hubnetzwerks in Azure unter Verwendung von Terraform

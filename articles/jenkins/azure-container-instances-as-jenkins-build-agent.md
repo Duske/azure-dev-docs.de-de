@@ -5,10 +5,10 @@ keywords: Jenkins, Azure, DevOps, Container Instances, Build-Agent
 ms.topic: article
 ms.date: 08/31/2018
 ms.openlocfilehash: 117e2a7cb8e67f33244eb82140c7166d72172e87
-ms.sourcegitcommit: 858b061ed9ac883821a0485054b8076e2e719821
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82209743"
 ---
 # <a name="tutorial-use-azure-container-instances-as-a-jenkins-build-agent"></a>Tutorial: Verwenden von Azure Container Instances als Jenkins-Build-Agent

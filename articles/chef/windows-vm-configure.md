@@ -8,10 +8,10 @@ author: tomarchermsft
 ms.author: tarcher
 ms.date: 02/22/2020
 ms.openlocfilehash: 17fc56cbf3aaed573cead58eb8d436d99efa391b
-ms.sourcegitcommit: a32ca0946275165ce24216c6fa243ec21d6c9193
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80893049"
 ---
 # <a name="quickstart---configure-a-windows-virtual-machine-in-azure-using-chef"></a>Schnellstart: Konfigurieren eines virtuellen Windows-Computers in Azure mithilfe von Chef
@@ -273,7 +273,7 @@ In diesem Schritt wird das Cookbook, das Sie auf dem lokalen Computer erstellt h
 
 ## <a name="deploy-a-virtual-machine-with-knife-azure"></a>Bereitstellen eines virtuellen Computers mit Knife Azure
 
-Verwenden Sie den Befehl `knife`, um einen virtuellen Azure-Computer bereitzustellen und das Cookbook `Webserver` anzuwenden.
+Verwenden Sie den Befehl `Webserver`, um einen virtuellen Azure-Computer bereitzustellen und das Cookbook `knife` anzuwenden.
 
 Mit dem Befehl `knife` werden auch der IIS-Webdienst und die Standardwebseite installiert.
 

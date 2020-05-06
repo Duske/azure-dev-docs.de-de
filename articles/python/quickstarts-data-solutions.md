@@ -4,10 +4,10 @@ description: Eine Liste mit Azure-Dokumentationsartikeln zu den ersten Schritten
 ms.date: 03/17/2020
 ms.topic: conceptual
 ms.openlocfilehash: b378a650f0f3d661ef0fd5d16ec487a1a4038a73
-ms.sourcegitcommit: 1bd9ec6a4115e9162e33b76a933869788e6ab702
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80442085"
 ---
 # <a name="data-solutions-for-python-apps-on-azure"></a>Datenlösungen für Python-Apps in Azure

@@ -9,10 +9,10 @@ ms.service: multiple
 ms.assetid: f452468b-7aae-4944-abad-0b1aaf19170d
 ms.custom: seo-java-july2019, seo-java-september2019
 ms.openlocfilehash: 202b34a6b64d75e814a4fb586a44e471a9a9f118
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81673916"
 ---
 # <a name="patterns-and-best-practices-for-development-with-the-azure-libraries-for-java"></a>Muster und bewährte Methoden für die Entwicklung mit den Azure-Bibliotheken für Java 
@@ -105,7 +105,7 @@ Eine Herausforderung beim Erstellen von Azure-Ressourcen ergibt sich, wenn eine 
 
 Mit `Creatable<T>`-Objekten können Sie Azure-Ressourcen für die Verwendung in Ihrem Code definieren, ohne zu warten, bis sie in Ihrem Abonnement erstellt wurden. Die Verwaltungsbibliotheken stellen die Erstellung von `Creatable<T>`-Objekten zurück, bis sie benötigt werden.
 
-Verwenden Sie das Verb `define()`, um `Creatable<T>`-Objekte für Azure-Ressourcen zu generieren:
+Verwenden Sie das Verb `Creatable<T>`, um `define()`-Objekte für Azure-Ressourcen zu generieren:
 
 ```java
 Creatable<PublicIPAddress> publicIPAddressCreatable = azure.publicIPAddresses().define(publicIPAddressName)
@@ -138,7 +138,7 @@ Die Ausnahmeklassen der Verwaltungsbibliotheken erweitern `com.microsoft.rest.Re
 
 ## <a name="logs-and-trace"></a>Protokolle und Ablaufverfolgung
 
-Konfigurieren Sie den Protokollierungsgrad der Verwaltungsbibliothek mithilfe von `withLogLevel()`, wenn Sie das Einstiegspunktobjekt `Azure` erstellen. Folgende Ablaufverfolgungsebenen stehen zur Verfügung:
+Konfigurieren Sie den Protokollierungsgrad der Verwaltungsbibliothek mithilfe von `Azure`, wenn Sie das Einstiegspunktobjekt `withLogLevel()` erstellen. Folgende Ablaufverfolgungsebenen stehen zur Verfügung:
 
 | Ablaufverfolgungsebene | Protokollierung aktiviert 
 | ------------ | ---------------
@@ -148,4 +148,4 @@ Konfigurieren Sie den Protokollierungsgrad der Verwaltungsbibliothek mithilfe vo
 | com.microsoft.rest.LogLevel.HEADERS | Alles aus BASIC plus Abfrage- und Antwortheader der REST-Aufrufe
 | com.microsoft.rest.LogLevel.BODY_AND_HEADERS | Alles aus den Protokollierungsebenen „BODY“ und „HEADERS“
 
-Falls Sie Ausgaben in einem Protokollierungsframework wie [Log4J 2](https://logging.apache.org/log4j/2.x/) protokollieren müssen, können Sie eine [SLF4J-Protokollierungsimplementierung](https://www.slf4j.org/manual.html) einbinden.
+Falls Sie Ausgaben in einem Protokollierungsframework wie [Log4J 2](https://www.slf4j.org/manual.html) protokollieren müssen, können Sie eine [SLF4J-Protokollierungsimplementierung](https://logging.apache.org/log4j/2.x/) einbinden.

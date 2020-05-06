@@ -3,7 +3,7 @@
   items:
     - name: Azure-Erweiterungen
       href: 'https://github.com/Azure/azure-microprofile'
-    - name: Tutorials
+    - name: Lernprogramme
       expanded: true
       items:
         - name: Bereitstellen in Azure Container Instances

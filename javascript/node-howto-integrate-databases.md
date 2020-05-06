@@ -4,10 +4,10 @@ description: Azure bietet eine Vielzahl verschiedener Datenbanken für die Verwe
 ms.topic: article
 ms.date: 08/20/2019
 ms.openlocfilehash: 6eb7dcb97d78504c49f2ea39f5d39750dfec7215
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "74467280"
 ---
 # <a name="how-to-integrate-azure-databases-in-nodejs-apps"></a>Integrieren von Azure-Datenbanken in Node.js-Apps

@@ -4,10 +4,10 @@ description: Hier wird beschrieben, wie Sie mit dem Azure-Toolkit für IntelliJ 
 ms.topic: quickstart
 ms.date: 03/26/2020
 ms.openlocfilehash: ff0733e275f89ffa349f8455455df93587ff4fdf
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81674816"
 ---
 # <a name="quickstart-create-an-azure-functions-project-using-intellij-idea"></a>Schnellstart: Erstellen eines Azure Functions-Projekts mit IntelliJ IDEA

@@ -3,7 +3,7 @@
   items:
     - name: Compute Services
       href: compute.md
-    - name: Daten
+    - name: Data
       href: data.md
     - name: Storage
       href: storage.md

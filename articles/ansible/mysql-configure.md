@@ -5,10 +5,10 @@ keywords: Ansible, Azure, DevOps, Bash, Playbook, MySQL, Datenbank
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.openlocfilehash: e8aad724edd55bda7284eda5f9630e5ffbe9f74c
-ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81743415"
 ---
 # <a name="tutorial-configure-databases-in-azure-database-for-mysql-using-ansible"></a>Tutorial: Konfigurieren von Datenbanken in Azure Database for MySQL mit Ansible
