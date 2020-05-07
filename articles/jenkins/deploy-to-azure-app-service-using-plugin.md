@@ -4,16 +4,16 @@ description: Erfahren Sie, wie Sie das Jenkins-Plug-In für Azure App Service zu
 keywords: Jenkins, Azure, DevOps, App Service
 ms.topic: tutorial
 ms.date: 07/31/2018
-ms.openlocfilehash: 6ba1f2d4673e8a99425d07a24ba55500d1b43f02
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 6d5287a3e5ff9500b1a734bd5546cd6af4b3f967
+ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82169836"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82861223"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-using-the-jenkins-plugin"></a>Tutorial: Durchführen der Bereitstellung in Azure App Service mit dem Jenkins-Plug-In
 
-Zum Bereitstellen einer Java-Web-App für Azure können Sie die Azure-Befehlszeilenschnittstelle in der [Jenkins-Pipeline](/azure/jenkins/deploy-to-azure-app-service-using-azure-cli) oder das [Jenkins-Plug-In für Azure App Service](https://plugins.jenkins.io/azure-app-service) verwenden. Version 1.0 des Jenkins-Plug-Ins unterstützt die kontinuierliche Bereitstellung mithilfe der Web-Apps-Funktion von Azure App Service über:
+Zum Bereitstellen einer Java-Web-App für Azure können Sie die Azure-Befehlszeilenschnittstelle in der [Jenkins-Pipeline](deploy-to-azure-app-service-using-azure-cli.md) oder das [Jenkins-Plug-In für Azure App Service](https://plugins.jenkins.io/azure-app-service) verwenden. Version 1.0 des Jenkins-Plug-Ins unterstützt die kontinuierliche Bereitstellung mithilfe der Web-Apps-Funktion von Azure App Service über:
 * Dateiupload.
 * Docker für Web-Apps unter Linux
 
@@ -133,7 +133,7 @@ Für Web-Apps unter Linux werden auch herkömmliche Bereitstellungsmethoden wie 
 
 Vor dem Einrichten des Auftrags in Jenkins benötigen Sie eine Web-App unter Linux. Außerdem ist eine Containerregistrierung zum Speichern und Verwalten Ihrer privaten Docker-Containerimages erforderlich. Sie können DockerHub zum Erstellen der Containerregistrierung verwenden. In diesem Beispiel wird Azure Container Registry verwendet.
 
-* [Erstellen einer Web-App unter Linux](/azure/app-service/containers/quickstart-nodejs.md).
+* [Erstellen einer Web-App unter Linux](/azure/app-service/containers/quickstart-nodejs).
 * Azure Container Registry ist ein verwalteter Dienst vom Typ [Docker-Registrierung](https://docs.docker.com/registry/), der auf Version 2.0 der Open Source-Docker-Registrierung basiert. [Erstellen einer Azure-Containerregistrierung](/azure/container-registry/container-registry-get-started-azure-cli). Sie können auch DockerHub verwenden.
 
 ### <a name="set-up-the-jenkins-job-for-docker"></a>Einrichten des Jenkins-Auftrags für Docker

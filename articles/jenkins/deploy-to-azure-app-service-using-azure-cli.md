@@ -4,12 +4,12 @@ description: Erfahren Sie, wie Sie mit der Azure CLI eine Java-Web-App an Azure 
 keywords: Jenkins, Azure, DevOps, App Service, CLI
 ms.topic: tutorial
 ms.date: 04/25/2020
-ms.openlocfilehash: 03eb896717350a242fb2f504a4da9b57ecc8a209
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 242986ca95b36d95393b7ff688ebf60bb95985fa
+ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82169886"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82861233"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-with-jenkins-and-the-azure-cli"></a>Tutorial: Bereitstellen an Azure App Service mit Jenkins und der Azure CLI
 
@@ -183,7 +183,7 @@ Gehen Sie wie unten angegeben vor, um zu überprüfen, ob die Bereitstellung der
 
 Wenn Sie die Nutzung der Azure CLI in Ihrer Jenkins-Pipeline eingerichtet haben, können Sie das Skript zur Bereitstellung für eine Azure-Web-App unter Linux ändern. Für Web-Apps unter Linux wird Docker unterstützt. Daher stellen Sie eine Dockerfile-Datei bereit, die Ihre Web-App mit Dienstlaufzeit in ein Docker-Image verpackt. Das Plug-In erstellt das Image, übermittelt es per Push an eine Docker-Registrierung und stellt das Image für Ihre Web-App bereit.
 
-1. [Erstellen Sie eine Azure-Web-App, die unter Linux ausgeführt wird](/azure/app-service/containers/quickstart-nodejs.md).
+1. [Erstellen Sie eine Azure-Web-App, die unter Linux ausgeführt wird](/azure/app-service/containers/quickstart-nodejs).
 
 1. [Installieren Sie Docker auf Ihrer Jenkins-Instanz](https://docs.docker.com/engine/installation/linux/ubuntu/).
 

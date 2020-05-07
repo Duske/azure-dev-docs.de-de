@@ -4,12 +4,12 @@ description: Es wird beschrieben, wie Sie Jenkins für Continuous Integration (C
 keywords: Jenkins, Azure, DevOps, AKS, Azure Kubernetes Service, GitHub
 ms.topic: article
 ms.date: 01/09/2019
-ms.openlocfilehash: 99c46e62e0d841d9ec6668fd5bcafdfa2cb6ba3a
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: cbde97c7796a7f89bfb8ec0cbe530e84bd750e04
+ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170396"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82861183"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-kubernetes-service-using-jenkins"></a>Tutorial: Bereitstellen über GitHub in Azure Kubernetes Service mit Jenkins
 
@@ -30,9 +30,9 @@ Für dieses Tutorial benötigen Sie Folgendes:
 
 - Grundkenntnisse zu Kubernetes, Git, CI/CD und Containerimages.
 
-- Einen [AKS-Cluster](/azure/aks/kubernetes-walkthrough.md) und `kubectl`, konfiguriert mit den [AKS-Clusteranmeldeinformationen](/cli/azure/aks#az-aks-get-credentials).
+- Einen [AKS-Cluster](/azure/aks/kubernetes-walkthrough) und `kubectl`, konfiguriert mit den [AKS-Clusteranmeldeinformationen](/cli/azure/aks#az-aks-get-credentials).
 
-- Eine [ACR-Registrierung (Azure Container Registry)](/azure/container-registry/container-registry-get-started-azure-cli.md), den Namen des ACR-Anmeldeservers und den für die [Authentifizierung mit der ACR-Registrierung](/azure/aks/cluster-container-registry-integration.md) konfigurierten AKS-Cluster.
+- Eine [ACR-Registrierung (Azure Container Registry)](/azure/container-registry/container-registry-get-started-azure-cli), den Namen des ACR-Anmeldeservers und den für die [Authentifizierung mit der ACR-Registrierung](/azure/aks/cluster-container-registry-integration) konfigurierten AKS-Cluster.
 
 - Version 2.0.46 oder höher der Azure-Befehlszeilenschnittstelle installiert und konfiguriert. Führen Sie  `az --version` aus, um die Version zu ermitteln. Wenn Sie eine Installation oder ein Upgrade ausführen müssen, finden Sie weitere Informationen unter  [Installieren der Azure CLI](/cli/azure/install-azure-cli).
 

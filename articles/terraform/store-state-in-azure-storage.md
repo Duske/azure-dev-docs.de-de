@@ -3,12 +3,12 @@ title: 'Tutorial: Speichern des Terraform-Zustands in Azure Storage'
 description: Es wird beschrieben, wie Sie den Terraform-Zustand in Azure Storage speichern.
 ms.topic: tutorial
 ms.date: 11/07/2019
-ms.openlocfilehash: f2180a8e12632c0693dcf491d621121168fa99c8
-ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
+ms.openlocfilehash: e61787a80905507c16a5ac7f23cfe9ed852f6708
+ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82169696"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82861243"
 ---
 # <a name="tutorial-store-terraform-state-in-azure-storage"></a>Tutorial: Speichern des Terraform-Status in Azure Storage
 
@@ -73,7 +73,7 @@ Erstellen Sie eine Umgebungsvariable namens `ARM_ACCESS_KEY` mit dem Wert des Az
 export ARM_ACCESS_KEY=<storage access key>
 ```
 
-Um den Zugriffsschlüssel des Azure Storage-Kontos noch stärker zu schützen, speichern Sie ihn in Azure Key Vault. Die Umgebungsvariable kann dann mit einem Befehl wie dem Folgenden festgelegt werden. Weitere Informationen zu Azure Key Vault finden Sie in der [Dokumentation zu Azure Key Vault](/azure/key-vault/secrets/quick-create-cli.md).
+Um den Zugriffsschlüssel des Azure Storage-Kontos noch stärker zu schützen, speichern Sie ihn in Azure Key Vault. Die Umgebungsvariable kann dann mit einem Befehl wie dem Folgenden festgelegt werden. Weitere Informationen zu Azure Key Vault finden Sie in der [Dokumentation zu Azure Key Vault](/azure/key-vault/secrets/quick-create-cli).
 
 ```bash
 export ARM_ACCESS_KEY=$(az keyvault secret show --name terraform-backend-key --vault-name myKeyVault --query value -o tsv)
@@ -124,7 +124,7 @@ Die Sperre wird angezeigt, wenn Sie das Blob über das Azure-Portal oder in ande
 
 In einem Azure-Blob gespeicherte Daten werden vor dem Speichern verschlüsselt. Bei Bedarf ruft Terraform den Zustand vom Back-End ab und speichert ihn im lokalen Arbeitsspeicher. Bei Verwendung dieses Musters wird der Zustand nie auf Ihren lokalen Datenträger geschrieben.
 
-Weitere Informationen zur Azure Storage-Verschlüsselung finden Sie unter [Azure Storage-Verschlüsselung für ruhende Daten](/azure/storage/common/storage-service-encryption.md).
+Weitere Informationen zur Azure Storage-Verschlüsselung finden Sie unter [Azure Storage-Verschlüsselung für ruhende Daten](/azure/storage/common/storage-service-encryption).
 
 ## <a name="next-steps"></a>Nächste Schritte
 

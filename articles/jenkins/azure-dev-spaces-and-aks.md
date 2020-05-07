@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie das Azure Dev Spaces-Plug-In in einer 
 keywords: Jenkins, Azure, DevOps, Azure Dev Spaces, AKS, Azure Kubernetes Service
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: 427b53642b4159a82dba699c631da8948a6b744b
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 2528d362a9c95aecd00b938fdeed2756c8643fd4
+ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170286"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82861253"
 ---
 # <a name="tutorial-use-azure-dev-spaces-with-azure-kubernetes-service"></a>Tutorial: Verwenden von Azure Dev Spaces mit Azure Kubernetes Service
 
@@ -58,7 +58,7 @@ In diesem Abschnitt werden folgende Azure-Ressourcen erstellt:
     az group create --name MyResourceGroup --location westus2
     ```
 
-2. Erstellen Sie einen AKS-Cluster. Erstellen Sie den AKS-Cluster in einer [Region, die Dev Spaces unterstützt](/azure/dev-spaces/about.md#supported-regions-and-configurations).
+2. Erstellen Sie einen AKS-Cluster. Erstellen Sie den AKS-Cluster in einer [Region, die Dev Spaces unterstützt](/azure/dev-spaces/about#supported-regions-and-configurations).
 
     ```azurecli
     az aks create --resource-group MyResourceGroup --name MyAKS --location westus2 --kubernetes-version 1.11.9 --enable-addons http_application_routing --generate-ssh-keys --node-count 1 --node-vm-size Standard_D1_v2
@@ -344,7 +344,7 @@ Für den dritten Schritt in diesem Abschnitt müssen Sie einen Teil der Jenkinsf
 
 2. Melden Sie sich bei Jenkins an, wählen Sie den Pipelinenamen aus, und wählen Sie anschließend **Build Now** (Jetzt erstellen) aus. 
 
-    Sie können auch einen *Webhook* festlegen, um die Jenkins-Pipeline automatisch auszulösen. Wenn ein Pull Request eingegeben wird, richtet GitHub eine POST-Anweisung an Jenkins, wodurch die Pipeline ausgelöst wird. Weitere Informationen zum Einrichten eines Webhooks finden Sie unter [Connect Jenkins to GitHub](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/jenkins/deploy-from-github-to-azure-app-service.md#connect-jenkins-to-github) (Herstellen einer Verbindung zwischen Jenkins und GitHub).
+    Sie können auch einen *Webhook* festlegen, um die Jenkins-Pipeline automatisch auszulösen. Wenn ein Pull Request eingegeben wird, richtet GitHub eine POST-Anweisung an Jenkins, wodurch die Pipeline ausgelöst wird. Weitere Informationen zum Einrichten eines Webhooks finden Sie unter [Connect Jenkins to GitHub](deploy-from-github-to-azure-app-service.md#connect-jenkins-to-github) (Herstellen einer Verbindung zwischen Jenkins und GitHub).
 
 3. Vergleichen Sie die Änderungen mit der aktuellen gemeinsam genutzten Version:
 
