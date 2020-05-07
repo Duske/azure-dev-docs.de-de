@@ -4,12 +4,12 @@ description: Verwenden Sie Azure für das Hosten des Jenkins-Builds und das Bere
 keywords: Jenkins, Azure, DevOps, Übersicht
 ms.topic: overview
 ms.date: 10/23/2019
-ms.openlocfilehash: f630dd601cc384588ae4d3af1a051b5c706de0b6
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 19bacd6e1b3d4ddee4e6fef27b2183f4a33545d6
+ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82171126"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82861303"
 ---
 # <a name="azure-and-jenkins"></a>Azure und Jenkins
 
@@ -34,7 +34,7 @@ Fügen Sie Ihrer vorhandenen Jenkins-Bereitstellung Build-Agents hinzu, um Ihre 
 Nach der Konfiguration mit einem [Azure-Dienstprinzipal](/azure/azure-resource-manager/resource-group-overview) können Jenkins-Aufträge und -Pipelines diese Anmeldeinformationen für Folgendes verwenden:
 
 - Sicheres Speichern und Archivieren von Buildartefakten in [Azure Storage](/azure/storage/common/storage-introduction) mithilfe des [Azure Storage-Plug-Ins](https://plugins.jenkins.io/windows-azure-storage). Weitere Informationen finden Sie in der [Jenkins-Speicheranleitung](azure-storage-blobs-as-build-artifact-repository.md).
-- Sie verwalten und konfigurieren Azure-Ressourcen mit der [Azure-Befehlszeilenschnittstelle](/azure/jenkins/deploy-to-azure-app-service-using-azure-cli).
+- Sie verwalten und konfigurieren Azure-Ressourcen mit der [Azure-Befehlszeilenschnittstelle](deploy-to-azure-app-service-using-azure-cli.md).
 
 ## <a name="deploy-your-code-into-azure-services"></a>Bereitstellen Ihres Codes in Azure-Diensten
 

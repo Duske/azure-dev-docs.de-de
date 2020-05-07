@@ -4,12 +4,12 @@ description: Es wird beschrieben, wie Sie in Azure einen virtuellen Jenkins-Comp
 keywords: Jenkins, Azure, DevOps, Pipeline, CI/CD, Docker
 ms.topic: tutorial
 ms.date: 03/27/2017
-ms.openlocfilehash: c584d6bbd18c36bde7730180a69194b23cd2c180
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 29c5d8926fe60eeb2e3603f0e3248e1d94763b6c
+ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82169686"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82861293"
 ---
 # <a name="tutorial-create-a-jenkins-pipeline-using-github-and-docker"></a>Tutorial: Erstellen einer Jenkins-Pipeline mit GitHub und Docker
 
@@ -28,7 +28,7 @@ Dieses Tutorial verwendet die CLI innerhalb des Diensts [Azure Cloud Shell](http
 Wenn Sie die CLI lokal installieren und verwenden möchten, müssen Sie für dieses Tutorial die Azure CLI-Version 2.0.30 oder höher ausführen. Führen Sie `az --version` aus, um die Version zu ermitteln. Informationen zum Durchführen einer Installation oder eines Upgrades finden Sie bei Bedarf unter [Installieren der Azure CLI]( /cli/azure/install-azure-cli).
 
 ## <a name="create-jenkins-instance"></a>Erstellen einer Jenkins-Instanz
-In einem vorherigen Tutorial zum [Anpassen eines virtuellen Linux-Computers beim ersten Start](/azure/virtual-machines/linux/tutorial-automate-vm-deployment.md) haben Sie erfahren, wie die Anpassung für virtuelle Computer mit cloud-init automatisiert wird. In diesem Tutorial wird eine cloud-init-Datei verwendet, um Jenkins und Docker auf einer VM zu installieren. Jenkins ist ein beliebter Open-Source-Automatisierungsserver, der sich problemlos in Azure integrieren lässt, um Continuous Integration (CI) und Continuous Delivery (CD) zu ermöglichen. Weitere Tutorials zur Verwendung von Jenkins finden Sie unter der [Jenkins in Azure-Hubs](https://docs.microsoft.com/azure/jenkins/).
+In einem vorherigen Tutorial zum [Anpassen eines virtuellen Linux-Computers beim ersten Start](/azure/virtual-machines/linux/tutorial-automate-vm-deployment) haben Sie erfahren, wie die Anpassung für virtuelle Computer mit cloud-init automatisiert wird. In diesem Tutorial wird eine cloud-init-Datei verwendet, um Jenkins und Docker auf einer VM zu installieren. Jenkins ist ein beliebter Open-Source-Automatisierungsserver, der sich problemlos in Azure integrieren lässt, um Continuous Integration (CI) und Continuous Delivery (CD) zu ermöglichen. Weitere Tutorials zur Verwendung von Jenkins finden Sie unter der [Jenkins in Azure-Hubs](https://docs.microsoft.com/azure/jenkins/).
 
 Erstellen Sie in der aktuellen Shell eine Datei namens *cloud-init-jenkins.txt*, und fügen Sie die folgende Konfiguration ein. Erstellen Sie die Datei beispielsweise in Cloud Shell, nicht auf dem lokalen Computer. Geben Sie `sensible-editor cloud-init-jenkins.txt` ein, um die Datei zu erstellen und eine Liste der verfügbaren Editoren anzuzeigen. Stellen Sie sicher, dass die gesamte Datei „cloud-init“ ordnungsgemäß kopiert wird, insbesondere die erste Zeile:
 
@@ -153,8 +153,8 @@ Erstellen Sie einen Jenkins-Auftrag, damit Jenkins auf ein Ereignis in GitHub, w
 Klicken Sie auf Ihrer Jenkins-Website auf der Startseite auf **Create new jobs** (Neue Aufträge erstellen):
 
 - Geben Sie *HelloWorld* als den Namen des Auftrags ein. Wählen Sie **Freestyle Project** und anschließend **OK** aus.
-- Wählen Sie im Abschnitt **Allgemein** die Option für **GitHub-Projekt** aus, und geben Sie die URL Ihres verzweigten Repositorys ein (beispielsweise *https://github.com/cynthn/nodejs-docs-hello-world* ).
-- Wählen Sie im Bereich **Quellcodeverwaltung** die Option **Git** aus, und geben Sie die URL vom Typ *.git* Ihres verzweigten Repositorys ein. Beispiel: *https://github.com/cynthn/nodejs-docs-hello-world.git*
+- Wählen Sie im Abschnitt **Allgemein** die Option für **GitHub-Projekt** aus, und geben Sie die URL Ihres verzweigten Repositorys ein (beispielsweise `https://github.com/cynthn/nodejs-docs-hello-world`).
+- Wählen Sie im Bereich **Quellcodeverwaltung** die Option **Git** aus, und geben Sie die URL vom Typ *.git* Ihres verzweigten Repositorys ein (beispielsweise `https://github.com/cynthn/nodejs-docs-hello-world.git`).
 - Wählen Sie im Bereich **Build Triggers** (Trigger erstellen) die Option **GitHub hook trigger for GITScm polling** (GitHub-Hooktrigger für GITScm-Abruf) aus.
 - Wählen Sie im Abschnitt **Build** die Option **Buildschritt hinzufügen** aus. Wählen Sie **Execute shell** (Shell ausführen) aus, und geben Sie dann `echo "Test"` im Befehlsfenster ein.
 - Wählen Sie unten auf der Auftragsseite **Speichern** aus.

@@ -1,22 +1,22 @@
 ---
-title: Verwenden von Spring Data R2DBC mit Azure Database for MySQL
-description: Hier erfahren Sie, wie Sie Spring Data R2DBC mit einer Azure Database for MySQL-Datenbank verwenden.
+title: Verwenden von Spring Data R2DBC mit Azure SQL-Datenbank
+description: Hier erfahren Sie, wie Sie Spring Data R2DBC mit einer Azure SQL-Datenbank verwenden.
 documentationcenter: java
-ms.date: 03/18/2020
-ms.service: mysql
+ms.date: 04/28/2020
+ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
-ms.openlocfilehash: 5dd4f1d41f73f177d99068fc0d981270f0134bb8
+ms.openlocfilehash: 80ccbbc84e4d23ff9083777f38615eb5d676e484
 ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/05/2020
-ms.locfileid: "82801868"
+ms.locfileid: "82766159"
 ---
-# <a name="use-spring-data-r2dbc-with-azure-database-for-mysql"></a>Verwenden von Spring Data R2DBC mit Azure Database for MySQL
+# <a name="use-spring-data-r2dbc-with-azure-sql-database"></a>Verwenden von Spring Data R2DBC mit Azure SQL-Datenbank
 
-In diesem Thema wird die Erstellung einer Beispielanwendung veranschaulicht, die [Spring Data R2DBC](https://spring.io/projects/spring-data-r2dbc) verwendet, um Informationen in einer [Azure Database for MySQL-Instanz](https://docs.microsoft.com/azure/mysql/) mithilfe der R2DBC-Implementierung für MySQL aus dem [r2dbc-mysql GitHub-Repository](https://github.com/mirromutth/r2dbc-mysql) zu speichern und abzurufen.
+In diesem Thema wird die Erstellung einer Beispielanwendung veranschaulicht, die [Spring Data R2DBC](https://spring.io/projects/spring-data-r2dbc) verwendet, um Informationen in [Azure SQL-Datenbank](https://docs.microsoft.com/azure/sql-database/) mithilfe der R2DBC-Implementierung für Microsoft SQL Server aus dem [GitHub-Repository „r2dbc-mssql“](https://github.com/r2dbc/r2dbc-mssql) zu speichern und abzurufen.
 
 [R2DBC](https://r2dbc.io/) ermöglicht die Nutzung reaktiver APIs mit herkömmlichen relationalen Datenbanken. Sie können es zusammen mit Spring WebFlux verwenden, um vollständig reaktive Spring Boot-Anwendungen zu erstellen, die nicht blockierende APIs verwenden. Dies bietet bessere Skalierbarkeit als der klassische „Ein-Thread-pro-Verbindung“-Ansatz.
 
@@ -35,16 +35,16 @@ Richten Sie zunächst mithilfe der folgenden Befehle einige Umgebungsvariablen e
 AZ_RESOURCE_GROUP=r2dbc-workshop
 AZ_DATABASE_NAME=<YOUR_DATABASE_NAME>
 AZ_LOCATION=<YOUR_AZURE_REGION>
-AZ_MYSQL_USERNAME=r2dbc
-AZ_MYSQL_PASSWORD=<YOUR_MYSQL_PASSWORD>
+AZ_SQL_SERVER_USERNAME=r2dbc
+AZ_SQL_SERVER_PASSWORD=<YOUR_AZURE_SQL_PASSWORD>
 AZ_LOCAL_IP_ADDRESS=<YOUR_LOCAL_IP_ADDRESS>
 ```
 
 Ersetzen Sie die Platzhalter durch die folgenden Werte, die in diesem Artikel verwendet werden:
 
-- `<YOUR_DATABASE_NAME>`: Der Name Ihres MySQL-Servers. Er muss innerhalb von Azure eindeutig sein.
+- `<YOUR_DATABASE_NAME>`: Der Name für den Azure SQL-Datenbank-Server. Er muss innerhalb von Azure eindeutig sein.
 - `<YOUR_AZURE_REGION>`: Die von Ihnen verwendete Azure-Region. Sie können standardmäßig `eastus` verwenden, wir empfehlen aber, eine Region zu konfigurieren, die näher an Ihrem Standort liegt. Die vollständige Liste der verfügbaren Regionen wird angezeigt, wenn Sie `az account list-locations` eingeben.
-- `<YOUR_MYSQL_PASSWORD>`: Das Kennwort Ihres MySQL-Datenbankservers. Dieses Kennwort sollte mindestens acht Zeichen lang sein. Es muss Zeichen aus drei der folgenden Kategorien enthalten: Englische Großbuchstaben, englische Kleinbuchstaben, Zahlen (0-9) und nicht alphanumerische Zeichen (!, $, #, % usw.).
+- `<AZ_SQL_SERVER_PASSWORD>`: Das Kennwort Ihres Azure SQL-Datenbank-Servers. Dieses Kennwort sollte mindestens acht Zeichen lang sein. Es muss Zeichen aus drei der folgenden Kategorien enthalten: Englische Großbuchstaben, englische Kleinbuchstaben, Zahlen (0-9) und nicht alphanumerische Zeichen (!, $, #, % usw.).
 - `<YOUR_LOCAL_IP_ADDRESS>`: Die IP-Adresse Ihres lokalen Computers, auf dem Sie die Spring Boot-Anwendung ausführen. Sie können sie ganz einfach ermitteln, indem Sie im Browser zu [whatismyip.akamai.com](http://whatismyip.akamai.com/) navigieren.
 
 Erstellen Sie als Nächstes eine Ressourcengruppe:
@@ -60,37 +60,35 @@ az group create \
 > Wir verwenden das in [Azure Cloud Shell](https://shell.azure.com/) standardmäßig installierte Dienstprogramm `jq`, um JSON-Daten anzuzeigen und ihre Lesbarkeit zu erhöhen.
 > Wenn Ihnen dieses Hilfsprogramm nicht gefällt, können Sie den Teil `| jq` aller verwendeten Befehle einfach entfernen.
 
-## <a name="create-an-azure-database-for-mysql-instance"></a>Erstellen einer Instanz von Azure-Datenbank für MySQL
+## <a name="create-an-azure-sql-database-instance"></a>Erstellen einer Azure SQL-Datenbankinstanz
 
-Das erste, was wir erstellen, ist ein verwalteter MySQL-Server.
+Sie erstellen zuerst einen verwalteten Azure SQL-Datenbank-Server.
 
 > [!NOTE]
-> Ausführlichere Informationen zum Erstellen von MySQL-Servern finden Sie unter [Erstellen eines Azure Database for MySQL-Servers im Azure-Portal](/azure/mysql/quickstart-create-mysql-server-database-using-azure-portal).
+> Ausführlichere Informationen zum Erstellen von Azure SQL-Datenbank-Servern finden Sie unter [Schnellstart: Erstellen einer Azure SQL-Einzeldatenbank](/azure/sql-database/sql-database-single-database-get-started).
 
 Führen Sie in der [Azure Cloud Shell](https://shell.azure.com/) das folgende Skript aus:
 
 ```azurecli
-az mysql server create \
+az sql server create \
     --resource-group $AZ_RESOURCE_GROUP \
     --name $AZ_DATABASE_NAME \
     --location $AZ_LOCATION \
-    --sku-name B_Gen5_1 \
-    --storage-size 5120 \
-    --admin-user $AZ_MYSQL_USERNAME \
-    --admin-password $AZ_MYSQL_PASSWORD \
+    --admin-user $AZ_SQL_SERVER_USERNAME \
+    --admin-password $AZ_SQL_SERVER_PASSWORD \
     | jq
 ```
 
-Mit diesem Befehl wird ein kleiner MySQL-Server erstellt.
+Mit diesem Befehl wird ein Azure SQL-Datenbank-Server erstellt.
 
-### <a name="configure-a-firewall-rule-for-your-mysql-server"></a>Konfigurieren einer Firewallregel für den MySQL-Server
+### <a name="configure-a-firewall-rule-for-your-azure-sql-database-server"></a>Konfigurieren einer Firewallregel für den Azure SQL-Datenbank-Server
 
-Azure Database for MySQL-Instanzen sind standardmäßig gesichert. Sie besitzen eine Firewall, die keine eingehenden Verbindungen zulässt. Damit Sie die Datenbank verwenden können, müssen Sie eine Firewallregel hinzufügen, die den Zugriff der lokalen IP-Adresse auf den Datenbankserver zulässt.
+Azure SQL-Datenbankinstanzen sind standardmäßig gesichert. Sie besitzen eine Firewall, die keine eingehenden Verbindungen zulässt. Damit Sie die Datenbank verwenden können, müssen Sie eine Firewallregel hinzufügen, die den Zugriff der lokalen IP-Adresse auf den Datenbankserver zulässt.
 
 Da Sie die lokale IP-Adresse zu Beginn dieses Artikels konfiguriert haben, können Sie die Firewall des Servers öffnen, indem Sie Folgendes ausführen:
 
 ```azurecli
-az mysql server firewall-rule create \
+az sql server firewall-rule create \
     --resource-group $AZ_RESOURCE_GROUP \
     --name $AZ_DATABASE_NAME-database-allow-local-ip \
     --server $AZ_DATABASE_NAME \
@@ -99,15 +97,15 @@ az mysql server firewall-rule create \
     | jq
 ```
 
-### <a name="configure-a-mysql-database"></a>Konfigurieren einer MySQL-Datenbank
+### <a name="configure-a-azure-sql-database"></a>Konfigurieren einer Azure SQL-Datenbank
 
-Der MySQL-Server, den Sie zuvor erstellt haben, ist leer. Er verfügt über keine Datenbank, die Sie mit der Spring Boot-Anwendung verwenden können. Erstellen Sie eine neue Datenbank mit dem Namen `r2dbc`:
+Der von Ihnen zuvor erstellte Azure SQL-Datenbank-Server ist leer. Er verfügt über keine Datenbank, die Sie mit der Spring Boot-Anwendung verwenden können. Erstellen Sie eine neue Datenbank mit dem Namen `r2dbc`:
 
 ```azurecli
-az mysql db create \
+az sql db create \
     --resource-group $AZ_RESOURCE_GROUP \
     --name r2dbc \
-    --server-name $AZ_DATABASE_NAME \
+    --server $AZ_DATABASE_NAME \
     | jq
 ```
 
@@ -127,35 +125,34 @@ Generieren der Anwendung an der Befehlszeile durch Eingeben von:
 curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-r2dbc-workshop -d bootVersion=2.3.0.M4 -d javaVersion=8 | tar -xzvf -
 ```
 
-### <a name="add-the-reactive-mysql-driver-implementation"></a>Hinzufügen der reaktiven MySQL-Treiberimplementierung
+### <a name="add-the-reactive-azure-sql-database-driver-implementation"></a>Hinzufügen der reaktiven Treiberimplementierung für Azure SQL-Datenbank
 
-Öffnen Sie die *pom.xml*-Datei des generierten Projekts, um den reaktiven MySQL-Treiber aus dem [r2dbc-mysql-Repository auf GitHub](https://github.com/mirromutth/r2dbc-mysql) hinzuzufügen.
+Öffnen Sie die Datei *pom.xml* des generierten Projekts, um den reaktiven Azure SQL-Datenbank-Treiber aus dem [GitHub-Repository „r2dbc-mssql“](https://github.com/r2dbc/r2dbc-mssql) hinzuzufügen.
 
 Fügen Sie nach der Abhängigkeit `spring-boot-starter-webflux` den folgenden Codeausschnitt hinzu:
 
 ```xml
 <dependency>
-   <groupId>dev.miku</groupId>
-   <artifactId>r2dbc-mysql</artifactId>
-   <version>0.8.1.RELEASE</version>
-   <scope>runtime</scope>
+    <groupId>io.r2dbc</groupId>
+    <artifactId>r2dbc-mssql</artifactId>
+    <scope>runtime</scope>
 </dependency>
 ```
 
-### <a name="configure-spring-boot-to-use-azure-database-for-mysql"></a>Konfigurieren von Spring Boot für die Verwendung von Azure Database for MySQL
+### <a name="configure-spring-boot-to-use-azure-sql-database"></a>Konfigurieren von Spring Boot für die Verwendung von Azure SQL-Datenbank
 
 Öffnen Sie die Datei *src/main/resources/application.properties*, und fügen Sie Folgendes hinzu:
 
 ```properties
 logging.level.org.springframework.data.r2dbc=DEBUG
 
-spring.r2dbc.url=r2dbc:pool:mysql://$AZ_DATABASE_NAME.mysql.database.azure.com:3306/r2dbc
+spring.r2dbc.url=r2dbc:pool:mssql://$AZ_DATABASE_NAME.database.windows.net:1433/r2dbc
 spring.r2dbc.username=r2dbc@$AZ_DATABASE_NAME
-spring.r2dbc.password=$AZ_MYSQL_PASSWORD
+spring.r2dbc.password=$AZ_SQL_SERVER_PASSWORD
 ```
 
 - Ersetzen Sie die beiden Variablen `$AZ_DATABASE_NAME` durch den Wert, den Sie zu Beginn dieses Artikels konfiguriert haben.
-- Ersetzen Sie die Variable `$AZ_MYSQL_PASSWORD` durch den Wert, den Sie zu Beginn dieses Artikels konfiguriert haben.
+- Ersetzen Sie die Variable `$AZ_SQL_SERVER_PASSWORD` durch den Wert, den Sie zu Beginn dieses Artikels konfiguriert haben.
 
 > [!NOTE]
 > Zur Verbesserung der Leistung ist die `spring.r2dbc.url`-Eigenschaft so konfiguriert, dass ein Verbindungspool mit [r2dbc-pool](https://github.com/r2dbc/r2dbc-pool) verwendet wird.
@@ -168,7 +165,7 @@ Sie sollten Ihre Anwendung nun mithilfe des angegebenen Maven-Wrappers starten k
 
 Hier sehen Sie einen Screenshot der Anwendung bei der ersten Ausführung:
 
-[![Die ausgeführte Anwendung](media/configure-spring-data-r2dbc-with-azure-mysql/create-mysql-01.png)](media/configure-spring-data-r2dbc-with-azure-mysql/create-mysql-01.png#lightbox)
+[![Die ausgeführte Anwendung](media/configure-spring-data-r2dbc-with-azure-azure-sql/create-azure-sql-01.png)](media/configure-spring-data-r2dbc-with-azure-azure-sql/create-azure-sql-01.png#lightbox)
 
 ### <a name="create-the-database-schema"></a>Erstellen des Datenbankschemas
 
@@ -189,7 +186,7 @@ Diese Spring Bean verwendet eine Datei namens *schema.sql*. Erstellen Sie daher 
 
 ```sql
 DROP TABLE IF EXISTS todo;
-CREATE TABLE todo (id SERIAL PRIMARY KEY, description VARCHAR(255), details VARCHAR(4096), done BOOLEAN);
+CREATE TABLE todo (id INT IDENTITY PRIMARY KEY, description VARCHAR(255), details VARCHAR(4096), done BIT);
 ```
 
 Verwenden Sie den folgenden Befehl, um die Anwendung zu beenden und erneut auszuführen. Die Anwendung verwendet nun die Datenbank `r2dbc`, die Sie zuvor erstellt haben, und erstellt darin eine `todo`-Tabelle.
@@ -200,11 +197,11 @@ Verwenden Sie den folgenden Befehl, um die Anwendung zu beenden und erneut auszu
 
 Hier sehen Sie einen Screenshot der Datenbanktabelle während der Erstellung:
 
-[![Erstellung der Datenbanktabelle](media/configure-spring-data-r2dbc-with-azure-mysql/create-mysql-02.png)](media/configure-spring-data-r2dbc-with-azure-mysql/create-mysql-02.png#lightbox)
+[![Erstellung der Datenbanktabelle](media/configure-spring-data-r2dbc-with-azure-azure-sql/create-azure-sql-02.png)](media/configure-spring-data-r2dbc-with-azure-azure-sql/create-azure-sql-02.png#lightbox)
 
 ## <a name="code-the-application"></a>Codieren der Anwendung
 
-Fügen Sie als Nächstes den Java-Code hinzu, der R2DBC zum Speichern und Abrufen von Daten aus Ihrem MySQL-Server verwendet.
+Fügen Sie als Nächstes den Java-Code hinzu, der R2DBC zum Speichern und Abrufen von Daten auf bzw. aus Ihrem Azure SQL-Datenbank-Server verwendet.
 
 Erstellen Sie neben der Klasse `DemoApplication` eine neue `Todo`-Java-Klasse:
 
@@ -354,9 +351,9 @@ Mit dem folgenden Befehl wird die Liste der „todo“-Elemente zurückgegeben, 
 
 Hier sehen Sie einen Screenshot dieser cURL-Anforderungen:
 
-[![Testen mit cURL](media/configure-spring-data-r2dbc-with-azure-mysql/create-mysql-03.png)](media/configure-spring-data-r2dbc-with-azure-mysql/create-mysql-03.png#lightbox)
+[![Testen mit cURL](media/configure-spring-data-r2dbc-with-azure-azure-sql/create-azure-sql-03.png)](media/configure-spring-data-r2dbc-with-azure-azure-sql/create-azure-sql-03.png#lightbox)
 
-Glückwunsch! Sie haben eine vollständig reaktive Spring Boot-Anwendung erstellt, die R2DBC zum Speichern und Abrufen von Daten in bzw. aus Azure Database for MySQL verwendet.
+Glückwunsch! Sie haben eine vollständig reaktive Spring Boot-Anwendung erstellt, die R2DBC zum Speichern und Abrufen von Daten in bzw. aus Azure SQL-Datenbank verwendet.
 
 ## <a name="clean-up-resources"></a>Bereinigen von Ressourcen
 

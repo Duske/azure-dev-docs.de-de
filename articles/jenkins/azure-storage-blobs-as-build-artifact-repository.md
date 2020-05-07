@@ -4,12 +4,12 @@ description: Es wird beschrieben, wie Sie den Azure-Blobdienst als Repository f�
 keywords: Jenkins, Azure, DevOps, Storage, CI/CD, Buildartefakte
 ms.topic: article
 ms.date: 08/13/2019
-ms.openlocfilehash: ac2ccc974c13a9dc19e1098d95ec484458377304
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: ceed42326faee6dcfab3790fd3af739b2f48d3da
+ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170166"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82861203"
 ---
 # <a name="tutorial-use-azure-storage-for-build-artifacts"></a>Tutorial: Verwenden von Azure Storage für Buildartefakte
 
@@ -47,7 +47,7 @@ Die Verwendung des Blob-Dienstes zum Hosten Ihrer Buildartefakte aus der agilen 
      
       Eine typische Jenkins CI-Lösung würde zwar zur Ausführung als Service konfiguriert, die Ausführung von "jenkins.war" über die Befehlszeile reicht für dieses Lernprogramm jedoch aus.
 * Ein Azure-Konto. Unter <https://www.azure.com> können Sie sich für ein Azure-Konto registrieren.
-* Ein Azure-Speicherkonto. Wenn Sie noch kein Speicherkonto haben, können Sie eines erstellen, indem Sie die Schritte unter [Erstellen eines Speicherkontos](/azure/storage/common/storage-account-create.md)befolgen.
+* Ein Azure-Speicherkonto. Wenn Sie noch kein Speicherkonto haben, können Sie eines erstellen, indem Sie die Schritte unter [Erstellen eines Speicherkontos](/azure/storage/common/storage-account-create)befolgen.
 * Vorkenntnisse der Jenkins CI-Lösung werden empfohlen, sind aber nicht zwingend erforderlich, da in den folgenden Abschnitten ein einfaches Beispiel verwendet wird, um zu zeigen, welche Schritte erforderlich sind, wenn Sie den Blob-Dienst als Repository für Jenking CI-Buildartefakte nutzen möchten.
 
 ## <a name="how-to-use-the-blob-service-with-jenkins-ci"></a>Verwenden des Blob-Diensts mit Jenkins CI
@@ -96,10 +96,10 @@ Für das Lernprogramm müssen Sie zunächst einen Auftrag erstellen, der mehrere
 6. Wählen Sie unter **Storage account name**das zu verwendende Speicherkonto aus.
 7. Geben Sie unter **Container name**den Containernamen ein. (Der Container wird erstellt, wenn er beim Hochladen der Buildartefakte noch nicht vorhanden ist.) Sie können Umgebungsvariablen verwenden. Geben Sie also für dieses Beispiel `${JOB_NAME}` als Containernamen ein.
    
-    **Tipp**
-   
-    Unter dem Bereich **Command**, in dem Sie ein Skript für **Execute Windows batch command** eingegeben haben, befindet sich ein Link zu den von Jenkins erkannten Umgebungsvariablen. Wählen Sie diesen Link aus, um die Namen und Beschreibungen der Umgebungsvariablen anzuzeigen. Umgebungsvariablen, die Sonderzeichen enthalten, z.B. die Umgebungsvariable **BUILD_URL**, sind nicht als Containername oder gemeinsamer virtueller Pfad zulässig sind.
-8. Wählen Sie für dieses Beispiel **Make new container public by default** (Neuen Container standardmäßig öffentlich machen) aus. (Wenn Sie einen privaten Container verwenden möchten, müssen Sie eine Shared Access Signature erstellen, um den Zugriff zu ermöglichen. Dies geht jedoch über den Rahmen dieses Artikels hinaus. Sie finden weitere Informationen zu Shared Access Signatures unter [Verwenden von Shared Access Signatures (SAS)](/azure//storage/common/storage-sas-overview.md).
+    > [!TIP]
+    > Unter dem Bereich **Command**, in dem Sie ein Skript für **Execute Windows batch command** eingegeben haben, befindet sich ein Link zu den von Jenkins erkannten Umgebungsvariablen. Wählen Sie diesen Link aus, um die Namen und Beschreibungen der Umgebungsvariablen anzuzeigen. Umgebungsvariablen, die Sonderzeichen enthalten, z.B. die Umgebungsvariable **BUILD_URL**, sind nicht als Containername oder gemeinsamer virtueller Pfad zulässig sind.
+    
+8. Wählen Sie für dieses Beispiel **Make new container public by default** (Neuen Container standardmäßig öffentlich machen) aus. (Wenn Sie einen privaten Container verwenden möchten, müssen Sie eine Shared Access Signature erstellen, um den Zugriff zu ermöglichen. Dies geht jedoch über den Rahmen dieses Artikels hinaus. Sie finden weitere Informationen zu Shared Access Signatures unter [Verwenden von Shared Access Signatures (SAS)](/azure/storage/common/storage-sas-overview).
 9. [Optional] Wählen Sie **Clean container before uploading** (Container vor dem Hochladen leeren), wenn die Inhalte aus dem Container gelöscht werden sollen, bevor die Buildartefakte hochgeladen (lassen Sie die Option deaktiviert, wenn die Inhalte nicht aus dem Container gelöscht werden sollen) werden.
 10. Geben Sie unter **List of Artifacts to upload** (Liste der hochzuladenden Artefakte) die Zeichenfolge `text/*.txt` ein.
 11. Geben Sie `${BUILD\_ID}/${BUILD\_NUMBER}` für die Zwecke dieses Tutorials unter **Common virtual path for uploaded artifacts** ein.
