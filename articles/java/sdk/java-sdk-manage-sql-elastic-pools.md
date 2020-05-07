@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
 ms.openlocfilehash: 1bc80d0f4c6ad0beff86bfa22fec59b3389ced03
-ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82105031"
 ---
 # <a name="manage-azure-sql-databases-in-elastic-pools-from-your-java-applications"></a>Verwalten von Azure SQL-Datenbanken in Pools für elastische Datenbanken über Ihre Java-Anwendungen
@@ -83,7 +83,7 @@ anotherDatabase = anotherDatabase.update()
                      .apply();
 ```
 
-An `withEdition()` übergebbare Werte finden Sie in der [DatabaseEditions-Klassenreferenz](/java/api/com.microsoft.azure.management.sql.databaseeditions).
+An [ übergebbare Werte finden Sie in der ](/java/api/com.microsoft.azure.management.sql.databaseeditions)DatabaseEditions-Klassenreferenz`withEdition()`.
 
 ## <a name="list-current-database-activities-in-an-elastic-pool"></a>Auflisten der aktuellen Datenbankaktivitäten in einem Pool für elastische Datenbanken
 ```java

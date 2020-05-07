@@ -3,13 +3,13 @@ title: 'Schnellstart: Erstellen einer Linux-VM mit Infrastruktur in Azure mit Te
 description: Es wird beschrieben, wie Sie mit Terraform eine vollständige Linux-VM-Umgebung in Azure erstellen und verwalten.
 keywords: Azure DevOps Terraform Linux VM virtueller Computer
 ms.topic: quickstart
-ms.date: 04/26/2020
-ms.openlocfilehash: bfc9766022e0f52a73d2badbc0977e2b2aa1fc11
-ms.sourcegitcommit: 9ff9b51ab21c93bfd61e480c6ff8e39c9d4bf02e
+ms.date: 05/04/2020
+ms.openlocfilehash: d6763118179251c224e0ec3ae6e05a630cae7cde
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82171516"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82801888"
 ---
 # <a name="quickstart-create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>Schnellstart: Erstellen einer Linux-VM mit Infrastruktur in Azure mit Terraform
 
@@ -57,7 +57,7 @@ resource "azurerm_resource_group" "myterraformgroup" {
 }
 ```
 
-In allen weiteren Abschnitten verweisen Sie mit `${azurerm_resource_group.myterraformgroup.name}` auf die Ressourcengruppe.
+In allen weiteren Abschnitten verweisen Sie mit `azurerm_resource_group.myterraformgroup.name` auf die Ressourcengruppe.
 
 ## <a name="create-virtual-network"></a>Virtuelles Netzwerk erstellen
 
@@ -146,9 +146,9 @@ resource "azurerm_network_interface" "myterraformnic" {
 
     ip_configuration {
         name                          = "myNicConfiguration"
-        subnet_id                     = "${azurerm_subnet.myterraformsubnet.id}"
+        subnet_id                     = "azurerm_subnet.myterraformsubnet.id"
         private_ip_address_allocation = "Dynamic"
-        public_ip_address_id          = "${azurerm_public_ip.myterraformpublicip.id}"
+        public_ip_address_id          = "azurerm_public_ip.myterraformpublicip.id"
     }
 
     tags = {

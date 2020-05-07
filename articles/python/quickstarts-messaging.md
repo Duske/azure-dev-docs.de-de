@@ -4,10 +4,10 @@ description: Eine Liste mit Azure-Dokumentationsartikeln zu den ersten Schritten
 ms.date: 03/17/2020
 ms.topic: conceptual
 ms.openlocfilehash: 3b95019add56bfe8e4cf50f8e5549f8037f6286f
-ms.sourcegitcommit: 1bd9ec6a4115e9162e33b76a933869788e6ab702
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80441985"
 ---
 # <a name="messaging-for-python-apps-on-azure"></a>Messaging für Python-Apps in Azure

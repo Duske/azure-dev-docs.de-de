@@ -4,10 +4,10 @@ description: Es wird beschrieben, wie Sie den Terraform-Zustand in Azure Storage
 ms.topic: tutorial
 ms.date: 11/07/2019
 ms.openlocfilehash: f2180a8e12632c0693dcf491d621121168fa99c8
-ms.sourcegitcommit: 9ff9b51ab21c93bfd61e480c6ff8e39c9d4bf02e
+ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82169696"
 ---
 # <a name="tutorial-store-terraform-state-in-azure-storage"></a>Tutorial: Speichern des Terraform-Status in Azure Storage
