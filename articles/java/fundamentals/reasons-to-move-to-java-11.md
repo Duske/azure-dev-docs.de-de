@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 11/19/2019
 ms.author: dagrieve
 ms.openlocfilehash: c0a2f46f8a3249f6c9580e823e102a86291e15e7
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81670636"
 ---
 # <a name="reasons-to-move-to-java-11"></a>Argumente für die Migration zu Java 11
@@ -83,7 +83,7 @@ Für eine ordnungsgemäße GC-Optimierung sind umfassende GC-Kenntnisse erforder
 
 #### <a name="g1gc"></a>G1GC
 
-Der Standard-Garbage Collector in Java 11 ist der G1-Garbage Collector (G1GC). G1GC ist für ein ausgewogenes Verhältnis zwischen Wartezeit und Durchsatz konzipiert. Der G1-Garbage Collector versucht, einen hohen Durchsatz zu erzielen, indem Pausenzeitenziele mit hoher Wahrscheinlichkeit erreicht. G1GC ist auf die Vermeidung vollständiger ‚Garbage Collections ausgelegt. Sollte Arbeitsspeicher allerdings von den gleichzeitigen Garbage Collections nicht schnell genug freigegeben werden, wird auf eine vollständige Garbage Collection zurückgegriffen. Die vollständige Garbage Collection verwendet die gleiche Anzahl paralleler Arbeitsthreads wie die neuen und gemischten Garbage Collections.
+Der Standard-Garbage Collector in Java 11 ist der G1-Garbage Collector (G1GC). G1GC ist für ein ausgewogenes Verhältnis zwischen Wartezeit und Durchsatz konzipiert. Der G1-Garbage Collector versucht, einen hohen Durchsatz zu erzielen, indem Pausenzeitenziele mit hoher Wahrscheinlichkeit erreicht. G1GC ist auf die Vermeidung vollständiger ‚Garbage Collections ausgelegt. Sollte Arbeitsspeicher allerdings von den gleichzeitigen Garbage Collections nicht \'schnell genug freigegeben werden, wird auf eine vollständige Garbage Collection zurückgegriffen. Die vollständige Garbage Collection verwendet die gleiche Anzahl paralleler Arbeitsthreads wie die neuen und gemischten Garbage Collections.
 
 #### <a name="parallel-gc"></a>Paralleler GC
 
