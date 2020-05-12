@@ -1,0 +1,48 @@
+### YamlMime:Landing
+title: Zusammenarbeit von GitHub und Azure
+summary: Hier erfahren Sie, wie GitHub und Azure zusammenarbeiten, damit Sie Apps erstellen und bereitstellen können.
+metadata:
+  title: Zusammenarbeit von GitHub und Azure
+  description: Hier erfahren Sie, wie GitHub und Azure zusammenarbeiten, damit Sie Apps erstellen und bereitstellen können.
+  ms.service: azure
+  ms.topic: landing-page
+  author: KathrynEE
+  ms.author: kaelli
+  ms.date: 05/05/2020
+  ms.openlocfilehash: ea8d295dcd5c5a51261cbcbe223a5b89400740ba
+  ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 05/08/2020
+  ms.locfileid: "82990362"
+landingContent:
+- title: GitHub Actions für Azure
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Bereitstellen in Azure mithilfe von GitHub Actions
+      url: github-actions.md
+- title: Bereitstellen in Azure
+  linkLists:
+  - linkListType: deploy
+    links:
+    - text: Bereitstellen von Apps aus GitHub in Azure
+      url: deploy-to-azure.md
+- title: Visual Studio und Visual Studio Code
+  linkLists:
+  - linkListType: deploy
+    links:
+    - text: Verwenden von Visual Studio oder Visual Studio Code zum Bereitstellen von Apps über GitHub
+      url: deploy-with-visual-studio.md
+- title: Azure DevOps- und GitHub-Integration
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Verwenden von Azure DevOps und GitHub
+      url: integrate-azure-devops.md
+- title: Herstellen einer Verbindung zwischen Azure und GitHub
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Herstellen einer Verbindung mit GitHub aus Azure und anderen Diensten
+      url: connect-from-azure.md

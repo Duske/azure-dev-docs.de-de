@@ -8,12 +8,12 @@ metadata:
   ms.author: karler
   ms.date: 04/03/2020
   ms.topic: landing-page
-  ms.openlocfilehash: 772bb5caba59d9f620d22d7d5fb945a617419095
-  ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+  ms.openlocfilehash: abd14e250416b5718537e1ca14b4ffdd8f3f3b5e
+  ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 05/05/2020
-  ms.locfileid: "81675156"
+  ms.lasthandoff: 05/08/2020
+  ms.locfileid: "82988937"
 landingContent:
 - title: Migrieren von Java-Anwendungen zu Azure
   linkLists:
@@ -25,8 +25,12 @@ landingContent:
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Spring zu Azure App Service
-      url: migrate-java-se-to-java-se-app-service.md
+    - text: Spring Boot zu Azure App Service
+      url: migrate-spring-boot-to-app-service.md
+    - text: Spring Boot zu AKS
+      url: migrate-spring-boot-to-azure-kubernetes-service.md
+    - text: Spring Cloud zu Azure Spring Cloud
+      url: migrate-spring-cloud-to-azure-spring-cloud.md
 - title: Migrieren von Tomcat zu Azure
   linkLists:
   - linkListType: how-to-guide

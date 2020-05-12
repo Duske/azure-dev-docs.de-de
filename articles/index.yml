@@ -10,12 +10,12 @@ metadata:
   ms.author: barbkess
   manager: barbkess
   ms.date: 04/15/2020
-  ms.openlocfilehash: 1068b2917cef3052b6753e0c563cbcaf9af3f542
-  ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+  ms.openlocfilehash: 2afe0deb03a1aff2b40c2d739f873bd6a2bbcf0c
+  ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 05/05/2020
-  ms.locfileid: "82209793"
+  ms.lasthandoff: 05/08/2020
+  ms.locfileid: "82988704"
 productDirectory:
   items:
   - title: Python
@@ -93,7 +93,7 @@ productDirectory:
       text: Speichern der Kontexte für Anmeldeinformationen
     - url: https://docs.microsoft.com/powershell/azure/
       text: Weitere Informationen finden Sie im Azure PowerShell Developer Center.
-  - title: Azure-Befehlszeilenschnittstelle
+  - title: Azure CLI
     imageSrc: https://docs.microsoft.com/media/logos/logo_CLIgeneric.svg
     links:
     - url: https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest
@@ -124,9 +124,9 @@ additionalContent:
     - title: Azure DevOps
       summary: Verwenden Sie Azure DevOps für die Arbeitsplanung, bei der gemeinsamen Codeentwicklung sowie bei der Erstellung und Bereitstellung von Anwendungen.
       url: https://docs.microsoft.com/azure/devops/?view=azure-devops
-    - title: GitHub-Aktionen
-      summary: Verwenden Sie GitHub Actions, um Ihre Workflows zur Softwareentwicklung in Ihrem Repository zu automatisieren, anzupassen und auszuführen.
-      url: https://help.github.com/en/actions
+    - title: Zusammenarbeit von Azure und GitHub
+      summary: Verwenden Sie GitHub und GitHub Actions, um Ihre Workflows zur Softwareentwicklung in Ihrem Repository zu automatisieren, anzupassen und auszuführen.
+      url: https://docs.microsoft.com/azure/developer/github
     - title: Jenkins
       summary: Automatisieren Sie mithilfe von Jenkins Continuous Integration und Continuous Delivery (CI/CD) für Ihre Softwareprojekte.
       url: https://docs.microsoft.com/azure/jenkins/
