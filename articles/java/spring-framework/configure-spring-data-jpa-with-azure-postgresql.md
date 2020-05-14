@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.topic: conceptual
-ms.openlocfilehash: 77addcc8b35dc15fe6bc64722e0a5d61b67bd4a5
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 723d98afd5f82a733011db207f8f462888c95e57
+ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81668956"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83369798"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-postgresql"></a>Verwenden der Spring Data-JPA mit Azure PostgreSQL
 
@@ -93,7 +93,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    | Parameter | BESCHREIBUNG |
    |---|---|
    | `host` | Der vollqualifizierte PostgreSQL-Servername, den Sie weiter oben in diesem Artikel festgelegt haben |
-   | `host` | Der PostgreSQL-Serverport (Standardwert: `5432`) |
+   | `port` | Der PostgreSQL-Serverport (Standardwert: `5432`) |
    | `username` | Der PostgreSQL-Administratorname, den Sie weiter oben in diesem Artikel festgelegt haben, mit angefügtem gekürzten Servernamen |
    | `dbname` | Gibt an, dass Sie vorerst die `postgres`-Standarddatenbank verwenden möchten |
 

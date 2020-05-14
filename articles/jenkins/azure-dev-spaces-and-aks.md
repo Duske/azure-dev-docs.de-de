@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie das Azure Dev Spaces-Plug-In in einer 
 keywords: Jenkins, Azure, DevOps, Azure Dev Spaces, AKS, Azure Kubernetes Service
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: 2528d362a9c95aecd00b938fdeed2756c8643fd4
-ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
+ms.openlocfilehash: acc4fba8bc12c631f395bf980ca6ee8b42dc8f49
+ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861253"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83369932"
 ---
 # <a name="tutorial-use-azure-dev-spaces-with-azure-kubernetes-service"></a>Tutorial: Verwenden von Azure Dev Spaces mit Azure Kubernetes Service
 
@@ -202,7 +202,7 @@ In der Beispielpipeline werden Helm und kubectl verwendet, um den Entwicklungsbe
 
 ### <a name="add-credentials-to-jenkins"></a>Hinzufügen von Anmeldeinformationen zu Jenkins
 
-1. Jenkins benötigt einen Azure-Dienstprinzipal für die Authentifizierung und den Zugriff auf Azure-Ressourcen. Wie Sie einen Dienstprinzipal erstellen, erfahren Sie im Abschnitt  [Erstellen eines Dienstprinzipals](https://docs.microsoft.com/azure/jenkins/deploy-from-github-to-azure-app-service#create-service-principal) des Bereitstellungstutorials für Azure App Service. Speichern Sie unbedingt eine Kopie der Ausgabe von `create-for-rbac`. Diese Informationen werden im nächsten Schritt benötigt. Die Ausgabe sieht in etwa wie folgt aus:
+1. Jenkins benötigt einen Azure-Dienstprinzipal für die Authentifizierung und den Zugriff auf Azure-Ressourcen. Wie Sie einen Dienstprinzipal erstellen, erfahren Sie im Abschnitt  [Erstellen eines Dienstprinzipals](deploy-from-github-to-azure-app-service.md#create-service-principal) des Bereitstellungstutorials für Azure App Service. Speichern Sie unbedingt eine Kopie der Ausgabe von `create-for-rbac`. Diese Informationen werden im nächsten Schritt benötigt. Die Ausgabe sieht in etwa wie folgt aus:
 
     ```json
     {
@@ -220,7 +220,7 @@ In der Beispielpipeline werden Helm und kubectl verwendet, um den Entwicklungsbe
 
     ![Hinzufügen von Dienstprinzipal-Anmeldeinformationen zu Jenkins](media/azure-dev-spaces-and-aks/add-service-principal-credentials.png)
 
-    Die Angabe einer **Beschreibung**ist optional. Eine ausführlichere Anleitung finden Sie im Abschnitt [Hinzufügen des Dienstprinzipals zu Jenkins](https://docs.microsoft.com/azure/jenkins/deploy-from-github-to-azure-app-service#add-service-principal-to-jenkins) des Bereitstellungstutorials für Azure App Service. 
+    Die Angabe einer **Beschreibung**ist optional. Eine ausführlichere Anleitung finden Sie im Abschnitt [Hinzufügen des Dienstprinzipals zu Jenkins](deploy-from-github-to-azure-app-service.md#add-service-principal-to-jenkins) des Bereitstellungstutorials für Azure App Service. 
 
 
 

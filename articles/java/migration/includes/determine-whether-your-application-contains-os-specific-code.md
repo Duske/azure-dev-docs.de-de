@@ -2,13 +2,13 @@
 author: edburns
 ms.author: edburns
 ms.date: 1/21/2020
-ms.openlocfilehash: 501d7da2e7af8b092018ec4827a0169b0253bcf8
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 53ed325e26e6929106bd102341f3f446332e26f2
+ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81672936"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988838"
 ---
 ### <a name="determine-whether-your-application-contains-os-specific-code"></a>Ermitteln, ob Ihre Anwendung betriebssystemspezifischen Code enthält
 
-Wenn Ihre Anwendung Code mit Abhängigkeiten vom Hostbetriebssystem enthält, müssen Sie ihn umgestalten, um diese Abhängigkeiten zu beseitigen.
+[!INCLUDE [determine-whether-your-application-contains-os-specific-code-no-title](determine-whether-your-application-contains-os-specific-code-no-title.md)]
