@@ -1,15 +1,31 @@
 - name: Azure für Python-Entwickler
   href: index.yml
-- name: Übersicht
+- name: Cloudentwicklung mit Azure
   items:
-    - name: Informationen zum Python SDK
+    - name: Was ist Azure?
+      href: cloud-development-overview.md
+    - name: Zugreifen auf sowie Bereitstellen und Verwalten von Ressourcen
+      href: cloud-development-provisioning.md
+    - name: Azure-Entwicklungsablauf
+      href: cloud-development-flow.md
+- name: Einrichten Ihrer Entwicklungsumgebung für Azure
+  href: configure-local-development-environment.md
+- name: Erste Schritte mit dem Azure SDK für Python
+  items:
+    - name: Übersicht
       href: azure-sdk-overview.md
-    - name: Entwicklertools
-      href: azure-tools.md
-- name: Schnellstarts
+    - name: Installieren von SDK-Bibliotheken
+      href: azure-sdk-install.md
+    - name: 'Beispiel: Erstellen einer Ressourcengruppe'
+      href: azure-sdk-example-resource-group.md
+    - name: 'Beispiel: Verwenden von Azure Storage'
+      href: azure-sdk-example-storage.md
+    - name: 'Beispiel: Bereitstellen einer Web-App mit Code'
+      href: azure-sdk-example-web-app.md
+    - name: 'Beispiel: Bereitstellen von virtuellen Computern'
+      href: azure-sdk-example-virtual-machines.md
+- name: Schnellstarts für Azure-Dienste
   items:
-    - name: Python SDK
-      href: azure-sdk-get-started.yml
     - name: App-Hosting
       href: quickstarts-app-hosting.md
     - name: Datenlösungen
@@ -22,9 +38,9 @@
       href: quickstarts-messaging.md
     - name: Sicherheit und Integration
       href: quickstarts-security-integration.md
-- name: Lernprogramme
+- name: Szenariospezifische Tutorials
   items:
-    - name: Bereitstellen für App Service mit VS Code
+    - name: Bereitstellen einer Web-App mit VS Code
       items:
         - name: 1. Einführung und Voraussetzungen
           href: tutorial-deploy-app-service-on-linux-01.md
@@ -52,7 +68,7 @@
           href: tutorial-deploy-containers-04.md
         - name: 5. Bereinigen der Ressourcen
           href: tutorial-deploy-containers-05.md
-    - name: Bereitstellen von Azure Functions mit VS Code
+    - name: Bereitstellen einer serverlosen Azure Functions-Instanz mit VS Code
       items:
         - name: 1. Einführung und Voraussetzungen
           href: tutorial-vs-code-serverless-python-01.md
@@ -70,13 +86,15 @@
           href: tutorial-vs-code-serverless-python-07.md
         - name: 8. Bereinigen der Ressourcen
           href: tutorial-vs-code-serverless-python-08.md
-- name: Gewusst-wie-Anleitungen
+- name: Anleitungen
   items:
-    - name: Installieren des SDKs
-      href: azure-sdk-install.md
-    - name: Authentication
+    - name: Authentifizieren von Apps mit Azure
       href: azure-sdk-authenticate.md
-    - name: Vorgangskonfiguration
+    - name: Verwalten von Dienstprinzipalen
+      href: how-to-manage-service-principals.md
+    - name: Zuweisen von Rollenberechtigungen zu Sicherheitsprinzipalen
+      href: how-to-assign-role-permissions.md
+    - name: Konfigurieren von REST-API-Argumenten
       href: azure-sdk-operation-config.md
     - name: Entwicklung mit mehreren Clouds
       href: azure-sdk-multi-cloud.md
