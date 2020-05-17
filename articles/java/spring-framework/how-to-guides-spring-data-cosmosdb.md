@@ -46,7 +46,7 @@ public interface ReactiveSampleRepository extends ReactiveCosmosRepository<Sampl
 }
 ```
 
-Abhängig von der Verwendung müssen Sie beide Repositorys separat in der Klasse `Configuration` aktivieren. Beispiel: 
+Abhängig von der Verwendung müssen Sie beide Repositorys separat in der Klasse `Configuration` aktivieren. Beispiel:
 
 ```java
 @Configuration
@@ -221,7 +221,7 @@ public CosmosDBConfig getConfig() {
 
 Version 2.2.x des Spring Data Cosmos DB SDK unterstützt Antwortdiagnosezeichenfolgen und Abfragemetriken.
 
-Legen Sie zum Aktivieren von Abfragemetriken in der Datei `populateQueryMetrics` das Flag **auf**true`application.properties` fest. Erweitern Sie dann die Schnittstelle `ResponseDiagnosticsProcessor`, und implementieren Sie die Methode `processResponseDiagnostics`, um die Diagnoseinformationen zu protokollieren. Übergeben Sie schließlich eine Instanz der Implementierung an die Methode `CosmosDbConfig.setResponseDiagnosticsProcessor`. Der folgende Code zeigt eine Beispielimplementierung:
+Legen Sie zum Aktivieren von Abfragemetriken in der Datei `application.properties` das Flag `populateQueryMetrics` auf **true** fest. Erweitern Sie dann die Schnittstelle `ResponseDiagnosticsProcessor`, und implementieren Sie die Methode `processResponseDiagnostics`, um die Diagnoseinformationen zu protokollieren. Übergeben Sie schließlich eine Instanz der Implementierung an die Methode `CosmosDbConfig.setResponseDiagnosticsProcessor`. Der folgende Code zeigt eine Beispielimplementierung:
 
 ```java
 @Configuration

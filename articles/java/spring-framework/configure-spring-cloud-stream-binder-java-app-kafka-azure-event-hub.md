@@ -348,7 +348,7 @@ In diesem Abschnitt erstellen Sie die Java-Klassen, die erforderlich sind, um Er
    ```shell
    curl -X POST -H "Content-Type: text/plain" -d "hello" http://localhost:8080/messages
    ```
-   In den Protokollen Ihrer Anwendung sollte „hello“ angezeigt werden. Beispiel: 
+   In den Protokollen Ihrer Anwendung sollte „hello“ angezeigt werden. Beispiel:
 
    ```shell
    [http-nio-8080-exec-2] INFO org.apache.kafka.common.utils.AppInfoParser - Kafka version : 1.0.2

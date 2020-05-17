@@ -83,7 +83,7 @@ anotherDatabase = anotherDatabase.update()
                      .apply();
 ```
 
-An [ übergebbare Werte finden Sie in der ](/java/api/com.microsoft.azure.management.sql.databaseeditions)DatabaseEditions-Klassenreferenz`withEdition()`.
+An `withEdition()` übergebbare Werte finden Sie in der [DatabaseEditions-Klassenreferenz](/java/api/com.microsoft.azure.management.sql.databaseeditions).
 
 ## <a name="list-current-database-activities-in-an-elastic-pool"></a>Auflisten der aktuellen Datenbankaktivitäten in einem Pool für elastische Datenbanken
 ```java

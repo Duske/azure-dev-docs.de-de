@@ -378,7 +378,7 @@ Führen Sie die folgenden Schritte aus, um Ihre Anwendung zu erstellen und zu te
    ```shell
    curl -X POST -H "Content-Type: text/plain" -d "hello" http://localhost:8080/messages
    ```
-   In den Protokollen Ihrer Anwendung sollte „hello“ angezeigt werden. Beispiel: 
+   In den Protokollen Ihrer Anwendung sollte „hello“ angezeigt werden. Beispiel:
 
    ```shell
    [Thread-13] INFO com.wingtiptoys.eventhub.EventhubSink - New message received: 'hello'

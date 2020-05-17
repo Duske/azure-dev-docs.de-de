@@ -133,7 +133,7 @@ Klicken Sie auf **OK**.
 
 ## <a name="configure-your-spring-boot-app-to-use-your-azure-cosmos-db"></a>Konfigurieren der Spring Boot-App für die Verwendung von Azure Cosmos DB
 
-1. Suchen Sie das Verzeichnis *resources* Ihrer App, und erstellen Sie eine neue Datei namens *application.yml*. Beispiel: 
+1. Suchen Sie das Verzeichnis *resources* Ihrer App, und erstellen Sie eine neue Datei namens *application.yml*. Beispiel:
 
    `C:\SpringBoot\wingtiptoysdata\src\main\resources\application.yml`
 

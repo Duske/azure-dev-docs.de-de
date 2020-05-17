@@ -15,15 +15,15 @@ Externe Ressourcen, z. B. Datenquellen, JMS-Nachrichtenbroker und andere, werde
 
 #### <a name="inside-your-application"></a>Innerhalb Ihrer Anwendung
 
-Untersuchen Sie die Datei *META-INF/context.xml*. Suchen Sie im `<Resource>`-Element nach `<Context>`-Elementen.
+Untersuchen Sie die Datei *META-INF/context.xml*. Suchen Sie im `<Context>`-Element nach `<Resource>`-Elementen.
 
 #### <a name="on-the-application-servers"></a>Auf den Anwendungsservern
 
 Untersuchen Sie die Dateien *$CATALINA_BASE/conf/context.xml* und *$CATALINA_BASE/conf/server.xml* sowie die *XML*-Dateien, die in Verzeichnissen der Art *$CATALINA_BASE/conf/[Engine-Name]/[Hostname]* enthalten sind.
 
-In *context.xml*-Dateien werden JNDI-Ressourcen im `<Resource>`-Element der obersten Ebene mithilfe von `<Context>`-Elementen beschrieben.
+In *context.xml*-Dateien werden JNDI-Ressourcen im `<Context>`-Element der obersten Ebene mithilfe von `<Resource>`-Elementen beschrieben.
 
-In *server.xml*-Dateien werden JNDI-Ressourcen im `<Resource>`-Element mithilfe von `<GlobalNamingResources>`-Elementen beschrieben.
+In *server.xml*-Dateien werden JNDI-Ressourcen im `<GlobalNamingResources>`-Element mithilfe von `<Resource>`-Elementen beschrieben.
 
 #### <a name="datasources"></a>Datenquellen
 

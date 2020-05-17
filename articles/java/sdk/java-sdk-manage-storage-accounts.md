@@ -15,7 +15,7 @@ ms.locfileid: "82104991"
 ---
 # <a name="manage-azure-storage-accounts-from-your-java-applications"></a>Verwalten von Azure-Speicherkonten über Ihre Java-Anwendungen
 
-[Dieses Beispiel](https://github.com/Azure-Samples/storage-java-manage-storage-accounts) erstellt mit den [Java-Verwaltungsbibliotheken](/azure/storage/common/storage-introduction) ein [Azure Storage](https://github.com/Azure/azure-sdk-for-java)-Konto und verwendet die Kontozugriffsschlüssel. 
+[Dieses Beispiel](https://github.com/Azure-Samples/storage-java-manage-storage-accounts) erstellt mit den [Java-Verwaltungsbibliotheken](https://github.com/Azure/azure-sdk-for-java) ein [Azure Storage](/azure/storage/common/storage-introduction)-Konto und verwendet die Kontozugriffsschlüssel. 
 
 ## <a name="run-the-sample"></a>Ausführen des Beispiels
 

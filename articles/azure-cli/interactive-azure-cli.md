@@ -64,7 +64,7 @@ az vm>>list -o table
 ```
 
 Sie können den Bereich auch auf Befehlsgruppen einer niedrigeren Ebene beschränken.
-Mit `vm image` können Sie den Bereich auf `%%vm image` festlegen.
+Mit `%%vm image` können Sie den Bereich auf `vm image` festlegen.
 Da der Bereich bereits auf `vm` festgelegt ist, verwenden wir in diesem Fall `%%image`.
 
 ```azurecli
@@ -72,7 +72,7 @@ az vm>> %%image
 az vm image>>
 ```
 
-An diesem Punkt können wir den Bereich mit `vm` wieder auf `%%..` erweitern oder einfach mit `%%` auf das Stammverzeichnis festlegen.
+An diesem Punkt können wir den Bereich mit `%%..` wieder auf `vm` erweitern oder einfach mit `%%` auf das Stammverzeichnis festlegen.
 
 ```azurecli
 az vm image>> %%

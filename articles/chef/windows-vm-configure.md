@@ -273,7 +273,7 @@ In diesem Schritt wird das Cookbook, das Sie auf dem lokalen Computer erstellt h
 
 ## <a name="deploy-a-virtual-machine-with-knife-azure"></a>Bereitstellen eines virtuellen Computers mit Knife Azure
 
-Verwenden Sie den Befehl `Webserver`, um einen virtuellen Azure-Computer bereitzustellen und das Cookbook `knife` anzuwenden.
+Verwenden Sie den Befehl `knife`, um einen virtuellen Azure-Computer bereitzustellen und das Cookbook `Webserver` anzuwenden.
 
 Mit dem Befehl `knife` werden auch der IIS-Webdienst und die Standardwebseite installiert.
 
