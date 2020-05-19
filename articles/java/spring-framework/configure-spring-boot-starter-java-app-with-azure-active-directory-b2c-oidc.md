@@ -11,12 +11,12 @@ ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 71bc7e2e7677ce3f53c70bd68e5e73765070bd06
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: c06c1205d1ef1f8dc7eec674c846cf53c6a2e5e8
+ms.sourcegitcommit: 996212c5a141d724d26f3899e91d194b08b2dc0b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82104861"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82985177"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>Tutorial: Schützen einer Java-Web-App mithilfe von Spring Boot Starter für Azure Active Directory B2C
 
@@ -88,15 +88,16 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
    ![Hinzufügen des Umleitungs-URIs der Anwendung](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c2-n.png)
 
-3. Wählen Sie in Ihrer Anwendung **Zertifikate & Geheimnisse** aus, klicken Sie zum Generieren von `${your-client-secret}` auf **Schlüssel generieren**, und klicken Sie dann auf **Speichern**.
+3. Wählen Sie **Zertifikate und Geheimnisse** aus, und klicken Sie auf **Neuer geheimer Clientschlüssel**, um den Schlüssel zu generieren.
 
    ![Erstellen eines Benutzerflows](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c3-n.png)
 
 4. Wählen Sie auf der linken Seite **Benutzerflows** aus, und klicken Sie dann auf **Neuer Benutzerflow**.
 
-5. Wählen Sie **Registrieren und Anmelden**, **Profilbearbeitung** und **Kennwortzurücksetzung** aus, um entsprechende Benutzerflows zu erstellen. Geben Sie unter **Name** einen Namen für den Benutzerflow und unter **Benutzerattribute und Ansprüche** die entsprechenden Werte ein, und klicken Sie auf **Erstellen**.
+5. Wählen Sie **Registrieren oder anmelden**, **Profilbearbeitung** und **Kennwortzurücksetzung** aus, um Ihren Benutzerflow zu erstellen. Weitere Informationen finden Sie im [Tutorial: Erstellen von Benutzerflows in Azure Active Directory B2C](/azure/active-directory-b2c/tutorial-create-user-flows). Von AAD B2C werden sowohl lokale Konten als auch soziale Netzwerke als Identitätsanbieter unterstützt. Ein Beispiel für die Erstellung eines GitHub-Identitätsanbieters finden Sie unter [Einrichten der Registrierung und Anmeldung mit einem GitHub-Konto mithilfe von Azure Active Directory B2C](/azure/active-directory-b2c/identity-provider-github).
+Wählen Sie **Anzeigename** aus, damit er in das Anspruchstoken eingeschlossen wird.
 
-   ![Konfigurieren des Benutzerflows](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c4-n.png)
+   ![Erstellen eines Benutzerflows](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c-create-userflow.png)
 
 ## <a name="configure-and-compile-your-app"></a>Konfigurieren und Kompilieren Ihrer App
 
@@ -110,7 +111,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    <dependency>
        <groupId>com.microsoft.azure</groupId>
        <artifactId>azure-active-directory-b2c-spring-boot-starter</artifactId>
-       <version>2.1.6.M2</version>
+       <version>2.2.4</version>
    </dependency>
    <dependency>
        <groupId>org.springframework.boot</groupId>
@@ -132,10 +133,10 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    azure:
      activedirectory:
        b2c:
-         tenant: ${your-tenant-name}
+         tenant: ${your-tenant-name} # This is also the first part of your domain name before "onmicrosoft.com".
          client-id: ${your-client-id}
          client-secret: ${your-client-secret}
-         reply-url: ${your-redirect-uri-from-aad} # should be absolute url.
+         reply-url: ${your-redirect-uri-from-aad} # This should be an absolute URL.
          logout-success-url: ${you-logout-success-url}
          user-flows:
            sign-up-or-sign-in: ${your-sign-up-or-in-user-flow}

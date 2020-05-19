@@ -5,31 +5,31 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: c6586f0ba2e651445e95fa3606daa35ee566df87
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 6d2d18a6dbf87a97b806876a534a103dbbf88420
+ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673476"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988778"
 ---
 # <a name="migrate-tomcat-applications-to-tomcat-on-azure-app-service"></a>Migrieren von Tomcat-Anwendungen zu Tomcat unter Azure App Service
 
 In diesem Leitfaden erfahren Sie, was Sie beachten sollten, wenn Sie eine vorhandene Tomcat-Anwendung für die Ausführung unter Azure App Service mit Tomcat 9.0 migrieren möchten.
 
-## <a name="before-you-start"></a>Vorbereitung
+## <a name="pre-migration"></a>Vor der Migration
 
-Falls Sie keine Anforderungen der Migrationsvorbereitung erfüllen können, helfen Ihnen die Informationen in den folgenden relevanten Migrationsleitfäden weiter:
+Führen Sie vor Beginn einer Migration die in den folgenden Abschnitten beschriebenen Schritte zur Bewertung und Bestandsermittlung aus, um eine erfolgreiche Migration zu gewährleisten.
+
+Falls Sie keine dieser Voraussetzungen für die Migration erfüllen können, sehen Sie sich die folgenden Begleithandbücher an:
 
 * [Migrieren von Tomcat-Anwendungen zu Containern unter Azure Kubernetes Service](migrate-tomcat-to-containers-on-azure-kubernetes-service.md)
 * Migrieren von Tomcat-Anwendungen zu Azure Virtual Machines (Leitfaden geplant)
 
-## <a name="pre-migration"></a>Vor der Migration
-
 ### <a name="switch-to-a-supported-platform"></a>Wechseln zu einer unterstützten Plattform
 
-App Service verfügt über bestimmte Versionen von Tomcat für bestimmte Versionen von Java. Migrieren Sie Ihre Anwendung zur Sicherstellung der Kompatibilität zu einer der unterstützten Versionen von Tomcat und Java in der aktuellen Umgebung, bevor Sie mit der Ausführung der restlichen Schritte beginnen. Achten Sie darauf, dass Sie die sich ergebende Konfiguration umfassend testen. Verwenden Sie für diese Tests das neueste stabile Release Ihrer Linux-Distribution.
+App Service verfügt über bestimmte Versionen von Tomcat für bestimmte Versionen von Java. Migrieren Sie Ihre Anwendung zur Sicherstellung der Kompatibilität in der aktuellen Umgebung zu einer der unterstützten Versionen von Tomcat und Java, bevor Sie mit den restlichen Schritten fortfahren. Achten Sie darauf, dass Sie die sich ergebende Konfiguration umfassend testen. Verwenden Sie für diese Tests das neueste stabile Release Ihrer Linux-Distribution.
 
-[!INCLUDE [note-obtain-your-current-java-version](includes/note-obtain-your-current-java-version.md)]
+[!INCLUDE [note-obtain-your-current-java-version-app-service](includes/note-obtain-your-current-java-version-app-service.md)]
 
 Melden Sie sich an Ihrem Produktionsserver an, und führen Sie den folgenden Befehl aus, um Ihre aktuelle Tomcat-Version zu ermitteln:
 
@@ -43,9 +43,11 @@ Laden Sie [Tomcat 9](https://tomcat.apache.org/download-90.cgi) herunter, um di
 
 [!INCLUDE [inventory-secrets](includes/inventory-secrets.md)]
 
+### <a name="inventory-certificates"></a>Inventarisieren von Zertifikaten
+
 [!INCLUDE [inventory-certificates](includes/inventory-certificates.md)]
 
-[!INCLUDE [inventory-persistence-usage](includes/inventory-persistence-usage.md)]
+[!INCLUDE [determine-whether-and-how-the-file-system-is-used](includes/determine-whether-and-how-the-file-system-is-used.md)]
 
 <!-- App-Service-specific addendum to inventory-persistence-usage -->
 #### <a name="dynamic-or-internal-content"></a>Dynamischer oder interner Inhalt
@@ -62,7 +64,7 @@ Falls das Erzielen von Sitzungspersistenz erforderlich ist, müssen Sie eine and
 
 ### <a name="special-cases"></a>Spezialfälle
 
-Für bestimmte Produktionsszenarien sind unter Umständen zusätzliche Änderungen erforderlich, oder es gelten zusätzliche Einschränkungen. Szenarien dieser Art treten zwar meist nicht sehr häufig auf, aber Sie sollten trotzdem sicherstellen, dass sie für Ihre Anwendung entweder nicht zutreffen oder korrekt behoben werden.
+Für bestimmte Produktionsszenarien sind unter Umständen zusätzliche Änderungen erforderlich, oder es gelten zusätzliche Einschränkungen. Szenarien dieser Art sind zwar eher selten, aber Sie sollten trotzdem sicherstellen, dass sie für Ihre Anwendung entweder nicht zutreffen oder korrekt behoben werden.
 
 #### <a name="determine-whether-application-relies-on-scheduled-jobs"></a>Ermitteln, ob für die Anwendung geplante Aufträge benötigt werden
 
@@ -72,43 +74,43 @@ Inventarisieren Sie alle geplanten Aufträge innerhalb oder außerhalb des Anwen
 
 #### <a name="determine-whether-your-application-contains-os-specific-code"></a>Ermitteln, ob Ihre Anwendung betriebssystemspezifischen Code enthält
 
-Wenn Ihre Anwendung Code mit Abhängigkeiten vom Hostbetriebssystem enthält, müssen Sie ihn umgestalten, um diese Abhängigkeiten zu beseitigen. Beispielsweise müssen Sie ggf. alle Vorkommen von `/` oder `\` in Dateisystempfaden durch [`File.Separator`](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#separator) oder [`Paths.get`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Paths.html#get-java.lang.String-java.lang.String...-) ersetzen.
+[!INCLUDE [determine-whether-your-application-contains-os-specific-code-no-title](includes/determine-whether-your-application-contains-os-specific-code-no-title.md)]
 
 #### <a name="determine-whether-tomcat-clustering-is-used"></a>Ermitteln, ob das Tomcat-Clustering genutzt wird
 
 Das [Tomcat-Clustering](https://tomcat.apache.org/tomcat-9.0-doc/cluster-howto.html) wird für Azure App Service nicht unterstützt. Stattdessen können Sie die Skalierung und den Lastenausgleich mit Azure App Service und ohne Tomcat-spezifische Funktionen konfigurieren und verwalten. Sie können den Sitzungszustand an einem alternativen Speicherort speichern, um ihn für Replikate übergreifend verfügbar zu machen. Weitere Informationen finden Sie unter [Identifizieren eines Mechanismus für Sitzungspersistenz](#identify-session-persistence-mechanism).
 
-Suchen Sie für die Ermittlung, ob für Ihre Anwendung das Clustering verwendet wird, in der `<Cluster>`server.xml`<Host>`-Datei in den Elementen `<Engine>` oder *nach dem*-Element.
+Suchen Sie für die Ermittlung, ob für Ihre Anwendung das Clustering verwendet wird, in der *server.xml*-Datei in den Elementen `<Host>` oder `<Engine>` nach dem `<Cluster>`-Element.
 
 #### <a name="identify-all-outside-processesdaemons-running-on-the-production-servers"></a>Ermitteln aller externen Prozesse/Daemons, die auf den Produktionsservern ausgeführt werden
 
-Sie müssen die Migration zu einem anderen Ort durchführen oder alle Prozesse beseitigen, die außerhalb des Anwendungsservers ausgeführt werden, z. B. die Überwachung von Daemons.
+Sie müssen zu einem anderen Ort migrieren oder alle Prozesse entfernen, die außerhalb des Anwendungsservers ausgeführt werden (beispielsweise die Überwachung von Daemons).
 
 #### <a name="determine-whether-non-http-connectors-are-used"></a>Ermitteln, ob Connectors ohne HTTP genutzt werden
 
 App Service unterstützt nur jeweils einen HTTP-Connector. Wenn für Ihre Anwendung zusätzliche Connectors erforderlich sind, z. B. der AJP-Connector, sollten Sie App Service nicht verwenden.
 
-Suchen Sie in der Datei `<Connector>`server.xml*Ihrer Tomcat-Konfiguration nach*-Elementen, um die von Ihrer Anwendung genutzten HTTP-Connectors zu ermitteln.
+Suchen Sie in der Datei *server.xml* Ihrer Tomcat-Konfiguration nach `<Connector>`-Elementen, um die von Ihrer Anwendung genutzten HTTP-Connectors zu ermitteln.
 
 #### <a name="determine-whether-memoryrealm-is-used"></a>Ermitteln, ob MemoryRealm genutzt wird
 
-Für [MemoryRealm](https://tomcat.apache.org/tomcat-9.0-doc/api/org/apache/catalina/realm/MemoryRealm.html) wird eine persistente XML-Datei benötigt. Unter Azure App Service müssen Sie diese Datei in das Verzeichnis */home* bzw. ein zugehöriges Unterverzeichnis oder in bereitgestellten Speicher hochladen. Hierbei müssen Sie den Parameter `pathName` entsprechend ändern.
+Für [MemoryRealm](https://tomcat.apache.org/tomcat-9.0-doc/api/org/apache/catalina/realm/MemoryRealm.html) wird eine persistente XML-Datei benötigt. Diese Datei muss in Azure App Service in das Verzeichnis */home* oder in eines seiner Unterverzeichnisse oder in eingebundenen Speicher hochgeladen werden. Anschließend muss der Parameter `pathName` entsprechend geändert werden.
 
 Gehen Sie wie folgt vor, um zu ermitteln, ob `MemoryRealm` derzeit verwendet wird: Untersuchen Sie Ihre *server.xml*- und *context.xml*-Dateien, und suchen Sie nach `<Realm>`-Elementen, für die das `className`-Attribut auf `org.apache.catalina.realm.MemoryRealm` festgelegt ist.
 
 #### <a name="determine-whether-ssl-session-tracking-is-used"></a>Ermitteln, ob die SSL-Sitzungsverfolgung genutzt wird
 
-App Service führt die Sitzungsabladung außerhalb der Tomcat-Runtime durch. Aus diesem Grund können Sie die [SSL-Sitzungsverfolgung](https://tomcat.apache.org/tomcat-9.0-doc/servletapi/javax/servlet/SessionTrackingMode.html#SSL) nicht verwenden. Verwenden Sie stattdessen einen anderen Modus für die Sitzungsverfolgung (`COOKIE` oder `URL`). Vermeiden Sie die Verwendung von App Service, wenn Sie die SSL-Sitzungsverfolgung benötigen.
+App Service führt die Sitzungsabladung außerhalb der Tomcat-Runtime durch. Daher kann die [SSL-Sitzungsverfolgung](https://tomcat.apache.org/tomcat-9.0-doc/servletapi/javax/servlet/SessionTrackingMode.html#SSL) nicht verwendet werden. Verwenden Sie stattdessen einen anderen Modus für die Sitzungsverfolgung (`COOKIE` oder `URL`). Vermeiden Sie die Verwendung von App Service, wenn Sie die SSL-Sitzungsverfolgung benötigen.
 
 #### <a name="determine-whether-accesslogvalve-is-used"></a>Ermitteln, ob AccessLogValve genutzt wird
 
-Bei Verwendung von [AccessLogValve](https://tomcat.apache.org/tomcat-9.0-doc/api/org/apache/catalina/valves/AccessLogValve.html) sollten Sie den Parameter `directory` auf `/home/LogFiles` oder ein zugehöriges Unterverzeichnis festlegen.
+Bei Verwendung von [AccessLogValve](https://tomcat.apache.org/tomcat-9.0-doc/api/org/apache/catalina/valves/AccessLogValve.html) muss der Parameter `directory` auf `/home/LogFiles` oder auf eines der zugehörigen Unterverzeichnisse festgelegt werden.
 
 ## <a name="migration"></a>Migration
 
 ### <a name="parameterize-the-configuration"></a>Parametrisieren der Konfiguration
 
-Bei der Migrationsvorbereitung haben Sie in *server.xml*- und *context.xml*-Dateien ggf. Geheimnisse und externe Abhängigkeiten identifiziert, z. B. Datenquellen. Ersetzen Sie für alle auf diese Weise identifizierten Elemente den Benutzernamen, das Kennwort, die Verbindungszeichenfolge und die URL durch eine Umgebungsvariable.
+Im Rahmen der Migrationsvorbereitung haben Sie wahrscheinlich einige Geheimnisse und externe Abhängigkeiten (beispielsweise Datenquellen) in den Dateien *server.xml* und *context.xml* ermittelt. Ersetzen Sie für alle ermittelten Elemente jeweils den Benutzernamen, das Kennwort, die Verbindungszeichenfolge und die URL durch eine Umgebungsvariable.
 
 Angenommen, die *context.xml*-Datei enthält das folgende Element:
 
@@ -180,7 +182,7 @@ Verwenden Sie die Anwendungseinstellungen, um die spezifischen Geheimnisse für 
 
 ### <a name="migrate-data-sources-libraries-and-jndi-resources"></a>Migrieren von Datenquellen, Bibliotheken und JNDI-Ressourcen
 
-Informationen zu den Konfigurationsschritten für Datenquellen finden Sie unter [Konfigurieren einer Linux-Java-App für Azure App Service](/azure/app-service/containers/configure-language-java#data-sources) im Abschnitt [Datenquellen](/azure/app-service/containers/configure-language-java).
+Informationen zu den Konfigurationsschritten für Datenquellen finden Sie unter [Konfigurieren einer Linux-Java-App für Azure App Service](/azure/app-service/containers/configure-language-java) im Abschnitt [Datenquellen](/azure/app-service/containers/configure-language-java#data-sources).
 
 [!INCLUDE[Tomcat datasource additional instructions](includes/tomcat-datasource-additional-instructions.md)]
 
@@ -211,10 +213,10 @@ Nachdem Sie Ihre Anwendung nun zu Azure App Service migriert haben, sollten Sie 
 
 * Wenn Sie sich für die Verwendung des Verzeichnisses */home* zum Speichern der Dateien entschieden haben, können Sie erwägen, dafür die [Umstellung auf Azure Storage](/azure/app-service/containers/how-to-serve-content-from-azure-storage) durchzuführen.
 
-* Falls Sie über Konfigurationsdaten im Verzeichnis */home* mit Verbindungszeichenfolgen, SSL-Schlüsseln und anderen Geheimnisinformationen verfügen, können Sie, falls möglich, eine Kombination aus [Azure Key Vault](/azure/app-service/app-service-key-vault-references) und [Parametereinfügung mit Anwendungseinstellungen](/azure/app-service/configure-common#configure-app-settings) verwenden.
+* Falls Sie im Verzeichnis */home*, das Verbindungszeichenfolgen, SSL-Schlüssel und andere Geheimnisinformationen enthält, über Konfigurationsdaten verfügen, empfiehlt es sich gegebenenfalls, eine Kombination aus [Azure Key Vault](/azure/app-service/app-service-key-vault-references) und [Parametereinfügung mit Anwendungseinstellungen](/azure/app-service/configure-common#configure-app-settings) zu verwenden.
 
 * Erwägen Sie die [Verwendung von Bereitstellungsslots](/azure/app-service/deploy-staging-slots), um zuverlässige Bereitstellungen ohne jegliche Ausfallzeiten zu erzielen.
 
-* Entwerfen und implementieren Sie eine DevOps-Strategie. Sie können [Bereitstellungen automatisieren und mit Azure Pipelines testen](/azure/devops/pipelines/ecosystems/java-webapp), um die Zuverlässigkeit sicherzustellen, während gleichzeitig die Entwicklungsgeschwindigkeit erhöht wird. Bei Verwendung von Bereitstellungsslots können Sie nicht nur die [Bereitstellung für einen Slot automatisieren](/azure/devops/pipelines/targets/webapp?view=azure-devops&tabs=yaml#deploy-to-a-slot), sondern auch den nachfolgenden Slotaustausch.
+* Entwerfen und implementieren Sie eine DevOps-Strategie. Sie können [Bereitstellungen automatisieren und mit Azure Pipelines testen](/azure/devops/pipelines/ecosystems/java-webapp), um die Zuverlässigkeit sicherzustellen, während gleichzeitig die Entwicklungsgeschwindigkeit erhöht wird. Bei Verwendung von Bereitstellungsslots können Sie nicht nur die [Bereitstellung für einen Slot automatisieren](/azure/devops/pipelines/targets/webapp?view=azure-devops&tabs=yaml#deploy-to-a-slot), sondern auch den anschließenden Slotaustausch.
 
 * Entwerfen und implementieren Sie eine Strategie für Geschäftskontinuität und Notfallwiederherstellung. Bei unternehmenskritischen Anwendungen sollten Sie erwägen, eine [Bereitstellungsarchitektur mit mehreren Regionen](/azure/architecture/reference-architectures/app-service-web-app/multi-region) zu verwenden.

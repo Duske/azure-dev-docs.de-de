@@ -5,18 +5,20 @@ author: edburns
 ms.author: edburns
 ms.topic: conceptual
 ms.date: 1/27/2020
-ms.openlocfilehash: 10edb96e4e0781945da85d5a872b14178db3122f
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: b9d9a4ea8ef81af5c67b91281e892b4626f42f62
+ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673516"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988889"
 ---
 # <a name="migrate-weblogic-applications-to-azure-virtual-machines"></a>Migrieren von WebLogic-Anwendungen zu virtuellen Azure-Computern
 
 In diesem Leitfaden wird beschrieben, was Sie beachten sollten, wenn Sie eine vorhandene WebLogic-Anwendung für die Ausführung auf Azure Virtual Machines migrieren möchten.
 
 ## <a name="pre-migration"></a>Vor der Migration
+
+Führen Sie vor Beginn einer Migration die in den folgenden Abschnitten beschriebenen Schritte zur Bewertung und Bestandsermittlung aus, um eine erfolgreiche Migration zu gewährleisten.
 
 ### <a name="define-what-you-mean-by-migration-complete"></a>Definieren der Bedeutung von „Migration abgeschlossen“
 
@@ -40,11 +42,11 @@ Ihre vorhandene WebLogic-Version muss mit der Version in den IaaS-Angeboten komp
 
 [!INCLUDE [inventory-all-certificates](includes/inventory-all-certificates.md)]
 
-[!INCLUDE [validate-that-the-supported-java-version-works-correctly](includes/validate-that-the-supported-java-version-works-correctly.md)]
+[!INCLUDE [validate-that-the-supported-java-version-works-correctly-weblogic](includes/validate-that-the-supported-java-version-works-correctly-weblogic.md)]
 
 [!INCLUDE [inventory-jndi-resources](includes/inventory-jndi-resources.md)]
 
-[!INCLUDE [domain-configuration](includes/domain-configuration.md)]
+[!INCLUDE [inspect-your-domain-configuration](includes/inspect-your-domain-configuration.md)]
 
 [!INCLUDE [determine-whether-session-replication-is-used](includes/determine-whether-session-replication-is-used.md)]
 
@@ -74,7 +76,11 @@ Ihre vorhandene WebLogic-Version muss mit der Version in den IaaS-Angeboten komp
 
 [!INCLUDE [determine-whether-wlst-is-used](includes/determine-whether-wlst-is-used.md)]
 
-[!INCLUDE [validate-whether-and-how-the-file-system-is-used](includes/validate-whether-and-how-the-file-system-is-used.md)]
+### <a name="determine-whether-and-how-the-file-system-is-used"></a>Ermitteln, ob und wie das Dateisystem verwendet wird
+
+VM-Dateisysteme funktionieren in Bezug auf die Persistenz und das Starten und Herunterfahren genauso wie lokale Dateisysteme. Trotzdem ist es wichtig, dass Sie die Anforderungen Ihres Dateisystems kennen und sicherstellen, dass die virtuellen Computer über eine geeignete Speichergröße und Leistung verfügen.
+
+[!INCLUDE [static-content](includes/static-content.md)]
 
 [!INCLUDE [determine-the-network-topology](includes/determine-the-network-topology.md)]
 

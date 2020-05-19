@@ -3,13 +3,13 @@ title: 'Schnellstart: Erstellen einer Linux-VM mit Infrastruktur in Azure mit Te
 description: Es wird beschrieben, wie Sie mit Terraform eine vollständige Linux-VM-Umgebung in Azure erstellen und verwalten.
 keywords: Azure DevOps Terraform Linux VM virtueller Computer
 ms.topic: quickstart
-ms.date: 05/04/2020
-ms.openlocfilehash: d6763118179251c224e0ec3ae6e05a630cae7cde
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.date: 05/11/2020
+ms.openlocfilehash: 3485e899deaf84a63a2cf2d8085ac34b43f6fca9
+ms.sourcegitcommit: aa417af8b5f00cbc056666e481250ef45c661d52
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82801888"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83153711"
 ---
 # <a name="quickstart-create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>Schnellstart: Erstellen einer Linux-VM mit Infrastruktur in Azure mit Terraform
 
@@ -146,9 +146,9 @@ resource "azurerm_network_interface" "myterraformnic" {
 
     ip_configuration {
         name                          = "myNicConfiguration"
-        subnet_id                     = "azurerm_subnet.myterraformsubnet.id"
+        subnet_id                     = azurerm_subnet.myterraformsubnet.id
         private_ip_address_allocation = "Dynamic"
-        public_ip_address_id          = "azurerm_public_ip.myterraformpublicip.id"
+        public_ip_address_id          = azurerm_public_ip.myterraformpublicip.id
     }
 
     tags = {
@@ -412,6 +412,9 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
 }
 ```
 
+**Hinweise:**
+
+- Im Hinblick auf den Block `admin_ssh_key` erfordert der Azure-VM-Agent, dass SSH-Schlüssel in den folgenden Pfad geschrieben werden: `/home/{username}/.ssh/authorized_keys`. Bei der Ausführung dieses Beispiels unter Windows müssen Sie unter Umständen sicherstellen, dass diese Verzeichnisstruktur vorhanden ist. Weitere Informationen zum Block `admin_ssh_key` finden Sie in der [Dokumentation zu „azurerm_linux_virtual_machine“ auf Terraform.io](https://www.terraform.io/docs/providers/azurerm/r/linux_virtual_machine.html).
 
 ## <a name="build-and-deploy-the-infrastructure"></a>Erstellen und Bereitstellen der Infrastruktur
 

@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: e6215502b54bedf62f40a024f9e7b3acc01cdc1f
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 1eeb7d6a17bb21963f3203d484387c0aae6c402f
+ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81670606"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988699"
 ---
 # <a name="migrate-java-applications-to-azure"></a>Migrieren von Java-Anwendungen zu Azure
 
@@ -80,7 +80,7 @@ Ermitteln Sie anhand des folgenden Rasters die Ziele, die die von Ihnen benötig
 
 |   |App<br>Dienst<br>Java SE|App<br>Dienst<br>Tomcat|Azure<br>Spring<br>Cloud|AKS|Virtual Machines|
 |---|---|---|---|---|---|---|
-| Spring Boot-/JAR-Anwendungen                                    |&#x2714;|        |        |&#x2714;|&#x2714;|
+| Spring Boot-/JAR-Anwendungen                                    |&#x2714;|        |&#x2714;|&#x2714;|&#x2714;|
 | Spring Cloud/Microservices                                      |        |        |&#x2714;|&#x2714;|&#x2714;|
 | Webanwendungen                                                  |        |&#x2714;|        |&#x2714;|&#x2714;|
 | Java EE-Anwendungen                                              |        |        |        |&#x2714;|&#x2714;|
@@ -88,8 +88,10 @@ Ermitteln Sie anhand des folgenden Rasters die Ziele, die die von Ihnen benötig
 | Langfristige Aufbewahrung im lokalen Dateisystem                         |&#x2714;|&#x2714;|        |&#x2714;|&#x2714;|
 | Clustering auf Anwendungsserverebene                               |        |        |        |&#x2714;|&#x2714;|
 | Batchaufträge/Geplante Aufträge                                            |        |        |&#x2714;|&#x2714;|&#x2714;|
+| VNET-Integration/Hybridkonnektivität                              |Vorschau |Vorschau |        |&#x2714;|&#x2714;|
+| Verfügbarkeit von Azure-Regionen                | [Details][10] | [Details][10] | [Details][11] |[Details][12]|[Details][13]|
 
-### <a name="ongoing-responsibility-grid"></a>Raster zu laufenden Zuständigkeiten
+### <a name="ongoing-responsibility-grid"></a>Übersicht zu laufenden Zuständigkeiten
 
 Ermitteln Sie anhand des folgenden Rasters, welche Zuständigkeiten sich nach der Migration in Bezug auf die einzelnen Ziele für Ihr Team ergeben.
 
@@ -98,14 +100,14 @@ Für Ihr Team gilt eine fortlaufende Zuständigkeit für die Aufgaben, die mit �
 > [!NOTE]
 > Hinweis: Es handelt sich hierbei nicht um eine umfassende Liste mit Zuständigkeiten.
 
-|   | App Service | Azure Spring Cloud | AKS | Virtual Machines |
+|                                                                       | App Service | Azure Spring Cloud | AKS | Virtual Machines |
 |---|---|---|---|---|
 | Aktualisieren von Bibliotheken<br>(einschließlich Behebung von Sicherheitsrisiken)                 | &#x1F449;   | &#x1F449;   | &#x1F449;   | &#x1F449; |
 | Aktualisieren des Anwendungsservers<br>(einschließlich Behebung von Sicherheitsrisiken)    | ![Azure][1] | ![Azure][1] | &#x1F449;   | &#x1F449; |
 | Aktualisieren der Java Runtime<br>(einschließlich Behebung von Sicherheitsrisiken)          | ![Azure][1] | ![Azure][1] | &#x1F449;   | &#x1F449; |
-| Auslösen von Kubernetes-Updates<br>(durchgeführt von Azure per manuellem Trigger) | –         | –         | &#x1F449;   | –       |
-| Abstimmen von nicht abwärtskompatiblen Änderungen der Kubernetes-API                  | –         | –         | &#x1F449;   | –       |
-| Aktualisieren des Container-Basisimages<br>(einschließlich Behebung von Sicherheitsrisiken)      | –         | –         | &#x1F449;   | –       |
+| Auslösen von Kubernetes-Updates<br>(durchgeführt von Azure per manuellem Trigger) | –         | ![Azure][1] | &#x1F449;   | –       |
+| Abstimmen von nicht abwärtskompatiblen Änderungen der Kubernetes-API                  | –         | ![Azure][1] | &#x1F449;   | –       |
+| Aktualisieren des Container-Basisimages<br>(einschließlich Behebung von Sicherheitsrisiken)      | –         | ![Azure][1] | &#x1F449;   | –       |
 | Aktualisieren des Betriebssystems<br>(einschließlich Behebung von Sicherheitsrisiken)      | ![Azure][1] | ![Azure][1] | ![Azure][1] | &#x1F449; |
 | Erkennen und Neustarten von Instanzen mit Fehlern                                   | ![Azure][1] | ![Azure][1] | ![Azure][1] | &#x1F449; |
 | Implementieren des Ausgleichs und parallelen Neustarts für Updates                       | ![Azure][1] | ![Azure][1] | ![Azure][1] | &#x1F449; |
@@ -138,8 +140,8 @@ Falls Sie eine Web-App unter Tomcat zu Azure Spring Cloud migrieren möchten, so
 
 |Ziel&nbsp;→<br><br>Anwendungstyp&nbsp;&nbsp;↓|App<br>Dienst<br>Java SE|App<br>Dienst<br>Tomcat|Azure<br>Spring<br>Cloud|AKS|Virtual Machines|
 |---|---|---|---|---|---|---|
-| Spring Boot-/<br>JAR-Anwendungen | [Leitfaden][5] | Leitfaden<br>Geplant | Leitfaden<br>Geplant | Leitfaden<br>Geplant | Leitfaden<br>Geplant |
-| Spring Cloud/<br>Microservices   | –           | –                 | Leitfaden<br>Geplant | Leitfaden<br>Geplant | Leitfaden<br>Geplant |
+| Spring Boot-/<br>JAR-Anwendungen | [Leitfaden][5] | Leitfaden<br>Geplant | Leitfaden<br>Geplant | [Leitfaden][14]      | Leitfaden<br>Geplant |
+| Spring Cloud/<br>Microservices   | –           | –                 | [Leitfaden][15]      | Leitfaden<br>Geplant | Leitfaden<br>Geplant |
 | Webanwendungen<br>unter Tomcat     | –           | [Leitfaden][2]       | –                 | [Leitfaden][3]       | Leitfaden<br>Geplant |
 
 **Java EE-Anwendungen**
@@ -158,8 +160,14 @@ Ermitteln Sie anhand der unten angegebenen Zeilen den Typ Ihrer Java EE-Anwendun
 [2]: migrate-tomcat-to-tomcat-app-service.md
 [3]: migrate-tomcat-to-containers-on-azure-kubernetes-service.md
 [4]: migrate-weblogic-to-virtual-machines.md
-[5]: migrate-java-se-to-java-se-app-service.md
+[5]: migrate-spring-boot-to-app-service.md
 [6]: migrate-weblogic-to-wildfly-on-azure-kubernetes-service.md
 [7]: migrate-websphere-to-wildfly-on-azure-kubernetes-service.md
 [8]: migrate-jboss-eap-to-wildfly-on-azure-kubernetes-service.md
 [9]: migrate-wildfly-to-wildfly-on-azure-kubernetes-service.md
+[10]: https://azure.microsoft.com/global-infrastructure/services/?products=app-service-linux
+[11]: https://azure.microsoft.com/global-infrastructure/services/?products=spring-cloud
+[12]: https://azure.microsoft.com/global-infrastructure/services/?products=kubernetes-service
+[13]: https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines
+[14]: migrate-spring-boot-to-azure-kubernetes-service.md
+[15]: migrate-spring-cloud-to-azure-spring-cloud.md

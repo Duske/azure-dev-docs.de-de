@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: 1d7348530a163981f5c0a5f6cd6af26d01c55848
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 8a6245f496b3a1371c43f764081f50b7b3f13dbd
+ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81671596"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988751"
 ---
 # <a name="migrate-tomcat-applications-to-containers-on-azure-kubernetes-service"></a>Migrieren von Tomcat-Anwendungen zu Containern unter Azure Kubernetes Service
 
@@ -18,16 +18,16 @@ In diesem Leitfaden wird beschrieben, was Sie beachten sollten, wenn Sie eine vo
 
 ## <a name="pre-migration"></a>Vor der Migration
 
+Führen Sie vor Beginn einer Migration die in den folgenden Abschnitten beschriebenen Schritte zur Bewertung und Bestandsermittlung aus, um eine erfolgreiche Migration zu gewährleisten.
+
 [!INCLUDE [inventory-external-resources](includes/inventory-external-resources.md)]
 
 [!INCLUDE [inventory-secrets](includes/inventory-secrets.md)]
 
-[!INCLUDE [inventory-persistence-usage](includes/inventory-persistence-usage.md)]
+[!INCLUDE [determine-whether-and-how-the-file-system-is-used](includes/determine-whether-and-how-the-file-system-is-used.md)]
 
 <!-- AKS-specific addendum to inventory-persistence-usage -->
-#### <a name="dynamic-or-internal-content"></a>Dynamischer oder interner Inhalt
-
-Für Dateien, für die von Ihrer Anwendung häufige Schreib- und Lesevorgänge durchgeführt werden (z. B. temporäre Datendateien), oder für statische Dateien, die nur für Ihre Anwendung sichtbar sind, können Sie Azure Storage-Freigaben als persistente Volumes bereitstellen. Weitere Informationen finden Sie unter [Dynamisches Erstellen und Verwenden eines persistenten Volumes mit Azure Files in Azure Kubernetes Service (AKS)](/azure/aks/azure-files-dynamic-pv).
+[!INCLUDE [dynamic-or-internal-content-aks](includes/dynamic-or-internal-content-aks.md)]
 
 ### <a name="identify-session-persistence-mechanism"></a>Identifizieren eines Mechanismus für Sitzungspersistenz
 
