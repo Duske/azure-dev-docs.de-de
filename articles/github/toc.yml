@@ -1,4 +1,4 @@
-- name: Zusammenarbeit von Azure und GitHub
+- name: Azure- und GitHub-Integration
   href: index.yml
   items:
     - name: GitHub Actions für Azure
