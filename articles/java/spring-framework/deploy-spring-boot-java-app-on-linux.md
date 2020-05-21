@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: 570b33614f32ef80e11ddf9d2c6774513248416e
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: e4c0c2ffb45303262b16179a726a8eb0526b3971
+ms.sourcegitcommit: 2760d3ca0ff0b939181d976a652f2b35ea5b3fb4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82166676"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83426112"
 ---
 # <a name="deploy-a-spring-boot-application-to-linux-on-azure-app-service"></a>Bereitstellen einer Spring Boot-Anwendung für Linux in Azure App Service
 
@@ -42,8 +42,8 @@ Die folgende Anleitung führt Sie durch die erforderlichen Schritte für das Ers
 1. Öffnen Sie eine Eingabeaufforderung, erstellen Sie ein lokales Verzeichnis zum Speichern Ihrer Anwendung, und wechseln Sie in dieses Verzeichnis. Beispiel:
 
    ```bash
-   md /users/robert/SpringBoot
-   cd /users/robert/SpringBoot
+   mkdir SpringBoot
+   cd SpringBoot
    ```
 
 1. Klonen Sie das Beispielprojekt [Spring Boot on Docker Getting Started] in das Verzeichnis, das Sie gerade erstellt haben. Beispiel:
