@@ -12,7 +12,7 @@
   href: configure-local-development-environment.md
 - name: Erste Schritte mit dem Azure SDK für Python
   items:
-    - name: Übersicht
+    - name: Übersicht und Verwendungsmuster
       href: azure-sdk-overview.md
     - name: Installieren von SDK-Bibliotheken
       href: azure-sdk-install.md
