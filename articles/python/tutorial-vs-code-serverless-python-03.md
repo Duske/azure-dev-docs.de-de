@@ -2,14 +2,14 @@
 title: 'Schritt 3: Untersuchen der Python-Codedateien für Azure Functions in VS Code'
 description: 'Tutorialschritt 3: Grundlegendes zum Python-Vorlagencode, der von Azure Functions bereitgestellt wird'
 ms.topic: conceptual
-ms.date: 09/02/2019
+ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 77dc4cb44158ded1dd5c6d1e19afb48272177a12
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 84e438cf1aaf94c1341964d17e17055d066140d6
+ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441335"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83708534"
 ---
 # <a name="3-examine-the-python-code-files-in-visual-studio-code"></a>3: Untersuchen der Python-Codedateien in Visual Studio Code
 
@@ -75,11 +75,11 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             name = req_body.get('name')
 
     if name:
-        return func.HttpResponse(f"Hello {name}!")
+        return func.HttpResponse(f"Hello, {name}. This HTTP triggered function executed successfully.")
     else:
         return func.HttpResponse(
-             "Please pass a name on the query string or in the request body",
-             status_code=400
+             "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.",
+             status_code=200
         )
 ```
 
@@ -88,7 +88,7 @@ Die wichtigen Teile des Codes lauten wie folgt:
 - Sie müssen das Modul `azure.functions` importieren. Das Importieren des Protokollierungsmoduls ist optional, wird jedoch empfohlen.
 - Die erforderliche `main`-Python-Funktion empfängt ein `func.HttpRequest`-Objekt mit dem Namen `req` und gibt einen Wert vom Typ `func.HttpResponse` zurück. Weitere Informationen zu den Funktionen dieser Objekte finden Sie in den Referenzen zu [func.HttpRequest](/python/api/azure-functions/azure.functions.httprequest?view=azure-python) und [func.HttpResponse](/python/api/azure-functions/azure.functions.httpresponse?view=azure-python).
 - Der Text von `main` verarbeitet dann die Anforderung und generiert eine Antwort. In diesem Fall sucht der Code in der URL nach einem `name`-Parameter. Wenn dies nicht gelingt, wird überprüft, ob der Anforderungstext JSON-Code enthält (mit `func.HttpRequest.get_json`) und ob der JSON-Code einen `name`-Wert enthält (mit der `get`-Methode des von `get_json` zurückgegebenen JSON-Objekts).
-- Wenn ein Name gefunden wird, gibt der Code die Zeichenfolge „Hello“ mit angefügtem Namen zurück. Andernfalls wird eine Fehlermeldung zurückgegeben.
+- Wenn ein Name gefunden wird, gibt der Code die Zeichenfolge „Hello“ mit angefügtem Namen zurück. Andernfalls wird eine generische Meldung zurückgegeben.
 
 > [!div class="nextstepaction"]
 > [Ich habe die Codedateien untersucht: Fahren Sie mit Schritt 4 fort. >>>](tutorial-vs-code-serverless-python-04.md)

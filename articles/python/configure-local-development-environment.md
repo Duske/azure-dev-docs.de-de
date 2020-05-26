@@ -1,0 +1,245 @@
+---
+title: Konfigurieren Ihrer lokalen Python-Umgebung für die Azure-Entwicklung
+description: Erfahren Sie, wie Sie eine lokale Python-Entwicklungsumgebung für die Arbeit mit Azure einrichten, einschließlich Visual Studio Code, dem Azure SDK und den erforderlichen Anmeldeinformationen für die SDK-Authentifizierung.
+ms.date: 05/12/2020
+ms.topic: conceptual
+ms.openlocfilehash: 77bcffbef1e1e8d7eb6203b31a861449feb01dcd
+ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83405013"
+---
+# <a name="configure-your-local-python-dev-environment-for-azure"></a>Konfigurieren Ihrer lokalen Python-Entwicklungsumgebung für Azure
+
+Beim Erstellen von Cloudanwendungen ziehen es Entwickler in der Regel vor, Code auf Ihren lokalen Arbeitsstationen zu testen, bevor sie diesen Code in einer Cloudumgebung wie Azure bereitstellen. Die lokale Entwicklung bietet Ihnen den Vorteil der Geschwindigkeit und einer größeren Vielfalt an Debugtools.
+
+Dieser Artikel enthält die einmalig durchzuführenden Einrichtungsanweisungen zum Erstellen und Überprüfen einer lokalen Entwicklungsumgebung, die für Python in Azure geeignet ist:
+
+- [Installieren der erforderlichen Komponenten](#required-components), nämlich ein Azure-Konto, Python und die Azure CLI.
+- [Konfigurieren der Authentifizierung](#configure-authentication), wenn Sie für die Bereitstellung, Verwaltung und den Zugriff auf Azure-Ressourcen Azure SDK-Bibliotheken verwenden.
+- Überprüfen des Prozesses der [Verwendung virtueller Python-Umgebungen](#use-python-virtual-environments) für jedes Ihrer Projekte.
+
+Nachdem Sie Ihre Arbeitsstation konfiguriert haben, müssen Sie nur noch minimale zusätzliche Konfigurationen vornehmen, um verschiedene Schnellstarts und Tutorials an anderer Stelle in diesem Developer Center sowie in der Azure-Dokumentation durchzuführen.
+
+## <a name="install-components"></a>Installieren von Komponenten
+
+### <a name="required-components"></a>Erforderliche Komponenten
+
+| Name/Installationsprogramm | BESCHREIBUNG |
+| --- | --- |
+| [Azure-Konto mit einem aktiven Abonnement](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=python-dev-center&mktingSource=environment-setup) | Konten/Abonnements sind kostenlos und umfassen viele kostenlose Dienste. |
+| [Python 2.7+ oder 3.5.3+](https://www.python.org/downloads) | Die Runtime der Programmiersprache Python. Wir empfehlen die aktuelle Version von Python 3.x, es sei denn, Sie haben besondere Anforderungen an die Version. |
+| [Azure-Befehlszeilenschnittstelle (CLI)](/cli/azure/install-azure-cli) | Bietet eine vollständige Sammlung von CLI-Befehlen zum Bereitstellen und Verwalten von Azure-Ressourcen. Python-Entwickler verwenden die Azure CLI häufig in Verbindung mit benutzerdefinierten Python-Skripts, die die Azure SDK-Verwaltungsbibliotheken verwenden. |
+
+Hinweise:
+
+- Abhängig von Ihren Anforderungen installieren Sie einzelne Azure SDK-Bibliotheken pro Projekt. Wir empfehlen, dass Sie [virtuelle Python-Umgebungen](#use-python-virtual-environments) für jedes Projekt verwenden.
+- Obwohl Azure PowerShell in der Regel äquivalent zur Azure CLI ist, empfehlen wir, die Azure CLI bei der Arbeit mit Python zu verwenden.
+
+### <a name="recommended-components"></a>Empfohlene Komponenten
+
+| Name/Installationsprogramm | BESCHREIBUNG |
+| --- | --- |
+| [Visual Studio Code](https://code.visualstudio.com) | Obwohl Sie mit jedem passenden Editor oder jeder geeigneten IDE arbeiten können, ist die kostenlose, schlanke IDE von Microsoft bei Python-Entwicklern sehr beliebt. Eine Einführung finden Sie unter [Python in VS Code](https://code.visualstudio.com/docs/python/python-tutorial). |
+| [Python-Erweiterungen für VS Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python) | Fügt VS Code Python-Unterstützung hinzu. |
+| [Azure-Erweiterung für VS Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack) | Fügt Unterstützung für eine Vielzahl von Azure-Diensten zu VS Code hinzu. Unterstützung für bestimmte Dienste kann auch einzeln installiert werden. |
+| [git](https://git-scm.com/downloads) | Befehlszeilentools für die Quellcodeverwaltung. Sie können verschiedene Quellcodeverwaltungstools verwenden, wenn Sie dies vorziehen. |
+
+### <a name="optional-components"></a>Optionale Komponenten
+
+| Name/Installationsprogramm | BESCHREIBUNG |
+| --- | --- |
+| [Docker-Erweiterung für VS Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python) | Fügt VS Code Docker-Unterstützung hinzu, was hilfreich ist, wenn Sie regelmäßig mit Containern arbeiten. |
+
+### <a name="verify-components"></a>Überprüfen von Komponenten
+
+1. Öffnen Sie ein Terminal oder eine Eingabeaufforderung.
+1. Überprüfen Sie Ihre Python-Version, indem Sie den Befehl `python --version` ausführen.
+1. Überprüfen Sie die Azure-CLI-Version, indem Sie `az --version` ausführen.
+1. Überprüfen der VS Code-Installation:
+    1. Führen Sie `code .` aus, um VS Code im aktuellen Ordner zu öffnen.
+    1. Wählen Sie in VS Code den Befehl **Ansicht** > **Erweiterungen** aus, um die Ansicht mit den Erweiterungen zu öffnen, und vergewissern Sie sich dann, dass in der Liste „Python“ und „Azure-Konto“ angezeigt werden (neben anderen „Azure“-Erweiterungen und „Docker“, wenn Sie diese Erweiterung ebenfalls installiert haben).
+
+## <a name="sign-in-to-azure-from-the-cli"></a>Anmelden bei Azure über die CLI
+
+Melden Sie sich in einem Terminal oder einer Eingabeaufforderung bei Ihrem Azure-Abonnement an:
+
+```azurecli
+az login
+```
+
+Der Befehl `az` ist der Stammbefehl der Azure CLI. Auf `az` folgen ein oder mehrere spezifische Befehle, z. B. `login`. Informationen finden Sie in der Referenz zum Befehl [az login](/cli/azure/authenticate-azure-cli).
+
+Die Azure CLI behält Ihre Anmeldung normalerweise sitzungsübergreifend bei, aber es ist bewährte Praxis, immer `az login` auszuführen, wenn Sie ein neues Terminal oder eine neue Eingabeaufforderung öffnen.
+
+## <a name="configure-authentication"></a>Konfigurieren der Authentifizierung
+
+Wie unter [Verwalten von Dienstprinzipalen: Grundlagen der Autorisierung](how-to-manage-service-principals.md#basics-of-azure-authorization) beschrieben, benötigt jeder Entwickler einen Dienstprinzipal, der als Anwendungsidentität verwendet wird, wenn App-Code lokal getestet wird.
+
+In den folgenden Abschnitten wird beschrieben, wie Sie einen Dienstprinzipal und die Umgebungsvariablen erstellen, die Azure SDK die Eigenschaften des Dienstprinzipals bereitstellen.
+
+Jeder Entwickler in Ihrer Organisation sollte diese Schritte einzeln ausführen.
+
+### <a name="create-a-service-principal-for-development"></a>Erstellen eines Dienstprinzipals für die Entwicklung
+
+1. Öffnen Sie ein Terminal oder eine Eingabeaufforderung, in dem bzw. der Sie sich bei der Azure CLI angemeldet haben (`az login`).
+
+1. Erstellen des Dienstprinzipals:
+
+    ```azurecli
+    az ad sp create-for-rbac --name localtest-sp-rbac --skip-assignment --sdk-auth > local-sp.json
+    ```
+
+    - Wenn Sie in einer Organisation sind, verfügen Sie im Abonnement möglicherweise nicht über die Berechtigung zum Ausführen dieses Befehls. Wenden Sie sich in diesem Fall an die Besitzer des Abonnements, damit sie den Dienstprinzipal für Sie erstellen.
+
+    - `ad` bedeutet Azure Active Directory, `sp` bedeutet „Dienstprinzipal“, und `create-for-rbac` bedeutet „Für rollenbasierte Zugriffssteuerung erstellen“, die primäre Form der Autorisierung in Azure. Informationen finden Sie in der Referenz zum Befehl [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac).
+
+    - Das Argument `--name` sollte innerhalb Ihrer Organisation eindeutig sein und in der Regel den Namen des Entwicklers verwenden, der den Dienstprinzipal verwendet. Wenn Sie dieses Argument weglassen, verwendet die Azure CLI einen generischen Namen der Form `azure-cli-<timestamp>`. Sie können den Dienstprinzipal auch über das Azure-Portal umbenennen, wenn Sie möchten.
+
+    - Das Argument `--skip-assignment` erstellt einen Dienstprinzipal ohne Standardberechtigungen. Anschließend müssen Sie dann dem Dienstprinzipal bestimmte Berechtigungen zuweisen, um lokal ausgeführtem Code den Zugriff auf Ressourcen zu gewähren. Verschiedene Schnellstarts und Tutorials enthalten Details zum Autorisieren eines Dienstprinzipals für die beteiligten Ressourcen.
+
+    - Der Befehl stellt eine JSON-Ausgabe bereit, die in einer Datei mit dem Namen *local-sp.json* gespeichert wird.
+
+    - Das Argument `--sdk-auth` generiert eine JSON-Ausgabe ähnlich den folgenden Werten. Ihre ID-Werte und Ihr Geheimnis unterscheiden sich alle davon:
+
+        <pre>
+        {
+          "clientId": "12345678-1111-2222-3333-1234567890ab",
+          "clientSecret": "abcdef00-4444-5555-6666-1234567890ab",
+          "subscriptionId": "00000000-0000-0000-0000-000000000000",
+          "tenantId": "00112233-7777-8888-9999-aabbccddeeff",
+          "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
+          "resourceManagerEndpointUrl": "https://management.azure.com/",
+          "activeDirectoryGraphResourceId": "https://graph.windows.net/",
+          "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
+          "galleryEndpointUrl": "https://gallery.azure.com/",
+          "managementEndpointUrl": "https://management.core.windows.net/"
+        }
+        </pre>
+
+        Ohne das Argument `--sdk-auth` generiert der Befehl eine einfachere Ausgabe:
+
+        <pre>
+        {
+          "appId": "12345678-1111-2222-3333-1234567890ab",
+          "displayName": "localtest-sp-rbac",
+          "name": "http://localtest-sp-rbac",
+          "password": "abcdef00-4444-5555-6666-1234567890ab",
+          "tenant": "00112233-7777-8888-9999-aabbccddeeff"
+        }
+        </pre>
+
+        In diesem Fall ist `tenant` die Mandanten-ID, `appId` ist die Client-ID, und `password` ist der geheime Clientschlüssel.
+
+        > [!IMPORTANT]
+        > Die Ausgabe dieses Befehls ist die einzige Stelle, an der Sie den geheimen Clientschlüssel/das Kennwort sehen können. Sie können das Geheimnis/Kennwort später nicht mehr abrufen. Sie können aber bei Bedarf ein neues Geheimnis hinzufügen, ohne den Dienstprinzipal oder vorhandene Geheimnisse ungültig zu machen.
+
+1. Schützen Sie die Client-ID und den geheimen Clientschlüssel (und alle Dateien, in denen diese gespeichert sind), sodass sie immer innerhalb eines bestimmten Benutzerkontos auf einer Arbeitsstation verbleiben. Speichern Sie diese Eigenschaften niemals in der Quellcodeverwaltung, oder geben Sie sie für andere Entwickler frei. Falls erforderlich, können Sie den Dienstprinzipal löschen und einen neuen erstellen.
+
+    Um eine zusätzliche Sicherheitsebene zu erzeugen, können Sie eine Richtlinie erstellen, die Dienstprinzipale regelmäßig löscht und neu erstellt, wodurch vorherige IDs und geheime Schlüssel ungültig werden.
+
+    Ferner ist ein Dienstprinzipal für die Entwicklung idealerweise nur für nicht produktive Ressourcen autorisiert oder wird innerhalb eines Azure-Abonnements erstellt, das nur zu Entwicklungszwecken verwendet wird. Die Produktionsanwendung würde dann ein gesondertes Abonnement sowie gesonderte Produktionsressourcen verwenden, die nur für die bereitgestellte Cloudanwendung autorisiert sind.
+
+Informationen, wie Sie Dienstprinzipale später noch ändern oder löschen können, finden Sie unter [Verwalten von Dienstprinzipalen](how-to-manage-service-principals.md).
+
+### <a name="create-environment-variables-for-the-azure-sdk"></a>Erstellen von Umgebungsvariablen für das Azure SDK
+
+# <a name="bash"></a>[Bash](#tab/bash)
+
+```bash
+AZURE_SUBSCRIPTION_ID="aa11bb33-cc77-dd88-ee99-0918273645aa"
+AZURE_TENANT_ID="00112233-7777-8888-9999-aabbccddeeff"
+AZURE_CLIENT_ID="12345678-1111-2222-3333-1234567890ab"
+AZURE_CLIENT_SECRET="abcdef00-4444-5555-6666-1234567890ab"
+```
+
+# <a name="cmd"></a>[cmd](#tab/cmd)
+
+```cmd
+set AZURE_SUBSCRIPTION_ID="aa11bb33-cc77-dd88-ee99-0918273645aa"
+set AZURE_TENANT_ID=00112233-7777-8888-9999-aabbccddeeff
+set AZURE_CLIENT_ID=12345678-1111-2222-3333-1234567890ab
+set AZURE_CLIENT_SECRET=abcdef00-4444-5555-6666-1234567890ab
+```
+
+---
+
+Ersetzen Sie die in diesen Befehlen angezeigten Werte durch die Werte Ihres spezifischen Dienstprinzipals.
+
+Um Ihre Abonnement-ID abzurufen, führen Sie den Befehl [`az account show`](/cli/azure/account?view=azure-cli-latest#az-account-show) aus, und suchen Sie in der Ausgabe nach der Eigenschaft `id`.
+
+Erstellen Sie zur einfacheren Verwendung eine *.sh*- oder *.cmd*-Datei mit diesen Befehlen, die Sie ausführen können, wenn Sie ein Terminal oder eine Eingabeaufforderung für lokale Tests öffnen. Fügen Sie auch diese Datei nicht zur Quellcodeverwaltung hinzu, damit sie nur in Ihrem Benutzerkonto verbleibt.
+
+## <a name="use-python-virtual-environments"></a>Verwenden virtueller Python-Umgebungen
+
+Wir empfehlen, dass Sie für jedes Projekt immer eine *virtuelle Umgebung* mithilfe der folgenden Schritte erstellen und aktivieren:
+
+1. Öffnen Sie ein Terminal oder eine Eingabeaufforderung.
+
+1. Erstellen Sie einen Ordner für Ihr Projekt.
+
+1. Erstellen der virtuellen Umgebung:
+
+    # <a name="bash"></a>[Bash](#tab/bash)
+
+    ```bash
+    python -m venv .venv
+    ```
+
+    # <a name="cmd"></a>[cmd](#tab/cmd)
+
+    ```bash
+    python -m venv .venv
+    ```
+
+    ---
+
+    Dieser Befehl führt das Python-Modul `venv` aus und erstellt eine virtuelle Umgebung in einem Ordner namens `.venv`.
+
+1. Aktivieren der virtuellen Umgebung:
+
+    # <a name="bash"></a>[Bash](#tab/bash)
+
+    ```bash
+    source .venv/scripts/activate
+    ```
+
+    # <a name="cmd"></a>[cmd](#tab/cmd)
+
+    ```bash
+    .venv\scripts\activate
+    ```
+
+    ---
+
+Eine virtuelle Umgebung ist ein Ordner innerhalb eines Projekts, der eine Kopie eines bestimmten Python-Interpreters isoliert. Sobald Sie diese Umgebung aktiviert haben (was in Visual Studio Code automatisch erfolgt), wird durch das Ausführen von `pip install` nur eine Bibliothek in dieser Umgebung installiert. Wenn Sie dann Ihren Python-Code ausführen, wird er im exakten Kontext der Umgebung mit spezifischen Versionen jeder einzelnen Bibliothek ausgeführt. Und wenn Sie dann `pip freeze` ausführen, erhalten Sie die genaue Liste dieser Bibliotheken. (In vielen der Beispiele in dieser Dokumentation erstellen Sie eine Datei *requirements.txt* für die benötigten Bibliotheken und verwenden dann `pip install -r requirements.txt`. Eine Datei mit den Anforderungen ist generell erforderlich, wenn Sie Code in Azure bereitstellen.)
+
+Wenn Sie keine virtuelle Umgebung verwenden, wird Python in seiner *globalen Umgebung* ausgeführt. Zwar ist die Verwendung der globalen Umgebung schnell und komfortabel, doch neigt sie im Laufe der Zeit zur Überfrachtung durch all die Bibliotheken, die Sie für jedes Projekt oder Experiment installieren. Ferner könnten Sie, wenn Sie eine Bibliothek für ein Projekt aktualisieren, andere Projekte beschädigen, die auf anderen Versionen dieser Bibliothek basieren. Und da die Umgebung von einer beliebigen Anzahl von Projekten gemeinsam genutzt wird, können Sie nicht `pip freeze` verwenden, um eine Liste der Abhängigkeiten eines beliebigen Projekts abzurufen.
+
+Die globale Umgebung ist der Ort, an dem Sie Toolpakete installieren sollten, die Sie in mehreren Projekten verwenden möchten. Beispielsweise können Sie `pip install gunicorn` in der globalen Umgebung ausführen, um den gunicorn-Webserver überall verfügbar zu machen.
+
+## <a name="use-source-control"></a>Verwenden der Quellcodeverwaltung
+
+Wir empfehlen, sich anzugewöhnen, bei jedem Start eines Projekts ein Quellcodeverwaltungs-Repository zu erstellen. Wenn Sie Git installiert haben, führen Sie einfach den folgenden Befehl aus:
+
+```bash
+git init
+```
+
+Von dort aus können Sie Befehle wie `git add` und `git commit` ausführen, um Änderungen zu übertragen. Durch regelmäßige Commits von Änderungen erstellen Sie einen Commitverlauf, über den Sie jeden vorherigen Zustand wiederherstellen können.
+
+Um eine Onlinesicherung Ihres Projekts zu erstellen, empfehlen wir außerdem, dass Sie Ihr Repository auf [GitHub](https://github.com) oder [Azure DevOps](/azure/devops/user-guide/code-with-git?view=azure-devops) hochladen. Wenn Sie zuerst ein lokales Repository initialisiert haben, verwenden Sie `git remote add`, um das lokale Repository an GitHub oder Azure DevOps anzufügen.
+
+Dokumentation zu git finden Sie auf [git-scm.com/docs](https://git-scm.com/docs) und im Internet.
+
+Visual Studio Code umfasst eine Reihe integrierter git-Features. Weitere Informationen finden Sie unter [Verwenden der Versionskontrolle in VS Code](https://code.visualstudio.com/docs/editor/versioncontrol).
+
+Sie können auch jedes andere Quellcodeverwaltungs-Tool Ihrer Wahl verwenden. Git ist lediglich eins der am häufigsten verwendeten und unterstützten.
+
+## <a name="next-step"></a>Nächster Schritt
+
+Sehen wir uns nun mit Ihrer eingerichteten lokalen Entwicklungsumgebung das Azure SDK genauer an.
+
+> [!div class="nextstepaction"]
+> [Verwenden des Azure SDK >>>](azure-sdk-overview.md)

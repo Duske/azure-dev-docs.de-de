@@ -2,14 +2,14 @@
 title: 'Schritt 5: Bereitstellen von Azure Functions in Python mit VS Code'
 description: 'Tutorialschritt 5: Bereitstellen von Python-Funktionscode in Azure, Streamen von Protokollen und Synchronisieren von Einstellungen zwischen einem lokalen Projekt und Azure'
 ms.topic: conceptual
-ms.date: 09/02/2019
+ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 425fb745cec74672cfabc6c3c5eab96821a43224
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 3e51760f6f779ef244d5788a3df852bc98924946
+ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441165"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83708614"
 ---
 # <a name="5-deploy-azure-functions-in-python"></a>5: Bereitstellen von Azure Functions in Python
 
@@ -25,9 +25,11 @@ Außerdem erfordert eine Funktions-App ein Azure Storage-Konto für Daten und ei
 
 1. Wenn Sie dazu aufgefordert werden, wählen Sie **Neue Funktions-App in Azure erstellen** aus, und geben Sie einen Namen an, der in Azure eindeutig ist (in der Regel verwenden Sie Ihren persönlichen Namen oder Firmennamen zusammen mit anderen eindeutigen Bezeichnern; Sie können Buchstaben, Ziffern und Bindestriche verwenden). Wenn Sie zuvor eine Funktions-App erstellt haben, wird der zugehörige Name in dieser Liste von Optionen angezeigt.
 
+1. Wählen Sie bei entsprechender Aufforderung eine Python-Version und einen Azure-Standort aus.
+
 1. Die Erweiterung führt die folgenden Aktionen aus, die Sie in Visual Studio Code-Popupmeldungen und im Fenster **Ausgabe** beobachten können (der Vorgang dauert einige Minuten):
 
-    - Erstellen Sie eine Ressourcengruppe mit dem von ihnen vergebenen Namen (ohne Bindestriche).
+    - Erstellen Sie eine Ressourcengruppe mit dem von ihnen an dem von Ihnen ausgewählten Ort vergebenen Namen (ohne Bindestriche).
     - Erstellen Sie in dieser Ressourcengruppe das Speicherkonto, den Hostingplan und die Funktions-App. Standardmäßig wird ein [Verbrauchstarif](/azure/azure-functions/functions-scale#consumption-plan) erstellt. Um Ihre Funktionen in einem dedizierten Plan ausführen zu können, müssen Sie die [Veröffentlichung mit erweiterten Erstellungsoptionen aktivieren](/azure/azure-functions/functions-develop-vs-code).
     - Stellen Sie Ihren Code für die Funktions-App bereit.
 
@@ -39,9 +41,9 @@ Außerdem erfordert eine Funktions-App ein Azure Storage-Konto für Daten und ei
 
     ![Meldung über eine erfolgreiche Bereitstellung mit zusätzlichen Aktionen](media/tutorial-vs-code-serverless-python/azure-functions-deployment-success-with-additional-actions.png)
 
-    Informationen zum **Streamen von Protokollen** und zu **Uploadeinstellungen** finden Sie in den nächsten Abschnitten. Informationen zur **Anzeige der Ausgabe** finden Sie im folgenden Schritt 5.
+    Informationen zum **Streamen von Protokollen** und zu **Uploadeinstellungen** finden Sie in den nächsten Abschnitten.
 
-1. Nach der Bereitstellung wird im **Ausgabefenster** auch der öffentliche Endpunkt in Azure angezeigt (die URL Ihres spezifischen Endpunkts stimmt mit dem Namen überein, den Sie für die Funktions-App angegeben haben):
+1. Wählen Sie **Ausgaben anzeigen** aus, um zum Fenster **Ausgabe** zu wechseln. In der Ausgabe wird der öffentliche Endpunkt in Azure angezeigt (die URL Ihres spezifischen Endpunkts stimmt mit dem Namen überein, den Sie für die Funktions-App angegeben haben):
 
     <pre>
     HTTP Trigger Urls:

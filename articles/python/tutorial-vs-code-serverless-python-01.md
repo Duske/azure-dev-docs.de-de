@@ -2,14 +2,14 @@
 title: 'Tutorial: Erstellen und Bereitstellen einer serverlosen Azure Functions-Instanz in Python mit Visual Studio Code'
 description: 'Tutorialschritt 1: Einführung und Voraussetzungen'
 ms.topic: conceptual
-ms.date: 09/02/2019
+ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 509e62b5bb8b23365dc30781b6f658a39894d56d
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: fcb9a520e10036d5059f060dedf49e8f222af184
+ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441235"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83708584"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>Tutorial: Erstellen und Bereitstellen von Azure Functions serverlos in Python mit Visual Studio Code
 
@@ -42,7 +42,7 @@ Verwenden Sie bei der Installation von Node.js die Standardoptionen, und wählen
 
 Installieren Sie folgende Software:
 
-- Python 3.7 oder Python 3.6 gemäß den Anforderungen von Azure Functions. Die neuesten kompatiblen Versionen sind [Python 3.7.5](https://www.python.org/downloads/release/python-375/) und [Python 3.6.8](https://www.python.org/downloads/release/python-368/). Scrollen Sie auf diesen Seiten nach unten, um die Installationsprogramme zu suchen. Wählen Sie bei der Installation **Add Python 3.x to PATH** (Python 3.x zu PATH hinzufügen) aus, und verwenden Sie die Standardoptionen, indem Sie die Option **Jetzt installieren** auswählen. Wählen Sie unter Windows außerdem am Ende des Prozesses **Disable Path length limit** (Pfadlängenbeschränkung deaktivieren) aus.
+- Python 3.6, 3.7 oder 3.8, wie für Azure Functions erforderlich. Installieren Sie Python von [python.org](https://www.python.org/downloads). Wählen Sie bei der Installation **Add Python 3.x to PATH** (Python 3.x zu PATH hinzufügen) aus, und verwenden Sie die Standardoptionen, indem Sie die Option **Jetzt installieren** auswählen. Wählen Sie unter Windows außerdem am Ende des Prozesses **Disable Path length limit** (Pfadlängenbeschränkung deaktivieren) aus.
 - [Visual Studio Code](https://code.visualstudio.com/)
 - Die [Python-Erweiterung](https://marketplace.visualstudio.com/items?itemName=ms-python.python) wie in [Erste Schritte in Python mit Visual Studio Code](https://code.visualstudio.com/docs/python/python-tutorial) beschrieben.
 - Die [Azure Functions-Erweiterung](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions). Allgemeine Informationen finden Sie im [vscode-azurefunctions-GitHub-Repository](https://github.com/Microsoft/vscode-azurefunctions).

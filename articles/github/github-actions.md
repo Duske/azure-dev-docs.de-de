@@ -1,27 +1,33 @@
 ---
 title: Bereitstellen in Azure mithilfe von GitHub Actions
 description: Hier erfahren Sie, wie Sie in Ihrem Repository Workflows zum Erstellen, Testen, Verpacken und Veröffentlichen sowie zum Bereitstellen in Azure erstellen.
-ms.author: kaelli
-author: KathrynEE
+author: N-Usha
+ms.author: ushan
 ms.topic: conceptual
 ms.service: azure
 ms.date: 05/05/2020
-ms.openlocfilehash: 16ebc2d8013b2199911c0648f4bb8364c4d6de06
-ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
+ms.openlocfilehash: 1b3906eeacf48e2561f49dc8480ce83565aeca3a
+ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83369926"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83631676"
 ---
 # <a name="deploy-to-azure-using-github-actions"></a>Bereitstellen in Azure mithilfe von GitHub Actions
 
-Mit GitHub Actions für Azure können Sie Ihre Workflows für die Bereitstellung in Azure automatisieren. Machen Sie sich zunächst mit folgenden GitHub-Aktionen vertraut: 
+[GitHub Actions](https://help.github.com/articles/about-github-actions) ermöglicht Entwicklern, das Erstellen automatisierter Workflows für den Softwareentwicklungslebenszyklus.  
+
+Mit GitHub Actions für Azure können Sie Workflows erstellen, die Sie in Ihrem Repository zum Erstellen, Testen, Verpacken, Veröffentlichen und **Bereitstellen** in Azure einrichten können. [Weitere Informationen zu allen anderen Integrationen mit Azure](https://aka.ms/GitHubonAzure).
+
+Noch heute mit einem [kostenlosen Azure-Konto](https://azure.com/free/open-source) beginnen!
+
+> [!NOTE]   
+> Über die Links in diesem Artikel gelangen Sie jeweils zu einem GitHub-Artikel oder -Repository. 
 
 - [Azure/webapps-deploy](https://github.com/Azure/webapps-deploy): Aktion zum Bereitstellen in Azure-Web-Apps und Azure Web-App für Container 
 - [Azure/appservice-settings](https://github.com/Azure/appservice-settings): Aktion zum Massenkonfigurieren von App-Einstellungen, Verbindungszeichenfolgen und anderen allgemeinen Einstellungen per JSON-Syntax für Ihre Azure-Web-App (Windows oder Linux) oder für zugehörige Bereitstellungsslots.
 
-> [!NOTE]   
-> Über die Links in diesem Artikel gelangen Sie jeweils zu einem GitHub-Artikel oder -Repository. 
+
 
 ## <a name="key-concepts"></a>Wichtige Begriffe
 
@@ -39,9 +45,11 @@ GitHub Actions enthält vorkonfigurierte Vorlagen und Marketplace-Aktionen.
 - [Verwenden von Aktionen aus dem GitHub-Marketplace](https://help.github.com/en/actions/getting-started-with-github-actions/using-actions-from-github-marketplace)  
 - [GitHub-Marketplace-Aktionen: Bereitstellen in Azure](https://github.com/marketplace?type=actions&query=Azure)  
   
-Links zu allen GitHub-Aktionen für Azure finden Sie auf der folgenden Seite: 
+GitHub Actions für Azure finden Sie auf den folgenden Seiten: 
    
 - [Azure-Aktionen](https://github.com/marketplace?query=Azure&type=actions)  
+- [Einsteiger-Aktionsworkflows für die Bereitstellung in Azure](https://github.com/Azure/actions-workflow-samples)
+
 
 ## <a name="connect-to-azure"></a>Herstellen einer Verbindung mit Azure
 
@@ -51,9 +59,9 @@ Beispielworkflows für die Verbindungsherstellung mit Azure finden Sie in den fo
 - [Azure-Befehlszeilenschnittstelle](https://github.com/Azure/CLI)  
 
 
-## <a name="starter-templates-and-end-to-end-cicd-workflow-samples"></a>Einsteigervorlagen und CI/CD-Workflowbeispiele (End-to-End) 
+## <a name="sample-apps-with-cicd-workflow-samples"></a>Beispiel-Apps mit CI/CD-Workflowbeispielen 
 
-Die folgenden Beispiele bieten End-to-End-Workflows für die Bereitstellung Ihrer Web-Apps in Azure: 
+Die folgenden Beispiele bieten End-to-End-Workflows für die Erstellung und Bereitstellung von Web-Apps in einer beliebigen Sprache und in einem beliebigen Ökosystem in Azure. 
 
 - [Bereitstellen einer Web-App mit ASP.NET-Unterstützung](https://github.com/Azure-Samples/dotnet-sample)  
 - [Bereitstellen einer ASP.NET Core-App](https://github.com/Azure-Samples/dotnet_core_sample)  
@@ -67,6 +75,8 @@ Die folgenden Beispiele bieten End-to-End-Workflows für die Bereitstellung Ihre
 ## <a name="deploy-a-web-app"></a>Bereitstellen einer Web-App
 
 - [Azure-Web-App](https://github.com/Azure/webapps-deploy)  
+Konfigurieren Sie App-Einstellungen und Verbindungszeichenfolgen mithilfe der Aktionen:
+
 - [Azure-Web-App für Container](https://github.com/Azure/webapps-container-deploy)  
 - [Azure App Service-Einstellungen](https://github.com/Azure/appservice-settings)  
 
@@ -78,6 +88,7 @@ Die folgenden Beispiele bieten End-to-End-Workflows für die Bereitstellung Ihre
 ## <a name="build-and-deploy-containerized-apps"></a>Erstellen und Bereitstellen von Container-Apps
 
 - [Docker-Anmeldung](https://github.com/Azure/docker-login)  
+- [Bereitstellen in Azure Container Instances](https://github.com/Azure/aci-deploy)
 
 ## <a name="deploy-to-kubernetes"></a>Bereitstellen in Kubernetes
 
@@ -100,6 +111,10 @@ Die folgenden Beispiele bieten End-to-End-Workflows für die Bereitstellung Ihre
 - [Azure SQL-Datenbank](https://github.com/Azure/sql-action)  
 - [Azure MySQL-Aktion](https://github.com/Azure/mysql-action)  
 
+## <a name="deploy-machine-learning-models"></a>Bereitstellen von Machine Learning-Modellen
+
+- [Bereitstellen von Azure Machine Learning](https://github.com/Azure/aml-deploy)  
+
 ## <a name="trigger-a-run-in-azure-pipelines"></a>Auslösen einer Ausführung in Azure Pipelines
 
 - [Azure Pipelines](https://github.com/Azure/pipelines)  
@@ -113,6 +128,6 @@ Die folgenden Beispiele bieten End-to-End-Workflows für die Bereitstellung Ihre
 
 Die folgenden GitHub-Ressourcen unterstützen Sie dabei, Ihre Apps unter Verwendung von GitHub in Azure bereitzustellen.  
 
-- [GitHub Actions für den Azure Marketplace](https://github.com/marketplace?query=Azure&type=actions)
+- [Marketplace für GitHub Actions für Azure](https://github.com/marketplace?query=Azure&type=actions)
 - [Learning-Lab: Continuous Delivery mit Azure](https://lab.github.com/githubtraining/github-actions:-continuous-delivery-with-azure)
 - [Einsteiger-Aktionsworkflows für die Bereitstellung in Azure](https://github.com/Azure/actions-workflow-samples)

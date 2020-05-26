@@ -2,14 +2,14 @@
 title: 'Schritt 2: Erstellen einer Python-Funktion für Azure Functions mit VS Code'
 description: 'Tutorialschritt 2: Verwenden der Azure Functions-Erweiterung für VS Code'
 ms.topic: conceptual
-ms.date: 09/02/2019
+ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: d1651b337c3d47b8dee839500d6fc017e50b6064
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: fb5cdf025c6b9740ab6959ea23b62bd2599c4eb9
+ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441185"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83708634"
 ---
 # <a name="2-create-a-python-function-for-azure-functions"></a>2: Erstellen einer Python-Funktion für Azure Functions
 
@@ -17,7 +17,7 @@ ms.locfileid: "80441185"
 
 In diesem Artikel erstellen Sie eine Python-Funktion für Azure Functions mit Visual Studio Code. Der Code für Azure Functions wird innerhalb eines Functions-_Projekts_ verwaltet, das Sie vor der Codeerstellung erstellen.
 
-1. Im **Azure: Functions**-Explorer (wird mit dem Azure-Symbol auf der linken Seite geöffnet) wählen Sie das Befehlssymbol **Neues Projekt** aus, oder öffnen Sie die Befehlspalette (F1), und wählen Sie **Azure Functions: Neues Projekt erstellen** aus.
+1. Im **Azure: Functions**-Explorer (wird mit dem Azure-Symbol auf der linken Seite geöffnet) wählen Sie das Befehlssymbol **Neues Projekt erstellen** aus, oder öffnen Sie die Befehlspalette (F1), und wählen Sie **Azure Functions: Neues Projekt erstellen** aus.
 
     ![„Neues Projekt erstellen“ im Azure Functions-Explorer](media/tutorial-vs-code-serverless-python/create-a-new-project-in-azure-functions-explorer.png)
 
@@ -27,22 +27,18 @@ In diesem Artikel erstellen Sie eine Python-Funktion für Azure Functions mit Vi
     | --- | --- | --- |
     | Angeben eines Ordners für das Projekt | Aktuell geöffneter Ordner | Der Ordner, in dem das Projekt erstellt wird. Sie sollten das Projekt in einem Unterordner erstellen. |
     | Auswählen einer Sprache für Ihr Funktions-App-Projekt | **Python** | Die Sprache, die für die Funktion verwendet werden soll, die die für den Code verwendete Vorlage bestimmt. |
+    | Auswählen des Python-Interpreters | (Verwenden Sie den bereitgestellten Standardpfad.) | Der für eine virtuelle Umgebung zu verwendende Python-Interpreter. |
     | Auswählen einer Vorlage für die erste Funktion Ihres Projekts | **HTTP-Trigger** | Eine Funktion, die einen HTTP-Trigger verwendet, wenn eine HTTP-Anforderung an den Endpunkt der Funktion gerichtet wird. (Für Azure Functions gibt es eine Reihe von anderen Triggern. Weitere Informationen finden Sie unter [Welche Möglichkeiten bestehen mit Functions?](/azure/azure-functions/functions-overview#what-can-i-do-with-functions).) |
-    | Angeben eines Funktionsnamens | HttpExample | Der Name wird für einen Unterordner verwendet, der den Code der Funktion zusammen mit Konfigurationsdaten enthält, und definiert auch den Namen des HTTP-Endpunkts. Verwenden Sie „HttpExample“ anstelle der Standardeinstellung „HTTPTrigger“, um die Funktion selbst vom Trigger zu unterscheiden. |
+    | Angeben eines Funktionsnamens | HttpExample | Der Name wird für einen Unterordner verwendet, der den Code der Funktion zusammen mit Konfigurationsdaten enthält, und definiert auch den Namen des HTTP-Endpunkts. Verwenden Sie „HttpExample“ anstelle der Standardeinstellung „HTTPTrigger1“, um die Funktion selbst vom Trigger zu unterscheiden. |
     | Autorisierungsstufe | **Anonym** | Bei der anonymen Autorisierung ist die Funktion für jeden öffentlich zugänglich. |
-    | Auswählen, wie Sie Ihr Projekt öffnen möchten | **In aktuellem Fenster öffnen** | Öffnet das Projekt im aktuellen Visual Studio Code-Fenster. |
-
-    > [!NOTE]
-    > Wenn sowohl Python 3.6 als auch Python 3.7 installiert ist, verwendet Visual Studio Code standardmäßig Python 3.6 für das Azure Functions-Projekt. Wenn Sie Python 3.7 verwenden möchten, müssen Sie derzeit zuerst eine Python 3.7-Umgebung erstellen und aktivieren und dann den Befehl `func init` über ein Terminal ausführen. Starten Sie anschließend von diesem Ordner aus Visual Studio Code mithilfe des Befehls `code .`.
 
 1. Nach kurzer Zeit wird eine Meldung angezeigt, dass das neue Projekt erstellt wurde. Im **Explorer** befindet sich der für die Funktion erstellte Unterordner, und Visual Studio Code öffnet die Datei *\_\_init\_\_.py*, die den Standardfunktionscode enthält:
 
     ![Ergebnis der Erstellung eines neuen Python-Projekts in Azure Functions](media/tutorial-vs-code-serverless-python/display-results-of-new-python-project-in-azure-functions.png)
 
-    > [!NOTE]
-    > Wenn Visual Studio Code Ihnen beim Öffnen von *\_\_init\_\_.py* mitteilt, dass Sie keinen Python-Interpreter ausgewählt haben, öffnen Sie die Befehlspalette (**F1**), und wählen Sie den **Python: Interpreter auswählen**-Befehl und dann die virtuelle Umgebung im lokalen `.env`-Ordner aus (der als Teil des Projekts erstellt wurde). Die Umgebung muss explizit auf Python 3.6x basieren, wie bereits im vorherigen Artikel unter [Voraussetzungen](tutorial-vs-code-serverless-python-01.md#prerequisites) erwähnt.
-    >
-    > ![Auswählen der mit dem Python-Projekt erstellten virtuellen Umgebung](media/tutorial-vs-code-serverless-python/select-virtual-environment-created-with-the-python-project.png)
+    Wenn Visual Studio Code Ihnen beim Öffnen von *\_\_init\_\_.py* mitteilt, dass Sie keinen Python-Interpreter ausgewählt haben, öffnen Sie die Befehlspalette (**F1**), und wählen Sie den **Python: Interpreter auswählen**-Befehl und dann die virtuelle Umgebung im lokalen `.env`-Ordner aus (der als Teil des Projekts erstellt wurde).
+
+    ![Auswählen der mit dem Python-Projekt erstellten virtuellen Umgebung](media/tutorial-vs-code-serverless-python/select-virtual-environment-created-with-the-python-project.png)
 
 > [!TIP]
 > Wenn Sie eine weitere Funktion im selben Projekt erstellen möchten, verwenden Sie den Befehl **Funktion erstellen** im **Azure: Functions**-Explorer, oder öffnen Sie die Befehlspalette (**F1**), und wählen Sie den Befehl **Azure Functions: Funktion erstellen**, und wählen Sie ihn aus. Beide Befehle fordern Sie zur Eingabe eines Funktionsnamens auf (des Namens des Endpunkts) und erstellen dann einen Unterordner mit den Standarddateien.
