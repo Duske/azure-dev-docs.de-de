@@ -1,14 +1,14 @@
 ---
 title: Installieren des Azure SDK für Python-Bibliotheken
 description: Es wird beschrieben, wie Sie das Azure SDK für Python-Bibliotheken mit pip installieren, deinstallieren und überprüfen. Der Artikel enthält Details zur Installation bestimmter Versionen und Vorschaupakete.
-ms.date: 04/23/2020
+ms.date: 05/13/2020
 ms.topic: conceptual
-ms.openlocfilehash: 172091bcdff5ba55ccc7c2f13c60f3c7d645efc1
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 302d17211480f9c8793d7be1de20a6ab5dec3c95
+ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82138746"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83403673"
 ---
 # <a name="install-azure-sdk-for-python-libraries"></a>Installieren des Azure SDK für Python-Bibliotheken
 
@@ -20,47 +20,53 @@ Alle anderen Bibliotheken im SDK sind *Clientbibliotheken*, die Sie im Anwendung
 
 ## <a name="install-the-latest-version-of-a-library"></a>Installieren der aktuellen Version einer Bibliothek
 
-Wenn Sie `pip install` ausführen, wird die neueste Version einer Bibliothek in Ihrer aktuellen Python-Umgebung installiert:
-
 ```bash
 pip install azure-storage-blob
 ```
+
+`pip install` installiert die neueste Version einer Bibliothek in Ihrer aktuellen Python-Umgebung.
 
 Auf Linux-Systemen wird `sudo pip install` vom SDK nicht unterstützt, um eine Bibliothek für alle Benutzer zu installieren. Jeder Benutzer muss `pip install` separat verwenden.
 
 ## <a name="install-specific-library-versions"></a>Installieren bestimmter Bibliotheksversionen
 
-Wenn Sie eine bestimmte Version einer Bibliothek installieren möchten, geben Sie die Version in der Befehlszeile an:
-
 ```bash
 pip install azure-storage-blob==12.0.0
 ```
 
+Geben Sie die Version in der Befehlszeile mit `pip install` an.
+
 ## <a name="install-preview-packages"></a>Installieren von Vorschaupaketen
-
-Microsoft veröffentlicht regelmäßig Vorschauversionen der SDK-Bibliotheken, die über Unterstützung für die neuen Features verfügen. Eine Einschränkung besteht hierbei aber darin, dass Bibliotheken jederzeit geändert werden können und daher nicht für Produktionsprojekte genutzt werden dürfen.
-
-Schließen Sie das Flag `--pre` in die Befehlszeile ein, um die neueste Vorschauversion einer Bibliothek zu installieren.
 
 ```bash
 pip install --pre azure-storage-blob
 ```
 
-## <a name="verify-a-library-installation"></a>Überprüfen der Installation einer Bibliothek
+Schließen Sie das Flag `--pre` in die Befehlszeile ein, um die neueste Vorschauversion einer Bibliothek zu installieren.
 
-Verwenden Sie `pip show <library>`, um zu überprüfen, ob eine Bibliothek installiert ist. Wenn die Bibliothek installiert wurde, werden mit dem Befehl die Version und andere zusammenfassende Informationen angezeigt. Andernfalls wird nach dem Ausführen des Befehls nichts angezeigt.
+Microsoft veröffentlicht regelmäßig Vorschauversionen der SDK-Bibliotheken, die über Unterstützung für die neuen Features verfügen. Eine Einschränkung besteht hierbei aber darin, dass Bibliotheken jederzeit geändert werden können und daher nicht für Produktionsprojekte genutzt werden dürfen.
+
+## <a name="verify-a-library-installation"></a>Überprüfen der Installation einer Bibliothek
 
 ```bash
 pip show azure-storage-blob
 ```
 
+Verwenden Sie `pip show <library>`, um zu überprüfen, ob eine Bibliothek installiert ist. Wenn die Bibliothek installiert wurde, werden mit dem Befehl die Version und andere zusammenfassende Informationen angezeigt. Andernfalls wird nach dem Ausführen des Befehls nichts angezeigt.
+
 Sie können auch `pip freeze` oder `pip list` verwenden, um alle Bibliotheken anzuzeigen, die in Ihrer aktuellen Python-Umgebung installiert sind.
 
 ## <a name="uninstall-a-library"></a>Deinstallieren einer Bibliothek
+
+```bash
+pip uninstall azure-storage-blob
+```
 
 Verwenden Sie `pip uninstall <library>`, um eine Bibliothek zu deinstallieren.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
+Sie sind jetzt uneingeschränkt bereit, Code zu schreiben und auszuführen. Dazu können Sie eines der folgenden Beispiele verwenden:
+
 > [!div class="nextstepaction"]
-> [Informationen zur Verwendung des SDK](azure-sdk-get-started.yml)
+> [Beispiel: Erstellen einer Ressourcengruppe >>>](azure-sdk-example-resource-group.md)
