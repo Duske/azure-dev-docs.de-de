@@ -3,12 +3,12 @@ title: Bereitstellen und Verwalten von und Zugreifen auf Ressourcen in Azure
 description: Eine Übersicht über die Methoden, die zum Arbeiten mit Azure-Ressourcen verwendet werden, einschließlich des Azure-Portals, der Azure CLI und des Azure SDK.
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 585c40523ba2be311af2d65fc3d4cbb679ba6f60
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: a56ea9c3f0165a15933d78ca7a049033b6e75fa9
+ms.sourcegitcommit: b69db02c3358ce7899cef105508e3d17fafc84b2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83404973"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83759923"
 ---
 # <a name="provisioning-accessing-and-managing-resources-on-azure"></a>Bereitstellen und Verwalten von und Zugreifen auf Ressourcen in Azure
 

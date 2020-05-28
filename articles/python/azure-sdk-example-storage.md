@@ -3,12 +3,12 @@ title: Bereitstellen und Verwenden von Speicherblobs Azure Storage mit dem Azure
 description: Verwenden Sie die Azure SDK für Python-Bibliotheken, um einen Blobcontainer in einem Azure Storage-Konto bereitzustellen und dann eine Datei in diesen Container hochzuladen.
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 9b26dd4c5708231c807ea57979bed6bdcd9de25f
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: 904ca66f6e4c065fa0705d2e35b8a7bb46396a0d
+ms.sourcegitcommit: b69db02c3358ce7899cef105508e3d17fafc84b2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83405103"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83759943"
 ---
 # <a name="example-use-the-azure-sdk-with-azure-storage"></a>Beispiel: Verwenden des Azure SDK mit Azure Storage
 
@@ -282,7 +282,7 @@ Aus diesen Gründen sollte der Produktionscode die Authentifizierungsmethode ver
         blob_client.upload_blob(data)
     ```
 
-1. Versuchen Sie, den Code auszuführen:
+1. Versuchen Sie, den Code auszuführen (bei dem absichtlich ein Fehler auftritt):
 
     ```bash
     python use_blob_auth.py
@@ -316,7 +316,7 @@ Aus diesen Gründen sollte der Produktionscode die Authentifizierungsmethode ver
 
     Das Argument `--scope` in diesem Befehl verwendet auch die Umgebungsvariablen AZURE_CLIENT_ID und AZURE_SUBSCRIPTION_ID, die Sie bereits in Ihrer lokalen Umgebung für Ihren Dienstprinzipal festgelegt haben sollten, indem Sie [Konfigurieren Ihrer lokalen Python-Entwicklungsumgebung für Azure](configure-local-development-environment.md) befolgt haben.
 
-1. Führen Sie den Code erneut aus, um sicherzustellen, dass er funktioniert. Wenn der Berechtigungsfehler erneut angezeigt wird, warten Sie eine Minute, bis die Berechtigungen verteilt wurden, und testen Sie dann den Code noch mal.
+1. Wenn Sie ein bis zwei Minuten gewartet haben, dass die Berechtigungen weitergegeben wurden, führen Sie den Code erneut aus, um zu überprüfen, ob er nun funktioniert. Wird der Berechtigungsfehler erneut angezeigt wird, warten Sie etwas länger, und führen Sie den Code dann erneut aus.
 
 Weitere Informationen zu Umfängen und Rollenzuweisungen finden Sie unter [Zuweisen von Rollenberechtigungen](how-to-assign-role-permissions.md).
 

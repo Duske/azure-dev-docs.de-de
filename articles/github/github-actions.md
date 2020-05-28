@@ -6,12 +6,12 @@ ms.author: ushan
 ms.topic: conceptual
 ms.service: azure
 ms.date: 05/05/2020
-ms.openlocfilehash: 1b3906eeacf48e2561f49dc8480ce83565aeca3a
-ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
+ms.openlocfilehash: 3e6f6d447da93873a1278eaa42882a9d08a94d57
+ms.sourcegitcommit: 9330d5af796b4b114466bbe75b8e18a9206f218e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83631676"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83862803"
 ---
 # <a name="deploy-to-azure-using-github-actions"></a>Bereitstellen in Azure mithilfe von GitHub Actions
 
@@ -23,11 +23,6 @@ Noch heute mit einem [kostenlosen Azure-Konto](https://azure.com/free/open-sourc
 
 > [!NOTE]   
 > Über die Links in diesem Artikel gelangen Sie jeweils zu einem GitHub-Artikel oder -Repository. 
-
-- [Azure/webapps-deploy](https://github.com/Azure/webapps-deploy): Aktion zum Bereitstellen in Azure-Web-Apps und Azure Web-App für Container 
-- [Azure/appservice-settings](https://github.com/Azure/appservice-settings): Aktion zum Massenkonfigurieren von App-Einstellungen, Verbindungszeichenfolgen und anderen allgemeinen Einstellungen per JSON-Syntax für Ihre Azure-Web-App (Windows oder Linux) oder für zugehörige Bereitstellungsslots.
-
-
 
 ## <a name="key-concepts"></a>Wichtige Begriffe
 
@@ -53,10 +48,11 @@ GitHub Actions für Azure finden Sie auf den folgenden Seiten:
 
 ## <a name="connect-to-azure"></a>Herstellen einer Verbindung mit Azure
 
-Beispielworkflows für die Verbindungsherstellung mit Azure finden Sie in den folgenden GitHub-Aktionen:  
+Verwenden Sie die folgenden GitHub-Aktionen, damit Beispielworkflows eine Verbindung mit Azure herstellen und Skripts basierend auf der Azure CLI oder Azure PowerShell ausgeführt werden:  
 
 - [Azure-Anmeldung](https://github.com/Azure/login)  
-- [Azure-Befehlszeilenschnittstelle](https://github.com/Azure/CLI)  
+- [Azure-Befehlszeilenschnittstelle](https://github.com/Azure/CLI)
+- [Azure PowerShell](https://github.com/Azure/powershell)
 
 
 ## <a name="sample-apps-with-cicd-workflow-samples"></a>Beispiel-Apps mit CI/CD-Workflowbeispielen 
@@ -69,15 +65,22 @@ Die folgenden Beispiele bieten End-to-End-Workflows für die Erstellung und Bere
 - [Bereitstellen einer Java-Web-App](https://github.com/Azure-Samples/java-spring-petclinic)  
 - [Bereitstellen einer Java Spring-App](https://github.com/Azure-Samples/Java-application-petstore-ee7)  
 - [Bereitstellen einer Python-Web-App](https://github.com/Azure-Samples/pythonSample_thecatsaidno)  
-- [Bereitstellen mit Docker](https://github.com/Azure-Samples/Node_express_container)  
+- [Bereitstellen einer containerbasierten Web-App mithilfe von Docker](https://github.com/Azure-Samples/Node_express_container)
 
 
 ## <a name="deploy-a-web-app"></a>Bereitstellen einer Web-App
 
-- [Azure-Web-App](https://github.com/Azure/webapps-deploy)  
+Bereitstellen in Azure-Web-Apps und Azure-Web-App für Container:
+
+- [Aktion: Azure/webapps-deploy](https://github.com/Azure/webapps-deploy)
+
+Bereitstellen einer statischen Web-App:
+- [Azure/static-web-apps-deploy](https://docs.microsoft.com/azure/static-web-apps/getting-started?tabs=angular)
+
+
 Konfigurieren Sie App-Einstellungen und Verbindungszeichenfolgen mithilfe der Aktionen:
 
-- [Azure-Web-App für Container](https://github.com/Azure/webapps-container-deploy)  
+- [Azure/appservice-settings](https://github.com/Azure/appservice-settings) 
 - [Azure App Service-Einstellungen](https://github.com/Azure/appservice-settings)  
 
 ## <a name="deploy-a-serverless-app"></a>Bereitstellen einer serverlosen App
