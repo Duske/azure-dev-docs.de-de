@@ -1,7 +1,7 @@
 ### YamlMime:Landing
 title: Azure für Python-Entwickler
 summary: >
-  Azure bietet umfangreiche Dienste für Python-Endwickler, u. a. App-Hosting, Speicher, Open-Source-Datenbanken wie mySQL und PostgreSQL, Data Science, maschinelles Lernen und KI. Mit dem Azure SDK für Python können Entwickler bei Verwendung dieser Dienste ihre Produktivität steigern.
+  Azure bietet umfangreiche Dienste für Python-Endwickler, u. a. App-Hosting, Speicher, Open-Source-Datenbanken wie mySQL und PostgreSQL, Data Science, maschinelles Lernen und KI. Mit den Azure-Bibliotheken (SDK) für Python können Entwickler bei Verwendung dieser Dienste ihre Produktivität steigern.
 metadata:
   title: Azure für Python-Entwickler
   description: Erste Schritte bei der Entwicklung mit Python und Azure
@@ -13,12 +13,12 @@ metadata:
   ms.technology: azure
   ms.service: multiple
   ms.devlang: python
-  ms.openlocfilehash: ef9b2de52a63454d89a74698852fc68118ccfdf2
-  ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+  ms.openlocfilehash: 4f128432052206091b1cced8447bd64c4e288133
+  ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 05/14/2020
-  ms.locfileid: "83403548"
+  ms.lasthandoff: 05/28/2020
+  ms.locfileid: "84146048"
 landingContent:
 - title: Erste Schritte mit Python in Azure
   linkLists:
@@ -32,42 +32,20 @@ landingContent:
       url: configure-local-development-environment.md
   - linkListType: overview
     links:
-    - text: Informationen zum Azure SDK für Python
+    - text: Einführung in die Azure-Bibliotheken für Python
       url: azure-sdk-overview.md
   - linkListType: how-to-guide
     links:
-    - text: Installieren von SDK-Bibliotheken
+    - text: Verwenden der Python-Bibliotheken
       url: azure-sdk-install.md
   - linkListType: tutorial
     links:
-    - text: Verwenden des Azure SDK über Code
+    - text: Verwenden der Azure-Bibliotheken im Code
       url: azure-sdk-example-resource-group.md
   - linkListType: reference
     links:
-    - text: API-Referenz zum Azure SDK für Python
-      url: /python/api?view=azure-python
-- title: Hosten von Anwendungen in Azure
-  linkLists:
-  - linkListType: quickstart
-    links:
-    - text: Erstellen einer serverlosen Funktion für HTTP-Anforderungen mit Visual Studio Code
-      url: tutorial-vs-code-serverless-python-01.md
-    - text: Erstellen einer serverlosen Funktion für HTTP-Anforderungen mit der Azure CLI
-      url: /azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-python
-    - text: Erstellen einer Python-App in Azure App Service für Linux
-      url: /azure/app-service/containers/quickstart-python
-    - text: Bereitstellen von Container-Apps in Azure Kubernetes Service
-      url: /azure/aks/kubernetes-walkthrough
-    - text: Bereitstellen einer Containerinstanz in Azure mithilfe der Azure-Befehlszeilenschnittstelle
-      url: /azure/container-instances/container-instances-quickstart
-    - text: Erstellen und Bereitstellen einer Python-App mit Azure Pipelines
-      url: /azure/devops/pipelines/languages/python-webapp
-    - text: Hinzufügen von „Mit Microsoft anmelden“ zu einer Python-Webanwendung
-      url: /azure/active-directory/develop/quickstart-v2-python-webapp
-  - linkListType: overview
-    links:
-    - text: Einführung in Azure App Service unter Linux
-      url: /azure/app-service/containers/app-service-linux-intro
+    - text: API-Referenz zu Azure-Bibliotheken für Python
+      url: sdk-library-api-reference.md
 - title: Erste Schritte mit Entwicklertools
   linkLists:
   - linkListType: overview
@@ -90,6 +68,28 @@ landingContent:
       url: /cli/azure/install-azure-cli?view=azure-cli-latest
     - text: Natives Ausführen von Linux-Anwendungen unter Windows 10 mithilfe verschiedener Distributionen
       url: /windows/wsl/install-win10
+- title: Hosten von Anwendungen in Azure
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Erstellen einer serverlosen Funktion für HTTP-Anforderungen mit Visual Studio Code
+      url: tutorial-vs-code-serverless-python-01.md
+    - text: Erstellen einer serverlosen Funktion für HTTP-Anforderungen mit der Azure CLI
+      url: /azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-python
+    - text: Erstellen einer Python-App in Azure App Service für Linux
+      url: /azure/app-service/containers/quickstart-python
+    - text: Bereitstellen von Container-Apps in Azure Kubernetes Service
+      url: /azure/aks/kubernetes-walkthrough
+    - text: Bereitstellen einer Containerinstanz in Azure mithilfe der Azure-Befehlszeilenschnittstelle
+      url: /azure/container-instances/container-instances-quickstart
+    - text: Erstellen und Bereitstellen einer Python-App mit Azure Pipelines
+      url: /azure/devops/pipelines/languages/python-webapp
+    - text: Hinzufügen von „Mit Microsoft anmelden“ zu einer Python-Webanwendung
+      url: /azure/active-directory/develop/quickstart-v2-python-webapp
+  - linkListType: overview
+    links:
+    - text: Einführung in Azure App Service unter Linux
+      url: /azure/app-service/containers/app-service-linux-intro
 - title: Dienste für Data Science, KI und maschinelles Lernen
   linkLists:
   - linkListType: overview

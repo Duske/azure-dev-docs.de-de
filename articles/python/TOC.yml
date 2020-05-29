@@ -8,19 +8,19 @@
       href: cloud-development-provisioning.md
     - name: Azure-Entwicklungsablauf
       href: cloud-development-flow.md
-- name: Einrichten Ihrer Entwicklungsumgebung für Azure
-  href: configure-local-development-environment.md
-- name: Erste Schritte mit dem Azure SDK für Python
+- name: Erste Schritte in Azure mit Python
   items:
-    - name: Übersicht und Verwendungsmuster
+    - name: Übersicht über Azure-Bibliotheken
       href: azure-sdk-overview.md
-    - name: Installieren von SDK-Bibliotheken
-      href: azure-sdk-install.md
-    - name: 'Beispiel: Erstellen einer Ressourcengruppe'
+    - name: Einrichten Ihrer Entwicklungsumgebung
+      href: configure-local-development-environment.md
+    - name: Verwendungsmuster für Bibliotheken
+      href: azure-sdk-library-usage-patterns.md
+    - name: 'Beispiel: Bereitstellen einer Ressourcengruppe'
       href: azure-sdk-example-resource-group.md
-    - name: 'Beispiel: Verwenden von Azure Storage'
+    - name: 'Beispiel: Bereitstellen und Verwenden von Azure-Speicher'
       href: azure-sdk-example-storage.md
-    - name: 'Beispiel: Bereitstellen einer Web-App mit Code'
+    - name: 'Beispiel: Bereitstellen einer Web-App'
       href: azure-sdk-example-web-app.md
     - name: 'Beispiel: Bereitstellen von virtuellen Computern'
       href: azure-sdk-example-virtual-machines.md
@@ -88,6 +88,8 @@
           href: tutorial-vs-code-serverless-python-08.md
 - name: Anleitungen
   items:
+    - name: Installieren von Bibliothekspaketen
+      href: azure-sdk-install.md
     - name: Authentifizieren von Apps mit Azure
       href: azure-sdk-authenticate.md
     - name: Verwalten von Dienstprinzipalen
@@ -128,7 +130,5 @@
       href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-search'
     - name: Alle Beispiele
       href: 'https://docs.microsoft.com/samples/browse/?languages=python'
-- name: Verweis
-  items:
-    - name: Azure SDK
-      href: sdk.md
+- name: API-Referenz zu Bibliotheken
+  href: sdk-library-api-reference.md
