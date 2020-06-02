@@ -7,18 +7,18 @@ metadata:
   description: Erste Schritte bei der Entwicklung mit Python und Azure
   author: kraigb
   ms.author: kraigb
-  ms.date: 05/04/2020
+  ms.date: 05/30/2020
   ms.topic: landing-page
   ms.collection: collection
   ms.technology: azure
   ms.service: multiple
   ms.devlang: python
-  ms.openlocfilehash: 4f128432052206091b1cced8447bd64c4e288133
-  ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
+  ms.openlocfilehash: 89cc9d65d903fdeabd236387a24dd340fd90f9f9
+  ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 05/28/2020
-  ms.locfileid: "84146048"
+  ms.lasthandoff: 06/01/2020
+  ms.locfileid: "84256425"
 landingContent:
 - title: Erste Schritte mit Python in Azure
   linkLists:
@@ -34,14 +34,12 @@ landingContent:
     links:
     - text: Einführung in die Azure-Bibliotheken für Python
       url: azure-sdk-overview.md
-  - linkListType: how-to-guide
-    links:
-    - text: Verwenden der Python-Bibliotheken
-      url: azure-sdk-install.md
   - linkListType: tutorial
     links:
-    - text: Verwenden der Azure-Bibliotheken im Code
-      url: azure-sdk-example-resource-group.md
+    - text: Bereitstellen von Azure Storage mit Python
+      url: azure-sdk-example-storage.md
+    - text: Verwenden von Azure Storage über Python-Code
+      url: azure-sdk-example-storage-use.md
   - linkListType: reference
     links:
     - text: API-Referenz zu Azure-Bibliotheken für Python

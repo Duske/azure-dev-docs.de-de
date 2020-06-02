@@ -18,8 +18,10 @@
       href: azure-sdk-library-usage-patterns.md
     - name: 'Beispiel: Bereitstellen einer Ressourcengruppe'
       href: azure-sdk-example-resource-group.md
-    - name: 'Beispiel: Bereitstellen und Verwenden von Azure-Speicher'
+    - name: 'Beispiel: Bereitstellen von Azure-Speicher'
       href: azure-sdk-example-storage.md
+    - name: 'Beispiel: Verwenden von Azure Storage'
+      href: azure-sdk-example-storage-use.md
     - name: 'Beispiel: Bereitstellen einer Web-App'
       href: azure-sdk-example-web-app.md
     - name: 'Beispiel: Bereitstellen von virtuellen Computern'
