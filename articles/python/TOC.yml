@@ -24,20 +24,22 @@
       href: azure-sdk-example-web-app.md
     - name: 'Beispiel: Bereitstellen von virtuellen Computern'
       href: azure-sdk-example-virtual-machines.md
-- name: Schnellstarts für Azure-Dienste
+- name: Erkunden spezifischer Azure-Dienste
   items:
     - name: App-Hosting
       href: quickstarts-app-hosting.md
     - name: Datenlösungen
       href: quickstarts-data-solutions.md
+    - name: Identität und Sicherheit
+      href: quickstarts-identity-security.md
     - name: Machine Learning
       href: quickstarts-machine-learning.md
-    - name: Azure Cognitive Services
+    - name: KI (Cognitive Services)
       href: quickstarts-cognitive-services.md
-    - name: Nachrichten
-      href: quickstarts-messaging.md
-    - name: Sicherheit und Integration
-      href: quickstarts-security-integration.md
+    - name: Messaging und IoT
+      href: quickstarts-messaging-iot.md
+    - name: Sonstige Dienste
+      href: quickstarts-other-services.md
 - name: Szenariospezifische Tutorials
   items:
     - name: Bereitstellen einer Web-App mit VS Code
