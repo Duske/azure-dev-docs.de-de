@@ -7,13 +7,13 @@
 - name: Schnellstarts
   expanded: true
   items:
+    - name: 'Erste Schritte: Cloud Shell'
+      href: getting-started-cloud-shell.md
     - name: Bereitstellen einer Ansible-Lösungsvorlage in CentOS
       href: solution-template-deploy.md
     - name: Installieren von Ansible auf virtuellen Linux-Computern
       href: install-on-linux-vm.md
       maintainContext: true
-    - name: Ausführen von Playbooks in Cloud Shell
-      href: cloudshell-run-playbook.md
     - name: Verwenden von virtuellen Linux-Computern
       expanded: true
       items:
@@ -23,7 +23,7 @@
         - name: Verwalten von virtuellen Linux-Computern
           href: vm-manage.md
           maintainContext: true
-- name: Lernprogramme
+- name: Tutorials
   items:
     - name: Azure Application Gateway
       items:
