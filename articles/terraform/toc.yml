@@ -7,10 +7,8 @@
 - name: Schnellstarts
   expanded: true
   items:
-    - name: Installieren und Konfigurieren von Terraform
-      href: install-configure.md
-    - name: Erstellen eines virtuellen Linux-Computers
-      href: create-linux-virtual-machine-with-infrastructure.md
+    - name: 'Erste Schritte: Cloud Shell'
+      href: getting-started-cloud-shell.md
 - name: Tutorials
   items:
     - name: Setup und Konfiguration
@@ -31,16 +29,6 @@
       items:
         - name: Bereitstellen einer Azure Cosmos DB-Instanz
           href: deploy-azure-cosmos-db-to-azure-container-instances.md
-    - name: Infrastruktur
-      items:
-        - name: Erstellen eines VM-Clusters mit Terraform-Modulen
-          href: create-vm-cluster-module.md
-        - name: Erstellen eines VM-Clusters mit Terraform und HCL
-          href: create-vm-cluster-with-infrastructure.md
-        - name: Bereitstellen einer VM-Skalierungsgruppe mit Infrastruktur
-          href: create-vm-scaleset-network-disks-hcl.md
-        - name: Bereitstellen einer VM-Skalierungsgruppe auf der Grundlage eines benutzerdefinierten Packer-Images
-          href: create-vm-scaleset-network-disks-using-packer-hcl.md
     - name: Netzwerke
       items:
         - name: Hub-Spoke-Topologie
@@ -62,9 +50,21 @@
         - name: Installieren der Terraform-Erweiterung für Visual Studio Code
           href: configure-vs-code-extension-for-terraform.md
         - name: Erstellen einer Terraform-Basisvorlage mithilfe von Yeoman
-          href: create-a-base-template-using-yeoman.md
+          href: create-base-template-using-yeoman.md
         - name: Testen von Terraform-Modulen mit Terratest
           href: test-modules-using-terratest.md
+    - name: Virtuelle Computer
+      items:
+        - name: Virtueller Computer mit Infrastruktur
+          href: create-linux-virtual-machine-with-infrastructure.md
+        - name: VM-Cluster mit Terraform-Modulen
+          href: create-vm-cluster-module.md
+        - name: VM-Cluster mit Terraform und HCL
+          href: create-vm-cluster-with-infrastructure.md
+        - name: VM-Skalierungsgruppe mit Infrastruktur
+          href: create-vm-scaleset-network-disks-hcl.md
+        - name: VM-Skalierungsgruppe über Packer-Image
+          href: create-vm-scaleset-network-disks-using-packer-hcl.md
 - name: Beispiele
   items:
     - name: Konfigurationsvorlagen

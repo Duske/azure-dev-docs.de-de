@@ -6,12 +6,12 @@ ms.author: ushan
 ms.topic: conceptual
 ms.service: azure
 ms.date: 05/05/2020
-ms.openlocfilehash: 3e6f6d447da93873a1278eaa42882a9d08a94d57
-ms.sourcegitcommit: 9330d5af796b4b114466bbe75b8e18a9206f218e
+ms.openlocfilehash: a7bcf09da47e9af41f404bfdd2454b25f94eb7b4
+ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83862803"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202849"
 ---
 # <a name="deploy-to-azure-using-github-actions"></a>Bereitstellen in Azure mithilfe von GitHub Actions
 
@@ -113,10 +113,6 @@ Konfigurieren Sie App-Einstellungen und Verbindungszeichenfolgen mithilfe der Ak
 
 - [Azure SQL-Datenbank](https://github.com/Azure/sql-action)  
 - [Azure MySQL-Aktion](https://github.com/Azure/mysql-action)  
-
-## <a name="deploy-machine-learning-models"></a>Bereitstellen von Machine Learning-Modellen
-
-- [Bereitstellen von Azure Machine Learning](https://github.com/Azure/aml-deploy)  
 
 ## <a name="trigger-a-run-in-azure-pipelines"></a>Auslösen einer Ausführung in Azure Pipelines
 

@@ -3,12 +3,12 @@ title: 'Tutorial: Erstellen eines lokalen virtuellen Netzwerks in Azure mit Terr
 description: Es wird beschrieben, wie Sie in Azure ein lokales virtuelles Netzwerk (VNET) für lokale Ressourcen implementieren.
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: cbce485076be459882609f8f38ab51d085e2b3e1
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 0f336a9dae0c063cb8498f0aae4db3d82d1dbcac
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170956"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329598"
 ---
 # <a name="tutorial-create-on-premises-virtual-network-in-azure-using-terraform"></a>Tutorial: Erstellen eines lokalen virtuellen Netzwerks in Azure mit Terraform
 
@@ -80,7 +80,7 @@ Erstellen Sie die Terraform-Konfigurationsdatei, um ein lokales VNET zu deklarie
       resource_group_name = azurerm_resource_group.onprem-vnet-rg.name
       address_space       = ["192.168.0.0/16"]
 
-      tags {
+      tags = {
         environment = local.prefix-onprem
       }
     }
@@ -105,7 +105,7 @@ Erstellen Sie die Terraform-Konfigurationsdatei, um ein lokales VNET zu deklarie
         resource_group_name = azurerm_resource_group.onprem-vnet-rg.name
         allocation_method   = "Dynamic"
 
-        tags {
+        tags = {
             environment = local.prefix-onprem
         }
     }
@@ -142,7 +142,7 @@ Erstellen Sie die Terraform-Konfigurationsdatei, um ein lokales VNET zu deklarie
             destination_address_prefix = "*"
         }
 
-        tags {
+        tags = {
             environment = "onprem"
         }
     }
@@ -183,7 +183,7 @@ Erstellen Sie die Terraform-Konfigurationsdatei, um ein lokales VNET zu deklarie
         disable_password_authentication = false
       }
 
-      tags {
+      tags = {
         environment = local.prefix-onprem
       }
     }
@@ -214,7 +214,7 @@ Erstellen Sie die Terraform-Konfigurationsdatei, um ein lokales VNET zu deklarie
         private_ip_address_allocation = "Dynamic"
         subnet_id                     = azurerm_subnet.onprem-gateway-subnet.id
       }
-      depends_on = ["azurerm_public_ip.onprem-vpn-gateway1-pip"]
+      depends_on = [azurerm_public_ip.onprem-vpn-gateway1-pip]
 
     }
     ```

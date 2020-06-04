@@ -3,12 +3,12 @@ title: 'Tutorial: Erstellen einer Azure-VM-Skalierungsgruppe auf der Grundlage e
 description: Es wird beschrieben, wie Sie Terraform verwenden, um eine Azure-VM-Skalierungsgruppe aus einem benutzerdefinierten Packer-Image zu konfigurieren und mit einer Version zu versehen – einschließlich eines virtuellen Netzwerks und verwalteter angefügter Datenträger.
 ms.topic: tutorial
 ms.date: 11/07/2019
-ms.openlocfilehash: dd7356070d9d9449b8f41ca183afec5bcb1ec630
-ms.sourcegitcommit: 2760d3ca0ff0b939181d976a652f2b35ea5b3fb4
+ms.openlocfilehash: c2c6ccce0f657d572d74f2930b934ba989ab7189
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83426103"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329558"
 ---
 # <a name="tutorial-create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image-by-using-terraform"></a>Tutorial: Erstellen einer Azure-VM-Skalierungsgruppe auf der Grundlage eines benutzerdefinierten Packer-Images unter Verwendung von Terraform
 
@@ -29,7 +29,7 @@ In diesem Tutorial lernen Sie Folgendes:
 ## <a name="prerequisites"></a>Voraussetzungen
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-- **Terraform**: [Installieren Sie Terraform, und konfigurieren Sie den Zugriff auf Azure.](install-configure.md)
+- **Terraform**: [Installieren Sie Terraform, und konfigurieren Sie den Zugriff auf Azure.](getting-started-cloud-shell.md)
 - **SSH-Schlüsselpaar:** [Erstellen Sie ein SSH-Schlüsselpaar.](/azure/virtual-machines/linux/mac-create-ssh-keys)
 - **Packer:**  [Installieren Sie Packer.](https://www.packer.io/docs/install/index.html)
 
@@ -92,7 +92,7 @@ resource "azurerm_resource_group" "vmss" {
   name     = var.resource_group_name
   location = var.location
 
-  tags {
+  tags = {
     environment = "codelab"
   }
 }
@@ -103,7 +103,7 @@ resource "azurerm_virtual_network" "vmss" {
   location            = var.location
   resource_group_name = azurerm_resource_group.vmss.name
 
-  tags {
+  tags = {
     environment = "codelab"
   }
 }
@@ -122,7 +122,7 @@ resource "azurerm_public_ip" "vmss" {
   allocation_method            = "Static"
   domain_name_label            = azurerm_resource_group.vmss.name
 
-  tags {
+  tags = {
     environment = "codelab"
   }
 }
@@ -192,7 +192,7 @@ resource "azurerm_lb" "vmss" {
     public_ip_address_id = azurerm_public_ip.vmss.id
   }
 
-  tags {
+  tags = {
     environment = "codelab"
   }
 }
@@ -288,7 +288,7 @@ resource "azurerm_virtual_machine_scale_set" "vmss" {
     }
   }
   
-  tags {
+  tags = {
     environment = "codelab"
   }
 }
@@ -353,7 +353,7 @@ resource "azurerm_public_ip" "jumpbox" {
   allocation_method            = "Static"
   domain_name_label            = "${azurerm_resource_group.vmss.name}-ssh"
 
-  tags {
+  tags = {
     environment = "codelab"
   }
 }
@@ -370,7 +370,7 @@ resource "azurerm_network_interface" "jumpbox" {
     public_ip_address_id          = azurerm_public_ip.jumpbox.id
   }
 
-  tags {
+  tags = {
     environment = "codelab"
   }
 }
@@ -411,7 +411,7 @@ resource "azurerm_virtual_machine" "jumpbox" {
     }
   }
 
-  tags {
+  tags = {
     environment = "codelab"
   }
 }

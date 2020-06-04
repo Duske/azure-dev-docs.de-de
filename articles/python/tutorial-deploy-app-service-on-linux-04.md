@@ -4,12 +4,12 @@ description: Schritt 4 des Tutorials, der den App Service anweist, wie die Web-
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 0f2636b694b0bd187a43aa2d734e936a89b4d4fa
-ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
+ms.openlocfilehash: 1e724fa7d35c1b3488dbe6738a4840e20bbfbf96
+ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83631735"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84256445"
 ---
 # <a name="4-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>4: Konfigurieren einer benutzerdefinierten Startdatei für Python-Apps in Azure App Service
 
@@ -54,7 +54,7 @@ Sie können auch einen Startbefehl mit dem Azure CLI-[Befehl `az webapp create`]
 
 Standardmäßig sucht App Service automatisch den Ordner, der die Datei *wsgi.py* enthält, und startet Gunicorn mit dem folgenden Befehl:
 
-```bash
+```cmd
 # <module> is the path to the folder that contains wsgi.py
 gunicorn --bind=0.0.0.0 --timeout 600 <module>.wsgi
 ```

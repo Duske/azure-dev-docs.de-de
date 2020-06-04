@@ -3,12 +3,12 @@ title: 'Tutorial: Erstellen einer Azure-VM-Skalierungsgruppe unter Verwendung vo
 description: Es wird beschrieben, wie Sie mit Terraform eine Azure-VM-Skalierungsgruppe konfigurieren und mit einer Version versehen.
 ms.topic: tutorial
 ms.date: 11/07/2019
-ms.openlocfilehash: bb6175c92d0487bd5707b721ebc39ce4b727fed6
-ms.sourcegitcommit: aa417af8b5f00cbc056666e481250ef45c661d52
+ms.openlocfilehash: 23b57d5b7161c318a154bfa2afcf133aa545a233
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83153727"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329578"
 ---
 # <a name="tutorial-create-an-azure-virtual-machine-scale-set-using-terraform"></a>Tutorial: Erstellen einer Azure-VM-Skalierungsgruppe unter Verwendung von Terraform
 
@@ -32,7 +32,7 @@ In diesem Tutorial lernen Sie Folgendes:
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-- **Installieren von Terraform**: Befolgen Sie die Anweisungen im Artikel [Installieren und Konfigurieren von Terraform zum Bereitstellen von VMs und sonstiger Infrastruktur in Azure](install-configure.md).
+- **Installieren von Terraform**: Befolgen Sie die Anweisungen im Artikel [Installieren und Konfigurieren von Terraform zum Bereitstellen von VMs und sonstiger Infrastruktur in Azure](getting-started-cloud-shell.md).
 
 - **Erstellen eines SSH-Schlüsselpaars**: Weitere Informationen finden Sie unter [Erstellen und Verwenden eines SSH-Schlüsselpaars (öffentlich und privat) für virtuelle Linux-Computer in Azure](/azure/virtual-machines/linux/mac-create-ssh-keys).
 
@@ -80,9 +80,9 @@ Führen Sie in der Azure Cloud Shell-Instanz die folgenden Schritte aus:
     description = "The location where resources will be created"
    }
 
-   variable "tags" {
+   variable "tags" = {
     description = "A map of the tags to use for the resources that are deployed"
-    type        = map
+    type        = map(string)
 
     default = {
       environment = "codelab"

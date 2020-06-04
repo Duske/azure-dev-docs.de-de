@@ -3,12 +3,12 @@ title: Bereitstellen von Docker-Containern in Azure App Service in Visual Stu
 description: 'Teil 1 des Tutorials: Einführung und Voraussetzungen.'
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: bd4110bbbef5e5f65f76cd9329b194646431f91a
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 816228d73ac6b21c2c3e144c3f7783de0377e73e
+ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82138790"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202869"
 ---
 # <a name="deploy-containers-to-azure-app-service"></a>Bereitstellen von Containern in Azure App Service
 
@@ -18,7 +18,7 @@ In diesem Tutorial verwenden Sie Visual Studio Code, um eine Node.js-Container
 
 Dieses Video enthält eine umfassende exemplarische Vorgehensweise für den Inhalt dieses Artikels.
 
-> [!VIDEO https://channel9.msdn.com/Shows/Docs-Azure/Deploy-containers-to-Azure-App-Service/player]
+> [!VIDEO https://channel9.msdn.com/Shows/Docs-Azure/Deploy-containers-Azure-App-Service/player]
 
 ## <a name="prerequisites"></a>Voraussetzungen
 

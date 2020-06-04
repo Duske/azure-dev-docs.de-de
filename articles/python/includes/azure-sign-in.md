@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 90ac4162e1a6032bcb1f3cfab7f249e4538314f7
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: cbcc292bf0b59adf35789bbd24ca37b0301a2ad7
+ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441475"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84269053"
 ---
 Nachdem Sie die Azure-Erweiterung installiert haben, melden Sie sich bei Ihrem Azure-Konto an, indem Sie zum **Azure**-Explorer navigieren, **Bei Azure anmelden** auswählen und dann den Anweisungen folgen. (Wenn Sie mehrere Azure-Erweiterungen installiert haben, wählen Sie die Erweiterung für den Bereich aus, in dem Sie arbeiten, z. B. App Service, Functions usw.)
 
@@ -19,14 +19,14 @@ Vergewissern Sie sich nach der Anmeldung, dass die E-Mail-Adresse Ihres Azure-Ko
 > [!NOTE]
 > Wenn der Fehler **Abonnement mit dem Namen [Abonnement-ID] nicht gefunden** auftritt, kann dies daran liegen, dass Sie sich hinter einem Proxy befinden und die Azure-API nicht erreichen können. Konfigurieren Sie die Umgebungsvariablen `HTTP_PROXY` und `HTTPS_PROXY` in Ihrem Terminal mit Ihren Proxyinformationen:
 >
-> ```bash
-> # macOS/Linux
-> export HTTPS_PROXY=https://username:password@proxy:8080
-> export HTTP_PROXY=http://username:password@proxy:8080
-> ```
->
 > ```cmd
 > # Windows
 > set HTTPS_PROXY=https://username:password@proxy:8080
 > set HTTP_PROXY=http://username:password@proxy:8080
+> ```
+>
+> ```bash
+> # macOS/Linux
+> export HTTPS_PROXY=https://username:password@proxy:8080
+> export HTTP_PROXY=http://username:password@proxy:8080
 > ```

@@ -3,12 +3,12 @@ title: 'Tutorial: Bereitstellen einer Azure Cosmos DB-Instanz für Azure Contain
 description: Es wird beschrieben, wie Sie eine einfache Terraform-Konfiguration erstellen, während Sie eine Azure Cosmos DB-Instanz für Azure Container Instances bereitstellen.
 ms.topic: tutorial
 ms.date: 04/26/2020
-ms.openlocfilehash: 88bcb862389a4cbfc611f7beab797e7601c49258
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 5b66d89f7a9a5c690d3a62e6b96a0b056cad9e0e
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82171016"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329548"
 ---
 # <a name="tutorial-deploy-an-azure-cosmos-db-to-azure-container-instances"></a>Tutorial: Bereitstellen einer Azure Cosmos DB-Instanz für Azure Container Instances
 
@@ -179,4 +179,4 @@ terraform destroy -auto-approve
 ## <a name="next-steps"></a>Nächste Schritte
 
 > [!div class="nextstepaction"]
-> [Installieren und Konfigurieren von Terraform, um Azure-Ressourcen bereitzustellen](install-configure.md)
+> [Installieren und Konfigurieren von Terraform, um Azure-Ressourcen bereitzustellen](getting-started-cloud-shell.md)
