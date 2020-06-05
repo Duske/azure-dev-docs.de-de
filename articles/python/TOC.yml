@@ -16,18 +16,20 @@
       href: configure-local-development-environment.md
     - name: Verwendungsmuster für Bibliotheken
       href: azure-sdk-library-usage-patterns.md
-    - name: 'Beispiel: Bereitstellen einer Ressourcengruppe'
-      href: azure-sdk-example-resource-group.md
-    - name: 'Beispiel: Bereitstellen von Azure-Speicher'
-      href: azure-sdk-example-storage.md
-    - name: 'Beispiel: Verwenden von Azure Storage'
-      href: azure-sdk-example-storage-use.md
-    - name: 'Beispiel: Bereitstellen einer Web-App'
-      href: azure-sdk-example-web-app.md
-    - name: 'Beispiel: Bereitstellen und Abfragen einer Datenbank'
-      href: azure-sdk-example-database.md
-    - name: 'Beispiel: Bereitstellen von virtuellen Computern'
-      href: azure-sdk-example-virtual-machines.md
+    - name: Beispiele
+      items:
+        - name: Bereitstellen einer Ressourcengruppe
+          href: azure-sdk-example-resource-group.md
+        - name: Bereitstellen von Azure-Speicher
+          href: azure-sdk-example-storage.md
+        - name: Verwenden von Azure Storage
+          href: azure-sdk-example-storage-use.md
+        - name: Bereitstellen einer Web-App
+          href: azure-sdk-example-web-app.md
+        - name: Bereitstellen und Abfragen einer Datenbank
+          href: azure-sdk-example-database.md
+        - name: Bereitstellen von virtuellen Computern
+          href: azure-sdk-example-virtual-machines.md
 - name: Erkunden spezifischer Azure-Dienste
   items:
     - name: App-Hosting
@@ -102,6 +104,8 @@
       href: how-to-manage-service-principals.md
     - name: Zuweisen von Rollenberechtigungen zu Sicherheitsprinzipalen
       href: how-to-assign-role-permissions.md
+    - name: Konfigurieren der Protokollierung
+      href: azure-sdk-logging.md
     - name: Konfigurieren von REST-API-Argumenten
       href: azure-sdk-operation-config.md
     - name: Entwicklung mit mehreren Clouds
