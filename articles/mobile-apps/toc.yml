@@ -1,0 +1,55 @@
+- name: 'Azure für Entwickler mobiler Anwendungen: Dokumentation'
+  href: index.yml
+- name: Übersicht
+  expanded: true
+  items:
+    - name: Auswählen eines Frameworks für die mobile Entwicklung
+      href: choose-mobile-framework.md
+    - name: Phasen bei der Cloudentwicklung für mobile Apps
+      href: mobile-cloud-development-stages.md
+- name: Konzepte
+  items:
+    - name: Authentifizierung
+      href: authentication.md
+    - name: Daten
+      items:
+        - name: Datenspeicher
+          href: data-storage.md
+        - name: Azure Storage
+          href: azure-storage.md
+        - name: Azure Content Delivery Network
+          href: azure-content-delivery-network.md
+    - name: Compute
+      items:
+        - name: Serverloses Computing
+          href: serverless-compute.md
+        - name: Echtzeit-Apps
+          href: real-time-communication.md
+    - name: Quellcodeverwaltung
+      href: code-hosting-services.md
+    - name: DevOps
+      items:
+        - name: Was ist DevOps?
+          href: devops.md
+        - name: Kontinuierliche Erstellung und Continuous Integration
+          href: continuous-integration.md
+        - name: Testen auf echten Geräten
+          href: test-mobile-apps.md
+        - name: Continuous Delivery
+          href: continuous-delivery.md
+    - name: Telemetrie
+      items:
+        - name: Analysieren der Nutzung und des Benutzerverhaltens
+          href: analytics.md
+        - name: Fehlerberichterstellung in Echtzeit
+          href: diagnostics.md
+    - name: Pushbenachrichtigungen
+      href: push-notifications.md
+    - name: Machine Learning
+      items:
+        - name: Azure Cognitive Services
+          href: cognitive-services.md
+        - name: Azure Maps
+          href: azure-maps.md
+        - name: Azure Cognitive Search
+          href: azure-search.md
