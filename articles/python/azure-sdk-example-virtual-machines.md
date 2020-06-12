@@ -1,25 +1,23 @@
 ---
-title: Bereitstellen eines virtuellen Computers mithilfe des Azure SDK für Python
+title: Bereitstellen eines virtuellen Computers mithilfe der Azure SDK-Bibliotheken für Python
 description: So stellen Sie einen virtuellen Azure-Computer mittels Python und den Azure SDK-Verwaltungsbibliotheken bereit.
-ms.date: 05/12/2020
+ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: f21495cc42f3bb228e460f1c591c9aa037dd8123
-ms.sourcegitcommit: 9330d5af796b4b114466bbe75b8e18a9206f218e
+ms.openlocfilehash: 297e45b2d694d723b84f84f6457577503155a598
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83862783"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329648"
 ---
-# <a name="example-use-the-azure-sdk-to-provision-a-virtual-machine"></a>Beispiel: Verwenden des Azure SDK zum Bereitstellen eines virtuellen Computers
+# <a name="example-use-the-azure-libraries-to-provision-a-virtual-machine"></a>Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen eines virtuellen Computers
 
-In diesem Beispiel wird veranschaulicht, wie die Azure SDK-Verwaltungsbibliotheken in einem Python-Skript verwendet werden, um eine Ressourcengruppe zu erstellen, die einen virtuellen Linux-Computer enthält.
-
-In diesem Beispiel gibt es keine Clientbibliotheken, da virtuelle Computer nur über eine Verwaltungsschnittstelle verfügen.
+In diesem Beispiel wird veranschaulicht, wie die Azure SDK-Verwaltungsbibliotheken in einem Python-Skript verwendet werden, um eine Ressourcengruppe zu erstellen, die einen virtuellen Linux-Computer enthält. ([Äquivalente Azure CLI-Befehle](#for-reference-equivalent-azure-cli-commands) finden Sie weiter unten in diesem Artikel.)
 
 Alle Befehle in diesem Artikel funktionieren in Linux-/Mac OS-bash- und Windows-Befehlsshells identisch, sofern nicht anders angegeben.
 
 > [!NOTE]
-> Das Bereitstellen eines virtuellen Computers mittels Code ist ein mehrstufiger Prozess, bei dem eine Reihe anderer Ressourcen bereitgestellt wird, die für den virtuellen Computer erforderlich sind. Wenn Sie solchen Code einfach über die Befehlszeile ausführen, ist es wesentlich einfacher, den Befehl [`az vm create`](/cli/azure/vm?view=azure-cli-latest#az-vm-create) zu verwenden, der diese sekundären Ressourcen automatisch mit Standardwerten für jede Einstellung bereitstellt, die Sie auslassen. Die einzigen erforderlichen Argumente sind eine Ressourcengruppe, ein VM-Name, ein Imagename und Anmeldeinformationen. Weitere Informationen finden Sie unter [Schnelles Erstellen einer VM mit der Azure CLI](/azure/virtual-machines/scripts/virtual-machines-windows-cli-sample-create-vm-quick-create).
+> Das Bereitstellen eines virtuellen Computers mittels Code ist ein mehrstufiger Prozess, bei dem eine Reihe anderer Ressourcen bereitgestellt wird, die für den virtuellen Computer erforderlich sind. Wenn Sie solchen Code über die Befehlszeile ausführen, ist es wesentlich einfacher, den Befehl [`az vm create`](/cli/azure/vm?view=azure-cli-latest#az-vm-create) zu verwenden. Hierdurch werden diese sekundären Ressourcen jeweils automatisch mit Standardwerten für die weggelassenen Einstellungen bereitgestellt. Die einzigen erforderlichen Argumente sind eine Ressourcengruppe, ein VM-Name, ein Imagename und Anmeldeinformationen. Weitere Informationen finden Sie unter [Schnelles Erstellen einer VM mit der Azure CLI](/azure/virtual-machines/scripts/virtual-machines-windows-cli-sample-create-vm-quick-create).
 
 ## <a name="1-set-up-your-local-development-environment"></a>1: Einrichten Ihrer lokalen Entwicklungsumgebung
 
@@ -27,7 +25,7 @@ Wenn Sie dies noch nicht getan haben, befolgen Sie sämtliche der Anweisungen un
 
 Stellen Sie sicher, dass Sie einen Dienstprinzipal für die lokale Entwicklung erstellen und eine virtuelle Umgebung für dieses Projekt erstellen und aktivieren.
 
-## <a name="2-install-the-needed-sdk-libraries"></a>2: Benötigte SDK-Bibliotheken installieren
+## <a name="2-install-the-needed-azure-library-packages"></a>2: Installieren der erforderlichen Azure-Bibliothekspakete
 
 1. Erstellen Sie eine Datei *requirements.txt*, in der die in diesem Beispiel verwendeten Verwaltungsbibliotheken aufgeführt sind:
 
@@ -40,7 +38,7 @@ Stellen Sie sicher, dass Sie einen Dienstprinzipal für die lokale Entwicklung e
 
 1. Installieren Sie in Ihrem Terminal oder in der Eingabeaufforderung bei aktivierter virtueller Umgebung die in *requirements.txt* aufgeführten Verwaltungsbibliotheken:
 
-    ```bash
+    ```cmd
     pip install -r requirements.txt
     ```
 
@@ -65,7 +63,7 @@ resource_client = get_client_from_cli_profile(ResourceManagementClient)
 
 # Constants we need in multiple places: the resource group name and the region
 # in which we provision resources. You can change these values however you want.
-RESOURCE_GROUP_NAME = "PythonSDKExample-VM-rg"
+RESOURCE_GROUP_NAME = "PythonAzureExample-VM-rg"
 LOCATION = "centralus"
 
 # Provision the resource group.
@@ -204,83 +202,89 @@ Dieser Code verwendet die CLI-basierten Authentifizierungsmethoden (`get_client_
 
 Um solchen Code in einem Produktionsskript zu verwenden (z. B. zum Automatisieren der VM-Verwaltung), verwenden Sie `DefaultAzureCredential` (empfohlen) oder eine dienstprinzipalbasierte Methode, wie unter [Authentifizieren von Python-Apps mit Azure-Diensten](azure-sdk-authenticate.md) beschrieben.
 
+### <a name="reference-links-for-classes-used-in-the-code"></a>Referenzlinks für im Code verwendete Klassen
+
+- [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient?view=azure-python)
+- [NetworkManagementClient (azure.mgmt.network)](/python/api/azure-mgmt-network/azure.mgmt.network.networkmanagementclient?view=azure-python)
+- [ComputeManagementClient (azure.mgmt.compute)](/python/api/azure-mgmt-compute/azure.mgmt.compute.computemanagementclient?view=azure-python)
+
 ## <a name="4-run-the-script"></a>4. Führen Sie das Skript aus.
 
-```bash
+```cmd
 python provision_vm.py
 ```
 
 Der Bereitstellungsprozess dauert einige Minuten.
 
-## <a name="5-verify-the-resources"></a>5. Ressourcen überprüfen
+## <a name="5-verify-the-resources"></a>5. Überprüfen der Ressourcen
 
-Öffnen Sie das [Azure-Portal](https://portal.azure.com), navigieren Sie zur Ressourcengruppe „PythonSDKExample-VM-rg“, und notieren Sie sich den virtuellen Computer, den virtuellen Datenträger, die Netzwerksicherheitsgruppe, die öffentliche IP-Adresse, die Netzwerkschnittstelle und das virtuelle Netzwerk:
+Öffnen Sie das [Azure-Portal](https://portal.azure.com), navigieren Sie zur Ressourcengruppe „PythonAzureExample-VM-rg“, und notieren Sie sich den virtuellen Computer, den virtuellen Datenträger, die Netzwerksicherheitsgruppe, die öffentliche IP-Adresse, die Netzwerkschnittstelle und das virtuelle Netzwerk:
 
 ![Die Azure-Portal Seite für die neue Ressourcengruppe mit dem virtuellen Computer und den zugehörigen Ressourcen](media/azure-sdk-example-virtual-machines/portal-vm-resources.png)
 
 ### <a name="for-reference-equivalent-azure-cli-commands"></a>Zur Referenz: äquivalente Azure CLI-Befehle
-
-# <a name="bash"></a>[Bash](#tab/bash)
-
-```azurecli
-# Provision the resource group
-
-az group create -n PythonSDKExample-VM-rg -l centralus
-
-# Provision a virtual network and subnet
-
-az network vnet create -g PythonSDKExample-VM-rg -n python-example-vnet \
-    --address-prefix 10.0.0.0/16 --subnet-name python-example-subnet \
-    --subnet-prefix 10.0.0.0/24
-
-# Provision a public IP address
-
-az network public-ip create -g PythonSDKExample-VM-rg -n python-example-ip \
-    --allocation-method Dynamic --version IPv4
-
-# Provision a network interface client
-
-az network nic create -g PythonSDKExample-VM-rg --vnet-name python-example-vnet \
-    --subnet python-example-subnet -n python-example-nic \
-    --public-ip-address python-example-ip
-
-# Provision the virtual machine
-
-az vm create -g PythonSDKExample-VM-rg -n ExampleVM -l "centralus" \
-    --nics python-example-nic --image UbuntuLTS \
-    --admin-username azureuser --admin-password ChangePa$$w0rd24
-
-```
 
 # <a name="cmd"></a>[cmd](#tab/cmd)
 
 ```azurecli
 # Provision the resource group
 
-az group create -n PythonSDKExample-VM-rg -l centralus
+az group create -n PythonAzureExample-VM-rg -l centralus
 
 # Provision a virtual network and subnet
 
-az network vnet create -g PythonSDKExample-VM-rg -n python-example-vnet ^
+az network vnet create -g PythonAzureExample-VM-rg -n python-example-vnet ^
     --address-prefix 10.0.0.0/16 --subnet-name python-example-subnet ^
     --subnet-prefix 10.0.0.0/24
 
 # Provision a public IP address
 
-az network public-ip create -g PythonSDKExample-VM-rg -n python-example-ip ^
+az network public-ip create -g PythonAzureExample-VM-rg -n python-example-ip ^
     --allocation-method Dynamic --version IPv4
 
 # Provision a network interface client
 
-az network nic create -g PythonSDKExample-VM-rg --vnet-name python-example-vnet ^
+az network nic create -g PythonAzureExample-VM-rg --vnet-name python-example-vnet ^
     --subnet python-example-subnet -n python-example-nic ^
     --public-ip-address python-example-ip
 
 # Provision the virtual machine
 
-az vm create -g PythonSDKExample-VM-rg -n ExampleVM -l "centralus" ^
+az vm create -g PythonAzureExample-VM-rg -n ExampleVM -l "centralus" ^
     --nics python-example-nic --image UbuntuLTS ^
     --admin-username azureuser --admin-password ChangePa$$w0rd24
+```
+
+# <a name="bash"></a>[Bash](#tab/bash)
+
+```azurecli
+# Provision the resource group
+
+az group create -n PythonAzureExample-VM-rg -l centralus
+
+# Provision a virtual network and subnet
+
+az network vnet create -g PythonAzureExample-VM-rg -n python-example-vnet \
+    --address-prefix 10.0.0.0/16 --subnet-name python-example-subnet \
+    --subnet-prefix 10.0.0.0/24
+
+# Provision a public IP address
+
+az network public-ip create -g PythonAzureExample-VM-rg -n python-example-ip \
+    --allocation-method Dynamic --version IPv4
+
+# Provision a network interface client
+
+az network nic create -g PythonAzureExample-VM-rg --vnet-name python-example-vnet \
+    --subnet python-example-subnet -n python-example-nic \
+    --public-ip-address python-example-ip
+
+# Provision the virtual machine
+
+az vm create -g PythonAzureExample-VM-rg -n ExampleVM -l "centralus" \
+    --nics python-example-nic --image UbuntuLTS \
+    --admin-username azureuser --admin-password ChangePa$$w0rd24
+
 ```
 
 ---
@@ -288,14 +292,20 @@ az vm create -g PythonSDKExample-VM-rg -n ExampleVM -l "centralus" ^
 ## <a name="6-clean-up-resources"></a>6: Bereinigen von Ressourcen
 
 ```azurecli
-az group delete -n PythonSDKExample-VM-rg
+az group delete -n PythonAzureExample-VM-rg
 ```
 
 Führen Sie diesen Befehl aus, wenn Sie die in diesem Beispiel erstellten Ressourcen nicht behalten müssen, und Sie in Ihrem Abonnement laufende Gebühren vermeiden möchten.
 
 ## <a name="see-also"></a>Weitere Informationen
 
+- [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Ressourcengruppe](azure-sdk-example-resource-group.md)
+- [Beispiel: Verwenden der Azure-Bibliotheken mit Azure Storage](azure-sdk-example-storage.md)
+- [Beispiel: Verwenden der Azure-Bibliotheken mit Azure Storage](azure-sdk-example-storage-use.md)
+- [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Web-App](azure-sdk-example-web-app.md)
+- [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Datenbank](azure-sdk-example-database.md)
+
 Die folgenden Ressourcen enthalten weitere umfassende Beispiele für die Verwendung von Python zum Erstellen eines virtuellen Computers:
 
 - [Erstellen und Verwalten von Windows-VMs in Azure mithilfe von Python](/azure/virtual-machines/windows/python). Sie können dieses Beispiel verwenden, um virtuelle Linux-Computer zu erstellen, indem Sie den `storage_profile`-Parameter ändern.
-- [Beispiele für die Verwaltung von Azure Virtual Machines – Python](https://github.com/Azure-Samples/virtual-machines-python-manage) (GitHub). Das Beispiel veranschaulicht zusätzliche Verwaltungsvorgänge wie das Starten und Neustarten eines virtuellen Computers, das Beenden und Löschen eines virtuellen Computers, das Erhöhen der Datenträgergröße sowie das Verwalten von Datenträgern.
+- [Beispiele für die Verwaltung von Azure Virtual Machines – Python](https://github.com/Azure-Samples/virtual-machines-python-manage) (GitHub). Das Beispiel veranschaulicht zusätzliche Verwaltungsvorgänge wie das Starten und Neustarten eines virtuellen Computers, das Beenden und Löschen eines virtuellen Computers, das Erhöhen der Datenträgergröße sowie das Verwalten von Datenträgern.

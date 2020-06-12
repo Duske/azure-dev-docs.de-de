@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: 1eeb7d6a17bb21963f3203d484387c0aae6c402f
-ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+ms.openlocfilehash: bbc7dd44e975fd47b52df41baa1ec526ac1908f8
+ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82988699"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202829"
 ---
 # <a name="migrate-java-applications-to-azure"></a>Migrieren von Java-Anwendungen zu Azure
 
@@ -74,9 +74,9 @@ Diese Anwendungen werden in Archiven mit der Erweiterung *.jar* (JAR-Dateien) an
 
 In den folgenden Abschnitten wird veranschaulicht, welche Dienstziele Ihre Anwendungsanforderungen erfüllen und welche Zuständigkeiten damit verbunden sind.
 
-### <a name="feature-grid"></a>Funktionsraster
+### <a name="hosting-options-grid"></a>Übersicht über die Hostingoptionen
 
-Ermitteln Sie anhand des folgenden Rasters die Ziele, die die von Ihnen benötigten Anwendungstypen und Features unterstützen.
+Anhand der folgenden Übersicht können Sie potenzielle Ziele für Ihren Anwendungstyp ermitteln. Wie Sie sehen, werden von AKS und Virtual Machines alle Anwendungstypen unterstützt, Ihr Team muss jedoch mehr Aufgaben übernehmen, wie im nächsten Abschnitt gezeigt.
 
 |   |App<br>Dienst<br>Java SE|App<br>Dienst<br>Tomcat|Azure<br>Spring<br>Cloud|AKS|Virtual Machines|
 |---|---|---|---|---|---|---|

@@ -1,21 +1,21 @@
 ---
-title: 'Herstellen einer Verbindung mit allen Regionen: Azure SDK für Python (mehrere Clouds)'
-description: Verwenden von Azure in allen Regionen
-ms.date: 05/04/2020
+title: Herstellen einer Verbindung mit allen Regionen unter Verwendung der Azure-Bibliotheken für Python (mehrere Clouds)
+description: Hier erfahren Sie, wie Sie das Modul „azure_cloud“ von „msrestazure“ verwenden, um eine Verbindung mit Azure in verschiedenen unabhängigen Regionen herzustellen.
+ms.date: 05/27/2020
 ms.topic: conceptual
 ms.custom: seo-python-october2019
-ms.openlocfilehash: b585cc6853c338ca1d1f97b8e477818368342f8e
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: f24e2261c8002f3f34d28ee02e0f409e8632f825
+ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83403676"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84146178"
 ---
-# <a name="multi-cloud-connect-to-all-regions-with-the-azure-sdk-for-python"></a>Mehrere Clouds: Herstellen einer Verbindung mit allen Regionen mit dem Azure SDK für Python
+# <a name="multi-cloud-connect-to-all-regions-with-the-azure-libraries-for-python"></a>Mehrere Clouds: Herstellen einer Verbindung mit allen Regionen unter Verwendung der Azure-Bibliotheken für Python
 
-Sie können das Azure SDK für Python verwenden, um eine Verbindung mit allen Regionen herzustellen, in denen Azure [verfügbar](https://azure.microsoft.com/regions/services) ist.
+Sie können die Azure-Bibliotheken für Python verwenden, um eine Verbindung mit allen Regionen herzustellen, in denen Azure [verfügbar](https://azure.microsoft.com/regions/services) ist.
 
-Standardmäßig ist das Azure SDK für Python zum Herstellen einer Verbindung mit der globalen Azure-Umgebung konfiguriert.
+Standardmäßig sind die Azure-Bibliotheken für die Verbindungsherstellung mit der globalen Azure-Umgebung konfiguriert.
 
 ## <a name="using-pre-declared-cloud-definition"></a>Verwenden einer vorab deklarierten Clouddefinition
 

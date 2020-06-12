@@ -1,14 +1,14 @@
 ---
 title: Bereitstellen und Verwalten von und Zugreifen auf Ressourcen in Azure
-description: Eine Übersicht über die Methoden, die zum Arbeiten mit Azure-Ressourcen verwendet werden, einschließlich des Azure-Portals, der Azure CLI und des Azure SDK.
-ms.date: 05/12/2020
+description: Hier finden Sie eine Übersicht über die Methoden zur Verwendung von Azure-Ressourcen. Dazu zählen das Azure-Portal, die Azure-Befehlszeilenschnittstelle und die Azure-Bibliotheken (SDK).
+ms.date: 05/27/2020
 ms.topic: conceptual
-ms.openlocfilehash: a56ea9c3f0165a15933d78ca7a049033b6e75fa9
-ms.sourcegitcommit: b69db02c3358ce7899cef105508e3d17fafc84b2
+ms.openlocfilehash: 7482b3ae29210c02382ddd20ee2f29b874e18ab5
+ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83759923"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84146202"
 ---
 # <a name="provisioning-accessing-and-managing-resources-on-azure"></a>Bereitstellen und Verwalten von und Zugreifen auf Ressourcen in Azure
 
@@ -26,7 +26,10 @@ Die Antwort ist einfach. Wie bei den meisten Betriebssystemen können Sie mit Az
 
 Sie können beliebige oder alle dieser sich ergänzenden Methoden verwenden, um beliebige Azure-Ressourcen zu erstellen, zu konfigurieren und zu verwalten, die Sie benötigen. Tatsächlich verwenden Sie in der Regel alle drei Verfahren im Verlauf eines Entwicklungsprojekts, und es lohnt sich, sich mit jeder dieser Methoden vertraut zu machen.
 
-Innerhalb dieses Developer Centers zeigen wir hauptsächlich die Verwendung der CLI und des Python-Codes, der das Azure SDK verwendet, da die Nutzung des Portals in der Dokumentation für jeden einzelnen Dienst ausführlich erläutert wird.
+Im Rahmen dieses Developer Centers liegt der Fokus auf der Verwendung der Befehlszeilenschnittstelle und des Python-Codes, von dem die Azure-Bibliotheken verwendet werden, da die Verwendung des Portals in der Dokumentation für die einzelnen Dienste ausführlich erläutert ist.
+
+> [!NOTE]
+> Die Azure-Bibliotheken für Python werden manchmal auch als Azure SDK für Python bezeichnet. Abgesehen von den Bibliotheken, die Sie über den Python-Paket-Manager (pip) erhalten, sind allerdings keine weiteren SDK-Komponenten vorhanden.
 
 ## <a name="azure-portal"></a>Azure-Portal
 
@@ -48,11 +51,11 @@ Sie können auch [Azure PowerShell](/powershell/) anstelle der Azure CLI verwend
 
 Anstatt der lokalen CLI oder PowerShell können Sie Azure Cloud Shell direkt über [https://shell.azure.com/](https://shell.azure.com/) verwenden. Da Cloud Shell jedoch keine lokale Umgebung ist, eignet sie sich eher für einmalige Vorgänge als für Automatisierung.
 
-## <a name="azure-rest-api-and-azure-sdk"></a>Azure-REST-API und Azure SDK
+## <a name="azure-rest-api-and-azure-libraries"></a>Azure-REST-API und Azure-Bibliotheken
 
 Die [Azure-REST-API](/rest/api/?view=Azure) ist die programmgesteuerte Schnittstelle von Azure, die über Secure REST über HTTP bereitgestellt wird, da die Rechenzentren von Azure grundsätzlich mit dem Internet verbunden sind. Jeder Ressource wird eine eindeutige URL zugewiesen, die eine ressourcenspezifische API unterstützt. Dies gilt für strikte Authentifizierungsprotokolle und Zugriffsrichtlinien. (Das Azure-Portal und die Azure CLI erledigen ihre Aufgaben letztlich über die REST-API.)
 
-Für Entwickler bietet das [Azure SDK](https://azure.microsoft.com/downloads/) sprachspezifische Bibliotheken, die die Funktionen der REST-API in weitaus bequemere Programmierparadigmen (z. B. Klassen und Objekte) übersetzen. Für Python installieren Sie immer einzelne SDK-Bibliotheken mit `pip install`, anstatt das SDK als Ganzes zu installieren.
+Für Entwickler bieten die Azure-Bibliotheken sprachspezifische Bibliotheken, die die Funktionen der REST-API in weitaus praktischere Programmierparadigmen (z. B. Klassen und Objekte) übersetzen. Für Python installieren Sie immer einzelne Bibliotheken mit `pip install`, anstatt ein eigenständiges SDK als Ganzes zu installieren. (Informationen zu anderen Sprachen finden Sie unter [Downloads](https://azure.microsoft.com/downloads/).)
 
 **Vorteile:** Genaue Kontrolle über alle Vorgänge, einschließlich einer viel direkteren Methode zur Verwendung von Ausgaben eines Vorgangs als Eingaben für einen anderen Vorgang. Python-Entwickler können mit vertrauten Sprachparadigmen arbeiten, anstatt die CLI zu verwenden. Kann auch aus Anwendungscode zum Automatisieren von Verwaltungsszenarien verwendet werden.
   

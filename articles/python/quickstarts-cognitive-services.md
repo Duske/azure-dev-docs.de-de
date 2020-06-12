@@ -1,35 +1,26 @@
 ---
-title: Schnellstartanleitungen für Cognitive Services für Python-Apps in Azure
-description: Eine Liste mit Azure-Dokumentationsartikeln zu den ersten Schritten im Zusammenhang mit Cognitive Services für Python-Apps.
-ms.date: 05/12/2020
+title: Erste Schritte mit Cognitive Services (KI) für Python-Apps in Azure
+description: Hier finden Sie einen Index mit Azure-Dokumentationsmaterial zu den ersten Schritten im Zusammenhang mit Cognitive Services (KI) für Python-Apps.
+ms.date: 05/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: 4b07e886fdb58f9a8abad48a6bd905cdf935e131
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: 7192826524f647560f502fa0d01d136c0de945d1
+ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83403763"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202806"
 ---
-# <a name="cognitive-services-for-python-apps-on-azure"></a>Cognitive Services für Python-Apps in Azure
+# <a name="ai-service-for-python-apps-on-azure"></a>KI-Dienst für Python-Apps in Azure
 
-Die folgenden Artikel helfen Ihnen bei den ersten Schritten mit Azure Cognitive Services, die umfangreiche KI-Funktionen für Anwendungen auf einfache Weise verfügbar machen:
+Mit Azure Cognitive Services können umfangreiche KI-Funktionen in Bereichen wie maschinelles Sehen und Bildverarbeitung, Sprachanalyse und -übersetzung, Spracherkennung/-synthese, Entscheidungsfindung und umfassende Suche mühelos in Anwendungen verwendet werden.
 
-- **Übersicht**:
-  - [Azure Cognitive Services-Module für Python](/python/api/overview/azure/cognitive-services?view=azure-python)
+Da Azure Cognitive Services ständig weiterentwickelt wird, empfiehlt es sich, mit der Suche nach Dokumentationsmaterial für die ersten Schritte mit Python auf der [Hubseite für Azure Cognitive Services](/azure/cognitive-services/) zu beginnen. Wählen Sie einen Dienst aus, für den Sie sich interessieren, und erweitern Sie dann den Knoten **Schnellstarts**. Suchen Sie unter **Schnellstarts** nach Unterabschnitten zur Verwendung der Clientbibliotheken oder der REST-API. Die Artikel in diesen Unterabschnitten enthalten Informationen zu Python (sofern unterstützt).
 
-- **Bildverarbeitung**:  
-  - [Schnellstart: Analysieren eines Remotebilds mit der Maschinelles Sehen-REST-API und Python](/azure/cognitive-services/Computer-vision/Quickstarts/python-analyze)
-  - [Schnellstart: Erstellen eines Bildklassifizierungsprojekts mit dem Custom Vision SDK für Python](/azure/cognitive-services/custom-vision-service/python-tutorial)
+> [!div class="nextstepaction"]
+> [Hubseite für Azure Cognitive Services](/azure/cognitive-services/)
 
-- **Gesichtserkennung**:  
-  - [Schnellstart: Clientbibliothek zur Gesichtserkennung für Python](/azure/cognitive-services/face/quickstarts/python-sdk)
+Lesen Sie auch die folgenden Artikel zu Azure Cognitive Search. Diese befinden sich in einem anderen Teil der Dokumentation als Cognitive Services:
 
-- **Sprache, Textanalyse und Suche**:
-  - [Schnellstart: LUIS-Erstellungsclientbibliothek (Language Understanding)](/azure/cognitive-services/luis/sdk-authoring)
-  - [Schnellstart: Verwenden der Textanalyse-Clientbibliothek](/azure/cognitive-services/text-analytics/quickstarts/text-analytics-sdk)
-  - [Schnellstart: Content Moderator-Clientbibliothek für Python](/azure/cognitive-services/content-moderator/python-sdk-quickstart)
-  - [Schnellstart: Vorschlagen von Suchabfragen mit der Bing-Vorschlagssuche-REST-API und Python](/azure/cognitive-services/bing-autosuggest/quickstarts/python)
-  - [Dokumentation zur Bing-Suche-API](/azure/cognitive-services/bing-web-search/index)
+- [Schnellstart: Erstellen eines Azure Cognitive Search-Index in Python mithilfe von Jupyter Notebooks](/azure/search/search-get-started-python)
+- [Tutorial: Verwenden von Python und KI zum Generieren von durchsuchbarem Inhalt über Azure-Blobs](/azure/search/cognitive-search-tutorial-blob-python)
 
-- **Speech-Dienste**
-  - [Dokumentation für den Speech-Dienst](/azure/cognitive-services/speech-service/index)

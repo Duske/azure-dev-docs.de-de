@@ -3,12 +3,12 @@ title: Verwalten lokaler Dienstprinzipale für die Azure-Entwicklung
 description: Verwalten von Dienstprinzipalen, die für die lokale Entwicklung mithilfe des Azure-Portals oder der Azure CLI erstellt werden.
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: b2e0c913b08c98994226d7a9de39ae83ae50ec21
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: ffb526a0073667f5ea53631925f2565215f60787
+ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83404883"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84146188"
 ---
 # <a name="how-to-manage-service-principals"></a>Verwalten von Dienstprinzipalen
 
@@ -18,7 +18,7 @@ Im Laufe der Zeit müssen Sie diese Dienstprinzipale wahrscheinlich löschen, um
 
 ## <a name="basics-of-azure-authorization"></a>Grundlagen der Azure-Autorisierung
 
-Wenn Ihr Code versucht, einen Vorgang für Azure-Ressourcen auszuführen (was über Klassen im Azure SDK geschieht), stellt Azure sicher, dass die Anwendung autorisiert ist, diese Aktion auszuführen. Sie verwenden das [Azure-Portal](https://portal.azure.com) oder die Azure CLI, um der Identität der Anwendung bestimmte rollen- oder ressourcenbasierte Berechtigungen zu erteilen. (Durch diese Vorgehensweise wird vermieden, dass übermäßige Berechtigungen für die Anwendung gewährt werden, die ausgenutzt werden können, wenn die Sicherheit Ihrer Anwendung beeinträchtigt sein sollte.)
+Wenn Ihr Code versucht, einen Vorgang für Azure-Ressourcen auszuführen (über Klassen in den Azure-Bibliotheken), wird von Azure sichergestellt, dass die Anwendung dazu autorisiert ist, diese Aktion auszuführen. Sie verwenden das [Azure-Portal](https://portal.azure.com) oder die Azure CLI, um der Identität der Anwendung bestimmte rollen- oder ressourcenbasierte Berechtigungen zu erteilen. (Durch diese Vorgehensweise wird vermieden, dass übermäßige Berechtigungen für die Anwendung gewährt werden, die ausgenutzt werden können, wenn die Sicherheit Ihrer Anwendung beeinträchtigt sein sollte.)
 
 Bei der Bereitstellung in Azure ist die Identität der Anwendung in der Regel mit dem Namen identisch, den Sie der App innerhalb des Diensts geben, der sie gehostet (z. B. Azure App Service, Azure Functions, ein virtueller Computer usw., wenn die verwaltete Identität aktiviert ist). Wenn Sie den Code lokal ausführen, ist jedoch kein solcher Hostingdienst beteiligt, sodass Sie Azure einen geeigneten Ersatz präsentieren müssen.
 
@@ -51,4 +51,4 @@ Mithilfe der Azure CLI können Sie viele der gleichen Vorgänge für Dienstprinz
 
 Weitere Informationen:
 
-- [Authentifizieren mit Azure mithilfe des Azure SDK](azure-sdk-authenticate.md)
+- [Authentifizieren von Python-Apps mit Azure-Diensten](azure-sdk-authenticate.md)

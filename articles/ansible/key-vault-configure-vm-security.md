@@ -4,12 +4,12 @@ description: Erfahren Sie, wie Sie Ansible zum Konfigurieren der VM-Sicherheit m
 keywords: Ansible, Azure, DevOps, Schlüsseltresor, Sicherheit, Anmeldeinformationen, Geheimnisse, Schlüssel, Zertifikate, Ansible-Module für Azure, Ressourcengruppe, azure_rm_resourcegroup,
 ms.topic: tutorial
 ms.date: 04/20/2020
-ms.openlocfilehash: ce9adb7ea121425d410665e1f4cc225cfdb82bd8
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 84ed514e742c8a8fa3a9acc9328fc71743dfc5cb
+ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81755233"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84145968"
 ---
 # <a name="tutorial-use-azure-key-vault-with-a-linux-virtual-machine-in-ansible"></a>Tutorial: Verwenden von Azure Key Vault mit einem virtuellen Linux-Computer in Ansible
 
@@ -216,7 +216,7 @@ Der folgende Codeausschnitt aus einem Ansible-Playbook zeigt das Erstellen eines
 **Hinweise:**
 
 - Das [azure_rm_keyvaultsecret-Modul](https://docs.ansible.com/ansible/latest/modules/azure_rm_keyvaultsecret_module.html) wird verwendet, um das Geheimnis des Schlüsseltresors zu erstellen.
-- Aus Gründen der Einfachheit beinhaltet die Demo den `secret_name` sowie den `secret_value`. Playbooks stellen aber Infrastructure-as-Code-Dateien (AiC) dar, ganz wie jeder andere Quellcode für Ihr Projekt. Daher sollten Werte wie diese für den Einsatz in Produktionsumgebungen niemals in unverschlüsselten Textdateien gespeichert werden.
+- Aus Gründen der Einfachheit beinhaltet die Demo den `secret_name` sowie den `secret_value`. Playbooks stellen allerdings IaC-Dateien (Infrastructure-as-Code) dar, genau wie jeder andere Quellcode für Ihr Projekt. Daher sollten Werte wie diese für den Einsatz in Produktionsumgebungen niemals in unverschlüsselten Textdateien gespeichert werden.
 - Nach der Ausführung dieses Codes wird das neu erstellte Geheimnis mit dem Namen `testsecret` auf der Registerkarte **Geheimnisse** des Schlüsseltresors aufgelistet. Um es anzuzeigen, wählen Sie das Geheimnis, die aktuelle Version und dann **Geheimniswert anzeigen** aus.
 
 ## <a name="get-a-key-vault-secret"></a>Abrufen eines Geheimnisses für einen Schlüsseltresor
@@ -242,7 +242,7 @@ tasks:
 
 - Das **azure_rm_keyvaultsecret_info-Modul** wird verwendet, um das Geheimnis des Schlüsseltresors abzurufen. Dieses Modul ist nur verfügbar, wenn die Ansible-Sammlung für Azure-Module verwendet wird. 
 - Wenn Sie beim Ausführen dieses Codeausschnitts einen Fehler empfangen, vergewissern Sie sich, dass Sie alle Anweisungen im Abschnitt [Voraussetzungen](#prerequisites) erfüllt haben.
-- Aus Gründen der Einfachheit beinhaltet die Demo den `secret_name` sowie den `secret_value`. Playbooks stellen aber Infrastructure-as-Code-Dateien (AiC) dar, ganz wie jeder andere Quellcode für Ihr Projekt. Daher sollten Werte wie diese für den Einsatz in Produktionsumgebungen niemals in unverschlüsselten Textdateien gespeichert werden.
+- Aus Gründen der Einfachheit beinhaltet die Demo den `secret_name` sowie den `secret_value`. Playbooks stellen allerdings IaC-Dateien (Infrastructure-as-Code) dar, genau wie jeder andere Quellcode für Ihr Projekt. Daher sollten Werte wie diese für den Einsatz in Produktionsumgebungen niemals in unverschlüsselten Textdateien gespeichert werden.
 
 ## <a name="run-the-complete-playbook"></a>Ausführen des vollständigen Playbooks
 

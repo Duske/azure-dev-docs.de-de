@@ -1,14 +1,14 @@
 ---
 title: Konfigurieren Ihrer lokalen Python-Umgebung für die Azure-Entwicklung
-description: Erfahren Sie, wie Sie eine lokale Python-Entwicklungsumgebung für die Arbeit mit Azure einrichten, einschließlich Visual Studio Code, dem Azure SDK und den erforderlichen Anmeldeinformationen für die SDK-Authentifizierung.
-ms.date: 05/12/2020
+description: Hier erfahren Sie, wie Sie eine lokale Python-Entwicklungsumgebung für die Arbeit mit Azure einrichten – einschließlich Visual Studio Code, den Azure SDK-Bibliotheken und den erforderlichen Anmeldeinformationen für die Bibliothekauthentifizierung.
+ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: 77bcffbef1e1e8d7eb6203b31a861449feb01dcd
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: e3eb03182a45f3ceacc8b3ea09abca47d8fa2e81
+ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83405013"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84256455"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>Konfigurieren Ihrer lokalen Python-Entwicklungsumgebung für Azure
 
@@ -17,7 +17,7 @@ Beim Erstellen von Cloudanwendungen ziehen es Entwickler in der Regel vor, Code 
 Dieser Artikel enthält die einmalig durchzuführenden Einrichtungsanweisungen zum Erstellen und Überprüfen einer lokalen Entwicklungsumgebung, die für Python in Azure geeignet ist:
 
 - [Installieren der erforderlichen Komponenten](#required-components), nämlich ein Azure-Konto, Python und die Azure CLI.
-- [Konfigurieren der Authentifizierung](#configure-authentication), wenn Sie für die Bereitstellung, Verwaltung und den Zugriff auf Azure-Ressourcen Azure SDK-Bibliotheken verwenden.
+- [Konfigurieren der Authentifizierung](#configure-authentication), wenn Sie Azure-Bibliotheken für die Bereitstellung, Verwaltung und den Zugriff auf Azure-Ressourcen verwenden.
 - Überprüfen des Prozesses der [Verwendung virtueller Python-Umgebungen](#use-python-virtual-environments) für jedes Ihrer Projekte.
 
 Nachdem Sie Ihre Arbeitsstation konfiguriert haben, müssen Sie nur noch minimale zusätzliche Konfigurationen vornehmen, um verschiedene Schnellstarts und Tutorials an anderer Stelle in diesem Developer Center sowie in der Azure-Dokumentation durchzuführen.
@@ -26,20 +26,20 @@ Nachdem Sie Ihre Arbeitsstation konfiguriert haben, müssen Sie nur noch minimal
 
 ### <a name="required-components"></a>Erforderliche Komponenten
 
-| Name/Installationsprogramm | BESCHREIBUNG |
+| Name/Installationsprogramm | Beschreibung |
 | --- | --- |
 | [Azure-Konto mit einem aktiven Abonnement](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=python-dev-center&mktingSource=environment-setup) | Konten/Abonnements sind kostenlos und umfassen viele kostenlose Dienste. |
 | [Python 2.7+ oder 3.5.3+](https://www.python.org/downloads) | Die Runtime der Programmiersprache Python. Wir empfehlen die aktuelle Version von Python 3.x, es sei denn, Sie haben besondere Anforderungen an die Version. |
-| [Azure-Befehlszeilenschnittstelle (CLI)](/cli/azure/install-azure-cli) | Bietet eine vollständige Sammlung von CLI-Befehlen zum Bereitstellen und Verwalten von Azure-Ressourcen. Python-Entwickler verwenden die Azure CLI häufig in Verbindung mit benutzerdefinierten Python-Skripts, die die Azure SDK-Verwaltungsbibliotheken verwenden. |
+| [Azure-Befehlszeilenschnittstelle (CLI)](/cli/azure/install-azure-cli) | Bietet eine vollständige Sammlung von CLI-Befehlen zum Bereitstellen und Verwalten von Azure-Ressourcen. Python-Entwickler verwenden die Azure-Befehlszeilenschnittstelle häufig in Verbindung mit benutzerdefinierten Python-Skripts, von denen die Azure-Verwaltungsbibliotheken genutzt werden. |
 
 Hinweise:
 
-- Abhängig von Ihren Anforderungen installieren Sie einzelne Azure SDK-Bibliotheken pro Projekt. Wir empfehlen, dass Sie [virtuelle Python-Umgebungen](#use-python-virtual-environments) für jedes Projekt verwenden.
+- Für jedes Projekt müssen abhängig von Ihren Anforderungen einzelne Azure-Bibliothekspakete installiert werden. Wir empfehlen, dass Sie [virtuelle Python-Umgebungen](#use-python-virtual-environments) für jedes Projekt verwenden. Es steht kein eigenständiges SDK-Installationsprogramm für Python zur Verfügung.
 - Obwohl Azure PowerShell in der Regel äquivalent zur Azure CLI ist, empfehlen wir, die Azure CLI bei der Arbeit mit Python zu verwenden.
 
 ### <a name="recommended-components"></a>Empfohlene Komponenten
 
-| Name/Installationsprogramm | BESCHREIBUNG |
+| Name/Installationsprogramm | Beschreibung |
 | --- | --- |
 | [Visual Studio Code](https://code.visualstudio.com) | Obwohl Sie mit jedem passenden Editor oder jeder geeigneten IDE arbeiten können, ist die kostenlose, schlanke IDE von Microsoft bei Python-Entwicklern sehr beliebt. Eine Einführung finden Sie unter [Python in VS Code](https://code.visualstudio.com/docs/python/python-tutorial). |
 | [Python-Erweiterungen für VS Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python) | Fügt VS Code Python-Unterstützung hinzu. |
@@ -48,7 +48,7 @@ Hinweise:
 
 ### <a name="optional-components"></a>Optionale Komponenten
 
-| Name/Installationsprogramm | BESCHREIBUNG |
+| Name/Installationsprogramm | Beschreibung |
 | --- | --- |
 | [Docker-Erweiterung für VS Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python) | Fügt VS Code Docker-Unterstützung hinzu, was hilfreich ist, wenn Sie regelmäßig mit Containern arbeiten. |
 
@@ -77,11 +77,11 @@ Die Azure CLI behält Ihre Anmeldung normalerweise sitzungsübergreifend bei, ab
 
 Wie unter [Verwalten von Dienstprinzipalen: Grundlagen der Autorisierung](how-to-manage-service-principals.md#basics-of-azure-authorization) beschrieben, benötigt jeder Entwickler einen Dienstprinzipal, der als Anwendungsidentität verwendet wird, wenn App-Code lokal getestet wird.
 
-In den folgenden Abschnitten wird beschrieben, wie Sie einen Dienstprinzipal und die Umgebungsvariablen erstellen, die Azure SDK die Eigenschaften des Dienstprinzipals bereitstellen.
+In den folgenden Abschnitten erfahren Sie, wie Sie einen Dienstprinzipal und die Umgebungsvariablen erstellen, durch die die Eigenschaften des Dienstprinzipals bei Bedarf für die Azure-Bibliotheken bereitgestellt werden.
 
 Jeder Entwickler in Ihrer Organisation sollte diese Schritte einzeln ausführen.
 
-### <a name="create-a-service-principal-for-development"></a>Erstellen eines Dienstprinzipals für die Entwicklung
+### <a name="create-a-service-principal-and-environment-variables-for-development"></a>Erstellen eines Dienstprinzipals und von Umgebungsvariablen für die Entwicklung
 
 1. Öffnen Sie ein Terminal oder eine Eingabeaufforderung, in dem bzw. der Sie sich bei der Azure CLI angemeldet haben (`az login`).
 
@@ -91,49 +91,37 @@ Jeder Entwickler in Ihrer Organisation sollte diese Schritte einzeln ausführen.
     az ad sp create-for-rbac --name localtest-sp-rbac --skip-assignment --sdk-auth > local-sp.json
     ```
 
-    - Wenn Sie in einer Organisation sind, verfügen Sie im Abonnement möglicherweise nicht über die Berechtigung zum Ausführen dieses Befehls. Wenden Sie sich in diesem Fall an die Besitzer des Abonnements, damit sie den Dienstprinzipal für Sie erstellen.
+    Die Ausgabe dieses Befehls wird in der Datei *local-sp.json* gespeichert. Ausführlichere Informationen zu dem Befehl und den zugehörigen Argumenten finden Sie unter [Aktionen des Befehls „create-for-rbac“](#what-the-create-for-rbac-command-does).
 
-    - `ad` bedeutet Azure Active Directory, `sp` bedeutet „Dienstprinzipal“, und `create-for-rbac` bedeutet „Für rollenbasierte Zugriffssteuerung erstellen“, die primäre Form der Autorisierung in Azure. Informationen finden Sie in der Referenz zum Befehl [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac).
+    Wenn Sie in einer Organisation sind, verfügen Sie im Abonnement möglicherweise nicht über die Berechtigung zum Ausführen dieses Befehls. Wenden Sie sich in diesem Fall an die Besitzer des Abonnements, damit sie den Dienstprinzipal für Sie erstellen.
 
-    - Das Argument `--name` sollte innerhalb Ihrer Organisation eindeutig sein und in der Regel den Namen des Entwicklers verwenden, der den Dienstprinzipal verwendet. Wenn Sie dieses Argument weglassen, verwendet die Azure CLI einen generischen Namen der Form `azure-cli-<timestamp>`. Sie können den Dienstprinzipal auch über das Azure-Portal umbenennen, wenn Sie möchten.
+1. Erstellen Sie Umgebungsvariablen, die von den Azure-Bibliotheken benötigt werden. (Vom Objekt `DefaultAzureCredential` der Bibliothek „azure-identity“ wird nach diesen Variablen gesucht.)
 
-    - Das Argument `--skip-assignment` erstellt einen Dienstprinzipal ohne Standardberechtigungen. Anschließend müssen Sie dann dem Dienstprinzipal bestimmte Berechtigungen zuweisen, um lokal ausgeführtem Code den Zugriff auf Ressourcen zu gewähren. Verschiedene Schnellstarts und Tutorials enthalten Details zum Autorisieren eines Dienstprinzipals für die beteiligten Ressourcen.
+    # <a name="cmd"></a>[cmd](#tab/cmd)
 
-    - Der Befehl stellt eine JSON-Ausgabe bereit, die in einer Datei mit dem Namen *local-sp.json* gespeichert wird.
+    ```cmd
+    set AZURE_SUBSCRIPTION_ID="aa11bb33-cc77-dd88-ee99-0918273645aa"
+    set AZURE_TENANT_ID=00112233-7777-8888-9999-aabbccddeeff
+    set AZURE_CLIENT_ID=12345678-1111-2222-3333-1234567890ab
+    set AZURE_CLIENT_SECRET=abcdef00-4444-5555-6666-1234567890ab
+    ```
 
-    - Das Argument `--sdk-auth` generiert eine JSON-Ausgabe ähnlich den folgenden Werten. Ihre ID-Werte und Ihr Geheimnis unterscheiden sich alle davon:
+    # <a name="bash"></a>[Bash](#tab/bash)
 
-        <pre>
-        {
-          "clientId": "12345678-1111-2222-3333-1234567890ab",
-          "clientSecret": "abcdef00-4444-5555-6666-1234567890ab",
-          "subscriptionId": "00000000-0000-0000-0000-000000000000",
-          "tenantId": "00112233-7777-8888-9999-aabbccddeeff",
-          "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
-          "resourceManagerEndpointUrl": "https://management.azure.com/",
-          "activeDirectoryGraphResourceId": "https://graph.windows.net/",
-          "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
-          "galleryEndpointUrl": "https://gallery.azure.com/",
-          "managementEndpointUrl": "https://management.core.windows.net/"
-        }
-        </pre>
+    ```bash
+    AZURE_SUBSCRIPTION_ID="aa11bb33-cc77-dd88-ee99-0918273645aa"
+    AZURE_TENANT_ID="00112233-7777-8888-9999-aabbccddeeff"
+    AZURE_CLIENT_ID="12345678-1111-2222-3333-1234567890ab"
+    AZURE_CLIENT_SECRET="abcdef00-4444-5555-6666-1234567890ab"
+    ```
 
-        Ohne das Argument `--sdk-auth` generiert der Befehl eine einfachere Ausgabe:
+    ---
 
-        <pre>
-        {
-          "appId": "12345678-1111-2222-3333-1234567890ab",
-          "displayName": "localtest-sp-rbac",
-          "name": "http://localtest-sp-rbac",
-          "password": "abcdef00-4444-5555-6666-1234567890ab",
-          "tenant": "00112233-7777-8888-9999-aabbccddeeff"
-        }
-        </pre>
+    Ersetzen Sie die in diesen Befehlen angezeigten Werte durch die Werte Ihres spezifischen Dienstprinzipals.
 
-        In diesem Fall ist `tenant` die Mandanten-ID, `appId` ist die Client-ID, und `password` ist der geheime Clientschlüssel.
+    Um Ihre Abonnement-ID abzurufen, führen Sie den Befehl [`az account show`](/cli/azure/account?view=azure-cli-latest#az-account-show) aus, und suchen Sie in der Ausgabe nach der Eigenschaft `id`.
 
-        > [!IMPORTANT]
-        > Die Ausgabe dieses Befehls ist die einzige Stelle, an der Sie den geheimen Clientschlüssel/das Kennwort sehen können. Sie können das Geheimnis/Kennwort später nicht mehr abrufen. Sie können aber bei Bedarf ein neues Geheimnis hinzufügen, ohne den Dienstprinzipal oder vorhandene Geheimnisse ungültig zu machen.
+    Erstellen Sie zur einfacheren Verwendung eine *.sh*- oder *.cmd*-Datei mit diesen Befehlen, die Sie ausführen können, wenn Sie ein Terminal oder eine Eingabeaufforderung für lokale Tests öffnen. Fügen Sie auch diese Datei nicht zur Quellcodeverwaltung hinzu, damit sie nur in Ihrem Benutzerkonto verbleibt.
 
 1. Schützen Sie die Client-ID und den geheimen Clientschlüssel (und alle Dateien, in denen diese gespeichert sind), sodass sie immer innerhalb eines bestimmten Benutzerkontos auf einer Arbeitsstation verbleiben. Speichern Sie diese Eigenschaften niemals in der Quellcodeverwaltung, oder geben Sie sie für andere Entwickler frei. Falls erforderlich, können Sie den Dienstprinzipal löschen und einen neuen erstellen.
 
@@ -141,35 +129,53 @@ Jeder Entwickler in Ihrer Organisation sollte diese Schritte einzeln ausführen.
 
     Ferner ist ein Dienstprinzipal für die Entwicklung idealerweise nur für nicht produktive Ressourcen autorisiert oder wird innerhalb eines Azure-Abonnements erstellt, das nur zu Entwicklungszwecken verwendet wird. Die Produktionsanwendung würde dann ein gesondertes Abonnement sowie gesonderte Produktionsressourcen verwenden, die nur für die bereitgestellte Cloudanwendung autorisiert sind.
 
-Informationen, wie Sie Dienstprinzipale später noch ändern oder löschen können, finden Sie unter [Verwalten von Dienstprinzipalen](how-to-manage-service-principals.md).
+1. Informationen, wie Sie Dienstprinzipale später noch ändern oder löschen können, finden Sie unter [Verwalten von Dienstprinzipalen](how-to-manage-service-principals.md).
 
-### <a name="create-environment-variables-for-the-azure-sdk"></a>Erstellen von Umgebungsvariablen für das Azure SDK
+#### <a name="what-the-create-for-rbac-command-does"></a>Aktionen des Befehls „create-for-rbac“
 
-# <a name="bash"></a>[Bash](#tab/bash)
+Durch den Befehl `az ad create-for-rbac` wird ein Dienstprinzipal für die rollenbasierte Authentifizierung (RBAC) erstellt.
 
-```bash
-AZURE_SUBSCRIPTION_ID="aa11bb33-cc77-dd88-ee99-0918273645aa"
-AZURE_TENANT_ID="00112233-7777-8888-9999-aabbccddeeff"
-AZURE_CLIENT_ID="12345678-1111-2222-3333-1234567890ab"
-AZURE_CLIENT_SECRET="abcdef00-4444-5555-6666-1234567890ab"
-```
+- `ad` bedeutet Azure Active Directory, `sp` bedeutet „Dienstprinzipal“, und `create-for-rbac` bedeutet „Für rollenbasierte Zugriffssteuerung erstellen“, die primäre Form der Autorisierung in Azure. Informationen finden Sie in der Referenz zum Befehl [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac).
 
-# <a name="cmd"></a>[cmd](#tab/cmd)
+- Das Argument `--name` sollte innerhalb Ihrer Organisation eindeutig sein und in der Regel den Namen des Entwicklers verwenden, der den Dienstprinzipal verwendet. Wenn Sie dieses Argument weglassen, verwendet die Azure CLI einen generischen Namen der Form `azure-cli-<timestamp>`. Sie können den Dienstprinzipal auch über das Azure-Portal umbenennen, wenn Sie möchten.
 
-```cmd
-set AZURE_SUBSCRIPTION_ID="aa11bb33-cc77-dd88-ee99-0918273645aa"
-set AZURE_TENANT_ID=00112233-7777-8888-9999-aabbccddeeff
-set AZURE_CLIENT_ID=12345678-1111-2222-3333-1234567890ab
-set AZURE_CLIENT_SECRET=abcdef00-4444-5555-6666-1234567890ab
-```
+- Das Argument `--skip-assignment` erstellt einen Dienstprinzipal ohne Standardberechtigungen. Anschließend müssen Sie dann dem Dienstprinzipal bestimmte Berechtigungen zuweisen, um lokal ausgeführtem Code den Zugriff auf Ressourcen zu gewähren. Verschiedene Schnellstarts und Tutorials enthalten Details zum Autorisieren eines Dienstprinzipals für die beteiligten Ressourcen.
 
----
+- Durch den Befehl wird eine JSON-Ausgabe bereitgestellt, die in diesem Beispiel in einer Datei namens *local-sp.json* gespeichert wird.
 
-Ersetzen Sie die in diesen Befehlen angezeigten Werte durch die Werte Ihres spezifischen Dienstprinzipals.
+- Das Argument `--sdk-auth` generiert eine JSON-Ausgabe ähnlich den folgenden Werten. Ihre ID-Werte und Ihr Geheimnis unterscheiden sich alle davon:
 
-Um Ihre Abonnement-ID abzurufen, führen Sie den Befehl [`az account show`](/cli/azure/account?view=azure-cli-latest#az-account-show) aus, und suchen Sie in der Ausgabe nach der Eigenschaft `id`.
+    <pre>
+    {
+      "clientId": "12345678-1111-2222-3333-1234567890ab",
+      "clientSecret": "abcdef00-4444-5555-6666-1234567890ab",
+      "subscriptionId": "00000000-0000-0000-0000-000000000000",
+      "tenantId": "00112233-7777-8888-9999-aabbccddeeff",
+      "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
+      "resourceManagerEndpointUrl": "https://management.azure.com/",
+      "activeDirectoryGraphResourceId": "https://graph.windows.net/",
+      "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
+      "galleryEndpointUrl": "https://gallery.azure.com/",
+      "managementEndpointUrl": "https://management.core.windows.net/"
+    }
+    </pre>
 
-Erstellen Sie zur einfacheren Verwendung eine *.sh*- oder *.cmd*-Datei mit diesen Befehlen, die Sie ausführen können, wenn Sie ein Terminal oder eine Eingabeaufforderung für lokale Tests öffnen. Fügen Sie auch diese Datei nicht zur Quellcodeverwaltung hinzu, damit sie nur in Ihrem Benutzerkonto verbleibt.
+    Ohne das Argument `--sdk-auth` generiert der Befehl eine einfachere Ausgabe:
+
+    <pre>
+    {
+      "appId": "12345678-1111-2222-3333-1234567890ab",
+      "displayName": "localtest-sp-rbac",
+      "name": "http://localtest-sp-rbac",
+      "password": "abcdef00-4444-5555-6666-1234567890ab",
+      "tenant": "00112233-7777-8888-9999-aabbccddeeff"
+    }
+    </pre>
+
+    In diesem Fall ist `tenant` die Mandanten-ID, `appId` ist die Client-ID, und `password` ist der geheime Clientschlüssel.
+
+    > [!IMPORTANT]
+    > Die Ausgabe dieses Befehls ist die einzige Stelle, an der Sie den geheimen Clientschlüssel/das Kennwort sehen können. Sie können das Geheimnis/Kennwort später nicht mehr abrufen. Sie können aber bei Bedarf ein neues Geheimnis hinzufügen, ohne den Dienstprinzipal oder vorhandene Geheimnisse ungültig zu machen.
 
 ## <a name="use-python-virtual-environments"></a>Verwenden virtueller Python-Umgebungen
 
@@ -181,13 +187,13 @@ Wir empfehlen, dass Sie für jedes Projekt immer eine *virtuelle Umgebung* mithi
 
 1. Erstellen der virtuellen Umgebung:
 
-    # <a name="bash"></a>[Bash](#tab/bash)
+    # <a name="cmd"></a>[cmd](#tab/cmd)
 
     ```bash
     python -m venv .venv
     ```
 
-    # <a name="cmd"></a>[cmd](#tab/cmd)
+    # <a name="bash"></a>[Bash](#tab/bash)
 
     ```bash
     python -m venv .venv
@@ -199,16 +205,16 @@ Wir empfehlen, dass Sie für jedes Projekt immer eine *virtuelle Umgebung* mithi
 
 1. Aktivieren der virtuellen Umgebung:
 
-    # <a name="bash"></a>[Bash](#tab/bash)
-
-    ```bash
-    source .venv/scripts/activate
-    ```
-
     # <a name="cmd"></a>[cmd](#tab/cmd)
 
     ```bash
     .venv\scripts\activate
+    ```
+
+    # <a name="bash"></a>[Bash](#tab/bash)
+
+    ```bash
+    source .venv/scripts/activate
     ```
 
     ---
@@ -223,7 +229,7 @@ Die globale Umgebung ist der Ort, an dem Sie Toolpakete installieren sollten, di
 
 Wir empfehlen, sich anzugewöhnen, bei jedem Start eines Projekts ein Quellcodeverwaltungs-Repository zu erstellen. Wenn Sie Git installiert haben, führen Sie einfach den folgenden Befehl aus:
 
-```bash
+```cmd
 git init
 ```
 
@@ -239,7 +245,7 @@ Sie können auch jedes andere Quellcodeverwaltungs-Tool Ihrer Wahl verwenden. Gi
 
 ## <a name="next-step"></a>Nächster Schritt
 
-Sehen wir uns nun mit Ihrer eingerichteten lokalen Entwicklungsumgebung das Azure SDK genauer an.
+Sehen Sie sich nach der Einrichtung Ihrer lokalen Entwicklungsumgebung die gängigen Verwendungsmuster für die Azure-Bibliotheken an:
 
 > [!div class="nextstepaction"]
-> [Verwenden des Azure SDK >>>](azure-sdk-overview.md)
+> [Azure-Bibliotheken für Python: Verwendungsmuster](azure-sdk-library-usage-patterns.md)

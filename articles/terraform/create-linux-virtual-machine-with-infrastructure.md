@@ -1,19 +1,19 @@
 ---
-title: 'Schnellstart: Erstellen einer Linux-VM mit Infrastruktur in Azure mit Terraform'
+title: 'Tutorial: Erstellen eines virtuellen Linux-Computers mit Infrastruktur in Azure unter Verwendung von Terraform'
 description: Es wird beschrieben, wie Sie mit Terraform eine vollständige Linux-VM-Umgebung in Azure erstellen und verwalten.
 keywords: Azure DevOps Terraform Linux VM virtueller Computer
-ms.topic: quickstart
-ms.date: 05/11/2020
-ms.openlocfilehash: 3485e899deaf84a63a2cf2d8085ac34b43f6fca9
-ms.sourcegitcommit: aa417af8b5f00cbc056666e481250ef45c661d52
+ms.topic: tutorial
+ms.date: 05/31/2020
+ms.openlocfilehash: 40dfe97d2311e251e23468b5d7a6eede778d7b8e
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83153711"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329438"
 ---
-# <a name="quickstart-create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>Schnellstart: Erstellen einer Linux-VM mit Infrastruktur in Azure mit Terraform
+# <a name="tutorial--create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>Tutorial: Erstellen einer Linux-VM mit Infrastruktur in Azure mit Terraform
 
-Mit Terraform können Sie vollständige Infrastrukturbereitstellungen in Azure definieren und erstellen. Dazu lassen sich Terraform-Vorlagen in einem für Menschen lesbaren Format erstellen, die Azure-Ressourcen konsistent und reproduzierbar erstellen und konfigurieren. In diesem Artikel wird gezeigt, wie Sie eine vollständige Linux-Umgebung und die unterstützenden Ressourcen mit Terraform erstellen. Hier erfahren Sie auch, wie Sie [Terraform installieren und konfigurieren](install-configure.md).
+Mit Terraform können Sie vollständige Infrastrukturbereitstellungen in Azure definieren und erstellen. Dazu lassen sich Terraform-Vorlagen in einem für Menschen lesbaren Format erstellen, die Azure-Ressourcen konsistent und reproduzierbar erstellen und konfigurieren. In diesem Artikel wird gezeigt, wie Sie eine vollständige Linux-Umgebung und die unterstützenden Ressourcen mit Terraform erstellen. Hier erfahren Sie auch, wie Sie [Terraform installieren und konfigurieren](getting-started-cloud-shell.md).
 
 [!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
@@ -25,22 +25,17 @@ Mit Terraform können Sie vollständige Infrastrukturbereitstellungen in Azure d
 
 Lassen Sie uns alle Abschnitte einer Terraform-Vorlage durchgehen. Sie können auch die Vollversion der [Terraform-Vorlage](#complete-terraform-script) sehen, die Sie kopieren und einfügen können.
 
-Der `provider`-Abschnitt weist Terraform an, einen Azure-Anbieter zu verwenden. Informationen zum Abrufen der Werte für `subscription_id`, `client_id`, `client_secret` und `tenant_id` finden Sie unter [Installieren und Konfigurieren von Terraform](install-configure.md). 
+Der `provider`-Abschnitt weist Terraform an, einen Azure-Anbieter zu verwenden. Informationen zum Abrufen der Werte für `subscription_id`, `client_id`, `client_secret` und `tenant_id` finden Sie unter [Installieren und Konfigurieren von Terraform](getting-started-cloud-shell.md).
 
 > [!TIP]
 > Wenn Sie Umgebungsvariablen für die Werte erstellen oder die [Azure Cloud Shell Bash-Funktionalität](/azure/cloud-shell/overview) verwenden, müssen Sie die Variablendeklarationen in diesem Abschnitt nicht einbeziehen.
 
 ```hcl
 provider "azurerm" {
-    # The "feature" block is required for AzureRM provider 2.x. 
+    # The "feature" block is required for AzureRM provider 2.x.
     # If you're using version 1.x, the "features" block is not allowed.
     version = "~>2.0"
     features {}
-    
-    subscription_id = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    client_id       = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    client_secret   = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    tenant_id       = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 }
 ```
 
@@ -83,10 +78,9 @@ resource "azurerm_subnet" "myterraformsubnet" {
     name                 = "mySubnet"
     resource_group_name  = azurerm_resource_group.myterraformgroup.name
     virtual_network_name = azurerm_virtual_network.myterraformnetwork.name
-    address_prefix       = "10.0.2.0/24"
+    address_prefixes       = ["10.0.2.0/24"]
 }
 ```
-
 
 ## <a name="create-public-ip-address"></a>Erstellen einer öffentlichen IP-Adresse
 
@@ -163,7 +157,6 @@ resource "azurerm_network_interface_security_group_association" "example" {
 }
 ```
 
-
 ## <a name="create-storage-account-for-diagnostics"></a>Erstellen eines Speicherkontos für Diagnosezwecke
 
 Um die Startdiagnose für eine VM zu speichern, benötigen Sie ein Speicherkonto. Diese Startdiagnose kann Sie bei der Problembehandlung und Überwachung des Status Ihrer VM unterstützen. Das Speicherkonto, dass Sie erstellen, dient nur der Speicherung der Startdiagnosedaten. Da jedes Speicherkonto einen eindeutigen Namen haben muss, wird im nächsten Abschnitt zufälliger Text erzeugt:
@@ -203,6 +196,13 @@ Der letzte Schritt besteht im Erstellen eines virtuellen Computers und dem Verwe
  SSH-Schlüsseldaten finden Sie im Abschnitt `ssh_keys`. Geben Sie im Feld `key_data` einen öffentlichen SSH-Schlüssel an.
 
 ```hcl
+resource "tls_private_key" "example_ssh" {
+  algorithm = "RSA"
+  rsa_bits = 4096
+}
+
+output "tls_private_key" { value = "tls_private_key.example_ssh.private_key_pem" }
+
 resource "azurerm_linux_virtual_machine" "myterraformvm" {
     name                  = "myVM"
     location              = "eastus"
@@ -229,7 +229,7 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
         
     admin_ssh_key {
         username       = "azureuser"
-        public_key     = file("/home/azureuser/.ssh/authorized_keys")
+        public_key     = tls_private_key.example_ssh.public_key_openssh
     }
 
     boot_diagnostics {
@@ -253,11 +253,6 @@ provider "azurerm" {
     # If you're using version 1.x, the "features" block is not allowed.
     version = "~>2.0"
     features {}
-
-    subscription_id = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    client_id       = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    client_secret   = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    tenant_id       = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 }
 
 # Create a resource group if it doesn't exist
@@ -287,7 +282,7 @@ resource "azurerm_subnet" "myterraformsubnet" {
     name                 = "mySubnet"
     resource_group_name  = azurerm_resource_group.myterraformgroup.name
     virtual_network_name = azurerm_virtual_network.myterraformnetwork.name
-    address_prefix       = "10.0.1.0/24"
+    address_prefixes       = ["10.0.1.0/24"]
 }
 
 # Create public IPs
@@ -372,6 +367,13 @@ resource "azurerm_storage_account" "mystorageaccount" {
     }
 }
 
+# Create (and display) an SSH key
+resource "tls_private_key" "example_ssh" {
+  algorithm = "RSA"
+  rsa_bits = 4096
+}
+output "tls_private_key" { value = "${tls_private_key.example_ssh.private_key_pem}" }
+
 # Create virtual machine
 resource "azurerm_linux_virtual_machine" "myterraformvm" {
     name                  = "myVM"
@@ -399,7 +401,7 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
         
     admin_ssh_key {
         username       = "azureuser"
-        public_key     = file("/home/azureuser/.ssh/authorized_keys")
+        public_key     = tls_private_key.example_ssh.public_key_openssh
     }
 
     boot_diagnostics {
@@ -411,10 +413,6 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
     }
 }
 ```
-
-**Hinweise:**
-
-- Im Hinblick auf den Block `admin_ssh_key` erfordert der Azure-VM-Agent, dass SSH-Schlüssel in den folgenden Pfad geschrieben werden: `/home/{username}/.ssh/authorized_keys`. Bei der Ausführung dieses Beispiels unter Windows müssen Sie unter Umständen sicherstellen, dass diese Verzeichnisstruktur vorhanden ist. Weitere Informationen zum Block `admin_ssh_key` finden Sie in der [Dokumentation zu „azurerm_linux_virtual_machine“ auf Terraform.io](https://www.terraform.io/docs/providers/azurerm/r/linux_virtual_machine.html).
 
 ## <a name="build-and-deploy-the-infrastructure"></a>Erstellen und Bereitstellen der Infrastruktur
 

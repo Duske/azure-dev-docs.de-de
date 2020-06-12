@@ -3,12 +3,12 @@ title: Azure-Entwicklungsablauf
 description: Eine Übersicht über den Cloudentwicklungszyklus in Azure, der die Bereitstellung, Codierung, Tests, Implementierung und Verwaltung umfasst.
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 577b813e2b4ccd8d2cae3d7999d9bb959f88adc2
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: d958659074a965b28d9898783f7810572e12248f
+ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83404963"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84146168"
 ---
 # <a name="the-azure-development-flow-provision-code-test-deploy-and-manage"></a>Der Azure-Entwicklungsablauf: Bereitstellung, Codierung, Tests, Implementierung und Verwaltung
 
@@ -20,11 +20,11 @@ Nachdem Sie nun das Azure-Modell der Dienste und Ressourcen verstanden haben, k�
 
 Wie im [vorherigen Artikel dieser Reihe](cloud-development-provisioning.md) beschrieben, besteht der erste Schritt bei der Entwicklung einer beliebigen Anwendung darin, die Ressourcen, die die Zielumgebung für Ihre Anwendung bilden, bereitzustellen und zu konfigurieren.
 
-Die Bereitstellung beginnt mit dem Erstellen einer Ressourcengruppe in einer geeigneten Azure-Region. Sie können eine Ressourcengruppe über das Azure-Portal, über die Azure CLI oder mit einem benutzerdefinierten Skript erstellen, das das Azure SDK (oder die REST-API) verwendet.
+Die Bereitstellung beginnt mit dem Erstellen einer Ressourcengruppe in einer geeigneten Azure-Region. Sie können eine Ressourcengruppe über das Azure-Portal, über die Azure-Befehlszeilenschnittstelle oder mit einem benutzerdefinierten Skript erstellen, das die Azure-Bibliotheken (oder die REST-API) verwendet.
 
-Innerhalb dieser Ressourcengruppe stellen Sie dann die einzelnen benötigten Ressourcen bereit und konfigurieren sie, indem Sie das Portal, die CLI oder das Azure SDK verwenden. Die Konfiguration umfasst das Festlegen von Zugriffsrichtlinien, die steuern, welche Identitäten (Dienstprinzipale und/oder Anwendungs-IDs) auf diese Ressourcen zugreifen können.
+Innerhalb dieser Ressourcengruppe können Sie dann die einzelnen benötigten Ressourcen über das Portal, über die Befehlszeilenschnittstelle oder über die Azure-Bibliotheken bereitstellen und konfigurieren. Die Konfiguration umfasst das Festlegen von Zugriffsrichtlinien, die steuern, welche Identitäten (Dienstprinzipale und/oder Anwendungs-IDs) auf diese Ressourcen zugreifen können.
 
-Für die meisten Entwicklungsszenarien erstellen Sie wahrscheinlich Bereitstellungsskripts mit der Azure CLI und/oder Python-Code unter Verwendung des Azure SDK. Solche Skripts beschreiben die Gesamtheit des Ressourcenbedarfs Ihrer Anwendung und ermöglichen es Ihnen, diese Ressourcen in verschiedenen Entwicklungs-, Test- und Produktionsumgebungen einfach erneut zu erstellen (im Gegensatz zur manuellen Durchführung vieler wiederholter Schritte im Azure-Portal). Mit solchen Skripts wird außerdem die Bereitstellung einer Umgebung in einer anderen Region oder die Verwendung anderer Ressourcengruppen vereinfacht. Sie können diese Skripts auch in Quellcodeverwaltungsrepositorys verwalten, sodass Sie über einen vollständigen Überwachungs- und Änderungsverlauf verfügen.
+Für die meisten Entwicklungsszenarien erstellen Sie wahrscheinlich Bereitstellungsskripts mit der Azure-Befehlszeilenschnittstelle und/oder Python-Code unter Verwendung der Azure-Bibliotheken. Solche Skripts beschreiben die Gesamtheit des Ressourcenbedarfs Ihrer Anwendung und ermöglichen es Ihnen, diese Ressourcen in verschiedenen Entwicklungs-, Test- und Produktionsumgebungen einfach erneut zu erstellen (im Gegensatz zur manuellen Durchführung vieler wiederholter Schritte im Azure-Portal). Mit solchen Skripts wird außerdem die Bereitstellung einer Umgebung in einer anderen Region oder die Verwendung anderer Ressourcengruppen vereinfacht. Sie können diese Skripts auch in Quellcodeverwaltungsrepositorys verwalten, sodass Sie über einen vollständigen Überwachungs- und Änderungsverlauf verfügen.
 
 ## <a name="step-2-write-your-app-code-to-use-resources"></a>Schritt 2: Schreiben des App-Codes für die Verwendung von Ressourcen
 
@@ -32,9 +32,9 @@ Nachdem Sie die Ressourcen bereitgestellt haben, die Sie für Ihre Anwendung ben
 
 Beispielsweise haben Sie im Bereitstellungsschritt möglicherweise ein Azure-Speicherkonto erstellt, einen Blobcontainer in diesem Konto angelegt und Zugriffsrichtlinien für die Anwendung für diesen Container festgelegt. Aus Ihrem Code können Sie sich jetzt mit diesem Speicherkonto authentifizieren und dann Blobs in diesem Container erstellen, aktualisieren oder löschen. (Dieser Vorgang wird unter [Beispiel: Verwenden von Azure Storage](azure-sdk-example-storage.md) veranschaulicht.) Sie haben analog dazu möglicherweise auch eine Datenbank mit einem Schema und entsprechenden Berechtigungen bereitgestellt, damit der Anwendungscode eine Verbindung mit der Datenbank herstellen und die üblichen CRUD-Vorgänge (Erstellen, Lesen, Aktualisieren und Löschen) ausführen kann.
 
-Als Python-Entwickler schreiben Sie Ihren Anwendungscode in der Regel in Python mithilfe des Azure SDK für Python. Allerdings können alle unabhängigen Teile einer Cloudanwendung in einer beliebigen unterstützten Sprache geschrieben werden. Wenn Sie in einem Team mit einer Vielzahl von Sprachkenntnissen arbeiten, ist es beispielsweise durchaus möglich, dass einige Teile der Anwendung in Python geschrieben werden, einige in JavaScript, einige in Java und wieder andere in C#.
+Als Python-Entwickler schreiben Sie Ihren Anwendungscode in der Regel in Python unter Verwendung der Azure-Bibliotheken für Python. Allerdings können alle unabhängigen Teile einer Cloudanwendung in einer beliebigen unterstützten Sprache geschrieben werden. Wenn Sie in einem Team mit einer Vielzahl von Sprachkenntnissen arbeiten, ist es beispielsweise durchaus möglich, dass einige Teile der Anwendung in Python geschrieben werden, einige in JavaScript, einige in Java und wieder andere in C#.
 
-Beachten Sie, dass der Anwendungscode das Azure SDK bei Bedarf zum Ausführen von Bereitstellungs- und Verwaltungsvorgängen verwenden kann. Die Bereitstellung von Skripts kann ebenfalls das SDK zum Initialisieren von Ressourcen mit bestimmten Daten oder das Ausführen von Aufgaben für die Verwaltung von Cloudressourcen verwenden, auch wenn diese Skripts lokal ausgeführt werden.
+Die Azure-Bibliotheken können von Anwendungscode nach Bedarf zum Ausführen von Bereitstellungs- und Verwaltungsvorgängen verwendet werden. Analog dazu können die Bibliotheken von Bereitstellungsskripts verwendet werden, um Ressourcen mit bestimmten Daten zu initialisieren oder Aufgaben für die Verwaltung von Cloudressourcen auszuführen. Das gilt auch, wenn diese Skripts lokal ausgeführt werden.
 
 ## <a name="step-3-test-and-debug-your-app-code-locally"></a>Schritt 3: Lokales Testen und Debuggen des App-Codes
 
@@ -54,7 +54,7 @@ Nachdem der Code in der Cloud bereitgestellt wurde, wird er jedoch unabhängig v
 
 ## <a name="step-5-manage-monitor-and-revise"></a>Schritt 5: Verwalten, überwachen und überarbeiten
 
-Nach der Bereitstellung sollten Sie sicherstellen, dass die Anwendung wie gewünscht funktioniert, auf Kundenanforderungen reagiert und Ressourcen effizient (und zu den niedrigsten Kosten) nutzt. Sie können verwalten, wie Azure Ihre Bereitstellung nach Bedarf automatisch skaliert, und Sie können Leistungsdaten über das Azure-Portal, die Azure CLI oder benutzerdefinierte Skripts erfassen und überwachen, die mit dem Azure SDK geschrieben wurden. Sie können dann Anpassungen an Ihren bereitgestellten Ressourcen in Echtzeit vornehmen, um die Leistung zu optimieren, indem Sie die gleichen Tools verwenden.
+Nach der Bereitstellung sollten Sie sicherstellen, dass die Anwendung wie gewünscht funktioniert, auf Kundenanforderungen reagiert und Ressourcen effizient (und zu den niedrigsten Kosten) nutzt. Sie können verwalten, wie Azure Ihre Bereitstellung nach Bedarf automatisch skaliert, und Sie können Leistungsdaten über das Azure-Portal, die Azure-Befehlszeilenschnittstelle oder benutzerdefinierte Skripts erfassen und überwachen, die mit den Azure-Bibliotheken geschrieben wurden. Sie können dann Anpassungen an Ihren bereitgestellten Ressourcen in Echtzeit vornehmen, um die Leistung zu optimieren, indem Sie die gleichen Tools verwenden.
 
 Die Überwachung gibt Aufschluss darüber, wie Sie Ihre Cloudanwendung ggf. neu strukturieren können. Beispielsweise können Sie feststellen, dass bestimmte Teile einer Web-App (z. B. eine Gruppe von API-Endpunkten) nur gelegentlich im Vergleich zu den primären Teilen verwendet werden. Sie können diese APIs dann separat als serverlose Azure Functions-Elemente bereitstellen, wobei sie über eigene unterstützende Computeressourcen verfügen, die nicht mit der Hauptanwendung konkurrieren, aber nur Centbeträge pro Monat kosten. Ihre Hauptanwendung kann dann auf eine größere Anzahl von Kunden reagieren, ohne dass Sie sie in einen höheren Kostentarif hochskalieren müssen.
 
@@ -62,7 +62,7 @@ Die Überwachung gibt Aufschluss darüber, wie Sie Ihre Cloudanwendung ggf. neu 
 
 Sie sind jetzt mit der grundlegenden Struktur von Azure und dem allgemeinen Entwicklungsablauf vertraut: Bereitstellen von Ressourcen, Schreiben und Testen von Code, Bereitstellen des Codes in Azure und Überwachen und Verwalten dieser Ressourcen.
 
-Der nächste Schritt besteht darin, die Arbeitsstation vollständig so zu konfigurieren, dass Sie mit diesem Ablauf funktioniert. Danach können Sie mit dem Azure SDK loslegen!
+Der nächste Schritt besteht darin, die Arbeitsstation vollständig zu konfigurieren, damit sie für diesen Ablauf verwendet werden kann. Danach können Sie sich mit den Azure-Bibliotheken befassen.
 
 > [!div class="nextstepaction"]
 > [Konfigurieren der lokalen Entwicklungsumgebung >>>](configure-local-development-environment.md)

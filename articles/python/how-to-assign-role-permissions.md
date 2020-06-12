@@ -3,12 +3,12 @@ title: Zuweisen von Rollenberechtigungen zu einer App-Identität oder einem Dien
 description: Erteilen von Berechtigungen für einen Dienstprinzipal oder eine App-Identität mithilfe der Azure CLI
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 28aa6b41d84c31eb8b6e6332c08c3a464c6cb04e
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: 4eedf982d16f9991bd884d6b575f0f8d8ee97bd2
+ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83404903"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84256435"
 ---
 # <a name="how-to-assign-role-permissions-to-an-app-identity-or-service-principal"></a>Informationen zum Zuweisen von Rollenberechtigungen zu einer App-Identität oder einem Dienstprinzipal
 
@@ -104,12 +104,12 @@ Der umfangreichste (am wenigsten spezifische) Bereich ist `/subscriptions/<subsc
 
 ### <a name="examples"></a>Beispiele
 
-In den folgenden Beispielen werden die folgenden Bedingungen angenommen (siehe [Beispiel: Verwenden des Azure SDK mit Azure Storage](azure-sdk-example-storage.md)):
+In den folgenden Beispielen werden die folgenden Bedingungen angenommen (siehe [Beispiel: Verwenden der Azure-Bibliotheken mit Azure Storage](azure-sdk-example-storage.md)):
 
 - Ihre Azure Abonnement-ID ist in einer Umgebungsvariablen mit dem Namen `AZURE_SUBSCRIPTION_ID` enthalten.
 - Die Client-ID des Dienstprinzipals, dem Sie eine Rolle zuweisen möchten, ist in einer Umgebungsvariablen namens `AZURE_CLIENT_ID` enthalten.
-- Im Abonnement verfügen Sie über eine Ressourcengruppe mit dem Namen „PythonSDKExample-Storage-rg“.
-- Die Ressourcengruppe enthält ein Azure Storage-Konto mit dem Namen „pythonsdkstorage-12345“.
+- Im Abonnement verfügen Sie über eine Ressourcengruppe mit dem Namen „PythonAzureExample-Storage-rg“.
+- Die Ressourcengruppe enthält ein Azure Storage-Konto mit dem Namen „pythonazurestorage-12345“.
 - Sie haben einen Blobcontainer mit dem Namen „blob-container-01“ in diesem Speicherkonto.
 - Sie möchten dem Dienstprinzipal die Rolle „Mitwirkender an Storage-Blobdaten“ zuweisen.
 
@@ -118,89 +118,81 @@ In den folgenden Beispielen werden die folgenden Bedingungen angenommen (siehe [
 
 #### <a name="grant-permissions-for-the-specific-container-only"></a>Erteilen von Berechtigungen nur für den spezifischen Container
 
-# <a name="bash"></a>[Bash](#tab/bash)
-
-```azurecli
-az role assignment create --assignee $AZURE_CLIENT_ID \
-    --role "Storage Blob Data Contributor" \
-    --scope "/subscriptions/$AZURE_SUBSCRIPTION_ID/resourceGroups/PythonSDKExample-Storage-rg/providers/Microsoft.Storage/storageAccounts/pythonsdkstorage12345/blobServices/default/containers/blob-container-01"
-```
-
 # <a name="cmd"></a>[cmd](#tab/cmd)
 
 ```azurecli
 az role assignment create --assignee %AZURE_CLIENT_ID% ^
     --role "Storage Blob Data Contributor" ^
-    --scope "/subscriptions/%AZURE_SUBSCRIPTION_ID%/resourceGroups/PythonSDKExample-Storage-rg/providers/Microsoft.Storage/storageAccounts/pythonsdkstorage12345/blobServices/default/containers/blob-container-01"
+    --scope "/subscriptions/%AZURE_SUBSCRIPTION_ID%/resourceGroups/PythonAzureExample-Storage-rg/providers/Microsoft.Storage/storageAccounts/pythonazurestorage12345/blobServices/default/containers/blob-container-01"
+```
+
+# <a name="bash"></a>[Bash](#tab/bash)
+
+```azurecli
+az role assignment create --assignee $AZURE_CLIENT_ID \
+    --role "Storage Blob Data Contributor" \
+    --scope "/subscriptions/$AZURE_SUBSCRIPTION_ID/resourceGroups/PythonAzureExample-Storage-rg/providers/Microsoft.Storage/storageAccounts/pythonazurestorage12345/blobServices/default/containers/blob-container-01"
 ```
 
 ---
 
 #### <a name="grant-permissions-for-all-blob-containers-in-the-storage-account"></a>Erteilen von Berechtigungen für alle Blobcontainer im Speicherkonto
 
-# <a name="bash"></a>[Bash](#tab/bash)
-
-```azurecli
-az role assignment create --assignee $AZURE_CLIENT_ID \
-    --role "Storage Blob Data Contributor" \
-    --scope "/subscriptions/$AZURE_SUBSCRIPTION_ID/resourceGroups/PythonSDKExample-Storage-rg/providers/Microsoft.Storage/storageAccounts/pythonsdkstorage12345"
-```
-
 # <a name="cmd"></a>[cmd](#tab/cmd)
 
 ```azurecli
 az role assignment create --assignee %AZURE_CLIENT_ID% ^
     --role "Storage Blob Data Contributor" ^
-    --scope "/subscriptions/%AZURE_SUBSCRIPTION_ID%/resourceGroups/PythonSDKExample-Storage-rg/providers/Microsoft.Storage/storageAccounts/pythonsdkstorage12345"
+    --scope "/subscriptions/%AZURE_SUBSCRIPTION_ID%/resourceGroups/PythonAzureExample-Storage-rg/providers/Microsoft.Storage/storageAccounts/pythonazurestorage12345"
+```
+
+# <a name="bash"></a>[Bash](#tab/bash)
+
+```azurecli
+az role assignment create --assignee $AZURE_CLIENT_ID \
+    --role "Storage Blob Data Contributor" \
+    --scope "/subscriptions/$AZURE_SUBSCRIPTION_ID/resourceGroups/PythonAzureExample-Storage-rg/providers/Microsoft.Storage/storageAccounts/pythonazurestorage12345"
 ```
 
 ---
 
 #### <a name="grant-permissions-for-all-blob-containers-in-the-resource-group"></a>Erteilen von Berechtigungen für alle Blobcontainer in der Ressourcengruppe
 
-# <a name="bash"></a>[Bash](#tab/bash)
-
-```azurecli
-az role assignment create --assignee $AZURE_CLIENT_ID \
-    --role "Storage Blob Data Contributor" \
-    --scope "/subscriptions/$AZURE_SUBSCRIPTION_ID/resourceGroups/PythonSDKExample-Storage-rg"
-```
-
-Alternativ können Sie die Ressourcengruppe einfach mit dem `--resource-group`-Parameter angeben:
-
-```azurecli
-az role assignment create --assignee $AZURE_CLIENT_ID \
-    --role "Storage Blob Data Contributor" \
-    --resource-group "PythonSDKExample-Storage-rg"
-```
-
 # <a name="cmd"></a>[cmd](#tab/cmd)
 
 ```azurecli
 az role assignment create --assignee %AZURE_CLIENT_ID% ^
     --role "Storage Blob Data Contributor" ^
-    --scope "/subscriptions/%AZURE_SUBSCRIPTION_ID%/resourceGroups/PythonSDKExample-Storage-rg"
+    --scope "/subscriptions/%AZURE_SUBSCRIPTION_ID%/resourceGroups/PythonAzureExample-Storage-rg"
 ```
 
-Alternativ können Sie die Ressourcengruppe einfach mit dem `--resource-group`-Parameter angeben:
+Alternativ kann die Ressourcengruppe auch mithilfe des Parameters `--resource-group` angegeben werden:
 
 ```azurecli
 az role assignment create --assignee %AZURE_CLIENT_ID% ^
     --role "Storage Blob Data Contributor" ^
-    --resource-group "PythonSDKExample-Storage-rg"
+    --resource-group "PythonAzureExample-Storage-rg"
 ```
-
----
-
-#### <a name="grant-permissions-to-all-blob-containers-in-the-subscription"></a>Erteilen von Berechtigungen für alle Blobcontainer im Abonnement
 
 # <a name="bash"></a>[Bash](#tab/bash)
 
 ```azurecli
 az role assignment create --assignee $AZURE_CLIENT_ID \
     --role "Storage Blob Data Contributor" \
-    --scope "/subscriptions/$AZURE_SUBSCRIPTION_ID"
+    --scope "/subscriptions/$AZURE_SUBSCRIPTION_ID/resourceGroups/PythonAzureExample-Storage-rg"
 ```
+
+Alternativ kann die Ressourcengruppe auch mithilfe des Parameters `--resource-group` angegeben werden:
+
+```azurecli
+az role assignment create --assignee $AZURE_CLIENT_ID \
+    --role "Storage Blob Data Contributor" \
+    --resource-group "PythonAzureExample-Storage-rg"
+```
+
+---
+
+#### <a name="grant-permissions-to-all-blob-containers-in-the-subscription"></a>Erteilen von Berechtigungen für alle Blobcontainer im Abonnement
 
 # <a name="cmd"></a>[cmd](#tab/cmd)
 
@@ -208,6 +200,14 @@ az role assignment create --assignee $AZURE_CLIENT_ID \
 az role assignment create --assignee %AZURE_CLIENT_ID% ^
     --role "Storage Blob Data Contributor" ^
     --scope "/subscriptions/%AZURE_SUBSCRIPTION_ID%"
+```
+
+# <a name="bash"></a>[Bash](#tab/bash)
+
+```azurecli
+az role assignment create --assignee $AZURE_CLIENT_ID \
+    --role "Storage Blob Data Contributor" \
+    --scope "/subscriptions/$AZURE_SUBSCRIPTION_ID"
 ```
 
 ---

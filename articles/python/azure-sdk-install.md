@@ -1,55 +1,69 @@
 ---
-title: Installieren des Azure SDK für Python-Bibliotheken
+title: Installieren von Azure SDK-Bibliothekspaketen für Python
 description: Es wird beschrieben, wie Sie das Azure SDK für Python-Bibliotheken mit pip installieren, deinstallieren und überprüfen. Der Artikel enthält Details zur Installation bestimmter Versionen und Vorschaupakete.
-ms.date: 05/13/2020
+ms.date: 05/26/2020
 ms.topic: conceptual
-ms.openlocfilehash: 302d17211480f9c8793d7be1de20a6ab5dec3c95
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: f50de734ab1d007c9e5efac8cd6559a2c03d83f5
+ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83403673"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84256255"
 ---
-# <a name="install-azure-sdk-for-python-libraries"></a>Installieren des Azure SDK für Python-Bibliotheken
+# <a name="how-to-install-azure-library-packages-for-python"></a>Installieren von Azure-Bibliothekspaketen für Python
 
-Das Azure SDK für Python bietet eine API, über die Sie von Python-Code aus mit Azure interagieren können. Die Namen aller aktuellen Bibliotheken finden Sie auf der [Seite mit dem Index zum Azure SDK für Python](https://azure.github.io/azure-sdk/releases/latest/all/python.html).
+Das Azure SDK für Python besteht ausschließlich aus vielen einzelnen Bibliotheken. Diese sind auf der [Indexseite des Azure SDK für Python](https://azure.github.io/azure-sdk/releases/latest/all/python.html) aufgeführt. Die spezifischen Bibliothekspakete, die Sie für ein Projekt benötigen, werden mithilfe von `pip install` installiert.
 
-Bibliotheken, deren Namen mit `azure-mgmt` beginnen, gehören zum Bereich *Verwaltung*. Sie verwenden sie zum Bereitstellen und Verwalten von Azure-Ressourcen, wie Sie dies auch im [Azure-Portal](https://portal.azure.com) oder mit der [Azure CLI](/cli/azure/install-azure-cli) durchführen. Sie nutzen beispielsweise die Bibliothek `azure-mgmt-storage`, um Azure Storage-Ressourcen bereitzustellen und zu verwalten.
-
-Alle anderen Bibliotheken im SDK sind *Clientbibliotheken*, die Sie im Anwendungscode verwenden, um bereits bereitgestellte Ressourcen zu nutzen. Für die Arbeit mit Azure Storage-Blobs im Anwendungscode verwenden Sie beispielsweise die Bibliothek `azure-storage-blob`.
+Mit diesen Bibliotheken können Sie Ressourcen für Azure-Dienste bereitstellen und verwalten (unter Verwendung der Verwaltungsbibliotheken, deren Name `-mgmt` enthält) und von App-Code aus eine Verbindung mit diesen Ressourcen herstellen (unter Verwendung der Clientbibliotheken).
 
 ## <a name="install-the-latest-version-of-a-library"></a>Installieren der aktuellen Version einer Bibliothek
 
-```bash
+```cmd
 pip install azure-storage-blob
 ```
 
-`pip install` installiert die neueste Version einer Bibliothek in Ihrer aktuellen Python-Umgebung.
+```cmd
+pip install azure-mgmt-storage
+```
 
-Auf Linux-Systemen wird `sudo pip install` vom SDK nicht unterstützt, um eine Bibliothek für alle Benutzer zu installieren. Jeder Benutzer muss `pip install` separat verwenden.
+Von `pip install` wird die neueste Version einer Bibliothek in Ihrer aktuellen Python-Umgebung abgerufen.
+
+Bei Linux-Systemen muss für jeden Benutzer separat eine Bibliothek installiert werden. Das Installieren von Bibliotheken für alle Benutzer mit `sudo pip install` wird nicht unterstützt.
 
 ## <a name="install-specific-library-versions"></a>Installieren bestimmter Bibliotheksversionen
 
-```bash
+```cmd
 pip install azure-storage-blob==12.0.0
 ```
 
-Geben Sie die Version in der Befehlszeile mit `pip install` an.
+```cmd
+pip install azure-mgmt-storage==10.0.0
+```
+
+Geben Sie in der Befehlszeile mithilfe von `pip install` die gewünschte Version an.
 
 ## <a name="install-preview-packages"></a>Installieren von Vorschaupaketen
 
-```bash
+```cmd
 pip install --pre azure-storage-blob
+```
+
+```cmd
+pip install --pre azure-mgmt-storage
 ```
 
 Schließen Sie das Flag `--pre` in die Befehlszeile ein, um die neueste Vorschauversion einer Bibliothek zu installieren.
 
-Microsoft veröffentlicht regelmäßig Vorschauversionen der SDK-Bibliotheken, die über Unterstützung für die neuen Features verfügen. Eine Einschränkung besteht hierbei aber darin, dass Bibliotheken jederzeit geändert werden können und daher nicht für Produktionsprojekte genutzt werden dürfen.
+Microsoft veröffentlicht regelmäßig Vorschauversionen von Bibliothekspaketen mit Unterstützung neuer Features. Diese Bibliotheken können sich jedoch jederzeit ändern und sind daher nicht für Produktionsprojekte geeignet.
 
 ## <a name="verify-a-library-installation"></a>Überprüfen der Installation einer Bibliothek
 
-```bash
+```cmd
 pip show azure-storage-blob
+```
+
+```cmd
+pip show azure-mgmt-storage
 ```
 
 Verwenden Sie `pip show <library>`, um zu überprüfen, ob eine Bibliothek installiert ist. Wenn die Bibliothek installiert wurde, werden mit dem Befehl die Version und andere zusammenfassende Informationen angezeigt. Andernfalls wird nach dem Ausführen des Befehls nichts angezeigt.
@@ -58,15 +72,8 @@ Sie können auch `pip freeze` oder `pip list` verwenden, um alle Bibliotheken an
 
 ## <a name="uninstall-a-library"></a>Deinstallieren einer Bibliothek
 
-```bash
+```cmd
 pip uninstall azure-storage-blob
 ```
 
 Verwenden Sie `pip uninstall <library>`, um eine Bibliothek zu deinstallieren.
-
-## <a name="next-steps"></a>Nächste Schritte
-
-Sie sind jetzt uneingeschränkt bereit, Code zu schreiben und auszuführen. Dazu können Sie eines der folgenden Beispiele verwenden:
-
-> [!div class="nextstepaction"]
-> [Beispiel: Erstellen einer Ressourcengruppe >>>](azure-sdk-example-resource-group.md)
