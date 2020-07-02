@@ -4,12 +4,12 @@ description: 'Tutorialschritt 4: lokales Ausführen des VS Code-Debuggers, um I
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 8d6b27b9390f347a464b9daded05b9c3b9a3352c
-ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
+ms.openlocfilehash: 761ffab12712f5c90127665addb65201016be2c8
+ms.sourcegitcommit: 0d492c9cc9b5295285ab75da55e5ab0577576287
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84256405"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85370691"
 ---
 # <a name="4-debug-the-azure-functions-python-code-locally"></a>4: Lokales Debuggen des Azure Functions-Python-Codes
 
@@ -34,7 +34,7 @@ Sie können Ihren Azure Functions-Python-Code lokal in Visual Studio Code debugg
     > [!TIP]
     > Wenn Sie nicht auf die URL zugreifen können und die Ausführung hinter einem Unternehmensproxy erfolgt (und daher wahrscheinlich die Umgebungsvariablen `HTTP_PROXY` und `HTTPS_PROXY` festgelegt sind), legen Sie die Umgebungsvariable `NO_PROXY` auf `localhost,127.0.0.1` fest, und wiederholen Sie den Vorgang.
 
-1. Versuchen Sie nun, zur Verwendung einen Namensparameter hinzuzufügen, z.B. `http://localhost:7071/api/HttpExample?name=VS%20Code`, und im Browserfenster sollte die Meldung „Hello Visual Studio Code!“ angezeigt werden, um zu zeigen, dass Sie diesen Codepfad ausgeführt haben.
+1. Versuchen Sie nun, zur Verwendung einen Namensparameter hinzuzufügen, z.B. `http://localhost:7071/api/HttpExample?name=Visual%20Studio%20Code`, und im Browserfenster sollte die Meldung „Hello Visual Studio Code!“ angezeigt werden, um zu zeigen, dass Sie diesen Codepfad ausgeführt haben.
 
 1. Wenn Sie den Namenswert einem JSON-Anforderungstext übergeben möchten, können Sie ein Tool wie curl mit dem JSON-Code inline verwenden:
 

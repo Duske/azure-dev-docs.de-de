@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 2/12/2020
-ms.openlocfilehash: 31243bb89024b9c6106538425e0254e309eb4ba2
-ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+ms.openlocfilehash: c9b05ea7f7e7d181150e11afb7e145740fc5ab5a
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82990152"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507602"
 ---
 # <a name="migrate-spring-cloud-applications-to-azure-spring-cloud"></a>Migrieren von Spring Cloud-Anwendungen zu Azure Spring Cloud
 
@@ -27,22 +27,7 @@ Falls Sie keine dieser Voraussetzungen für die Migration erfüllen können, seh
 
 ### <a name="inspect-application-components"></a>Untersuchen der Anwendungskomponenten
 
-#### <a name="determine-whether-and-how-the-file-system-is-used"></a>Ermitteln, ob und wie das Dateisystem verwendet wird
-
-Suchen Sie nach Fällen, in denen Ihre Dienste Daten in das lokale Dateisystem schreiben bzw. Daten daraus lesen. Ermitteln Sie, wo kurzlebige/temporäre Dateien geschrieben und gelesen und wo langlebige Dateien geschrieben und gelesen werden.
-
-> [!NOTE]
-> Pro Azure Spring Cloud-Instanz bietet Azure Spring Cloud 5 GB temporären Speicher (eingebunden in `/tmp`). Wenn die geschriebenen temporären Dateien über diesen Grenzwert hinausgehen oder an einen anderen Speicherort geschrieben werden, sind Codeänderungen erforderlich.
-
-<!-- The following two "static content" sections should be identical to the contents of includes\static-content.md except that here we use H5 headings. -->
-
-##### <a name="read-only-static-content"></a>Schreibgeschützter statischer Inhalt
-
-Falls mit Ihrer Anwendung derzeit statischer Inhalt bereitgestellt wird, benötigen Sie dafür einen anderen Speicherort. Sie können beispielsweise erwägen, statischen Inhalt in Azure Blob Storage zu verschieben und Azure CDN hinzuzufügen, um global eine sehr hohe Downloadgeschwindigkeit zu erzielen. Weitere Informationen finden Sie unter [Hosten von statischen Websites in Azure Storage](/azure/storage/blobs/storage-blob-static-website)und[Schnellstart: Integrieren eines Azure-Speicherkontos in Azure CDN](/azure/cdn/cdn-create-a-storage-account-with-cdn).
-
-##### <a name="dynamically-published-static-content"></a>Dynamisch veröffentlichter statischer Inhalt
-
-Wenn Ihre Anwendung statischen Inhalt zulässt, der von Ihrer Anwendung hochgeladen bzw. produziert wird, nach der Erstellung aber unveränderlich ist, können Sie Azure Blob Storage und Azure CDN wie oben beschrieben nutzen. Hierbei können Sie auch eine Azure-Funktion zum Verarbeiten von Uploads und der CDN-Aktualisierung verwenden. Eine entsprechende Beispielimplementierung finden Sie unter [Hochladen und CDN-Vorabladen von statischem Inhalt mit Azure Functions](https://github.com/Azure-Samples/functions-java-push-static-contents-to-cdn).
+[!INCLUDE [determine-whether-and-how-the-file-system-is-used-azure-spring-cloud](includes/determine-whether-and-how-the-file-system-is-used-azure-spring-cloud.md)]
 
 #### <a name="determine-whether-any-of-the-services-contain-os-specific-code"></a>Ermitteln, ob Dienste betriebssystemspezifischen Code enthalten
 

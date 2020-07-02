@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 01/22/2019
-ms.openlocfilehash: e4a12380521828ac69aead376ae7ff5797e300ab
-ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+ms.openlocfilehash: 46fa281fdbaf53e35a73701fa2c17ae2ed3e2d90
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82990302"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507632"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-app-service"></a>Migrieren von Spring Boot-Anwendungen zu Azure App Service
 
@@ -33,15 +33,19 @@ App Service verfügt über bestimmte Versionen von Java SE. Migrieren Sie Ihre A
 
 ### <a name="inventory-external-resources"></a>Bestand: Externe Ressourcen
 
-Identifizieren Sie externe Ressourcen, z. B. Datenquellen, JMS-Nachrichtenbroker und URLs anderer Dienste. Bei Spring Boot-Anwendungen finden Sie die Konfiguration dieser Ressourcen normalerweise unter *src/main/directory* in einer Datei, die meist den Namen *application.properties* oder *application.yml* hat. Überprüfen Sie außerdem die Umgebungsvariablen der Produktionsbereitstellung auf relevante Konfigurationseinstellungen.
+Identifizieren Sie externe Ressourcen, z. B. Datenquellen, JMS-Nachrichtenbroker und URLs anderer Dienste. Bei Spring Boot-Anwendungen befindet sich die Konfiguration solcher Ressourcen üblicherweise im Ordner *src/main/directory* in einer Datei namens *application.properties* oder *application.yml*. Überprüfen Sie außerdem die Umgebungsvariablen der Produktionsbereitstellung auf relevante Konfigurationseinstellungen.
 
 [!INCLUDE [inventory-databases-spring-boot](includes/inventory-databases-spring-boot.md)]
 
 [!INCLUDE [identify-jms-brokers-in-spring](includes/identify-jms-brokers-in-spring.md)]
 
-Nachdem Sie den oder die verwendeten Broker ermittelt haben, können Sie nach den entsprechenden Einstellungen suchen. Diese sind normalerweise in den Dateien *application.properties* und *application.yml* für Spring Boot enthalten.
+Nachdem Sie den oder die verwendeten Broker ermittelt haben, können Sie nach den entsprechenden Einstellungen suchen. Bei Spring Boot-Anwendungen befinden sich diese in der Regel im Anwendungsverzeichnis in den Dateien *application.properties* und *application.yml*.
 
 [!INCLUDE [jms-broker-settings-examples-in-spring](includes/jms-broker-settings-examples-in-spring.md)]
+
+[!INCLUDE [identify-external-caches-azure-spring-cloud](includes/identify-external-caches-azure-spring-cloud.md)]
+
+[!INCLUDE [inventory-identity-providers-spring-boot](includes/inventory-identity-providers-spring-boot.md)]
 
 #### <a name="all-other-external-resources"></a>Alle anderen externen Ressourcen
 
@@ -53,9 +57,7 @@ Es würde den Rahmen dieses Leitfadens sprengen, jede mögliche externe Abhängi
 
 Überprüfen Sie alle Eigenschaften und Konfigurationsdateien sowie alle Umgebungsvariablen in den Produktionsbereitstellungen auf Geheimniszeichenfolgen und Kennwörter. In einer Spring Boot-Anwendung befinden sich diese Zeichenfolgen meist in *application.properties* oder *application.yml*.
 
-#### <a name="inventory-certificates"></a>Inventarisieren von Zertifikaten
-
-[!INCLUDE [inventory-certificates](includes/inventory-certificates.md)]
+[!INCLUDE [inventory-certificates-h4](includes/inventory-certificates-h4.md)]
 
 [!INCLUDE [determine-whether-and-how-the-file-system-is-used](includes/determine-whether-and-how-the-file-system-is-used.md)]
 
@@ -146,6 +148,8 @@ Führen Sie [diese Schritte zum Migrieren von Verbindungseinstellungen und ander
 ![App Service-Anwendungskonfiguration](media/migrate-spring-boot-to-app-service/app-service-parameterized-spring-boot-app-settings.png)
 
 [!INCLUDE [migrate-scheduled-jobs](includes/migrate-scheduled-jobs.md)]
+
+[!INCLUDE [migrate-identity-provider-app-service.md](includes/migrate-identity-provider-app-service.md)]
 
 ### <a name="restart-and-smoke-test"></a>Neustarten und Durchführen des Buildüberprüfungstests
 

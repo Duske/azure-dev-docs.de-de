@@ -1,7 +1,6 @@
 - name: 'Azure für Entwickler mobiler Anwendungen: Dokumentation'
   href: index.yml
 - name: Übersicht
-  expanded: true
   items:
     - name: Auswählen eines Frameworks für die mobile Entwicklung
       href: choose-mobile-framework.md

@@ -4,12 +4,12 @@ description: Es wird beschrieben, wie Sie einen Kubernetes-Cluster mit Azure Kub
 keywords: Azure DevOps Terraform Application Gateway eingehend AKS Kubernetes
 ms.topic: tutorial
 ms.date: 03/09/2020
-ms.openlocfilehash: 60036b7ba4071d900a86835889501a932d48e7fe
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 433cf2e73e4672d73e036ebc1e25b6c1cc98795e
+ms.sourcegitcommit: fb0564696f8067e6dfa8b9eaf819fadf321c2884
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329628"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85327208"
 ---
 # <a name="tutorial-create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>Tutorial: Erstellen eines Application Gateway-Eingangscontrollers in Azure Kubernetes Service
 
@@ -225,7 +225,7 @@ Erstellen Sie die Terraform-Konfigurationsdatei, in der alle für diese Bereitst
       default     = "~/.ssh/id_rsa.pub"
     }
 
-    variable "tags" = {
+    variable "tags" {
       type = map(string)
 
       default = {
