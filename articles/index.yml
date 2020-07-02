@@ -10,12 +10,12 @@ metadata:
   ms.author: barbkess
   manager: barbkess
   ms.date: 04/15/2020
-  ms.openlocfilehash: 193bcf51848ac6fbf3c1f3fb263313bbde2784f8
-  ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
+  ms.openlocfilehash: 408483ef614ca546e8f0af2331d126ff35148ed0
+  ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 05/19/2020
-  ms.locfileid: "83631563"
+  ms.lasthandoff: 07/01/2020
+  ms.locfileid: "85790612"
 productDirectory:
   items:
   - title: Python
@@ -36,17 +36,17 @@ productDirectory:
   - title: JavaScript
     imageSrc: https://docs.microsoft.com/media/logos/logo_js.svg
     links:
-    - url: https://docs.microsoft.com/azure/javascript/tutorial-vscode-static-website-node-01?tabs=bash
+    - url: https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-static-website-node-01?tabs=bash
       text: Erstellen und Bereitstellen einer statischen Website
-    - url: https://docs.microsoft.com/azure/javascript/tutorial-vscode-azure-app-service-node-01?tabs=bash
+    - url: https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-azure-app-service-node-01?tabs=bash
       text: Bereitstellen einer Node.js-App in Azure App Service
-    - url: https://docs.microsoft.com/azure/javascript/tutorial-vscode-serverless-node-01?tabs=bash
+    - url: https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-serverless-node-01?tabs=bash
       text: Bereitstellen einer Azure Functions-Anwendung
-    - url: https://docs.microsoft.com/azure/javascript/tutorial-vscode-docker-node-01?tabs=bash
+    - url: https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-docker-node-01?tabs=bash
       text: Bereitstellen einer Node.js-App mithilfe von Docker-Containern
-    - url: https://docs.microsoft.com/azure/cosmos-db/create-mongodb-nodejs?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+    - url: https://docs.microsoft.com/azure/cosmos-db/create-mongodb-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
       text: Migrieren einer MongoDB-Web-App zu Azure Cosmos DB
-    - url: https://docs.microsoft.com/azure/javascript/
+    - url: https://docs.microsoft.com/azure/developer/javascript/
       text: Weitere Infos finden Sie im Entwicklercenter für JavaScript.
   - title: Java
     imageSrc: https://docs.microsoft.com/media/logos/logo_java.svg
@@ -108,6 +108,21 @@ productDirectory:
       text: Erstellen eines virtuellen Computers
     - url: https://docs.microsoft.com/cli/azure/
       text: Weitere Infos finden Sie im Azure CLI Developer Center.
+  - title: Mobile
+    imageSrc: https://static.docs.com/ui/media/product/azure/devices.svg
+    links:
+    - url: https://docs.microsoft.com/azure/developer/mobile-apps/serverless-compute
+      text: Erstellen einer serverlosen mobilen App
+    - url: https://docs.microsoft.com/azure/cosmos-db/create-sql-api-xamarin-dotnet
+      text: Speichern von Daten mit Azure Cosmos DB
+    - url: https://docs.microsoft.com/azure/developer/mobile-apps/push-notifications
+      text: Senden von Pushbenachrichtigungen zur Einbindung von Benutzern
+    - url: https://docs.microsoft.com/azure/developer/mobile-apps/authentication
+      text: Hinzufügen von Authentifizierung und Verwalten von Benutzeridentitäten
+    - url: https://docs.microsoft.com/azure/devops/pipelines/get-started/key-pipelines-concepts?view=azure-devops
+      text: Wichtige Konzepte für neue Azure Pipelines-Benutzer
+    - url: https://docs.microsoft.com/azure/developer/mobile-apps
+      text: Weitere Infos finden Sie im Developer Center für mobile Apps.
 additionalContent:
   sections:
   - title: Tools

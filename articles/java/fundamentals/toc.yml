@@ -12,7 +12,7 @@
           href: java-jdk-install.md
         - name: Java-Docker-Images für Azure
           href: java-jdk-docker-images.md
-        - name: Java Flight Recorder und Mission Control
+        - name: Zulu Flight Recorder und Mission Control
           href: java-jdk-flight-recorder-and-mission-control.md
         - name: "Argumente für die Migration zu Java\_11"
           href: reasons-to-move-to-java-11.md
@@ -38,7 +38,7 @@
       href: /azure/jenkins/
     - name: Azure DevOps
       href: /azure/devops/java/
-    - name: Lernprogramme
+    - name: Tutorials
       expanded: true
       items:
         - name: Überwachen und Protokollieren mithilfe von Logz.io
