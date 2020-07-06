@@ -1,6 +1,10 @@
 - name: Azure für JavaScript- und Node.js-Entwickler
   href: index.yml
   items:
+    - name: Erste Schritte in Azure mit JavaScript
+      items:
+        - name: Einrichten Ihrer Entwicklungsumgebung
+          href: configure-local-development-environment.md
     - name: Schnellstarts
       expanded: true
       items:
