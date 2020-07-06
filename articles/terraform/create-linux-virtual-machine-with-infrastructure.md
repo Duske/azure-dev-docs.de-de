@@ -1,17 +1,17 @@
 ---
-title: 'Tutorial: Erstellen eines virtuellen Linux-Computers mit Infrastruktur in Azure unter Verwendung von Terraform'
+title: 'Tutorial: Erstellen einer Linux-VM mit Infrastruktur in Azure unter Verwendung von Terraform'
 description: Es wird beschrieben, wie Sie mit Terraform eine vollständige Linux-VM-Umgebung in Azure erstellen und verwalten.
 keywords: Azure DevOps Terraform Linux VM virtueller Computer
 ms.topic: tutorial
-ms.date: 05/31/2020
-ms.openlocfilehash: 40dfe97d2311e251e23468b5d7a6eede778d7b8e
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.date: 06/14/2020
+ms.openlocfilehash: 97b4381c45e67458e01093d735f9b32e97584149
+ms.sourcegitcommit: 2d6c9687b39e33a6b5e980d9a375c9f8f1f2cab7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329438"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84779652"
 ---
-# <a name="tutorial--create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>Tutorial: Erstellen einer Linux-VM mit Infrastruktur in Azure mit Terraform
+# <a name="tutorial-create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>Tutorial: Erstellen einer Linux-VM mit Infrastruktur in Azure mit Terraform
 
 Mit Terraform können Sie vollständige Infrastrukturbereitstellungen in Azure definieren und erstellen. Dazu lassen sich Terraform-Vorlagen in einem für Menschen lesbaren Format erstellen, die Azure-Ressourcen konsistent und reproduzierbar erstellen und konfigurieren. In diesem Artikel wird gezeigt, wie Sie eine vollständige Linux-Umgebung und die unterstützenden Ressourcen mit Terraform erstellen. Hier erfahren Sie auch, wie Sie [Terraform installieren und konfigurieren](getting-started-cloud-shell.md).
 
@@ -463,10 +463,10 @@ Wenn alle Eingaben richtig und Sie für die Erstellung der Infrastruktur in Azur
 terraform apply
 ```
 
-Wenn Terraform den Vorgang abschließt, wurde die VM-Infrastruktur erstellt. Sie können die öffentliche IP-Adresse Ihres virtuellen Computers mit dem Befehl [az vm show](/cli/azure/vm) abrufen:
+Wenn Terraform den Vorgang abschließt, wurde die VM-Infrastruktur erstellt. Sie können die öffentliche IP-Adresse Ihres virtuellen Computers mit dem Befehl [az vm show](/cli/azure/vm#az-vm-show) abrufen:
 
 ```azurecli-interactive
-az vm show --resource-group myResourceGroup --name myVM -d --query [publicIps] --o tsv
+az vm show --resource-group myResourceGroup --name myVM -d --query [publicIps] -o tsv
 ```
 
 Anschließend können Sie eine SSH-Verbindung mit dem virtuellen Computer herstellen:

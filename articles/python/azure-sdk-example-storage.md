@@ -3,12 +3,12 @@ title: Bereitstellen von Azure Storage mit den Azure-Bibliotheken für Python
 description: Verwenden Sie die Azure SDK für Python-Bibliotheken, um einen Blobcontainer in einem Azure Storage-Konto bereitzustellen und dann eine Datei in diesen Container hochzuladen.
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: ffc65746be0a7e002263010df4fe3048e0c321d1
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 74f6e21b80505cd0b63061a76f4811b0c687d1a9
+ms.sourcegitcommit: 5ebbc1c06f98e29a146764661efbf34957020fe8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329668"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84716098"
 ---
 # <a name="example-use-the-azure-libraries-with-azure-storage"></a>Beispiel: Verwenden der Azure-Bibliotheken mit Azure Storage
 
@@ -154,7 +154,7 @@ Es kann ein oder zwei Minuten dauern, bis das Skript abgeschlossen ist.
 
     ![Die Azure-Portal Seite für das Speicherkonto mit dem Blobcontainer](media/azure-sdk-example-storage/portal-show-blob-containers.png)
 
-1. Wenn Sie diese bereitgestellten Ressourcen über Anwendungscode verwenden möchten, fahren Sie mit [Beispiel: Verwenden der Azure-Bibliotheken mit Azure Storage](azure-sdk-example-storage-use.md) fort.
+1. Wenn Sie diese bereitgestellten Ressourcen über Anwendungscode verwenden möchten, fahren Sie mit [Beispiel: Verwenden von Azure Storage](azure-sdk-example-storage-use.md).
 
 Ein weiteres Beispiel mit der Azure Storage-Verwaltungsbibliothek finden Sie unter [Erste Schritte mit der Azure Storage-Verwaltung in Python](https://docs.microsoft.com/samples/azure-samples/storage-python-manage/storage-python-manage/).
 
@@ -165,22 +165,22 @@ Die folgenden Azure CLI-Befehle führen dieselben Bereitstellungsschritte wie da
 # <a name="cmd"></a>[cmd](#tab/cmd)
 
 ```azurecli
-# Provision the resource group
+rem Provision the resource group
 
 az group create -n PythonAzureExample-Storage-rg -l centralus
 
-# Provision the storage account
+rem Provision the storage account
 
 az storage account create -g PythonAzureExample-Storage-rg -l centralus ^
     -n pythonazurestorage12345 --kind StorageV2 --sku Standard_LRS
 
-# Retrieve the connection string
+rem Retrieve the connection string
 
 az storage account show-connection-string -g PythonAzureExample-Storage-rg ^
     -n pythonazurestorage12345
 
-# Provision the blob container; NOTE: this command assumes you have an environment variable
-# named AZURE_STORAGE_CONNECTION_STRING with the connection string for the storage account.
+rem Provision the blob container; NOTE: this command assumes you have an environment variable
+rem named AZURE_STORAGE_CONNECTION_STRING with the connection string for the storage account.
 
 set AZURE_STORAGE_CONNECTION_STRING=<connection_string>
 az storage container create --account-name pythonazurestorage12345 -n blob-container-01
@@ -229,5 +229,5 @@ Sie können auch die [`ResourceManagementClient.resource_groups.delete`](/python
 - [Beispiel: Verwenden der Azure-Bibliotheken mit Azure Storage](azure-sdk-example-storage-use.md)
 - [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Ressourcengruppe](azure-sdk-example-resource-group.md)
 - [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Web-App](azure-sdk-example-web-app.md)
-- [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Datenbank](azure-sdk-example-database.md)
+- [Beispiel: Bereitstellen und Abfragen einer Datenbank](azure-sdk-example-database.md)
 - [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen eines virtuellen Computers](azure-sdk-example-virtual-machines.md)

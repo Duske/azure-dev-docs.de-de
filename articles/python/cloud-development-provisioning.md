@@ -3,12 +3,12 @@ title: Bereitstellen und Verwalten von und Zugreifen auf Ressourcen in Azure
 description: Hier finden Sie eine Übersicht über die Methoden zur Verwendung von Azure-Ressourcen. Dazu zählen das Azure-Portal, die Azure-Befehlszeilenschnittstelle und die Azure-Bibliotheken (SDK).
 ms.date: 05/27/2020
 ms.topic: conceptual
-ms.openlocfilehash: 7482b3ae29210c02382ddd20ee2f29b874e18ab5
-ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
+ms.openlocfilehash: bc2fb2138c5ea5cf5438f2d892483b094e78eb8d
+ms.sourcegitcommit: b3e506c6f140d91e6fdd9dcadf22ab1aa67f6978
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84146202"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84942419"
 ---
 # <a name="provisioning-accessing-and-managing-resources-on-azure"></a>Bereitstellen und Verwalten von und Zugreifen auf Ressourcen in Azure
 
@@ -35,7 +35,7 @@ Im Rahmen dieses Developer Centers liegt der Fokus auf der Verwendung der Befehl
 
 Das [Azure-Portal](https://portal.azure.com) ist die vollständig anpassbare, browserbasierte Benutzeroberfläche von Azure, über die Sie Ressourcen mit allen Azure-Diensten bereitstellen und verwalten können. Für den Zugriff auf das Portal müssen Sie sich zunächst mit einem Microsoft-Konto anmelden und dann ein kostenloses Azure-Konto mit einem Abonnement erstellen. (Nachdem Sie sich angemeldet haben, können Sie das Symbol **?** und dann **Interaktive Tour starten** auswählen, um eine einfache exemplarische Vorgehensweise für die wichtigsten Funktionen des Portals anzuzeigen.)
 
-**Vorteile:** Die Benutzeroberfläche erleichtert das Durchsuchen von Diensten und Ermitteln der verschiedenen Konfigurationsoptionen. Das Festlegen von Konfigurationswerten ist sicher, da keine Informationen auf der lokalen Arbeitsstation gespeichert werden.
+**Vorteile:** Die Benutzeroberfläche erleichtert das Durchsuchen von Diensten und Ermitteln ihrer verschiedenen Konfigurationsoptionen. Das Festlegen von Konfigurationswerten ist sicher, da keine Informationen auf der lokalen Arbeitsstation gespeichert werden.
 
 **Nachteile:** Das Arbeiten mit dem Portal ist ein manueller Vorgang, der nicht automatisiert werden kann. Um beispielsweise nachvollziehen zu können, welche Aktionen Sie zum Ändern einer Konfiguration ausgeführt haben, müssen Sie die jeweiligen Schritte in einem separaten Dokument aufzeichnen.
 
@@ -49,7 +49,7 @@ Die [Azure CLI](/cli/azure/?view=azure-cli-latest) ist die [Open-Source](https:/
 
 Sie können auch [Azure PowerShell](/powershell/) anstelle der Azure CLI verwenden, obwohl die Befehle der Azure CLI im Linux-Stil Python-Entwicklern in der Regel vertrauter sind.
 
-Anstatt der lokalen CLI oder PowerShell können Sie Azure Cloud Shell direkt über [https://shell.azure.com/](https://shell.azure.com/) verwenden. Da Cloud Shell jedoch keine lokale Umgebung ist, eignet sie sich eher für einmalige Vorgänge als für Automatisierung.
+Anstatt der lokalen CLI oder PowerShell können Sie Azure Cloud Shell direkt über [https://shell.azure.com/](https://shell.azure.com/) verwenden. Die Cloud Shell ist praktisch, da Sie automatisch bei Azure authentifiziert wird, nachdem Sie geöffnet wurde, und die gleichen Funktionen wie das Azure-Portal aufweist. Da es sich bei der Cloud Shell jedoch nicht um eine lokale Umgebung handelt, eignet sie sich eher für einzelne Vorgänge, wie Sie sie über das Portal ausführen würden, als für eine skriptbasierte Automatisierung.
 
 ## <a name="azure-rest-api-and-azure-libraries"></a>Azure-REST-API und Azure-Bibliotheken
 
@@ -73,11 +73,11 @@ Sie können sich vorstellen, dass Sie im Ressourcenmodell von Azure im Laufe der
 
 1. **Abonnements**: Jedes Azure-Abonnement verfügt über ein eigenes Abrechnungskonto und stellt häufig ein bestimmtes Team oder eine Abteilung innerhalb einer Organisation dar. Im Allgemeinen stellen Sie alle benötigten Ressourcen für eine bestimmte Anwendung innerhalb desselben Abonnements bereit, sodass sie von Features wie der freigegebenen Authentifizierung profitieren kann. Da jedoch über öffentliche URLs und die erforderlichen Autorisierungstoken auf alle Ressourcen zugegriffen werden kann, ist es sicherlich möglich, Ressourcen über mehrere Abonnements zu verteilen.
 
-1. **Ressourcengruppen**: Innerhalb eines Abonnements sind Ressourcengruppen Container für andere Ressourcen, die Sie dann *als* eine Gruppe verwalten können. (Aus diesem Grund bezieht sich eine Ressourcengruppe in der Regel auf ein bestimmtes Projekt.) Jedes Mal, wenn Sie eine Ressource bereitstellen, müssen Sie in der Tat die Gruppe angeben, zu der sie gehört. Der erste Schritt bei einem neuen Projekt besteht in der Regel darin, eine geeignete Ressourcengruppe zu erstellen. Wenn Sie die Ressourcengruppe löschen, heben Sie die Zuordnung aller enthaltenen Ressourcen auf, anstatt jede Ressource einzeln löschen zu müssen. Vertrauen Sie uns, wenn wir sagen, dass die Vernachlässigung der Organisation Ihrer Ressourcengruppen später zu vielen Schwierigkeiten führen kann, wenn Sie nicht mehr wissen, welche Ressource zu welchem Projekt gehört!
+1. **Ressourcengruppen**: Innerhalb eines Abonnements sind Ressourcengruppen Container für andere Ressourcen, die Sie dann als eine Gruppe verwalten können. (Aus diesem Grund bezieht sich eine Ressourcengruppe in der Regel auf ein bestimmtes Projekt.) Jedes Mal, wenn Sie eine Ressource bereitstellen, müssen Sie in der Tat die Gruppe angeben, zu der sie gehört. Der erste Schritt bei einem neuen Projekt besteht in der Regel darin, eine geeignete Ressourcengruppe zu erstellen. Wenn Sie die Ressourcengruppe löschen, heben Sie die Zuordnung aller enthaltenen Ressourcen auf, anstatt jede Ressource einzeln löschen zu müssen. Vertrauen Sie uns, wenn wir sagen, dass die Vernachlässigung der Organisation Ihrer Ressourcengruppen später zu vielen Schwierigkeiten führen kann, wenn Sie nicht mehr wissen, welche Ressource zu welchem Projekt gehört!
 
 1. **Benennen von Ressourcen**: innerhalb einer Ressourcengruppe können Sie dann die gewünschten Benennungsstrategien verwenden, um Gemeinsamkeiten oder Beziehungen zwischen Ressourcen auszudrücken. Da der Name häufig in der URL der Ressource verwendet wird, gibt es möglicherweise Einschränkungen hinsichtlich der Zeichen, die Sie verwenden können. (Einige Namen lassen z. B. nur Buchstaben und Ziffern zu, wohingegen in anderen Bindestriche und Unterstriche zulässig sind.)
 
-Während der Arbeit mit Azure entwickeln Sie Ihre eigenen Präferenzen für die Organisation Ihrer Ressourcen und Ihre eigenen Konventionen für die Benennung von Abonnements, Ressourcengruppen und einzelnen Ressourcengruppen.
+Während der Arbeit mit Azure entwickeln Sie Ihre eigenen Präferenzen für die Organisation Ihrer Ressourcen und Ihre eigenen Konventionen für die Benennung von Abonnements, Ressourcengruppen und einzelnen Ressourcen.
 
 ### <a name="regions-and-geographies"></a>Regionen und geografische Regionen
 

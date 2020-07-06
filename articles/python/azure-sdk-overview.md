@@ -3,12 +3,12 @@ title: Verwenden der Azure-Bibliotheken (SDK) für Python
 description: Übersicht über die Features und Funktionen der Azure-Bibliotheken für Python, die Entwicklern zu mehr Produktivität beim Bereitstellen, Verwenden und Verwalten von Azure-Ressourcen verhelfen.
 ms.date: 05/26/2020
 ms.topic: conceptual
-ms.openlocfilehash: 056c290883984c4abfacb3b7cef9e67f09e800c7
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: ffa626db0518967e2659eeb5b89ece4bc15c1ce2
+ms.sourcegitcommit: 7474de4884bce076ce33ca77ae3584ba1598bbc6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329608"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85069391"
 ---
 # <a name="use-the-azure-libraries-sdk-for-python"></a>Verwenden der Azure-Bibliotheken (SDK) für Python
 
@@ -16,11 +16,15 @@ Die Open-Source-basierten Azure-Bibliotheken für Python vereinfachen die Bereit
 
 ## <a name="the-details-you-really-want-to-know"></a>Die Details, die Sie wirklich interessieren
 
-- Die Bibliotheken unterstützen Python 2.7 und Python 3.5.3 oder höher und wurden außerdem mit PyPy 5.4+ getestet.
+- Über die Azure-Bibliotheken kommunizieren Sie mit Azure-Diensten *über* Python-Code, den Sie entweder lokal oder in der Cloud ausführen. (Ob Sie Python-Code innerhalb des Bereichs eines bestimmten Diensts ausführen können, hängt davon ab, ob dieser Dienst selbst zurzeit Python unterstützt.)
+
+- Die Bibliotheken unterstützen Python 2.7 und Python 3.5.3 oder höher und wurden außerdem mit PyPy 5.4 oder höher getestet.
 
 - Im Azure SDK für Python sind über 180 einzelne Python-Bibliotheken enthalten, die sich auf bestimmte Azure-Dienste beziehen. Das SDK enthält keine weiteren Tools.
 
-- Die benötigten Bibliothekspakete können mithilfe des Befehls `pip install <library_name>` unter Angabe der Bibliotheksnamen aus der [Releaseliste](https://azure.github.io/azure-sdk/releases/latest/all/python.html) installiert werden. Ausführlichere Informationen finden Sie unter [Installieren des Azure SDK für Python-Bibliotheken](azure-sdk-install.md).
+- Wenn Sie Code lokal ausführen, basiert die Authentifizierung mit Azure auf Umgebungsvariablen, wie unter [Konfigurieren der lokalen Entwicklungsumgebung](configure-local-development-environment.md) beschrieben. 
+
+- Die benötigten Bibliothekspakete werden mithilfe von `pip install <library_name>` unter Angabe der Bibliotheksnamen aus dem [Paket-Index für das Python SDK](azure-sdk-library-package-index.md) installiert. Ausführlichere Informationen finden Sie unter [Installieren des Azure SDK für Python-Bibliotheken](azure-sdk-install.md).
 
 - Es gibt getrennte „Verwaltungs“- und „Client“-Bibliotheken (manchmal auch als Bibliotheken der „Verwaltungsebene“ bzw. „Datenebene“ bezeichnet). Jede Gruppe dient unterschiedlichen Zwecken und wird von einer anderen Art von Code genutzt. Weitere Details finden Sie in den folgenden Abschnitten weiter unten in diesem Artikel:
   - [Bereitstellen und Verwalten von Azure-Ressourcen mit Verwaltungsbibliotheken](#provision-and-manage-azure-resources-with-management-libraries)
@@ -29,6 +33,8 @@ Die Open-Source-basierten Azure-Bibliotheken für Python vereinfachen die Bereit
 - Dokumentationsmaterial für die Bibliotheken finden Sie in der nach Azure-Dienst strukturierten [Referenz](/python/api/overview/azure/?view=azure-python) oder im nach Paketname strukturierten [Python-API-Browser](/python/api/?view=azure-python). Derzeit müssen Sie häufig auf eine Reihe von Ebenen klicken, um zu den Klassen und Methoden zu gelangen, die Sie interessieren. Wir möchten uns im Voraus für diese unterdurchschnittliche Erfahrung entschuldigen. Wir arbeiten an einer Verbesserung!
 
 - Wenn Sie die Bibliotheken selbst ausprobieren möchten, sollten Sie zunächst [Ihre lokale Entwicklungsumgebung einrichten](configure-local-development-environment.md). Anschließend können Sie eines der folgenden eigenständigen Beispiele ausprobieren. Die Reihenfolge spielt dabei keine Rolle: [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Ressourcengruppe](azure-sdk-example-resource-group.md), [Beispiel: Verwenden der Azure-Bibliotheken mit Azure Storage](azure-sdk-example-storage.md), [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Web-App](azure-sdk-example-web-app.md), [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Datenbank](azure-sdk-example-database.md) und [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen eines virtuellen Computers](azure-sdk-example-virtual-machines.md).
+
+- Ein Demonstrationsvideo von der virtuellen PyCon 2020 finden Sie unter <a href="https://www.youtube.com/watch?v=M1pVxItg2Mg&feature=youtu.be&ocid=AID3006292" target="_blank">Verwenden von Azure SDKs für die Interaktion mit Azure-Ressourcen</a> (youtube.com).
 
 ### <a name="non-essential-but-still-interesting-details"></a>Nicht wesentliche, aber immer noch interessante Details
 
@@ -46,7 +52,7 @@ Die Open-Source-basierten Azure-Bibliotheken für Python vereinfachen die Bereit
 
   - Diese gemeinsam genutzten Funktionen sind in der Bibliothek [azure-core](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/core/azure-core) enthalten.
 
-  - Die Bibliotheken, die aktuell mit der Core-Bibliothek funktionieren, sind unter[Neueste Releases des Azure SDK für Python](https://azure.github.io/azure-sdk/releases/latest/#python) aufgeführt. Diese Bibliotheken, primär die Clientbibliotheken, werden manchmal als „Track 2“ bezeichnet.
+  - Die Bibliotheken, die aktuell mit der Core-Bibliothek funktionieren, sind unter[Neueste Releases des Azure SDK für Python](azure-sdk-library-package-index.md#libraries-using-azurecore) aufgeführt. Diese Bibliotheken, primär die Clientbibliotheken, werden manchmal als „Track 2“ bezeichnet.
 
   - Die Verwaltungsbibliotheken sowie alle anderen Bibliotheken, die noch nicht aktualisiert wurden, werden mitunter als „Track 1“ bezeichnet.
 

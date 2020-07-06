@@ -2,13 +2,13 @@
 title: 'Tutorial: Erstellen einer Terraform-Basisvorlage in Azure mithilfe von Yeoman'
 description: Hier erfahren Sie, wie Sie eine Terraform-Basisvorlage in Azure mithilfe von Yeoman erstellen.
 ms.topic: tutorial
-ms.date: 04/25/2020
-ms.openlocfilehash: 1c60af3f4ebdac75dc5c4c56b76ee271002f29d6
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.date: 05/25/2020
+ms.openlocfilehash: 3278b1abb16275eb325964a3e0d78a2d61230dd4
+ms.sourcegitcommit: bbfa6e0dfb3c8e66e5f47b080590105787a6e74b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329948"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85418218"
 ---
 # <a name="tutorial-create-a-terraform-base-template-in-azure-using-yeoman"></a>Tutorial: Erstellen einer Terraform-Basisvorlage in Azure mithilfe von Yeoman
 

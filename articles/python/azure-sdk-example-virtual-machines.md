@@ -3,12 +3,12 @@ title: Bereitstellen eines virtuellen Computers mithilfe der Azure SDK-Biblioth
 description: So stellen Sie einen virtuellen Azure-Computer mittels Python und den Azure SDK-Verwaltungsbibliotheken bereit.
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: 297e45b2d694d723b84f84f6457577503155a598
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 4b11caa66eb297225b4b61000575a8a9c48edb19
+ms.sourcegitcommit: 5ebbc1c06f98e29a146764661efbf34957020fe8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329648"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84716088"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-virtual-machine"></a>Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen eines virtuellen Computers
 
@@ -227,28 +227,28 @@ Der Bereitstellungsprozess dauert einige Minuten.
 # <a name="cmd"></a>[cmd](#tab/cmd)
 
 ```azurecli
-# Provision the resource group
+rem Provision the resource group
 
 az group create -n PythonAzureExample-VM-rg -l centralus
 
-# Provision a virtual network and subnet
+rem Provision a virtual network and subnet
 
 az network vnet create -g PythonAzureExample-VM-rg -n python-example-vnet ^
     --address-prefix 10.0.0.0/16 --subnet-name python-example-subnet ^
     --subnet-prefix 10.0.0.0/24
 
-# Provision a public IP address
+rem Provision a public IP address
 
 az network public-ip create -g PythonAzureExample-VM-rg -n python-example-ip ^
     --allocation-method Dynamic --version IPv4
 
-# Provision a network interface client
+rem Provision a network interface client
 
 az network nic create -g PythonAzureExample-VM-rg --vnet-name python-example-vnet ^
     --subnet python-example-subnet -n python-example-nic ^
     --public-ip-address python-example-ip
 
-# Provision the virtual machine
+rem Provision the virtual machine
 
 az vm create -g PythonAzureExample-VM-rg -n ExampleVM -l "centralus" ^
     --nics python-example-nic --image UbuntuLTS ^
@@ -303,7 +303,7 @@ Führen Sie diesen Befehl aus, wenn Sie die in diesem Beispiel erstellten Ressou
 - [Beispiel: Verwenden der Azure-Bibliotheken mit Azure Storage](azure-sdk-example-storage.md)
 - [Beispiel: Verwenden der Azure-Bibliotheken mit Azure Storage](azure-sdk-example-storage-use.md)
 - [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Web-App](azure-sdk-example-web-app.md)
-- [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Datenbank](azure-sdk-example-database.md)
+- [Beispiel: Bereitstellen und Abfragen einer Datenbank](azure-sdk-example-database.md)
 
 Die folgenden Ressourcen enthalten weitere umfassende Beispiele für die Verwendung von Python zum Erstellen eines virtuellen Computers:
 

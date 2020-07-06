@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: bbc7dd44e975fd47b52df41baa1ec526ac1908f8
-ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
+ms.openlocfilehash: 51babfacd133ed0ba0d9b5bc728c4373e137022c
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202829"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507466"
 ---
 # <a name="migrate-java-applications-to-azure"></a>Migrieren von Java-Anwendungen zu Azure
 
@@ -78,7 +78,7 @@ In den folgenden Abschnitten wird veranschaulicht, welche Dienstziele Ihre Anwen
 
 Anhand der folgenden Übersicht können Sie potenzielle Ziele für Ihren Anwendungstyp ermitteln. Wie Sie sehen, werden von AKS und Virtual Machines alle Anwendungstypen unterstützt, Ihr Team muss jedoch mehr Aufgaben übernehmen, wie im nächsten Abschnitt gezeigt.
 
-|   |App<br>Dienst<br>Java SE|App<br>Dienst<br>Tomcat|Azure<br>Spring<br>Cloud|AKS|Virtual Machines|
+|   |App<br>Dienst<br>Java SE|App<br>Dienst<br>Tomcat|Azure<br>Spring<br>Cloud|AKS|Virtual<br>Machines|
 |---|---|---|---|---|---|---|
 | Spring Boot-/JAR-Anwendungen                                    |&#x2714;|        |&#x2714;|&#x2714;|&#x2714;|
 | Spring Cloud/Microservices                                      |        |        |&#x2714;|&#x2714;|&#x2714;|
@@ -98,9 +98,9 @@ Ermitteln Sie anhand des folgenden Rasters, welche Zuständigkeiten sich nach de
 Für Ihr Team gilt eine fortlaufende Zuständigkeit für die Aufgaben, die mit „&#x1F449;“ gekennzeichnet sind. Wir empfehlen Ihnen, zur Erfüllung dieser Zuständigkeiten einen stabilen, stark automatisierten Prozess zu implementieren. 
 
 > [!NOTE]
-> Hinweis: Es handelt sich hierbei nicht um eine umfassende Liste mit Zuständigkeiten.
+> Hinweis: Die Liste mit den Zuständigkeiten erhebt keinen Anspruch auf Vollständigkeit.
 
-|                                                                       | App Service | Azure Spring Cloud | AKS | Virtual Machines |
+|                                                                       | App<br>Dienst | Azure<br>Spring<br>Cloud | AKS | Virtual<br>Machines |
 |---|---|---|---|---|
 | Aktualisieren von Bibliotheken<br>(einschließlich Behebung von Sicherheitsrisiken)                 | &#x1F449;   | &#x1F449;   | &#x1F449;   | &#x1F449; |
 | Aktualisieren des Anwendungsservers<br>(einschließlich Behebung von Sicherheitsrisiken)    | ![Azure][1] | ![Azure][1] | &#x1F449;   | &#x1F449; |
@@ -140,9 +140,9 @@ Falls Sie eine Web-App unter Tomcat zu Azure Spring Cloud migrieren möchten, so
 
 |Ziel&nbsp;→<br><br>Anwendungstyp&nbsp;&nbsp;↓|App<br>Dienst<br>Java SE|App<br>Dienst<br>Tomcat|Azure<br>Spring<br>Cloud|AKS|Virtual Machines|
 |---|---|---|---|---|---|---|
-| Spring Boot-/<br>JAR-Anwendungen | [Leitfaden][5] | Leitfaden<br>Geplant | Leitfaden<br>Geplant | [Leitfaden][14]      | Leitfaden<br>Geplant |
-| Spring Cloud/<br>Microservices   | –           | –                 | [Leitfaden][15]      | Leitfaden<br>Geplant | Leitfaden<br>Geplant |
-| Webanwendungen<br>unter Tomcat     | –           | [Leitfaden][2]       | –                 | [Leitfaden][3]       | Leitfaden<br>Geplant |
+| Spring Boot-/<br>JAR-Anwendungen | [Leitfaden][5] | Leitfaden<br>Geplant | [Leitfaden][16] | [Leitfaden][14]      | Leitfaden<br>Geplant |
+| Spring Cloud/<br>Microservices   | –           | –                 | [Leitfaden][15] | Leitfaden<br>Geplant | Leitfaden<br>Geplant |
+| Webanwendungen<br>unter Tomcat     | –           | [Leitfaden][2]       | –            | [Leitfaden][3]       | Leitfaden<br>Geplant |
 
 **Java EE-Anwendungen**
 
@@ -171,3 +171,4 @@ Ermitteln Sie anhand der unten angegebenen Zeilen den Typ Ihrer Java EE-Anwendun
 [13]: https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines
 [14]: migrate-spring-boot-to-azure-kubernetes-service.md
 [15]: migrate-spring-cloud-to-azure-spring-cloud.md
+[16]: migrate-spring-boot-to-azure-spring-cloud.md

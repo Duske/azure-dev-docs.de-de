@@ -3,12 +3,12 @@ title: Bereitstellen einer Ressourcengruppe unter Verwendung der Azure-Bibliothe
 description: Verwenden Sie die Ressourcenverwaltungsbibliothek im Azure SDK für Python, um eine Ressourcengruppe aus Python-Code zu erstellen.
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: 0d0ff5bf8a2417e38f9fd066b226ed26da87322b
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 38c2f87511c040a04040844fb512fd436d566c15
+ms.sourcegitcommit: 499f7275446f006fa43c4eff3b1f0d001e9a98d9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329678"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84453701"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-resource-group"></a>Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Ressourcengruppe
 
@@ -127,5 +127,5 @@ az group create -n PythonAzureExample-ResourceGroup-rg -l centralus
 - [Beispiel: Verwenden der Azure-Bibliotheken mit Azure Storage](azure-sdk-example-storage.md)
 - [Beispiel: Verwenden der Azure-Bibliotheken mit Azure Storage](azure-sdk-example-storage-use.md)
 - [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Web-App](azure-sdk-example-web-app.md)
-- [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Datenbank](azure-sdk-example-database.md)
+- [Beispiel: Bereitstellen und Abfragen einer Datenbank](azure-sdk-example-database.md)
 - [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen eines virtuellen Computers](azure-sdk-example-virtual-machines.md)

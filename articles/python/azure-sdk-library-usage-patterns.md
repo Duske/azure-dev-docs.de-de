@@ -1,18 +1,18 @@
 ---
 title: Verwendungsmuster mit den Azure-Bibliotheken für Python
 description: Hier finden Sie eine Übersicht über gängige Verwendungsmuster mit den Azure SDK-Bibliotheken für Python.
-ms.date: 05/26/2020
+ms.date: 06/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: f712dc41233b8301e370c9eb63786d8e2d7f8c70
-ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
+ms.openlocfilehash: d1cd1b1c965fdf5b6907c9842260d4c029d625f5
+ms.sourcegitcommit: b3e506c6f140d91e6fdd9dcadf22ab1aa67f6978
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84256275"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84942409"
 ---
 # <a name="azure-libraries-for-python-usage-patterns"></a>Azure-Bibliotheken für Python: Verwendungsmuster
 
-Das Azure SDK für Python besteht ausschließlich aus vielen unabhängigen Bibliotheken. Diese sind auf der [Indexseite des Azure SDK für Python](https://azure.github.io/azure-sdk/releases/latest/all/python.html) aufgeführt.
+Das Azure SDK für Python besteht ausschließlich aus vielen unabhängigen Bibliotheken. Diese werden im [Paketindex für das Python SDK](azure-sdk-library-package-index.md) aufgeführt.
 
 Alle Bibliotheken verfügen über bestimmte allgemeine Merkmale und Verwendungsmuster. Hierzu zählen beispielsweise die Installation und die Verwendung von JSON-Inline-Code für Objektargumente.
 
@@ -33,6 +33,79 @@ pip install azure-storage-blob
 Von `pip install` wird die neueste Version einer Bibliothek in Ihrer aktuellen Python-Umgebung abgerufen.
 
 `pip` kann auch zum Deinstallieren von Bibliotheken sowie zum Installieren bestimmter Versionen (einschließlich Vorschauversionen) verwendet werden. Weitere Informationen finden Sie unter [Installieren von Azure-Bibliothekspaketen für Python](azure-sdk-install.md).
+
+## <a name="asynchronous-operations"></a>Asynchrone Vorgänge
+
+Viele Vorgänge, die Sie über Client- und Verwaltungsclientobjekte aufrufen (z. B. [`WebSiteManagementClient.web_apps.create_or_update`](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.operations.webappsoperations?view=azure-python#create-or-update-resource-group-name--name--site-envelope--custom-headers-none--raw-false--polling-true----operation-config-)), geben ein Objekt vom Typ `AzureOperationPoller[<type>]` zurück, wobei `<type>` für den betreffenden Vorgang spezifisch ist.
+
+Ein [`AzureOperationPoller`](/python/api/msrestazure/msrestazure.azure_operation.azureoperationpoller?view=azure-python)-Rückgabetyp bedeutet, dass der Vorgang asynchron ist. Dementsprechend müssen Sie die `result`-Methode dieses Pollers so aufrufen, dass sie wartet, bis das tatsächliche Ergebnis des Vorgangs verfügbar wird.
+
+Der folgende Code stammt aus [Beispiel: Bereitstellen und Implementieren einer Web-App](azure-sdk-example-web-app.md) und zeigt ein Beispiel für die Verwendung des Pollers, damit auf ein Ergebnis gewartet wird:
+
+```python
+poller = app_service_client.web_apps.create_or_update(RESOURCE_GROUP_NAME,
+    WEB_APP_NAME,
+    {
+        "location": LOCATION,
+        "server_farm_id": plan_result.id,
+        "site_config": {
+            "linux_fx_version": "python|3.8"
+        }
+    }
+)
+
+web_app_result = poller.result()
+```
+
+In diesem Fall ist der Rückgabewert von `create_or_update` vom Typ `AzureOperationPoller[Site]`. Dies bedeutet, dass der Rückgabewert von `poller.result()` ein [Site](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.models.site?view=azure-python)-Objekt ist.
+
+## <a name="exceptions"></a>Ausnahmen
+
+Im Allgemeinen werden von den Azure-Bibliotheken Ausnahmen ausgelöst, wenn Vorgänge nicht wie vorgesehen ausgeführt werden, einschließlich fehlerhafter HTTP-Anforderungen an die Azure-REST-API. Für App-Code können Sie dann `try...except`-Blöcke um Bibliotheksvorgänge herum verwenden.
+
+Weitere Informationen zum Typ der Ausnahmen, die ausgelöst werden können, finden Sie in der Dokumentation zum betreffenden Vorgang.
+
+## <a name="logging"></a>Protokollierung
+
+Die neuesten Azure-Bibliotheken verwenden die Python-`logging`-Standardbibliothek, um die Protokollausgabe zu generieren. Sie können den Protokolliergrad für einzelne Bibliotheken, Gruppen von Bibliotheken oder alle Bibliotheken festlegen. Nachdem Sie einen Protokollierungsdatenstrom-Handler registriert haben, können Sie die Protokollierung für ein bestimmtes Clientobjekt oder einen bestimmten Vorgang aktivieren. Weitere Informationen finden Sie unter [Protokollierung in den Azure-Bibliotheken](azure-sdk-logging.md).
+
+## <a name="proxy-configuration"></a>Proxykonfiguration
+
+Zum Angeben eines Proxys können Sie Umgebungsvariablen oder optionale Argumente verwenden. Weitere Informationen finden Sie unter [Konfigurieren von Proxys](azure-sdk-configure-proxy.md).
+
+## <a name="optional-arguments-for-client-objects-and-methods"></a>Optionale Argumente für Clientobjekte und -methoden
+
+In der Bibliotheksreferenzdokumentation tritt häufig ein `**kwargs`- oder `**operation_config**`-Argument in der Signatur eines Clientobjektkonstruktors oder einer bestimmten Vorgangsmethode auf. Diese Platzhalter geben an, dass das betreffende Objekt oder die betreffende Methode zusätzliche benannte Argumente unterstützen kann. In der Regel gibt die Referenzdokumentation die spezifischen Argumente an, die Sie verwenden können. Es gibt auch einige allgemeine Argumente, die häufig unterstützt werden, wie in den folgenden Abschnitten beschrieben.
+
+### <a name="arguments-for-libraries-based-on-azurecore"></a>Argumente für Bibliotheken, die auf azure.core basieren
+
+Diese Argumente gelten für die Bibliotheken, die unter [Python: Neue Bibliotheken](https://azure.github.io/azure-sdk/releases/latest/#python) aufgeführt werden.
+
+| Name                       | type | Standard     | BESCHREIBUNG |
+| ---                        | ---  | ---         | ---         |
+| logging_enable             | bool | False       | Aktiviert die Protokollierung. Weitere Informationen finden Sie unter [Protokollierung in den Azure-Bibliotheken](azure-sdk-logging.md). |
+| proxies                    | dict | {}          | Proxyserver-URLs. Weitere Informationen finden Sie unter [Konfigurieren von Proxys](azure-sdk-configure-proxy.md). |
+| use_env_settings           | bool | True        | Wenn TRUE, ist die Verwendung von `HTTP_PROXY`- und `HTTPS_PROXY`-Umgebungsvariablen für Proxys zulässig. Wenn FALSE, werden Umgebungsvariablen ignoriert. Weitere Informationen finden Sie unter [Konfigurieren von Proxys](azure-sdk-configure-proxy.md). |
+| connection_timeout         | INT  | 300         | Das Timeout in Sekunden für das Herstellen einer Verbindung mit Azure-REST-API-Endpunkten. |
+| read_timeout               | INT  | 300         | Das Timeout (in Sekunden) für das Abschließen eines Azure-REST-API-Vorgangs (das heißt, das Warten auf eine Antwort). |
+| retry_total                | INT  | 10          | Die Anzahl zulässiger Wiederholungsversuche für REST-API-Aufrufe. Verwenden Sie `retry_total=0`, um Wiederholungsversuche zu deaktivieren. |
+| retry_mode                 | enum | exponential | Wendet Wiederholungsversuche auf lineare oder exponentielle Weise an. Bei „single“ werden Wiederholungsversuche in regelmäßigen Intervallen ausgeführt. Bei „exponential“ wartet jeder Wiederholungsversuch doppelt so lange wie der vorherige Wiederholungsversuch. |
+
+Einzelne Bibliotheken sind nicht verpflichtet, diese Argumente zu unterstützen, daher sollten Sie sich stets in der Referenzdokumentation für jede Bibliothek über die genauen Details informieren.
+
+### <a name="arguments-for-non-core-libraries"></a>Argumente für Bibliotheken, die keine Kernbibliothekensind
+
+| Name               | type | Standard | BESCHREIBUNG |
+| ---                | ---  | ---     | ---         |
+| Überprüfen             | bool | True    | Überprüft das SSL-Zertifikat. |
+| cert               | str  | Keine    | Pfad zum lokalen Zertifikat für die clientseitige Überprüfung |
+| timeout            | INT  | 30      | Zeitlimit für das Herstellen einer Serververbindung in Sekunden. |
+| allow_redirects    | bool | False   | Aktiviert Umleitungen. |
+| max_redirects      | INT  | 30      | Maximale Anzahl zulässiger Umleitungen |
+| proxies            | dict | {}      | Proxyserver-URL. Weitere Informationen finden Sie unter [Konfigurieren von Proxys](azure-sdk-configure-proxy.md). |
+| use_env_proxies    | bool | False   | Aktiviert das Lesen von Proxyeinstellungen aus lokalen Umgebungsvariablen. |
+| retries            | INT  | 10      | Die Gesamtanzahl der zulässigen Wiederholungsversuche. |
+| enable_http_logger | bool | False   | Aktiviert Protokolle von HTTP im Debugmodus. |
 
 ## <a name="inline-json-pattern-for-object-arguments"></a>JSON-Inline-Muster für Objektargumente
 
@@ -126,6 +199,7 @@ Nachdem Sie nun mit den allgemeinen Mustern für die Verwendung der Azure-Biblio
 - [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Ressourcengruppe](azure-sdk-example-resource-group.md)
 - [Beispiel: Verwenden der Azure-Bibliotheken mit Azure Storage](azure-sdk-example-storage.md)
 - [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Web-App](azure-sdk-example-web-app.md)
+- [Beispiel: Bereitstellen und Abfragen einer Datenbank](azure-sdk-example-database.md)
 - [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen eines virtuellen Computers](azure-sdk-example-virtual-machines.md)
 
 Da diese Beispiele weder sequenziell noch voneinander abhängig sind, gibt es keine vorgegebene Reihenfolge.

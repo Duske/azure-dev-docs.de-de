@@ -1,14 +1,14 @@
 ---
-title: Bereitstellen und Verwenden von Speicherblobs Azure Storage mit dem Azure SDK für Python
+title: Verwenden von Speicherblobs Azure Storage mit dem Azure SDK für Python
 description: Hier erfahren Sie, wie Sie die Bibliotheken des Azure SDK für Python verwenden, um auf einen vorab bereitgestellten Blobcontainer in einem Azure Storage-Konto zuzugreifen und eine Datei in diesen Container hochzuladen.
-ms.date: 05/29/2020
+ms.date: 06/15/2020
 ms.topic: conceptual
-ms.openlocfilehash: 50d9b781e0ec3a1a9f752a9ec193720d99b88f4d
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 9015017b1e0b2839e4a3986950625fb8a498717e
+ms.sourcegitcommit: 74ff4dec3b0556201c243e8c2302555b08dd79e9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329658"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84812666"
 ---
 # <a name="example-use-the-azure-libraries-with-azure-storage"></a>Beispiel: Verwenden der Azure-Bibliotheken mit Azure Storage
 
@@ -47,11 +47,11 @@ Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
 
 ## <a name="4-use-blob-storage-from-app-code"></a>4: Verwenden von Blobspeicher über App-Code
 
-In den folgenden Abschnitten (4a und 4b) werden zwei Möglichkeiten für den Zugriff auf den Blobcontainer gezeigt.
+In den folgenden Abschnitten (4a und 4b) werden zwei Möglichkeiten für den Zugriff auf den Blobcontainer gezeigt, den Sie über [Beispiel: Verwenden der Azure-Bibliotheken mit Azure Storage](azure-sdk-example-storage.md) bereitgestellt haben.
 
-Bei der [ersten Methode (4a)](#4a-use-blob-storage-with-authentication) wird die App mit `DefaultAzureCredential` authentifiziert, wie im Artikel [Authentifizieren von Python-Apps mit Azure-Diensten](azure-sdk-authenticate.md#authenticate-with-defaultazurecredential) beschrieben. Mit dieser Methode müssen Sie zunächst der App-Identität die geeigneten Berechtigungen zuweisen, wobei es sich um die empfohlene Vorgehensweise handelt.
+Bei der [ersten Methode (Abschnitt 4a unten)](#4a-use-blob-storage-with-authentication) wird die App mit `DefaultAzureCredential` authentifiziert, wie im Artikel [Authentifizieren von Python-Apps](azure-sdk-authenticate.md#authenticate-with-defaultazurecredential) beschrieben. Mit dieser Methode müssen Sie zunächst der App-Identität die geeigneten Berechtigungen zuweisen, wobei es sich um die empfohlene Vorgehensweise handelt.
 
-Bei der [zweiten Methode (4b)](#4b-use-blob-storage-with-a-connection-string) wird eine Verbindungszeichenfolge verwendet, um direkt auf das Speicherkonto zuzugreifen. Obwohl diese Methode einfacher erscheint, hat Sie zwei bedeutende Nachteile:
+Bei der [zweiten Methode (Abschnitt 4b unten)](#4b-use-blob-storage-with-a-connection-string) wird eine Verbindungszeichenfolge verwendet, um direkt auf das Speicherkonto zuzugreifen. Obwohl diese Methode einfacher erscheint, hat Sie zwei bedeutende Nachteile:
 
 - Eine Verbindungszeichenfolge authentifiziert den Verbindungs-Agent von Natur aus mit dem Speicher*konto* anstatt mit einzelnen Ressourcen innerhalb dieses Kontos. Folglich stellt eine Verbindungszeichenfolge eine umfassendere Autorisierung bereit, als sie möglicherweise erforderlich ist.
 
@@ -116,7 +116,7 @@ Aus diesen Gründen empfiehlt es sich, in Produktionscode die Authentifizierungs
 
     Da der lokale Dienstprinzipal, den Sie verwenden, nicht über die Berechtigung für den Zugriff auf den Blobcontainer verfügt, wird der folgende Fehler angezeigt: „Diese Anforderung ist nicht berechtigt, diesen Vorgang mit dieser Berechtigung auszuführen.“
 
-1. Um dem Dienstprinzipal Berechtigungen für den Container zu gewähren, verwenden Sie den Azure CLI-Befehl [az role assignment create](/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create) (ein langer Befehl!):
+1. Um dem Dienstprinzipal Containerberechtigungen zu gewähren, verwenden Sie den Azure CLI-Befehl [az role assignment create](/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create) (ein langer Befehl!):
 
     # <a name="cmd"></a>[cmd](#tab/cmd)
 
@@ -199,5 +199,5 @@ Sie können auch die [`ResourceManagementClient.resource_groups.delete`](/python
 - [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Ressourcengruppe](azure-sdk-example-resource-group.md)
 - [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Web-App](azure-sdk-example-web-app.md)
 - [Beispiel: Verwenden der Azure-Bibliotheken mit Azure Storage](azure-sdk-example-storage.md)
-- [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Datenbank](azure-sdk-example-database.md)
+- [Beispiel: Bereitstellen und Abfragen einer Datenbank](azure-sdk-example-database.md)
 - [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen eines virtuellen Computers](azure-sdk-example-virtual-machines.md)

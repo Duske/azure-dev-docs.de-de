@@ -1,29 +1,29 @@
 ---
-title: 'Schnellstart: Erste Schritte mit Terraform: Azure Cloud Shell'
+title: 'Schnellstart: Erste Schritte mit Terraform mit Azure Cloud Shell'
 description: In dieser Schnellstartanleitung erfahren Sie, wie Sie Terraform für die Erstellung von Azure-Ressourcen installieren und konfigurieren.
 keywords: Azure DevOps Terraform installieren konfigurieren Cloud Shell init planen anwenden Ausführung Portal anmelden Anmeldung RBAC Dienstprinzipal automatisiertes Skript
 ms.topic: quickstart
-ms.date: 06/01/2020
-ms.openlocfilehash: 184d2720e3e2259a6c909d0775ffee20c0f30419
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.date: 06/11/2020
+ms.openlocfilehash: 4b0f6802673d886cecdc9523d99886c19fbad94a
+ms.sourcegitcommit: 2d6c9687b39e33a6b5e980d9a375c9f8f1f2cab7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329908"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84779662"
 ---
-# <a name="quickstart-getting-started-with-terraform---azure-cloud-shell"></a>Schnellstart: Erste Schritte mit Terraform: Azure Cloud Shell
+# <a name="quickstart-getting-started-with-terraform-using-azure-cloud-shell"></a>Schnellstart: Erste Schritte mit Terraform mit Azure Cloud Shell
  
 [!INCLUDE [terraform-intro.md](includes/terraform-intro.md)]
 
-In diesem Artikel werden die ersten Schritte mit Terraform in der [Azure Cloud Shell](/azure/cloud-shell/overview)-Umgebung beschrieben.
+In diesem Artikel werden die ersten Schritte mit [Terraform in Azure](https://www.terraform.io/docs/providers/azurerm/index.html) in der [Azure Cloud Shell](/azure/cloud-shell/overview)-Umgebung beschrieben.
 
 [!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
-## <a name="configure-your-environment"></a>Konfigurieren Ihrer Umgebung
+## <a name="prerequisites"></a>Voraussetzungen
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-## <a name="open-cloud-shell"></a>Öffnen von Cloud Shell
+## <a name="configure-azure-cloud-shell"></a>Konfigurieren von Azure Cloud Shell
 
 1. Navigieren Sie zum [Azure-Portal](https://portal.azure.com).
 
@@ -35,43 +35,54 @@ In diesem Artikel werden die ersten Schritte mit Terraform in der [Azure Cloud�
 
 1. Falls Sie Cloud Shell bislang noch nicht verwendet haben, konfigurieren Sie die Umgebungs- und Speichereinstellungen. In diesem Artikel wird die Bash-Umgebung verwendet.
 
-## <a name="log-into-your-microsoft-account"></a>Anmelden bei Ihrem Microsoft-Konto
+## <a name="log-into-azure"></a>Anmelden bei Azure
 
-Cloud Shell wird automatisch unter dem Microsoft-Konto authentifiziert, mit dem Sie sich beim Azure-Portal angemeldet haben. Sollten Sie über mehrere Microsoft-Konten mit Azure-Abonnements verfügen, können Sie sich allerdings unter Verwendung von [az login](/cli/azure/reference-index?view=azure-cli-latest#az-login) bei einem dieser Konten anmelden. Hier sehen Sie zwei Beispiele für die Verwendung des Befehls `az login`:
+Cloud Shell wird automatisch unter dem Microsoft-Konto authentifiziert, mit dem Sie sich beim Azure-Portal angemeldet haben.
 
-Verwenden Sie abhängig von Ihrem Szenario eine der folgenden Vorgehensweisen:
+Außerdem werden Sie nach der Anmeldung bei Ihrem Microsoft-Konto automatisch beim Azure-Standardabonnement für dieses Konto angemeldet. Wenn das aktuelle Microsoft-Konto richtig ist und Sie Abonnements wechseln möchten, lesen Sie den Abschnitt [Angeben des aktuellen Azure-Abonnements](#specify-the-current-azure-subscription).
+
+Sollten Sie über mehrere Microsoft-Konten mit Azure-Abonnements verfügen, können Sie sich mit einer der folgenden Optionen bei einem dieser Konten anmelden:
+
+- [Anmelden bei Ihrem Microsoft-Konto](#log-into-your-microsoft-account)
+- [Anmelden mit einem Azure-Dienstprinzipal](#log-into-azure-using-an-azure-service-principal)
+
+### <a name="log-into-your-microsoft-account"></a>Anmelden bei Ihrem Microsoft-Konto
+
+Wenn Sie `az login` ohne Parameter ausführen, werden eine URL und ein Code angezeigt. Navigieren Sie zu der URL, geben Sie den Code ein, und befolgen Sie die Anweisungen, um sich mit Ihrem Microsoft-Konto bei Azure anzumelden. Sobald Sie angemeldet sind, kehren Sie zum Portal zurück.
+
+```azurecli
+az login
+```
+
+Hinweise:
+- Nach erfolgreicher Anmeldung zeigt `az login` eine Liste der Azure-Abonnements an, die mit dem angemeldeten Microsoft-Konto verknüpft sind.
+- Für die einzelnen verfügbaren Azure-Abonnements wird jeweils eine Liste mit Eigenschaften angezeigt. Die Eigenschaft `isDefault` gibt das verwendete Azure-Abonnement an. Im Abschnitt [Angeben des aktuellen Azure-Abonnements](#specify-the-current-azure-subscription) erfahren Sie, wie Sie zu einem anderen Azure-Abonnement wechseln.
+
+### <a name="log-into-azure-using-an-azure-service-principal"></a>Anmelden bei Azure mit einem Azure-Dienstprinzipal
+
+**Erstellen Sie einen Azure-Dienstprinzipal**: Wenn Sie sich mithilfe eines Dienstprinzipals bei einem Azure-Abonnement anmelden möchten, benötigen Sie zunächst Zugriff auf einen Dienstprinzipal. Wenn Sie bereits über einen Dienstprinzipal verfügen, können Sie diesen Teil des Abschnitts überspringen.
+
+Automatisierte Tools wie Terraform, die Azure-Dienste bereitstellen oder verwenden, sollten stets über eingeschränkte Berechtigungen verfügen. Azure bietet Dienstprinzipale, um zu vermeiden, dass sich Anwendungen als Benutzer mit uneingeschränkten Berechtigungen anmelden. Sollten Sie noch nicht über einen Dienstprinzipal für die Anmeldung verfügen, können Sie sich mit Ihren Benutzeranmeldeinformationen anmelden und anschließend einen Dienstprinzipal erstellen. Nach Erstellung des Dienstprinzipals können Sie dessen Informationen für zukünftige Anmeldungen verwenden.
+
+Beim [Erstellen eines Dienstprinzipals mit der Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?) stehen zahlreiche Optionen zur Verfügung. In diesem Artikel wird mit [az ad sp create-for-rbac](/cli/azure/ad/sp?#az-ad-sp-create-for-rbac) ein Dienstprinzipal mit einer Rolle **Mitwirkender** erstellt. Die Rolle **Mitwirkender** (die Standardeinstellung) verfügt über uneingeschränkte Berechtigungen für Lese- und Schreibvorgänge in einem Azure-Konto. Weitere Informationen zur rollenbasierten Zugriffssteuerung (Role-Based Access Control, RBAC) finden Sie unter [Integrierte Integrierte Rollen](/azure/active-directory/role-based-access-built-in-roles).
+
+Geben Sie den folgenden Befehl ein, und ersetzen Sie dabei `<subscription_id>` durch die ID des Abonnementkontos, das Sie verwenden möchten.
     
-- **Sie möchten sich als Benutzer anmelden:** Wenn Sie den Befehl `az login` ohne Parameter ausführen, werden eine URL und ein Code angezeigt. Navigieren Sie zu der URL, geben Sie den Code ein, und befolgen Sie die Anweisungen, um sich mit Ihrem Microsoft-Konto bei Azure anzumelden. Kehren Sie nach Abschluss der Anmeldung zum Portal zurück.
+```azurecli
+az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscription_id>"
+```
 
-    ```azurecli-interactive
-    az login
-    ```
-
-    **Hinweise:**
-    - Nach erfolgreicher Anmeldung wird durch den Befehl `az login` eine Liste der Azure-Abonnements angezeigt, die mit dem angemeldeten Microsoft-Konto verknüpft sind.
-    - Für die einzelnen verfügbaren Azure-Abonnements wird jeweils eine Liste mit Eigenschaften angezeigt. Die Eigenschaft `isDefault` gibt das verwendete Azure-Abonnement an. Im Abschnitt [Angeben des aktuellen Azure-Abonnements](#specify-the-current-azure-subscription) erfahren Sie, wie Sie zu einem anderen Azure-Abonnement wechseln.
-
-- **Sie möchten einen (noch nicht vorhandenen) Dienstprinzipal verwenden:** Automatisierte Tools wie Terraform, die Azure-Dienste bereitstellen oder verwenden, sollten stets über eingeschränkte Berechtigungen verfügen. Azure bietet Dienstprinzipale, um zu vermeiden, dass sich Anwendungen als Benutzer mit uneingeschränkten Berechtigungen anmelden. Sollten Sie noch nicht über einen Dienstprinzipal für die Anmeldung verfügen, können Sie sich mit Ihren Benutzeranmeldeinformationen anmelden und anschließend einen Dienstprinzipal erstellen. Nach Erstellung des Dienstprinzipals können Sie dessen Informationen für zukünftige Anmeldungen verwenden.
-
-    Beim [Erstellen eines Dienstprinzipals](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest) stehen zahlreiche Optionen zur Verfügung. In diesem Artikel wird ein Dienstprinzipal mit der Standardrolle **Mitwirkender** erstellt. Die Rolle **Mitwirkender** verfügt über uneingeschränkte Berechtigungen für Lese- und Schreibvorgänge in einem Azure-Konto. Weitere Informationen zur rollenbasierten Zugriffssteuerung (Role-Based Access Control, RBAC) finden Sie unter [Integrierte Azure-Rollen](/azure/active-directory/role-based-access-built-in-roles). 
+Hinweise:
+- Nach erfolgreichem Abschluss zeigt `az ad sp create-for-rbac` mehrere Werte an, z. B. das automatisch generierte Kennwort. Dieses Kennwort kann nicht erneut abgerufen werden. Es empfiehlt sich daher, das Kennwort an einem sicheren Ort zu speichern. Sollten Sie Ihr Kennwort vergessen, müssen Sie die [Anmeldeinformationen des Dienstprinzipals zurücksetzen](/cli/azure/create-an-azure-service-principal-azure-cli#reset-credentials).
     
-    Verwenden Sie den Befehl [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac), und ersetzen Sie `<subscription_id>` durch die ID des gewünschten Abonnementkontos:
-    
-    ```azurecli-interactive
-    az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscription_id>"
-    ```
+**Anmelden mit einem Azure-Dienstprinzipal:** Ersetzen Sie im folgenden Aufruf von `az login` die Platzhalter durch Informationen Ihres Dienstprinzipals.
 
-    **Hinweise:**
-    - Nach erfolgreichem Abschluss werden durch den Befehl `az ad sp create-for-rbac` mehrere Werte angezeigt, unter anderem das automatisch generierte Kennwort. Dieses Kennwort kann nicht erneut abgerufen werden. Es empfiehlt sich daher, das Kennwort an einem sicheren Ort zu speichern. Sollten Sie Ihr Kennwort vergessen, müssen Sie die [Anmeldeinformationen des Dienstprinzipals zurücksetzen](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest#reset-credentials).
-    
-- **Anmelden mit einem Azure-Dienstprinzipal:** Ersetzen Sie die Platzhalter im folgenden Befehl vom Typ `az login` durch Informationen Ihres Dienstprinzipals:
+```azurecli
+az login --service-principal -u <service_principal_name> -p "<service_principal_password>" --tenant "<service_principal_tenant>"
+```
 
-    ```azurecli-interactive
-    az login --service-principal -u <service_principal_name> -p "<service_principal_password>" --tenant "<service_principal_tenant>"
-    ```
-
-    **Hinweise:**
-    - Nach erfolgreicher Anmeldung werden durch den Befehl `az login` verschiedene Eigenschaften für das Azure-Abonnement angezeigt, unter anderem `id` und `name`.
+Hinweise:
+- Nach erfolgreicher Anmeldung zeigt `az login` verschiedene Eigenschaften für das Azure-Abonnement an, z. B. `id` und `name`.
 
 ## <a name="specify-the-current-azure-subscription"></a>Angeben des aktuellen Azure-Abonnements
 
@@ -82,34 +93,38 @@ Wie bereits im vorherigen Abschnitt erläutert, stehen für die Anmeldung bei Az
 
 Die folgenden Schritte gelten für das erste Szenario und umfassen folgende Aufgaben:
 
-- Überprüfen des aktuellen Azure-Abonnements
+- Anzeigen des aktuellen Azure-Abonnements
 - Auflisten aller verfügbaren Azure-Abonnements für das aktuelle Microsoft-Konto
 - Wechseln zu einem anderen Azure-Abonnement
 
-1. Verwenden Sie zum Überprüfen des aktuellen Azure-Abonnements den Befehl [az account show](/cli/azure/account#az-account-show).
+1. Verwenden Sie [az account show](/cli/azure/account#az-account-show), um das aktuelle Azure-Abonnement anzuzeigen.
 
-    ```azurecli-interactive
+    ```azurecli
     az account show
     ```
     
 1. Wenn Sie Zugriff auf mehrere verfügbare Azure-Abonnements haben, verwenden Sie [az account list](/cli/azure/account#az-account-list), um eine Liste mit Abonnementnamen/-IDs anzuzeigen:
 
-    ```azurecli-interactive
+    ```azurecli
     az account list --query "[].{name:name, subscriptionId:id}"
     ```
 
-1. Wenn Sie für die aktuelle Cloud Shell-Sitzung ein bestimmtes Azure-Abonnement verwenden möchten, verwenden Sie den Befehl [az account set](/cli/azure/account#az-account-set). Ersetzen Sie den Platzhalter `<subscription_id>` durch die ID (oder den Namen) des gewünschten Abonnements:
+1. Wenn Sie für die aktuelle Cloud Shell-Sitzung ein bestimmtes Azure-Abonnement verwenden möchten, verwenden Sie [az account set](/cli/azure/account#az-account-set). Ersetzen Sie den Platzhalter `<subscription_id>` durch die ID (oder den Namen) des gewünschten Abonnements:
 
-    ```azurecli-interactive
+    ```azurecli
     az account set --subscription="<subscription_id>"
     ```
 
-    **Hinweise:**
-    - Die Ergebnisse des Wechsels zum angegebenen Azure-Abonnement werden durch den Befehl `az account set` nicht angezeigt. Sie können sich jedoch mithilfe des Befehls `az account show` vergewissern, dass sich das aktuelle Azure-Abonnement geändert hat.
+    Hinweise:
+    - Die Ergebnisse des Wechsels zum angegebenen Azure-Abonnement werden durch den Aufruf von `az account set` nicht angezeigt. Sie können sich jedoch mithilfe von `az account show` vergewissern, dass sich das aktuelle Azure-Abonnement geändert hat.
+
+## <a name="configure-terraform"></a>Konfigurieren von Terraform
+
+Für Cloud Shell wird automatisch die neueste Version von Terraform installiert. Darüber hinaus werden von Terraform automatisch Informationen aus dem aktuellen Azure-Abonnement verwendet. Daher ist keine Installation oder Konfiguration erforderlich.
 
 ## <a name="create-a-terraform-configuration-file"></a>Erstellen einer Terraform-Konfigurationsdatei
 
-In diesem Abschnitt wird der [Code Shell-Editor](/azure/cloud-shell/using-cloud-shell-editor) verwendet, um eine Terraform-Konfigurationsdatei zu definieren.
+In diesem Abschnitt erfahren Sie, wie Sie eine Terraform-Konfigurationsdatei erstellen, die eine Azure-Ressourcengruppe erstellt.
 
 1. Wechseln Sie zum Verzeichnis der eingebundenen Dateifreigabe, in der Ihre Arbeit in Cloud Shell gespeichert wird. Weitere Informationen zur Dateispeicherung durch Cloud Shell finden Sie unter [Herstellen einer Verbindung mit dem Microsoft Azure Files-Speicher](/azure/cloud-shell/overview#connect-your-microsoft-azure-files-storage).
     
@@ -129,7 +144,7 @@ In diesem Abschnitt wird der [Code Shell-Editor](/azure/cloud-shell/using-cloud
     cd QuickstartTerraformTest
     ```
 
-1. Erstellen Sie mithilfe Ihres bevorzugten Editors eine Terraform-Konfigurationsdatei. In diesem Artikel wird der integrierte Cloud Shell-Editor verwendet.
+1. Erstellen Sie mithilfe Ihres bevorzugten Editors eine Terraform-Konfigurationsdatei. In diesem Artikel wird der integrierte [Cloud Shell-Editor](/azure/cloud-shell/using-cloud-shell-editor) verwendet.
 
     ```bash
     code QuickstartTerraformTest.tf
@@ -150,7 +165,7 @@ In diesem Abschnitt wird der [Code Shell-Editor](/azure/cloud-shell/using-cloud
     }
     ```
 
-    **Hinweise:**
+    Hinweise:
     - Der Block `provider` dient zum Angeben der Verwendung des [Azure-Anbieters (`azurerm`)](https://www.terraform.io/docs/providers/azurerm/index.html).
     - Innerhalb des Anbieterblocks `azurerm` werden die Attribute `version` und `features` festgelegt. Wie Sie dem Kommentar entnehmen können, ist deren Verwendung versionsspezifisch. Weitere Informationen zum Festlegen dieser Attribute für Ihre Umgebung finden Sie unter [Version 2.0 des AzureRM-Anbieters](https://www.terraform.io/docs/providers/azurerm/guides/2.0-upgrade-guide.html).
     - Die einzige [Ressourcendeklaration](https://www.terraform.io/docs/configuration/resources.html) betrifft den Ressourcentyp [azurerm_resource_group](https://www.terraform.io/docs/providers/azurerm/r/resource_group.html). Für `azure_resource_group` sind die Argumente `name` und `location` erforderlich.
@@ -161,14 +176,14 @@ In diesem Abschnitt wird der [Code Shell-Editor](/azure/cloud-shell/using-cloud
 
 ## <a name="create-and-apply-a-terraform-execution-plan"></a>Erstellen und Anwenden eines Terraform-Ausführungsplans
 
-Für Cloud Shell wird automatisch die neueste Version von Terraform installiert. Darüber hinaus werden von Terraform automatisch Informationen aus dem aktuellen Azure-Abonnement verwendet. Daher ist keine Installation oder Konfiguration erforderlich. Nachdem Sie Ihre Konfigurationsdateien erstellt haben, können Sie mit wenigen Terraform-Befehlen einen Ausführungsplan erstellen. Der erstellte Ausführungsplan kann dann überprüft und bereitgestellt werden.
+Nachdem Sie Ihre Konfigurationsdateien erstellt haben, wird in diesem Abschnitt erläutert, wie ein *Ausführungsplan* erstellt und auf Ihre Cloudinfrastruktur anwendet wird.
 
 1. Initialisieren Sie die Terraform-Bereitstellung mithilfe des Befehls [terraform init](https://www.terraform.io/docs/commands/init.html). Mit diesem Schritt werden die Azure-Module heruntergeladen, die zum Erstellen einer Azure-Ressourcengruppe erforderlich sind.
 
     ```bash
     terraform init
     ```
-    
+
 1. Mithilfe des Terraform-Befehls [terraform plan](https://www.terraform.io/docs/commands/plan.html) können Sie eine Vorschau der auszuführenden Aktionen anzeigen.
 
     ```bash
@@ -185,16 +200,16 @@ Für Cloud Shell wird automatisch die neueste Version von Terraform installiert.
     ```bash
     terraform apply
     ```
-    
+
 1. Von Terraform wird gezeigt, was passiert, wenn Sie den Ausführungsplan anwenden, und Sie werden zur Bestätigung der Ausführung aufgefordert. Geben Sie zur Bestätigung des Befehls `yes` ein, und drücken Sie die **EINGABETASTE**.
 
-1. Vergewissern Sie sich nach der Bestätigung der Planausführung mithilfe des Befehls [az group show](/cli/azure/group?view=azure-cli-latest#az-group-show), dass die Ressourcengruppe erfolgreich wurde.
+1. Vergewissern Sie sich nach der Bestätigung der Planausführung mithilfe des Befehls [az group show](/cli/azure/group?#az-group-show), dass die Ressourcengruppe erfolgreich wurde.
 
-    ```azurecli-interactive
+    ```azurecli
     az group show -n "QuickstartTerraformTest-rg"
     ```
 
-    War der Vorgang erfolgreich, werden verschiedene Eigenschaften der neu erstellten Ressourcengruppe angezeigt.
+    War der Vorgang erfolgreich, zeigt `az group show` verschiedene Eigenschaften der neu erstellten Ressourcengruppe an.
 
 ## <a name="persist-an-execution-plan-for-later-deployment"></a>Speichern eines Ausführungsplans zur späteren Bereitstellung
 
@@ -224,7 +239,7 @@ Die folgenden Schritte veranschaulichen das grundlegende Muster für die Nutzung
     terraform apply QuickstartTerraformTest.tfplan
     ```
 
-**Hinweise:**
+Hinweise:
 - Um die Verwendung mit Automatisierung zu ermöglichen, kann `terraform apply <filename>` ohne Bestätigung ausgeführt werden.
 - Wenn Sie dieses Feature verwenden möchten, lesen Sie den [Abschnitt mit der Sicherheitswarnung](https://www.terraform.io/docs/commands/plan.html#security-warning).
 
@@ -238,16 +253,16 @@ Löschen Sie die in diesem Artikel erstellten Ressourcen, wenn Sie sie nicht meh
     terraform destroy
     ```
 
-1. Von Terraform wird gezeigt, was passiert, wenn Sie den Ausführungsplan umkehren, und Sie werden zur Bestätigung des Vorgangs aufgefordert. Geben Sie zur Bestätigung des Befehls `yes` ein, und drücken Sie die **EINGABETASTE**.
+1. Von Terraform wird gezeigt, was passiert, wenn Sie den Ausführungsplan umkehren, und Sie werden zur Bestätigung des Vorgangs aufgefordert. Geben Sie zur Bestätigung `yes` ein, und drücken Sie die **EINGABETASTE**.
 
-1. Die Ausgabe nach der Bestätigung der Planausführung sieht in etwa wie im folgenden Beispiel aus. Vergewissern Sie sich mithilfe des Befehls [az group show](/cli/azure/group?view=azure-cli-latest#az-group-show), dass die Ressourcengruppe gelöscht wurde.
+1. Die Ausgabe nach der Bestätigung der Planausführung sieht in etwa wie im folgenden Beispiel aus. Vergewissern Sie sich mithilfe des Befehls [az group show](/cli/azure/group?#az-group-show), dass die Ressourcengruppe gelöscht wurde.
 
-    ```azurecli-interactive
+    ```azurecli
     az group show -n "QuickstartTerraformTest-rg"
     ```
 
-    **Hinweise:**
-    - War der Vorgang erfolgreich, wird vom Befehl `az group show` angezeigt, dass die Ressourcengruppe nicht vorhanden ist.
+    Hinweise:
+    - War der Vorgang erfolgreich, zeigt `az group show` an, dass die Ressourcengruppe nicht vorhanden ist.
 
 1. Wechseln Sie zum übergeordneten Verzeichnis, und entfernen Sie das Demoverzeichnis. Durch den Parameter `-r` wird vor dem Entfernen des Verzeichnisses der Inhalt des Verzeichnisses entfernt. Zu den Verzeichnisinhalten gehören die weiter oben erstellte Konfigurationsdatei sowie die Terraform-Zustandsdateien.
 

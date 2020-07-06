@@ -7,12 +7,12 @@ ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
-ms.openlocfilehash: 1dda447182867d6646e6b9637852f08b1d6fb124
-ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
+ms.openlocfilehash: fbde7d54010bc68bf89ea757f08432a46e8f6fbb
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83631645"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507767"
 ---
 # <a name="use-spring-data-r2dbc-with-azure-sql-database"></a>Verwenden von Spring Data R2DBC mit Azure SQL-Datenbank
 
@@ -22,93 +22,13 @@ In diesem Thema wird die Erstellung einer Beispielanwendung veranschaulicht, die
 
 [!INCLUDE [spring-data-prerequisites.md](includes/spring-data-prerequisites.md)]
 
-## <a name="prepare-the-working-environment"></a>Vorbereiten der Arbeitsumgebung
-
-Richten Sie zunächst mithilfe der folgenden Befehle einige Umgebungsvariablen ein:
-
-```bash
-AZ_RESOURCE_GROUP=r2dbc-workshop
-AZ_DATABASE_NAME=<YOUR_DATABASE_NAME>
-AZ_LOCATION=<YOUR_AZURE_REGION>
-AZ_SQL_SERVER_USERNAME=spring
-AZ_SQL_SERVER_PASSWORD=<YOUR_AZURE_SQL_PASSWORD>
-AZ_LOCAL_IP_ADDRESS=<YOUR_LOCAL_IP_ADDRESS>
-```
-
-Ersetzen Sie die Platzhalter durch die folgenden Werte, die in diesem Artikel verwendet werden:
-
-- `<YOUR_DATABASE_NAME>`: Der Name für den Azure SQL-Datenbank-Server. Er muss innerhalb von Azure eindeutig sein.
-- `<YOUR_AZURE_REGION>`: Die von Ihnen verwendete Azure-Region. Sie können standardmäßig `eastus` verwenden, wir empfehlen aber, eine Region zu konfigurieren, die näher an Ihrem Standort liegt. Die vollständige Liste der verfügbaren Regionen wird angezeigt, wenn Sie `az account list-locations` eingeben.
-- `<AZ_SQL_SERVER_PASSWORD>`: Das Kennwort Ihres Azure SQL-Datenbank-Servers. Dieses Kennwort sollte mindestens acht Zeichen lang sein. Es muss Zeichen aus drei der folgenden Kategorien enthalten: Englische Großbuchstaben, englische Kleinbuchstaben, Zahlen (0-9) und nicht alphanumerische Zeichen (!, $, #, % usw.).
-- `<YOUR_LOCAL_IP_ADDRESS>`: Die IP-Adresse Ihres lokalen Computers, auf dem Sie die Spring Boot-Anwendung ausführen. Sie können sie ganz einfach ermitteln, indem Sie im Browser zu [whatismyip.akamai.com](http://whatismyip.akamai.com/) navigieren.
-
-Erstellen Sie als Nächstes eine Ressourcengruppe:
-
-```azurecli
-az group create \
-    --name $AZ_RESOURCE_GROUP \
-    --location $AZ_LOCATION \
-    | jq
-```
-
-> [!NOTE]
-> Wir verwenden das in [Azure Cloud Shell](https://shell.azure.com/) standardmäßig installierte Dienstprogramm `jq`, um JSON-Daten anzuzeigen und ihre Lesbarkeit zu erhöhen.
-> Wenn Ihnen dieses Hilfsprogramm nicht gefällt, können Sie den Teil `| jq` aller verwendeten Befehle einfach entfernen.
-
-## <a name="create-an-azure-sql-database-instance"></a>Erstellen einer Azure SQL-Datenbankinstanz
-
-Sie erstellen zuerst einen verwalteten Azure SQL-Datenbank-Server.
-
-> [!NOTE]
-> Ausführlichere Informationen zum Erstellen von Azure SQL-Datenbank-Servern finden Sie unter [Schnellstart: Erstellen einer Azure SQL-Einzeldatenbank](/azure/sql-database/sql-database-single-database-get-started).
-
-Führen Sie in der [Azure Cloud Shell](https://shell.azure.com/) das folgende Skript aus:
-
-```azurecli
-az sql server create \
-    --resource-group $AZ_RESOURCE_GROUP \
-    --name $AZ_DATABASE_NAME \
-    --location $AZ_LOCATION \
-    --admin-user $AZ_SQL_SERVER_USERNAME \
-    --admin-password $AZ_SQL_SERVER_PASSWORD \
-    | jq
-```
-
-Mit diesem Befehl wird ein Azure SQL-Datenbank-Server erstellt.
-
-### <a name="configure-a-firewall-rule-for-your-azure-sql-database-server"></a>Konfigurieren einer Firewallregel für den Azure SQL-Datenbank-Server
-
-Azure SQL-Datenbankinstanzen sind standardmäßig gesichert. Sie besitzen eine Firewall, die keine eingehenden Verbindungen zulässt. Damit Sie die Datenbank verwenden können, müssen Sie eine Firewallregel hinzufügen, die den Zugriff der lokalen IP-Adresse auf den Datenbankserver zulässt.
-
-Da Sie die lokale IP-Adresse zu Beginn dieses Artikels konfiguriert haben, können Sie die Firewall des Servers öffnen, indem Sie Folgendes ausführen:
-
-```azurecli
-az sql server firewall-rule create \
-    --resource-group $AZ_RESOURCE_GROUP \
-    --name $AZ_DATABASE_NAME-database-allow-local-ip \
-    --server $AZ_DATABASE_NAME \
-    --start-ip-address $AZ_LOCAL_IP_ADDRESS \
-    --end-ip-address $AZ_LOCAL_IP_ADDRESS \
-    | jq
-```
-
-### <a name="configure-a-azure-sql-database"></a>Konfigurieren einer Azure SQL-Datenbank
-
-Der von Ihnen zuvor erstellte Azure SQL-Datenbank-Server ist leer. Er verfügt über keine Datenbank, die Sie mit der Spring Boot-Anwendung verwenden können. Erstellen Sie eine neue Datenbank mit dem Namen `demo`:
-
-```azurecli
-az sql db create \
-    --resource-group $AZ_RESOURCE_GROUP \
-    --name demo \
-    --server $AZ_DATABASE_NAME \
-    | jq
-```
+[!INCLUDE [spring-data-sql-server-setup.md](includes/spring-data-sql-server-setup.md)]
 
 [!INCLUDE [spring-data-create-reactive.md](includes/spring-data-create-reactive.md)]
 
 ### <a name="generate-the-application-by-using-spring-initializr"></a>Erstellen der Anwendung mithilfe von Spring Initializr
 
-Generieren der Anwendung an der Befehlszeile durch Eingeben von:
+Generieren Sie die Anwendung durch Ausführen des folgenden Befehls in der Befehlszeile:
 
 ```bash
 curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.0.RELEASE -d javaVersion=8 | tar -xzvf -
@@ -118,7 +38,7 @@ curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d b
 
 Öffnen Sie die Datei *pom.xml* des generierten Projekts, um den reaktiven Azure SQL-Datenbank-Treiber aus dem [GitHub-Repository „r2dbc-mssql“](https://github.com/r2dbc/r2dbc-mssql) hinzuzufügen.
 
-Fügen Sie nach der Abhängigkeit `spring-boot-starter-webflux` den folgenden Codeausschnitt hinzu:
+Fügen Sie nach der Abhängigkeit `spring-boot-starter-webflux` den folgenden Text hinzu:
 
 ```xml
 <dependency>
@@ -130,7 +50,7 @@ Fügen Sie nach der Abhängigkeit `spring-boot-starter-webflux` den folgenden Co
 
 ### <a name="configure-spring-boot-to-use-azure-sql-database"></a>Konfigurieren von Spring Boot für die Verwendung von Azure SQL-Datenbank
 
-Öffnen Sie die Datei *src/main/resources/application.properties*, und fügen Sie Folgendes hinzu:
+Öffnen Sie die Datei *src/main/resources/application.properties*, und fügen Sie den folgenden Text hinzu:
 
 ```properties
 logging.level.org.springframework.data.r2dbc=DEBUG
@@ -140,13 +60,12 @@ spring.r2dbc.username=spring@$AZ_DATABASE_NAME
 spring.r2dbc.password=$AZ_SQL_SERVER_PASSWORD
 ```
 
-- Ersetzen Sie die beiden Variablen `$AZ_DATABASE_NAME` durch den Wert, den Sie zu Beginn dieses Artikels konfiguriert haben.
-- Ersetzen Sie die Variable `$AZ_SQL_SERVER_PASSWORD` durch den Wert, den Sie zu Beginn dieses Artikels konfiguriert haben.
+Ersetzen Sie die beiden `$AZ_DATABASE_NAME`-Variablen und die `$AZ_SQL_SERVER_PASSWORD`-Variable durch die Werte, die Sie zu Beginn dieses Artikels konfiguriert haben.
 
 > [!NOTE]
 > Zur Verbesserung der Leistung ist die `spring.r2dbc.url`-Eigenschaft so konfiguriert, dass ein Verbindungspool mit [r2dbc-pool](https://github.com/r2dbc/r2dbc-pool) verwendet wird.
 
-Sie sollten Ihre Anwendung nun mithilfe des angegebenen Maven-Wrappers starten können:
+Sie sollten Ihre Anwendung nun mithilfe des angegebenen Maven-Wrappers wie folgt starten können:
 
 ```bash
 ./mvnw spring-boot:run
@@ -165,7 +84,7 @@ DROP TABLE IF EXISTS todo;
 CREATE TABLE todo (id INT IDENTITY PRIMARY KEY, description VARCHAR(255), details VARCHAR(4096), done BIT);
 ```
 
-Halten Sie die ausgeführte Anwendung an, und starten Sie sie erneut. Die Anwendung verwendet nun die Datenbank `demo`, die Sie zuvor erstellt haben, und erstellt darin eine `todo`-Tabelle.
+Halten Sie die ausgeführte Anwendung an, und starten Sie sie mit dem folgenden Befehl erneut. Die Anwendung verwendet nun die Datenbank `demo`, die Sie zuvor erstellt haben, und erstellt darin eine `todo`-Tabelle.
 
 ```bash
 ./mvnw spring-boot:run

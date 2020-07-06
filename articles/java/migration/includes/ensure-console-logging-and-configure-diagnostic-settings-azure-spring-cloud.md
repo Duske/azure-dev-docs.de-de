@@ -2,16 +2,16 @@
 author: yevster
 ms.author: yebronsh
 ms.date: 4/15/2020
-ms.openlocfilehash: b53308d4a9db52a25665d0daa74be678e726c499
-ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+ms.openlocfilehash: 3ff76d977c231b4b238f9dbec7f3bfaddfe5e484
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82990182"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507600"
 ---
 ### <a name="ensure-console-logging-and-configure-diagnostic-settings"></a>Sicherstellen der Konsolenprotokollierung und Konfigurieren von Diagnoseeinstellungen
 
-Konfigurieren Sie Ihre Protokollierung so, dass die Protokollierungsinformationen aller Anwendungen in Azure Spring Cloud nicht in Dateien, sondern in der Konsole ausgegeben werden.
+Konfigurieren Sie Ihre Protokollierung so, dass alle Ausgaben nicht in Dateien, sondern an die Konsole weitergeleitet werden.
 
 Nach der Bereitstellung einer Anwendung in Azure Spring Cloud können Sie [eine Diagnoseeinstellung hinzufügen](/azure/spring-cloud/diagnostic-services), um die Erfassung protokollierter Ereignisse zu ermöglichen (beispielsweise durch Azure Monitor Log Analytics).
 

@@ -3,12 +3,12 @@ title: Konfigurieren Ihrer lokalen Python-Umgebung für die Azure-Entwicklung
 description: Hier erfahren Sie, wie Sie eine lokale Python-Entwicklungsumgebung für die Arbeit mit Azure einrichten – einschließlich Visual Studio Code, den Azure SDK-Bibliotheken und den erforderlichen Anmeldeinformationen für die Bibliothekauthentifizierung.
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: e3eb03182a45f3ceacc8b3ea09abca47d8fa2e81
-ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
+ms.openlocfilehash: cf87c90bd36594ffa4e1f3837133238f89a77836
+ms.sourcegitcommit: 43e4b50f6f6f5806b2f162ca39367face0779ff6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84256455"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84421496"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>Konfigurieren Ihrer lokalen Python-Entwicklungsumgebung für Azure
 
@@ -22,11 +22,13 @@ Dieser Artikel enthält die einmalig durchzuführenden Einrichtungsanweisungen z
 
 Nachdem Sie Ihre Arbeitsstation konfiguriert haben, müssen Sie nur noch minimale zusätzliche Konfigurationen vornehmen, um verschiedene Schnellstarts und Tutorials an anderer Stelle in diesem Developer Center sowie in der Azure-Dokumentation durchzuführen.
 
+Dieses Setup für die lokale Entwicklung ist von der [Bereitstellung von Ressourcen](cloud-development-flow.md) getrennt, aus denen die  *Cloudumgebung* Ihrer Anwendung in Azure besteht. In Ihrem Entwicklungsprozess führen Sie Code in Ihrer lokalen Entwicklungsumgebung aus, der auf diese Cloudressourcen zugreifen kann, aber Ihr Code wird noch nicht für einen [geeigneten Hostingdienst](quickstarts-app-hosting.md) in der Cloud bereitgestellt. Dieser Bereitstellungsschritt wird später ausgeführt, wie im Artikel [Azure-Entwicklungsablauf](cloud-development-flow.md) beschrieben.
+
 ## <a name="install-components"></a>Installieren von Komponenten
 
 ### <a name="required-components"></a>Erforderliche Komponenten
 
-| Name/Installationsprogramm | Beschreibung |
+| Name/Installationsprogramm | BESCHREIBUNG |
 | --- | --- |
 | [Azure-Konto mit einem aktiven Abonnement](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=python-dev-center&mktingSource=environment-setup) | Konten/Abonnements sind kostenlos und umfassen viele kostenlose Dienste. |
 | [Python 2.7+ oder 3.5.3+](https://www.python.org/downloads) | Die Runtime der Programmiersprache Python. Wir empfehlen die aktuelle Version von Python 3.x, es sei denn, Sie haben besondere Anforderungen an die Version. |
@@ -39,7 +41,7 @@ Hinweise:
 
 ### <a name="recommended-components"></a>Empfohlene Komponenten
 
-| Name/Installationsprogramm | Beschreibung |
+| Name/Installationsprogramm | BESCHREIBUNG |
 | --- | --- |
 | [Visual Studio Code](https://code.visualstudio.com) | Obwohl Sie mit jedem passenden Editor oder jeder geeigneten IDE arbeiten können, ist die kostenlose, schlanke IDE von Microsoft bei Python-Entwicklern sehr beliebt. Eine Einführung finden Sie unter [Python in VS Code](https://code.visualstudio.com/docs/python/python-tutorial). |
 | [Python-Erweiterungen für VS Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python) | Fügt VS Code Python-Unterstützung hinzu. |
@@ -48,7 +50,7 @@ Hinweise:
 
 ### <a name="optional-components"></a>Optionale Komponenten
 
-| Name/Installationsprogramm | Beschreibung |
+| Name/Installationsprogramm | BESCHREIBUNG |
 | --- | --- |
 | [Docker-Erweiterung für VS Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python) | Fügt VS Code Docker-Unterstützung hinzu, was hilfreich ist, wenn Sie regelmäßig mit Containern arbeiten. |
 
@@ -71,7 +73,7 @@ az login
 
 Der Befehl `az` ist der Stammbefehl der Azure CLI. Auf `az` folgen ein oder mehrere spezifische Befehle, z. B. `login`. Informationen finden Sie in der Referenz zum Befehl [az login](/cli/azure/authenticate-azure-cli).
 
-Die Azure CLI behält Ihre Anmeldung normalerweise sitzungsübergreifend bei, aber es ist bewährte Praxis, immer `az login` auszuführen, wenn Sie ein neues Terminal oder eine neue Eingabeaufforderung öffnen.
+Die Azure CLI behält Ihre Anmeldung normalerweise sitzungsübergreifend bei, aber es ist eine bewährte Methode, immer `az login` auszuführen, wenn Sie ein neues Terminal oder eine neue Eingabeaufforderung öffnen.
 
 ## <a name="configure-authentication"></a>Konfigurieren der Authentifizierung
 

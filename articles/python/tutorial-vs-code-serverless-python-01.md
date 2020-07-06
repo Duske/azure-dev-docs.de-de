@@ -4,12 +4,12 @@ description: 'Tutorialschritt 1: Einführung und Voraussetzungen'
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: fcb9a520e10036d5059f060dedf49e8f222af184
-ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
+ms.openlocfilehash: e05402123da0c95a7e3abed8d0f525ad0c065bbe
+ms.sourcegitcommit: 7474de4884bce076ce33ca77ae3584ba1598bbc6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83708584"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85069374"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>Tutorial: Erstellen und Bereitstellen von Azure Functions serverlos in Python mit Visual Studio Code
 
@@ -18,6 +18,8 @@ In diesem Artikel verwenden Sie Visual Studio Code und die Azure Functions-Erwei
 Azure Functions führt Ihren Code in einer serverlosen Umgebung aus, ohne dass ein virtueller Computer bereitgestellt oder eine Web-App veröffentlicht werden muss. Die Azure Functions-Erweiterung für Visual Studio Code vereinfacht den Prozess der Verwendung von Funktionen erheblich, indem sie automatisch viele Konfigurationsprobleme löst.
 
 Wenn Sie Probleme mit einem der Schritte in diesem Tutorial haben, würden wir uns über nähere Informationen freuen. Verwenden Sie die Schaltfläche **Ich bin auf ein Problem gestoßen** am Ende jedes Artikels, um Feedback zu geben.
+
+Ein Demonstrationsvideo von der virtuellen PyCon 2020 finden Sie unter <a href="https://www.youtube.com/watch?v=9bMsdBYy-D0&feature=youtu.be&ocid=AID3006292" target="_blank">Erstellen von Azure Functions mit VS Code</a> (youtube.com). Möglicherweise interessieren Sie sich auch für die längere Sitzung mit dem Titel <a href="https://www.youtube.com/watch?v=PV7iy6FPjAY&feature=youtu.be&t=13&ocid=AID3006292" target="_blank">Einfache Datenverarbeitung mit Azure Functions</a> (youtube.com). 
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -42,7 +44,7 @@ Verwenden Sie bei der Installation von Node.js die Standardoptionen, und wählen
 
 Installieren Sie folgende Software:
 
-- Python 3.6, 3.7 oder 3.8, wie für Azure Functions erforderlich. Installieren Sie Python von [python.org](https://www.python.org/downloads). Wählen Sie bei der Installation **Add Python 3.x to PATH** (Python 3.x zu PATH hinzufügen) aus, und verwenden Sie die Standardoptionen, indem Sie die Option **Jetzt installieren** auswählen. Wählen Sie unter Windows außerdem am Ende des Prozesses **Disable Path length limit** (Pfadlängenbeschränkung deaktivieren) aus.
+- Eine 64-Bit-Version von Python 3.6, 3.7 oder 3.8, wie für Azure Functions erforderlich. Installieren Sie Python von [python.org](https://www.python.org/downloads). Wählen Sie bei der Installation **Add Python 3.x to PATH** (Python 3.x zu PATH hinzufügen) aus, und verwenden Sie die Standardoptionen, indem Sie die Option **Jetzt installieren** auswählen. Wählen Sie unter Windows außerdem am Ende des Prozesses **Disable Path length limit** (Pfadlängenbeschränkung deaktivieren) aus.
 - [Visual Studio Code](https://code.visualstudio.com/)
 - Die [Python-Erweiterung](https://marketplace.visualstudio.com/items?itemName=ms-python.python) wie in [Erste Schritte in Python mit Visual Studio Code](https://code.visualstudio.com/docs/python/python-tutorial) beschrieben.
 - Die [Azure Functions-Erweiterung](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions). Allgemeine Informationen finden Sie im [vscode-azurefunctions-GitHub-Repository](https://github.com/Microsoft/vscode-azurefunctions).

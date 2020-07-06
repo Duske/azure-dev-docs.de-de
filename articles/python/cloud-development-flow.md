@@ -1,20 +1,28 @@
 ---
 title: Azure-Entwicklungsablauf
 description: Eine Übersicht über den Cloudentwicklungszyklus in Azure, der die Bereitstellung, Codierung, Tests, Implementierung und Verwaltung umfasst.
-ms.date: 05/12/2020
+ms.date: 06/04/2020
 ms.topic: conceptual
-ms.openlocfilehash: d958659074a965b28d9898783f7810572e12248f
-ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
+ms.openlocfilehash: 644cafc60619a1920e256c4c4f32f1b3308caa83
+ms.sourcegitcommit: 499f7275446f006fa43c4eff3b1f0d001e9a98d9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84146168"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84453741"
 ---
 # <a name="the-azure-development-flow-provision-code-test-deploy-and-manage"></a>Der Azure-Entwicklungsablauf: Bereitstellung, Codierung, Tests, Implementierung und Verwaltung
 
 [Vorheriger Artikel: Bereitstellen und Verwalten von und Zugreifen auf Ressourcen](cloud-development-provisioning.md)
 
 Nachdem Sie nun das Azure-Modell der Dienste und Ressourcen verstanden haben, können Sie den Gesamtablauf der Entwicklung von Cloudanwendungen mit Azure nachvollziehen: **Bereitstellung**, **Codierung**, **Tests**, **Implementierung** und **Verwaltung**.
+
+| Schritt | Primäre Tools | activities |
+| --- | --- | --- |
+| Bereitstellen | Azure CLI, Azure-Portal, Cloud Shell, Python-Skripts mit Azure-Verwaltungsbibliotheken | Bereitstellen von Ressourcengruppen, Bereitstellen bestimmter Ressourcen in diesen Gruppen, Konfigurieren von Ressourcen für die Verwendung aus App-Code und/oder zum Empfangen von Python-Code in Bereitstellungen. |
+| Code | Code-Editor (z. B. Visual Studio Code), Azure-Bibliotheken, Referenzdokumentation | Schreiben von Python-Code mithilfe der Azure-Clientbibliotheken, um mit bereitgestellten Ressourcen zu interagieren. |
+| Test | Python-Runtime, Debugger | Lokales Ausführen von Python-Code für aktive Cloudressourcen (in der Regel für Entwicklungs- oder Testressourcen, nicht für Produktionsressourcen). Der Code selbst wird noch nicht in Azure gehostet, was Ihnen hilft, schnell zu debuggen und zu iterieren. |
+| Bereitstellen | Azure CLI, GitHub, DevOps | Nachdem der Code lokal getestet wurde, stellen Sie ihn in einem geeigneten Azure-Hostingdienst bereit, in dem der Code selbst in der Cloud ausgeführt werden kann. Bereitgestellter Code wird normalerweise für Staging- oder Produktionsressourcen ausgeführt. |
+| Verwalten | Azure CLI, Azure-Portal, Python-Skripts, Azure Monitor | Überwachen der Leistung und Reaktionsfähigkeit von Apps, Vornehmen von Anpassungen in der Produktionsumgebung, Rückmigration von Verbesserungen in die Entwicklungsumgebung für die nächste Bereitstellungs- und Entwicklungsrunde. |
 
 ## <a name="step-1-provision-and-configure-resources"></a>Schritt 1: Bereitstellen und Konfigurieren von Ressourcen
 
@@ -24,7 +32,7 @@ Die Bereitstellung beginnt mit dem Erstellen einer Ressourcengruppe in einer gee
 
 Innerhalb dieser Ressourcengruppe können Sie dann die einzelnen benötigten Ressourcen über das Portal, über die Befehlszeilenschnittstelle oder über die Azure-Bibliotheken bereitstellen und konfigurieren. Die Konfiguration umfasst das Festlegen von Zugriffsrichtlinien, die steuern, welche Identitäten (Dienstprinzipale und/oder Anwendungs-IDs) auf diese Ressourcen zugreifen können.
 
-Für die meisten Entwicklungsszenarien erstellen Sie wahrscheinlich Bereitstellungsskripts mit der Azure-Befehlszeilenschnittstelle und/oder Python-Code unter Verwendung der Azure-Bibliotheken. Solche Skripts beschreiben die Gesamtheit des Ressourcenbedarfs Ihrer Anwendung und ermöglichen es Ihnen, diese Ressourcen in verschiedenen Entwicklungs-, Test- und Produktionsumgebungen einfach erneut zu erstellen (im Gegensatz zur manuellen Durchführung vieler wiederholter Schritte im Azure-Portal). Mit solchen Skripts wird außerdem die Bereitstellung einer Umgebung in einer anderen Region oder die Verwendung anderer Ressourcengruppen vereinfacht. Sie können diese Skripts auch in Quellcodeverwaltungsrepositorys verwalten, sodass Sie über einen vollständigen Überwachungs- und Änderungsverlauf verfügen.
+Für die meisten Anwendungsszenarien erstellen Sie wahrscheinlich Bereitstellungsskripts mit der Azure CLI und/oder Python-Code unter Verwendung der Azure-Bibliotheken. Solche Skripts beschreiben die Gesamtheit des Ressourcenbedarfs Ihrer Anwendung. Mit einem Skript können Sie auf einfache Weise denselben Satz von Ressourcen in verschiedenen Entwicklungs-, Test-, Staging- und Produktionsumgebungen erneut erstellen, anstatt viele wiederholte Schritte im Azure-Portal manuell auszuführen. Mit solchen Skripts wird außerdem die Bereitstellung einer Umgebung in einer anderen Region oder die Verwendung anderer Ressourcengruppen vereinfacht. Sie können diese Skripts auch in Quellcodeverwaltungsrepositorys verwalten, sodass Sie über einen vollständigen Überwachungs- und Änderungsverlauf verfügen.
 
 ## <a name="step-2-write-your-app-code-to-use-resources"></a>Schritt 2: Schreiben des App-Codes für die Verwendung von Ressourcen
 
@@ -32,7 +40,9 @@ Nachdem Sie die Ressourcen bereitgestellt haben, die Sie für Ihre Anwendung ben
 
 Beispielsweise haben Sie im Bereitstellungsschritt möglicherweise ein Azure-Speicherkonto erstellt, einen Blobcontainer in diesem Konto angelegt und Zugriffsrichtlinien für die Anwendung für diesen Container festgelegt. Aus Ihrem Code können Sie sich jetzt mit diesem Speicherkonto authentifizieren und dann Blobs in diesem Container erstellen, aktualisieren oder löschen. (Dieser Vorgang wird unter [Beispiel: Verwenden von Azure Storage](azure-sdk-example-storage.md) veranschaulicht.) Sie haben analog dazu möglicherweise auch eine Datenbank mit einem Schema und entsprechenden Berechtigungen bereitgestellt, damit der Anwendungscode eine Verbindung mit der Datenbank herstellen und die üblichen CRUD-Vorgänge (Erstellen, Lesen, Aktualisieren und Löschen) ausführen kann.
 
-Als Python-Entwickler schreiben Sie Ihren Anwendungscode in der Regel in Python unter Verwendung der Azure-Bibliotheken für Python. Allerdings können alle unabhängigen Teile einer Cloudanwendung in einer beliebigen unterstützten Sprache geschrieben werden. Wenn Sie in einem Team mit einer Vielzahl von Sprachkenntnissen arbeiten, ist es beispielsweise durchaus möglich, dass einige Teile der Anwendung in Python geschrieben werden, einige in JavaScript, einige in Java und wieder andere in C#.
+App-Code verwendet in der Regel Umgebungsvariablen, um die Namen und URLs der zu verwendenden Ressourcen zu identifizieren. Mit Umgebungsvariablen können Sie problemlos zwischen Cloudumgebungen (Entwicklung, Test, Staging und Produktion) wechseln, ohne dass Änderungen am Code vorgenommen werden müssen.
+
+Als Python-Entwickler schreiben Sie Ihren Anwendungscode wahrscheinlich in Python unter Verwendung der Azure-Bibliotheken für Python. Allerdings können alle unabhängigen Teile einer Cloudanwendung in einer beliebigen unterstützten Sprache geschrieben werden. Wenn Sie in einem Team mit einer Vielzahl von Sprachkenntnissen arbeiten, ist es beispielsweise durchaus möglich, dass einige Teile der Anwendung in Python geschrieben werden, einige in JavaScript, einige in Java und wieder andere in C#.
 
 Die Azure-Bibliotheken können von Anwendungscode nach Bedarf zum Ausführen von Bereitstellungs- und Verwaltungsvorgängen verwendet werden. Analog dazu können die Bibliotheken von Bereitstellungsskripts verwendet werden, um Ressourcen mit bestimmten Daten zu initialisieren oder Aufgaben für die Verwaltung von Cloudressourcen auszuführen. Das gilt auch, wenn diese Skripts lokal ausgeführt werden.
 
@@ -42,7 +52,7 @@ Entwickler testen Anwendungscode in der Regel gern auf ihren lokalen Arbeitsstat
 
 Indem Sie den Code lokal ausführen, können Sie auch die Debugfunktionen von Tools wie Visual Studio Code nutzen und Ihren Code in einem Quellcodeverwaltungsrepository verwalten.
 
-Sie müssen Ihren Code für lokale Tests überhaupt nicht ändern: Azure unterstützt die lokale Entwicklung und das Debuggen mit dem gleichen Code, den Sie in der Cloud bereitstellen. Umgebungsvariablen sind der Schlüssel: In der Cloud kann Ihr Code auf die Einstellungen der Hostingressource als Umgebungsvariablen zugreifen. Wenn Sie dieselben Umgebungsvariablen lokal erstellen, wird derselbe Code ohne Änderungen ausgeführt. Dieses Muster funktioniert für Authentifizierungsanmeldeinformationen, Ressourcen-URLs, Verbindungszeichenfolgen und eine beliebige Anzahl anderer Einstellungen, wodurch die Verwendung von Ressourcen in einer Entwicklungsumgebung beim lokalen Ausführen von Code und von Produktionsressourcen nach der Bereitstellung des Codes in der Cloud vereinfacht wird.
+Sie müssen Ihren Code für lokale Tests überhaupt nicht ändern: Azure unterstützt die lokale Entwicklung und das Debuggen mit dem gleichen Code, den Sie in der Cloud bereitstellen. Umgebungsvariablen sind erneut der Schlüssel: In der Cloud kann Ihr Code auf die Einstellungen der Hostingressource als Umgebungsvariablen zugreifen. Wenn Sie dieselben Umgebungsvariablen lokal erstellen, wird derselbe Code ohne Änderungen ausgeführt. Dieses Muster funktioniert für Authentifizierungsanmeldeinformationen, Ressourcen-URLs, Verbindungszeichenfolgen und eine beliebige Anzahl anderer Einstellungen, wodurch die Verwendung von Ressourcen in einer Entwicklungsumgebung beim lokalen Ausführen von Code und von Produktionsressourcen nach der Bereitstellung des Codes in der Cloud vereinfacht wird.
 
 ## <a name="step-4-deploy-your-app-code-to-azure"></a>Schritt 4: Bereitstellen des App-Codes in Azure
 
@@ -62,7 +72,7 @@ Die Überwachung gibt Aufschluss darüber, wie Sie Ihre Cloudanwendung ggf. neu 
 
 Sie sind jetzt mit der grundlegenden Struktur von Azure und dem allgemeinen Entwicklungsablauf vertraut: Bereitstellen von Ressourcen, Schreiben und Testen von Code, Bereitstellen des Codes in Azure und Überwachen und Verwalten dieser Ressourcen.
 
-Der nächste Schritt besteht darin, die Arbeitsstation vollständig zu konfigurieren, damit sie für diesen Ablauf verwendet werden kann. Danach können Sie sich mit den Azure-Bibliotheken befassen.
+Der nächste Schritt besteht darin, sich mit den Azure-Bibliotheken für Python vertraut zu machen, die Sie in vielen Teilen des Flows verwenden.
 
 > [!div class="nextstepaction"]
-> [Konfigurieren der lokalen Entwicklungsumgebung >>>](configure-local-development-environment.md)
+> [Einführung in die Verwendung der Azure-Bibliotheken für Python >>>](azure-sdk-overview.md)
