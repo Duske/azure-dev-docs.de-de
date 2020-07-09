@@ -6,12 +6,12 @@ ms.date: 02/01/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 762ac74b73a274e792ed19ac8ca7c2b68d98e778
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 051704a83e0535a6754c3c4dbd82eb8dfcf8e3c4
+ms.sourcegitcommit: 7be67fb768fb5e19f7de573068cc1376b3d90d1f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82105071"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85906437"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-intellij"></a>Verwalten von Speicherkonten mithilfe von Azure-Explorer für IntelliJ
 
@@ -35,47 +35,23 @@ Gehen Sie folgendermaßen vor, um ein Speicherkonto mit dem Azure-Explorer zu er
 
    ![Dialogfeld „Neues Speicherkonto erstellen“][CS02]
 
-   * **Name:** Geben Sie den Namen des neuen Speicherkontos an.
+   * **Name**: Der Name für das neue Speicherkonto.
 
-   * **Kontoart:** Geben Sie den Typ des zu erstellenden Speicherkontos an (z.B. „Blob Storage“). Weitere Informationen finden Sie unter [Informationen zu Azure-Speicherkonten]. 
+   * **Kontoart**: Der Typ des zu erstellenden Speicherkontos (z. B. „Blob Storage“). Weitere Informationen finden Sie unter [Informationen zu Azure-Speicherkonten]. 
 
-   * **Leistung:** Geben Sie an, welches Speicherkontoangebot vom ausgewählten Herausgeber verwendet werden soll (z.B. „Premium“). Weitere Informationen finden Sie unter [Skalierbarkeits- und Leistungsziele für Azure Storage]. 
+   * **Leistung**: Das zu verwendende Speicherkontoangebot des ausgewählten Herausgebers (z. B. „Premium“). Weitere Informationen finden Sie unter [Skalierbarkeits- und Leistungsziele für Azure Storage]. 
 
-   * **Replikation**: Gibt die Replikation des Speicherkontos an (z.B. „zonenredundant“). Weitere Informationen finden Sie unter [Azure-Speicherreplikation]. 
+   * **Replikation**: Die Replikation für das Speicherkonto (z. B. „Zonenredundant“). Weitere Informationen finden Sie unter [Azure-Speicherreplikation]. 
 
-   * **Abonnement:** Wählen Sie das Azure-Abonnement aus, das Sie für das neue Speicherkonto verwenden möchten.
+   * **Abonnement**: Das Azure-Abonnement, das Sie für das neue Speicherkonto verwenden möchten.
 
-   * **Ort**: Gibt den Speicherort an, an dem Ihr Speicherkonto erstellt wird (z.B. USA, Westen).
+   * **Standort**: Der Standort, an dem Ihr Speicherkonto erstellt wird (z. B. „USA, Westen“).
 
-   * **Ressourcengruppe:** Geben Sie die Ressourcengruppe für Ihren virtuellen Computer an. Wählen Sie eine der folgenden Optionen aus:
-      * **Neu erstellen:** gibt an, dass Sie eine neue Ressourcengruppe erstellen möchten.
+   * **Ressourcengruppe**: Die Ressourcengruppe für Ihre VM. Wählen Sie eine der folgenden Optionen aus:
+      * **Neue erstellen**: Gibt an, dass Sie eine neue Ressourcengruppe erstellen möchten.
       * **Vorhandene verwenden**: Gibt an, dass Sie in einer Liste von Ressourcengruppen, die Ihrem Azure-Konto zugeordnet sind, eine Auswahl treffen möchten.
 
 4. Nachdem Sie alle vorstehenden Optionen angegeben haben, klicken Sie auf **OK**.
-
-## <a name="create-a-storage-container-in-intellij"></a>Erstellen eines Speichercontainers in IntelliJ
-
-Gehen Sie folgendermaßen vor, um einen Speichercontainer mit dem Azure-Explorer zu erstellen:
-
-1. Klicken Sie in der Azure-Exploreransicht mit der rechten Maustaste auf das Speicherkonto, in dem Sie einen Container erstellen möchten, und klicken Sie dann auf **Blobcontainer erstellen**.
-
-   ![Befehl „Blobcontainer erstellen“][CC01]
-
-2. Geben Sie im Dialogfeld **Blobcontainer erstellen** den Namen für Ihren Container ein, und klicken Sie dann auf **OK**. Weitere Informationen zum Benennen von Speichercontainern finden Sie unter [Benennen von Containern, Blobs und Metadaten und Verweisen auf diese].
-
-   ![Dialogfeld „Speichercontainer erstellen“][CC02]
-
-## <a name="delete-a-storage-container-in-intellij"></a>Löschen eines Speichercontainers in IntelliJ
-
-Gehen Sie folgendermaßen vor, um einen Speichercontainer mit dem Azure-Explorer zu löschen:
-
-1. Klicken Sie in der Azure-Exploreransicht mit der rechten Maustaste auf den Speichercontainer, und klicken Sie dann auf **Löschen**.
-
-   ![Befehl „Speichercontainer löschen“][DC01]
-
-2. Klicken Sie im Bestätigungsfenster auf **Ja**.
-
-   ![Bestätigungsfenster für „Speichercontainer löschen“][DC02]
 
 ## <a name="delete-a-storage-account-in-intellij"></a>Löschen eines Speicherkontos in IntelliJ
 
@@ -111,7 +87,7 @@ Weitere Informationen zu Azure Storage-Konten sowie Größen und Preisen finden 
 [Informationen zu Azure-Speicherkonten]: /azure/storage/storage-create-storage-account
 [Azure-Speicherreplikation]: /azure/storage/storage-redundancy
 [Skalierbarkeits- und Leistungsziele für Azure Storage]: /azure/storage/storage-scalability-targets
-[Benennen von Containern, BLOBs und Metadaten und Verweisen auf diese]: https://go.microsoft.com/fwlink/?LinkId=255555
+[Naming and referencing containers, blobs, and metadata]: https://go.microsoft.com/fwlink/?LinkId=255555
 
 [Größen für Windows-Speicherkonten in Azure]: /azure/virtual-machines/virtual-machines-windows-sizes
 [Größen für Linux-Speicherkonten in Azure]: /azure/virtual-machines/virtual-machines-linux-sizes
