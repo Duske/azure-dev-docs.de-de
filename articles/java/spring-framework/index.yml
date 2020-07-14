@@ -6,12 +6,12 @@ metadata:
   description: Spring ist ein von Pivotal entwickeltes Open-Source-Anwendungsframework, das ein vereinfachtes, modulares Verfahren für die Erstellung von Java-Anwendungen bereitstellt. Der Inhalt auf dieser Website veranschaulicht, wie Sie Spring-Apps entwickeln und in der Cloud bereitstellen.
   ms.date: 03/13/2020
   ms.topic: landing-page
-  ms.openlocfilehash: 5cb86fbe5b328e84e3437dc3e5946061b62de421
-  ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+  ms.openlocfilehash: 4131fd1146fbff953a53747a7415b17e7f74ebf6
+  ms.sourcegitcommit: a7f2019727a954836b803493807664d4e4574ee3
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 05/05/2020
-  ms.locfileid: "81675406"
+  ms.lasthandoff: 07/13/2020
+  ms.locfileid: "86286437"
 landingContent:
 - title: Leitfäden mit ersten Schritten
   linkLists:
@@ -56,7 +56,7 @@ landingContent:
   - linkListType: sample
     links:
     - text: Spring Boot-Beispiele für Azure
-      url: https://github.com/Microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples
+      url: https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples
     - text: Spring-Handbücher
       url: https://github.com/spring-guides/
 - title: Spring-Ressourcen
