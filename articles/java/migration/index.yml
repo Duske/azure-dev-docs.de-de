@@ -1,19 +1,21 @@
 ### YamlMime:Landing
-title: Dokumentation zur Migration von Java zu Azure
+title: Strategiedokumentation zur Migration von Java zu Azure
 summary: Empfohlene Strategien zum Migrieren von Java-Anwendungen zu Azure
 metadata:
   title: Dokumentation zur Migration von Java zu Azure
-  description: Empfohlene Strategien zum Migrieren von Java-Anwendungen zu Azure
+  description: Entdecken Sie die empfohlenen Migrationsstrategien für die Java-Migration. Verschieben Sie Java-, Tomcat-, WildFly-, WebSphere-, Jboss- und WebLogic-Anwendungen problemlos in Azure.
+  keywords: migration strategies, migration strategy, java migration
   author: KarlErickson
   ms.author: karler
   ms.date: 04/03/2020
   ms.topic: landing-page
-  ms.openlocfilehash: abd14e250416b5718537e1ca14b4ffdd8f3f3b5e
-  ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+  ms.custom: azure-migrate-seo
+  ms.openlocfilehash: 875ee9ed26bd865f8074752be92aeefed3cae0e3
+  ms.sourcegitcommit: 513381434d3538f4397a6c1d40c94e002af6ffa9
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 05/08/2020
-  ms.locfileid: "82988937"
+  ms.lasthandoff: 07/09/2020
+  ms.locfileid: "86195441"
 landingContent:
 - title: Migrieren von Java-Anwendungen zu Azure
   linkLists:
