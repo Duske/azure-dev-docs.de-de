@@ -1,13 +1,14 @@
 ---
-ms.openlocfilehash: 5d005f5a4906e5e2a55189d073383ab77f6c1860
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: a6e51b3fca9e2ae633a69b6372d7f622d2697812
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81674186"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405751"
 ---
-| **Erstellen von virtuellen Computern** || 
+| Beispiel  | BESCHREIBUNG |
 |---|---|
+| **Erstellen von virtuellen Computern** ||
 | [Verwalten virtueller Computer][1] | Erstellen, ändern, starten, beenden und löschen Sie virtuelle Computer. |
 | [Erstellen eines virtuellen Computers aus einem benutzerdefinierten Image][2] | Erstellen Sie ein benutzerdefiniertes VM-Image, und verwenden Sie es für die Erstellung neuer virtueller Computer. | 
 | [Erstellen eines virtuellen Computers mit einer speziellen VHD aus einer Momentaufnahme][3] | Erstellen Sie eine Momentaufnahme des Betriebssystems und der Datenträger des virtuellen Computers, erstellen Sie verwaltete Datenträger mithilfe der Momentaufnahmen, und erstellen Sie anschließend einen virtuellen Computer durch Anfügen der verwalteten Datenträger. |  

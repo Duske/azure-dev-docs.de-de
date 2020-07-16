@@ -8,12 +8,13 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 252ef1e31a71d996cb9e3856b48232ba24b66903
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 55f980785ea8cf4988c6a82dfa700beef18e2dfc
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81671186"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405761"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-the-legacy-toolkit-for-eclipse"></a>Erstellen einer „Hello World“-Web-App für Azure mit dem Legacytoolkit für Eclipse
 
@@ -118,9 +119,9 @@ Es gibt mehrere Möglichkeiten, eine Java-Webanwendung in Azure bereitzustellen.
    * Geben Sie im Textfeld **Name** einen Namen für die neue Ressourcengruppe ein.
    * Wählen Sie im Dropdownmenü **Region** den entsprechenden Azure-Rechenzentrumsstandort für Ihre Ressourcengruppe aus.
    * OPTIONAL: Standardmäßig stellt Azure automatisch eine aktuelle Distribution von Java 8 in Ihrem Web-App-Container als JVM bereit. Sie können jedoch eine andere JVM-Version und -Distribution angeben, wenn Ihre Web-App dies erfordert. Um das JDK für Ihre Web-App anzugeben, klicken Sie auf die Registerkarte **JDK** , und wählen Sie eine der folgenden Optionen aus:
-     * **Deploy the default JDK offered by Azure Web Apps service**(Das vom Azure-Web-Apps-Dienst angebotene Standard-JDK bereitstellen): Diese Option stellt eine aktuelle Distribution von Java bereit.
-     * **Deploy a 3rd party JDK available on Azure**(Ein in Azure verfügbares JDK eines Drittanbieters bereitstellen): Mit dieser Option können Sie aus einer Liste der von Microsoft Azure angebotenen JDKs auswählen.
-     * **Deploy my own JDK from this download location**(Eigenes JDK von diesem Downloadspeicherort bereitstellen): Mit dieser Option können Sie Ihre eigene JDK-Distribution angeben, die als ZIP-Datei gepackt und entweder in einen öffentlich verfügbaren Speicherort oder in ein Azure-Speicherkonto hochgeladen sein muss, auf das Sie Zugriff haben.
+     * **Bereitstellen des Standard-JDKs des Azure-Web-Apps-Diensts**: Mit dieser Option wird eine aktuelle Distribution von Java bereitgestellt.
+     * **In Azure verfügbares Drittanbieter-JDK bereitstellen**: Mit dieser Option können Sie aus einer Liste der von Microsoft Azure angebotenen JDKs auswählen.
+     * **Eigenes JDK von diesem Downloadspeicherort bereitstellen**: Mit dieser Option können Sie Ihre eigene JDK-Distribution angeben, die als ZIP-Datei gepackt und entweder in einen öffentlich verfügbaren Speicherort oder in ein Azure-Speicherkonto hochgeladen sein muss, auf das Sie Zugriff haben.
           
        ![Dialogfeld für neuen Web-App-Container][07b]
 
@@ -128,7 +129,7 @@ Es gibt mehrere Möglichkeiten, eine Java-Webanwendung in Azure bereitzustellen.
 
    h. Im Dropdownmenü **App Service Plan** (App Service-Plan) werden die App Service-Pläne aufgelistet, die der ausgewählten Ressourcengruppe zugeordnet sind. (App Service-Pläne enthalten verschiedene Informationen wie z.B. den Speicherort Ihrer Web-App, den Tarif und die Größe der Compute-Instanz. Da ein App Service-Plan für mehrere Web-Apps verwendet werden kann, wird er getrennt von einer bestimmten Web-App-Bereitstellung verwaltet.)
       
-       You can select an existing App Service Plan (if you have any) and skip to step h below, or use the following these steps to create a new App Service Plan:
+      Sie können einen vorhandenen App Service-Plan auswählen (sofern vorhanden) und direkt mit Schritt h unten fortfahren oder die folgenden Schritte ausführen, um einen neuen App Service-Plan zu erstellen:
       
       * Klicken Sie auf **New...**
       * Das Dialogfeld **New App Service Plan** (Neuer App Service-Plan) wird angezeigt:

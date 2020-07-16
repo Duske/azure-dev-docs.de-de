@@ -3,16 +3,16 @@ title: Azure-Module für JavaScript
 description: Übersicht über die Azure-Verwaltungsmodule und -Dienstmodule für JavaScript
 ms.date: 06/17/2017
 ms.topic: article
-ms.openlocfilehash: 193e2d3c92a9c2b8e3970e7a130246947a7cc4da
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.openlocfilehash: 2d01dcc2095bc91fb9695c0299b603b86c4719f0
+ms.sourcegitcommit: a7f2019727a954836b803493807664d4e4574ee3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791790"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86286447"
 ---
 # <a name="azure-modules-for-javascript"></a>Azure-Module für JavaScript
 
-Mit den Azure-Modulen für JavaScript können Sie Azure-Ressourcen verwalten und über Ihre JavaScript-Anwendungen Verbindungen mit Diensten herstellen. Der Code ist in Form von npm-Modulen (/api/?view=azure-node-latest.md) für die Verwendung in Ihren Projekten verfügbar.
+Mit den Azure-Modulen für JavaScript können Sie Azure-Ressourcen verwalten und über Ihre JavaScript-Anwendungen Verbindungen mit Diensten herstellen. Der Code ist in Form von [npm-Modulen](https://docs.microsoft.com/javascript/api/overview/azure/sql?view=azure-node-latest) für die Verwendung in Ihren Projekten verfügbar.
 
 ## <a name="manage-azure-resources"></a>Verwalten von Azure-Ressourcen
 
@@ -75,7 +75,7 @@ msRestAzure.loginWithServicePrincipalSecret(clientId, secret, domain, function (
 });
 ```
 
-Die [Installationsanleitung](/api/?view=azure-node-latest) enthält eine vollständige Liste mit den Modulen. Im [Artikel zu den ersten Schritten](../index.yml) finden Sie Informationen zur Einrichtung der Authentifizierung und Ausführung von Beispielcode zum Erstellen und Aktualisieren von Ressourcen für Ihr eigenes Azure-Abonnement.
+Die [Installationsanleitung](https://docs.microsoft.com/javascript/api/overview/azure/sql?view=azure-node-latest) enthält eine vollständige Liste mit den Modulen. Im [Artikel zu den ersten Schritten](../index.yml) finden Sie Informationen zur Einrichtung der Authentifizierung und Ausführung von Beispielcode zum Erstellen und Aktualisieren von Ressourcen für Ihr eigenes Azure-Abonnement.
 
 ## <a name="connect-to-azure-services"></a>Herstellen einer Verbindung mit Azure-Diensten
 

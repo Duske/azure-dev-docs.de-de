@@ -3,12 +3,13 @@ title: Schnellstarts für Verzeichnisse für Java-Apps in Azure
 description: Eine Liste mit Azure-Dokumentationsartikeln zu den ersten Schritten im Zusammenhang mit Verzeichnissen für Java-Apps.
 ms.date: 04/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: d8663f6dbf78f44eb24cf19a2ed8376604cfc489
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 58510938d37cfe0fce18a894b1a0a407451e5642
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673666"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379614"
 ---
 # <a name="directories-for-java-apps-on-azure"></a>Verzeichnisse für Java-Apps in Azure
 

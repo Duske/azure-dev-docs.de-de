@@ -8,13 +8,13 @@ ms.date: 11/12/2019
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.custom: mvc
-ms.openlocfilehash: ea2d5ba7b48650c28e908448147da77d2e829312
-ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
+ms.custom: mvc, devx-track-java
+ms.openlocfilehash: f3757b8ca84eb9c52f9e4a94f20d54fd3a303652
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84256415"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86378614"
 ---
 # <a name="deploy-spring-boot-application-to-the-azure-kubernetes-service"></a>Bereitstellen von Spring Boot-Anwendungen in Azure Kubernetes Service
 

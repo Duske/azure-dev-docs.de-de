@@ -3,12 +3,13 @@ title: Schnellstarts für Daten für Java-Apps in Azure
 description: Eine Liste mit Azure-Dokumentationsartikeln zu den ersten Schritten im Zusammenhang mit Daten für Java-Apps.
 ms.date: 04/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: 5063f716377c05e14786d655f672304102d6bd78
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: ea6c6ad85c40f5924b321e9edfa2d5db599685a6
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673706"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379624"
 ---
 # <a name="data-for-java-apps-on-azure"></a>Daten für Java-Apps in Azure
 

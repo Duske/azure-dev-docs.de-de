@@ -3,12 +3,13 @@ title: Schnellstarts für das Speichern von Java-Apps in Azure
 description: Eine Liste mit Azure-Dokumentationsartikeln zu den ersten Schritten im Zusammenhang mit dem Speichern von Java-Apps.
 ms.date: 04/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: 24a6160a1bd744e8dc96646dc5c287f89509016a
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 2291b5a9dd374ea92079e1b8f70e3fd87f24b00e
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81672026"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379564"
 ---
 # <a name="storage-for-java-apps-on-azure"></a>Speichern von Java-Apps in Azure
 
