@@ -3,14 +3,14 @@ title: Bereitstellen von Azure Storage mit den Azure-Bibliotheken für Python
 description: Verwenden Sie die Azure SDK für Python-Bibliotheken, um einen Blobcontainer in einem Azure Storage-Konto bereitzustellen und dann eine Datei in diesen Container hochzuladen.
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: 74f6e21b80505cd0b63061a76f4811b0c687d1a9
-ms.sourcegitcommit: 5ebbc1c06f98e29a146764661efbf34957020fe8
+ms.openlocfilehash: 648abeb105f1c575d5454af09cd2279c059d7b98
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84716098"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405721"
 ---
-# <a name="example-use-the-azure-libraries-with-azure-storage"></a>Beispiel: Verwenden der Azure-Bibliotheken mit Azure Storage
+# <a name="example-provision-azure-storage-using-the-azure-libraries-for-python"></a>Beispiel: Bereitstellen von Azure Storage mit den Azure-Bibliotheken für Python
 
 In diesem Artikel erfahren Sie, wie Sie die Azure-Verwaltungsbibliotheken in einem Python-Skript verwenden, um eine Ressourcengruppe bereitzustellen, die ein Azure Storage-Konto und einen Blobspeichercontainer enthält. ([Äquivalente Azure CLI-Befehle](#for-reference-equivalent-azure-cli-commands) finden Sie weiter unten in diesem Artikel.)
 

@@ -8,12 +8,13 @@ ms.service: active-directory
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: ff89152b5cbcd8c0abeff74ce75c4ba21528613e
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 2714d4d4b8a614bcdbf951eb2a9dc4c2dc78dda2
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82138818"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379424"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>Tutorial: Schützen einer Java-Web-App mithilfe von Spring Boot Starter für Azure Active Directory
 
@@ -124,9 +125,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
     ![App-Manifest konfigurieren][create-app-registration-11]
 
     > [!NOTE]
-    > 
-    > Weitere Informationen zum `oauth2AllowImplicitFlow`-Parameter und anderen Anwendungseinstellungen finden Sie unter [Azure Active Directory-Anwendungsmanifest][AAD app manifest]. 
-    >
+    > Weitere Informationen zum `oauth2AllowImplicitFlow`-Parameter und anderen Anwendungseinstellungen finden Sie unter [Azure Active Directory-Anwendungsmanifest][AAD app manifest].
 
 ### <a name="add-a-user-account-to-your-directory-and-add-that-account-to-a-group"></a>Hinzufügen eines Benutzerkontos zu Ihrem Verzeichnis und Hinzufügen dieses Kontos zu einer Gruppe
 
@@ -139,11 +138,9 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    ![Eingeben der Benutzerkontoinformationen][create-user-02]
 
    > [!NOTE]
-   > 
    > Sie müssen die Verzeichnis-URL von weiter oben in diesem Tutorial eingeben, wenn Sie den Benutzernamen eingeben. Beispiel:
    >
    > `wingtipuser@wingtiptoysdirectory.onmicrosoft.com`
-   > 
 
 1. Klicken Sie auf **Gruppen** und dann auf **Neue Gruppe erstellen**, um eine Gruppe zu erstellen, die Sie für die Autorisierung in Ihrer Anwendung verwenden können.
 
@@ -151,7 +148,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
    ![Auswählen des Benutzers für die Gruppe][create-user-03]
 
-1. Navigieren Sie zurück zum Bereich **Benutzer**, wählen Sie Ihren Testbenutzer aus, klicken Sie auf **Kennwort zurücksetzen**, und kopieren Sie das Kennwort. Sie verwenden es später in diesem Tutorial, wenn Sie sich an Ihrer Anwendung anmelden. 
+1. Navigieren Sie zurück zum Bereich **Benutzer**, wählen Sie Ihren Testbenutzer aus, klicken Sie auf **Kennwort zurücksetzen**, und kopieren Sie das Kennwort. Sie verwenden es später in diesem Tutorial, wenn Sie sich an Ihrer Anwendung anmelden.
 
    ![Anzeigen des Kennworts][create-user-04]
 
@@ -193,6 +190,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    # Specifies the list of Active Directory groups to use for authorization:
    azure.activedirectory.active-directory-groups=Users
    ```
+
    Hierbei gilt:
 
    | Parameter | BESCHREIBUNG |
@@ -203,9 +201,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    | `azure.activedirectory.active-directory-groups` | Enthält eine Liste mit Active Directory-Gruppen für die Autorisierung. |
 
    > [!NOTE]
-   > 
    > Eine vollständige Liste mit verfügbaren Werten in der Datei *application.properties* finden Sie im [Spring Boot-Beispiel für Azure Active Directory][AAD Spring Boot Sample] auf GitHub.
-   >
 
 1. Speichern und schließen Sie die Datei *application.properties*.
 
@@ -236,10 +232,10 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
       }
    }
    ```
+
    > [!NOTE]
-   > 
    > Der Gruppenname, den Sie für die Methode `@PreAuthorize("hasRole('')")` angeben, muss eine der Gruppen enthalten, die Sie im Feld `azure.activedirectory.active-directory-groups` der Datei *application.properties* angegeben haben.
-   > 
+   >
    > Sie können auch verschiedene Autorisierungseinstellungen für verschiedene Anforderungszuordnungen angeben. Beispiel:
    >
    > ``` java
@@ -262,7 +258,6 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    >    }
    > }
    > ```
-   >    
 
 1. Erstellen Sie im Java-Quellordner für Ihre Anwendung einen Ordner namens *security*. Beispiel: *src/main/java/com/wingtiptoys/security/security*.
 
@@ -319,20 +314,16 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    ![Anmelden bei Ihrer Anwendung][application-login]
 
    > [!NOTE]
-   > 
    > Wenn dies die erste Anmeldung für ein neues Benutzerkonto ist, werden Sie möglicherweise zum Ändern Ihres Kennworts aufgefordert.
-   > 
+   >
    > ![Ändern des Kennworts][update-password]
-   > 
 
 1. Nach erfolgreicher Anmeldung sollte der Beispieltext „Hello World“ des Controllers angezeigt werden.
 
    ![Erfolgreiche Anmeldung][hello-world]
 
    > [!NOTE]
-   > 
    > Für nicht autorisierte Benutzerkonten wird eine Meldung vom Typ **HTTP 403 (nicht autorisiert)** zurückgegeben.
-   >
 
 ## <a name="summary"></a>Zusammenfassung
 
@@ -360,7 +351,7 @@ Weitere Informationen zu Spring und Azure finden Sie im Dokumentationscenter zu 
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/
-[AAD Spring Boot Sample]: https://github.com/Microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples/azure-active-directory-spring-boot-backend-sample
+[AAD Spring Boot Sample]: https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-active-directory-backend
 
 <!-- IMG List -->
 

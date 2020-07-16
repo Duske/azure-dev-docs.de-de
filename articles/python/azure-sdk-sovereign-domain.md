@@ -1,15 +1,15 @@
 ---
 title: Herstellen einer Verbindung mit allen Regionen unter Verwendung der Azure-Bibliotheken für Python (mehrere Clouds)
 description: Verwenden des Moduls „azure_cloud“ von „msrestazure“, um eine Verbindung mit Azure in verschiedenen unabhängigen Regionen herzustellen
-ms.date: 06/09/2020
+ms.date: 07/13/2020
 ms.topic: conceptual
 ms.custom: seo-python-october2019
-ms.openlocfilehash: c8dc34260f4a37090af8c8408f7da70cf1de1f23
-ms.sourcegitcommit: b3e506c6f140d91e6fdd9dcadf22ab1aa67f6978
+ms.openlocfilehash: 25e8851a8812782712ff65ec4627a0d2ead848ae
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84947512"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86377904"
 ---
 # <a name="multi-cloud-connect-to-all-regions-with-the-azure-libraries-for-python"></a>Mehrere Clouds: Herstellen einer Verbindung mit allen Regionen unter Verwendung der Azure-Bibliotheken für Python
 
@@ -17,9 +17,18 @@ Sie können die Azure-Bibliotheken für Python verwenden, um eine Verbindung mit
 
 Standardmäßig sind die Azure-Bibliotheken für die Verbindungsherstellung mit der globalen Azure-Umgebung konfiguriert.
 
-## <a name="using-pre-declared-cloud-definition"></a>Verwenden einer vorab deklarierten Clouddefinition
+## <a name="using-pre-defined-sovereign-cloud-constants"></a>Verwenden von vordefinierten Sovereign Cloud-Konstanten
 
-Verwenden Sie das `azure_cloud`-Modul von `msrestazure` (0.4.11 oder höher):
+Vordefinierte Sovereign Cloud-Konstanten werden vom `azure_cloud`-Modul von `msrestazure` (0.4.11+) bereitgestellt:
+
+- `AZURE_PUBLIC_CLOUD`
+- `AZURE_CHINA_CLOUD`
+- `AZURE_US_GOV_CLOUD`
+- `AZURE_GERMAN_CLOUD`
+
+Wenn Sie eine Konstante über den gesamten Code anwenden möchten, definieren Sie eine Umgebungsvariable mit dem Namen `AZURE_CLOUD` mithilfe eines der Werte in der vorherigen Liste. (`AZURE_PUBLIC_CLOUD` ist der Standardwert.)
+
+Zum Anwenden einer Konstante in bestimmten Vorgängen importieren Sie die gewünschte Konstante aus `msrest.azure_cloud`, und verwenden Sie sie beim Erstellen von Anmeldeinformationen und Clientobjekten:
 
 ```python
 from msrestazure.azure_cloud import AZURE_CHINA_CLOUD
@@ -33,16 +42,9 @@ client = ResourceManagementClient(credentials,
     subscription_id, base_url=AZURE_CHINA_CLOUD.endpoints.resource_manager)
 ```
   
-Folgende Clouddefinitionen sind verfügbar:
-
-- `AZURE_PUBLIC_CLOUD`
-- `AZURE_CHINA_CLOUD`
-- `AZURE_US_GOV_CLOUD`
-- `AZURE_GERMAN_CLOUD`
-
 ## <a name="using-your-own-cloud-definition"></a>Verwenden Ihrer eigenen Clouddefinition
 
-In diesem Code verwenden Sie `get_cloud_from_metadata_endpoint` mit dem Azure Resource Manager-Endpunkt für die private Cloud (z. B. eine Cloud, die auf Azure Stack basiert):
+Im folgenden Code wird `get_cloud_from_metadata_endpoint` mit dem Azure Resource Manager-Endpunkt für eine private Cloud (z. B. eine Cloud, die auf Azure Stack basiert) verwendet:
 
 ```python
 from msrestazure.azure_cloud import get_cloud_from_metadata_endpoint
@@ -59,7 +61,7 @@ client = ResourceManagementClient(credentials, subscription_id,
 
 ## <a name="using-adal"></a>Verwenden von ADAL
 
-Beim Herstellen einer Verbindung mit einer anderen Region müssen einige Punkte berücksichtigt werden:
+Beim Herstellen einer Verbindung mit einer anderen Region sollten Sie die folgenden Fragen beachten:
 
 - An welchem Endpunkt soll nach einem Token (Authentifizierung) gefragt werden?
 - An welchem Endpunkt wird dieses Token (Nutzung) verwendet?

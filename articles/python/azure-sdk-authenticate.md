@@ -3,12 +3,12 @@ title: Authentifizieren von Python-Anwendungen mit Azure-Diensten
 description: Hier erfahren Sie, wie Sie die Anmeldeinformationsobjekte abrufen, die erforderlich sind, um eine Python-App mit Azure-Diensten unter Verwendung der Azure-Bibliotheken zu authentifizieren.
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 5a882a6cc18ef20a8a26650bacaa7bfe94e90771
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 337c520ba163c4029c4352c10d6ca865caf34755
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329428"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86377994"
 ---
 # <a name="how-to-authenticate-python-apps-with-azure-services"></a>Authentifizieren von Python-Apps mit Azure-Diensten
 
@@ -86,13 +86,15 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-Zurzeit funktioniert `DefaultAzureCredential` nur mit Azure SDK-Clientbibliotheken („Datenebene“) und funktioniert nicht mit Azure SDK-Verwaltungsbibliotheken, deren Namen mit `azure-mgmt` beginnen, wie in diesem Codebeispiel gezeigt. Der Aufruf von `subscription_client.subscriptions.list()` schlägt mit dem eher vagen folgenden Fehler fehl: „Das DefaultAzureCredential-Objekt hat kein Attribut 'signed_session'.“ Dieser Fehler tritt auf, weil die aktuellen SDK-Verwaltungsbibliotheken davon ausgehen, dass das Anmeldeinformationenobjekt eine `signed_session`-Eigenschaft enthält, die `DefaultAzureCredential` fehlt.
+Zurzeit funktioniert `DefaultAzureCredential` nur mit Azure SDK-Clientbibliotheken („Datenebene“) und Vorschauversionen der Azure SDK-Verwaltungsbibliotheken (deren Namen mit `azure-mgmt` beginnen), wie in diesem Codebeispiel gezeigt. Der Aufruf von `subscription_client.subscriptions.list()` schlägt bei Bibliotheken des aktuellen Release mit dem eher vagen folgenden Fehler fehl: „Das DefaultAzureCredential-Objekt hat kein Attribut 'signed_session'.“ Dieser Fehler tritt auf, weil die aktuellen SDK-Verwaltungsbibliotheken davon ausgehen, dass das Anmeldeinformationenobjekt eine `signed_session`-Eigenschaft enthält, die `DefaultAzureCredential` fehlt.
 
-Bis diese Bibliotheken später im Jahr 2020 aktualisiert werden, können Sie den Fehler auf zwei Arten umgehen:
+Sie können den Fehler umgehen, indem Sie Vorschauversionen von Verwaltungsbibliotheken verwenden, wie im Blogbeitrag [Einführung neuer Vorschauversionen für Azure-Verwaltungsbibliotheken](https://devblogs.microsoft.com/azure-sdk/introducing-new-previews-for-azure-management-libraries/) beschrieben.
+
+Alternativ können Sie die folgenden Methoden anwenden:
 
 1. Verwenden Sie eine der anderen Authentifizierungsmethoden, die in den nachfolgenden Abschnitten dieses Artikels beschrieben werden, die für Code geeignet ist, der *nur* SDK-Verwaltungsbibliotheken verwendet und nicht in der Cloud bereitgestellt wird. in diesem Fall können Sie nur auf lokale Dienstprinzipale zurückgreifen.
 
-1. Verwenden Sie anstelle von `DefaultAzureCredential` die [CredentialWrapper-Klasse („cred_wrapper.py“)](https://gist.github.com/lmazuel/cc683d82ea1d7b40208de7c9fc8de59d), die von einem Mitglied des Azure SDK-Entwicklungsteams bereitgestellt wird. Nachdem Microsoft die aktualisierten Verwaltungsbibliotheken veröffentlicht hat, können Sie einfach wieder zu `DefaultAzureCredential` zurückkehren. Diese Methode hat den Vorteil, dass Sie die gleichen Anmeldeinformationen sowohl mit dem SDK-Client als auch mit den Verwaltungsbibliotheken verwenden können, und sie funktioniert sowohl lokal als auch in der Cloud.
+1. Verwenden Sie anstelle von `DefaultAzureCredential` die [CredentialWrapper-Klasse („cred_wrapper.py“)](https://gist.github.com/lmazuel/cc683d82ea1d7b40208de7c9fc8de59d), die von einem Mitglied des Azure SDK-Entwicklungsteams bereitgestellt wird. Nachdem die aktualisierten Verwaltungsbibliotheken veröffentlicht wurden, können Sie einfach wieder zu `DefaultAzureCredential` zurückkehren. Diese Methode hat den Vorteil, dass Sie die gleichen Anmeldeinformationen sowohl mit dem SDK-Client als auch mit den Verwaltungsbibliotheken verwenden können, und sie funktioniert sowohl lokal als auch in der Cloud.
 
     Wenn Sie eine Kopie von *cred_wrapper. py* in Ihren Projektordner heruntergeladen haben, sieht der vorherige Code wie folgt aus:
 
@@ -106,7 +108,7 @@ Bis diese Bibliotheken später im Jahr 2020 aktualisiert werden, können Sie de
     print(subscription.subscription_id)
     ```
 
-    Nachdem die Verwaltungsbibliotheken aktualisiert wurden, können Sie `DefaultAzureCredential` direkt verwenden.
+    Auch hier können Sie `DefaultAzureCredential` direkt verwenden, nachdem die aktualisierten Verwaltungsbibliotheken veröffentlicht wurden.
 
 ## <a name="other-authentication-methods"></a>Andere Authentifizierungsmethoden
 

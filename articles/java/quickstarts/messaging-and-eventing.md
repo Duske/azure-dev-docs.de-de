@@ -3,14 +3,15 @@ title: Schnellstartanleitungen für Messaging und Ereignisse für Java-Apps in A
 description: Eine Liste mit Azure-Dokumentationsartikeln zu den ersten Schritten im Zusammenhang mit Messaging und Ereignissen für Java-Apps.
 ms.date: 04/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: fc45140d68493bd80093f361b478e485cc2ed42f
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: d5455c05872c67853b526fd30ecb4aee3c75954c
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673646"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405641"
 ---
-# <a name="caching-for-java-apps-on-azure"></a>Zwischenspeichern von Java-Apps in Azure
+# <a name="messaging-and-eventing-for-java-apps-on-azure"></a>Messaging und Ereignisse für Java-Apps in Azure
 
 Die folgenden Artikel helfen Ihnen bei den ersten Schritten mit verschiedenen Messaging- und Ereignisoptionen in Azure:
 

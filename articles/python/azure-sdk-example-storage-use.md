@@ -3,14 +3,14 @@ title: Verwenden von Speicherblobs Azure Storage mit dem Azure SDK für Python
 description: Hier erfahren Sie, wie Sie die Bibliotheken des Azure SDK für Python verwenden, um auf einen vorab bereitgestellten Blobcontainer in einem Azure Storage-Konto zuzugreifen und eine Datei in diesen Container hochzuladen.
 ms.date: 06/15/2020
 ms.topic: conceptual
-ms.openlocfilehash: 9015017b1e0b2839e4a3986950625fb8a498717e
-ms.sourcegitcommit: 74ff4dec3b0556201c243e8c2302555b08dd79e9
+ms.openlocfilehash: 41c2c586678084e30f9f5b2bff3c773b46f5463d
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84812666"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405731"
 ---
-# <a name="example-use-the-azure-libraries-with-azure-storage"></a>Beispiel: Verwenden der Azure-Bibliotheken mit Azure Storage
+# <a name="example-access-azure-storage-using-the-azure-libraries-for-pyhon"></a>Beispiel: Zugriff auf Azure Storage mit den Azure-Bibliotheken für Python
 
 In diesem Beispiel erfahren Sie, wie Sie die Azure-Clientbibliotheken in Python-Anwendungscode verwenden, um eine Datei in diesen Blobspeichercontainer hochzuladen. In dem Beispiel wird davon ausgegangen, dass Sie die Ressourcen aus [Beispiel: Verwenden der Azure-Bibliotheken mit Azure Storage](azure-sdk-example-storage.md) bereitgestellt haben.
 

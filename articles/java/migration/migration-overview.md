@@ -5,12 +5,13 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: 51babfacd133ed0ba0d9b5bc728c4373e137022c
-ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
+ms.custom: devx-track-java
+ms.openlocfilehash: 3487cc326222a013c7f0acec396ed343c8bd9621
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84507466"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405711"
 ---
 # <a name="migrate-java-applications-to-azure"></a>Migrieren von Java-Anwendungen zu Azure
 
@@ -78,7 +79,7 @@ In den folgenden Abschnitten wird veranschaulicht, welche Dienstziele Ihre Anwen
 
 Anhand der folgenden Übersicht können Sie potenzielle Ziele für Ihren Anwendungstyp ermitteln. Wie Sie sehen, werden von AKS und Virtual Machines alle Anwendungstypen unterstützt, Ihr Team muss jedoch mehr Aufgaben übernehmen, wie im nächsten Abschnitt gezeigt.
 
-|   |App<br>Dienst<br>Java SE|App<br>Dienst<br>Tomcat|Azure<br>Spring<br>Cloud|AKS|Virtual<br>Machines|
+|Ziel&nbsp;→<br><br>Anwendungstyp&nbsp;&nbsp;↓|App<br>Dienst<br>Java SE|App<br>Dienst<br>Tomcat|Azure<br>Spring<br>Cloud|AKS|Virtual<br>Machines|
 |---|---|---|---|---|---|---|
 | Spring Boot-/JAR-Anwendungen                                    |&#x2714;|        |&#x2714;|&#x2714;|&#x2714;|
 | Spring Cloud/Microservices                                      |        |        |&#x2714;|&#x2714;|&#x2714;|
@@ -95,12 +96,12 @@ Anhand der folgenden Übersicht können Sie potenzielle Ziele für Ihren Anwendu
 
 Ermitteln Sie anhand des folgenden Rasters, welche Zuständigkeiten sich nach der Migration in Bezug auf die einzelnen Ziele für Ihr Team ergeben.
 
-Für Ihr Team gilt eine fortlaufende Zuständigkeit für die Aufgaben, die mit „&#x1F449;“ gekennzeichnet sind. Wir empfehlen Ihnen, zur Erfüllung dieser Zuständigkeiten einen stabilen, stark automatisierten Prozess zu implementieren. 
+Für Ihr Team gilt eine fortlaufende Zuständigkeit für die Aufgaben, die mit „&#x1F449;“ gekennzeichnet sind. Wir empfehlen Ihnen, zur Erfüllung dieser Zuständigkeiten einen stabilen, stark automatisierten Prozess zu implementieren.
 
 > [!NOTE]
 > Hinweis: Die Liste mit den Zuständigkeiten erhebt keinen Anspruch auf Vollständigkeit.
 
-|                                                                       | App<br>Dienst | Azure<br>Spring<br>Cloud | AKS | Virtual<br>Machines |
+|Ziel&nbsp;→<br><br>Aufgabe&nbsp;↓                            | App<br>Dienst | Azure<br>Spring<br>Cloud | AKS | Virtual<br>Machines |
 |---|---|---|---|---|
 | Aktualisieren von Bibliotheken<br>(einschließlich Behebung von Sicherheitsrisiken)                 | &#x1F449;   | &#x1F449;   | &#x1F449;   | &#x1F449; |
 | Aktualisieren des Anwendungsservers<br>(einschließlich Behebung von Sicherheitsrisiken)    | ![Azure][1] | ![Azure][1] | &#x1F449;   | &#x1F449; |
