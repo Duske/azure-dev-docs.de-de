@@ -3,12 +3,12 @@ title: Authentifizieren von Python-Anwendungen mit Azure-Diensten
 description: Hier erfahren Sie, wie Sie die Anmeldeinformationsobjekte abrufen, die erforderlich sind, um eine Python-App mit Azure-Diensten unter Verwendung der Azure-Bibliotheken zu authentifizieren.
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 337c520ba163c4029c4352c10d6ca865caf34755
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 1694f85b2ad41a12865bb3d367b1b8498ab474bb
+ms.sourcegitcommit: 04ee2325e3efd9b7797102b4cd9d5db009c38a42
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86377994"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86945818"
 ---
 # <a name="how-to-authenticate-python-apps-with-azure-services"></a>Authentifizieren von Python-Apps mit Azure-Diensten
 
@@ -69,7 +69,7 @@ In beiden Fällen müssen der beteiligten Identität Berechtigungen für die ent
 ### <a name="using-defaultazurecredential-with-sdk-management-libraries"></a>Verwenden von DefaultAzureCredential mit SDK-Verwaltungsbibliotheken
 
 ```python
-# WARNING: this code presently fails!
+# WARNING: this code presently fails with current release libraries!
 
 from azure.identity import DefaultAzureCredential
 
@@ -86,7 +86,7 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-Zurzeit funktioniert `DefaultAzureCredential` nur mit Azure SDK-Clientbibliotheken („Datenebene“) und Vorschauversionen der Azure SDK-Verwaltungsbibliotheken (deren Namen mit `azure-mgmt` beginnen), wie in diesem Codebeispiel gezeigt. Der Aufruf von `subscription_client.subscriptions.list()` schlägt bei Bibliotheken des aktuellen Release mit dem eher vagen folgenden Fehler fehl: „Das DefaultAzureCredential-Objekt hat kein Attribut 'signed_session'.“ Dieser Fehler tritt auf, weil die aktuellen SDK-Verwaltungsbibliotheken davon ausgehen, dass das Anmeldeinformationenobjekt eine `signed_session`-Eigenschaft enthält, die `DefaultAzureCredential` fehlt.
+Zurzeit funktioniert `DefaultAzureCredential` nur mit Azure SDK-Clientbibliotheken („Datenebene“) und Vorschauversionen der Azure SDK-Verwaltungsbibliotheken (d. h. der aktuellen Vorschauversion von Bibliotheken, deren Namen mit `azure-mgmt` beginnen), wie in diesem Codebeispiel gezeigt. Der Aufruf von `subscription_client.subscriptions.list()` schlägt bei Bibliotheken des aktuellen Release mit dem eher vagen folgenden Fehler fehl: „Das DefaultAzureCredential-Objekt hat kein Attribut 'signed_session'.“ Dieser Fehler tritt auf, weil die aktuellen SDK-Verwaltungsbibliotheken davon ausgehen, dass das Anmeldeinformationenobjekt eine `signed_session`-Eigenschaft enthält, die `DefaultAzureCredential` fehlt.
 
 Sie können den Fehler umgehen, indem Sie Vorschauversionen von Verwaltungsbibliotheken verwenden, wie im Blogbeitrag [Einführung neuer Vorschauversionen für Azure-Verwaltungsbibliotheken](https://devblogs.microsoft.com/azure-sdk/introducing-new-previews-for-azure-management-libraries/) beschrieben.
 
