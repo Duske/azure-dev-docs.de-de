@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie Ihre dynamischen Azure-Bestände mithilf
 keywords: Ansible, Azure, DevOps, Bash, CloudShell, dynamischer Bestand
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: 8ad48c49094c19087318434cd02c38dcb1857a76
-ms.sourcegitcommit: 7da78b35a847db9929554962dfcc47860f472fb9
+ms.openlocfilehash: 20c152c6f276aed68abf10a6f2e6ae052235a99f
+ms.sourcegitcommit: 9365b437b119eebf98e40f851bd6f66fe966be4a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85133623"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86422662"
 ---
 # <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>Tutorial: Konfigurieren von dynamischen Beständen Ihrer Azure-Ressourcen mit Ansible
 
@@ -87,7 +87,7 @@ Nachdem Sie Ihre virtuellen Computer definiert (und markiert) haben, können Sie
 
 ### <a name="using-ansible-version--28"></a>Verwendung einer früheren Version als Ansible 2.8
 
-Unter Ansible wird ein Python-Skript mit dem Namen [azure_rm.py](https://github.com/ansible-collections/community.general/blob/master/scripts/inventory/azure_rm.py) bereitgestellt, mit dem ein dynamischer Bestand Ihrer Azure-Ressourcen generiert wird. Die folgende Anleitung zeigt Schritt für Schritt, wie Sie unter Verwendung des Skripts `azure_rm.py` eine Verbindung mit Ihren beiden virtuellen Azure-Testcomputern herstellen:
+Unter Ansible wird ein Python-Skript mit dem Namen [azure_rm.py](https://github.com/ansible-collections/community.general/blob/main/scripts/inventory/azure_rm.py) bereitgestellt, mit dem ein dynamischer Bestand Ihrer Azure-Ressourcen generiert wird. Die folgende Anleitung zeigt Schritt für Schritt, wie Sie unter Verwendung des Skripts `azure_rm.py` eine Verbindung mit Ihren beiden virtuellen Azure-Testcomputern herstellen:
 
 1. Rufen Sie mithilfe des GNU-Befehls `wget` das Skript `azure_rm.py` ab:
 
