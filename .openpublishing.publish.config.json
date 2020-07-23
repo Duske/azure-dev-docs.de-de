@@ -19,10 +19,7 @@
     "name": "docfx_v3"
   },
   "notification_subscribers": [
-    "brendm@microsoft.com",
-    "karler@microsoft.com",
-    "kraigb@microsoft.com",
-    "barbkess@microsoft.com"
+      "alachary@microsoft.com"
   ],
   "sync_notification_subscribers": [],
   "branches_to_filter": [
