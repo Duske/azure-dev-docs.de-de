@@ -4,12 +4,12 @@ description: Es wird beschrieben, wie Sie in Azure mit Terraform-Modulen einen C
 keywords: Azure DevOps Terraform VM virtueller Computer Cluster Modul Registrierung
 ms.topic: tutorial
 ms.date: 03/09/2020
-ms.openlocfilehash: c6561f2e5ba98be4906f480ff8ac7970eae6e408
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: ad318237dcefd6586211c45fb79e51baa05549c4
+ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329488"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334385"
 ---
 # <a name="tutorial-create-an-azure-vm-cluster-with-terraform-using-the-module-registry"></a>Tutorial: Erstellen eines Azure-VM-Clusters mit Terraform mithilfe der Modulregistrierung
 
@@ -30,9 +30,9 @@ Dieser Artikel führt Sie durch die Erstellung eines kleinen VM-Clusters mit dem
 ## <a name="set-up-authentication-with-azure"></a>Einrichten der Authentifizierung mit Azure
 
 > [!TIP]
-> Wenn Sie [Terraform-Umgebungsvariablen verwenden](getting-started-cloud-shell.md) oder dieses Tutorial in der [Azure Cloud Shell](/azure/cloud-shell/overview) ausführen, überspringen Sie diesen Schritt.
+> Wenn Sie [Terraform-Umgebungsvariablen verwenden](get-started-cloud-shell.md) oder dieses Tutorial in der [Azure Cloud Shell](/azure/cloud-shell/overview) ausführen, überspringen Sie diesen Schritt.
 
- Unter [Installieren von Terraform und Konfigurieren des Zugriffs auf Azure](getting-started-cloud-shell.md) finden Sie Informationen zum Erstellen eines Azure-Dienstprinzipals. Verwenden Sie diesen Dienstprinzipal, um folgenden Code in die neue Datei `azureProviderAndCreds.tf` in einem leeren Verzeichnis einzufügen:
+ Unter [Installieren von Terraform und Konfigurieren des Zugriffs auf Azure](get-started-cloud-shell.md) finden Sie Informationen zum Erstellen eines Azure-Dienstprinzipals. Verwenden Sie diesen Dienstprinzipal, um folgenden Code in die neue Datei `azureProviderAndCreds.tf` in einem leeren Verzeichnis einzufügen:
 
 ```hcl
 variable subscription_id {}

@@ -4,16 +4,16 @@ description: Es wird beschrieben, wie Sie mit Terraform eine vollständige Linux
 keywords: Azure DevOps Terraform Linux VM virtueller Computer
 ms.topic: tutorial
 ms.date: 06/14/2020
-ms.openlocfilehash: 97b4381c45e67458e01093d735f9b32e97584149
-ms.sourcegitcommit: 2d6c9687b39e33a6b5e980d9a375c9f8f1f2cab7
+ms.openlocfilehash: 53580815deaaef30512ca9ccd2c506908d2192ca
+ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84779652"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334435"
 ---
 # <a name="tutorial-create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>Tutorial: Erstellen einer Linux-VM mit Infrastruktur in Azure mit Terraform
 
-Mit Terraform können Sie vollständige Infrastrukturbereitstellungen in Azure definieren und erstellen. Dazu lassen sich Terraform-Vorlagen in einem für Menschen lesbaren Format erstellen, die Azure-Ressourcen konsistent und reproduzierbar erstellen und konfigurieren. In diesem Artikel wird gezeigt, wie Sie eine vollständige Linux-Umgebung und die unterstützenden Ressourcen mit Terraform erstellen. Hier erfahren Sie auch, wie Sie [Terraform installieren und konfigurieren](getting-started-cloud-shell.md).
+Mit Terraform können Sie vollständige Infrastrukturbereitstellungen in Azure definieren und erstellen. Dazu lassen sich Terraform-Vorlagen in einem für Menschen lesbaren Format erstellen, die Azure-Ressourcen konsistent und reproduzierbar erstellen und konfigurieren. In diesem Artikel wird gezeigt, wie Sie eine vollständige Linux-Umgebung und die unterstützenden Ressourcen mit Terraform erstellen. Hier erfahren Sie auch, wie Sie [Terraform installieren und konfigurieren](get-started-cloud-shell.md).
 
 [!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
@@ -25,7 +25,7 @@ Mit Terraform können Sie vollständige Infrastrukturbereitstellungen in Azure d
 
 Lassen Sie uns alle Abschnitte einer Terraform-Vorlage durchgehen. Sie können auch die Vollversion der [Terraform-Vorlage](#complete-terraform-script) sehen, die Sie kopieren und einfügen können.
 
-Der `provider`-Abschnitt weist Terraform an, einen Azure-Anbieter zu verwenden. Informationen zum Abrufen der Werte für `subscription_id`, `client_id`, `client_secret` und `tenant_id` finden Sie unter [Installieren und Konfigurieren von Terraform](getting-started-cloud-shell.md).
+Der `provider`-Abschnitt weist Terraform an, einen Azure-Anbieter zu verwenden. Informationen zum Abrufen der Werte für `subscription_id`, `client_id`, `client_secret` und `tenant_id` finden Sie unter [Installieren und Konfigurieren von Terraform](get-started-cloud-shell.md).
 
 > [!TIP]
 > Wenn Sie Umgebungsvariablen für die Werte erstellen oder die [Azure Cloud Shell Bash-Funktionalität](/azure/cloud-shell/overview) verwenden, müssen Sie die Variablendeklarationen in diesem Abschnitt nicht einbeziehen.

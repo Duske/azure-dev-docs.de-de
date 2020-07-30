@@ -3,12 +3,12 @@ title: 'Tutorial: Erstellen einer Terraform-Basisvorlage in Azure mithilfe von Y
 description: Hier erfahren Sie, wie Sie eine Terraform-Basisvorlage in Azure mithilfe von Yeoman erstellen.
 ms.topic: tutorial
 ms.date: 05/25/2020
-ms.openlocfilehash: 3278b1abb16275eb325964a3e0d78a2d61230dd4
-ms.sourcegitcommit: bbfa6e0dfb3c8e66e5f47b080590105787a6e74b
+ms.openlocfilehash: 8e9c4444d95f052fc5872565b316ec15e033be82
+ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85418218"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334465"
 ---
 # <a name="tutorial-create-a-terraform-base-template-in-azure-using-yeoman"></a>Tutorial: Erstellen einer Terraform-Basisvorlage in Azure mithilfe von Yeoman
 
@@ -27,7 +27,7 @@ In diesem Artikel lernen Sie Folgendes:
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 - **Visual Studio Code**: Laden Sie [hier](https://code.visualstudio.com/download) Visual Studio Code für Ihre Plattform herunter.
-- **Terraform**: [Installieren Sie Terraform](getting-started-cloud-shell.md), um das von Yeoman erstellte Modul auszuführen.
+- **Terraform**: [Installieren Sie Terraform](get-started-cloud-shell.md), um das von Yeoman erstellte Modul auszuführen.
 - **Docker**: [Installieren Sie Docker](https://www.docker.com/get-started), um das vom Yeoman-Generator erstellte Modul auszuführen.
 - **Programmiersprache Go**: [Installieren Sie Go](https://golang.org/), da es sich bei den von Yeoman generierten Testfällen um Code in der Sprache Go handelt.
 
@@ -141,7 +141,7 @@ Vom Yeoman-Modulgenerator wurden folgende Dateien erstellt:
     - Testfälle werden in Go geschrieben.
     - Alle Codes im Test sind End-to-End-Tests.
     - Bei End-to-End-Tests wird versucht, alle unter `fixture`definierten Elemente bereitzustellen. Die Ergebnisse in der Datei `template_output.go` werden mit den vordefinierten erwarteten Werten verglichen.
-    - `Gopkg.lock` und `Gopkg.toml`: Definieren die Abhängigkeiten. 
+    - `Gopkg.lock` und `Gopkg.toml`: Definieren die Abhängigkeiten.
 
 Weitere Informationen zum Yeoman-Generator für Azure (https://github.com/Azure/generator-az-terra-module ) finden Sie in der [Terratest-Dokumentation](https://terratest.gruntwork.io/docs/).
 
