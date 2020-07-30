@@ -43,7 +43,15 @@
         - name: Fehlerberichterstellung in Echtzeit
           href: diagnostics.md
     - name: Pushbenachrichtigungen
-      href: push-notifications.md
+      items:
+        - name: Kontaktaufnahme mit Benutzern durch Senden von Pushbenachrichtigungen
+          href: push-notifications.md
+        - name: Senden einer Pushbenachrichtigung an eine Xamarin.Forms-App mithilfe von Azure Notification Hubs
+          href: notification-hubs-backend-service-xamarin-forms.md
+        - name: "Senden einer Pushbenachrichtigung an eine React\_Native-App mithilfe von Azure Notification Hubs"
+          href: notification-hubs-backend-service-react-native.md
+        - name: Senden einer Pushbenachrichtigung an eine Flutter-App mithilfe von Azure Notification Hubs
+          href: notification-hubs-backend-service-flutter.md
     - name: Machine Learning
       items:
         - name: Azure Cognitive Services

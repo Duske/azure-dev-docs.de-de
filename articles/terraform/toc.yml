@@ -8,7 +8,9 @@
   expanded: true
   items:
     - name: 'Erste Schritte: Cloud Shell'
-      href: getting-started-cloud-shell.md
+      href: get-started-cloud-shell.md
+    - name: 'Erste Schritte: PowerShell'
+      href: get-started-powershell.md
 - name: Tutorials
   items:
     - name: Setup und Konfiguration

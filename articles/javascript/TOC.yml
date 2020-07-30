@@ -90,6 +90,10 @@
               href: /azure/cognitive-services/Computer-vision/Quickstarts/node-analyze?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
             - name: Spracherkennung
               href: /azure/cognitive-services/speech-service/get-started?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
+        - name: Protokollierung und Metriken
+          items:
+            - name: Protokollierung mit dem Azure SDK
+              href: node-sdk-logging.md
     - name: Tutorials
       items:
         - name: Bereitstellen von Azure Functions mit VS Code
@@ -220,5 +224,7 @@
           href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&products=azure-search'
         - name: Alle Beispiele
           href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs'
-    - name: Verweis
-      href: /javascript/api/?view=azure-node-latest
+    - name: API-Referenz zu Bibliotheken
+      href: /javascript/api/overview/azure/?view=azure-node-latest
+    - name: Aktuelle SDKs
+      href: 'https://azure.github.io/azure-sdk/releases/latest/index.html#javascript'
