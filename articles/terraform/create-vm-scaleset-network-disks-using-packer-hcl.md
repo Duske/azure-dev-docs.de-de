@@ -1,14 +1,14 @@
 ---
 title: 'Tutorial: Erstellen einer Azure-VM-Skalierungsgruppe auf der Grundlage eines benutzerdefinierten Packer-Images unter Verwendung von Terraform'
-description: Es wird beschrieben, wie Sie Terraform verwenden, um eine Azure-VM-Skalierungsgruppe aus einem benutzerdefinierten Packer-Image zu konfigurieren und mit einer Version zu versehen – einschließlich eines virtuellen Netzwerks und verwalteter angefügter Datenträger.
+description: Hier wird beschrieben, wie Sie mit Terraform eine Azure-VM-Skalierungsgruppe aus einem von Packer generierten benutzerdefinierten Image konfigurieren und mit einer Version versehen.
 ms.topic: tutorial
 ms.date: 11/07/2019
-ms.openlocfilehash: d9db8f47cdb4c295ef5625450980938ff348b5fb
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.openlocfilehash: f72d8ab828259e4408ceb78528ce310a214e05ad
+ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85790842"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334395"
 ---
 # <a name="tutorial-create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image-by-using-terraform"></a>Tutorial: Erstellen einer Azure-VM-Skalierungsgruppe auf der Grundlage eines benutzerdefinierten Packer-Images unter Verwendung von Terraform
 
@@ -29,7 +29,7 @@ In diesem Tutorial lernen Sie Folgendes:
 ## <a name="prerequisites"></a>Voraussetzungen
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-- **Terraform**: [Installieren Sie Terraform, und konfigurieren Sie den Zugriff auf Azure.](getting-started-cloud-shell.md)
+- **Terraform**: [Installieren Sie Terraform, und konfigurieren Sie den Zugriff auf Azure.](get-started-cloud-shell.md)
 - **SSH-Schlüsselpaar:** [Erstellen Sie ein SSH-Schlüsselpaar.](/azure/virtual-machines/linux/mac-create-ssh-keys)
 - **Packer:**  [Installieren Sie Packer.](https://learn.hashicorp.com/packer/getting-started/install)
 

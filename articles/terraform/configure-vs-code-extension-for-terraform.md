@@ -3,12 +3,12 @@ title: 'Tutorial: Konfigurieren der Azure Terraform-Erweiterung für Visual Stud
 description: Erfahren Sie, wie Sie die Azure Terraform-Erweiterung in Visual Studio Code installieren und verwenden.
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: 9fd6d6b93537795109117198aa20063b556b8368
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 7bbddd2d455e53354829557b99c19a8fb3e3dbf7
+ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329568"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334485"
 ---
 # <a name="tutorial-configure-the-azure-terraform-visual-studio-code-extension"></a>Tutorial: Konfigurieren der Azure Terraform-Erweiterung für Visual Studio Code
 
@@ -25,7 +25,7 @@ In diesem Artikel werden folgende Vorgehensweisen behandelt:
 ## <a name="prerequisites"></a>Voraussetzungen
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-- **Terraform**: [Installieren und konfigurieren Sie Terraform](getting-started-cloud-shell.md).
+- **Terraform**: [Installieren und konfigurieren Sie Terraform](get-started-cloud-shell.md).
 - **Visual Studio Code**: Installieren Sie die für Ihre Umgebung geeignete Version von [Visual Studio Code](https://code.visualstudio.com/download).
 
 ## <a name="prepare-your-dev-environment"></a>Vorbereiten Ihrer Entwicklungsumgebung
@@ -137,7 +137,7 @@ In dieser Übung erstellen Sie eine grundlegende Terraform-Konfigurationsdatei, 
 
 1. Klicken Sie in der angezeigten Bestätigung auf **OK**.
 
-    ![Möchten Sie Cloud Shell öffnen?](media/configure-vs-code-extension-for-terraform/tf-do-you-want-to-open-cloud-shell.png)
+    ![Bestätigungsdialogfeld für das Öffnen von Cloud Shell](media/configure-vs-code-extension-for-terraform/tf-do-you-want-to-open-cloud-shell.png)
 
 1. Wenn Sie Cloud Shell zum ersten Mal über einen neuen Ordner starten, werden Sie zur Erstellung einer Webanwendung aufgefordert. Wählen Sie **Open**(Öffnen).
 
@@ -273,7 +273,7 @@ Bevor Sie die Terraform-Befehle in Visual Studio Code verwenden können, müssen
 
 1. Klicken Sie in der angezeigten Bestätigung auf **OK**, und folgen Sie den Anweisungen auf dem Bildschirm.
 
-    ![Möchten Sie Cloud Shell öffnen?](media/configure-vs-code-extension-for-terraform/tf-do-you-want-to-open-cloudshell-small.png)
+    ![Bestätigungsdialogfeld für das Öffnen von Cloud Shell](media/configure-vs-code-extension-for-terraform/tf-do-you-want-to-open-cloudshell-small.png)
 
 >[!NOTE]
 >Wenn Sie den **lint**- oder den **end to end**-Test durchführen, verwendet Azure einen Containerdienst, um einen Testcomputer für den eigentlichen Test bereitzustellen. Deshalb kann es mehrere Minuten dauern, bis Ihre Testergebnisse zurückgegeben werden.
@@ -292,7 +292,7 @@ Nach einigen Augenblicken wird eine Liste im Terminalbereich angezeigt, die folg
 
 1. Klicken Sie in der angezeigten Bestätigung auf **OK**, und folgen Sie den Anweisungen auf dem Bildschirm.
 
-    ![Möchten Sie Cloud Shell öffnen?](media/configure-vs-code-extension-for-terraform/tf-do-you-want-to-open-cloudshell-small.png)
+    ![Bestätigungsdialogfeld für das Öffnen von Cloud Shell](media/configure-vs-code-extension-for-terraform/tf-do-you-want-to-open-cloudshell-small.png)
 
 >[!NOTE]
 >Wenn Sie den **lint**- oder den **end to end**-Test durchführen, verwendet Azure einen Containerdienst, um einen Testcomputer für den eigentlichen Test bereitzustellen. Deshalb kann es mehrere Minuten dauern, bis Ihre Testergebnisse zurückgegeben werden.

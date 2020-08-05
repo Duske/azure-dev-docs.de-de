@@ -8,12 +8,12 @@ ms.date: 03/25/2020
 ms.topic: article
 ms.service: multiple
 ms.custom: devx-track-java
-ms.openlocfilehash: 5dbe0235143621587b111f4537a49b36f88115f1
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 5bb7f711eae230a08893d2f94c242a06af809f88
+ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379444"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87400618"
 ---
 # <a name="configure-logging-with-the-azure-sdk-for-java"></a>Konfigurieren der Protokollierung mit dem Azure SDK für Java
 
@@ -26,17 +26,30 @@ Das Azure SDK für Java-Clientbibliotheken verwendet [Simple Logging Facade for 
 
 ## <a name="declare-a-logging-framework"></a>Deklarieren eines Protokollierungsframeworks
 
-Vor der Implementierung dieser Protokollierungen müssen Sie das relevante Framework als Abhängigkeit in Ihrem Projekt deklarieren. Weitere Informationen finden Sie im [SLF4J-Benutzerhandbuch](http://www.slf4j.org/manual.html#projectDep).
+Vor der Implementierung dieser Protokollierungen müssen Sie das relevante Framework als Abhängigkeit in Ihrem Projekt deklarieren. Weitere Informationen finden Sie im [SLF4J-Benutzerhandbuch](https://www.slf4j.org/manual.html#projectDep).
 
-## <a name="configure-log4j-or-log4j-2"></a>Konfigurieren von Log4j oder Log4j 2
+In den folgenden Abschnitten finden Sie Konfigurationsbeispiele für gängige Protokollierungsframeworks.
 
-Sie können die Protokollierung mit Log4j und Log4j 2 in einer Eigenschaftendatei oder einer XML-Datei konfigurieren. Ausführliche Informationen zur Log4j- und Log4j 2-Protokollierung finden Sie im [Handbuch zu Apache Log4j 2](https://logging.apache.org/log4j/2.x/manual/configuration.html).
+## <a name="use-log4j"></a>Verwenden von Log4j
 
-### <a name="use-a-properties-file"></a>Verwenden einer Eigenschaftendatei
+In den folgenden Beispielen werden Konfigurationen für das Log4j-Protokollierungsframework veranschaulicht. Weitere Informationen finden Sie in der [Log4j-Dokumentation](https://logging.apache.org/log4j/1.2/).
 
-Erstellen Sie im Verzeichnis *./src/main/resource* Ihres Projekts eine neue Datei mit dem Namen *log4j.properties* (oder *log4j2.properties* für Logj4 2). Verwenden Sie die folgenden Beispiele für den Einstieg:
+**Aktivieren von Log4j durch Hinzufügen einer Maven-Abhängigkeit**
 
-Log4j-Beispiel:
+Fügen Sie der Datei *pom.xml* Ihres Projekts Folgendes hinzu:
+
+```xml
+<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-log4j12</artifactId>
+    <version>[1.0,)</version> <!-- Version number 1.0 and above -->
+</dependency>
+```
+
+**Aktivieren von Log4j mithilfe einer Eigenschaftendatei**
+
+Erstellen Sie im Verzeichnis *./src/main/resource* Ihres Projekts eine Datei vom Typ *log4j.properties*, und fügen Sie den folgenden Inhalt hinzu:
 
 ```properties
 log4j.rootLogger=INFO, A1
@@ -46,47 +59,70 @@ log4j.appender.A1.layout.ConversionPattern=%m%n
 log4j.logger.com.azure.core=ERROR
 ```
 
-Log4j2-Beispiel:
+**Aktivieren von Log4j mithilfe einer XML-Datei**
 
-```properties
-appender.console.type = Console
-appender.console.name = LogToConsole
-appender.console.layout.type = PatternLayout
-appender.console.layout.pattern = %msg%n
-logger.app.name=com.azure.core
-logger.app.level=ERROR
-```
-
-### <a name="use-an-xml-file"></a>Verwenden einer XML-Datei
-
-Alternativ können Sie eine XML-Datei zum Konfigurieren von Log4j und Log4j2 verwenden. Erstellen Sie im Verzeichnis *./src/main/resource* Ihres Projekts eine neue Datei mit dem Namen *log4j.xml* (oder *log4j2.xml* für Logj4 2). Verwenden Sie die folgenden Beispiele für den Einstieg:
-
-Log4j-Beispiel:
+Erstellen Sie im Verzeichnis *./src/main/resource* Ihres Projekts eine Datei vom Typ *log4j.xml*, und fügen Sie den folgenden Inhalt hinzu:
 
 ```xml
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
 <log4j:configuration debug="true" xmlns:log4j='http://jakarta.apache.org/log4j/'>
 
-  <appender name="console" class="org.apache.log4j.ConsoleAppender">
-    <param name="Target" value="System.out"/>
-    <layout class="org.apache.log4j.PatternLayout">
-    <param name="ConversionPattern" value="%m%n" />
-    </layout>
-  </appender>
-  <logger name="com.azure.core" additivity="true">
-    <level value="ERROR" />
-    <appender-ref ref="console" />
-  </logger>
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%m%n" />
+        </layout>
+    </appender>
+    <logger name="com.azure.core">
+        <level value="ERROR" />
+        <appender-ref ref="console" />
+    </logger>
 
-  <root>
-    <priority value ="info"></priority>
-    <appender-ref ref="console"></appender>
-  </root>
+    <root>
+        <level value="info" />
+        <appender-ref ref="console" />
+    </root>
 
 </log4j:configuration>
 ```
 
-Log4j2-Beispiel:
+## <a name="use-log4j-2"></a>Verwenden von Log4j 2
+
+In den folgenden Beispielen werden Konfigurationen für das Log4j 2-Protokollierungsframework veranschaulicht. Weitere Informationen finden Sie in der [Log4j 2-Dokumentation](https://logging.apache.org/log4j/2.x/manual/configuration.html).
+
+**Aktivieren von Log4j 2 durch Hinzufügen einer Maven-Abhängigkeit**
+
+Fügen Sie der Datei *pom.xml* Ihres Projekts Folgendes hinzu:
+
+```
+<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j-impl -->
+<dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-slf4j-impl</artifactId>
+    <version>[2.0,)</version> <!-- Version number 2.0 and above -->
+</dependency>
+```
+
+**Aktivieren von Log4j 2 mithilfe einer Eigenschaftendatei**
+
+Erstellen Sie im Verzeichnis *./src/main/resource* Ihres Projekts eine Datei vom Typ *log4j2.properties*, und fügen Sie den folgenden Inhalt hinzu:
+
+```properties
+appender.console.type = Console
+appender.console.name = STDOUT
+appender.console.layout.type = PatternLayout
+appender.console.layout.pattern = %msg%n
+logger.app.name=com.azure.core
+logger.app.level=ERROR
+
+rootLogger.level = info
+rootLogger.appenderRefs = stdout
+rootLogger.appenderRef.stdout.ref = STDOUT
+```
+
+**Aktivieren von Log4j 2 mithilfe einer XML-Datei**
+
+Erstellen Sie im Verzeichnis *./src/main/resource* Ihres Projekts eine Datei vom Typ *log4j2.xml*, und fügen Sie den folgenden Inhalt hinzu:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -108,14 +144,28 @@ Log4j2-Beispiel:
 </Configuration>
 ```
 
-## <a name="configure-logback"></a>Konfigurieren von Logback
+## <a name="use-logback"></a>Verwenden von Logback
 
-[Logback](https://logback.qos.ch/manual/introduction.html) ist eines der gängigen Protokollierungsframeworks und eine native Implementierung von SLF4J. Erstellen Sie zum Konfigurieren von Logback im Verzeichnis *./src/main/resources* Ihres Projekts eine neue XML-Datei mit dem Namen *logback.xml*. Weitere Informationen zu den Konfigurationsoptionen finden Sie auf der [Logback-Projektwebsite](https://logback.qos.ch/manual/configuration.html).
+In den folgenden Beispielen werden grundlegende Konfigurationen für das Logback-Protokollierungsframework veranschaulicht. Weitere Informationen finden Sie in der [Logback-Dokumentation](https://logback.qos.ch/manual/configuration.html).
 
-Hier sehen Sie ein Beispiel für eine Logback-Konfiguration:
+**Aktivieren von Logback durch Hinzufügen einer Maven-Abhängigkeit**
+
+Fügen Sie der Datei *pom.xml* Ihres Projekts Folgendes hinzu:
+
+```
+<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+<dependency>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-classic</artifactId>
+    <version>[0.2.5,)</version> <!-- Version number 0.2.5 and above -->
+</dependency>
+```
+
+**Aktivieren von Logback mithilfe einer XML-Datei**
+
+Erstellen Sie im Verzeichnis *./src/main/resource* Ihres Projekts eine Datei vom Typ *Logback.xml*, und fügen Sie den folgenden Inhalt hinzu:
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
 <configuration>
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
     <encoder>
@@ -131,9 +181,19 @@ Hier sehen Sie ein Beispiel für eine Logback-Konfiguration:
 </configuration>
 ```
 
-Hier sehen Sie eine einfache Logback-Konfiguration für die Protokollierung in der Konsole:
+## <a name="use-logback-in-a-spring-boot-application"></a>Verwenden von Logback in einer Spring Boot-Anwendung
 
-```xml
+In den folgenden Beispielen werden einige Konfigurationen für die Verwendung von Logback mit Spring veranschaulicht. In der Regel fügen Sie einer Datei vom Typ *logback.xml* im Verzeichnis *./src/main/resources* Ihres Projekts Projektkonfigurationen hinzu. Spring überprüft diese Datei auf verschiedene Konfigurationen, einschließlich Protokollierung. Weitere Informationen finden Sie in der [Logback-Dokumentation](https://logback.qos.ch/manual/configuration.html).
+
+Sie können Ihre Anwendung so konfigurieren, dass sie Logback-Konfigurationen aus beliebigen Dateien liest. Wenn Sie die Datei *logback.xml* mit Ihrer Spring-Anwendung verknüpfen möchten, erstellen Sie im Verzeichnis *./src/main/resources* Ihres Projekts eine Datei vom Typ *application.properties*, und fügen Sie den folgenden Inhalt hinzu:
+
+```properties
+logging.config=classpath:logback.xml
+```
+
+Fügen Sie der Datei *logback.xml* Folgendes hinzu, um eine Logback-Konfiguration für die Protokollierung in der Konsole zu erstellen:
+
+```xml 
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
   <appender name="Console"
@@ -151,7 +211,7 @@ Hier sehen Sie eine einfache Logback-Konfiguration für die Protokollierung in d
 </configuration>
 ```
 
-Nachfolgend sehen Sie eine Konfiguration für die Protokollierung in einer Datei, für die stündlich ein Rollover ausgeführt und die im GZIP-Dateiformat archiviert wird:
+Fügen Sie der Datei *logback.xml* Folgendes hinzu, um die Protokollierung in einer Datei zu konfigurieren, für die stündlich ein Rollover ausgeführt und die im GZIP-Dateiformat archiviert wird:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -177,17 +237,9 @@ Nachfolgend sehen Sie eine Konfiguration für die Protokollierung in einer Datei
 </configuration>
 ```
 
-### <a name="configure-logback-for-a-spring-boot-application"></a>Konfigurieren von Logback für eine Spring Boot-Anwendung
-
-Spring sucht in der Datei *application.properties* (im Verzeichnis *./src/main/resources*) nach Ihren Projektkonfigurationen, einschließlich Protokollierung. Fügen Sie in der Datei *application.properties* die folgende Zeile hinzu, um die Datei *logback.xml* mit Ihrer Spring Boot-Anwendung zu verknüpfen:
-
-```properties
-logging.config=classpath:logback.xml
-```
-
 ## <a name="configure-fallback-logging-for-temporary-debugging"></a>Konfigurieren der Fallbackprotokollierung für temporäres Debuggen
 
-In Szenarien, in denen Ihre Anwendung nicht erneut mit der SLF4J-Protokollierung bereitgestellt werden kann, können Sie die Fallbackprotokollierung verwenden. Diese ist ab Azure Core 1.3.0 oder höher in die Azure-Clientbibliotheken für Java integriert. Zum Aktivieren dieser Protokollierung müssen Sie sich zunächst vergewissern, dass nicht die SLF4J-Protokollierung eingerichtet ist, da diese Vorrang hat. Legen Sie anschließend die Umgebungsvariable `AZURE_LOG_LEVEL` fest. Nach dem Festlegen der Umgebungsvariable müssen Sie die Anwendung neu starten, um mit dem Erstellen von Protokollen zu beginnen.
+In Szenarien, in denen Ihre Anwendung nicht erneut mit der SLF4J-Protokollierung bereitgestellt werden kann, können Sie die Fallbackprotokollierung verwenden. Diese ist ab Azure Core 1.3.0 in die Azure-Clientbibliotheken für Java integriert. Zum Aktivieren dieser Protokollierung müssen Sie sich zunächst vergewissern, dass nicht die SLF4J-Protokollierung eingerichtet ist, da diese Vorrang hat. Legen Sie anschließend die Umgebungsvariable `AZURE_LOG_LEVEL` fest. Nach dem Festlegen der Umgebungsvariable müssen Sie die Anwendung neu starten, um mit dem Erstellen von Protokollen zu beginnen.
 
 Die folgende Tabelle enthält die zulässigen Werte für diese Umgebungsvariable:
 
