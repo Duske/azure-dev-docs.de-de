@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 19f529b6d04e73c18648b77b2ac83a31ca1a455f
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: b3772c4d51852f9d77f63b2c998983a43cf00f4e
+ms.sourcegitcommit: 300251b3d866bac9c7d2dfc3133efaaea8e0ce04
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378134"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87438338"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-eclipse"></a>Verwalten von Speicherkonten mithilfe von Azure-Explorer für Eclipse
 
@@ -113,8 +113,8 @@ Weitere Informationen zu Azure Storage-Konten sowie Größen und Preisen finden 
 [Skalierbarkeits- und Leistungsziele für Azure Storage]: /azure/storage/storage-scalability-targets
 [Benennen von Containern, BLOBs und Metadaten und Verweisen auf diese]: https://go.microsoft.com/fwlink/?LinkId=255555
 
-[Größen für Windows-Speicherkonten in Azure]: /azure/virtual-machines/virtual-machines-windows-sizes
-[Größen für Linux-Speicherkonten in Azure]: /azure/virtual-machines/virtual-machines-linux-sizes
+[Größen für Windows-Speicherkonten in Azure]: https://docs.microsoft.com/azure/virtual-machines/sizes
+[Größen für Linux-Speicherkonten in Azure]: https://docs.microsoft.com/azure/virtual-machines/sizes
 [Preise von Windows-Speicherkonten]: https://azure.microsoft.com/pricing/details/virtual-machines/windows/
 [Preise von Linux-Speicherkonten]: https://azure.microsoft.com/pricing/details/virtual-machines/linux/
 

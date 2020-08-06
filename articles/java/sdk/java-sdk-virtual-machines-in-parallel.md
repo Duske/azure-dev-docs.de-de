@@ -7,19 +7,19 @@ ms.topic: article
 ms.date: 03/30/2017
 ms.reviewer: asirveda
 ms.custom: devx-track-java
-ms.openlocfilehash: 78f50ce1c0110a9329d259d951e665a65bcbafeb
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: a0e93cd355560c62c91cee61df843564e738dd25
+ms.sourcegitcommit: 300251b3d866bac9c7d2dfc3133efaaea8e0ce04
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379404"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87438353"
 ---
 # <a name="create-virtual-machines-across-multiple-regions-from-your-java-applications"></a>Erstellen virtueller Computer in mehreren Regionen über Ihre Java-Anwendungen
 
 [Dieses Beispiel](https://github.com/Azure-Samples/compute-java-create-virtual-machines-across-regions-in-parallel) erstellt virtuelle Computer parallel in verschiedenen Azure-Regionen unter Verwendung der [Azure-Verwaltungsbibliotheken für Java](https://github.com/Azure/azure-sdk-for-java).
 
 > [!IMPORTANT]
-> In dem Beispiel werden insgesamt 48 virtuelle Computer mit Ubuntu 16.04 LTS und der Größe [STANDARD_DS3_V2](/azure/virtual-machines/virtual-machines-windows-sizes) in vier Regionen erstellt. Die virtuellen Computer werden durch den Beispielcode vor dem Beenden wieder gelöscht. [Überprüfen Sie Ihre Diensteinschränkungen und Kontingente](/azure/azure-subscription-service-limits), bevor Sie dieses Beispiel mit der Standardanzahl von virtuellen Computern ausführen.
+> In dem Beispiel werden insgesamt 48 virtuelle Computer mit Ubuntu 16.04 LTS und der Größe [STANDARD_DS3_V2](https://docs.microsoft.com/azure/virtual-machines/sizes) in vier Regionen erstellt. Die virtuellen Computer werden durch den Beispielcode vor dem Beenden wieder gelöscht. [Überprüfen Sie Ihre Diensteinschränkungen und Kontingente](/azure/azure-subscription-service-limits), bevor Sie dieses Beispiel mit der Standardanzahl von virtuellen Computern ausführen.
 
 ## <a name="run-the-sample"></a>Ausführen des Beispiels
 

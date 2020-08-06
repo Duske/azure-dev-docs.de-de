@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 37ca9a27ec009efb0b08b0df091565209568b59a
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 5d561d59b4bc84e26fc405135c26de6ec0f4f27f
+ms.sourcegitcommit: 300251b3d866bac9c7d2dfc3133efaaea8e0ce04
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378184"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87438342"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-eclipse"></a>Verwalten virtueller Computer mit dem Azure-Explorer für Eclipse
 
@@ -149,8 +149,8 @@ Weitere Informationen zu den Größen und Preisen für virtuelle Azure-Computer 
 
 <!-- URL List -->
 
-[Größen für virtuelle Windows-Computer in Azure]: /azure/virtual-machines/virtual-machines-windows-sizes
-[Größen für virtuelle Linux-Computer in Azure]: /azure/virtual-machines/virtual-machines-linux-sizes
+[Größen für virtuelle Windows-Computer in Azure]: https://docs.microsoft.com/azure/virtual-machines/sizes
+[Größen für virtuelle Linux-Computer in Azure]: https://docs.microsoft.com/azure/virtual-machines/sizes
 [Preise von virtuellen Windows-Computern]: https://azure.microsoft.com/pricing/details/virtual-machines/windows/
 [Preise von virtuellen Linux-Computern]: https://azure.microsoft.com/pricing/details/virtual-machines/linux/
 

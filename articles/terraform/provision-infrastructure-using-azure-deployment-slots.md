@@ -1,17 +1,17 @@
 ---
-title: 'Tutorial: Bereitstellen der Infrastruktur mit Azure-Bereitstellungsslots per Terraform'
+title: Bereitstellen der Infrastruktur mit Azure-Bereitstellungsslots per Terraform
 description: Es wird beschrieben, wie Sie Terraform mit Bereitstellungsslots für Azure-Anbieter verwenden.
 keywords: Azure DevOps Terraform Bereitstellungsslots
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/09/2020
-ms.openlocfilehash: 8f5597684a9d61474685f8117fa584405fa0979e
-ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
+ms.openlocfilehash: 8ae9f51b82f7868e4df11f1586664f203aa5403b
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82171956"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478482"
 ---
-# <a name="tutorial-provision-infrastructure-with-azure-deployment-slots-using-terraform"></a>Tutorial: Bereitstellen der Infrastruktur mit Azure-Bereitstellungsslots per Terraform
+# <a name="provision-infrastructure-with-azure-deployment-slots-using-terraform"></a>Bereitstellen der Infrastruktur mit Azure-Bereitstellungsslots per Terraform
 
 Mit [Azure-Bereitstellungsslots](/azure/app-service/deploy-staging-slots) können Sie zwischen verschiedenen Versionen Ihrer App wechseln. Dadurch lassen sich die Auswirkungen fehlerhafter Bereitstellungen minimieren. 
 
