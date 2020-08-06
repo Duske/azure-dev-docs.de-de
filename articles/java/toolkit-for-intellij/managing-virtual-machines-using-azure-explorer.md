@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: d05e5f5c6680e4a33bfd66289437d6967fe34e88
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 65f0c827fec68bc6a11d7dcaf380738967e16a92
+ms.sourcegitcommit: 300251b3d866bac9c7d2dfc3133efaaea8e0ce04
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378064"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87438474"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-intellij"></a>Verwalten virtueller Computer mit dem Azure-Explorer für IntelliJ
 
@@ -39,19 +39,19 @@ Gehen Sie folgendermaßen vor, um einen virtuellen Computer mit dem Azure-Explor
 
 4. Geben Sie im Fenster **Virtuelles Computerimage auswählen** die folgenden Informationen ein:
 
-   * **Standort:** gibt den Standort an, an dem Ihr virtueller Computer erstellt wird (z.B. *USA, Westen*). 
+   * **Standort**: Der Standort, an dem Ihre VM erstellt wird (z. B. *USA, Westen*). 
 
-   * **Empfohlenes Image:** gibt an, dass Sie ein Image aus einer verkürzten Liste häufig verwendeter Images auswählen möchten.
+   * **Empfohlenes Image**: Gibt an, dass Sie ein Image aus einer gekürzten Liste häufig verwendeter Images auswählen.
 
-   * **Benutzerdefiniertes Image:** gibt an, dass Sie ein benutzerdefiniertes Image auswählen möchten, indem Sie die folgenden Informationen angeben:
+   * **Benutzerdefiniertes Image**: Gibt an, dass Sie ein benutzerdefiniertes Image auswählen, indem Sie die folgenden Informationen angeben:
 
-      * **Herausgeber:** gibt den Herausgeber an, der das Image für den virtuellen Computer erstellt hat (z.B. *Microsoft*).
+      * **Herausgeber**: Der Herausgeber, der das zu verwendende Image für die VM erstellt hat (z. B. *Microsoft*).
 
-      * **Angebot:** gibt an, welches Angebot eines virtuellen Computers für den ausgewählten Herausgeber verwendet werden soll (z.B. *JDK*).
+      * **Angebot**: Das zu verwendende VM-Angebot des ausgewählten Herausgebers (z. B. *JDK*).
 
-      * **SKU:** gibt die zu verwendende SKU (Stock-Keeping Unit, Artikelnummer) aus dem ausgewählten Angebot an (z.B. *JDK_8*).
+      * **SKU**: Die zu verwendende SKU (Stock Keeping Unit) des ausgewählten Angebots (z. B. *JDK_8*).
 
-      * **Versionsnummer:** gibt an, welche Version der ausgewählten SKU verwendet werden soll.
+      * **Versionsnummer**: Die zu verwendende Version der ausgewählten SKU.
 
    ![Fenster „Virtuelles Computerimage auswählen“][CR03]
 
@@ -59,13 +59,13 @@ Gehen Sie folgendermaßen vor, um einen virtuellen Computer mit dem Azure-Explor
 
 6. Geben Sie im Fenster **Grundlegende Einstellungen des virtuellen Computers** die folgenden Informationen ein:
 
-   * **Name des virtuellen Computers:** gibt den Namen des neuen virtuellen Computers an. Dieser muss mit einem Buchstaben beginnen und darf nur Buchstaben, Ziffern und Bindestriche enthalten.
+   * **Name des virtuellen Computers**: Der Name Ihrer neuen VM. Der Name muss mit einem Buchstaben beginnen und darf nur Buchstaben, Ziffern und Bindestriche enthalten.
 
-   * **Größe:** gibt die Anzahl der Kerne und den Speicher an, die dem virtuellen Computer zugeordnet werden sollen
+   * **Size**: Die Anzahl von Kernen und der Arbeitsspeicher, die der VM zugeordnet werden sollen.
 
-   * **Benutzername:** gibt das Administratorkonto an, das für die Verwaltung Ihres virtuellen Computer erstellt werden soll
+   * **Benutzername**: Das Administratorkonto, das für die Verwaltung Ihrer VM erstellt werden soll.
 
-   * **Kennwort** und **Bestätigen**: geben das Kennwort für Ihr Administratorkonto an
+   * **Kennwort** und **Bestätigen**: Das Kennwort für Ihr Administratorkonto.
 
    ![Fenster „Grundlegende Einstellungen des virtuellen Computers“][CR04]
 
@@ -73,25 +73,25 @@ Gehen Sie folgendermaßen vor, um einen virtuellen Computer mit dem Azure-Explor
 
 8. Geben Sie im Fenster **Zugeordnete Ressourcen** die folgenden Informationen ein:
 
-   * **Ressourcengruppe:** gibt die Ressourcengruppe für Ihren virtuellen Computer an. Wählen Sie eine der folgenden Optionen aus:
-      * **Neu erstellen:** gibt an, dass Sie eine neue Ressourcengruppe erstellen möchten.
-      * **Vorhandene verwenden:** gibt an, dass Sie in einer Liste von Ressourcengruppen, die Ihrem Azure-Konto zugeordnet sind, eine Auswahl treffen möchten.
+   * **Ressourcengruppe**: Die Ressourcengruppe für Ihre VM. Wählen Sie eine der folgenden Optionen aus:
+      * **Neue erstellen**: Gibt an, dass Sie eine neue Ressourcengruppe erstellen möchten.
+      * **Vorhandene verwenden**: Gibt an, dass Sie in einer Liste von Ressourcengruppen, die Ihrem Azure-Konto zugeordnet sind, eine Auswahl treffen möchten.
 
        ![Fenster „Zugeordnete Ressourcen“][CR07]
 
-   * **Speicherkonto:** gibt das Speicherkonto an, das zum Speichern des virtuellen Computers verwendet werden soll. Sie können ein vorhandenes Speicherkonto auswählen oder ein neues erstellen. Wenn Sie **Neu erstellen** auswählen, wird das folgende Dialogfeld angezeigt:
+   * **Speicherkonto**: Das Speicherkonto, das zum Speichern der VM verwendet werden soll. Sie können ein vorhandenes Speicherkonto auswählen oder ein neues erstellen. Wenn Sie **Neu erstellen** auswählen, wird das folgende Dialogfeld angezeigt:
 
       ![Dialogfeld „Speicherkonto erstellen“][CR05]
 
-   * **Virtuelles Netzwerk** und **Subnetz**: geben das virtuelle Netzwerk und das Subnetz an, mit dem der virtuelle Computer eine Verbindung herstellen soll. Sie können ein vorhandenes Netzwerk und Subnetz verwenden oder ein neues Netzwerk und Subnetz erstellen. Wenn Sie **Neu erstellen** auswählen, wird das folgende Dialogfeld angezeigt:
+   * **Virtuelles Netzwerk** und **Subnetz**: Das virtuelle Netzwerk und das Subnetz, mit denen Ihre VM eine Verbindung herstellt. Sie können ein vorhandenes Netzwerk und Subnetz verwenden oder ein neues Netzwerk und Subnetz erstellen. Wenn Sie **Neu erstellen** auswählen, wird das folgende Dialogfeld angezeigt:
 
       ![Dialogfeld „Virtuelles Netzwerk erstellen“][CR06]
 
-   * **Öffentliche IP-Adresse:** gibt eine externe IP-Adresse für den virtuellen Computer an. Sie können eine neue IP-Adresse erstellen oder **(Keine)** auswählen, wenn Ihr virtueller Computer nicht über eine öffentliche IP-Adresse verfügt. 
+   * **Öffentliche IP-Adresse:** Eine externe IP-Adresse für Ihre VM. Sie können eine neue IP-Adresse erstellen oder **(Keine)** auswählen, wenn Ihr virtueller Computer nicht über eine öffentliche IP-Adresse verfügt. 
 
-   * **Netzwerksicherheitsgruppe:** gibt eine optionale Netzwerkfirewall für den virtuellen Computer an. Sie können eine vorhandene Firewall auswählen oder **(Keine)** auswählen, wenn Ihr virtueller Computer keine Netzwerkfirewall verwendet. 
+   * **Netzwerksicherheitsgruppe**: Eine optionale Netzwerkfirewall für Ihre VM. Sie können eine vorhandene Firewall auswählen oder **(Keine)** auswählen, wenn Ihr virtueller Computer keine Netzwerkfirewall verwendet. 
 
-   * **Verfügbarkeitsgruppe:** gibt eine optionale Verfügbarkeitsgruppe an, der Ihr virtueller Computer angehören kann. Sie können eine vorhandene Verfügbarkeitsgruppe auswählen, eine neue erstellen oder **(Keine)** auswählen, wenn Ihr virtueller Computer keiner Verfügbarkeitsgruppe angehören soll.
+   * **Verfügbarkeitsgruppe**: Eine optionale Verfügbarkeitsgruppe, der Ihre VM angehören kann. Sie können eine vorhandene Verfügbarkeitsgruppe auswählen, eine neue erstellen oder **(Keine)** auswählen, wenn Ihr virtueller Computer keiner Verfügbarkeitsgruppe angehören soll.
 
 9. Klicken Sie auf **Fertig stellen**.  
     Der neue virtuelle Computer wird im Toolfenster von Azure-Explorer angezeigt. 
@@ -150,8 +150,8 @@ Weitere Informationen zu den Größen und Preisen für virtuelle Azure-Computer 
 <!-- URL List -->
 
 [Anleitung zur Anmeldung für das Azure-Toolkit für IntelliJ]: ./sign-in-instructions.md
-[Größen für virtuelle Windows-Computer in Azure]: /azure/virtual-machines/virtual-machines-windows-sizes
-[Größen für virtuelle Linux-Computer in Azure]: /azure/virtual-machines/virtual-machines-linux-sizes
+[Größen für virtuelle Windows-Computer in Azure]: https://docs.microsoft.com/azure/virtual-machines/sizes
+[Größen für virtuelle Linux-Computer in Azure]: https://docs.microsoft.com/azure/virtual-machines/sizes
 [Preise von virtuellen Windows-Computern]: https://azure.microsoft.com/pricing/details/virtual-machines/windows/
 [Preise von virtuellen Linux-Computern]: https://azure.microsoft.com/pricing/details/virtual-machines/linux/
 

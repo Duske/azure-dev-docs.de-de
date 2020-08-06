@@ -1,17 +1,17 @@
 ---
-title: 'Tutorial: Erstellen einer Linux-VM mit Infrastruktur in Azure unter Verwendung von Terraform'
+title: Erstellen einer Linux-VM mit Infrastruktur in Azure mit Terraform
 description: Es wird beschrieben, wie Sie mit Terraform eine vollständige Linux-VM-Umgebung in Azure erstellen und verwalten.
 keywords: Azure DevOps Terraform Linux VM virtueller Computer
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 06/14/2020
-ms.openlocfilehash: 53580815deaaef30512ca9ccd2c506908d2192ca
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 518e5f619e142b3bed0ff539ff2b448c6f3e5b48
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334435"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478350"
 ---
-# <a name="tutorial-create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>Tutorial: Erstellen einer Linux-VM mit Infrastruktur in Azure mit Terraform
+# <a name="create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>Erstellen einer Linux-VM mit Infrastruktur in Azure mit Terraform
 
 Mit Terraform können Sie vollständige Infrastrukturbereitstellungen in Azure definieren und erstellen. Dazu lassen sich Terraform-Vorlagen in einem für Menschen lesbaren Format erstellen, die Azure-Ressourcen konsistent und reproduzierbar erstellen und konfigurieren. In diesem Artikel wird gezeigt, wie Sie eine vollständige Linux-Umgebung und die unterstützenden Ressourcen mit Terraform erstellen. Hier erfahren Sie auch, wie Sie [Terraform installieren und konfigurieren](get-started-cloud-shell.md).
 
