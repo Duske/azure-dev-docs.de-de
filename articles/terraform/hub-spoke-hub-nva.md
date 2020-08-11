@@ -3,20 +3,20 @@ title: 'Tutorial: Erstellen einer virtuellen Hub-Netzwerkappliance in Azure mit 
 description: Es wird beschrieben, wie Sie ein virtuelles Hubnetzwerk (VNET) erstellen, das als allgemeiner Verbindungspunkt zwischen anderen Netzwerken fungiert.
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: 49af4bde3568185e1915edb49be3040ece89676f
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 71599c3d62ba3c3e0c6132cdf5197b87927cec91
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329312"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478560"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-appliance-in-azure-using-terraform"></a>Tutorial: Erstellen einer virtuellen Hub-Netzwerkappliance in Azure mit Terraform
 
-Ein **VPN-Gerät** ist ein Gerät, das externe Konnektivität mit einem lokalen Netzwerk bereitstellt. Das VPN-Gerät kann ein Hardwaregerät oder eine Softwarelösung sein. Ein Beispiel für eine Softwarelösung ist der Routing- und RAS-Dienst (RRAS) in Windows Server 2012. Weitere Informationen über VPN-Geräte finden Sie unter [Informationen zu VPN-Geräten für VPN Gateway-Verbindungen zwischen Standorten](/azure/vpn-gateway/vpn-gateway-about-vpn-devices).
+Ein *VPN-Gerät* ist ein Gerät, das externe Konnektivität mit einem lokalen Netzwerk bereitstellt. Das VPN-Gerät kann ein Hardwaregerät oder eine Softwarelösung sein. Ein Beispiel für eine Softwarelösung ist der Routing- und RAS-Dienst (RRAS) in Windows Server 2012. Weitere Informationen über VPN-Geräte finden Sie unter [Informationen zu VPN-Geräten für VPN Gateway-Verbindungen zwischen Standorten](/azure/vpn-gateway/vpn-gateway-about-vpn-devices).
 
-Azure unterstützt eine Vielzahl von virtuellen Netzwerkgeräten, aus denen Sie auswählen können. In diesem Tutorial wird eine Ubuntu-Image verwendet. Weitere Informationen über die Vielzahl der von Azure unterstützten Gerätelösungen finden Sie auf der [Startseite für Netzwerkgeräte](https://azure.microsoft.com/solutions/network-appliances/).
+Azure unterstützt eine Vielzahl von virtuellen Netzwerkgeräten, aus denen Sie auswählen können. In diesem Artikel wird ein Ubuntu-Image verwendet. Weitere Informationen über die Vielzahl der von Azure unterstützten Gerätelösungen finden Sie auf der [Startseite für Netzwerkgeräte](https://azure.microsoft.com/solutions/network-appliances/).
 
-Dieses Tutorial enthält die folgenden Aufgaben:
+In diesem Artikel werden die folgenden Aufgaben behandelt:
 
 > [!div class="checklist"]
 > * Verwenden von HCL (HashiCorp-Sprache), um das Hub-VNET in einer Hub-Spoke-Topologie zu implementieren

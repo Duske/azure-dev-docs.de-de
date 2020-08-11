@@ -4,12 +4,13 @@ description: Hier erfahren Sie, wie Sie die Azure-Befehlszeilenschnittstelle in 
 keywords: Jenkins, Azure, DevOps, Azure Spring Cloud, Azure CLI
 ms.topic: tutorial
 ms.date: 01/07/2020
-ms.openlocfilehash: c9341ef89e43f14111b6e656daebadcd4790322d
-ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 0135dbfa67f1de2b0602ae06b7ab970c2b560d59
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861213"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478310"
 ---
 # <a name="tutorial-deploy-apps-to-azure-spring-cloud-using-jenkins-and-the-azure-cli"></a>Tutorial: Bereitstellen von Apps in Azure Spring Cloud mithilfe von Jenkins und der Azure-Befehlszeilenschnittstelle
 
@@ -191,7 +192,7 @@ Die Beispielpipeline verwendet Maven zum Erstellen und die Azure-Befehlszeilensc
 ## <a name="create-a-jenkinsfile"></a>Erstellen einer Jenkinsfile
 1. Erstellen Sie in Ihrem eigenen Repository (https://github.com/&lt ;Ihre GitHub-ID&gt; /piggymetrics), eine **Jenkinsfile** im Stammverzeichnis.
 
-2. Aktualisieren Sie die Datei wie folgt. Ersetzen Sie dabei die Platzhalter **\<resource group name>** (Ressourcengruppenname) und **\<service name>** (Dienstname). Falls Sie beim Hinzufügen der Anmeldeinformationen in Jenkins einen anderen Wert verwendet haben, ersetzen Sie **azure_service_principal** durch die korrekte ID. 
+2. Aktualisieren Sie die Datei wie folgt. Ersetzen Sie die Werte von **\<resource group name>** und **\<service name>** . Falls Sie beim Hinzufügen der Anmeldeinformationen in Jenkins einen anderen Wert verwendet haben, ersetzen Sie **azure_service_principal** durch die korrekte ID. 
 
    ```groovy
        node {

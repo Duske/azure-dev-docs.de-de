@@ -3,18 +3,18 @@ title: 'Tutorial: Erstellen eines virtuellen Hubnetzwerks in Azure unter Verwend
 description: Es wird beschrieben, wie Sie ein virtuelles Hubnetzwerk in Azure erstellen, das als allgemeiner Verbindungspunkt zwischen anderen Netzwerken fungiert.
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: deef7a1462662b8f9f6ebbca013929102fa4ba95
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: ed2b391075dc04b7ef16d3f305ef4ff86abed4ae
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329698"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478570"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-in-azure-by-using-terraform"></a>Tutorial: Erstellen eines virtuellen Hubnetzwerks in Azure unter Verwendung von Terraform
 
-Das virtuelle Hubnetzwerk fungiert als zentraler Konnektivitätspunkt für Ihr lokales Netzwerk. In dem virtuellen Netzwerk werden gemeinsame Dienste gehostet, die von in den virtuellen Spoke-Netzwerken gehosteten Workloads genutzt werden. Zu Demonstrationszwecken werden in diesem Tutorial keine gemeinsamen Dienste implementiert.
+Das virtuelle Hubnetzwerk fungiert als zentraler Konnektivitätspunkt für Ihr lokales Netzwerk. In dem virtuellen Netzwerk werden gemeinsame Dienste gehostet, die von in den virtuellen Spoke-Netzwerken gehosteten Workloads genutzt werden. Zu Demonstrationszwecken werden in diesem Artikel keine gemeinsamen Dienste implementiert.
 
-Dieses Tutorial enthält die folgenden Aufgaben:
+In diesem Artikel werden die folgenden Aufgaben behandelt:
 
 > [!div class="checklist"]
 > * Implementieren des virtuellen Hubnetzwerks in einer Hub-and-Spoke-Topologie unter Verwendung der HashiCorp Configuration Language (HCL)

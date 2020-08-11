@@ -1,20 +1,20 @@
 ---
-title: 'Tutorial: Erstellen einer Azure-VM-Skalierungsgruppe auf der Grundlage eines benutzerdefinierten Packer-Images unter Verwendung von Terraform'
+title: Erstellen einer Azure-VM-Skalierungsgruppe auf der Grundlage eines benutzerdefinierten Packer-Images unter Verwendung von Terraform
 description: Hier wird beschrieben, wie Sie mit Terraform eine Azure-VM-Skalierungsgruppe aus einem von Packer generierten benutzerdefinierten Image konfigurieren und mit einer Version versehen.
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 11/07/2019
-ms.openlocfilehash: f72d8ab828259e4408ceb78528ce310a214e05ad
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 541d294a3098e2da7c76855de4db0c425b408e0e
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334395"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478470"
 ---
-# <a name="tutorial-create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image-by-using-terraform"></a>Tutorial: Erstellen einer Azure-VM-Skalierungsgruppe auf der Grundlage eines benutzerdefinierten Packer-Images unter Verwendung von Terraform
+# <a name="create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image-by-using-terraform"></a>Erstellen einer Azure-VM-Skalierungsgruppe auf der Grundlage eines benutzerdefinierten Packer-Images unter Verwendung von Terraform
 
 [Azure-VM-Skalierungsgruppen](/azure/virtual-machine-scale-sets) ermöglichen die Konfiguration identischer virtueller Computer. Die Anzahl von VM-Instanzen kann bedarfs- zeitplangesteuert angepasst werden. Weitere Informationen finden Sie unter [Automatisches Skalieren einer VM-Skalierungsgruppe im Azure-Portal](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-portal).
 
-In diesem Tutorial lernen Sie Folgendes:
+In diesem Artikel werden folgende Vorgehensweisen behandelt:
 
 > [!div class="checklist"]
 > * Einrichten Ihrer Terraform-Bereitstellung
@@ -158,14 +158,14 @@ Die Ressourcengruppe enthält die folgenden Ressourcen:
 
 
 ## <a name="create-an-azure-image-by-using-packer"></a>Erstellen eines Azure-Images mit Packer
-Erstellen Sie ein benutzerdefiniertes Linux-Image, wie im Tutorial [Erstellen von Images von virtuellen Linux-Computern in Azure mit Packer](/azure/virtual-machines/linux/build-image-with-packer) beschrieben.
+Erstellen Sie wie im Artikel [Erstellen von Images von Linux-VMs in Azure mit Packer](/azure/virtual-machines/linux/build-image-with-packer) beschrieben ein benutzerdefiniertes Linux-Image.
  
-Folgen Sie den Schritten des Tutorials, um ein Ubuntu-Image mit Nginx-Installation und aufgehobener Bereitstellung zu erstellen.
+Folgen Sie den Schritten des Artikels, um ein Ubuntu-Image mit Nginx-Installation und aufgehobener Bereitstellung zu erstellen.
 
 ![Nachdem Sie das Packer-Image erstellt haben, verfügen Sie über ein Image.](./media/create-vm-scaleset-network-disks-using-packer-hcl/packerimagecreated.png)
 
 > [!NOTE]
-> Im Rahmen dieses Tutorials wird im Packer-Image ein Befehl zum Installieren von Nginx ausgeführt. Sie können auch bei der Erstellung Ihr eigenes Skript ausführen.
+> Im Rahmen dieses Artikels wird im Packer-Image ein Befehl zum Installieren von Nginx ausgeführt. Sie können auch bei der Erstellung Ihr eigenes Skript ausführen.
 
 ## <a name="edit-the-infrastructure-to-add-the-virtual-machine-scale-set"></a>Bearbeiten Sie die Infrastruktur, um die VM-Skalierungsgruppe hinzuzufügen.
 
@@ -442,7 +442,7 @@ Nach Abschluss der Bereitstellung sieht der Inhalt der Ressourcengruppe wie folg
 
 ## <a name="clean-up-the-environment"></a>Bereinigen der Umgebung
 
-Die folgenden Befehle löschen die in diesem Tutorial erstellten Ressourcen:
+Die folgenden Befehle löschen die in diesem Artikel erstellten Ressourcen:
 
 ```bash
 terraform destroy

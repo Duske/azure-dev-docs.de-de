@@ -1,18 +1,18 @@
 ---
-title: 'Tutorial: Erstellen einer Terraform-Basisvorlage in Azure mithilfe von Yeoman'
+title: Erstellen einer Terraform-Basisvorlage in Azure mithilfe von Yeoman
 description: Hier erfahren Sie, wie Sie eine Terraform-Basisvorlage in Azure mithilfe von Yeoman erstellen.
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 05/25/2020
-ms.openlocfilehash: 8e9c4444d95f052fc5872565b316ec15e033be82
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: e43c28232009f3dec274ad2c1749d9ab5d88957b
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334465"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478530"
 ---
-# <a name="tutorial-create-a-terraform-base-template-in-azure-using-yeoman"></a>Tutorial: Erstellen einer Terraform-Basisvorlage in Azure mithilfe von Yeoman
+# <a name="create-a-terraform-base-template-in-azure-using-yeoman"></a>Erstellen einer Terraform-Basisvorlage in Azure mithilfe von Yeoman
 
-In diesem Tutorial erfahren Sie, wie Sie eine Kombination aus [Terraform](/azure/terraform/) und [Yeoman](https://yeoman.io/) verwenden. Terraform ist ein Tool für die Infrastrukturerstellung in Azure. Yeoman erleichtert die Erstellung von Terraform-Modulen.
+In diesem Artikel erfahren Sie, wie Sie [Terraform](/azure/terraform/) und [Yeoman](https://yeoman.io/) zusammen verwenden. Terraform ist ein Tool für die Infrastrukturerstellung in Azure. Yeoman erleichtert die Erstellung von Terraform-Modulen.
 
 In diesem Artikel lernen Sie Folgendes:
 > [!div class="checklist"]
@@ -32,7 +32,7 @@ In diesem Artikel lernen Sie Folgendes:
 - **Programmiersprache Go**: [Installieren Sie Go](https://golang.org/), da es sich bei den von Yeoman generierten Testfällen um Code in der Sprache Go handelt.
 
 >[!NOTE]
->Bei den meisten der in diesem Tutorial beschriebenen Verfahren wird die Befehlszeilenschnittstelle verwendet. Die beschriebenen Schritte gelten für alle Betriebssysteme und Befehlszeilentools. In den Beispielen wird PowerShell für die lokale Umgebung und Git Bash für die Cloud Shell-Umgebung verwendet.
+>Bei den meisten Verfahren in diesem Artikel wird die Befehlszeilenschnittstelle verwendet. Die beschriebenen Schritte gelten für alle Betriebssysteme und Befehlszeilentools. In den Beispielen wird PowerShell für die lokale Umgebung und Git Bash für die Cloud Shell-Umgebung verwendet.
 
 ## <a name="prepare-your-environment"></a>Vorbereiten der Umgebung
 

@@ -1,20 +1,20 @@
 ---
-title: 'Tutorial: Erstellen einer Azure-VM-Skalierungsgruppe unter Verwendung von Terraform'
+title: Erstellen einer Azure-VM-Skalierungsgruppe unter Verwendung von Terraform
 description: Es wird beschrieben, wie Sie mit Terraform eine Azure-VM-Skalierungsgruppe konfigurieren und mit einer Version versehen.
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 11/07/2019
-ms.openlocfilehash: 057fbec811c842b27823395735186120612bc6c5
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 75481c04038b13d81fa273e53bd1950c84fa5053
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334405"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478500"
 ---
-# <a name="tutorial-create-an-azure-virtual-machine-scale-set-using-terraform"></a>Tutorial: Erstellen einer Azure-VM-Skalierungsgruppe unter Verwendung von Terraform
+# <a name="create-an-azure-virtual-machine-scale-set-using-terraform"></a>Erstellen einer Azure-VM-Skalierungsgruppe unter Verwendung von Terraform
 
 [Azure-VM-Skalierungsgruppen](/azure/virtual-machine-scale-sets) ermöglichen die Konfiguration identischer virtueller Computer. Die Anzahl von VM-Instanzen kann bedarfs- zeitplangesteuert angepasst werden. Weitere Informationen finden Sie unter [Automatisches Skalieren einer VM-Skalierungsgruppe im Azure-Portal](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-portal).
 
-In diesem Tutorial lernen Sie Folgendes:
+In diesem Artikel werden folgende Vorgehensweisen behandelt:
 
 > [!div class="checklist"]
 > * Einrichten einer Terraform-Bereitstellung
@@ -512,7 +512,7 @@ Nach Abschluss der Bereitstellung sieht der Inhalt der Ressourcengruppe wie derj
 
 ## <a name="environment-cleanup"></a>Bereinigen der Umgebung
 
-Wenn Sie die in diesem Tutorial erstellten Terraform-Ressourcen löschen möchten, geben Sie in Cloud Shell den folgenden Befehl ein:
+Wenn Sie die in diesem Artikel erstellten Terraform-Ressourcen löschen möchten, geben Sie in Cloud Shell den folgenden Befehl ein:
 
 ```bash
 terraform destroy

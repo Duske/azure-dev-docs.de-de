@@ -1,16 +1,16 @@
 ---
-title: 'Tutorial: Konfigurieren der Azure Terraform-Erweiterung für Visual Studio Code'
+title: Konfigurieren der Azure Terraform-Erweiterung für Visual Studio Code
 description: Erfahren Sie, wie Sie die Azure Terraform-Erweiterung in Visual Studio Code installieren und verwenden.
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 10/26/2019
-ms.openlocfilehash: 7bbddd2d455e53354829557b99c19a8fb3e3dbf7
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 6ac6cada3e7a411d940f5207fa6cfa10f4fea0de
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334485"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478550"
 ---
-# <a name="tutorial-configure-the-azure-terraform-visual-studio-code-extension"></a>Tutorial: Konfigurieren der Azure Terraform-Erweiterung für Visual Studio Code
+# <a name="configure-the-azure-terraform-visual-studio-code-extension"></a>Konfigurieren der Azure Terraform-Erweiterung für Visual Studio Code
 
 Dank der Azure Terraform-Erweiterung für Visual Studio Code können Sie Terraform im Editor nutzen. Mit dieser Erweiterung können Sie Terraform-Konfigurationen erstellen, testen und ausführen. Die Erweiterung unterstützt auch die Visualisierung des Ressourcendiagramms.
 
@@ -166,7 +166,7 @@ In dieser Übung erstellen Sie eine grundlegende Terraform-Konfigurationsdatei, 
 
 ### <a name="visualize-the-plan"></a>Visualisieren des Plans
 
-Im bisherigen Verlauf dieses Tutorials haben Sie GraphViz installiert. Terraform kann GraphViz verwenden, um eine visuelle Darstellung einer Konfiguration oder eines Ausführungsplans zu generieren. Die Azure Terraform-Erweiterung für Visual Studio Code implementiert dieses Feature über den Befehl *visualize*.
+Weiter oben in diesem Artikel haben Sie GraphViz installiert. Terraform kann GraphViz verwenden, um eine visuelle Darstellung einer Konfiguration oder eines Ausführungsplans zu generieren. Die Azure Terraform-Erweiterung für Visual Studio Code implementiert dieses Feature über den Befehl *visualize*.
 
 - Wählen Sie auf der Menüleiste **Ansicht > Befehlspalette > Azure Terraform: Visualisieren** aus.
 

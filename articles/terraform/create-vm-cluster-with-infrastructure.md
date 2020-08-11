@@ -1,19 +1,19 @@
 ---
-title: 'Tutorial: Erstellen eines Azure-VM-Clusters mit Terraform und HCL'
+title: Erstellen eines Azure-VM-Clusters mit Terraform und HCL
 description: Es wird beschrieben, wie Sie in Azure mit Terraform und HCL einen Cluster mit virtuellen Linux-Computern mit Lastenausgleich erstellen.
 keywords: Azure DevOps Terraform VM virtueller Computer Cluster
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/09/2020
-ms.openlocfilehash: 7f19d28270f911cac7bc96a9159f1b927ceb0235
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: f970bdd0f3d37d32cae9e556094c199cfb82df2e
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170476"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478487"
 ---
-# <a name="tutorial-create-an-azure-vm-cluster-with-terraform-and-hcl"></a>Tutorial: Erstellen eines Azure-VM-Clusters mit Terraform und HCL
+# <a name="create-an-azure-vm-cluster-with-terraform-and-hcl"></a>Erstellen eines Azure-VM-Clusters mit Terraform und HCL
 
-In diesem Tutorial erfahren Sie, wie Sie unter Verwendung von [HCL](https://www.terraform.io/docs/configuration/syntax.html) einen kleinen Computecluster erstellen. 
+In diesem Artikel erfahren Sie, wie Sie unter Verwendung von [HCL](https://www.terraform.io/docs/configuration/syntax.html) einen kleinen Computecluster erstellen. 
 
 Dabei lernen Sie Folgendes:
 
@@ -236,7 +236,7 @@ Terraform bestimmt die Aktionen, die erforderlich sind, um den in der Konfigurat
 
 ## <a name="4-apply-the-terraform-execution-plan"></a>4. Anwenden des Terraform-Ausführungsplans
 
-Im letzten Schritt dieses Tutorials wird mit dem Befehl [terraform apply](https://www.terraform.io/docs/commands/apply.html) der Satz der durch den Befehl `terraform plan` generierten Aktionen angewendet.
+Im letzten Schritt dieses Artikels führen Sie den Befehl [terraform apply](https://www.terraform.io/docs/commands/apply.html) aus, um die durch den Befehl `terraform plan` generierten Aktionen anzuwenden.
 
 Wenn Sie den letzten Ausführungsplan anwenden möchten, führen Sie den folgenden Befehl aus:
 

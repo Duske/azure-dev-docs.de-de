@@ -1,19 +1,19 @@
 ---
-title: 'Tutorial: Erstellen eines Azure-VM-Clusters mit Terraform mithilfe der Modulregistrierung'
+title: Erstellen eines Azure-VM-Clusters mit Terraform mithilfe der Modulregistrierung
 description: Es wird beschrieben, wie Sie in Azure mit Terraform-Modulen einen Cluster mit virtuellen Windows-Computern erstellen.
 keywords: Azure DevOps Terraform VM virtueller Computer Cluster Modul Registrierung
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/09/2020
-ms.openlocfilehash: ad318237dcefd6586211c45fb79e51baa05549c4
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 771f8a1ce86aa36f7dfa9cf3f97f50e41ca23efa
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334385"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478450"
 ---
-# <a name="tutorial-create-an-azure-vm-cluster-with-terraform-using-the-module-registry"></a>Tutorial: Erstellen eines Azure-VM-Clusters mit Terraform mithilfe der Modulregistrierung
+# <a name="create-an-azure-vm-cluster-with-terraform-using-the-module-registry"></a>Erstellen eines Azure-VM-Clusters mit Terraform mithilfe der Modulregistrierung
 
-Dieser Artikel führt Sie durch die Erstellung eines kleinen VM-Clusters mit dem [Azure Compute-Modul](https://registry.terraform.io/modules/Azure/compute/azurerm/1.0.2) für Terraform. In diesem Tutorial lernen Sie Folgendes: 
+Dieser Artikel führt Sie durch die Erstellung eines kleinen VM-Clusters mit dem [Azure Compute-Modul](https://registry.terraform.io/modules/Azure/compute/azurerm/1.0.2) für Terraform. In diesem Artikel wird Folgendes behandelt:
 
 > [!div class="checklist"]
 > * Einrichten der Authentifizierung mit Azure
@@ -30,7 +30,7 @@ Dieser Artikel führt Sie durch die Erstellung eines kleinen VM-Clusters mit dem
 ## <a name="set-up-authentication-with-azure"></a>Einrichten der Authentifizierung mit Azure
 
 > [!TIP]
-> Wenn Sie [Terraform-Umgebungsvariablen verwenden](get-started-cloud-shell.md) oder dieses Tutorial in der [Azure Cloud Shell](/azure/cloud-shell/overview) ausführen, überspringen Sie diesen Schritt.
+> Falls Sie [Terraform-Umgebungsvariablen verwenden](get-started-cloud-shell.md) oder dieses Beispiel in [Azure Cloud Shell](/azure/cloud-shell/overview) ausführen, überspringen Sie diesen Schritt.
 
  Unter [Installieren von Terraform und Konfigurieren des Zugriffs auf Azure](get-started-cloud-shell.md) finden Sie Informationen zum Erstellen eines Azure-Dienstprinzipals. Verwenden Sie diesen Dienstprinzipal, um folgenden Code in die neue Datei `azureProviderAndCreds.tf` in einem leeren Verzeichnis einzufügen:
 

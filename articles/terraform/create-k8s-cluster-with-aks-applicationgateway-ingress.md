@@ -1,23 +1,23 @@
 ---
-title: 'Tutorial: Erstellen eines Application Gateway-Eingangscontrollers in Azure Kubernetes Service'
+title: Erstellen eines Application Gateway-Eingangscontrollers in Azure Kubernetes Service
 description: Es wird beschrieben, wie Sie einen Kubernetes-Cluster mit Azure Kubernetes Service mit Application Gateway als Eingangscontroller erstellen.
 keywords: Azure DevOps Terraform Application Gateway eingehend AKS Kubernetes
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/09/2020
-ms.openlocfilehash: a98d9af5c8d3bd63451f007f66a8793d9f38a61d
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 4e34942257baa1e530a7ed0990a6d30a5297dadf
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334448"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478520"
 ---
-# <a name="tutorial-create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>Tutorial: Erstellen eines Application Gateway-Eingangscontrollers in Azure Kubernetes Service
+# <a name="create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>Erstellen eines Application Gateway-Eingangscontrollers in Azure Kubernetes Service
 
 [Azure Kubernetes Service (AKS)](/azure/aks/) verwaltet Ihre gehostete Kubernetes-Umgebung. Mit AKS können Sie ganz ohne Kenntnisse im Bereich Containerorchestrierung schnell und einfach containerbasierte Anwendungen bereitstellen und verwalten. Mit AKS müssen Anwendungen für Betriebs- und Wartungsaufgaben nicht mehr manuell offline geschaltet werden. Diese Aufgaben, darunter auch das Bereitstellen, Upgraden und Skalieren von Ressourcen, können mit AKS bedarfsgerecht durchgeführt werden.
 
 Für Kubernetes-Dienste bietet ein Eingangscontroller zahlreiche Funktionen. Zu diesen Funktionen gehören Reverseproxy, konfigurierbares Routing von Datenverkehr und TLS-Terminierung. Mithilfe von Ressourcen für eingehende Kubernetes-Daten werden Eingangsregeln für einzelne Kubernetes-Dienste konfiguriert. Durch die Verwendung von einem Eingangscontroller und Eingangsregeln kann eine einzelne IP-Adresse zum Weiterleiten von Datenverkehr an mehrere Dienste in einem Kubernetes-Cluster verwendet werden. Alle oben genannten Funktionen werden von Azure [Application Gateway](/azure/Application-Gateway/) bereitgestellt, was Application Gateway zu einem idealen Eingangscontroller für Kubernetes in Azure macht. 
 
-In diesem Tutorial lernen Sie Folgendes:
+In diesem Artikel lernen Sie Folgendes:
 
 > [!div class="checklist"]
 > * Erstellen eines [Kubernetes](https://www.redhat.com/en/topics/containers/what-is-kubernetes)-Clusters mit AKS und Application Gateway als Eingangscontroller
@@ -604,7 +604,7 @@ In diesem Abschnitt erfahren Sie, wie der Befehl `terraform init` verwendet wird
 
     ![Beispiel für Ergebnisse von „terraform plan“](./media/terraform-k8s-cluster-appgw-with-tf-aks/terraform-plan-complete.png)
 
-1. Führen Sie den Befehl `terraform apply` aus, um den Plan zum Erstellen des Kubernetes-Clusters anzuwenden. Der Prozess zum Erstellen eines Kubernetes-Clusters dauert einige Minuten. Dies kann zu einem Timeout der Cloud Shell-Sitzung führen. Wenn ein Timeout der Cloud Shell-Sitzung eintritt, können Sie die Schritte im Abschnitt „Wiederherstellen nach einem Cloud Shell-Timeout“ ausführen, um das Tutorial abzuschließen.
+1. Führen Sie den Befehl `terraform apply` aus, um den Plan zum Erstellen des Kubernetes-Clusters anzuwenden. Der Prozess zum Erstellen eines Kubernetes-Clusters dauert einige Minuten. Dies kann zu einem Timeout der Cloud Shell-Sitzung führen. Wenn ein Timeout der Cloud Shell-Sitzung eintritt, können Sie die Schritte im Abschnitt „Wiederherstellen nach einem Cloud Shell-Timeout“ ausführen, um den Prozess abzuschließen.
 
     ```bash
     terraform apply out.plan

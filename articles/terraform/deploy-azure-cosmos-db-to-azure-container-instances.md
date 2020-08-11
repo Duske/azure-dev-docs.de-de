@@ -1,18 +1,18 @@
 ---
-title: 'Tutorial: Bereitstellen einer Azure Cosmos DB-Instanz für Azure Container Instances'
+title: Bereitstellen einer Azure Cosmos DB-Instanz für Azure Container Instances
 description: Hier erfahren Sie, wie Sie mithilfe von Terraform eine Azure Cosmos DB-Instanz in Azure Container Instances bereitstellen.
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 04/26/2020
-ms.openlocfilehash: d0a175d3b465de640c151bd2b8ce339f0b5ade5b
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 4534de7d57b86adefee36f5f6c0f455126a033c3
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334365"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478600"
 ---
-# <a name="tutorial-deploy-an-azure-cosmos-db-to-azure-container-instances"></a>Tutorial: Bereitstellen einer Azure Cosmos DB-Instanz für Azure Container Instances
+# <a name="deploy-an-azure-cosmos-db-to-azure-container-instances"></a>Bereitstellen einer Azure Cosmos DB-Instanz für Azure Container Instances
 
-In diesem Tutorial erstellen Sie Azure-Ressourcen mit Terraform. Sie erfahren Schritt für Schritt, wie Sie folgende Ressourcen erstellen:
+In diesem Artikel erstellen Sie Azure-Ressourcen mit Terraform. Sie erfahren Schritt für Schritt, wie Sie folgende Ressourcen erstellen:
 
 > [!div class="checklist"]
 > * Azure Cosmos DB-Instanz
@@ -170,7 +170,7 @@ Navigieren Sie zum Testen der Anwendung zum FQDN der Containerinstanz. Die Ergeb
 
 Löschen Sie die in diesem Artikel erstellten Ressourcen, wenn Sie sie nicht mehr benötigen.
 
-Führen Sie den Befehl [terraform destroy](https://www.terraform.io/docs/commands/destroy.html) aus, um die in diesem Tutorial erstellten Azure-Ressourcen zu entfernen:
+Führen Sie den Befehl [terraform destroy](https://www.terraform.io/docs/commands/destroy.html) aus, um die in diesem Artikel erstellten Azure-Ressourcen zu entfernen:
 
 ```bash
 terraform destroy -auto-approve

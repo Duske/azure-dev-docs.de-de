@@ -1,21 +1,21 @@
 ---
-title: 'Tutorial: Erstellen eines Kubernetes-Clusters mit Azure Kubernetes Service (AKS) unter Verwendung von Terraform'
+title: Erstellen eines Kubernetes-Clusters mit Azure Kubernetes Service (AKS) unter Verwendung von Terraform
 description: Es wird beschrieben, wie Sie einen Kubernetes-Cluster mit Azure Kubernetes Service und Terraform erstellen.
 keywords: Azure DevOps Terraform AKS Kubernetes
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/09/2020
-ms.openlocfilehash: 6056b6990e820d863404eea7394adc483de0cd3c
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 0f0d8eb512f4ba6d2e4245ad61dcb41d969cf4b8
+ms.sourcegitcommit: da9fab1b718c71e40c7cbe0a08526c316dcdd6df
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334451"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87525805"
 ---
-# <a name="tutorial-create-a-kubernetes-cluster-with-azure-kubernetes-service-using-terraform"></a>Tutorial: Erstellen eines Kubernetes-Clusters mit Azure Kubernetes Service unter Verwendung von Terraform
+# <a name="create-a-kubernetes-cluster-with-azure-kubernetes-service-using-terraform"></a>Erstellen eines Kubernetes-Clusters mit Azure Kubernetes Service unter Verwendung von Terraform
 
 [Azure Kubernetes Service (AKS)](/azure/aks/) verwaltet Ihre gehostete Kubernetes-Umgebung. Mit AKS können Sie ganz ohne Kenntnisse im Bereich Containerorchestrierung containerbasierte Anwendungen bereitstellen und verwalten. Darüber hinaus lassen sich mit AKS viele gängige Wartungsvorgänge ausführen, ohne die App offline schalten zu müssen. Zu diesen Vorgängen zählen unter anderem das Bereitstellen, Upgraden und Skalieren von Ressourcen nach Bedarf.
 
-In diesem Tutorial lernen Sie Folgendes:
+In diesem Artikel lernen Sie Folgendes:
 
 > [!div class="checklist"]
 > * Verwenden von HCL (HashiCorp-Sprache) zum Definieren eines Kubernetes-Clusters
@@ -147,7 +147,7 @@ Erstellen Sie die Terraform-Konfigurationsdatei, die die Ressourcen für den Kub
         default_node_pool {
             name            = "agentpool"
             node_count      = var.agent_count
-            vm_size         = "Standard_DS1_v2"
+            vm_size         = "Standard_D2_v2"
         }
 
         service_principal {
@@ -160,6 +160,11 @@ Erstellen Sie die Terraform-Konfigurationsdatei, die die Ressourcen für den Kub
             enabled                    = true
             log_analytics_workspace_id = azurerm_log_analytics_workspace.test.id
             }
+        }
+        
+        network_profile {
+        load_balancer_sku = "Standard"
+        network_plugin = "kubenet"
         }
 
         tags = {
@@ -334,7 +339,7 @@ In diesem Abschnitt erfahren Sie, wie der Befehl `terraform init` verwendet wird
 
     ![Beispiel für Ergebnisse von „terraform plan“](./media/create-k8s-cluster-with-tf-and-aks/terraform-plan-complete.png)
 
-1. Führen Sie den Befehl `terraform apply` aus, um den Plan zum Erstellen des Kubernetes-Clusters anzuwenden. Der Prozess zum Erstellen eines Kubernetes-Clusters dauert einige Minuten. Dies kann zu einem Timeout der Cloud Shell-Sitzung führen. Wenn ein Timeout der Cloud Shell-Sitzung eintritt, können Sie die Schritte im Abschnitt „Wiederherstellen nach einem Cloud Shell-Timeout“ ausführen, um das Tutorial abzuschließen.
+1. Führen Sie den Befehl `terraform apply` aus, um den Plan zum Erstellen des Kubernetes-Clusters anzuwenden. Der Prozess zum Erstellen eines Kubernetes-Clusters dauert einige Minuten. Dies kann zu einem Timeout der Cloud Shell-Sitzung führen. Wenn ein Timeout der Cloud Shell-Sitzung eintritt, können Sie die Schritte im Abschnitt „Wiederherstellen nach einem Cloud Shell-Timeout“ ausführen, um den Prozess abzuschließen.
 
     ```bash
     terraform apply out.plan

@@ -1,17 +1,17 @@
 ---
-title: 'Schnellstart: Erste Schritte mit Terraform unter Verwendung von PowerShell'
+title: 'Schnellstart: Erste Schritte mit Terraform unter Verwendung von Windows und PowerShell'
 description: In dieser Schnellstartanleitung erfahren Sie, wie Sie Terraform für die Erstellung von Azure-Ressourcen installieren und konfigurieren.
 keywords: Azure DevOps Terraform installieren konfigurieren Windows init planen anwenden Ausführung anmelden Anmeldung RBAC Dienstprinzipal automatisiertes Skript PowerShell
 ms.topic: quickstart
 ms.date: 07/27/2020
-ms.openlocfilehash: 40663f23d79066354cb7a78318eba7a8998676c5
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: 055d3fcdbe095ddc3e5e1f5b90efcbd4950d43f6
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87400658"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478580"
 ---
-# <a name="quickstart-get-started-with-terraform-using-powershell"></a>Schnellstart: Erste Schritte mit Terraform unter Verwendung von PowerShell
+# <a name="quickstart-get-started-with-terraform-using-windows-and-powershell"></a>Schnellstart: Erste Schritte mit Terraform unter Verwendung von Windows und PowerShell
  
 [!INCLUDE [terraform-intro.md](includes/terraform-intro.md)]
 
