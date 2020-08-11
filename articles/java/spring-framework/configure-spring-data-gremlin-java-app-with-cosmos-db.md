@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.custom: devx-track-java
-ms.openlocfilehash: 2a2c052587a55c00927824cfc9a2feb7f0fee5df
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 81a80d14e4cf371801cf75af1618048dda8775d7
+ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379114"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810623"
 ---
 # <a name="how-to-use-the-spring-data-gremlin-starter-with-the-azure-cosmos-db-sql-api"></a>Verwenden von Spring Data Gremlin Starter mit der SQL-API von Azure Cosmos DB
 
@@ -32,461 +32,103 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 * Ein unterstütztes Java Development Kit (JDK). Weitere Informationen zu den für die Entwicklung in Azure verfügbaren JDKs finden Sie unter <https://aka.ms/azure-jdks>.
 * [Apache Maven](http://maven.apache.org/), Version 3.0 oder höher
 
-> [!IMPORTANT]
->
-> Für die Schritte in diesem Artikel wird mindestens die Spring Boot-Version 2.0 benötigt.
->
 
-## <a name="create-an-azure-cosmos-db-using-the-azure-portal"></a>Erstellen einer Azure Cosmos DB-Instanz über das Azure-Portal
+## <a name="create-resource"></a>Resource erstellen
 
-### <a name="create-your-azure-cosmos-database-for-use-with-gremlin-api"></a>Erstellen Ihrer Azure-Cosmos-Datenbank für die Verwendung mit der Gremlin-API
+### <a name="create-azure-cosmos-db"></a>Erstellen von Azure Cosmos DB
 
-1. Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>, und klicken Sie auf **+Ressource erstellen**.
+1. Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>, und klicken Sie auf `+Create a resource`.
 
-1. Klicken Sie auf **Datenbanken** und anschließend auf **Azure Cosmos DB**.
+   >[!div class="mx-imgBorder"]
+   >![Ressource erstellen][create-a-resource-01]
 
-   ![Erstellen von Azure Cosmos DB][AZ02]
+1. Klicken Sie auf `Databases` und dann auf `Azure Cosmos DB`.
 
-1. Geben Sie auf der Seite **Azure Cosmos DB** die folgenden Informationen ein:
+   >[!div class="mx-imgBorder"]
+   >![Azure Cosmos DB-Datenbank erstellen][create-a-resource-02]
 
-   * Wählen Sie das **Abonnement** aus, das Sie für Ihre Datenbank verwenden möchten.
-   * Legen Sie fest, ob eine neue **Ressourcengruppe** für Ihre Datenbank erstellt werden soll, oder wählen Sie eine vorhandene Ressourcengruppe aus.
-   * Geben Sie einen eindeutigen Wert für **Kontoname** ein, der als Teil des Gremlin-URIs für Ihre Datenbank verwendet wird. Wenn Sie für **Kontoname** also beispielsweise **wingtiptoysdata** eingegeben haben, lautet der Gremlin-URI *wingtiptoysdata.gremlin.cosmosdb.azure.com*.
-   * Wählen Sie **Gremlin (Diagramm)** für die API aus.
-   * Geben Sie den **Speicherort** für Ihre Datenbank an.
+1. Geben Sie auf der Seite `Azure Cosmos DB` die folgenden Informationen ein:
+
+   * Wählen Sie das `Subscription` aus, das Sie für Ihre Datenbank verwenden möchten.
+   * Legen Sie fest, ob eine neue `Resource Group` für Ihre Datenbank erstellt werden soll, oder wählen Sie eine vorhandene Ressourcengruppe aus.
+   * Geben Sie einen eindeutigen Wert für `Account Name` ein, der als Teil des Gremlin-URI für Ihre Datenbank verwendet wird. Beispiel: Wenn Sie `account-sample` für `Account Name` eingeben, lautet der Gremlin-URI `account-samplewingtiptoysdata.gremlin.cosmosdb.azure.com`.
+   * Wählen Sie für die API `Gremlin (Graph)` aus.
+   * Geben Sie den `Location` für Ihre Datenbank an.
    
-Klicken Sie nach Angabe dieser Optionen auf **Überprüfen + erstellen**.
+1. Klicken Sie nach Angabe dieser Optionen auf `Review + create`.
 
-   ![Angeben von Optionen für Azure Cosmos DB][AZ03]
+   >[!div class="mx-imgBorder"]
+   >![Azure Cosmos DB-Konto erstellen][create-a-resource-03]
 
-Überprüfen Sie die Angaben, und klicken Sie anschließend auf **Erstellen**, um Ihre Datenbank zu erstellen.
-
-1. Klicken Sie nach der Erstellung der Datenbank auf **Zu Ressource wechseln**. Sie wird auf Ihrem Azure-**Dashboard** sowie auf den Seiten **Alle Ressourcen** und **Azure Cosmos DB** aufgeführt. Sie können in Ihrer Datenbank auf eine beliebige Stelle klicken, um die Eigenschaftenseite für Ihren Cache zu öffnen.
-
-1. Wenn die Eigenschaftenseite für Ihre Datenbank angezeigt wird, klicken Sie auf **Schlüssel**, und kopieren Sie Ihren URI sowie Ihre Zugriffsschlüssel für Ihre Datenbank. Diese Werte verwenden Sie in Ihrer Spring Boot-Anwendung.
-
-   ![Zugriffsschlüssel][AZ05]
+1. Überprüfen Sie die Angaben, und klicken Sie anschließend auf `Create`, um Ihre Datenbank zu erstellen.
 
 ### <a name="add-a-graph-to-your-azure-cosmos-database"></a>Hinzufügen eines Diagramms zu Ihrer Azure-Cosmos-Datenbank
 
-1. Klicken Sie auf **Daten-Explorer** und anschließend auf **New Graph** (Neues Diagramm).
+1. Klicken Sie auf der Cosmos DB-Seite auf `Data Explorer` und anschließend auf `New Graph`.
 
-   ![Neues Diagramm][AZ06]
+   >[!div class="mx-imgBorder"]
+   >![Neuer Graph][create-a-graph-01]
 
-1. Wenn **Diagramm hinzufügen** angezeigt wird, geben Sie folgende Informationen ein:
+1. Wenn `Add Graph` angezeigt wird, geben Sie folgende Informationen ein:
 
-   * Geben Sie eine eindeutige **Datenbank-ID** für Ihre Datenbank an.
-   * Sie können Ihre **Speicherkapazität** angeben oder die Standardeinstellung übernehmen.
-   * Geben Sie eine eindeutige **Diagramm-ID** für Ihr Diagramm an.
-   * Geben Sie einen **Partitionsschlüssel** an. Weitere Informationen finden Sie unter [Verwenden eines partitionierten Graph in Azure Cosmos DB](/azure/cosmos-db/graph-partitioning).
-Klicken Sie auf **OK**.
+   * Geben Sie eine eindeutige `Database id` für Ihre Datenbank an.
+   * Sie können Ihre `Storage capacity` angeben oder die Standardeinstellung übernehmen.
+   * Geben Sie eine eindeutige `Graph id` für Ihre Datenbank an.
+   * Geben Sie einen `Partition key` an. Weitere Informationen finden Sie unter [Graphpartitionierung].
+Klicken Sie auf `OK`.
    
-   Wenn Sie diese Optionen angegeben haben, klicken Sie auf **OK**, um das Diagramm zu erstellen.
+   Klicken Sie nach Angabe dieser Optionen auf `OK`, um den Graphen zu erstellen.
 
-   ![Hinzufügen des Diagramms][AZ07]
+   >[!div class="mx-imgBorder"]
+   >![Graph hinzufügen][create-a-graph-02]
 
-1. Das erstellte Diagramm kann über den **Daten-Explorer** angezeigt werden.
+1. Der erstellte Graph kann im `Data Explorer` angezeigt werden.
 
-   ![Anzeige der Diagrammeigenschaften][AZ08]
+   >[!div class="mx-imgBorder"]
+   >![Graphdetails][create-a-graph-03]
+   
+   
 
-## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Erstellen einer einfachen Spring Boot-Anwendung mit Spring Initializr
+## <a name="create-simple-spring-boot-application-with-the-spring-initializr"></a>Erstellen einer einfachen Spring Boot-Anwendung mit Spring Initializr
 
 1. Navigieren Sie zu <https://start.spring.io/>.
 
-1. Geben Sie an, dass Sie ein Projekt vom Typ **Maven** mit **Java** generieren möchten, benennen Sie **Gruppe** und **Artefakt** für Ihre Anwendung, und geben Sie als **Spring Boot**-Version mindestens die Version 2.0 an. Klicken Sie anschließend auf die Schaltfläche **Projekt generieren**.
+1. Füllen Sie die Projektmetadaten aus, und klicken Sie anschließend auf `GENERATE`:
 
-   ![Grundlegende Spring Initializr-Optionen][SI01]
+   >[!div class="mx-imgBorder"]
+   >![Spring Initializr][spring-initializr-01]
 
-   > [!NOTE]
-   >
-   > Spring Initializr verwendet zur Erstellung des Paketnamens die Namen für **Gruppe** und **Artefakt** (also beispielsweise „*com.example.wintiptoysdata“).
-   >
+1. Entzippen Sie die Datei, und importieren Sie sie in Ihre integrierte Entwicklungsumgebung (Integrated Development Environment, IDE).
 
-1. Laden Sie das Projekt nach entsprechender Aufforderung unter einem Pfad auf dem lokalen Computer herunter.
 
-1. Nachdem Sie die Dateien auf Ihrem lokalen System extrahiert haben, kann Ihre einfache Spring Boot-Anwendung bearbeitet werden.
+## <a name="update-code-according-to-the-sample-project"></a>Aktualisieren des Codes entsprechend dem Beispielprojekt
 
-   ![Dateien eines benutzerdefinierten Spring Boot-Projekts][SI03]
+Ändern Sie das Projekt entsprechend dem Beispielprojekt: [azure-spring-data-sample-gremlin].
 
-## <a name="configure-your-spring-boot-app-to-use-the-spring-data-gremlin-starter"></a>Konfigurieren Ihrer Spring Boot-App für die Verwendung von Spring Data Gremlin Starter
+1. Fügen Sie eine Abhängigkeit von `azure-spring-data-gremlin` hinzu.
 
-1. Suchen Sie die Datei *pom.xml* im Verzeichnis Ihrer App. Beispiel:
+1. Löschen Sie alle Inhalte in `src/test/`.
 
-   `C:\SpringBoot\wingtiptoysdata\pom.xml`
+1. Fügen Sie wie in diesem Beispiel alle Java-Dateien in `src/main/java` hinzu.
 
-   Oder
+1. Aktualisieren Sie die Konfiguration in `src/main/resorces/application.properties`. Dabei gilt Folgendes:
 
-   `/users/example/home/wingtiptoysdata/pom.xml`
-
-1. Öffnen Sie die Datei *pom.xml* in einem Text-Editor, und fügen Sie Spring Data Gremlin Starter der Liste mit `<dependencies>` hinzu:
-
-   ```xml
-   <dependency>
-      <groupId>com.microsoft.spring.data.gremlin</groupId>
-      <artifactId>spring-data-gremlin</artifactId>
-      <version>2.0.0</version>
-   </dependency>
-   ```
-
-   ![Bearbeiten der Datei „pom.xml“][PM02]
-
-1. Speichern und schließen Sie die Datei *pom.xml*.
-
-## <a name="configure-your-spring-boot-app-to-use-your-azure-cosmos-db"></a>Konfigurieren der Spring Boot-App für die Verwendung von Azure Cosmos DB
-
-1. Suchen Sie das Verzeichnis *resources* Ihrer App, und erstellen Sie eine neue Datei namens *application.yml*. Beispiel:
-
-   `C:\SpringBoot\wingtiptoysdata\src\main\resources\application.yml`
-
-   Oder
-
-   `/users/example/home/wingtiptoysdata/src/main/resources/application.yml`
-
-   ![Erstellen der Datei „application.yml“][RE01]
-
-1. Öffnen Sie die Datei *application.yml* in einem Text-Editor, und fügen Sie ihr die folgenden Zeilen hinzu. Ersetzen Sie dabei die Beispielwerte durch die entsprechenden Eigenschaften für Ihre Datenbank:
-
-   ```yaml
-   gremlin:
-      endpoint: wingtiptoys.gremlin.cosmosdb.azure.com
-      port: 443
-      username: /dbs/wingtiptoysdb/colls/wingtiptoysgraph
-      password: 57686f6120447564652c20426f6220526f636b73==
-      telemetryAllowed: false
-   ```
-   
-   Hierbei gilt:
-   
-   | Feld | BESCHREIBUNG |
-   |---|---|
-   | `endpoint` | Gibt den Gremlin-URI für Ihre Datenbank an. Dieser wird von der eindeutigen **ID** abgeleitet, die Sie zuvor in diesem Tutorial beim Erstellen Ihrer Azure Cosmos DB-Instanz angegeben haben. |
-   | `port` | Gibt den TCP/IP-Port an (**443** für HTTPS). |
-   | `username` | Gibt die eindeutige **Datenbank-ID** und **Diagramm-ID** an, die Sie zuvor in diesem Tutorial beim Hinzufügen Ihres Diagramms verwendet haben (Syntax: /dbs/ **{Datenbank-ID}** /colls/ **{Diagramm-ID}** ). |
-   | `password` | Gibt den primären oder sekundären **Zugriffsschlüssel** an, den Sie zuvor in diesem Tutorial kopiert haben. |
+   | Feld              | Beschreibung                                                                                                                                                                                                             |
+   |--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+   | `endpoint`         | Gibt den Gremlin-URI für Ihre Datenbank an. Dieser wird von der eindeutigen **ID** abgeleitet, die Sie zuvor in diesem Tutorial beim Erstellen Ihrer Azure Cosmos DB-Instanz angegeben haben.                                                 |
+   | `port`             | Gibt den TCP/IP-Port an (**443** für HTTPS).                                                                                                                                                           |
+   | `username`         | Gibt die eindeutige **Datenbank-ID** und **Diagramm-ID** an, die Sie zuvor in diesem Tutorial beim Hinzufügen Ihres Diagramms verwendet haben (Syntax: /dbs/**{Datenbank-ID}**/colls/**{Diagramm-ID}**). |
+   | `password`         | Gibt den primären oder sekundären **Zugriffsschlüssel** an, den Sie zuvor in diesem Tutorial kopiert haben.                                                                                                                      |
+   | `sslEnabled`       | Gibt an, ob Secure Sockets Layer (SSL) aktiviert werden soll.                                                                                                                                                                                           |
    | `telemetryAllowed` | Geben Sie **true** an, wenn Sie Telemetriedaten aktivieren möchten (oder **false**, falls nicht).
+   | `maxContentLength` | Gibt die maximale Inhaltslänge an.                                                                                                                                                                                           |
 
-1. Speichern und schließen Sie die Datei *application.yml*.
+1. Rufen Sie das Kennwort ab:
 
-## <a name="add-sample-code-to-implement-basic-database-functionality"></a>Hinzufügen eines Beispielcodes zur Implementierung von grundlegenden Datenbankfunktionen
+   >[!div class="mx-imgBorder"]
+   >![Kennwort abrufen][get-password-01]
 
-In diesem Abschnitt werden die Java-Klassen erstellt, die erforderlich sind, um Daten in Ihrer Datenbank zu speichern.
-
-### <a name="modify-the-main-application-class"></a>Ändern der Hauptanwendungsklasse
-
-1. Suchen Sie die Java-Hauptanwendungsdatei im Paketverzeichnis Ihrer App. Beispiel:
-
-   `C:\SpringBoot\wingtiptoysdata\src\main\java\com\example\wingtiptoysdata\WingtiptoysdataApplication.java`
-
-   Oder
-
-   `/users/example/home/wingtiptoysdata/src/main/java/com/example/wingtiptoysdata/WingtiptoysdataApplication.java`
-
-   ![Suchen der Java-Anwendungsdatei][JV01]
-
-1. Öffnen Sie die Java-Hauptanwendungsdatei in einem Text-Editor, und fügen Sie die folgenden Zeilen zur Datei hinzu:
-
-   ```java
-   package com.example.wingtiptoysdata;
-   
-   // These imports are required for the application.
-   import com.microsoft.spring.data.gremlin.common.GremlinFactory;
-   import com.example.wingtiptoysdata.domain.Network;
-   import com.example.wingtiptoysdata.domain.Person;
-   import com.example.wingtiptoysdata.domain.Relation;
-   import com.example.wingtiptoysdata.repository.NetworkRepository;
-   import com.example.wingtiptoysdata.repository.PersonRepository;
-   import com.example.wingtiptoysdata.repository.RelationRepository;
-   import org.springframework.beans.factory.annotation.Autowired;
-   import org.springframework.boot.SpringApplication;
-   import org.springframework.boot.autoconfigure.SpringBootApplication;
-   import javax.annotation.PostConstruct;
-   import javax.annotation.PreDestroy;
-   
-   @SpringBootApplication
-   public class WingtiptoysdataApplication {
-   
-       // Define several person classes to store personal data.
-       private final Person person1 = new Person("01", "Nellie Hughes", "23");
-       private final Person person2 = new Person("02", "Delmar Alfred", "34");
-       private final Person person3 = new Person("03", "Kelley Hunter", "45");
-       private final Person person4 = new Person("04", "Roscoe Guerin", "56");
-       private final Person person5 = new Person("05", "Gracie Chavez", "67");
-   
-       // Define relationship classes to define the relationships between some of the persons.
-       private final Relation relation1 = new Relation("0102", "siblings", person1, person2);
-       private final Relation relation2 = new Relation("0203", "coworkers", person2, person3);
-       private final Relation relation3 = new Relation("0301", "parent", person3, person1);
-       private final Relation relation4 = new Relation("0302", "parent", person3, person2);
-       private final Relation relation5 = new Relation("0501", "grandparent", person5, person1);
-       private final Relation relation6 = new Relation("0502", "grandparent", person5, person2);
-   
-       // Define the network.
-       private final Network network = new Network();
-   
-       // Autowire the repositories and factory.
-       @Autowired
-       private PersonRepository personRepo;
-       @Autowired
-       private RelationRepository relationRepo;
-       @Autowired
-       private NetworkRepository networkRepo;
-       @Autowired
-       private GremlinFactory factory;
-   
-       // Run the Spring application and exit.
-    public static void main(String[] args) {
-           SpringApplication.run(WingtiptoysdataApplication.class, args);
-           System.exit(0);
-    }
-   
-       // Perform post-construct operations.    
-       @PostConstruct
-       public void setup() {
-           // Delete any existing data from the database.
-           this.networkRepo.deleteAll();
-   
-           // Add the relationship classes as edges.
-           this.network.getEdges().add(this.relation1);
-           this.network.getEdges().add(this.relation2);
-           this.network.getEdges().add(this.relation3);
-           this.network.getEdges().add(this.relation4);
-           this.network.getEdges().add(this.relation5);
-           this.network.getEdges().add(this.relation6);
-   
-           // Add the person classes as vertices.
-           this.network.getVertexes().add(this.person1);
-           this.network.getVertexes().add(this.person2);
-           this.network.getVertexes().add(this.person3);
-           this.network.getVertexes().add(this.person4);
-           this.network.getVertexes().add(this.person5);
-   
-           // Save the network.
-           this.networkRepo.save(this.network);
-       }
-   }
-   ```
-
-1. Speichern und schließen Sie die Java-Hauptanwendungsdatei.
-
-### <a name="define-a-basic-class-for-storing-configuration-information"></a>Definieren einer einfachen Klasse zum Speichern von Konfigurationsinformationen
-
-1. Erstellen Sie unter dem Paketverzeichnis Ihrer App einen Ordner namens *config*. Beispiel:
-
-   `C:\SpringBoot\wingtiptoysdata\src\main\java\com\example\wingtiptoysdata\config`
-
-   Oder
-
-   `/users/example/home/wingtiptoysdata/src/main/java/com/example/wingtiptoysdata/config`
-
-1. Erstellen Sie im Verzeichnis *config* eine neue Java-Datei namens *UserRepositoryConfiguration.java*, öffnen Sie sie in einem Text-Editor, und fügen Sie folgende Zeilen hinzu:
-
-   ```java
-   package com.example.wingtiptoysdata.config;
-
-   import com.microsoft.spring.data.gremlin.common.GremlinConfiguration;
-   import com.microsoft.spring.data.gremlin.common.GremlinFactory;
-   import com.microsoft.spring.data.gremlin.config.AbstractGremlinConfiguration;
-   import com.microsoft.spring.data.gremlin.repository.config.EnableGremlinRepositories;
-   import org.springframework.beans.factory.annotation.Autowired;
-   import org.springframework.boot.context.properties.EnableConfigurationProperties;
-   import org.springframework.context.annotation.Bean;
-   import org.springframework.context.annotation.Configuration;
-   import org.springframework.context.annotation.PropertySource;
-   
-   @Configuration
-   @EnableGremlinRepositories(basePackages = "com.example.wingtiptoysdata.repository")
-   @EnableConfigurationProperties(GremlinConfiguration.class)
-   @PropertySource("classpath:application.yml")
-   public class UserRepositoryConfiguration extends AbstractGremlinConfiguration {
-   
-       @Autowired
-       private GremlinConfiguration config;
-   
-       @Override
-       public GremlinConfiguration getGremlinConfiguration() {
-           return this.config;
-       }
-   }
-   ```
-
-1. Speichern und schließen Sie die Datei *UserRepositoryConfiguration.java*.
-
-### <a name="define-a-set-of-classes-that-define-the-elements-of-your-graph-database"></a>Definieren einer Gruppe von Klassen zum Definieren der Elemente Ihrer Diagrammdatenbank
-
-1. Erstellen Sie unter dem Paketverzeichnis Ihrer App einen Ordner namens *domain*. Beispiel:
-
-   `C:\SpringBoot\wingtiptoysdata\src\main\java\com\example\wingtiptoysdata\domain`
-
-   Oder
-
-   `/users/example/home/wingtiptoysdata/src/main/java/com/example/wingtiptoysdata/domain`
-
-1. Erstellen Sie im Verzeichnis *domain* eine neue Java-Datei namens *Person.java*, öffnen Sie sie in einem Text-Editor, und fügen Sie folgende Zeilen hinzu:
-
-   ```java
-   package com.example.wingtiptoysdata.domain;
-   
-   import com.microsoft.spring.data.gremlin.annotation.Vertex;
-   import lombok.AllArgsConstructor;
-   import lombok.Data;
-   import lombok.NoArgsConstructor;
-   import org.springframework.data.annotation.Id;
-   
-   @Data
-   @Vertex
-   @AllArgsConstructor
-   @NoArgsConstructor
-   public class Person {
-   
-       @Id
-       private String id;
-   
-       private String name;
-   
-       private String age;
-   }
-   ```
-
-1. Speichern und schließen Sie die Datei *Person.java*.
-
-1. Erstellen Sie im Verzeichnis *domain* eine neue Java-Datei namens *Relation.java*, öffnen Sie sie in einem Text-Editor, und fügen Sie folgende Zeilen hinzu:
-
-   ```java
-   package com.example.wingtiptoysdata.domain;
-   
-   import com.microsoft.spring.data.gremlin.annotation.Edge;
-   import com.microsoft.spring.data.gremlin.annotation.EdgeFrom;
-   import com.microsoft.spring.data.gremlin.annotation.EdgeTo;
-   import lombok.AllArgsConstructor;
-   import lombok.Data;
-   import lombok.NoArgsConstructor;
-   import org.springframework.data.annotation.Id;
-   
-   @Data
-   @Edge
-   @AllArgsConstructor
-   @NoArgsConstructor
-   public class Relation {
-   
-       @Id
-       private String id;
-   
-       private String name;
-   
-       @EdgeFrom
-       private Person personFrom;
-   
-       @EdgeTo
-       private Person personTo;
-   }
-   ```
-
-1. Speichern und schließen Sie die Datei *Relation.java*.
-
-1. Erstellen Sie im Verzeichnis *domain* eine neue Java-Datei namens *Network.java*, öffnen Sie sie in einem Text-Editor, und fügen Sie folgende Zeilen hinzu:
-
-   ```java
-   package com.example.wingtiptoysdata.domain;
-   
-   import com.microsoft.spring.data.gremlin.annotation.EdgeSet;
-   import com.microsoft.spring.data.gremlin.annotation.Graph;
-   import com.microsoft.spring.data.gremlin.annotation.VertexSet;
-   import lombok.Getter;
-   import org.springframework.data.annotation.Id;
-   
-   import java.util.ArrayList;
-   import java.util.List;
-   
-   @Graph
-   public class Network {
-   
-       @Id
-       private String id;
-   
-       public Network() {
-           this.edges = new ArrayList<Object>();
-           this.vertexes = new ArrayList<Object>();
-       }
-   
-       @EdgeSet
-       @Getter
-       private List<Object> edges;
-   
-       @VertexSet
-       @Getter
-       private List<Object> vertexes;
-   }
-   ```
-
-1. Speichern und schließen Sie die Datei *Network.java*.
-
-### <a name="define-a-set-of-classes-that-define-the-repositories-for-your-graph-database"></a>Definieren einer Gruppe von Klassen zum Definieren der Repositorys für Ihre Diagrammdatenbank
-
-1. Erstellen Sie unter dem Paketverzeichnis Ihrer App einen Ordner namens *repository*. Beispiel:
-
-   `C:\SpringBoot\wingtiptoysdata\src\main\java\com\example\wingtiptoysdata\repository`
-
-   Oder
-
-   `/users/example/home/wingtiptoysdata/src/main/java/com/example/wingtiptoysdata/repository`
-
-1. Erstellen Sie im Verzeichnis *repository* eine neue Java-Datei namens *NetworkRepository.java*, öffnen Sie sie in einem Text-Editor, und fügen Sie folgende Zeilen hinzu:
-
-   ```java
-   package com.example.wingtiptoysdata.repository;
-   
-   import com.microsoft.spring.data.gremlin.repository.GremlinRepository;
-   import com.example.wingtiptoysdata.domain.Network;
-   import org.springframework.stereotype.Repository;
-   
-   @Repository
-   public interface NetworkRepository extends GremlinRepository<Network, String> {
-   }
-   ```
-
-1. Speichern und schließen Sie die Datei *NetworkRepository.java*.
-
-1. Erstellen Sie im Verzeichnis *repository* eine neue Java-Datei namens *PersonRepository.java*, öffnen Sie sie in einem Text-Editor, und fügen Sie folgende Zeilen hinzu:
-
-   ```java
-   package com.example.wingtiptoysdata.repository;
-   
-   import com.microsoft.spring.data.gremlin.repository.GremlinRepository;
-   import com.example.wingtiptoysdata.domain.Person;
-   import org.springframework.stereotype.Repository;
-   
-   @Repository
-   public interface PersonRepository extends GremlinRepository<Person, String> {
-   }
-   ```
-
-1. Speichern und schließen Sie die Datei *PersonRepository.java*.
-
-1. Erstellen Sie im Verzeichnis *repository* eine neue Java-Datei namens *RelationRepository.java*, öffnen Sie sie in einem Text-Editor, und fügen Sie folgende Zeilen hinzu:
-
-   ```java
-   package com.example.wingtiptoysdata.repository;
-   
-   import com.microsoft.spring.data.gremlin.repository.GremlinRepository;
-   import com.example.wingtiptoysdata.domain.Relation;
-   import org.springframework.stereotype.Repository;
-   
-   @Repository
-   public interface RelationRepository extends GremlinRepository<Relation, String> {
-   }
-   ```
-
-1. Speichern und schließen Sie die Datei *RelationRepository.java*.
-
-## <a name="build-and-test-your-app"></a>Erstellen und Testen der App
-
-1. Öffnen Sie eine Eingabeaufforderung, und wechseln Sie zum Ordnerverzeichnis, in dem sich die Datei *pom.xml* befindet. Beispiel:
-
-   `cd C:\SpringBoot\wingtiptoysdata`
-
-   Oder
-
-   `cd /users/example/home/wingtiptoysdata`
+## <a name="build-and-run-the-project"></a>Erstellen und Ausführen des Projekts
 
 1. Erstellen Sie mit Maven die Spring Boot-Anwendung, und führen Sie sie aus. Beispiel:
 
@@ -495,9 +137,11 @@ In diesem Abschnitt werden die Java-Klassen erstellt, die erforderlich sind, um 
    mvn spring-boot:run
    ```
 
-1. Die Anwendung zeigt mehrere Laufzeitmeldungen an. Sind keine Fehler aufgetreten, können Sie im Azure-Portal den Inhalt Ihrer Azure Cosmos DB-Instanz anzeigen. Klicken Sie hierzu auf der Eigenschaftenseite für Ihre Datenbank auf **Daten-Explorer**, klicken Sie auf **Execute Gremlin Query** (Gremlin-Abfrage ausführen), und wählen Sie anschließend ein Element aus der Ergebnisliste aus, um die Daten anzuzeigen.
+1. Wenn Ihre App erfolgreich gestartet wurde, können Sie den Graphen im Azure-Portal überprüfen:
 
-   ![Anzeigen von Daten mit dem Document-Explorer][JV03]
+   >[!div class="mx-imgBorder"]
+   >![Ergebnis der Ausführung][execute-result-01]
+
 
 ## <a name="next-steps"></a>Nächste Schritte
 
@@ -551,24 +195,21 @@ Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure 
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/
+[Graphpartitionierung]: https://docs.microsoft.com/azure/cosmos-db/graph-partitioning
+[azure-spring-data-sample-gremlin]: https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-data-sample-gremlin
 
 <!-- IMG List -->
 
-[AZ02]: media/configure-spring-data-gremlin-java-app-with-cosmos-db/AZ02.png
-[AZ03]: media/configure-spring-data-gremlin-java-app-with-cosmos-db/AZ03.png
-[AZ05]: media/configure-spring-data-gremlin-java-app-with-cosmos-db/AZ05.png
-[AZ06]: media/configure-spring-data-gremlin-java-app-with-cosmos-db/AZ06.png
-[AZ07]: media/configure-spring-data-gremlin-java-app-with-cosmos-db/AZ07.png
-[AZ08]: media/configure-spring-data-gremlin-java-app-with-cosmos-db/AZ08.png
+[create-a-resource-01]: media/configure-spring-data-gremlin-java-app-with-cosmos-db/create-a-resource-01.png
+[create-a-resource-02]: media/configure-spring-data-gremlin-java-app-with-cosmos-db/create-a-resource-02.png
+[create-a-resource-03]: media/configure-spring-data-gremlin-java-app-with-cosmos-db/create-a-resource-03.png
 
-[SI01]: media/configure-spring-data-gremlin-java-app-with-cosmos-db/SI01.png
-[SI03]: media/configure-spring-data-gremlin-java-app-with-cosmos-db/SI03.png
+[create-a-graph-01]: media/configure-spring-data-gremlin-java-app-with-cosmos-db/create-a-graph-01.png
+[create-a-graph-02]: media/configure-spring-data-gremlin-java-app-with-cosmos-db/create-a-graph-02.png
+[create-a-graph-03]: media/configure-spring-data-gremlin-java-app-with-cosmos-db/create-a-graph-03.png
 
-[RE01]: media/configure-spring-data-gremlin-java-app-with-cosmos-db/RE01.png
-[RE02]: media/configure-spring-data-gremlin-java-app-with-cosmos-db/RE02.png
+[spring-initializr-01]: media/configure-spring-data-gremlin-java-app-with-cosmos-db/spring-initializr-01.png
 
-[PM02]: media/configure-spring-data-gremlin-java-app-with-cosmos-db/PM02.png
+[get-password-01]: media/configure-spring-data-gremlin-java-app-with-cosmos-db/get-password-01.png
 
-[JV01]: media/configure-spring-data-gremlin-java-app-with-cosmos-db/JV01.png
-[JV02]: media/configure-spring-data-gremlin-java-app-with-cosmos-db/JV02.png
-[JV03]: media/configure-spring-data-gremlin-java-app-with-cosmos-db/JV03.png
+[execute-result-01]: media/configure-spring-data-gremlin-java-app-with-cosmos-db/execute-result-01.png
