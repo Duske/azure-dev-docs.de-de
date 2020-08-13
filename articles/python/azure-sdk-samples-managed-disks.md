@@ -3,12 +3,13 @@ title: Managed Disks
 description: Erstellen, Ändern der Größe und Aktualisieren eines verwalteten Datenträgers
 ms.topic: conceptual
 ms.date: 6/15/2017
-ms.openlocfilehash: 11e50b86f888079ef44d498dfa59cf999bd0b08a
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-python
+ms.openlocfilehash: 0e319d56f1391d193979c79750025a99b565134a
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441645"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983242"
 ---
 # <a name="managed-disks"></a>Managed Disks
 

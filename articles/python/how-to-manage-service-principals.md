@@ -3,13 +3,13 @@ title: Verwalten lokaler Dienstprinzipale für die Azure-Entwicklung
 description: Verwalten von Dienstprinzipalen, die für die lokale Entwicklung mithilfe des Azure-Portals oder der Azure CLI erstellt werden.
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.custom: devx-track-azurecli
-ms.openlocfilehash: e29ee999472d0d9d141cfad728e62f1fe518e85b
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.custom: devx-track-python, devx-track-azurecli
+ms.openlocfilehash: 8901a7ef9de7bbca31c5ba0352c79a4ee2c5cdf9
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478359"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983102"
 ---
 # <a name="how-to-manage-service-principals"></a>Verwalten von Dienstprinzipalen
 

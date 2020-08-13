@@ -3,13 +3,13 @@ title: 'Schritt 5: Bereitstellen von Azure Functions in Python mit VS Code'
 description: 'Tutorialschritt 5: Bereitstellen von Python-Funktionscode in Azure, Streamen von Protokollen und Synchronisieren von Einstellungen zwischen einem lokalen Projekt und Azure'
 ms.topic: conceptual
 ms.date: 05/19/2020
-ms.custom: seo-python-october2019
-ms.openlocfilehash: 3e51760f6f779ef244d5788a3df852bc98924946
-ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
+ms.custom: devx-track-python, seo-python-october2019
+ms.openlocfilehash: 950dda297f131f9ae9e2029f79cecae7455e0c07
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83708614"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87982852"
 ---
 # <a name="5-deploy-azure-functions-in-python"></a>5: Bereitstellen von Azure Functions in Python
 

@@ -3,13 +3,13 @@ title: 'Schritt 2: Erstellen einer Python-Funktion für Azure Functions mit VS C
 description: 'Tutorialschritt 2: Verwenden der Azure Functions-Erweiterung für VS Code'
 ms.topic: conceptual
 ms.date: 05/19/2020
-ms.custom: seo-python-october2019
-ms.openlocfilehash: fb5cdf025c6b9740ab6959ea23b62bd2599c4eb9
-ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
+ms.custom: devx-track-python, seo-python-october2019
+ms.openlocfilehash: 13c0083434d024064462bb583a6b24d9e80c38dd
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83708634"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983512"
 ---
 # <a name="2-create-a-python-function-for-azure-functions"></a>2: Erstellen einer Python-Funktion für Azure Functions
 

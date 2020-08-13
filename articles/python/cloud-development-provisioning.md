@@ -3,12 +3,13 @@ title: Bereitstellen und Verwalten von und Zugreifen auf Ressourcen in Azure
 description: Hier finden Sie eine Übersicht über die Methoden zur Verwendung von Azure-Ressourcen. Dazu zählen das Azure-Portal, die Azure-Befehlszeilenschnittstelle und die Azure-Bibliotheken (SDK).
 ms.date: 05/27/2020
 ms.topic: conceptual
-ms.openlocfilehash: bc2fb2138c5ea5cf5438f2d892483b094e78eb8d
-ms.sourcegitcommit: b3e506c6f140d91e6fdd9dcadf22ab1aa67f6978
+ms.custom: devx-track-python
+ms.openlocfilehash: 457970eb359be9f10c6269e1ea98efec76612009
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84942419"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983212"
 ---
 # <a name="provisioning-accessing-and-managing-resources-on-azure"></a>Bereitstellen und Verwalten von und Zugreifen auf Ressourcen in Azure
 

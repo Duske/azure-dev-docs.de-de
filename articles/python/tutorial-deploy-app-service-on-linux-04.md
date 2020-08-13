@@ -3,13 +3,13 @@ title: 'Schritt 4: Konfigurieren einer benutzerdefinierten Startdatei für Pytho
 description: Schritt 4 des Tutorials, der den App Service anweist, wie die Web-App gestartet wird, einschließlich spezifischer Anweisungen für Django, Flask und andere Frameworks.
 ms.topic: conceptual
 ms.date: 05/19/2020
-ms.custom: seo-python-october2019
-ms.openlocfilehash: 1e724fa7d35c1b3488dbe6738a4840e20bbfbf96
-ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
+ms.custom: devx-track-python, seo-python-october2019
+ms.openlocfilehash: 5de5f7f52fbf8c88bf05c7cb300952aee81a8439
+ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84256445"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88147381"
 ---
 # <a name="4-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>4: Konfigurieren einer benutzerdefinierten Startdatei für Python-Apps in Azure App Service
 
@@ -17,7 +17,7 @@ ms.locfileid: "84256445"
 
 In diesem Artikel wird gezeigt, wie Sie eine benutzerdefinierte Startdatei für eine Python-App in einer Azure App Service-Instanz konfigurieren.
 
-Je nachdem, wie Sie Ihre App strukturiert haben, müssen Sie möglicherweise eine benutzerdefinierte Startbefehlsdatei für Ihre App erstellen, wie in der Azure-Dokumentation unter [Konfigurieren von Python-Apps für App Service für Linux](https://docs.microsoft.com/azure/app-service/containers/how-to-configure-python) beschrieben.
+Je nachdem, wie Sie Ihre App strukturiert haben, müssen Sie möglicherweise eine benutzerdefinierte Startbefehlsdatei für Ihre App erstellen, wie in der Azure-Dokumentation unter [Konfigurieren von Python-Apps für App Service für Linux](/azure/app-service/configure-language-python) beschrieben.
 
 Spezifische Anwendungsfälle für einen benutzerdefinierten Startbefehl:
 

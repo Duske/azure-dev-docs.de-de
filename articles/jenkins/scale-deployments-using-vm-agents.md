@@ -4,12 +4,12 @@ description: Es wird beschrieben, wie Sie virtuelle Azure-Computer mit dem Jenki
 keywords: Jenkins, Azure, DevOps, virtueller Computer, Agents
 ms.topic: tutorial
 ms.date: 07/31/2018
-ms.openlocfilehash: 488569312a665d6efb91e995490254289024a745
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: c5ea0c3782414abfda47810ba68ad1092cd7b0d5
+ms.sourcegitcommit: f65561589d22b9ba2d69b290daee82eb47b0b20f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170536"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88162049"
 ---
 # <a name="tutorial-scale-jenkins-deployments-with-azure-vm-agents"></a>Tutorial: Skalieren von Jenkins-Bereitstellungen mit Azure-VM-Agents
 
@@ -28,9 +28,6 @@ In diesem Lernprogramm lernen Sie Folgendes:
 > [!VIDEO https://channel9.msdn.com/Shows/Azure-Friday/Continuous-Integration-with-Jenkins-Using-Azure-VM-Agents/player]
 
 ## <a name="install-azure-vm-agents-plugin"></a>Installieren des Azure-VM-Agents-Plug-In
-
-> [!TIP]
-> Wenn Sie Jenkins mithilfe der [Lösungsvorlage](configure-on-linux-vm.md) in Azure bereitgestellt haben, ist das Plug-In für Azure-VM-Agents bereits installiert.
 
 1. Wählen Sie im Jenkins-Dashboard die Optionen **Manage Jenkins** und dann **Manage Plugins** aus.
 
@@ -106,7 +103,7 @@ Konfigurieren Sie eine Vorlage zum Definieren eines Azure-VM-Agents. Diese Vorla
 
 ## <a name="configure-agent-operating-system-and-tools"></a>Konfigurieren von Betriebssystem und Tools des Agents
 
-Wählen Sie im Abschnitt **Image Configuration** der Plug-In-Konfiguration die Option **Ubuntu 16.04 LTS** aus. Aktivieren Sie die Kontrollkästchen neben **Install Git (Latest)** , **Install Maven (V3.5.0)** und **Install Docker**, um diese Tools in neu erstellten Agents zu installieren.
+Wählen Sie im Abschnitt **Image Configuration** der Plug-In-Konfiguration die Option **Ubuntu 16.04 LTS** aus. Aktivieren Sie die Kontrollkästchen neben **Install Git (Latest)**, **Install Maven (V3.5.0)** und **Install Docker**, um diese Tools in neu erstellten Agents zu installieren.
 
 ![Konfigurieren von Betriebssystem und Tools für den virtuellen Computer](./media/scale-deployments-using-vm-agents/jenkins-os-config.png)
 

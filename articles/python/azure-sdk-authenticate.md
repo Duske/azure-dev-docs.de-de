@@ -3,12 +3,13 @@ title: Authentifizieren von Python-Anwendungen mit Azure-Diensten
 description: Hier erfahren Sie, wie Sie die Anmeldeinformationsobjekte abrufen, die erforderlich sind, um eine Python-App mit Azure-Diensten unter Verwendung der Azure-Bibliotheken zu authentifizieren.
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 1694f85b2ad41a12865bb3d367b1b8498ab474bb
-ms.sourcegitcommit: 04ee2325e3efd9b7797102b4cd9d5db009c38a42
+ms.custom: devx-track-python
+ms.openlocfilehash: 08636d4a9b8b0b93b6e448b919a14cbfc3ae2a96
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86945818"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87982672"
 ---
 # <a name="how-to-authenticate-python-apps-with-azure-services"></a>Authentifizieren von Python-Apps mit Azure-Diensten
 

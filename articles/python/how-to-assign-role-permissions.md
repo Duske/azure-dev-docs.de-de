@@ -3,13 +3,13 @@ title: Zuweisen von Rollenberechtigungen zu einer App-Identität oder einem Dien
 description: Erteilen von Berechtigungen für einen Dienstprinzipal oder eine App-Identität mithilfe der Azure CLI
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.custom: devx-track-azurecli
-ms.openlocfilehash: 46856cef77058ec3eb48aa6da806adb0bba26327
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.custom: devx-track-python, devx-track-azurecli
+ms.openlocfilehash: 3eb81eac5ee9a7f2f85e50494efa2e04bbcbe439
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478380"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983132"
 ---
 # <a name="how-to-assign-role-permissions-to-an-app-identity-or-service-principal"></a>Informationen zum Zuweisen von Rollenberechtigungen zu einer App-Identität oder einem Dienstprinzipal
 

@@ -3,12 +3,13 @@ title: Material zu den ersten Schritten mit sonstigen Azure-Diensten für Python
 description: Hier finden Sie einen Index mit Azure-Dokumentationsmaterial für sonstige Dienste, die mit Python-Apps verwendet werden.
 ms.date: 05/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: de4da2be8b3767cabf4bb8fdb7e23528bb778e60
-ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
+ms.custom: devx-track-python
+ms.openlocfilehash: 1a58973b0e51f488c0b8afbbbe473cbbfc088c24
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84207643"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87982872"
 ---
 # <a name="other-services-for-python-apps-on-azure"></a>Weitere Dienste für Python-Apps in Azure
 

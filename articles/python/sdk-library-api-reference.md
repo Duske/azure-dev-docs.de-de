@@ -2,12 +2,13 @@
 title: 'API-Referenz für Azure SDK-Bibliotheken: Python'
 ms.date: 05/26/2020
 ms.topic: conceptual
-ms.openlocfilehash: 2004573d946d43867baaf0930e4df4d4dd1e6d07
-ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
+ms.custom: devx-track-python
+ms.openlocfilehash: aa5462ae28153a631562c6703880a872b51dd048
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202879"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87982862"
 ---
 # <a name="azure-libraries-for-python-api-reference"></a>API-Referenz für die Azure-Bibliotheken für Python
 

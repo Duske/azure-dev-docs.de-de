@@ -3,12 +3,13 @@ title: Auflisten von Images
 description: Auflisten aller verfügbaren Images, die zum Erstellen virtueller Computer verwendet werden sollen
 ms.topic: conceptual
 ms.date: 6/15/2017
-ms.openlocfilehash: 5ce7525ffe87af544c6b8bb4b74dc9a3a0c035cb
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-python
+ms.openlocfilehash: b0c9a363c31add637ddef720971ca3098c002c59
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441665"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983252"
 ---
 # <a name="list-images"></a>Auflisten von Images
 

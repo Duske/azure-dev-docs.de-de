@@ -3,17 +3,17 @@ title: 'Tutorial: Bereitstellen von Docker-Containern in Azure App Service mit V
 description: 'Tutorialschritt 1: Einführung und Voraussetzungen'
 ms.topic: conceptual
 ms.date: 09/12/2019
-ms.custom: seo-python-october2019
-ms.openlocfilehash: 1e86b06b87ed2a0471f38102d1ad5bca8d0dfcb1
-ms.sourcegitcommit: 7474de4884bce076ce33ca77ae3584ba1598bbc6
+ms.custom: devx-track-python, seo-python-october2019
+ms.openlocfilehash: fe98ff2007be9f817cc8e9bd0210761579eef536
+ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85069398"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88147411"
 ---
 # <a name="tutorial-deploy-docker-containers-to-azure-app-service-with-visual-studio-code"></a>Tutorial: Bereitstellen von Docker-Containern in Azure App Service mit Visual Studio Code
 
-In diesem Artikel erfahren Sie, wie Sie mit Visual Studio Code ein Containerimage aus einer Containerregistrierung in [Azure App Service](https://azure.microsoft.com/services/app-service/containers/) bereitstellen.
+In diesem Artikel erfahren Sie, wie Sie mit Visual Studio Code ein Containerimage aus einer Containerregistrierung in [Azure App Service](/azure/app-service/) bereitstellen.
 
 Wenn Sie Probleme mit einem der Schritte in diesem Tutorial haben, würden wir uns über nähere Informationen freuen. Verwenden Sie den Link **Ich bin auf ein Problem gestoßen** am Ende jedes Artikels, um Feedback zu geben.
 

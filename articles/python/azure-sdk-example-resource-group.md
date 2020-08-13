@@ -3,12 +3,13 @@ title: Bereitstellen einer Ressourcengruppe unter Verwendung der Azure-Bibliothe
 description: Verwenden Sie die Ressourcenverwaltungsbibliothek im Azure SDK für Python, um eine Ressourcengruppe aus Python-Code zu erstellen.
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: 38c2f87511c040a04040844fb512fd436d566c15
-ms.sourcegitcommit: 499f7275446f006fa43c4eff3b1f0d001e9a98d9
+ms.custom: devx-track-python
+ms.openlocfilehash: 1a87e53253eff5679245ac5528fac3bb10e2bc8d
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84453701"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87982612"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-resource-group"></a>Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Ressourcengruppe
 
