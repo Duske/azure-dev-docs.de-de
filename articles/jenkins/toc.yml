@@ -7,9 +7,9 @@
 - name: Schnellstarts
   expanded: true
   items:
-    - name: Erstellen eines Jenkins-Servers
+    - name: Konfigurieren von Jenkins über die Azure-Befehlszeilenschnittstelle
       href: configure-on-linux-vm.md
-- name: Lernprogramme
+- name: Tutorials
   items:
     - name: Konfigurieren
       items:

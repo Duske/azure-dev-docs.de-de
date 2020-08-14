@@ -7,13 +7,10 @@
 - name: Schnellstarts
   expanded: true
   items:
-    - name: 'Erste Schritte: Cloud Shell'
+    - name: Konfigurieren von Ansible mithilfe von Azure Cloud Shell
       href: getting-started-cloud-shell.md
-    - name: Bereitstellen einer Ansible-Lösungsvorlage in CentOS
-      href: solution-template-deploy.md
-    - name: Installieren von Ansible auf virtuellen Linux-Computern
+    - name: Konfigurieren von Ansible über die Azure-Befehlszeilenschnittstelle
       href: install-on-linux-vm.md
-      maintainContext: true
     - name: Verwenden von virtuellen Linux-Computern
       expanded: true
       items:
