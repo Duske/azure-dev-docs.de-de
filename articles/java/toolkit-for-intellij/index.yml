@@ -3,21 +3,21 @@ title: Dokumentation zum Azure-Toolkit für IntelliJ
 summary: Das Azure-Toolkit für IntelliJ stellt Vorlagen und Funktionen bereit, mit denen Sie Azure-Anwendungen mithilfe der IntelliJ-IDE-Entwicklungsumgebung einfach erstellen, entwickeln, testen und bereitstellen können.
 metadata:
   title: Dokumentation zum Azure-Toolkit für IntelliJ
-  description: Erhalten Sie weitere Informationen zum Azure Toolkit für IntelliJ.
+  description: Verwenden Sie das Azure-Toolkit für IntelliJ, um Azure-Anwendungen mithilfe der IntelliJ-IDE einfach zu erstellen, zu entwickeln, zu testen und bereitzustellen.
   ms.date: 03/13/2020
   ms.topic: landing-page
-  ms.openlocfilehash: f816ad75074b92b0b2b8025c5e541b5ef7988b65
-  ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+  ms.openlocfilehash: f69096bead0650bbb5a40959f55cdf0967dade8e
+  ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 05/05/2020
-  ms.locfileid: "81675386"
+  ms.lasthandoff: 08/14/2020
+  ms.locfileid: "88241012"
 landingContent:
 - title: Leitfäden mit ersten Schritten
   linkLists:
   - linkListType: quickstart
     links:
-    - text: Erstellen einer Hallo Welt-Web-App für Azure App Service
+    - text: Erstellen einer „Hello World“-Web-App für Azure App Service
       url: create-hello-world-web-app.md
     - text: Erstellen einer HTTP-Triggerfunktion für Azure Functions
       url: quickstart-functions.md
