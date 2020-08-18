@@ -3,19 +3,32 @@ title: 'Schnellstart: Erste Schritte mit Terraform unter Verwendung von Windows 
 description: In dieser Schnellstartanleitung erfahren Sie, wie Sie Terraform für die Erstellung von Azure-Ressourcen installieren und konfigurieren.
 keywords: Azure DevOps Terraform installieren konfigurieren Windows init planen anwenden Ausführung anmelden Anmeldung RBAC Dienstprinzipal automatisiertes Skript PowerShell
 ms.topic: quickstart
-ms.date: 07/27/2020
-ms.openlocfilehash: 055d3fcdbe095ddc3e5e1f5b90efcbd4950d43f6
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.date: 08/08/2020
+ms.openlocfilehash: 7ba60acf445f9ba29836e76aa50626985695bf2c
+ms.sourcegitcommit: 6a8485d659d6239569c4e3ecee12f924c437b235
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478580"
+ms.lasthandoff: 08/09/2020
+ms.locfileid: "88026152"
 ---
 # <a name="quickstart-get-started-with-terraform-using-windows-and-powershell"></a>Schnellstart: Erste Schritte mit Terraform unter Verwendung von Windows und PowerShell
  
 [!INCLUDE [terraform-intro.md](includes/terraform-intro.md)]
 
 In diesem Artikel werden die ersten Schritte mit [Terraform in Azure](https://www.terraform.io/docs/providers/azurerm/index.html) unter Verwendung von PowerShell beschrieben.
+
+In diesem Artikel werden folgende Vorgehensweisen behandelt:
+> [!div class="checklist"]
+> * Installieren der neuesten PowerShell-Version
+> * Installieren des neuen PowerShell Az-Moduls
+> * Installieren der Azure CLI
+> * Installieren von Terraform
+> * Erstellen eines Azure-Dienstprinzipals für Authentifizierungszwecke
+> * Anmelden bei Azure mit dem Dienstprinzipal 
+> * Festlegen von Umgebungsvariablen, damit Terraform ordnungsgemäß bei Ihrem Azure-Abonnement authentifiziert wird
+> * Schreiben eines Terraform-Skripts zum Erstellen einer Azure-Ressourcengruppe
+> * Erstellen und Anwenden eines Terraform-Ausführungsplans
+> * Verwenden des `terraform plan -destroy`-Flags zum Umkehren eines Ausführungsplans
 
 [!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
@@ -119,6 +132,16 @@ Wenn Sie sich mithilfe eines Dienstprinzipals bei einem Azure-Abonnement anmelde
     Connect-AzAccount -Credential $spCredential -Tenant "<azure_subscription_tenant_id>" -ServicePrincipal
     ```
 
+## <a name="set-environment-variables"></a>Festlegen von Umgebungsvariablen
+
+Legen Sie Umgebungsvariablen fest, damit Terraform das gewünschte Azure-Abonnement verwendet. Sie können die Umgebungsvariablen auf der Windows-Systemebene oder innerhalb einer bestimmten PowerShell-Sitzung festlegen. Wenn Sie die Umgebungsvariablen für eine bestimmte Sitzung festlegen möchten, verwenden Sie den folgenden Code. Ersetzen Sie die Platzhalter durch die entsprechenden Werte für Ihre Umgebung:
+
+```powershell
+$env:ARM_CLIENT_ID=<service_principle_app_id>
+$env:ARM_SUBSCRIPTION_ID=<azure_subscription_id>
+$env:ARM_TENANT_ID=<azure_subscription_tenant_id>
+```
+
 ## <a name="create-a-terraform-configuration-file"></a>Erstellen einer Terraform-Konfigurationsdatei
 
 In diesem Abschnitt erstellen Sie eine Terraform-Konfigurationsdatei, die eine Azure-Ressourcengruppe erstellt.
@@ -162,16 +185,6 @@ In diesem Abschnitt erstellen Sie eine Terraform-Konfigurationsdatei, die eine A
     - Innerhalb des Anbieterblocks `azurerm` werden die Attribute `version` und `features` festgelegt. Wie Sie dem Kommentar entnehmen können, ist deren Verwendung versionsspezifisch. Weitere Informationen zum Festlegen dieser Attribute finden Sie unter [Version 2.0 des AzureRM-Anbieters](https://www.terraform.io/docs/providers/azurerm/guides/2.0-upgrade-guide.html).
     - Die einzige [Ressourcendeklaration](https://www.terraform.io/docs/configuration/resources.html) betrifft den Ressourcentyp [azurerm_resource_group](https://www.terraform.io/docs/providers/azurerm/r/resource_group.html). Die beiden erforderlichen Argumente für azure_resource_group sind der Name und der Speicherort.
 
-## <a name="set-environment-variables"></a>Festlegen von Umgebungsvariablen
-
-Legen Sie Umgebungsvariablen fest, damit Terraform das gewünschte Azure-Abonnement verwendet. Sie können die Umgebungsvariablen auf der Windows-Systemebene oder innerhalb einer bestimmten PowerShell-Sitzung festlegen. Wenn Sie die Umgebungsvariablen für eine bestimmte Sitzung festlegen möchten, verwenden Sie den folgenden Code. Ersetzen Sie die Platzhalter durch die entsprechenden Werte für Ihre Umgebung:
-
-```powershell
-$env:ARM_CLIENT_ID=<service_principle_app_id>
-$env:ARM_SUBSCRIPTION_ID=<azure_subscription_id>
-$env:ARM_TENANT_ID=<azure_subscription_tenant_id>
-```
-
 ## <a name="create-and-apply-a-terraform-execution-plan"></a>Erstellen und Anwenden eines Terraform-Ausführungsplans
 
 In diesem Abschnitt erstellen Sie einen *Ausführungsplan* und wenden ihn auf Ihre Cloudinfrastruktur an.
@@ -205,7 +218,9 @@ In diesem Abschnitt erstellen Sie einen *Ausführungsplan* und wenden ihn auf Ih
     Get-AzResourceGroup -Name QuickstartTerraformTest-rg
     ```
 
-    War der Vorgang erfolgreich, werden verschiedene Eigenschaften der neu erstellten Ressourcengruppe angezeigt.
+    **Hinweise**:
+
+    - War der Vorgang erfolgreich, werden verschiedene Eigenschaften der neu erstellten Ressourcengruppe angezeigt.
 
 ## <a name="clean-up-resources"></a>Bereinigen von Ressourcen
 

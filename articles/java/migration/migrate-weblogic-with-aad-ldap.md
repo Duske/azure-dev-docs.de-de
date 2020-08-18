@@ -3,14 +3,14 @@ title: Autorisierung und Authentifizierung von Endbenutzern mit Azure Active Dir
 description: In diesem Leitfaden erfahren Sie, wie Sie Oracle WebLogic Server konfigurieren, um über LDAP eine Verbindung mit Azure Active Directory Domain Services herzustellen.
 author: edburns
 ms.author: edburns
-ms.topic: conceptual
-ms.date: 07/09/2020
-ms.openlocfilehash: 0f3b8f7e2535bc91629f056cf59bc0d2658aba19
-ms.sourcegitcommit: 1f78e54deb85c6063b887286a13a967d1d186b50
+ms.topic: tutorial
+ms.date: 08/10/2020
+ms.openlocfilehash: b828fc2bc41b0e4e557472e7efd00498e68933db
+ms.sourcegitcommit: b923aee828cd4b309ef92fe1f8d8b3092b2ffc5a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87118442"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88052217"
 ---
 # <a name="end-user-authorization-and-authentication-for-migrating-java-apps-on-weblogic-server-to-azure"></a>Autorisierung und Authentifizierung von Endbenutzern für die Migration von Java-Apps in WebLogic Server zu Azure
 
@@ -35,7 +35,7 @@ Dieser Leitfaden hilft Ihnen zwar nicht beim Ändern der Konfiguration einer vor
 ## <a name="prerequisites"></a>Voraussetzungen
 
 * Ein aktives Azure-Abonnement.
-  * Wenn Sie kein Azure-Abonnement besitzen, [erstellen Sie ein Konto](https://azure.microsoft.com/free/).
+  * Wenn Sie kein Azure-Abonnement besitzen, können Sie ein [kostenloses Konto erstellen](https://azure.microsoft.com/free/).
 * Die Fähigkeit, eine der in [Oracle WebLogic Server: Azure-Anwendungen](/azure/virtual-machines/workloads/oracle/oracle-weblogic) aufgeführten WLS-Azure-Anwendungen bereitzustellen.
 
 ## <a name="migration-context"></a>Migrationskontext
@@ -46,6 +46,7 @@ In diesem Abschnitt werden einige Punkte erläutert, die im Zusammenhang mit der
 * Sollte Ihr Szenario eine lokale Active Directory-Gesamtstruktur beinhalten, empfiehlt sich ggf. die Implementierung einer Hybrididentitätslösung mit Azure AD.  Weitere Informationen finden Sie in der [Dokumentation zur Hybrid-Identität](/azure/active-directory/hybrid/).
 * Wenn Sie bereits über eine lokale AD DS-Bereitstellung (Active Directory Domain Services) verfügen, informieren Sie sich unter [Vergleichen von selbstverwalteten Active Directory Domain Services, Azure Active Directory und verwalteten Azure Active Directory Domain Services](/azure/active-directory-domain-services/compare-identity-solutions) über mögliche Migrationspfade.
 * Wenn Sie eine Optimierung für die Cloud durchführen, erfahren Sie in diesem Leitfaden, wie Sie mit Azure AD DS-LDAP und WLS von Grund auf neu beginnen.
+* Eine umfassende Übersicht über die Migration von WebLogic Server zu Azure Virtual Machines finden Sie unter [Migrieren von WebLogic-Anwendungen zu virtuellen Azure-Computern](migrate-weblogic-to-virtual-machines.md).
 
 ## <a name="azure-active-directory-configuration"></a>Azure Active Directory-Konfiguration
 
@@ -115,6 +116,38 @@ Führen Sie die Schritte unter [Bereinigen von Ressourcen](/azure/active-directo
 
 Führen Sie die unter [Konfigurieren von Secure LDAP (LDAPS) für eine verwaltete Azure AD Domain Services-Domäne](/azure/active-directory-domain-services/tutorial-configure-ldaps) beschriebenen Schritte aus, und berücksichtigen Sie dabei die oben aufgeführten Abweichungen.  Nun können die für die WLS-Konfiguration erforderlichen Werte erfasst werden.
 
+### <a name="disable-weak-tls-v1"></a>Deaktivieren der unsicheren TLS v1
+
+Standardmäßig ermöglicht Azure Active Directory Domain Services (Azure AD DS) die Verwendung von TLS v1. Diese gilt als unsicher und wird ab WebLogic Server 14 nicht mehr unterstützt. 
+
+In diesem Abschnitt erfahren Sie, wie Sie das TLS v1-Verschlüsselungsverfahren deaktivieren.
+
+Rufen Sie zunächst die Ressourcen-ID der Azure Domain Service-Instanz ab, die LDAP ermöglicht. Im folgenden Beispiel wird die ID einer Azure Domain Service-Instanz namens `aaddscontoso.com` in einer Ressourcengruppe mit dem Namen `aadds-rg` abgerufen.
+
+```azurecli
+AADDS_ID=$(az resource show --resource-group aadds-rg --resource-type "Microsoft.AAD/DomainServices" --name aaddscontoso.com --query "id" --output tsv)
+```
+
+Führen Sie den folgenden Befehl aus, um TLS v1 zu deaktivieren:
+
+```azurecli
+az resource update --ids $AADDS_ID --set properties.domainSecuritySettings.tlsV1=Disabled
+```
+
+Die Ausgabe zeigt `"tlsV1": "Disabled"` für `domainSecuritySettings` an, wie im folgenden Beispiel gezeigt:
+
+```text
+"domainSecuritySettings": {
+      "ntlmV1": "Enabled",
+      "syncKerberosPasswords": "Enabled",
+      "syncNtlmPasswords": "Enabled",
+      "syncOnPremPasswords": "Enabled",
+      "tlsV1": "Disabled"
+}
+```
+
+Weitere Informationen finden Sie unter [Deaktivieren von schwachen Verschlüsselungen und der Kennworthashsynchronisierung zum Schützen einer verwalteten Azure Active Directory Domain Services-Domäne](/azure/active-directory-domain-services/secure-your-domain).
+
 ## <a name="wls-configuration"></a>WLS-Konfiguration
 
 In diesem Abschnitt erfahren Sie, wie Sie die Parameterwerte aus den zuvor bereitgestellten Azure AD DS-Instanz erfassen.
@@ -149,9 +182,9 @@ Vergewissern Sie sich mithilfe der folgenden Schritte, dass die Integration erfo
 
 1. Besuchen Sie die WLS-Verwaltungskonsole.
 1. Erweitern Sie die Struktur im linken Navigationsbereich, und wählen Sie **Security Realms** -> **myrealm** -> **Providers** („Sicherheitsbereiche“ > „myrealm“ > „Anbieter“) aus.
-1. Bei erfolgreicher Integration wird der AAD-Anbieter angezeigt (beispielsweise `AzureActiveDirectoryProvider`).
+1. Bei erfolgreicher Integration wird der Azure AD-Anbieter angezeigt (beispielsweise `AzureActiveDirectoryProvider`).
 1. Erweitern Sie die Struktur im linken Navigationsbereich, und wählen Sie **Security Realms** -> **myrealm** -> **Users and Groups** („Sicherheitsbereiche“ > „myrealm“ > „Benutzer und Gruppen“) aus.
-1. Bei erfolgreicher Integration werden Benutzer aus dem AAD-Anbieter angezeigt.
+1. Bei erfolgreicher Integration werden Benutzer aus dem Azure AD-Anbieter angezeigt.
 
 ### <a name="lock-down-and-secure-ldap-access-over-the-internet"></a>Beschränken des Secure LDAP-Zugriffs über das Internet
 
@@ -163,5 +196,7 @@ Nun können Sie unter [Konfigurieren von Secure LDAP (LDAPS) für eine verwalte
 
 ## <a name="next-steps"></a>Nächste Schritte
 
+Erkunden Sie andere Aspekte der Migration von WebLogic Server-Apps zu Azure.
+
 > [!div class="nextstepaction"]
-> [Migrieren von WebLogic-Anwendungen zu virtuellen Azure-Computern](/azure/developer/java/migration/migrate-weblogic-to-virtual-machines)
+> [Migrieren von WebLogic Server-Anwendungen zu virtuellen Azure-Computern](/azure/developer/java/migration/migrate-weblogic-to-virtual-machines)

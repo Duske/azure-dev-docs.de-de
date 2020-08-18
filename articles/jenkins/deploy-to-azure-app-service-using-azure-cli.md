@@ -3,14 +3,14 @@ title: 'Tutorial: Durchführen der Bereitstellung für Azure App Service mit Jen
 description: Erfahren Sie, wie Sie mit der Azure CLI eine Java-Web-App an Azure in der Jenkins-Pipeline bereitstellen.
 keywords: Jenkins, Azure, DevOps, App Service, CLI
 ms.topic: tutorial
-ms.date: 04/25/2020
+ms.date: 08/08/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 63a5097358001e0312af13053e3d7310fe413cc7
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.openlocfilehash: b26adfa3fd4639efa5de20ffcf93f1730a992a12
+ms.sourcegitcommit: f65561589d22b9ba2d69b290daee82eb47b0b20f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478340"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88162069"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-with-jenkins-and-the-azure-cli"></a>Tutorial: Bereitstellen an Azure App Service mit Jenkins und der Azure CLI
 
@@ -26,7 +26,7 @@ Für die Bereitstellung einer Java-Web-App in Azure können Sie die Azure CLI in
 
 ## <a name="create-and-configure-jenkins-instance"></a>Erstellen und Konfigurieren einer Jenkins-Instanz
 
-Wenn Sie noch nicht über einen Jenkins-Master verfügen, können Sie die [Jenkins-Lösungsvorlage](configure-on-linux-vm.md) für die Installation verwenden. Standardmäßig wird mit der Vorlage das erforderliche Plug-In für die [Azure-Anmeldeinformationen](https://plugins.jenkins.io/azure-credentials) installiert. 
+Wenn Sie noch nicht über einen Jenkins-Master verfügen, [installieren Sie Jenkins auf einer Linux-VM](configure-on-linux-vm.md).
 
 Das Azure-Anmeldeinformationen-Plug-In ermöglicht Ihnen das Speichern von Anmeldeinformationen des Microsoft Azure-Dienstprinzipals in Jenkins. In Version 1.2 haben wir Support hinzugefügt, durch den die Jenkins-Pipeline die Azure-Anmeldeinformationen abrufen kann. 
 

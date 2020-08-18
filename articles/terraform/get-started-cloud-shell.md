@@ -3,19 +3,29 @@ title: 'Schnellstart: Erste Schritte mit Terraform unter Verwendung von Azure Cl
 description: In dieser Schnellstartanleitung erfahren Sie, wie Sie Terraform für die Erstellung von Azure-Ressourcen installieren und konfigurieren.
 keywords: Azure DevOps Terraform installieren konfigurieren Cloud Shell init planen anwenden Ausführung Portal anmelden Anmeldung RBAC Dienstprinzipal automatisiertes Skript
 ms.topic: quickstart
-ms.date: 07/26/2020
-ms.openlocfilehash: dbe290fbb7909d116d2ff0cec8e01a3b145ded30
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.date: 08/08/2020
+ms.openlocfilehash: 736c805b8dd8c95d1950537b754059cca9fc5712
+ms.sourcegitcommit: 6a8485d659d6239569c4e3ecee12f924c437b235
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478590"
+ms.lasthandoff: 08/09/2020
+ms.locfileid: "88026142"
 ---
 # <a name="quickstart-get-started-with-terraform-using-azure-cloud-shell"></a>Schnellstart: Erste Schritte mit Terraform unter Verwendung von Azure Cloud Shell
  
 [!INCLUDE [terraform-intro.md](includes/terraform-intro.md)]
 
 In diesem Artikel werden die ersten Schritte mit [Terraform in Azure](https://www.terraform.io/docs/providers/azurerm/index.html) beschrieben.
+
+In diesem Artikel werden folgende Vorgehensweisen behandelt:
+> [!div class="checklist"]
+> * Authentifizierung bei Azure mit `az login`
+> * Erstellen eines Azure-Dienstprinzipals mit der Azure CLI
+> * Authentifizieren bei Azure mit einem Dienstprinzipal
+> * Festlegen des aktuellen Azure-Abonnements für die Verwendung, wenn Sie über mehrere Abonnements verfügen
+> * Schreiben eines Terraform-Skripts zum Erstellen einer Azure-Ressourcengruppe
+> * Erstellen und Anwenden eines Terraform-Ausführungsplans
+> * Verwenden des `terraform plan -destroy`-Flags zum Umkehren eines Ausführungsplans
 
 [!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
@@ -166,7 +176,7 @@ In diesem Abschnitt erfahren Sie, wie Sie eine Terraform-Konfigurationsdatei ers
 
 ## <a name="create-and-apply-a-terraform-execution-plan"></a>Erstellen und Anwenden eines Terraform-Ausführungsplans
 
-Nachdem Sie Ihre Konfigurationsdateien erstellt haben, wird in diesem Abschnitt erläutert, wie ein *Ausführungsplan* erstellt und auf Ihre Cloudinfrastruktur anwendet wird.
+In diesem Abschnitt erstellen Sie einen *Ausführungsplan* und wenden ihn auf Ihre Cloudinfrastruktur an.
 
 1. Initialisieren Sie die Terraform-Bereitstellung mithilfe des Befehls [terraform init](https://www.terraform.io/docs/commands/init.html). Mit diesem Schritt werden die Azure-Module heruntergeladen, die zum Erstellen einer Azure-Ressourcengruppe erforderlich sind.
 
@@ -174,27 +184,24 @@ Nachdem Sie Ihre Konfigurationsdateien erstellt haben, wird in diesem Abschnitt 
     terraform init
     ```
 
-1. Führen Sie [terraform plan](https://www.terraform.io/docs/commands/plan.html) aus, um einen Ausführungsplan zu erstellen und die Ergebnisse als Vorschau anzuzeigen.
+1. Führen Sie [terraform plan](https://www.terraform.io/docs/commands/plan.html) aus, um auf der Grundlage Ihrer Terraform-Konfigurationsdatei einen Ausführungsplan zu erstellen.
 
     ```bash
-    terraform plan
+    terraform plan -out QuickstartTerraformTest.tfplan
     ```
 
-    **Hinweise**:
+    **Hinweise:**
+    - Durch den Befehl `terraform plan` wird ein Ausführungsplan erstellt, aber nicht ausgeführt. Stattdessen werden die Aktionen ermittelt, die erforderlich sind, um die in Ihren Konfigurationsdateien angegebene Konfiguration zu erstellen. Mit diesem Muster können Sie überprüfen, ob der Ausführungsplan Ihren Erwartungen entspricht, bevor Sie Änderungen an den eigentlichen Ressourcen vornehmen.
+    - Der optionale Parameter `-out` ermöglicht die Angabe einer Ausgabedatei für den Plan. Durch die Verwendung des Parameters `-out` wird sichergestellt, dass genau der von Ihnen überprüfte Plan angewendet wird.
+    - Weitere Informationen zum Speichern von Ausführungsplänen und zur Sicherheit finden Sie im [Abschnitt mit der Sicherheitswarnung](https://www.terraform.io/docs/commands/plan.html#security-warning).
 
-    - Durch den Befehl `terraform plan` wird ein Ausführungsplan erstellt, aber nicht ausgeführt. Stattdessen werden die Aktionen ermittelt, die erforderlich sind, um die in Ihren Konfigurationsdateien angegebene Konfiguration zu erstellen.
-    - Mit dem Befehl `terraform plan` können Sie überprüfen, ob der Ausführungsplan Ihren Erwartungen entspricht, bevor Sie Änderungen an den eigentlichen Ressourcen vornehmen.
-    - Der optionale Parameter `-out` ermöglicht die Angabe einer Ausgabedatei für den Plan. Weitere Informationen zur Verwendung des Parameters `-out` finden Sie im Abschnitt [Speichern eines Ausführungsplans zur späteren Bereitstellung](#persist-an-execution-plan-for-later-deployment).
-
-1. Wenden Sie den Ausführungsplan mithilfe des Befehls [terraform apply](https://www.terraform.io/docs/commands/apply.html) an.
+1. Führen Sie zum Anwenden des Ausführungsplans den Befehl [terraform apply](https://www.terraform.io/docs/commands/apply.html) aus.
 
     ```bash
-    terraform apply
+    terraform apply QuickstartTerraformTest.tfplan
     ```
 
-1. Von Terraform wird gezeigt, was passiert, wenn Sie den Ausführungsplan anwenden, und Sie werden zur Bestätigung der Ausführung aufgefordert. Geben Sie zur Bestätigung des Befehls `yes` ein, und drücken Sie die **EINGABETASTE**.
-
-1. Vergewissern Sie sich nach der Bestätigung der Planausführung mithilfe des Befehls [az group show](/cli/azure/group?#az-group-show), dass die Ressourcengruppe erfolgreich erstellt wurde.
+1. Wenn der Ausführungsplan angewendet wurde, können Sie mithilfe von [az group show](/cli/azure/group?#az-group-show) testen, ob die Ressourcengruppe erfolgreich erstellt wurde.
 
     ```azurecli
     az group show -n "QuickstartTerraformTest-rg"
@@ -204,39 +211,6 @@ Nachdem Sie Ihre Konfigurationsdateien erstellt haben, wird in diesem Abschnitt 
 
     - War der Vorgang erfolgreich, zeigt `az group show` verschiedene Eigenschaften der neu erstellten Ressourcengruppe an.
 
-## <a name="persist-an-execution-plan-for-later-deployment"></a>Speichern eines Ausführungsplans zur späteren Bereitstellung
-
-Im vorherigen Abschnitt wurde gezeigt, wie Sie einen [Terraform-Plan](https://www.terraform.io/docs/commands/plan.html) ausführen, um einen Ausführungsplan zu erstellen. Anschließend wurde gezeigt, dass der Plan mithilfe von [terraform apply](https://www.terraform.io/docs/commands/apply.html) angewendet wird. Dieses Muster eignet sich bestens, wenn die Schritte interaktiv und sequenziell sind.
-
-In komplexeren Szenarien kann der Ausführungsplan in einer Datei gespeichert werden. Dieser Ausführungsplan kann dann später (oder sogar von einem anderen Computer aus) angewendet werden.
-
-Falls Sie dieses Feature nutzen möchten, empfiehlt es sich, den Artikel [Ausführen von Terraform mit Automatisierung](https://learn.hashicorp.com/terraform/development/running-terraform-in-automation) zu lesen.
-
-Die folgenden Schritte veranschaulichen das grundlegende Muster für die Nutzung dieses Features:
-
-1. Führen Sie [terraform init](https://www.terraform.io/docs/commands/init.html) aus.
-
-    ```bash
-    terraform init
-    ```
-
-1. Führen Sie `terraform plan` mit dem Parameter `-out` aus.
-
-    ```bash
-    terraform plan -out QuickstartTerraformTest.tfplan
-    ```
-
-1. Führen Sie `terraform apply` aus, und geben Sie dabei den Namen der Datei aus dem vorherigen Schritt an.
-
-    ```bash
-    terraform apply QuickstartTerraformTest.tfplan
-    ```
-
-    **Hinweise:**
-    
-    - Um die Verwendung mit Automatisierung zu ermöglichen, kann `terraform apply <filename>` ohne Bestätigung ausgeführt werden.
-    - Wenn Sie dieses Feature verwenden möchten, lesen Sie den [Abschnitt mit der Sicherheitswarnung](https://www.terraform.io/docs/commands/plan.html#security-warning).
-    
 ## <a name="clean-up-resources"></a>Bereinigen von Ressourcen
 
 Löschen Sie die in diesem Artikel erstellten Ressourcen, wenn Sie sie nicht mehr benötigen.
@@ -248,9 +222,9 @@ Löschen Sie die in diesem Artikel erstellten Ressourcen, wenn Sie sie nicht meh
     ```
 
     **Hinweise**:
-    - Durch den Befehl `terraform plan` wird ein Ausführungsplan erstellt, aber nicht ausgeführt. Stattdessen werden die Aktionen ermittelt, die erforderlich sind, um die in Ihren Konfigurationsdateien angegebene Konfiguration zu erstellen. So können Sie überprüfen, ob der Ausführungsplan Ihren Erwartungen entspricht, bevor Sie Änderungen an den eigentlichen Ressourcen vornehmen.
+    - Durch den Befehl `terraform plan` wird ein Ausführungsplan erstellt, aber nicht ausgeführt. Stattdessen werden die Aktionen ermittelt, die erforderlich sind, um die in Ihren Konfigurationsdateien angegebene Konfiguration zu erstellen. Mit diesem Muster können Sie überprüfen, ob der Ausführungsplan Ihren Erwartungen entspricht, bevor Sie Änderungen an den eigentlichen Ressourcen vornehmen.
     - Mit dem Parameter `-destroy` wird ein Plan zum Zerstören der Ressourcen generiert.
-    - Der optionale Parameter `-out` ermöglicht die Angabe einer Ausgabedatei für den Plan. Der Parameter `-out` sollte immer verwendet werden, da damit sichergestellt wird, dass genau der von Ihnen überprüfte Plan angewendet wird.
+    - Der optionale Parameter `-out` ermöglicht die Angabe einer Ausgabedatei für den Plan. Durch die Verwendung des Parameters `-out` wird sichergestellt, dass genau der von Ihnen überprüfte Plan angewendet wird.
     - Weitere Informationen zum Speichern von Ausführungsplänen und zur Sicherheit finden Sie im [Abschnitt mit der Sicherheitswarnung](https://www.terraform.io/docs/commands/plan.html#security-warning).
 
 1. Führen Sie zum Anwenden des Ausführungsplans den Befehl [terraform apply](https://www.terraform.io/docs/commands/apply.html) aus.

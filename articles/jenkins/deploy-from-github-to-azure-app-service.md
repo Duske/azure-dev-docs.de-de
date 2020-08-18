@@ -3,13 +3,13 @@ title: 'Tutorial: Bereitstellen über GitHub in Azure App Service mit Jenkins'
 description: Es wird beschrieben, wie Sie Jenkins für Continuous Integration (CI) über GitHub und Continuous Deployment (CD) in Azure App Service für Java-Web-Apps konfigurieren.
 keywords: Jenkins, Azure, DevOps, App Service
 ms.topic: tutorial
-ms.date: 10/23/2019
-ms.openlocfilehash: 6516f5481f6170a9d15d43113ac0f3f234174931
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.date: 08/10/2020
+ms.openlocfilehash: 3961d413a573d416777f649cef44ceccdecb0b01
+ms.sourcegitcommit: e792f681ab66c54e6fd0c7f3cb71816206216d72
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170026"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88075713"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-app-service-using-jenkins"></a>Tutorial: Bereitstellen über GitHub in Azure App Service mit Jenkins
 
@@ -116,31 +116,20 @@ Erstellen Sie als Nächstes den Azure-Dienstprinzipal, den Jenkins für die Auth
 
 ## <a name="create-service-principal"></a>Erstellen eines Dienstprinzipals
 
-In einem späteren Abschnitt erstellen Sie einen Jenkins-Pipelineauftrag, der Ihre App auf der Grundlage von GitHub erstellt und in Azure App Service bereitstellt. Damit Jenkins auf Azure zugreifen kann, ohne Ihre Anmeldeinformationen eingeben zu müssen, erstellen Sie in Azure Active Directory einen [Dienstprinzipal](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals) für Jenkins. Ein Dienstprinzipal ist eine separate Identität, die Jenkins für die Authentifizierung des Zugriffs auf Azure-Ressourcen verwenden kann. Führen Sie zum Erstellen dieses Dienstprinzipals den Azure CLI-Befehl [ **`az ad sp create-for-rbac`** ](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest) aus – entweder über Ihre lokale Befehlszeile oder über Azure Cloud Shell. Beispiel: 
+In einem späteren Abschnitt erstellen Sie einen Jenkins-Pipelineauftrag, der Ihre App auf der Grundlage von GitHub erstellt und in Azure App Service bereitstellt. Damit Jenkins ohne Eingabe Ihrer Anmeldeinformationen auf Azure zugreifen kann, benötigen Sie einen [Dienstprinzipal](/active-directory/develop/app-objects-and-service-principals). Wenn Sie bereits einen Dienstprinzipal haben, den Sie für diesen Artikel verwenden können, überspringen Sie diesen Abschnitt.
+
+Führen Sie zum Erstellen dieses Dienstprinzipals den Azure CLI-Befehl [az ad sp create-for-rbac](/cli/azure/ad/sp?#az-ad-sp-create-for-rbac) aus.
 
 ```azurecli-interactive
-az ad sp create-for-rbac --name "yourAzureServicePrincipalName" --password yourSecurePassword
+az ad sp create-for-rbac
 ```
 
-Der Dienstprinzipalname muss in Anführungszeichen gesetzt werden. Erstellen Sie außerdem ein sicheres Kennwort unter Berücksichtigung der [Kennwortrichtlinien und -einschränkungen in Azure Active Directory](/azure/active-directory/active-directory-passwords-policy). Wenn Sie kein Kennwort angeben, erstellt die Azure-Befehlszeilenschnittstelle ein Kennwort für Sie. 
+**Hinweise**:
 
-Der Befehl **`create-for-rbac`** generiert die folgende Ausgabe: 
+- Nach dem erfolgreichen Abschluss werden von `az ad sp create-for-rbac` verschiedene Werte angezeigt. Die Werte `name`, `password` und `tenant` werden im nächsten Schritt verwendet.
+- Ein Dienstprinzipal wird standardmäßig mit der Rolle **Mitwirkender** erstellt, die über vollständige Berechtigungen zum Lesen und Schreiben in einem Azure-Konto verfügt. Weitere Informationen zur rollenbasierten Zugriffssteuerung (Role-Based Access Control, RBAC) finden Sie unter [Integrierte Integrierte Rollen](/azure/active-directory/role-based-access-built-in-roles).
+- Dieses Kennwort kann nicht erneut abgerufen werden. Es empfiehlt sich daher, das Kennwort an einem sicheren Ort zu speichern. Sollten Sie Ihr Kennwort vergessen, müssen Sie die [Anmeldeinformationen des Dienstprinzipals zurücksetzen](/cli/azure/create-an-azure-service-principal-azure-cli#reset-credentials).
 
-```json
-{
-   "appId": "yourAzureServicePrincipal-ID", // A GUID such as AAAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAAAA
-   "displayName": "yourAzureServicePrincipalName", // A user-friendly name for your Azure service principal
-   "name": "http://yourAzureServicePrincipalName",
-   "password": "yourSecurePassword",
-   "tenant": "yourAzureActiveDirectoryTenant-ID" // A GUID such as BBBBBBBB-BBBB-BBBB-BBBB-BBBBBBBBBBBB
-}
-```
-
-> [!TIP]
-> 
-> Falls Sie bereits über einen Dienstprinzipal verfügen, können Sie stattdessen diese Identität verwenden.
-> Verwenden Sie die Eigenschaftswerte `appId`, `password` und `tenant`, wenn Sie Dienstprinzipalwerte für die Authentifizierung angeben. 
-> Verwenden Sie den Eigenschaftswert `displayName`, wenn Sie nach einem vorhandenen Dienstprinzipal suchen.
 
 ## <a name="add-service-principal-to-jenkins"></a>Hinzufügen des Dienstprinzipals zu Jenkins
 
@@ -158,7 +147,7 @@ Der Befehl **`create-for-rbac`** generiert die folgende Ausgabe:
 
    | Eigenschaft | Wert | BESCHREIBUNG | 
    |----------|-------|-------------| 
-   | **Abonnement-ID** | <*yourAzureSubscription-ID*> | Der GUID-Wert für Ihr Azure-Abonnement. <p>**Tipp**: Sollten Sie Ihre Azure-Abonnement-ID nicht kennen, führen Sie an der Befehlszeile oder in Cloud Shell den folgenden Azure CLI-Befehl aus, und verwenden Sie dann den `id`-GUID-Wert: <p>`az account list` | 
+   | **Abonnement-ID** | <*yourAzureSubscription-ID*> | Der GUID-Wert für Ihr Azure-Abonnement. <p>**Tipp:** Sollten Sie Ihre Azure-Abonnement-ID nicht kennen, führen Sie an der Befehlszeile oder in Cloud Shell den folgenden Azure CLI-Befehl aus, und verwenden Sie dann den `id`-GUID-Wert: <p>`az account list` | 
    | **Client-ID** | <*yourAzureServicePrincipal-ID*> | Der `appId`-GUID-Wert, der zuvor für Ihren Azure-Dienstprinzipal generiert wurde. | 
    | **Geheimer Clientschlüssel** | <*yourSecurePassword*> | Der `password`-Wert (Geheimnis), den Sie für Ihren Azure-Dienstprinzipal angegeben haben. | 
    | **Tenant ID** | <*yourAzureActiveDirectoryTenant-ID*> | Der `tenant`-GUID-Wert für Ihren Azure Active Directory-Mandanten. | 

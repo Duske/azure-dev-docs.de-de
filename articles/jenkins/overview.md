@@ -3,13 +3,13 @@ title: Übersicht über Jenkins und Azure
 description: Verwenden Sie Azure für das Hosten des Jenkins-Builds und das Bereitstellen von Automatisierungsservern. Nutzen Sie darüber hinaus Azure Compute- und Azure Storage-Ressourcen, um die Pipelines für Continuous Integration und Continuous Deployment (CI/CD) zu erweitern.
 keywords: Jenkins, Azure, DevOps, Übersicht
 ms.topic: overview
-ms.date: 10/23/2019
-ms.openlocfilehash: 19bacd6e1b3d4ddee4e6fef27b2183f4a33545d6
-ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
+ms.date: 08/08/2020
+ms.openlocfilehash: 2592ad806d58b3cbfcf930f180fa582945be3196
+ms.sourcegitcommit: f65561589d22b9ba2d69b290daee82eb47b0b20f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861303"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88162039"
 ---
 # <a name="azure-and-jenkins"></a>Azure und Jenkins
 
@@ -19,13 +19,7 @@ Dieser Artikel bietet eine Einführung in die Verwendung von Azure mit Jenkins. 
 
 ## <a name="host-your-jenkins-servers-in-azure"></a>Hosten von Jenkins-Servern in Azure
 
-Hosten Sie Jenkins in Azure, um Ihre Buildautomatisierung zu zentralisieren und Ihre Bereitstellung zu skalieren, wenn die Anforderungen Ihrer Softwareprojekte steigen. Sie können Jenkins in Azure wie folgt bereitstellen:
- 
-- Mit der [Jenkins-Projektmappenvorlage](configure-on-linux-vm.md) in Azure Marketplace
-- Mit [Azure Virtual Machines](/azure/virtual-machines/linux/overview). In unserem [Tutorial](pipeline-with-github-and-docker.md) finden Sie Informationen zum Erstellen einer Jenkins-Instanz auf einem virtuellen Computer.
-- Informationen zu einem Kubernetes-Cluster im [Azure Container Service](/azure/container-service/kubernetes/container-service-kubernetes-walkthrough) finden Sie in unserer [Anleitung](/azure/container-service/kubernetes/container-service-kubernetes-jenkins).
-
-Überwachen und verwalten Sie Ihre Azure Jenkins-Bereitstellung mit [Azure Monitor-Protokollen](/azure/log-analytics/log-analytics-overview) und der [Azure-Befehlszeilenschnittstelle](/cli/azure).
+Hosten Sie Jenkins in Azure, um Ihre Buildautomatisierung zu zentralisieren und Ihre Bereitstellung zu skalieren, wenn die Anforderungen Ihrer Softwareprojekte steigen. Weitere Informationen zum Installieren und Konfigurieren von Jenkins auf einer Linux-VM finden Sie unter [Schnellstart: Erste Schritte mit Jenkins](configure-on-linux-vm.md). Überwachen und verwalten Sie Ihre Azure Jenkins-Bereitstellung mit [Azure Monitor-Protokollen](/azure/log-analytics/log-analytics-overview) und der [Azure-Befehlszeilenschnittstelle](/cli/azure).
 
 ## <a name="scale-your-build-automation-on-demand"></a>Skalieren der Buildautomatisierung nach Bedarf
 
