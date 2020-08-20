@@ -3,17 +3,14 @@ title: 'Schnellstart: Konfigurieren von virtuellen Linux-Computern in Azure mit 
 description: In diesem Schnellstart erfahren Sie, wie Sie einen virtuellen Linux-Computer in Azure mit Ansible erstellen.
 keywords: Ansible, Azure, DevOps, virtueller Computer
 ms.topic: tutorial
-ms.service: ansible
-author: tomarchermsft
-manager: gwallace
-ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: 76e59ccd9b97771877b6c2a919dcfaf8b12840eb
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-ansible
+ms.openlocfilehash: c9f6d9a954b8bdbd05ede42cc69a0078eae3cea2
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81743867"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240432"
 ---
 # <a name="quickstart-configure-linux-virtual-machines-in-azure-using-ansible"></a>Schnellstart: Erstellen eines virtuellen Linux-Computers in Azure mithilfe von Ansible
 

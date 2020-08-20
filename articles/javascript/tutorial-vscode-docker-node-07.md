@@ -3,12 +3,13 @@ title: Streamen von Protokollen aus einer Node.js-Container-App in Visual Studi
 description: 'Teil 7 des Tutorials: Streamen von Protokollen in Visual Studio Code'
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 10ccf13cddfc7bb1ed7f226629072cb9baeea3a1
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: ad62a7551013f29d9affad9272b20aad2b1a5dd8
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791996"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218380"
 ---
 # <a name="stream-logs-into-visual-studio-code"></a>Streamen von Protokollen in Visual Studio Code
 

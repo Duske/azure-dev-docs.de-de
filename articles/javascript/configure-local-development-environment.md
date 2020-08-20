@@ -3,12 +3,13 @@ title: Konfigurieren Ihrer lokalen JavaScript-Umgebung für die Azure-Entwicklun
 description: Hier erfahren Sie, wie Sie eine lokale JavaScript-Entwicklungsumgebung für die Arbeit mit Azure einrichten – einschließlich einem Editor, den Azure SDK-Bibliotheken, optionalen Tools und den erforderlichen Anmeldeinformationen für die Bibliothekauthentifizierung.
 ms.date: 07/01/2020
 ms.topic: conceptual
-ms.openlocfilehash: 2285e79ea62d2de961fd7d4dc7647fec2312b83c
-ms.sourcegitcommit: 7be67fb768fb5e19f7de573068cc1376b3d90d1f
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 1071985de770d8c1d9e5e78a25e8556048857a3e
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85911184"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218934"
 ---
 # <a name="configure-your-local-javascript-dev-environment-for-azure"></a>Konfigurieren Ihrer lokalen JavaScript-Entwicklungsumgebung für Azure
 

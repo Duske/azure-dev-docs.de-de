@@ -3,14 +3,14 @@ title: 'Tutorial: Konfigurieren von kubenet-Netzwerken in Azure Kubernetes Servi
 description: Es wird beschrieben, wie Sie Ansible zum Konfigurieren von kubenet-Netzwerken im AKS-Cluster (Azure Kubernetes Service) konfigurieren.
 keywords: Ansible, Azure, DevOps, Bash, Cloud Shell, Playbook, AKS, Container, Kubernetes
 ms.topic: tutorial
-ms.custom: fasttrack-edit
 ms.date: 10/23/2019
-ms.openlocfilehash: 7d1dc7b381c02c84b2da89c5c90d822e86a3cd1b
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-ansible,fasttrack-edit
+ms.openlocfilehash: 55b3f2ec248e3163a6916c8a6067957f6a0c9ae1
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82026123"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88239772"
 ---
 # <a name="tutorial-configure-kubenet-networking-in-azure-kubernetes-service-aks-using-ansible"></a>Tutorial: Konfigurieren von kubenet-Netzwerken in Azure Kubernetes Service (AKS) mit Ansible
 

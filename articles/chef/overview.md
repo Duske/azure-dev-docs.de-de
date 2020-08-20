@@ -4,12 +4,13 @@ description: Einführung in die Verwendung von Chef zum Konfigurieren und Testen
 keywords: Azure, Chef, Devops, virtuelle Computer, Übersicht, Automatisieren
 ms.date: 02/22/2020
 ms.topic: article
-ms.openlocfilehash: 94cfe5d57673db151d53133fb8b2ef66c5629b93
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-chef
+ms.openlocfilehash: 86678436612f97e2928228ec9dd47ac9185d9b72
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80892989"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240922"
 ---
 # <a name="using-chef-with-azure"></a>Verwenden von Chef mit Azure
 

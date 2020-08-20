@@ -3,13 +3,13 @@ title: Schreiben von serverlosem Node.js-Code mit Azure Functions
 description: In diesem Artikel wird die Verwendung von Azure Functions zum Erstellen und Bereitstellen von serverlosem Code erläutert.
 ms.topic: article
 ms.date: 08/19/2019
-ms.custom: seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: ae6a4cebef39976af4d9a30534d394d37d86a0c8
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-javascript
+ms.openlocfilehash: 8b0fa5aac45d95780da4327d72cea6b6533c971e
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791671"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218607"
 ---
 # <a name="use-azure-functions-to-write-serverless-nodejs-code-on-azure"></a>Verwenden von Azure Functions zum Schreiben von serverlosem Node.js-Code in Azure
 

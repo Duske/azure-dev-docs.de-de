@@ -4,12 +4,13 @@ description: Es wird beschrieben, wie Sie Jenkins für Continuous Integration (C
 keywords: Jenkins, Azure, DevOps, App Service
 ms.topic: tutorial
 ms.date: 08/10/2020
-ms.openlocfilehash: 3961d413a573d416777f649cef44ceccdecb0b01
-ms.sourcegitcommit: e792f681ab66c54e6fd0c7f3cb71816206216d72
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: 6b7f1693eb02b51107e595365bc800540f98f20e
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88075713"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241022"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-app-service-using-jenkins"></a>Tutorial: Bereitstellen über GitHub in Azure App Service mit Jenkins
 

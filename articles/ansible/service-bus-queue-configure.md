@@ -4,12 +4,13 @@ description: Informationen zum Erstellen einer Azure Service Bus-Warteschlange m
 keywords: Ansible, Azure, DevOps, Bash, Playbook, Service Bus, Warteschlange
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: 0707e93ad7177345b93e1f432b56006e8ccf9484
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-ansible
+ms.openlocfilehash: 438c5787469a31403285f8884452d5293f1460f4
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81743346"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88239992"
 ---
 # <a name="tutorial-configure-queues-in-azure-service-bus-using-ansible"></a>Tutorial: Konfigurieren von Warteschlangen in Azure Service Bus mithilfe von Ansible
 

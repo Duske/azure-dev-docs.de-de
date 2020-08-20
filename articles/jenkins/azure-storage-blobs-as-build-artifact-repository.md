@@ -4,12 +4,13 @@ description: Es wird beschrieben, wie Sie den Azure-Blobdienst als Repository f√
 keywords: Jenkins, Azure, DevOps, Storage, CI/CD, Buildartefakte
 ms.topic: article
 ms.date: 08/13/2019
-ms.openlocfilehash: ceed42326faee6dcfab3790fd3af739b2f48d3da
-ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: 783d6870eff461ccf4936aff9bfd76577816e5bf
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861203"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240972"
 ---
 # <a name="tutorial-use-azure-storage-for-build-artifacts"></a>Tutorial: Verwenden von Azure Storage f√ºr Buildartefakte
 

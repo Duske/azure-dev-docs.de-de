@@ -3,12 +3,13 @@ title: Streamen von Protokollen aus Azure App Service in Visual Studio Code
 description: 'Teil 4 des Tutorials: Anzeigen oder Anfügen von Protokollen.'
 ms.topic: conceptual
 ms.date: 03/04/2020
-ms.openlocfilehash: e6c1f4f87a28b33dac51d6ffc59c0cd9dfdc429d
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 6bc01b7691bf4881d610453707dd3c97654554be
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792056"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218333"
 ---
 # <a name="stream-logs-from-azure-app-service"></a>Streamen von Protokollen aus Azure App Service
 

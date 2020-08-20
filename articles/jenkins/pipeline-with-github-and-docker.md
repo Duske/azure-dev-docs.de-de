@@ -4,12 +4,13 @@ description: Es wird beschrieben, wie Sie in Azure einen virtuellen Jenkins-Comp
 keywords: Jenkins, Azure, DevOps, Pipeline, CI/CD, Docker
 ms.topic: tutorial
 ms.date: 03/27/2017
-ms.openlocfilehash: 29c5d8926fe60eeb2e3603f0e3248e1d94763b6c
-ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: 2a9bc23852a04b42b72628adda116585d354f860
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861293"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240702"
 ---
 # <a name="tutorial-create-a-jenkins-pipeline-using-github-and-docker"></a>Tutorial: Erstellen einer Jenkins-Pipeline mit GitHub und Docker
 

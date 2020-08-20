@@ -4,12 +4,13 @@ description: Informationen zum Bereitstellen und Konfigurieren des Chef-Clients 
 keywords: Azure, Chef, Devops, Client, Installation, Portal
 ms.date: 02/22/2020
 ms.topic: article
-ms.openlocfilehash: b5dd158bd06511bf440228d4ae0948596bca0612
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-chef
+ms.openlocfilehash: 3fb282914bad8992a5f4df76019df89824675da0
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80892899"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240822"
 ---
 # <a name="install-the-chef-client-from-the-azure-portal"></a>Installieren des Chef-Clients aus dem Azure-Portal
 Im Azure-Portal können Sie einem Linux- oder Windows-Computer direkt die Chef-Clienterweiterung hinzufügen. Dieser Artikel führt Sie mithilfe eines neuen virtuellen Linux-Computers durch den Prozess.

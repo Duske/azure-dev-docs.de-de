@@ -4,12 +4,13 @@ description: Hier erfahren Sie, wie Sie das Azure Dev Spaces-Plug-In in einer 
 keywords: Jenkins, Azure, DevOps, Azure Dev Spaces, AKS, Azure Kubernetes Service
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: acc4fba8bc12c631f395bf980ca6ee8b42dc8f49
-ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: 505ee15ab181e63576f1bb2c276ac317d8372164
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83369932"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240852"
 ---
 # <a name="tutorial-use-azure-dev-spaces-with-azure-kubernetes-service"></a>Tutorial: Verwenden von Azure Dev Spaces mit Azure Kubernetes Service
 
@@ -37,7 +38,7 @@ In diesem Tutorial werden gewisse Kenntnisse im Zusammenhang mit gängigen Azure
 
 * [Installation der Azure-Befehlszeilenschnittstelle](/cli/azure/install-azure-cli?view=azure-cli-latest) (Version 2.0.43 oder höher)
 
-* Ein Jenkins-Masterserver. Sollten Sie noch nicht über einen Jenkins-Masterserver verfügen, stellen Sie [Jenkins](https://aka.ms/jenkins-on-azure) mithilfe dieser [Schnellstartanleitung](https://docs.microsoft.com/azure/jenkins/install-jenkins-solution-template) in Azure bereit. 
+* Ein Jenkins-Masterserver. Sollten Sie noch nicht über einen Jenkins-Masterserver verfügen, stellen Sie [Jenkins](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins) mithilfe dieser [Schnellstartanleitung](https://docs.microsoft.com/azure/jenkins/install-jenkins-solution-template) in Azure bereit. 
 
 * Der Jenkins-Server muss sowohl über Helm als auch über kubectl verfügen und für das Jenkins-Konto verfügbar sein, wie weiter unten in diesem Tutorial erläutert.
 

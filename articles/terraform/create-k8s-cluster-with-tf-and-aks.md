@@ -4,12 +4,13 @@ description: Es wird beschrieben, wie Sie einen Kubernetes-Cluster mit Azure Kub
 keywords: Azure DevOps Terraform AKS Kubernetes
 ms.topic: how-to
 ms.date: 03/09/2020
-ms.openlocfilehash: 0f0d8eb512f4ba6d2e4245ad61dcb41d969cf4b8
-ms.sourcegitcommit: da9fab1b718c71e40c7cbe0a08526c316dcdd6df
+ms.custom: devx-track-terraform
+ms.openlocfilehash: 726f4544f4c417792d784dfaddf93a3d79eaec9e
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87525805"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241252"
 ---
 # <a name="create-a-kubernetes-cluster-with-azure-kubernetes-service-using-terraform"></a>Erstellen eines Kubernetes-Clusters mit Azure Kubernetes Service unter Verwendung von Terraform
 

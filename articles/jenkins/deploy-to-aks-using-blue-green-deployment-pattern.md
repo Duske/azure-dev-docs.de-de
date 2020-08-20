@@ -4,12 +4,13 @@ description: Hier erfahren Sie, wie Sie Bereitstellungen in Azure Kubernetes Ser
 keywords: Jenkins, Azure, DevOps, Kubernetes, K8s, AKS, Blau/Grün-Bereitstellung, Continuous Delivery, CD
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: 051a1531c9e973231ca56256603df63f60e21cf9
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: 9a81b47d0e3828bb7c1cd809a66b2245f5a83771
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82169946"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240992"
 ---
 # <a name="tutorial-deploy-to-azure-kubernetes-service-aks-using-the-bluegreen-deployment-pattern"></a>Tutorial: Durchführen der Bereitstellung in Azure Kubernetes Service (AKS) mit dem Blau/Grün-Bereitstellungsmuster
 
@@ -189,7 +190,7 @@ Sie können eine Blau/Grün-Bereitstellung manuell oder mit einem Setupskript (i
 
 In diesem Abschnitt erfahren Sie, wie Sie den Jenkins-Server für die Ausführung eines Builds vorbereiten – dies ist zu Testzwecken ausreichend. Sie sollten jedoch einen [Azure-VM-Agent](https://plugins.jenkins.io/azure-vm-agents) oder den [Azure Container-Agent](https://plugins.jenkins.io/azure-container-agents) verwenden, um einen Agenten zum Ausführen Ihrer Builds in Azure zu starten. Weitere Informationen finden Sie im Jenkins-Artikel [Sicherheitsaspekte beim Erstellen auf Masterknoten](https://wiki.jenkins.io/display/JENKINS/Security+implication+of+building+on+master) (in englischer Sprache).
 
-1. Stellen Sie einen [Jenkins-Master in Azure](https://aka.ms/jenkins-on-azure) bereit.
+1. Stellen Sie einen [Jenkins-Master in Azure](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins) bereit.
 
 1. Stellen Sie über SSH eine Verbindung mit dem Server her, und installieren Sie die Buildtools auf dem Server, auf dem der Build ausgeführt werden soll.
    

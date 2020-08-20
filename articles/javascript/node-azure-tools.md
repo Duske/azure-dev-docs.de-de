@@ -3,13 +3,13 @@ title: Tools für JavaScript-Entwickler in Azure
 description: Installieren der einzelnen Node.js- und JavaScript-Entwicklungstools in Azure
 ms.topic: article
 ms.date: 11/07/2017
-ms.custom: seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: 690ae9375a8ac8d929d610bde4e306061cd1ff8e
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-javascript
+ms.openlocfilehash: 3de364d2bf2cb44dee0b7d08ee79dfbffb161300
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791795"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218782"
 ---
 # <a name="azure-tools-for-javascript-developers"></a>Azure-Tools für JavaScript-Entwickler
 Die folgenden Tools werden für die Entwicklung von JavaScript-Apps in Azure empfohlen:

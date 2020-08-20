@@ -3,12 +3,13 @@ title: Lokale Ausführung der Azure Functions-Anwendung in Visual Studio Code
 description: 'Teil 3 des Tutorials: Lokales Ausführen der App, um sie zu testen.'
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: fd2255fa3a085f979e5893d6178063ee8686ea08
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 2dbc9001da2cef09eb7625b472359d22406ca6a9
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791586"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240882"
 ---
 # <a name="test-the-function-locally"></a>Lokales Testen der Funktion
 

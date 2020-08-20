@@ -3,12 +3,13 @@ title: Erstellen eines Azure Storage-Kontos für eine statische Node.js-Website
 description: 'Teil 3 des Tutorials: Erstellen eines Azure Storage-Kontos'
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 4adca67f850497777abce7d550e39532e59257d9
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: f0aa6a8cbfc0a5d286d0b7c93a12cbd48b68d620
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791876"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218347"
 ---
 # <a name="create-an-azure-storage-account"></a>Erstellen eines Azure-Speicherkontos
 

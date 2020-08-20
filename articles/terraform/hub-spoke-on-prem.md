@@ -3,12 +3,13 @@ title: 'Tutorial: Erstellen eines lokalen virtuellen Netzwerks in Azure mit Terr
 description: Es wird beschrieben, wie Sie in Azure ein lokales virtuelles Netzwerk (VNET) für lokale Ressourcen implementieren.
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: 0f336a9dae0c063cb8498f0aae4db3d82d1dbcac
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.custom: devx-track-terraform
+ms.openlocfilehash: 63ad0ef21ee9a6474710bf7ac40282d442105567
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329598"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241102"
 ---
 # <a name="tutorial-create-on-premises-virtual-network-in-azure-using-terraform"></a>Tutorial: Erstellen eines lokalen virtuellen Netzwerks in Azure mit Terraform
 

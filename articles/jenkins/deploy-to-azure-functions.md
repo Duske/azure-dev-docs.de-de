@@ -4,12 +4,13 @@ description: Hier wird beschrieben, wie Sie mit dem Jenkins-Azure Functions-Plug
 keywords: Jenkins, Azure, DevOps, Java, Azure Functions
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: 4dbd37b9527a3c41c6f1d5b40edf974b6adda6c3
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: fa63ebf5a41a3c515f92b0c551ee63d683b665c7
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82169796"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240931"
 ---
 # <a name="tutorial-deploy-to-azure-functions-using-jenkins"></a>Tutorial: Durchführen einer Bereitstellung in Azure Functions mit Jenkins
 
@@ -51,7 +52,7 @@ Die folgenden Schritte veranschaulichen, wie Sie mit der Azure CLI eine Java-Fun
 
 In den folgenden Schritten wird beschrieben, wie Sie den Jenkins-Server vorbereiten:
 
-1. Stellen Sie einen [Jenkins-Server](https://aka.ms/jenkins-on-azure) bereit. Wenn Sie noch keine Instanz des installierten Jenkins-Servers installiert haben, hilft Ihnen die Anleitung im Artikel zum Thema [Erstellen eines Jenkins-Servers in Azure](./configure-on-linux-vm.md) weiter.
+1. Stellen Sie einen [Jenkins-Server](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins) bereit. Wenn Sie noch keine Instanz des installierten Jenkins-Servers installiert haben, hilft Ihnen die Anleitung im Artikel zum Thema [Erstellen eines Jenkins-Servers in Azure](./configure-on-linux-vm.md) weiter.
 
 1. Melden Sie sich per SSH an der Jenkins-Instanz an.
 
