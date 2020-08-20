@@ -4,12 +4,12 @@ description: 'Tutorialschritt 5: Bereitstellen des Web-App-Codes'
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: b1c6fba45520e3e327f4b15d60d28000091ad016
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: e7c600314f1535589ca15daaa3bbbd9ffdc69b9d
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983613"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501455"
 ---
 # <a name="5-deploy-your-python-web-app-to-azure-app-service-on-linux"></a>5: Bereitstellen Ihrer Python-Web-App in Azure App Service für Linux
 
@@ -47,4 +47,4 @@ Verwenden Sie dieses Verfahren, um Ihre Python-App in einer Azure App Service-In
 > [!div class="nextstepaction"]
 > [Ich habe meine App bereitgestellt: Fahren Sie mit Schritt 6 fort. >>>](tutorial-deploy-app-service-on-linux-06.md)
 
-[Ich bin auf ein Problem gestoßen](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=05-deploy-app)
+[Treten Probleme auf? Informieren Sie uns darüber.](https://aka.ms/FlaskVSCQuickstartHelp)

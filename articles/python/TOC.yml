@@ -108,10 +108,10 @@
       items:
         - name: Authentifizieren von Apps mit Azure
           href: azure-sdk-authenticate.md
-        - name: Verwalten von Dienstprinzipalen
-          href: how-to-manage-service-principals.md
         - name: Zuweisen von Rollenberechtigungen zu Sicherheitsprinzipalen
           href: how-to-assign-role-permissions.md
+        - name: Verwalten von Dienstprinzipalen
+          href: how-to-manage-service-principals.md
     - name: Installieren von Paketen
       href: azure-sdk-install.md
     - name: Paketindex
