@@ -3,12 +3,13 @@ title: Erstellen eines Azure-Dienstprinzipals mit Node.js
 description: Hier erfahren Sie, wie Sie die Dienstprinzipalauthentifizierung mit Node.js und JavaScript verwenden.
 ms.topic: article
 ms.date: 06/17/2017
-ms.openlocfilehash: 1a85d185d6272a72b0f8029822b01174f9a043ce
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 9343d1bfaa48e5b2307c5f442107b91613663e94
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791654"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218879"
 ---
 # <a name="create-an-azure-service-principal-with-nodejs"></a>Erstellen eines Azure-Dienstprinzipals mit Node.js 
 
@@ -46,7 +47,7 @@ Bei der Erstellung eines Dienstprinzipals mithilfe der [Azure CLI 2.0](/cli/azur
 
 4. Durch den Aufruf von `az login` werden eine URL und ein Code zurückgegeben. Navigieren Sie zur angegebenen URL, geben Sie den Code ein, und melden Sie sich mit Ihrer Azure-Identität an. (Dies geschieht unter Umständen automatisch, wenn Sie bereits angemeldet sind.) Sie können dann über die CLI auf Ihr Konto zugreifen.
 
-5. Rufen Sie Ihr Abonnement und die Mandanten-ID ab:
+5. Rufen Sie Ihre Abonnement-ID und die Mandanten-ID ab:
 
     ```shell
     $ az account list

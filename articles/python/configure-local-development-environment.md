@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie eine lokale Python-Entwicklungsumgebung 
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 8d20960df802dc4671f6b432173a56f6dc88c38c
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: d95584758900eae2c50df5e731fd84f8bca00897
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983142"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614499"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>Konfigurieren Ihrer lokalen Python-Entwicklungsumgebung für Azure
 
@@ -78,7 +78,7 @@ Die Azure CLI behält Ihre Anmeldung normalerweise sitzungsübergreifend bei, ab
 
 ## <a name="configure-authentication"></a>Konfigurieren der Authentifizierung
 
-Wie unter [Verwalten von Dienstprinzipalen: Grundlagen der Autorisierung](how-to-manage-service-principals.md#basics-of-azure-authorization) beschrieben, benötigt jeder Entwickler einen Dienstprinzipal, der als Anwendungsidentität verwendet wird, wenn App-Code lokal getestet wird.
+Wie unter [Authentifizieren von Apps mit Azure](azure-sdk-authenticate.md#identity-when-running-the-app-locally) beschrieben, benötigt jeder Entwickler einen Dienstprinzipal, der beim lokalen Testen des App-Codes als Anwendungsidentität verwendet werden kann.
 
 In den folgenden Abschnitten erfahren Sie, wie Sie einen Dienstprinzipal und die Umgebungsvariablen erstellen, durch die die Eigenschaften des Dienstprinzipals bei Bedarf für die Azure-Bibliotheken bereitgestellt werden.
 
@@ -98,7 +98,7 @@ Jeder Entwickler in Ihrer Organisation sollte diese Schritte einzeln ausführen.
 
     Wenn Sie in einer Organisation sind, verfügen Sie im Abonnement möglicherweise nicht über die Berechtigung zum Ausführen dieses Befehls. Wenden Sie sich in diesem Fall an die Besitzer des Abonnements, damit sie den Dienstprinzipal für Sie erstellen.
 
-1. Erstellen Sie Umgebungsvariablen, die von den Azure-Bibliotheken benötigt werden. (Vom Objekt `DefaultAzureCredential` der Bibliothek „azure-identity“ wird nach diesen Variablen gesucht.)
+1. Verwenden Sie die folgenden Befehle zum Erstellen der Umgebungsvariablen, die von den Azure-Bibliotheken benötigt werden. (Vom Objekt `DefaultAzureCredential` der Bibliothek „azure-identity“ wird nach diesen Variablen gesucht.)
 
     # <a name="cmd"></a>[cmd](#tab/cmd)
 
@@ -124,7 +124,7 @@ Jeder Entwickler in Ihrer Organisation sollte diese Schritte einzeln ausführen.
 
     Um Ihre Abonnement-ID abzurufen, führen Sie den Befehl [`az account show`](/cli/azure/account?view=azure-cli-latest#az-account-show) aus, und suchen Sie in der Ausgabe nach der Eigenschaft `id`.
 
-    Erstellen Sie zur einfacheren Verwendung eine *.sh*- oder *.cmd*-Datei mit diesen Befehlen, die Sie ausführen können, wenn Sie ein Terminal oder eine Eingabeaufforderung für lokale Tests öffnen. Fügen Sie auch diese Datei nicht zur Quellcodeverwaltung hinzu, damit sie nur in Ihrem Benutzerkonto verbleibt.
+    Erstellen Sie als Erleichterung eine Befehlszeilen-Skriptdatei (z. B. *setenv.sh* unter macOS/Linux oder *setenv.cmd* unter Windows), die diese Befehle enthält. Anschließend können Sie das Skript jeweils ausführen, um die Variablen festzulegen, wenn Sie ein Terminal oder eine Eingabeaufforderung für lokale Tests öffnen. Fügen Sie auch diese Skriptdatei nicht der Quellcodeverwaltung hinzu, damit sie nur unter Ihrem Benutzerkonto vorhanden ist.
 
 1. Schützen Sie die Client-ID und den geheimen Clientschlüssel (und alle Dateien, in denen diese gespeichert sind), sodass sie immer innerhalb eines bestimmten Benutzerkontos auf einer Arbeitsstation verbleiben. Speichern Sie diese Eigenschaften niemals in der Quellcodeverwaltung, oder geben Sie sie für andere Entwickler frei. Falls erforderlich, können Sie den Dienstprinzipal löschen und einen neuen erstellen.
 

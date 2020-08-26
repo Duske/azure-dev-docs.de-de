@@ -5,12 +5,12 @@ ms.devlang: python
 ms.topic: tutorial
 ms.date: 07/23/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 0e9785871eba8866b5d225bb9ac1339becc172a3
-ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
+ms.openlocfilehash: 9e6794d655d420d5f6b4093aecf15b7540f34709
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88147391"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614534"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>Tutorial: Bereitstellen einer Django-Web-App mit PostgreSQL mithilfe des Azure-Portals
 
@@ -190,12 +190,18 @@ Nach dem Einrichten der Datenbank und der Verbindungseinstellungen können Sie n
 
 Wurden Code und Datenbank bereitgestellt, ist die App fast bereit für die Verwendung. Nun muss nur noch das erforderliche Schema in der Datenbank selbst eingerichtet werden. Hierzu können Sie die Datenmodelle in der Django-App zur Datenbank migrieren.
 
-1. Wählen Sie im Browserfenster oder auf der Browserregisterkarte der Web-App **SSH** aus (auf der linken Seite unter **Entwicklungstools**), um eine SSH-Konsole auf dem Web-App-Server zu öffnen. Es kann eine Minute dauern, bis die Verbindung zum ersten Mal hergestellt wird, da der Web-App-Container gestartet werden muss.
+1. Wählen Sie im Browserfenster oder auf der Registerkarte für die Web-App die Option **SSH** (links unter **Entwicklungstools**) und dann **Starten** aus, um auf dem Web-App-Server eine SSH-Konsole zu öffnen. Es kann eine Minute dauern, bis die Verbindung zum ersten Mal hergestellt wird, da der Web-App-Container gestartet werden muss.
 
 1. Navigieren Sie in der Konsole zum Ordner der Web-App:
 
     ```bash
     cd site/wwwroot
+    ```
+
+1. Aktivieren Sie die virtuelle Umgebung des Containers:
+
+    ```bash
+    source /antenv/bin/activate
     ```
 
 1. Installieren von Python-Paketen:
@@ -247,6 +253,8 @@ Wenn Sie jedoch die Datenmodelle der Django-App ändern, müssen Sie diese Ände
 1. Stellen Sie über SSH erneut eine Verbindung mit der Web-App her, wie unter [Ausführen einer Django-Datenbankmigration](#run-django-database-migrations) beschrieben.
 
 1. Navigieren Sie mit `cd site/wwwroot` zum App-Ordner.
+
+1. Aktivieren Sie die virtuelle Umgebung mit `source /antenv/bin/activate`.
 
 1. Führen Sie die Migration mit `python manage.py migrate` erneut aus.
 

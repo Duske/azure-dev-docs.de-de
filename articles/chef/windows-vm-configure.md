@@ -7,12 +7,13 @@ ms.service: chef
 author: tomarchermsft
 ms.author: tarcher
 ms.date: 02/22/2020
-ms.openlocfilehash: 17fc56cbf3aaed573cead58eb8d436d99efa391b
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-chef
+ms.openlocfilehash: 7afddc83fef8e52e074600df75f2a2f6bc7c9ea7
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80893049"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501356"
 ---
 # <a name="quickstart---configure-a-windows-virtual-machine-in-azure-using-chef"></a>Schnellstart: Konfigurieren eines virtuellen Windows-Computers in Azure mithilfe von Chef
 
@@ -52,7 +53,7 @@ Laden Sie die neueste Version der [Azure-Befehlszeilenschnittstelle](https://doc
 ## <a name="configure-azure-service-principal"></a>Konfigurieren eines Azure-Dienstprinzipals
 
 Der Dienstprinzipal hilft uns bei der Erstellung von Azure-Ressourcen über die Chef-Arbeitsstation.  Führen Sie in PowerShell die folgenden Befehle aus, um den Dienstprinzipal mit den erforderlichen Berechtigungen zu erstellen:
- 
+
 ```powershell
 Login-AzureRmAccount
 Get-AzureRmSubscription
@@ -101,10 +102,11 @@ Kopieren Sie alle Dateien aus `chef-starter\chef-repo\.chef` in das Verzeichnis 
 
 Kopieren Sie die Datei `organization-validator.pem` in `c:\chef`, falls sie in `c:\Downloads` gespeichert wurde.
 
-Ihr Verzeichnis sollte in etwa wie folgt aussehen:
+Ihr Verzeichnis sollte nun in etwa wie folgt aussehen:
 
 ```powershell
-    Directory: C:\Users\username\chef
+
+Directory: C:\Users\username\chef
 
 Mode           LastWriteTime    Length Name
 ----           -------------    ------ ----
@@ -180,7 +182,7 @@ Auf dem Desktop wird „CW PowerShell“ angezeigt. Dieses Tool wird für die I
 
 `chef --version` sollte etwa Folgendes zurückgeben:
 
-```
+```powershell
 Chef Workstation: 0.4.2
   chef-run: 0.3.0
   chef-client: 15.0.300
@@ -202,9 +204,11 @@ In diesem Tutorial wird davon ausgegangen, dass Sie Azure Resource Manager für 
 
 Installieren Sie die Knife-Erweiterung für Azure. Diese enthält auch das Azure-Plug-In.
 
-Führen Sie den folgenden Befehl aus.
+Führen Sie den folgenden Befehl aus:
 
-    chef gem install knife-azure ––pre
+```bash
+chef gem install knife-azure ––pre
+```
 
 > [!NOTE]
 > Durch das Argument `–-pre` wird sichergestellt, dass Sie die neueste RC-Version des Azure-Plug-Ins für Knife erhalten, das Zugriff auf die neuesten APIs bietet.
@@ -215,9 +219,11 @@ Wahrscheinlich wird gleichzeitig auch eine Reihe von Abhängigkeiten installiert
 
 ![Ausgabe beim Installieren der Knife-Erweiterung für Azure](./media/windows-vm-configure/install-knife-azure.png)
 
-Führen Sie den folgenden Befehl aus, um sich zu vergewissern, dass alles korrekt konfiguriert ist:
+Führen Sie den folgenden Befehl aus, um sich zu vergewissern, dass alles richtig konfiguriert ist:
 
-    knife azurerm server list
+```bash
+knife azurerm server list
+```
 
 Wenn alles richtig konfiguriert ist, wird eine Liste der verfügbaren Azure-Images angezeigt.
 
@@ -227,29 +233,33 @@ Herzlichen Glückwunsch. Die Arbeitsstation ist eingerichtet!
 
 Ein Cookbook wird von Chef verwendet, um eine Reihe von Befehlen zu definieren, die auf Ihrem verwalteten Client ausgeführt werden sollen. Verwenden Sie zur Cookbookerstellung einfach den Befehl `chef generate cookbook`, um die Cookbookvorlage zu generieren. Dieses Cookbook ist für einen Webserver vorgesehen, der automatisch IIS bereitstellt.
 
-Führen Sie unter `C:\Chef directory` den folgenden Befehl aus.
+Führen Sie im Verzeichnis `C:\Chef directory` den folgenden Befehl aus:
 
-    chef generate cookbook webserver
+```bash
+chef generate cookbook webserver
+```
 
 Mit diesem Befehl werden eine Reihe von Dateien im Verzeichnis C:\Chef\cookbooks\webserver generiert. Als Nächstes wird der Satz von Befehlen definiert, die der Chef-Client auf dem verwalteten virtuellen Computer ausführen soll.
 
 Die Befehle werden in der Datei default.rb gespeichert. Definieren Sie in dieser Datei eine Reihe von Befehlen, um IIS zu installieren und zu starten sowie um eine Vorlagendatei in den Ordner `wwwroot` zu kopieren.
 
-Ändern Sie die Datei „C:\chef\cookbooks\webserver\recipes\default.rb“, und fügen Sie die folgenden Zeilen hinzu:
+Ändern Sie die Datei „C:\chef\cookbooks\webserver\recipes\default.rb“, und fügen Sie ihr die folgenden Zeilen hinzu:
 
-    powershell_script 'Install IIS' do
-         action :run
-         code 'add-windowsfeature Web-Server'
-    end
+```powershell
+powershell_script 'Install IIS' do
+        action :run
+        code 'add-windowsfeature Web-Server'
+end
 
-    service 'w3svc' do
-         action [ :enable, :start ]
-    end
+service 'w3svc' do
+        action [ :enable, :start ]
+end
 
-    template 'c:\inetpub\wwwroot\Default.htm' do
-         source 'Default.htm.erb'
-         rights :read, 'Everyone'
-    end
+template 'c:\inetpub\wwwroot\Default.htm' do
+        source 'Default.htm.erb'
+        rights :read, 'Everyone'
+end
+```
 
 Speichern Sie die Datei, sobald Sie fertig sind.
 
@@ -259,7 +269,9 @@ In diesem Schritt wird eine Vorlagendatei für die Seite `default.html` generier
 
 Führen Sie den folgenden Befehl aus, um die Vorlage zu generieren:
 
-    chef generate template webserver Default.htm
+```bash
+chef generate template webserver Default.htm
+```
 
 Navigieren Sie zur Datei `C:\chef\cookbooks\webserver\templates\default\Default.htm.erb`. Fügen Sie der Datei etwas einfachen HTML-Code (*Hello World*) hinzu, und speichern Sie sie.
 
@@ -267,7 +279,9 @@ Navigieren Sie zur Datei `C:\chef\cookbooks\webserver\templates\default\Default.
 
 In diesem Schritt wird das Cookbook, das Sie auf dem lokalen Computer erstellt haben, kopiert und auf den von Chef gehosteten Server hochgeladen. Das hochgeladene Cookbook wird dann auf der Registerkarte **Policy** (Richtlinie) angezeigt.
 
-    knife cookbook upload webserver
+```bash
+knife cookbook upload webserver
+```
 
 ![Ergebnisse der Installation des Cookbooks auf dem Chef-Server](./media/windows-vm-configure/cookbook-installation-under-policy-tab.png)
 
@@ -278,20 +292,20 @@ Verwenden Sie den Befehl `knife`, um einen virtuellen Azure-Computer bereitzuste
 Mit dem Befehl `knife` werden auch der IIS-Webdienst und die Standardwebseite installiert.
 
 ```bash
-    knife azurerm server create `
-    --azure-resource-group-name rg-chefdeployment `
-    --azure-storage-account store `
-    --azure-vm-name chefvm `
-    --azure-vm-size 'Standard_DS2_v2' `
-    --azure-service-location 'westus' `
-    --azure-image-reference-offer 'WindowsServer' `
-    --azure-image-reference-publisher 'MicrosoftWindowsServer' `
-    --azure-image-reference-sku '2016-Datacenter' `
-    --azure-image-reference-version 'latest' `
-    -x myuser -P myPassword123 `
-    --tcp-endpoints '80,3389' `
-    --chef-daemon-interval 1 `
-    -r "recipe[webserver]"
+knife azurerm server create `
+--azure-resource-group-name rg-chefdeployment `
+--azure-storage-account store `
+--azure-vm-name chefvm `
+--azure-vm-size 'Standard_DS2_v2' `
+--azure-service-location 'westus' `
+--azure-image-reference-offer 'WindowsServer' `
+--azure-image-reference-publisher 'MicrosoftWindowsServer' `
+--azure-image-reference-sku '2016-Datacenter' `
+--azure-image-reference-version 'latest' `
+-x myuser -P myPassword123 `
+--tcp-endpoints '80,3389' `
+--chef-daemon-interval 1 `
+-r "recipe[webserver]"
 ```
 
 Mit dem Beispielbefehl für `knife` wird ein virtueller Computer vom Typ *Standard_DS2_v2* mit Windows Server 2016 in der Region „USA, Westen“ erstellt. Passen Sie diese Werte gemäß Ihren App-Anforderungen an.

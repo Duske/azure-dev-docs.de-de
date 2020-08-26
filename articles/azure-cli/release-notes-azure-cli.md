@@ -8,12 +8,12 @@ ms.date: 04/21/2020
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 10dfdc316ba00f8a7019f0724aab231e344c1c6d
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 74262a0be1062f32f63a225521f92657334c9994
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82031312"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501265"
 ---
 # <a name="azure-cli-release-notes"></a>Versionshinweise für die Azure CLI
 
@@ -1425,7 +1425,7 @@ Version 2.0.68
 
 * Aktualisierte ADLS-Version (0.0.45)
 
-### <a name="feedback"></a>Feedback
+### <a name="feedback-command"></a>Feedbackbefehl
 
 * Wird ein fehlgeschlagener Erweiterungsbefehl gemeldet, versucht `az feedback` nun, über den Index die Projekt-/Repository-URL der Erweiterung im Browser zu öffnen.
 
@@ -1801,7 +1801,7 @@ Version 2.0.63
 ### <a name="cdn"></a>CDN
 * Unterstützung hinzugefügt für `Microsoft_Standard` und `Standard_ChinaCdn`
 
-### <a name="feedback"></a>Feedback
+### <a name="feedback-command"></a>Feedbackbefehl
 * `feedback` zur Anzeige von Metadaten zu den zuletzt ausgeführten Befehlen geändert
 * `feedback` geändert, um den Benutzer zur Unterstützung beim Issueerstellungsprozess aufzufordern (durch Öffnen eines Browsers und Verwenden einer Issuevorlage)
 * `feedback` geändert, um den Issuetext bei der Ausführung mit „--verbose“ auszugeben
@@ -3867,7 +3867,7 @@ Version 2.0.27
 * Unterstützung für den Parameter `--pip-proxy` zu Befehlen vom Typ `az extension [add|update]` hinzugefügt
 * Unterstützung für das Argument `--pip-extra-index-urls` zu Befehlen vom Typ `az extension [add|update]` hinzugefügt
 
-### <a name="feedback"></a>Feedback
+### <a name="feedback-command"></a>Feedbackbefehl
 
 * Erweiterungsinformationen zu Telemetriedaten hinzugefügt
 

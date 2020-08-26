@@ -1,20 +1,21 @@
 ---
-title: Bereitstellen von Node.js-Apps in Azure App Service in Visual Studio Code
+title: Bereitstellen von Apps in Azure App Service mit Visual Studio Code
 description: 'Teil 3 des Tutorials: Bereitstellen der Website'
 ms.topic: conceptual
 ms.date: 03/04/2020
-ms.openlocfilehash: 2a1089a88a27d1ae02b2ce4f0e201ef02f21c74e
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 5d812f9aa6efb308cafcb5d3e3ccb1ce852e93f1
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791650"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501505"
 ---
 # <a name="deploy-the-app-to-azure"></a>Bereitstellen der Anwendung in Azure
 
 [Vorheriger Schritt: Erstellen der App](tutorial-vscode-azure-app-service-node-02.md)
 
-In diesem Schritt stellen Sie Ihre Node.js-App in Azure bereit, indem Sie die Git-Bereitstellung per VS Code und die Azure App Service-Erweiterung verwenden. Hierfür müssen Sie zuerst ein lokales Git-Repository initialisieren und dann eine Web-App in Azure erstellen und abschließend VS Code für die Verwendung der Git-Bereitstellung konfigurieren.
+In diesem Schritt stellen Sie Ihre Node.js-App in Azure bereit, indem Sie die Git-Bereitstellung per VS Code und die Azure App Service-Erweiterung verwenden. Hierfür müssen Sie zuerst ein lokales Git-Repository initialisieren, dann eine Web-App in Azure erstellen und schließlich VS Code für die Verwendung der Git-Bereitstellung konfigurieren.
 
 1. Stellen Sie im Terminal sicher, dass Sie sich im Ordner *expressApp1* befinden, und starten Sie Visual Studio Code dann mit dem folgenden Befehl:
 

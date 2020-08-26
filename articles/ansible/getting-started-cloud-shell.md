@@ -1,17 +1,18 @@
 ---
-title: 'Schnellstart: Erste Schritte mit Ansible: Azure Cloud Shell'
+title: 'Schnellstart: Konfigurieren von Ansible per Azure Cloud Shell'
 description: In dieser Schnellstartanleitung wird beschrieben, wie Sie verschiedene Ansible-Aufgaben mit Bash in Azure Cloud Shell durchführen.
 keywords: Ansible, Azure, DevOps, Bash, CloudShell, Playbook, Bash
 ms.topic: quickstart
-ms.date: 06/01/2020
-ms.openlocfilehash: f48342dc9abdaa1a93979a6026e453f41e0043a7
-ms.sourcegitcommit: 7da78b35a847db9929554962dfcc47860f472fb9
+ms.date: 08/13/2020
+ms.custom: devx-track-ansible
+ms.openlocfilehash: fa118213624db21192617b65930041b8712075bd
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85133633"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240312"
 ---
-# <a name="quickstart-getting-started-with-ansible---azure-cloud-shell"></a>Schnellstart: Erste Schritte mit Ansible: Azure Cloud Shell
+# <a name="quickstart-configure-ansible-using-azure-cloud-shell"></a>Schnellstart: Konfigurieren von Ansible mithilfe von Azure Cloud Shell
 
 [!INCLUDE [annsible-intro.md](includes/ansible-intro.md)]
 

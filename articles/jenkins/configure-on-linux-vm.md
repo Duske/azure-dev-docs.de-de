@@ -1,17 +1,18 @@
 ---
-title: 'Schnellstart: Erste Schritte mit Jenkins'
+title: 'Schnellstart: Konfigurieren von Jenkins über die Azure-Befehlszeilenschnittstelle'
 description: Es wird beschrieben, wie Sie Jenkins auf einem virtuellen Azure-Linux-Computer installieren und eine Java-Beispielanwendung erstellen.
 keywords: Jenkins, Azure, DevOps, Portal, Linux, virtueller Computer
 ms.topic: quickstart
-ms.date: 08/07/2020
-ms.openlocfilehash: 06d2365f51df76861a3a154702c4b82f962f7038
-ms.sourcegitcommit: f65561589d22b9ba2d69b290daee82eb47b0b20f
+ms.date: 08/19/2020
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: b5be59dc1ed3fab69051a8ddd23576e27c966a7b
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88162089"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614553"
 ---
-# <a name="quickstart-get-started-with-jenkins"></a>Schnellstart: Erste Schritte mit Jenkins
+# <a name="quickstart-configure-jenkins-using-azure-cli"></a>Schnellstart: Konfigurieren von Jenkins über die Azure-Befehlszeilenschnittstelle
 
 In dieser Schnellstartanleitung erfahren Sie, wie Sie [Jenkins](https://jenkins.io) auf einem virtuellen Computer unter Ubuntu Linux mit den Tools und Plug-Ins installieren, die für die Arbeit mit Azure konfiguriert sind.
 
@@ -64,19 +65,36 @@ Wenn beim Konfigurieren von Jenkins Probleme auftreten, finden Sie auf der [Clou
 1. Erstellen Sie mit [az group create](/cli/azure/group#az-group-create) eine Ressourcengruppe. Möglicherweise müssen Sie den Parameter `--location` durch den entsprechenden Wert für Ihre Umgebung ersetzen.
 
     ```azurecli
-    az group create --name QuickstartJenkins-rg --location eastus
+    az group create \
+    --name QuickstartJenkins-rg \
+    --location eastus
     ```
 
 1. Erstellen Sie mit dem Befehl [az vm create](/cli/azure/vm#az-vm-create) einen virtuellen Computer.
 
     ```azurecli
-    az vm create --resource-group QuickstartJenkins-rg --name QuickstartJenkins-vm --image UbuntuLTS --admin-username "azureuser" --generate-ssh-keys --custom-data cloud-init-jenkins.txt
+    az vm create \
+    --resource-group QuickstartJenkins-rg \
+    --name QuickstartJenkins-vm \
+    --image UbuntuLTS \
+    --admin-username "azureuser" \
+    --generate-ssh-keys \
+    --custom-data cloud-init-jenkins.txt
+    ```
+
+1. Überprüfen Sie die Erstellung (und den Zustand) des neuen virtuellen Computers mit [az vm list](/cli/azure/vm#az-vm-list).
+
+    ```azurecli
+    az vm list -d -o table --query "[?name=='QuickstartJenkins-vm']"
     ```
 
 1. Öffnen Sie mit dem Befehl [az vm open](/cli/azure/vm#az-vm-open-port) Port 8080 auf dem neuen virtuellen Computer.
 
     ```azurecli
-    az vm open-port --resource-group QuickstartJenkins-rg --name QuickstartJenkins-vm  --port 8080 --priority 1010
+    az vm open-port \
+    --resource-group QuickstartJenkins-rg \
+    --name QuickstartJenkins-vm  \
+    --port 8080 --priority 1010
     ```
 
 ## <a name="configure-jenkins"></a>Konfigurieren von Jenkins
@@ -84,7 +102,11 @@ Wenn beim Konfigurieren von Jenkins Probleme auftreten, finden Sie auf der [Clou
 1. Rufen Sie mit dem Befehl [az vm show](/cli/azure/vm#az-vm-show) die öffentliche IP-Adresse für den virtuellen Beispielcomputer ab.
 
     ```azurecli
-    az vm show --resource-group QuickstartJenkins-rg --name QuickstartJenkins-vm -d --query [publicIps] --output tsv
+    az vm show \
+    --resource-group QuickstartJenkins-rg \
+    --name QuickstartJenkins-vm -d \
+    --query [publicIps] \
+    --output tsv
     ```
 
     **Hinweise**:
@@ -124,6 +146,8 @@ Wenn beim Konfigurieren von Jenkins Probleme auftreten, finden Sie auf der [Clou
     ![Wählen Sie die Option zum Installieren der ausgewählten Plug-Ins aus.](./media/configure-on-linux-vm/select-plugins.png)
 
 1. Geben Sie im Filterfeld oben auf der Seite `github` ein. Wählen Sie das GitHub-Plug-In und dann **Installieren** aus.
+
+    ![Installieren der GitHub-Plug-Ins](./media/configure-on-linux-vm/install-github-plugin.png)
 
 1. Geben Sie die Informationen für den ersten Administratorbenutzer ein, und wählen Sie **Speichern und weiter** aus.
 

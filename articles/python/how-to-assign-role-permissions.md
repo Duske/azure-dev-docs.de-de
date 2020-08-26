@@ -4,12 +4,12 @@ description: Erteilen von Berechtigungen für einen Dienstprinzipal oder eine Ap
 ms.date: 05/12/2020
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 3eb81eac5ee9a7f2f85e50494efa2e04bbcbe439
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: facfa1663e6f62a7458f99ee20c86f66ee67b17d
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983132"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614480"
 ---
 # <a name="how-to-assign-role-permissions-to-an-app-identity-or-service-principal"></a>Informationen zum Zuweisen von Rollenberechtigungen zu einer App-Identität oder einem Dienstprinzipal
 
@@ -17,7 +17,7 @@ Das RBAC-System (Role-Based Access Control, rollenbasierte Zugriffssteuerung) vo
 
 Weisen Sie in der Praxis immer nur die Rollen zu, die ein Sicherheitsprinzipal für den spezifischsten Bereich tatsächlich benötigt. Vermeiden Sie es, umfangreichere Rollen in umfassenderen Bereichen zuzuweisen, auch wenn dies anfänglich bequemer erscheint. Durch das Einschränken von Rollen und Bereichen schränken Sie ein, welche Ressourcen gefährdet sind, wenn der Sicherheitsprinzipal jemals kompromittiert wird (d. h., wenn die Anmeldeinformationen für diesen Prinzipal bei einer Datenverletzung oder einem anderen Sicherheitsvorfall verfügbar gemacht werden).
 
-Da Sie unterschiedliche Sicherheitsprinzipale in der Entwicklungs- und der Produktionsumgebung verwenden, wiederholen Sie die Rollenzuweisungen in jeder Umgebung. Dies bedeutet, dass Sie während der Entwicklung in der Regel dem lokalen Dienstprinzipal, der auf Ihrer Arbeitsstation erstellt wurde, Rollen zuweisen (weitere Informationen finden Sie unter [Konfigurieren Ihrer lokalen Python-Entwicklungsumgebung: Authentifizierung](configure-local-development-environment.md#configure-authentication)). In der Produktionsumgebung weisen Sie der Anwendungsidentität oder dem Dienstprinzipal vor der Bereitstellung Rollen zu, um sicherzustellen, dass die Anwendung beim Start Zugriff besitzt.
+Da Sie unterschiedliche Sicherheitsprinzipale in der Entwicklungs- und der Produktionsumgebung verwenden, wiederholen Sie die Rollenzuweisungen in jeder Umgebung. Dies bedeutet, dass Sie während der Entwicklung in der Regel dem lokalen Dienstprinzipal, der auf Ihrer Arbeitsstation erstellt wurde, Rollen zuweisen (weitere Informationen finden Sie unter [Konfigurieren Ihrer lokalen Python-Entwicklungsumgebung: Authentifizierung](configure-local-development-environment.md#configure-authentication)). In der Produktionsumgebung weisen Sie der verwalteten Identität oder dem Dienstprinzipal der Anwendung vor der Bereitstellung Rollen zu, um sicherzustellen, dass für die Anwendung beim Start Zugriff besteht. Weitere Informationen finden Sie unter [Authentifizierung: Identität bei Ausführung der App in Azure](azure-sdk-authenticate.md#identity-when-running-the-app-on-azure).
 
 Weitere allgemeine Informationen zu RBAC finden Sie unter [Was ist die rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC) von Azure?](/azure/role-based-access-control/overview)
 
@@ -64,7 +64,7 @@ Ausführliche Informationen und eine exemplarische Vorgehensweise für die Benut
 
 ## <a name="identify-scope-and-assign-a-role-through-the-azure-cli"></a><a name="azure-cli"></a>Identifizieren des Bereichs und Zuweisen einer Rolle über die Azure CLI
 
-Bei der Rollenzuweisung mit der Azure CLI wird der Befehl [`az role assignment`](/cli/azure/role/assignment?view=azure-cli-latest) verwendet. Mit `az role assignment create` können Sie eine Zuweisung hinzufügen und mit `az role assignment delete` eine Zuweisung entfernen. 
+Bei der Rollenzuweisung mit der Azure CLI wird der Befehl [`az role assignment`](/cli/azure/role/assignment?view=azure-cli-latest) verwendet. Mit `az role assignment create` können Sie eine Zuweisung hinzufügen und mit `az role assignment delete` eine Zuweisung entfernen.
 
 Obwohl der vollständige Prozess unter [Hinzufügen oder Entfernen von Azure-Rollenzuweisungen mithilfe der Azure CLI](/azure/role-based-access-control/role-assignments-cli) beschrieben wird, werden in der folgenden Zusammenfassung bestimmte Beispiele vorgestellt, die für andere Artikel in diesem Developer Center relevant sind.
 

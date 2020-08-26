@@ -1,105 +1,118 @@
 ---
-title: 'Schnellstart: Installieren von Ansible auf virtuellen Linux-Computern in Azure'
+title: 'Schnellstart: Konfigurieren von Ansible über die Azure-Befehlszeilenschnittstelle'
 description: In diesem Schnellstart erfahren Sie, wie Sie Ansible für die Verwaltung von Azure-Ressourcen unter Ubuntu, CentOS und SLES installieren und konfigurieren.
-keywords: Ansible, Azure, DevOps, Bash, CloudShell, Playbook, Bash
+keywords: Ansible, Azure, DevOps, Bash, Cloud Shell, Playbook, Azure CLI
 ms.topic: quickstart
-ms.service: ansible
-author: tomarchermsft
-manager: gwallace
-ms.author: tarcher
-ms.date: 04/30/2019
-ms.openlocfilehash: 4f577b9841375d63bfc88249da88e554c1464bde
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.date: 08/13/2020
+ms.custom: devx-track-ansible,devx-track-cli
+ms.openlocfilehash: aa1758e6b9670640c218976f6369d9935aa6381b
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81743590"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240162"
 ---
-# <a name="quickstart-install-ansible-on-linux-virtual-machines-in-azure"></a>Schnellstart: Installieren von Ansible auf virtuellen Linux-Computern in Azure
+# <a name="quickstart-configure-ansible-using-azure-cli"></a>Schnellstart: Konfigurieren von Ansible über die Azure-Befehlszeilenschnittstelle
 
-Ansible ermöglicht die Automatisierung der Bereitstellung und Konfiguration von Ressourcen in Ihrer Umgebung. Dieser Artikel veranschaulicht das Konfigurieren von Ansible für einige der verbreitetsten Linux-Distributionen. Um Ansible auf anderen Distributionen zu installieren, passen Sie die installierten Pakete entsprechend an Ihre Plattform an. 
+In dieser Schnellstartanleitung wird veranschaulicht, wie Sie [Ansible](https://docs.ansible.com/) mit der Azure-Befehlszeilenschnittstelle (Azure CLI) installieren.
+
+In diesem Schnellstart führen Sie die folgenden Aufgaben aus:
+
+> [!div class="checklist"]
+> * Erstellen eines SSH-Schlüsselpaars
+> * Erstellen einer Ressourcengruppe
+> * Erstellen eines virtuellen CentOS-Computers 
+> * Installieren von Ansible auf dem virtuellen Computer
+> * Herstellen einer Verbindung mit dem virtuellen Computer über SSH
+> * Konfigurieren von Ansible auf dem virtuellen Computer
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-[!INCLUDE [open-source-devops-prereqs-azure-sub.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 [!INCLUDE [open-source-devops-prereqs-create-sp.md](../includes/open-source-devops-prereqs-create-service-principal.md)]
 - **Zugriff auf Linux oder einen virtuellen Linux-Computer:** Falls Sie keinen Linux-Computer besitzen, erstellen Sie einen [virtuellen Linux-Computer](/azure/virtual-network/quick-create-cli).
 
-## <a name="install-ansible-on-an-azure-linux-virtual-machine"></a>Installieren von Ansible auf einem virtuellen Azure Linux-Computer
+## <a name="create-an-ssh-key-pair"></a>Erstellen eines SSH-Schlüsselpaars
 
-Melden Sie sich beim Linux-Computer an, und wählen Sie eine der folgenden Distributionen aus, um Schritte zum Installieren von Ansible anzuzeigen:
+Bei der Verbindungsherstellung mit Linux-VMs können Sie die Kennwortauthentifizierung oder die schlüsselbasierte Authentifizierung nutzen. Die schlüsselbasierte Authentifizierung ist sicherer als die Verwendung von Kennwörtern. Daher wird in diesem Artikel die schlüsselbasierte Authentifizierung verwendet.
 
-- [CentOS 7.4](#centos-74)
-- Ubuntu 16.04 LTS
-- [SLES 12 SP2](#sles-12-sp2)
+Bei der schlüsselbasierten Authentifizierung gibt es zwei Schlüssel:
 
-### <a name="centos-74"></a>CentOS 7.4
+- **Öffentlicher Schlüssel**: Der öffentliche Schlüssel wird auf dem Host gespeichert, z. B. auf Ihrer VM (wie in diesem Artikel).
+- **Privater Schlüssel**: Mit dem privaten Schlüssel können Sie eine sichere Verbindung mit Ihrem Host herstellen. Der private Schlüssel ist quasi Ihr Kennwort und sollte entsprechend geschützt werden.
+        
+Mit den folgenden Schritten wird die Erstellung eines SSH-Schlüsselpaars beschrieben.
 
-In diesem Abschnitt konfigurieren Sie CentOS für die Verwendung von Ansible.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 
-1. Öffnen Sie ein Terminalfenster.
+1. Öffnen Sie [Azure Cloud Shell](/azure/cloud-shell/overview), und wechseln Sie, falls noch nicht geschehen, zu **Bash**.
 
-1. Geben Sie den folgenden Befehl ein, um die erforderlichen Pakete für die Python-SDK-Module für Azure auf dem virtuellen Computer zu installieren:
-
-    ```bash
-    sudo yum check-update; sudo yum install -y gcc libffi-devel python-devel openssl-devel epel-release
-    sudo yum install -y python-pip python-wheel
-    ```
-
-1. Geben Sie den folgenden Befehl ein, um die erforderlichen Pakete für Ansible zu installieren:
+1. Erstellen Sie einen SSH-Schlüssel, indem Sie [ssh-keygen](https://www.ssh.com/ssh/keygen/) verwenden.
 
     ```bash
-    sudo pip install ansible[azure]
+    ssh-keygen -m PEM -t rsa -b 2048 -C "azureuser@azure" -f ~/.ssh/ansible_rsa -N ""
     ```
 
-1. [Erstellen Sie die Azure-Anmeldeinformationen](#create-azure-credentials).
+    **Hinweise**:
 
-### <a name="ubuntu-1604-lts"></a>Ubuntu 16.04 LTS
+    - Mit dem Befehl `ssh-keygen` wird der Speicherort der generierten Schlüsseldateien angezeigt. Sie benötigen diesen Verzeichnisnamen beim Erstellen des virtuellen Computers.
+    - Der öffentliche Schlüssel wird in `ansible_rsa.pub` und der private Schlüssel in `ansible_rsa` gespeichert.
 
-In diesem Abschnitt konfigurieren Sie Ubuntu für die Verwendung von Ansible.
+## <a name="create-a-virtual-machine"></a>Erstellen eines virtuellen Computers
 
-1. Öffnen Sie ein Terminalfenster.
+1. Erstellen Sie mit [az group create](/cli/azure/group#az-group-create) eine Ressourcengruppe. Möglicherweise müssen Sie den Parameter `--location` durch den entsprechenden Wert für Ihre Umgebung ersetzen.
 
-1. Geben Sie den folgenden Befehl ein, um die erforderlichen Pakete für die Python-SDK-Module für Azure auf dem virtuellen Computer zu installieren:
-
-    ```bash
-    sudo apt-get update && sudo apt-get install -y libssl-dev libffi-dev python-dev python-pip
+    ```azurecli
+    az group create --name QuickstartAnsible-rg --location eastus
     ```
 
-1. Geben Sie den folgenden Befehl ein, um die erforderlichen Pakete für Ansible zu installieren:
+1. Erstellen Sie mit dem Befehl [az vm create](/cli/azure/vm#az-vm-create) einen virtuellen Computer.
 
-    ```bash
-    sudo pip install ansible[azure]
+    ```azurecli
+    az vm create \
+    --resource-group QuickstartAnsible-rg \
+    --name QuickstartAnsible-vm \
+    --image OpenLogic:CentOS:7.7:latest \
+    --admin-username azureuser \
+    --ssh-key-values <ssh_public_key_filename>
     ```
 
-1. [Erstellen Sie die Azure-Anmeldeinformationen](#create-azure-credentials).
+1. Überprüfen Sie die Erstellung (und den Zustand) des neuen virtuellen Computers mit [az vm list](/cli/azure/vm#az-vm-list).
 
-### <a name="sles-12-sp2"></a>SLES 12 SP2
-
-In diesem Abschnitt konfigurieren Sie SLES für die Verwendung von Ansible.
-
-1. Öffnen Sie ein Terminalfenster.
-
-1. Geben Sie den folgenden Befehl ein, um die erforderlichen Pakete für die Python-SDK-Module für Azure auf dem virtuellen Computer zu installieren:
-
-    ```bash
-    sudo zypper refresh && sudo zypper --non-interactive install gcc libffi-devel-gcc5 make \
-        python-devel libopenssl-devel libtool python-pip python-setuptools
+    ```azurecli
+    az vm list -d -o table --query "[?name=='QuickstartAnsible-vm']"
     ```
 
-1. Geben Sie den folgenden Befehl ein, um die erforderlichen Pakete für Ansible zu installieren:
+    **Hinweise**:
 
-    ```bash
-    sudo pip install ansible[azure]
-    ```
+    - Die Ausgabe des Befehls `az vm list` enthält die öffentliche IP-Adresse, die zum Herstellen einer Verbindung mit dem virtuellen Computer per SSH genutzt wird.
 
-1. Geben Sie den folgenden Befehl ein, um das Python-Kryptografiepaket zu entfernen, das den Konflikt verursacht:
+## <a name="install-ansible-on-the-virtual-machine"></a>Installieren von Ansible auf dem virtuellen Computer
 
-    ```bash
-    sudo pip uninstall -y cryptography
-    ```
+Führen Sie das Skript für die Ansible-Installation aus, indem Sie [az vm extension set](/cli/azure/vm/extension?#az-vm-extension-set) verwenden.
 
-1. [Erstellen Sie die Azure-Anmeldeinformationen](#create-azure-credentials).
+```azurecli
+az vm extension set \
+ --resource-group QuickstartAnsible-rg \
+ --vm-name QuickstartAnsible-vm \
+ --name customScript \
+ --publisher Microsoft.Azure.Extensions \
+ --version 2.1 \
+ --settings '{"fileUris":["https://raw.githubusercontent.com/MicrosoftDocs/mslearn-ansible-control-machine/master/configure-ansible-centos.sh"]}' \
+ --protected-settings '{"commandToExecute": "./configure-ansible-centos.sh"}'
+```
+
+**Hinweise:**
+
+- Nach Abschluss des Vorgangs werden mit dem Befehl `az vm extension` die Ergebnisse der Ausführung des Installationsskripts angezeigt.
+
+## <a name="connect-to-your-virtual-machine-via-ssh"></a>Herstellen einer Verbindung mit Ihrem virtuellen Computer per SSH
+
+Verwenden Sie den SSH-Befehl, um eine Verbindung mit Ihrem virtuellen Computer herzustellen.
+
+```azurecli
+ssh -i <ssh_private_key_filename> azureuser@<vm_ip_address>
+```
 
 ## <a name="create-azure-credentials"></a>Erstellen von Azure-Anmeldeinformationen
 
@@ -117,7 +130,7 @@ Konfigurieren Sie die Ansible-Anmeldeinformationen mithilfe einer der folgenden 
 
 ### <a name="span-idfile-credentials-create-ansible-credentials-file"></a><span id="file-credentials"/> Erstellen einer Datei mit Ansible-Anmeldeinformationen
 
-In diesem Abschnitt erstellen Sie eine lokale Datei mit Anmeldeinformationen, um Anmeldeinformationen für Ansible bereitzustellen. 
+In diesem Abschnitt erstellen Sie eine lokale Datei mit Anmeldeinformationen, um Anmeldeinformationen für Ansible bereitzustellen.
 
 Weitere Informationen zum Definieren von Ansible-Anmeldeinformationen finden Sie unter [Bereitstellen von Anmeldeinformationen für Azure-Module](https://docs.ansible.com/ansible/guide_azure.html#providing-credentials-to-azure-modules).
 
@@ -155,13 +168,9 @@ In diesem Abschnitt exportieren Sie die Werte für den Dienstprinzipal, um Ihre 
     export AZURE_TENANT=<security-principal-tenant>
     ```
 
-## <a name="verify-the-configuration"></a>Überprüfen der Konfiguration
-
-Erstellen Sie mit Ansible eine Azure-Ressourcengruppe, um zu überprüfen, ob die Konfiguration erfolgreich war.
-
-[!INCLUDE [create-resource-group-with-ansible.md](includes/ansible-snippet-create-resource-group.md)]
+Sie verfügen nun über einen virtuellen Computer, auf dem Ansible installiert und konfiguriert ist!
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-> [!div class="nextstepaction"] 
-> [Schnellstart: Konfigurieren eines virtuellen Linux-Computers in Azure mithilfe von Ansible](./vm-configure.md)
+> [!div class="nextstepaction"]
+> [Ansible unter Azure](/azure/developer/Ansible)
