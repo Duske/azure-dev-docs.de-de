@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: article
 ms.workload: storage
 ms.custom: devx-track-java
-ms.openlocfilehash: 33f275274f46bf15c60a69087f956090fbb30e6e
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: a944739722a657636200d31bd7bf04242c8ea040
+ms.sourcegitcommit: a4131409651d6d4f56733fe8311ca77b2004bc59
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379184"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88830404"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>Verwenden von Spring Boot Starter für Azure Storage
 
@@ -105,8 +105,8 @@ Gehen Sie wie folgt vor, um die Spring Boot-Anwendung für die Verwendung von A
    ```xml
    <dependency>
       <groupId>com.microsoft.azure</groupId>
-      <artifactId>spring-azure-starter-storage</artifactId>
-      <version>1.2.5</version>
+      <artifactId>spring-starter-azure-storage</artifactId>
+      <version>1.2.7</version>
    </dependency>
    ```
 

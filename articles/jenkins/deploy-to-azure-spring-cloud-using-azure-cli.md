@@ -5,16 +5,16 @@ keywords: Jenkins, Azure, DevOps, Azure Spring Cloud, Azure CLI
 ms.topic: tutorial
 ms.date: 08/10/2020
 ms.custom: devx-track-jenkins,devx-track-azurecli
-ms.openlocfilehash: 769067c03fce08e462364314d2e4712ab6ffe155
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 707af403bf789ccd85e52f7bb5880389f61e8f15
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240832"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725164"
 ---
 # <a name="tutorial-deploy-apps-to-azure-spring-cloud-using-jenkins-and-the-azure-cli"></a>Tutorial: Bereitstellen von Apps in Azure Spring Cloud mithilfe von Jenkins und der Azure-Befehlszeilenschnittstelle
 
-[Azure Spring Cloud](/spring-cloud/spring-cloud-overview) ist eine vollständig verwaltete Microserviceentwicklung mit integrierter Dienstermittlung und Konfigurationsverwaltung. Der Dienst vereinfacht die Bereitstellung Spring Boot-basierter Microserviceanwendungen in Azure. In diesem Tutorial erfahren Sie, wie Sie die Azure-Befehlszeilenschnittstelle in Jenkins verwenden, um Continuous Integration und Continuous Delivery (CI/CD) für Azure Spring Cloud zu automatisieren.
+[Azure Spring Cloud](/azure/spring-cloud/spring-cloud-overview) ist eine vollständig verwaltete Microserviceentwicklung mit integrierter Dienstermittlung und Konfigurationsverwaltung. Der Dienst vereinfacht die Bereitstellung Spring Boot-basierter Microserviceanwendungen in Azure. In diesem Tutorial erfahren Sie, wie Sie die Azure-Befehlszeilenschnittstelle in Jenkins verwenden, um Continuous Integration und Continuous Delivery (CI/CD) für Azure Spring Cloud zu automatisieren.
 
 Dieses Tutorial umfasst folgende Aufgaben:
 
@@ -24,7 +24,7 @@ Dieses Tutorial umfasst folgende Aufgaben:
 > * Verwenden der Azure-Befehlszeilenschnittstelle in einer Jenkins-Pipeline, um die Microserviceanwendungen zu erstellen und bereitzustellen 
 
 >[!Note]
-> Azure Spring Cloud wird zurzeit als Public Preview angeboten. Angebote der Public Preview ermöglichen Kunden das Experimentieren mit neuen Funktionen vor der offiziellen Veröffentlichung.  Funktionen und Dienste in der Public Preview sind nicht zur Verwendung in der Produktion bestimmt.  Weitere Informationen zur Unterstützung während der Vorschauphase finden Sie in den [häufig gestellten Fragen](https://azure.microsoft.com/support/faq/). Sie können auch eine [Supportanfrage](/azure-supportability/how-to-create-azure-support-request) einreichen, um weitere Informationen zu erhalten.
+> Azure Spring Cloud wird zurzeit als Public Preview angeboten. Angebote der Public Preview ermöglichen Kunden das Experimentieren mit neuen Funktionen vor der offiziellen Veröffentlichung.  Funktionen und Dienste in der Public Preview sind nicht zur Verwendung in der Produktion bestimmt.  Weitere Informationen zur Unterstützung während der Vorschauphase finden Sie in den [häufig gestellten Fragen](https://azure.microsoft.com/support/faq/). Sie können auch eine [Supportanfrage](/azure/azure-portal/supportability/how-to-create-azure-support-request) einreichen, um weitere Informationen zu erhalten.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -36,7 +36,7 @@ Dieses Tutorial umfasst folgende Aufgaben:
 
 ## <a name="provision-a-service-instance-and-launch-a-java-spring-application"></a>Bereitstellen einer Dienstinstanz und Starten einer Java Spring-Anwendung
 
-Wir verwenden [Piggy Metrics](https://github.com/Azure-Samples/piggymetrics) als exemplarische Microsoft-Dienstanwendung und gehen wie unter [Schnellstart: Starten einer Java Spring-Anwendung mit der Azure CLI](/spring-cloud/spring-cloud-quickstart-launch-app-cli.md) beschrieben vor, um die Dienstinstanz bereitzustellen und die Anwendungen einzurichten. Falls Sie diesen Prozess bereits durchlaufen haben, können Sie direkt mit dem nächsten Abschnitt fortfahren. Andernfalls finden Sie im Anschluss die Azure CLI-Befehle. Weitere Hintergrundinformationen finden Sie unter [Schnellstart: Starten einer Java Spring-Anwendung mit der Azure CLI](/spring-cloud/spring-cloud-quickstart-launch-app-cli.md).
+Wir verwenden [Piggy Metrics](https://github.com/Azure-Samples/piggymetrics) als exemplarische Microsoft-Dienstanwendung und gehen wie unter [Schnellstart: Starten einer Java Spring-Anwendung mit der Azure CLI](/azure/spring-cloud/spring-cloud-quickstart-launch-app-cli) beschrieben vor, um die Dienstinstanz bereitzustellen und die Anwendungen einzurichten. Falls Sie diesen Prozess bereits durchlaufen haben, können Sie direkt mit dem nächsten Abschnitt fortfahren. Andernfalls finden Sie im Anschluss die Azure CLI-Befehle. Weitere Hintergrundinformationen finden Sie unter [Schnellstart: Starten einer Java Spring-Anwendung mit der Azure CLI](/azure/spring-cloud/spring-cloud-quickstart-launch-app-cli).
 
 Ihr lokaler Computer muss die gleichen Voraussetzungen erfüllen wie der Jenkins-Buildserver. Zum Erstellen und Bereitstellen der Microserviceanwendungen muss Folgendes installiert sein:
     * [Git-Client](https://git-scm.com/)

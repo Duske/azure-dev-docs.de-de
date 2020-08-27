@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, App Service
 ms.topic: tutorial
 ms.date: 08/10/2020
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 6b7f1693eb02b51107e595365bc800540f98f20e
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: dea9ebe0976b45332f166034f3ff5c92ca4cfe99
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241022"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725204"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-app-service-using-jenkins"></a>Tutorial: Bereitstellen über GitHub in Azure App Service mit Jenkins
 
@@ -117,7 +117,7 @@ Erstellen Sie als Nächstes den Azure-Dienstprinzipal, den Jenkins für die Auth
 
 ## <a name="create-service-principal"></a>Erstellen eines Dienstprinzipals
 
-In einem späteren Abschnitt erstellen Sie einen Jenkins-Pipelineauftrag, der Ihre App auf der Grundlage von GitHub erstellt und in Azure App Service bereitstellt. Damit Jenkins ohne Eingabe Ihrer Anmeldeinformationen auf Azure zugreifen kann, benötigen Sie einen [Dienstprinzipal](/active-directory/develop/app-objects-and-service-principals). Wenn Sie bereits einen Dienstprinzipal haben, den Sie für diesen Artikel verwenden können, überspringen Sie diesen Abschnitt.
+In einem späteren Abschnitt erstellen Sie einen Jenkins-Pipelineauftrag, der Ihre App auf der Grundlage von GitHub erstellt und in Azure App Service bereitstellt. Damit Jenkins ohne Eingabe Ihrer Anmeldeinformationen auf Azure zugreifen kann, benötigen Sie einen [Dienstprinzipal](/azure/active-directory/develop/app-objects-and-service-principals). Wenn Sie bereits einen Dienstprinzipal haben, den Sie für diesen Artikel verwenden können, überspringen Sie diesen Abschnitt.
 
 Führen Sie zum Erstellen dieses Dienstprinzipals den Azure CLI-Befehl [az ad sp create-for-rbac](/cli/azure/ad/sp?#az-ad-sp-create-for-rbac) aus.
 
