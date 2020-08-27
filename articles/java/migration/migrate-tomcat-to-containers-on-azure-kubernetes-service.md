@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 2671f861e780aad0025f881311b9bc603d72bb90
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 29e446c28cb6935ffe0eeb51fa3a4b21c93e78a4
+ms.sourcegitcommit: 95fdc444c424f4a7d7d53437837e9532a0b897e9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379684"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88662961"
 ---
 # <a name="migrate-tomcat-applications-to-containers-on-azure-kubernetes-service"></a>Migrieren von Tomcat-Anwendungen zu Containern unter Azure Kubernetes Service
 
@@ -36,7 +36,7 @@ Untersuchen Sie die *context.xml*-Dateien in Ihrer Anwendung und der Tomcat-Konf
 
 Die integrierten [PersistentManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html)-Implementierungen von Tomcat, z. B. [StandardManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Standard_Implementation) oder [FileStore](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Nested_Components), sind nicht für die Nutzung mit einer verteilten skalierten Plattform wie Kubernetes konzipiert. AKS nimmt ggf. einen Lastenausgleich zwischen verschiedenen Pods vor und kann für Pods jederzeit einen transparenten Neustart durchführen. Das dauerhafte Speichern eines veränderlichen Zustands in einem Dateisystem ist daher nicht zu empfehlen.
 
-Falls das Erzielen von Sitzungspersistenz erforderlich ist, müssen Sie eine andere `PersistentManager`-Implementierung verwenden, bei der in einen externen Datenspeicher geschrieben wird, z. B. Pivotal-Sitzungs-Manager mit Redis Cache. Weitere Informationen finden Sie unter [Verwenden von Redis als Sitzungscache mit Tomcat](/azure/app-service/containers/configure-language-java#use-redis-as-a-session-cache-with-tomcat).
+Ist Sitzungspersistenz erforderlich, müssen Sie eine andere `PersistentManager`-Implementierung verwenden, bei der in einen externen Datenspeicher geschrieben wird, z. B. VMware Tanzu-Sitzungs-Manager mit Redis Cache. Weitere Informationen finden Sie unter [Verwenden von Redis als Sitzungscache mit Tomcat](/azure/app-service/containers/configure-language-java#use-redis-as-a-session-cache-with-tomcat).
 
 ### <a name="special-cases"></a>Spezialfälle
 

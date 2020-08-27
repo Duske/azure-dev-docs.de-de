@@ -3,14 +3,14 @@ title: 'Schnellstart: Konfigurieren von Jenkins über die Azure-Befehlszeilensch
 description: Es wird beschrieben, wie Sie Jenkins auf einem virtuellen Azure-Linux-Computer installieren und eine Java-Beispielanwendung erstellen.
 keywords: Jenkins, Azure, DevOps, Portal, Linux, virtueller Computer
 ms.topic: quickstart
-ms.date: 08/19/2020
+ms.date: 08/21/2020
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: b5be59dc1ed3fab69051a8ddd23576e27c966a7b
-ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
+ms.openlocfilehash: 4e2250e6ca76c804f08a4f6ab4715ae4fc094570
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88614553"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725214"
 ---
 # <a name="quickstart-configure-jenkins-using-azure-cli"></a>Schnellstart: Konfigurieren von Jenkins über die Azure-Befehlszeilenschnittstelle
 
@@ -22,7 +22,7 @@ In diesem Schnellstart führen Sie die folgenden Aufgaben aus:
 > * Erstellen Sie eine Setupdatei, die Jenkins herunterlädt und installiert.
 > * Erstellen einer Ressourcengruppe
 > * Erstellen eines virtuellen Computers mit der Setupdatei
-> * Öffnen von Port 8080, damit Sie eine SSH-Verbindung mit dem virtuellen Computer herstellen können
+> * Öffnen von Port 8080 für den Zugriff auf Jenkins auf dem virtuellen Computer
 > * Herstellen einer Verbindung mit dem virtuellen Computer über SSH
 > * Konfigurieren eines Jenkins-Beispielauftrags basierend auf einer Java-Beispiel-App in GitHub
 > * Erstellen des Jenkins-Beispielauftrags
@@ -88,7 +88,7 @@ Wenn beim Konfigurieren von Jenkins Probleme auftreten, finden Sie auf der [Clou
     az vm list -d -o table --query "[?name=='QuickstartJenkins-vm']"
     ```
 
-1. Öffnen Sie mit dem Befehl [az vm open](/cli/azure/vm#az-vm-open-port) Port 8080 auf dem neuen virtuellen Computer.
+1. Jenkins wird standardmäßig an Port 8080 ausgeführt. Öffnen Sie daher mit dem Befehl [az vm open](/cli/azure/vm#az-vm-open-port) Port 8080 auf dem neuen virtuellen Computer.
 
     ```azurecli
     az vm open-port \

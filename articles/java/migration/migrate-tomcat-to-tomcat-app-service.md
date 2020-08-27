@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 1b22dfa4269cc0c51450ca307bb96b787278625b
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 227908087ffdbdc3ce27a3da721464ff91b6b085
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379704"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725194"
 ---
 # <a name="migrate-tomcat-applications-to-tomcat-on-azure-app-service"></a>Migrieren von Tomcat-Anwendungen zu Tomcat unter Azure App Service
 
@@ -53,7 +53,7 @@ Laden Sie [Tomcat 9](https://tomcat.apache.org/download-90.cgi) herunter, um di
 <!-- App-Service-specific addendum to inventory-persistence-usage -->
 #### <a name="dynamic-or-internal-content"></a>Dynamischer oder interner Inhalt
 
-Für Dateien, für die von Ihrer Anwendung häufige Schreib- und Lesevorgänge durchgeführt werden (z. B. temporäre Datendateien), oder für statische Dateien, die nur für Ihre Anwendung sichtbar sind, können Sie Azure Storage im App Service-Dateisystem bereitstellen. Weitere Informationen finden Sie unter [Bereitstellen von Inhalt aus Azure Storage in App Service unter Linux](/azure/app-service/containers/how-to-serve-content-from-azure-storage).
+Für Dateien, für die von Ihrer Anwendung häufige Schreib- und Lesevorgänge durchgeführt werden (z. B. temporäre Datendateien), oder für statische Dateien, die nur für Ihre Anwendung sichtbar sind, können Sie Azure Storage im App Service-Dateisystem bereitstellen. Weitere Informationen finden Sie unter [Bereitstellen von Inhalt aus Azure Storage in App Service unter Linux](/azure/app-service/configure-connect-to-azure-storage).
 
 ### <a name="identify-session-persistence-mechanism"></a>Identifizieren eines Mechanismus für Sitzungspersistenz
 
@@ -61,7 +61,7 @@ Untersuchen Sie die *context.xml*-Dateien in Ihrer Anwendung und der Tomcat-Konf
 
 Die integrierten [PersistentManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html)-Implementierungen von Tomcat, z. B. [StandardManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Standard_Implementation) oder [FileStore](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Nested_Components), sind nicht für die Nutzung mit einer verteilten skalierten Plattform wie App Service konzipiert. Da App Service ggf. einen Lastenausgleich zwischen verschiedenen Instanzen vornimmt und für Instanzen jederzeit einen transparenten Neustart durchführen kann, ist das dauerhafte Speichern eines veränderlichen Zustands in einem Dateisystem nicht zu empfehlen.
 
-Falls das Erzielen von Sitzungspersistenz erforderlich ist, müssen Sie eine andere `PersistentManager`-Implementierung verwenden, bei der in einen externen Datenspeicher geschrieben wird, z. B. Pivotal-Sitzungs-Manager mit Redis Cache. Weitere Informationen finden Sie unter [Verwenden von Redis als Sitzungscache mit Tomcat](/azure/app-service/containers/configure-language-java#use-redis-as-a-session-cache-with-tomcat).
+Ist Sitzungspersistenz erforderlich, müssen Sie eine andere `PersistentManager`-Implementierung verwenden, bei der in einen externen Datenspeicher geschrieben wird, z. B. VMware Tanzu-Sitzungs-Manager mit Redis Cache. Weitere Informationen finden Sie unter [Verwenden von Redis als Sitzungscache mit Tomcat](/azure/app-service/containers/configure-language-java#use-redis-as-a-session-cache-with-tomcat).
 
 ### <a name="special-cases"></a>Spezialfälle
 
@@ -212,7 +212,7 @@ Nachdem Sie Ihre Anwendung nun zu Azure App Service migriert haben, sollten Sie 
 
 ### <a name="recommendations"></a>Empfehlungen
 
-* Wenn Sie sich für die Verwendung des Verzeichnisses */home* zum Speichern der Dateien entschieden haben, können Sie erwägen, dafür die [Umstellung auf Azure Storage](/azure/app-service/containers/how-to-serve-content-from-azure-storage) durchzuführen.
+* Wenn Sie sich für die Verwendung des Verzeichnisses */home* zum Speichern der Dateien entschieden haben, können Sie erwägen, dafür die [Umstellung auf Azure Storage](/azure/app-service/configure-connect-to-azure-storage) durchzuführen.
 
 * Falls Sie im Verzeichnis */home*, das Verbindungszeichenfolgen, SSL-Schlüssel und andere Geheimnisinformationen enthält, über Konfigurationsdaten verfügen, empfiehlt es sich gegebenenfalls, eine Kombination aus [Azure Key Vault](/azure/app-service/app-service-key-vault-references) und [Parametereinfügung mit Anwendungseinstellungen](/azure/app-service/configure-common#configure-app-settings) zu verwenden.
 

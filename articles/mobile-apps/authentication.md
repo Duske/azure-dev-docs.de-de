@@ -7,12 +7,12 @@ ms.service: mobile-services
 ms.topic: article
 ms.date: 06/08/2020
 ms.author: masoucou
-ms.openlocfilehash: 782123b4b567010a43ce72c622f7db5a65679db9
-ms.sourcegitcommit: f02ff55cef47581303a217cf1d310879cd722237
+ms.openlocfilehash: 2afdf7c4194052aff1fe7c7f915540b270ce588e
+ms.sourcegitcommit: c012db9b6e369813c56f35a0ddbb1d3a73db5c4d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84632582"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88889234"
 ---
 # <a name="add-authentication-and-manage-user-identities-in-your-mobile-apps"></a>Hinzufügen von Authentifizierung und Verwalten von Benutzeridentitäten in Ihren mobilen Apps
 
@@ -45,14 +45,14 @@ Mit den folgenden Diensten können Sie Benutzerauthentifizierung in ihren mobile
 
 [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) ist der cloudbasierte Identitäts- und Zugriffsverwaltungsdienst von Microsoft, über den Ihre Mitarbeiter sich anmelden und zugreifen können auf:
 
-- Externe Ressourcen wie Microsoft Office 365, das Azure-Portal und Tausende andere SaaS-Anwendungen (Software-as-a-Service).
+- Externe Ressourcen wie Microsoft 365, das Azure-Portal und Tausende andere SaaS-Anwendungen (Software-as-a-Service)
 - Interne Ressourcen (beispielsweise Apps im Netzwerk/Intranet Ihres Unternehmens oder selbst entwickelte Cloud-Apps Ihrer Organisation)
 
 ### <a name="azure-active-directory-features"></a>Features von Azure Active Directory
 
 - Nahtloser, äußerst sicherer Zugriff, indem Benutzer mit den Anwendungen verbunden werden, die sie benötigen.
 - Umfassender Identitätsschutz und erhöhte Sicherheit für Identitäten und Zugriff auf Basis von Benutzer-, Standort-, Geräte-, Daten- und Anwendungskontext.
-- Tausende von bereits integrierten Apps für sowohl kommerzielle als auch benutzerdefinierte Anwendungen, etwa Office 365, Salesforce.com und Box.
+- Tausende von bereits integrierten Apps für sowohl kommerzielle als auch benutzerdefinierte Anwendungen, etwa Microsoft 365, Salesforce.com und Box
 - Die Möglichkeit zur Verwaltung von Zugriff im großen Stil.
 
 ### <a name="azure-active-directory-references"></a>Azure Active Directory-Referenzen
