@@ -5,12 +5,12 @@ keywords: Azure, Chef, Devops, virtuelle Computer, Übersicht, automatisieren, H
 ms.date: 05/15/2018
 ms.topic: article
 ms.custom: devx-track-chef
-ms.openlocfilehash: af7a08e526a5b9109cb9662b1be5d2243af92e9d
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: d2a834c631986b70a13c95f1403e84e82886a5f2
+ms.sourcegitcommit: 95fdc444c424f4a7d7d53437837e9532a0b897e9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240772"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88662941"
 ---
 # <a name="use-habitat-to-deploy-your-application-to-azure"></a>Verwenden von Habitat zum Bereitstellen Ihrer Anwendung in Azure
 
@@ -28,7 +28,7 @@ Habitat löst die kontinuierliche Bereitstellung komplexer, Microservice-orienti
 
 ## <a name="run-any-application-anywhere"></a>Ausführen einer beliebigen Anwendung – und zwar überall
 
-Mit Habitat können Anwendungen unverändert in allen Laufzeitumgebungen ausgeführt werden. Dies umfasst alles: von Bare-Metal und virtuellen Computern bis hin zu Containern (z. B. Docker), Clusterverwaltungssystemen (z. B. Mesosphere oder Kubernetes) und PaaS-Systemen (z. B. Pivot Cloud Foundry).
+Mit Habitat können Anwendungen unverändert in allen Laufzeitumgebungen ausgeführt werden. Dies umfasst alles: von Bare-Metal-Computern und virtuellen Computern bis hin zu Containern (z. B. Docker), Clusterverwaltungssystemen (z. B. Mesosphere oder Kubernetes) und PaaS-Systemen (z. B. VMware Tanzu Application Service (vormals Pivotal Cloud Foundry)).
 
 ## <a name="integrate-into-the-chef-devops-workflow"></a>Integration in den Chef DevOps-Workflow
 
