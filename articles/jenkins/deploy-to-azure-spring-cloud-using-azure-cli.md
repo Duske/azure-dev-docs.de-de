@@ -3,14 +3,14 @@ title: Bereitstellen von Apps in Azure Spring Cloud mithilfe von Jenkins und der
 description: Hier erfahren Sie, wie Sie die Azure-Befehlszeilenschnittstelle in einer Continuous Integration- und Deployment-Pipeline verwenden, um Microservice für den Azure Spring Cloud-Dienst bereitzustellen.
 keywords: Jenkins, Azure, DevOps, Azure Spring Cloud, Azure CLI
 ms.topic: tutorial
-ms.date: 08/10/2020
+ms.date: 09/01/2020
 ms.custom: devx-track-jenkins,devx-track-azurecli
-ms.openlocfilehash: 707af403bf789ccd85e52f7bb5880389f61e8f15
-ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
+ms.openlocfilehash: 7c6b9d526b2fe42a0210daf70ec8ba919641ced9
+ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88725164"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89374561"
 ---
 # <a name="tutorial-deploy-apps-to-azure-spring-cloud-using-jenkins-and-the-azure-cli"></a>Tutorial: Bereitstellen von Apps in Azure Spring Cloud mithilfe von Jenkins und der Azure-Befehlszeilenschnittstelle
 
@@ -23,16 +23,13 @@ Dieses Tutorial umfasst folgende Aufgaben:
 > * Vorbereiten Ihres Jenkins-Servers
 > * Verwenden der Azure-Befehlszeilenschnittstelle in einer Jenkins-Pipeline, um die Microserviceanwendungen zu erstellen und bereitzustellen 
 
->[!Note]
-> Azure Spring Cloud wird zurzeit als Public Preview angeboten. Angebote der Public Preview ermöglichen Kunden das Experimentieren mit neuen Funktionen vor der offiziellen Veröffentlichung.  Funktionen und Dienste in der Public Preview sind nicht zur Verwendung in der Produktion bestimmt.  Weitere Informationen zur Unterstützung während der Vorschauphase finden Sie in den [häufig gestellten Fragen](https://azure.microsoft.com/support/faq/). Sie können auch eine [Supportanfrage](/azure/azure-portal/supportability/how-to-create-azure-support-request) einreichen, um weitere Informationen zu erhalten.
-
 ## <a name="prerequisites"></a>Voraussetzungen
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-**Jenkins**: [Installieren von Jenkins auf einer Linux-VM](configure-on-linux-vm.md)
+- **Jenkins**: [Installieren von Jenkins auf einer Linux-VM](configure-on-linux-vm.md)
 
-**GitHub-Konto:** Sollten Sie über kein GitHub-Konto verfügen, erstellen Sie zunächst ein [kostenloses Konto](https://github.com/).
+- **GitHub-Konto:** Sollten Sie über kein GitHub-Konto verfügen, erstellen Sie zunächst ein [kostenloses Konto](https://github.com/).
 
 ## <a name="provision-a-service-instance-and-launch-a-java-spring-application"></a>Bereitstellen einer Dienstinstanz und Starten einer Java Spring-Anwendung
 

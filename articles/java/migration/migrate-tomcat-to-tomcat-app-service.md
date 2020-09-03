@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 227908087ffdbdc3ce27a3da721464ff91b6b085
-ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
+ms.openlocfilehash: 7a8de3191551be1557b68cab55b6d91afcf41feb
+ms.sourcegitcommit: 4036ac08edd7fc6edf8d11527444061b0e4531ef
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88725194"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89061999"
 ---
 # <a name="migrate-tomcat-applications-to-tomcat-on-azure-app-service"></a>Migrieren von Tomcat-Anwendungen zu Tomcat unter Azure App Service
 
@@ -44,8 +44,6 @@ Laden Sie [Tomcat 9](https://tomcat.apache.org/download-90.cgi) herunter, um di
 
 [!INCLUDE [inventory-secrets](includes/inventory-secrets.md)]
 
-### <a name="inventory-certificates"></a>Inventarisieren von Zertifikaten
-
 [!INCLUDE [inventory-certificates](includes/inventory-certificates.md)]
 
 [!INCLUDE [determine-whether-and-how-the-file-system-is-used](includes/determine-whether-and-how-the-file-system-is-used.md)]
@@ -62,6 +60,10 @@ Untersuchen Sie die *context.xml*-Dateien in Ihrer Anwendung und der Tomcat-Konf
 Die integrierten [PersistentManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html)-Implementierungen von Tomcat, z. B. [StandardManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Standard_Implementation) oder [FileStore](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Nested_Components), sind nicht für die Nutzung mit einer verteilten skalierten Plattform wie App Service konzipiert. Da App Service ggf. einen Lastenausgleich zwischen verschiedenen Instanzen vornimmt und für Instanzen jederzeit einen transparenten Neustart durchführen kann, ist das dauerhafte Speichern eines veränderlichen Zustands in einem Dateisystem nicht zu empfehlen.
 
 Ist Sitzungspersistenz erforderlich, müssen Sie eine andere `PersistentManager`-Implementierung verwenden, bei der in einen externen Datenspeicher geschrieben wird, z. B. VMware Tanzu-Sitzungs-Manager mit Redis Cache. Weitere Informationen finden Sie unter [Verwenden von Redis als Sitzungscache mit Tomcat](/azure/app-service/containers/configure-language-java#use-redis-as-a-session-cache-with-tomcat).
+
+[!INCLUDE [identify-all-outside-processes-and-daemons-running-on-the-production-servers](includes/identify-all-outside-processes-and-daemons-running-on-the-production-servers.md)]
+
+[!INCLUDE [identify-all-outside-processes-and-daemons-running-on-the-production-servers](includes/identify-all-outside-processes-and-daemons-running-on-the-production-servers.md)]
 
 ### <a name="special-cases"></a>Spezialfälle
 
@@ -82,10 +84,6 @@ Inventarisieren Sie alle geplanten Aufträge innerhalb oder außerhalb des Anwen
 Das [Tomcat-Clustering](https://tomcat.apache.org/tomcat-9.0-doc/cluster-howto.html) wird für Azure App Service nicht unterstützt. Stattdessen können Sie die Skalierung und den Lastenausgleich mit Azure App Service und ohne Tomcat-spezifische Funktionen konfigurieren und verwalten. Sie können den Sitzungszustand an einem alternativen Speicherort speichern, um ihn für Replikate übergreifend verfügbar zu machen. Weitere Informationen finden Sie unter [Identifizieren eines Mechanismus für Sitzungspersistenz](#identify-session-persistence-mechanism).
 
 Suchen Sie für die Ermittlung, ob für Ihre Anwendung das Clustering verwendet wird, in der *server.xml*-Datei in den Elementen `<Host>` oder `<Engine>` nach dem `<Cluster>`-Element.
-
-#### <a name="identify-all-outside-processesdaemons-running-on-the-production-servers"></a>Ermitteln aller externen Prozesse/Daemons, die auf den Produktionsservern ausgeführt werden
-
-Sie müssen zu einem anderen Ort migrieren oder alle Prozesse entfernen, die außerhalb des Anwendungsservers ausgeführt werden (beispielsweise die Überwachung von Daemons).
 
 #### <a name="determine-whether-non-http-connectors-are-used"></a>Ermitteln, ob Connectors ohne HTTP genutzt werden
 
