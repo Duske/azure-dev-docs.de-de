@@ -112,6 +112,22 @@
           href: how-to-assign-role-permissions.md
         - name: Verwalten von Dienstprinzipalen
           href: how-to-manage-service-principals.md
+        - name: Schritt-für-Schritt-Tutorial
+          items:
+            - name: 1. Einführung und Hintergrund
+              href: walkthrough-tutorial-authentication-01.md
+            - name: 2. Authentifizierungsanforderungen
+              href: walkthrough-tutorial-authentication-02.md
+            - name: 3. Implementierung von Drittanbieter-APIs
+              href: walkthrough-tutorial-authentication-03.md
+            - name: 4. Implementierung der Haupt-App
+              href: walkthrough-tutorial-authentication-04.md
+            - name: 5. Abhängigkeiten und Umgebungsvariablen
+              href: walkthrough-tutorial-authentication-05.md
+            - name: 6. Startcode der Haupt-App
+              href: walkthrough-tutorial-authentication-06.md
+            - name: 7. Endpunkt der Haupt-App
+              href: walkthrough-tutorial-authentication-07.md
     - name: Installieren von Paketen
       href: azure-sdk-install.md
     - name: Paketindex

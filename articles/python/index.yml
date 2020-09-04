@@ -14,28 +14,28 @@ metadata:
   ms.service: multiple
   ms.devlang: python
   ms.custom: devx-track-python
-  ms.openlocfilehash: 1a89da5a7ce092de4d8194db2136d390fec22928
-  ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
+  ms.openlocfilehash: 2dbd633555e7841eb28f58813a9ba292da989dd6
+  ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 08/12/2020
-  ms.locfileid: "88147251"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89374541"
 landingContent:
-- title: Bereitstellen serverloser Funktionen
+- title: Serverlose Funktionen
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Verwendung von Visual Studio Code
+    - text: Bereitstellen mithilfe von Visual Studio Code
       url: tutorial-vs-code-serverless-python-01.md
-    - text: Verwenden der Befehlszeile
+    - text: Bereitstellen mithilfe der Befehlszeile
       url: /azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-python
     - text: Herstellen einer Verbindung mit Speicher mithilfe von Visual Studio Code
       url: /azure/azure-functions/functions-add-output-binding-storage-queue-vs-code?pivots=programming-language-python
     - text: Herstellen einer Verbindung mit Speicher über die Befehlszeile
       url: /azure/azure-functions/functions-add-output-binding-storage-queue-cli?tabs=bash%2Cbrowser&pivots=programming-language-python
-- title: Bereitstellen von Web-Apps
+- title: Web-Apps
   linkLists:
-  - linkListType: how-to-guide
+  - linkListType: deploy
     links:
     - text: Flask unter Verwendung von Visual Studio Code
       url: tutorial-deploy-app-service-on-linux-01.md
@@ -47,9 +47,9 @@ landingContent:
       url: /azure/app-service/tutorial-python-postgresql-app
     - text: Container unter Verwendung von Visual Studio Code
       url: tutorial-deploy-containers-01.md
-    - text: Erstellen einer CI/CD-Pipeline
+    - text: CI/CD-Pipeline
       url: /azure/devops/pipelines/ecosystems/python-webapp
-- title: Bereitstellen von Machine Learning-Modellen
+- title: Machine Learning
   linkLists:
   - linkListType: how-to-guide
     links:
@@ -63,9 +63,9 @@ landingContent:
       url: quickstarts-cognitive-services.md
     - text: Mehr...
       url: quickstarts-machine-learning.md
-- title: Bereitstellen von Daten und Speicher
+- title: Daten und Speicher
   linkLists:
-  - linkListType: how-to-guide
+  - linkListType: deploy
     links:
     - text: SQL-Datenbanken
       url: quickstarts-data-solutions.md#sql-databases
@@ -73,7 +73,7 @@ landingContent:
       url: quickstarts-data-solutions.md#tables-blobs-files-nosql
     - text: Big Data und Analysen
       url: quickstarts-data-solutions.md#big-data-and-analytics
-- title: Verwenden von Azure-Bibliotheken (SDK)
+- title: Azure-Bibliotheken (SDK)
   linkLists:
   - linkListType: get-started
     links:
@@ -85,7 +85,9 @@ landingContent:
       url: azure-sdk-overview.md
     - text: Informationen zu Verwendungsmustern für Bibliotheken
       url: azure-sdk-library-usage-patterns.md
-- title: Erkunden der Entwicklertools
+    - text: Authentifizieren mit Azure-Diensten
+      url: walkthrough-tutorial-authentication-01.md
+- title: Entwicklertools
   linkLists:
   - linkListType: get-started
     links:
