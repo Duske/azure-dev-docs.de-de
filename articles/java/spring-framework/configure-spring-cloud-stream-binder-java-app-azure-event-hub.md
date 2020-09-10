@@ -8,12 +8,12 @@ ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: ff068c48a36aa746de1dac23861d453e0c6ff512
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 50b6046e8b4435d8e75af1bb8df360be018eb8ec
+ms.sourcegitcommit: 5ab6e90e20a87f9a8baea652befc74158a9b6613
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379194"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89614296"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>Erstellen einer Spring Cloud Stream Binder-Anwendung mit Azure Event Hubs
 
@@ -136,7 +136,7 @@ Gehen Sie zum Erstellen einer Spring Boot-Anwendung wie folgt vor:
    <dependency>
       <groupId>com.microsoft.azure</groupId>
       <artifactId>spring-cloud-azure-eventhubs-stream-binder</artifactId>
-      <version>1.1.0.RC2</version>
+      <version>1.2.7</version>
    </dependency>
    ```
 
@@ -253,7 +253,6 @@ Gehen Sie zum Erstellen einer Spring Boot-Anwendung wie folgt vor:
    |       `spring.cloud.stream.bindings.input.group `        | Gibt eine Consumergruppe von Azure Event Hub an, die auf „$Default“ festgelegt werden kann, um die grundlegende Consumergruppe zu verwenden, die bei der Erstellung Ihres Azure Event Hubs erstellt wurde. |
    |    `spring.cloud.stream.bindings.output.destination`     |                               Gibt den Azure Event Hub an, der das Ausgabeziel ist (in diesem Tutorial ist das Ausgabeziel mit dem Eingabeziel identisch).                               |
 
-
 3. Speichern und schließen Sie die Datei *application.properties*.
 
 ## <a name="add-sample-code-to-implement-basic-event-hub-functionality"></a>Hinzufügen von Beispielcode zum Implementieren grundlegender Event Hub-Funktionen
@@ -342,13 +341,13 @@ In diesem Abschnitt erstellen Sie die Java-Klassen, die erforderlich sind, um Er
 
       @StreamListener(Sink.INPUT)
       public void handleMessage(String message, @Header(AzureHeaders.CHECKPOINTER) Checkpointer checkpointer) {
-         LOGGER.info("New message received: '{}'", message);
-         checkpointer.success().handle((r, ex) -> {
-            if (ex == null) {
-               LOGGER.info("Message '{}' successfully checkpointed", message);
-            }
-            return null;
-         });
+        LOGGER.info("New message received: '{}'", message);
+        checkpointer.success()
+                .doOnSuccess(s -> LOGGER.info("Message '{}' successfully checkpointed", message))
+                .doOnError((msg) -> {
+                    LOGGER.error(String.valueOf(msg));
+                })
+                .subscribe();
       }
    }
    ```
