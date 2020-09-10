@@ -5,12 +5,12 @@ author: edburns
 ms.author: edburns
 ms.topic: tutorial
 ms.date: 08/10/2020
-ms.openlocfilehash: b828fc2bc41b0e4e557472e7efd00498e68933db
-ms.sourcegitcommit: b923aee828cd4b309ef92fe1f8d8b3092b2ffc5a
+ms.openlocfilehash: b1437362601e990b560dc0385420605ef01a426a
+ms.sourcegitcommit: 4049dc6109600a8308ba5617cc122a5b32cc4ca1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88052217"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89056279"
 ---
 # <a name="end-user-authorization-and-authentication-for-migrating-java-apps-on-weblogic-server-to-azure"></a>Autorisierung und Authentifizierung von Endbenutzern für die Migration von Java-Apps in WebLogic Server zu Azure
 
@@ -107,14 +107,24 @@ Führen Sie vor den unter [Testen von Abfragen in der verwalteten Domäne](/azur
    >
    > Im Anschluss folgen einige Tipps zum Abfragen der LDAP-Daten. Dies ist erforderlich, um einige Werte zu erfassen, die für die WLS-Konfiguration erforderlich sind.
    >
-   > * Im Tutorial wird die Verwendung des Windows-Programms *LDP.exe* empfohlen.  Sie können aber auch [Apache Directory Studio](https://directory.apache.org/studio/downloads.html) verwenden.
+   > * Im Tutorial wird die Verwendung des Windows-Programms *LDP.exe* empfohlen.  Dieses Programm ist nur unter Windows verfügbar.  Nicht-Windows-Benutzer können auch [Apache Directory Studio](https://directory.apache.org/studio/downloads.html) verwenden.
    > * Wenn Sie sich mit *LDP.exe* bei LDAP anmelden, ist der Benutzername lediglich der Teil vor @.  Beim Benutzer `alice@contoso.onmicrosoft.com` lautet der Benutzername für die Bindungsaktion von *LDP.exe* also `alice`.  Lassen Sie *LDP.exe* außerdem für die weiteren Schritte ausgeführt und angemeldet.
    >
 Notieren Sie sich im Abschnitt [Konfigurieren einer DNS-Zone für den externen Zugriff](/azure/active-directory-domain-services/tutorial-configure-ldaps#configure-dns-zone-for-external-access) den Wert für **Externe Secure LDAP-IP-Adresse**.  Es wird später noch benötigt.
 
+Wenn der Wert der **externen Secure LDAP-IP-Adresse** nicht direkt angezeigt wird, führen Sie die folgenden Schritte aus, um die IP-Adresse zu erhalten.
+
+1. Suchen Sie im Portal die Ressourcengruppe, die die Azure AD Domain Services-Ressource enthält.
+1. Wählen Sie in der Liste der Ressourcen die öffentliche IP-Ressource für die Azure AD Domain Services-Ressource aus, wie in der folgenden Abbildung dargestellt.  Die öffentliche IP-Adresse beginnt wahrscheinlich mit `aads`.
+   :::image type="content" source="media/migrate-weblogic-with-aad-ldap/alternate-secure-ip-address-technique.png" alt-text="Browser, in dem die Auswahl der öffentlichen IP-Adresse angezeigt wird.":::
+1. Die öffentliche IP-Adresse wird neben der Bezeichnung **IP-Adresse** angezeigt.
+
 Führen Sie die Schritte unter [Bereinigen von Ressourcen](/azure/active-directory-domain-services/tutorial-configure-ldaps#clean-up-resources) erst aus, wenn Sie in diesem Leitfaden dazu aufgefordert werden.
 
 Führen Sie die unter [Konfigurieren von Secure LDAP (LDAPS) für eine verwaltete Azure AD Domain Services-Domäne](/azure/active-directory-domain-services/tutorial-configure-ldaps) beschriebenen Schritte aus, und berücksichtigen Sie dabei die oben aufgeführten Abweichungen.  Nun können die für die WLS-Konfiguration erforderlichen Werte erfasst werden.
+
+>[!NOTE]
+> Warten Sie, bis die Verarbeitung der Secure LDAP-Konfiguration abgeschlossen ist, bevor Sie mit dem nächsten Abschnitt fortfahren.
 
 ### <a name="disable-weak-tls-v1"></a>Deaktivieren der unsicheren TLS v1
 
@@ -162,7 +172,7 @@ Wenn Sie eine der in [Oracle WebLogic Server: Azure-Anwendungen](/azure/virtual-
 | `wlsLDAPGroupBaseDN` und `wlsLDAPUserBaseDN` | Benutzerbasis-DN und Gruppenbasis-DN | Im Rahmen dieses Tutorials werden für beide Eigenschaften die gleichen Werte verwendet (der Teil von **wlsLDAPPrincipal** nach dem ersten Komma).|
 | `wlsLDAPPrincipalPassword` | Kennwort für Prinzipal | Dieser Wert ist das Kennwort für den Benutzer, der der Gruppe **AAD DC Administrators** (AAD-DC-Administratoren) hinzugefügt wurde. |
 | `wlsLDAPProviderName` | Anbietername | Für diesen Wert kann der Standardwert beibehalten werden.  Er wird als Name des Authentifizierungsanbieters in WLS verwendet. |
-| `wlsLDAPSSLCertificate` | Trust-Keystore für die SSL-Konfiguration | Bei diesem Wert handelt es sich um die Base64-codierte Datei mit der Erweiterung *.cer*, die Sie nach Abschluss des Schritts [Exportieren eines Zertifikats für Clientcomputer](/azure/active-directory-domain-services/tutorial-configure-ldaps#export-a-certificate-for-client-computers) gespeichert haben.  Dieser Wert kann mit den folgenden UNIX- oder PowerShell-Befehlen abgerufen werden: <br /> Bash: <br /> `base64 your-certificate.cer -w 0 >temp.txt` <br /> PowerShell: <br /> `$Content = Get-Content -Path .\your-certificate.cer -Encoding Byte`<br /> `$Base64 = [System.Convert]::ToBase64String($Content)` <br /> `$Base64 | Out-File .\temp.txt`
+| `wlsLDAPSSLCertificate` | Trust-Keystore für die SSL-Konfiguration | Bei diesem Wert handelt es sich um die Datei mit der Erweiterung *.cer*, die Sie nach Abschluss des Schritts [Exportieren eines Zertifikats für Clientcomputer](/azure/active-directory-domain-services/tutorial-configure-ldaps#export-a-certificate-for-client-computers) gespeichert haben.
 
 ### <a name="integrating-azure-ad-ds-ldap-with-wls"></a>Integrieren von Azure AD DS-LDAP in WLS
 

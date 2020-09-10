@@ -4,16 +4,16 @@ description: Verwenden Sie die Azure SDK für Python-Bibliotheken, um einen Blob
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 6a956cf0f4f4689e653307f95d5f0900c8d01589
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: b774d986b886aae528c97c4583511a8d6c0ba0a5
+ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983432"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89275204"
 ---
 # <a name="example-provision-azure-storage-using-the-azure-libraries-for-python"></a>Beispiel: Bereitstellen von Azure Storage mit den Azure-Bibliotheken für Python
 
-In diesem Artikel erfahren Sie, wie Sie die Azure-Verwaltungsbibliotheken in einem Python-Skript verwenden, um eine Ressourcengruppe bereitzustellen, die ein Azure Storage-Konto und einen Blobspeichercontainer enthält. ([Äquivalente Azure CLI-Befehle](#for-reference-equivalent-azure-cli-commands) finden Sie weiter unten in diesem Artikel.)
+In diesem Artikel erfahren Sie, wie Sie die Azure-Verwaltungsbibliotheken in einem Python-Skript verwenden, um eine Ressourcengruppe bereitzustellen, die ein Azure Storage-Konto und einen Blobspeichercontainer enthält. ([Äquivalente Azure CLI-Befehle](#for-reference-equivalent-azure-cli-commands) finden Sie weiter unten in diesem Artikel. Wenn Sie die Azure-Portal bevorzugen, finden Sie weitere Informationen unter [Erstellen eines Azure Storage-Kontos](/azure/storage/common/storage-account-create?tabs=azure-portal) und [Erstellen eines Blobcontainers](/azure/storage/blobs/storage-quickstart-blobs-portal).)
 
 Sehen Sie sich nach der Bereitstellung der Ressourcen das [Beispiel zur Verwendung von Azure Storage](azure-sdk-example-storage-use.md) an, um zu erfahren, wie Sie die Azure-Clientbibliotheken in Python-Anwendungscode verwenden, um eine Datei in den Blobspeichercontainer hochzuladen.
 

@@ -8,12 +8,12 @@ ms.date: 04/21/2020
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 74262a0be1062f32f63a225521f92657334c9994
-ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
+ms.openlocfilehash: 4dcc1bcfb6e42089e221a1ebd7eb5abc0d37a4e3
+ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88501265"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89374551"
 ---
 # <a name="azure-cli-release-notes"></a>Versionshinweise für die Azure CLI
 
@@ -4571,7 +4571,7 @@ Version 2.0.15
 
 * Problem behoben, aufgrund dessen bei Verwendung von `--instance-id *` zusätzliche, fehlerhafte Informationen für `vmss get-instance-view` angezeigt wurden
 * Unterstützung für `--lb-sku` zu `vmss create` hinzugefügt:
-* Menschliche Namen aus der Administratornamen-Blacklist für `[vm|vmss] create` entfernt
+* Menschliche Namen aus der Administratornamen-Blockliste für `[vm|vmss] create` entfernt
 * Problem behoben, aufgrund dessen `[vm|vmss] create` einen Fehler ausgelöst hat, wenn aus einem Image keine Tarifinformationen extrahiert werden konnten
 * Absturzproblem beim Erstellen einer VMMS-Skalierungsgruppe mit einem internen Lastenausgleich behoben
 * Problem behoben, aufgrund dessen das Argument `--no-wait` nicht mit `vm availability-set create` verwendet werden konnte

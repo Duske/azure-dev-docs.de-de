@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie die Bibliotheken des Azure SDK für Pyt
 ms.date: 08/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: bcb8d680950e2c42d3d7f092478c4d6096454b12
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 8bbbb03a4bbbdb24e2c45692a0a982341fbcd7a5
+ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982692"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89275134"
 ---
 # <a name="example-access-azure-storage-using-the-azure-libraries-for-python"></a>Beispiel: Zugriff auf Azure Storage mit den Azure-Bibliotheken für Python
 
@@ -21,7 +21,16 @@ Alle Befehle in diesem Artikel funktionieren in Linux-/Mac OS-bash- und Windows
 
 Wenn Sie dies noch nicht getan haben, befolgen Sie sämtliche der Anweisungen unter [Konfigurieren Ihrer lokalen Python-Entwicklungsumgebung für Azure](configure-local-development-environment.md).
 
-Stellen Sie sicher, dass Sie einen Dienstprinzipal für die lokale Entwicklung erstellen und eine virtuelle Umgebung für dieses Projekt erstellen und aktivieren.
+Stellen Sie sicher, dass Sie einen Dienstprinzipal für die lokale Entwicklung erstellen, Umgebungsvariablen für den Dienstprinzipal festlegen (siehe unten) und eine virtuelle Umgebung für dieses Projekt erstellen und aktivieren.
+
+In diesem Beispiel wird davon ausgegangen, dass Sie die folgenden Umgebungsvariablen bereits festgelegt haben:
+
+| Variablenname | Erwarteter Wert |
+| --- | --- |
+| AZURE_SUBSCRIPTION_ID | Die GUID Ihres Azure-Abonnements. |
+| AZURE_CLIENT_ID | Die Client-ID Ihres lokalen Dienstprinzipals. |
+| AZURE_CLIENT_SECRET | Der geheime Clientschlüssel Ihres Dienstprinzipals. |
+| AZURE_TENANT_ID | Die Mandanten-ID für Ihren Dienstprinzipal. |
 
 ## <a name="2-install-library-packages"></a>2: Installieren von Bibliothekspaketen
 
