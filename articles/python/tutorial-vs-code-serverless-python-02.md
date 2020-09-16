@@ -4,12 +4,12 @@ description: 'Tutorialschritt 2: Verwenden der Azure Functions-Erweiterung für
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 13c0083434d024064462bb583a6b24d9e80c38dd
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 08f301ef4596ae8aac96051a13fd680917bd79be
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983512"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473565"
 ---
 # <a name="2-create-a-python-function-for-azure-functions"></a>2: Erstellen einer Python-Funktion für Azure Functions
 
@@ -48,4 +48,4 @@ In diesem Artikel erstellen Sie eine Python-Funktion für Azure Functions mit Vi
 > [!div class="nextstepaction"]
 > [Ich habe die Funktion erstellt: Fahren Sie mit Schritt 3 fort. >>>](tutorial-vs-code-serverless-python-03.md)
 
-[Ich bin auf ein Problem gestoßen](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=02-create-function)
+Sie haben Probleme? Übermitteln Sie ein GitHub-Problem, indem Sie unten auf dieser Seite die Feedbackoption „Diese Seite“ verwenden.

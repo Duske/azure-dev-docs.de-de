@@ -4,12 +4,12 @@ description: 'Tutorialschritt 7: Hinzufügen einer Bindung in Python zum Schrei
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 211d1534d617b649b574f9f3d23e8c5ffd5ac414
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: a8e320b42221b1f1d30859d41b8e56f52c18072a
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982810"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473615"
 ---
 # <a name="7-add-a-storage-binding-for-azure-functions-in-python"></a>7: Hinzufügen einer Speicherbindung für Azure Functions in Python
 
@@ -99,4 +99,4 @@ In diesem Abschnitt fügen Sie der HttpExample-Funktion, die Sie zuvor in diesem
 > [!div class="nextstepaction"]
 > [Ich habe eine Speicherbindung hinzugefügt: Fahren Sie mit Schritt 8 fort. >>>](tutorial-vs-code-serverless-python-08.md)
 
-[Ich bin auf ein Problem gestoßen](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=07-storage-binding)
+Sie haben Probleme? Übermitteln Sie ein GitHub-Problem, indem Sie unten auf dieser Seite die Feedbackoption „Diese Seite“ verwenden.

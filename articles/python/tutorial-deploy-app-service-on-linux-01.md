@@ -1,15 +1,15 @@
 ---
 title: 'Tutorial: Bereitstellen von Python-Apps in Azure App Service für Linux aus Visual Studio Code'
-description: 'Tutorialschritt 1: Einführung, Voraussetzungen und Anmeldung bei Azure'
+description: 'Tutorial: Schritt 1, Verwenden von Web-Apps, Einführung, Voraussetzungen'
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 255e94d863f0c144ff4de402a2d775a21645b95a
-ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
+ms.openlocfilehash: d4544c6e013f20b606303e56ff2169e87383d88c
+ms.sourcegitcommit: 5ab6e90e20a87f9a8baea652befc74158a9b6613
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88501375"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89614324"
 ---
 # <a name="tutorial-deploy-python-apps-to-azure-app-service-on-linux-from-visual-studio-code"></a>Tutorial: Bereitstellen von Python-Apps in Azure App Service für Linux aus Visual Studio Code
 
@@ -18,6 +18,9 @@ In diesem Artikel erfahren Sie, wie Sie mithilfe von Visual Studio Code eine Pyt
 Wenn Sie Probleme mit einem der Schritte in diesem Tutorial haben, würden wir uns über nähere Informationen freuen. Verwenden Sie den Link **Ich bin auf ein Problem gestoßen** am Ende jedes Artikels, um Feedback zu geben.
 
 Ein Demonstrationsvideo von der virtuellen PyCon 2020 finden Sie unter <a href="https://www.youtube.com/watch?v=dNVvFttc-sA&feature=youtu.be&ocid=AID3006292" target="_blank">Erstellen von WebApps mit VS Code und Azure App Service</a> (youtube.com).
+
+> [!NOTE]
+> Falls Sie Apps lieber über die CLI bereitstellen möchten, helfen Ihnen die Informationen unter **[Schnellstart: Erstellen einer Python-App in Azure App Service für Linux](/azure/app-service/quickstart-python)** weiter.
 
 > [!TIP]
 > [Azure App Service für Linux](/azure/app-service/overview#app-service-on-linux) führt den Quellcode in einem vordefinierten Docker-Container aus. Dieser Container führt Apps mit Python 3.7 mithilfe des [Gunicorn](https://gunicorn.org)-Webservers aus. Die Eigenschaften dieses Containers werden unter [Konfigurieren von Python-Apps für App Service unter Linux](/azure/app-service/configure-language-python) beschrieben. Die Containerdefinition selbst finden Sie unter [github.com/Azure-App-Service/python](https://github.com/Azure-App-Service/python/tree/master/3.7).

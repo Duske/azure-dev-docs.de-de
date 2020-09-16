@@ -4,12 +4,12 @@ description: Hier erhalten Sie Informationen zu Integrationstests und erfahren, 
 ms.topic: tutorial
 ms.date: 07/31/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 3d305fb63deffb8f56ebd2cb1503bac543c5b84b
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ced6dc9a3ff40ceee3ac37daea3ab6300a529e0e
+ms.sourcegitcommit: 62f78d529c02c7d7895d32ec8ed415bf0946d056
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241302"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89557553"
 ---
 # <a name="tutorial-configure-integration-tests-for-terraform-projects-in-azure"></a>Tutorial: Konfigurieren von Integrationstests für Terraform-Projekte in Azure
 
@@ -36,7 +36,7 @@ In diesem Artikel lernen Sie Folgendes:
 - **Installieren von Terraform**: Führen Sie [den Download und die Installation von Terraform](https://www.terraform.io/downloads.html) entsprechend den Anforderungen Ihrer Umgebung durch.
 - **Forken Sie die Testbeispiele**: Forken Sie das [Terraform-Beispielprojekt auf GitHub](https://github.com/Azure/terraform), und klonen Sie es auf Ihrem Dev/Test-Computer.
 
-## <a name="validate-alocal-terraform-configuration"></a>Überprüfen einer lokalen Terraform-Konfiguration
+## <a name="validate-a-local-terraform-configuration"></a>Überprüfen einer lokalen Terraform-Konfiguration
 
 Der Befehl [terraform validate](https://www.terraform.io/docs/commands/validate.html) wird über die Befehlszeile im Verzeichnis mit Ihren Terraform-Dateien ausgeführt. Diese Befehle dienen in erster Linie zur Überprüfung der Syntax.
 

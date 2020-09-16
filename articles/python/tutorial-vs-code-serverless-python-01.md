@@ -1,15 +1,15 @@
 ---
 title: 'Tutorial: Erstellen und Bereitstellen einer serverlosen Azure Functions-Instanz in Python mit Visual Studio Code'
-description: 'Tutorialschritt 1: Einführung und Voraussetzungen'
+description: 'Tutorial: Schritt 1, Verwenden von Azure Functions, Einführung und Voraussetzungen.'
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 25ae33cef961b35747ee614a52ff80ebf1e96d62
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 740a64785c57694be34f37ef6aa6571b0b3304b7
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982982"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473605"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>Tutorial: Erstellen und Bereitstellen von Azure Functions serverlos in Python mit Visual Studio Code
 
@@ -71,4 +71,4 @@ Der Befehl `func` durchläuft die Datei *func.cmd*, die im globalen Node.js-Ordn
 > [!div class="nextstepaction"]
 > [Ich habe mich bei Azure angemeldet: Fahren Sie mit Schritt 2 fort. >>>](tutorial-vs-code-serverless-python-02.md)
 
-[Ich bin auf ein Problem gestoßen](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=01-verify-prerequisites)
+Sie haben Probleme? Übermitteln Sie ein GitHub-Problem, indem Sie unten auf dieser Seite die Feedbackoption „Diese Seite“ verwenden.

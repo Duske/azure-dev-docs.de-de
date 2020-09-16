@@ -4,12 +4,12 @@ description: 'Tutorialschritt 5: Bereitstellen von Python-Funktionscode in Azur
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 950dda297f131f9ae9e2029f79cecae7455e0c07
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: e4108ff7b705be96f62c06a02e301bce9247c048
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982852"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473595"
 ---
 # <a name="5-deploy-azure-functions-in-python"></a>5: Bereitstellen von Azure Functions in Python
 
@@ -75,4 +75,4 @@ Um alle Änderungen zu übernehmen, die Sie über das Portal oder den **Azure-Ex
 > [!div class="nextstepaction"]
 > [Ich habe die Funktionen bereitgestellt: Fahren Sie mit Schritt 6 fort. >>>](tutorial-vs-code-serverless-python-06.md)
 
-[Ich bin auf ein Problem gestoßen](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=05-deploy)
+Sie haben Probleme? Übermitteln Sie ein GitHub-Problem, indem Sie unten auf dieser Seite die Feedbackoption „Diese Seite“ verwenden.

@@ -4,12 +4,12 @@ description: 'Tutorialschritt 4: Anzeigen von Protokollen aus Azure App Service
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: aeaaafbb271689babd03c2ccc3216703c3580ebc
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 92af617452aa8892f61e110a69be53a9208f3883
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983502"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473505"
 ---
 # <a name="4-stream-logs-from-azure-app-service-for-a-container"></a>4: Streamen von Protokollen aus Azure App Service für einen Container
 
@@ -41,4 +41,4 @@ Sie können in VS Code Protokolle von der ausgeführten Website in Azure App Ser
 > [!div class="nextstepaction"]
 > [Die Protokolle werden angezeigt: Fahren Sie mit Schritt 5 fort. >>>](tutorial-deploy-containers-05.md)
 
-[Ich bin auf ein Problem gestoßen](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-containers&step=04-stream-logs)
+Sie haben Probleme? Übermitteln Sie ein GitHub-Problem, indem Sie unten auf dieser Seite die Feedbackoption „Diese Seite“ verwenden.
