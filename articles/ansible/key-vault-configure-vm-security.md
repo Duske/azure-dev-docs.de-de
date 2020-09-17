@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, Schlüsseltresor, Sicherheit, Anmeldeinformati
 ms.topic: tutorial
 ms.date: 04/20/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 935361b62c30a34d3a2916abba79a2c2c99d1214
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 4891b277f8c1f9fcd7fe4c1d54ed13b39f19d2e4
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240002"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682016"
 ---
 # <a name="tutorial-use-azure-key-vault-with-a-linux-virtual-machine-in-ansible"></a>Tutorial: Verwenden von Azure Key Vault mit einem virtuellen Linux-Computer in Ansible
 
@@ -40,13 +40,13 @@ In diesem Tutorial wird gezeigt, wie Sie die Ansible-Sammlung für Azure-Module 
 
 Verwenden Sie die Azure-Befehlszeilenschnittstelle, um die erforderlichen Azure-Abonnementinformationen abzurufen, die zum Verwenden der Ansible-Module für Azure erforderlich sind. 
 
-1. Rufen Sie die Azure-Abonnement-ID und die ID des Azure-Abonnementmandanten mithilfe des Befehls `az account show` ab. Geben Sie für den `<Subscription>`-Platzhalter entweder den Namen des Azure-Abonnements oder die Azure-Abonnement-ID an. Der Befehl zeigt viele der Schlüsselwerte an, die dem Azure-Standardabonnement zugeordnet sind. Wenn Sie über mehrere Abonnements verfügen, müssen Sie möglicherweise das aktuelle Abonnement mithilfe des Befehls [az account set](/cli/azure/account?view=azure-cli-latest#az-account-set) festlegen. Notieren Sie sich sowohl den **ID**- als auch den **tenantID**-Wert aus der Ausgabe des Befehls.
+1. Rufen Sie die Azure-Abonnement-ID und die ID des Azure-Abonnementmandanten mithilfe des Befehls `az account show` ab. Geben Sie für den `<Subscription>`-Platzhalter entweder den Namen des Azure-Abonnements oder die Azure-Abonnement-ID an. Der Befehl zeigt viele der Schlüsselwerte an, die dem Azure-Standardabonnement zugeordnet sind. Wenn Sie über mehrere Abonnements verfügen, müssen Sie möglicherweise das aktuelle Abonnement mithilfe des Befehls [az account set](/cli/azure/account#az-account-set) festlegen. Notieren Sie sich sowohl den **ID**- als auch den **tenantID**-Wert aus der Ausgabe des Befehls.
 
     ```azurecli
     az account show --subscription "<Subscription>" --query tenantId
     ```
 
-1. Wenn Sie nicht über einen Dienstprinzipal für das Azure-Abonnement verfügen. [Erstellen eines Azure-Dienstprinzipals mit der Azure-Befehlszeilenschnittstelle](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest). Notieren Sie sich den Wert von **appid** aus der Befehlsausgabe.
+1. Wenn Sie nicht über einen Dienstprinzipal für das Azure-Abonnement verfügen. [Erstellen eines Azure-Dienstprinzipals mit der Azure-Befehlszeilenschnittstelle](/cli/azure/create-an-azure-service-principal-azure-cli). Notieren Sie sich den Wert von **appid** aus der Befehlsausgabe.
 
 1. Rufen Sie mit dem Befehl `az ad sp show` die Objekt-ID des Dienstprinzipals ab. Geben Sie für den `<ApplicationID>`-Platzhalter die appId des Dienstprinzipals an. Der `--query`-Parameter gibt an, welcher Wert an *stdout* gedruckt werden soll. In diesem Fall handelt es sich um die Objekt-ID des Dienstprinzipals.
 
@@ -441,23 +441,23 @@ Nach der Einrichtung des Schlüsseltresors und seines Geheimnisses können Sie d
     
 ## <a name="clean-up-resources"></a>Bereinigen von Ressourcen
 
-Löschen Sie die in diesem Artikel erstellten Ressourcen, wenn Sie sie nicht mehr benötigen. Ersetzen Sie den `<kv_rg>`-Platzhalter durch die Ressourcengruppe, die für den Schlüsseltresor dieser Demo verwendet wird.
+Löschen Sie die in diesem Artikel erstellten Ressourcen, wenn Sie sie nicht mehr benötigen. Ersetzen Sie den `<kv_rg>`-Platzhalter durch die Ressourcengruppe, die für den Schlüsseltresor dieser Demo verwendet wird. 
 
-```yml
-- hosts: localhost
-  vars:
-    kv_rg: <kv_rg>
-    test_vm_rg: kv_test_vm_rg
-  tasks:
-    - name: Delete the key vault resource group
-      azure_rm_resourcegroup:
-        name: "{{ kv_rg }}"
-        force_delete_nonempty: yes
-        state: absent
-    - name: Delete the test vm resource group
-      azure_rm_resourcegroup:
-        name: "{{ test_vm_rg }}"
-        force_delete_nonempty: yes
+```yml  
+- hosts: localhost  
+  vars: 
+    kv_rg: <kv_rg>  
+    test_vm_rg: kv_test_vm_rg   
+  tasks:    
+    - name: Delete the key vault resource group 
+      azure_rm_resourcegroup:   
+        name: "{{ kv_rg }}" 
+        force_delete_nonempty: yes  
+        state: absent   
+    - name: Delete the test vm resource group   
+      azure_rm_resourcegroup:   
+        name: "{{ test_vm_rg }}"    
+        force_delete_nonempty: yes  
         state: absent
 ```
 

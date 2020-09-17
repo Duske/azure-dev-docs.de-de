@@ -4,19 +4,19 @@ description: Eine Liste mit Azure-Dokumentationsartikeln zu den ersten Schritten
 ms.date: 04/09/2020
 ms.topic: conceptual
 ms.custom: devx-track-java
-ms.openlocfilehash: 37dee8493855f0a17c5b18e2c1ed2c85138687e7
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 164ba2d57b633195baec751d9b2a987e159b1ee9
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379644"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682105"
 ---
 # <a name="compute-services-for-java-apps-on-azure"></a>Computedienste für Java-Apps in Azure
 
 Die folgenden Artikel helfen Ihnen bei den ersten Schritten mit Computediensten in Azure:
 
 - [App Service (Linux)](/azure/app-service/containers/quickstart-java)
-- [App Service Linux: Spring Boot](/azure/developer/java/spring-framework/deploy-spring-boot-java-app-with-maven-plugin)
+- [App Service Linux: Spring Boot](/azure/app-service/quickstart-java?tabs=javase&pivots=platform-linux)
 - [App Service mithilfe von IntelliJ](/azure/developer/java/toolkit-for-intellij/create-hello-world-web-app)
 - [App Service mithilfe von Eclipse](/azure/developer/java/toolkit-for-eclipse/create-hello-world-web-app)
 - [App Service mithilfe von Visual Studio Code](https://code.visualstudio.com/docs/java/java-webapp)

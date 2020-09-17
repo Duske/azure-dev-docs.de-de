@@ -5,12 +5,12 @@ ms.devlang: python
 ms.topic: tutorial
 ms.date: 07/23/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 4ad5086e0bc0500a7b7a117142a153e56ee4b481
-ms.sourcegitcommit: 5ab6e90e20a87f9a8baea652befc74158a9b6613
+ms.openlocfilehash: 19c0dda48b0fb7b5b0c3af75a1d94d3c9b9e4080
+ms.sourcegitcommit: 4824cea71195b188b4e8036746f58bf8b70dc224
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89614289"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89753769"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>Tutorial: Bereitstellen einer Django-Web-App mit PostgreSQL mithilfe des Azure-Portals
 
@@ -230,15 +230,15 @@ Wurden Code und Datenbank bereitgestellt, ist die App fast bereit für die Verwe
 
 Sie können nun einen schnellen Test für die App ausführen, um zu überprüfen, ob sie mit der PostgreSQL-Datenbank arbeitet.
 
-1. Kehren Sie im Browserfenster oder auf der Browserregisterkarte der Web-App zur Seite **Übersicht** zurück,und wählen Sie die **URL** für die Web-App (im Format `http:\//\<app-name>.azurewebsites.net`) aus.
+1. Kehren Sie im Browserfenster oder auf der Browserregisterkarte der Web-App zur Seite **Übersicht** zurück,und wählen Sie die **URL** für die Web-App (im Format `http://<app-name>.azurewebsites.net`) aus.
 
 1. In der App sollte „No polls are available“ (Keine Umfragen verfügbar) angezeigt werden, da die Datenbank noch keine spezifischen Umfragen enthält.
 
-1. Navigieren Sie zu `http:\//\<app-name>.azurewebsites.net/admin` (Seite für die Django-Verwaltung), und melden sie sich mit den Superuser-Anmeldeinformationen aus dem vorherigen Abschnitt an (`root` und `Pollsdb1`).
+1. Navigieren Sie zu `http://<app-name>.azurewebsites.net/admin` (Seite für die Django-Verwaltung), und melden sie sich mit den Superuser-Anmeldeinformationen aus dem vorherigen Abschnitt an (`root` und `Pollsdb1`).
 
 1. Wählen Sie unter **Polls** (Umfragen) neben **Questions** (Fragen) die Option **Add** (Hinzufügen) aus, und erstellen Sie eine Frage für eine Umfrage mit mehreren Auswahlmöglichkeiten.
 
-1. Navigieren Sie wieder zu `http:\//\<app-name>.azurewebsites.net/`, und vergewissern Sie sich, dass die Fragen nun angezeigt werden. Beantworten Sie Fragen nach Belieben, um Daten in der Datenbank zu generieren.
+1. Navigieren Sie wieder zu `http://<app-name>.azurewebsites.net/`, und vergewissern Sie sich, dass die Fragen nun angezeigt werden. Beantworten Sie Fragen nach Belieben, um Daten in der Datenbank zu generieren.
 
 **Glückwunsch!** Sie führen eine Python-Django-Web-App in Azure App Service für Linux mit einer aktiven PostgreSQL-Datenbank aus.
 

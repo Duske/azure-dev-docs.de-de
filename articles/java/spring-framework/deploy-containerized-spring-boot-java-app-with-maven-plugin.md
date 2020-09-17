@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: seo-java-july2019, seo-java-august2019, devx-track-java
-ms.openlocfilehash: e6e3effc4a857656a6d118d3fee898fa086c082e
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: c8ee810df90ed9b0de12e92c336898fb700e1c67
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378624"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681634"
 ---
 # <a name="use-maven-for-azure-web-apps-to-deploy-a-containerized-spring-boot-app-to-azure"></a>Bereitstellen einer containerbasierten Spring Boot-App in Azure mithilfe von Maven für Azure-Web-Apps
 
@@ -318,7 +318,7 @@ Weitere Informationen zu den verschiedenen in diesem Artikel besprochenen Techno
 
 * [Anmelden bei Azure über die Azure-Befehlszeilenschnittstelle (CLI)](/azure/xplat-cli-connect)
 
-* [How to use the Maven Plugin for Azure Web Apps to deploy a Spring Boot app to Azure App Service ](deploy-spring-boot-java-app-with-maven-plugin.md) (Bereitstellen einer Spring Boot-App in Azure App Service mithilfe des Maven-Plug-Ins für Azure-Web-Apps)
+* [Schnellstart: Erstellen einer Java-App in Azure App Service](/azure/app-service/quickstart-java?tabs=javase&pivots=platform-linux)
 
 * [Erstellen eines Azure-Dienstprinzipals mit Azure CLI 2.0](/cli/azure/create-an-azure-service-principal-azure-cli)
 
