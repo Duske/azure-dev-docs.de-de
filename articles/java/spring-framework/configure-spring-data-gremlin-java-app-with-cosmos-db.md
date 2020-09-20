@@ -1,20 +1,20 @@
 ---
 title: Verwenden von Spring Data Gremlin Starter mit der SQL-API von Azure Cosmos DB
-description: Hier erfahren Sie, wie eine mit dem Spring Boot-Initialisierer erstellte Anwendung mit der SQL-API von Azure Cosmos DB konfiguriert wird.
+description: Hier erfahren Sie, wie eine mit Spring Boot Initializr erstellte Anwendung mit der SQL-API von Azure Cosmos DB konfiguriert wird.
 services: cosmos-db
 documentationcenter: java
-ms.date: 01/10/2020
+ms.date: 08/03/2020
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.custom: devx-track-java
-ms.openlocfilehash: 81a80d14e4cf371801cf75af1618048dda8775d7
-ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
+ms.openlocfilehash: 4a19b6dff945cb04d2b726b546e362c261a00595
+ms.sourcegitcommit: 5ab6e90e20a87f9a8baea652befc74158a9b6613
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810623"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89614331"
 ---
 # <a name="how-to-use-the-spring-data-gremlin-starter-with-the-azure-cosmos-db-sql-api"></a>Verwenden von Spring Data Gremlin Starter mit der SQL-API von Azure Cosmos DB
 
@@ -33,16 +33,16 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 * [Apache Maven](http://maven.apache.org/), Version 3.0 oder höher
 
 
-## <a name="create-resource"></a>Resource erstellen
+## <a name="create-an-azure-cosmos-db-account"></a>Erstellen eines Azure Cosmos DB-Kontos
 
-### <a name="create-azure-cosmos-db"></a>Erstellen von Azure Cosmos DB
+### <a name="create-a-cosmos-db-account-using-the-azure-portal"></a>Erstellen eines Cosmos DB-Kontos über das Azure-Portal
 
-1. Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>, und klicken Sie auf `+Create a resource`.
+1. Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>, und wählen Sie `+Create a resource` aus.
 
    >[!div class="mx-imgBorder"]
    >![Ressource erstellen][create-a-resource-01]
 
-1. Klicken Sie auf `Databases` und dann auf `Azure Cosmos DB`.
+1. Wählen Sie `Databases` und dann `Azure Cosmos DB` aus.
 
    >[!div class="mx-imgBorder"]
    >![Azure Cosmos DB-Datenbank erstellen][create-a-resource-02]
@@ -55,16 +55,20 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    * Wählen Sie für die API `Gremlin (Graph)` aus.
    * Geben Sie den `Location` für Ihre Datenbank an.
    
-1. Klicken Sie nach Angabe dieser Optionen auf `Review + create`.
+1. Wählen Sie nach Angabe dieser Optionen die Option `Review + create` aus.
 
    >[!div class="mx-imgBorder"]
    >![Azure Cosmos DB-Konto erstellen][create-a-resource-03]
 
-1. Überprüfen Sie die Angaben, und klicken Sie anschließend auf `Create`, um Ihre Datenbank zu erstellen.
+1. Überprüfen Sie die Angaben, und wählen Sie anschließend `Create` aus, um Ihre Datenbank zu erstellen.
+
+1. Wählen Sie nach der Erstellung der Datenbank die Option **Zu Ressource wechseln** aus. Sie ist auch in Ihrem Azure-**Dashboard** sowie auf den Seiten **Alle Ressourcen** und **Azure Cosmos DB** aufgeführt. Sie können Ihre Datenbank an all diesen Orten auswählen, um die Eigenschaftenseite für Ihren Cache zu öffnen.
+
+1. Gehen Sie wie folgt vor, wenn die Eigenschaftenseite für Ihre Datenbank angezeigt wird: Wählen Sie **Schlüssel** aus, und kopieren Sie Ihren URI sowie Ihre Zugriffsschlüssel für die Datenbank. Diese Werte benötigen Sie in Ihrer Spring Boot-Anwendung.
 
 ### <a name="add-a-graph-to-your-azure-cosmos-database"></a>Hinzufügen eines Diagramms zu Ihrer Azure-Cosmos-Datenbank
 
-1. Klicken Sie auf der Cosmos DB-Seite auf `Data Explorer` und anschließend auf `New Graph`.
+1. Wählen Sie auf der Cosmos DB-Seite die Option `Data Explorer` und dann `New Graph` aus.
 
    >[!div class="mx-imgBorder"]
    >![Neuer Graph][create-a-graph-01]
@@ -74,10 +78,9 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    * Geben Sie eine eindeutige `Database id` für Ihre Datenbank an.
    * Sie können Ihre `Storage capacity` angeben oder die Standardeinstellung übernehmen.
    * Geben Sie eine eindeutige `Graph id` für Ihre Datenbank an.
-   * Geben Sie einen `Partition key` an. Weitere Informationen finden Sie unter [Graphpartitionierung].
-Klicken Sie auf `OK`.
+   * Geben Sie einen `Partition key` an. Weitere Informationen finden Sie unter [Graphpartitionierung]. Wählen Sie `OK`aus.
    
-   Klicken Sie nach Angabe dieser Optionen auf `OK`, um den Graphen zu erstellen.
+   Wählen Sie nach Angabe dieser Optionen `OK` aus, um den Graphen zu erstellen.
 
    >[!div class="mx-imgBorder"]
    >![Graph hinzufügen][create-a-graph-02]
@@ -89,44 +92,64 @@ Klicken Sie auf `OK`.
    
    
 
-## <a name="create-simple-spring-boot-application-with-the-spring-initializr"></a>Erstellen einer einfachen Spring Boot-Anwendung mit Spring Initializr
+## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Erstellen einer einfachen Spring Boot-Anwendung mit Spring Initializr
 
 1. Navigieren Sie zu <https://start.spring.io/>.
 
-1. Füllen Sie die Projektmetadaten aus, und klicken Sie anschließend auf `GENERATE`:
+1. Geben Sie an, dass Sie ein **Maven**-Projekt mit **Java** generieren möchten, geben Sie die Namen für **Group** (Gruppe) und **Artifact** (Artefakt) für Ihre Anwendung ein, und geben Sie Version 2.3.1. als **Spring Boot**-Version an. Wählen Sie anschließend **GENERATE** (GENERIEREN) aus.
+
+> [!NOTE]
+>
+> Spring Initializr verwendet zur Erstellung des Paketnamens die Namen für **Gruppe** und **Artefakt** (also beispielsweise `com.example.wintiptoysdata`).
+
 
    >[!div class="mx-imgBorder"]
    >![Spring Initializr][spring-initializr-01]
 
-1. Entzippen Sie die Datei, und importieren Sie sie in Ihre integrierte Entwicklungsumgebung (Integrated Development Environment, IDE).
+1. Laden Sie das Projekt nach entsprechender Aufforderung unter einem Pfad auf dem lokalen Computer herunter.
+
+1. Nachdem Sie die Dateien auf Ihrem lokalen System extrahiert haben, können Sie den Import in Ihre IDE durchführen.
 
 
-## <a name="update-code-according-to-the-sample-project"></a>Aktualisieren des Codes entsprechend dem Beispielprojekt
+## <a name="configure-your-spring-boot-app-to-use-the-spring-data-gremlin-starter"></a>Konfigurieren Ihrer Spring Boot-App für die Verwendung von Spring Data Gremlin Starter
 
-Ändern Sie das Projekt entsprechend dem Beispielprojekt: [azure-spring-data-sample-gremlin].
+Wir replizieren die Konfigurationen des vorhandenen [Azure Spring Data-Gremlin-Beispiels](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-data-sample-gremlin). Navigieren Sie zum Beispiel, und führen Sie die in diesem Abschnitt angegebenen Schritte aus, um Ihre Spring Boot-App zu konfigurieren.
 
-1. Fügen Sie eine Abhängigkeit von `azure-spring-data-gremlin` hinzu.
+1. Suchen Sie die Datei *pom.xml* im Verzeichnis Ihrer App. Beispiel:
 
-1. Löschen Sie alle Inhalte in `src/test/`.
+   *C:\SpringBoot\wingtiptoysdata\pom.xml*
 
-1. Fügen Sie wie in diesem Beispiel alle Java-Dateien in `src/main/java` hinzu.
+   - oder -
 
-1. Aktualisieren Sie die Konfiguration in `src/main/resorces/application.properties`. Dabei gilt Folgendes:
+   */users/example/home/wingtiptoysdata/pom.xml*
 
-   | Feld              | Beschreibung                                                                                                                                                                                                             |
+1. Öffnen Sie die Datei *pom.xml*, und fügen Sie Spring Data Gremlin Starter der Liste mit den Abhängigkeiten (`<dependencies>`) hinzu:
+
+   ```xml
+   <dependency>
+      <groupId>com.azure</groupId>
+      <artifactId>azure-spring-data-gremlin</artifactId>
+      <version>2.3.1-beta.1</version> <!-- {x-version-update;com.azure:azure-spring-data-gremlin;current} -->
+    </dependency>
+   ```
+
+1. Speichern und schließen Sie die Datei *pom.xml*.
+
+1. Navigieren Sie zum Ordner *src/test/* , und löschen Sie seinen gesamten Inhalt.
+
+1. Navigieren Sie in der Beispiel-App zum Ordner *src/main/java*, und kopieren und überschreiben Sie dieses Verzeichnis in Ihrer lokalen Spring Boot-App.
+
+1. Aktualisieren Sie die Konfigurationen in der Datei *src/main/resources/application.properties* so, dass sie Folgendes enthalten:
+
+   | Feld              | BESCHREIBUNG                                                                                                                                                                                                             |
    |--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-   | `endpoint`         | Gibt den Gremlin-URI für Ihre Datenbank an. Dieser wird von der eindeutigen **ID** abgeleitet, die Sie zuvor in diesem Tutorial beim Erstellen Ihrer Azure Cosmos DB-Instanz angegeben haben.                                                 |
+   | `endpoint`         | Gibt den Gremlin-URI für Ihre Datenbank an. Dieser wird von der eindeutigen **ID** abgeleitet, die Sie zuvor in dieser Schnellstartanleitung beim Erstellen Ihrer Azure Cosmos DB-Instanz angegeben haben.                                                 |
    | `port`             | Gibt den TCP/IP-Port an (**443** für HTTPS).                                                                                                                                                           |
-   | `username`         | Gibt die eindeutige **Datenbank-ID** und **Diagramm-ID** an, die Sie zuvor in diesem Tutorial beim Hinzufügen Ihres Diagramms verwendet haben (Syntax: /dbs/**{Datenbank-ID}**/colls/**{Diagramm-ID}**). |
-   | `password`         | Gibt den primären oder sekundären **Zugriffsschlüssel** an, den Sie zuvor in diesem Tutorial kopiert haben.                                                                                                                      |
+   | `username`         | Gibt die eindeutige **Datenbank-ID** und **Graph-ID** an, die Sie zuvor in dieser Schnellstartanleitung beim Hinzufügen Ihres Graphen verwendet haben (Syntax: /dbs/ **{Datenbank-ID}** /colls/ **{Graph-ID}** ). |
+   | `password`         | Gibt den primären oder sekundären **Zugriffsschlüssel** an, den Sie zuvor in dieser Schnellstartanleitung kopiert haben.                                                                                                                      |
    | `sslEnabled`       | Gibt an, ob Secure Sockets Layer (SSL) aktiviert werden soll.                                                                                                                                                                                           |
    | `telemetryAllowed` | Geben Sie **true** an, wenn Sie Telemetriedaten aktivieren möchten (oder **false**, falls nicht).
    | `maxContentLength` | Gibt die maximale Inhaltslänge an.                                                                                                                                                                                           |
-
-1. Rufen Sie das Kennwort ab:
-
-   >[!div class="mx-imgBorder"]
-   >![Kennwort abrufen][get-password-01]
 
 ## <a name="build-and-run-the-project"></a>Erstellen und Ausführen des Projekts
 
@@ -137,7 +160,7 @@ Klicken Sie auf `OK`.
    mvn spring-boot:run
    ```
 
-1. Wenn Ihre App erfolgreich gestartet wurde, können Sie den Graphen im Azure-Portal überprüfen:
+1. Wenn Ihre App erfolgreich gestartet wird, können Sie den Graphen im Azure-Portal überprüfen:
 
    >[!div class="mx-imgBorder"]
    >![Ergebnis der Ausführung][execute-result-01]
@@ -145,7 +168,7 @@ Klicken Sie auf `OK`.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Weitere Informationen zu Spring und Azure finden Sie im Dokumentationscenter zu Spring in Azure.
+Weitere Informationen zu Spring in Azure finden Sie in der Dokumentation zu Spring in Azure.
 
 > [!div class="nextstepaction"]
 > [Spring Framework in Azure](/azure/developer/java/spring-framework)

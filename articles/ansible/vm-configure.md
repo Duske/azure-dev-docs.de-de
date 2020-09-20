@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, virtueller Computer
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: c9f6d9a954b8bdbd05ede42cc69a0078eae3cea2
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 6ef5b2799218e3edb008d19102985d38ca6646d6
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240432"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681951"
 ---
 # <a name="quickstart-configure-linux-virtual-machines-in-azure-using-ansible"></a>Schnellstart: Erstellen eines virtuellen Linux-Computers in Azure mithilfe von Ansible
 
@@ -58,10 +58,6 @@ Der folgende Abschnitt eines Ansible-Beispielplaybooks erstellt ein Subnetz mit 
 ```
 
 ## <a name="create-a-public-ip-address"></a>Erstellen einer öffentlichen IP-Adresse
-
-
-
-
 
 [Öffentliche IP-Adressen](/azure/virtual-network/virtual-network-ip-addresses-overview-arm) ermöglichen Internetressourcen die eingehende Kommunikation mit Azure-Ressourcen. Öffentliche IP-Adressen ermöglichen Azure-Ressourcen außerdem die ausgehende Kommunikation mit öffentlichen Azure-Diensten. In beiden Szenarien wird der Ressource, auf die zugegriffen wird, eine IP-Adresse zugewiesen. Die Adresse ist für die Ressource reserviert, bis Sie die Zuweisung aufheben. Wenn einer Ressource keine öffentliche IP-Adresse zugewiesen ist, kann die Ressource trotzdem ausgehend mit dem Internet kommunizieren. Die Verbindung erfolgt, indem Azure dynamisch eine verfügbare IP-Adresse zuweist. Die dynamisch zugewiesene Adresse ist nicht für die Ressource reserviert.
 
@@ -282,6 +278,10 @@ In diesem Abschnitt wird die Ausführung des in diesem Artikel vorgestellten Ans
     ```bash
     ssh azureuser@<ip-address>
     ```
+
+## <a name="clean-up-resources"></a>Bereinigen von Ressourcen
+
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>Nächste Schritte
 
