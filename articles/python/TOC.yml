@@ -14,7 +14,7 @@
       items:
         - name: Verwendung von Visual Studio Code
           items:
-            - name: 1. Einführung und Voraussetzungen
+            - name: 1. Konfigurieren Ihrer Umgebung
               href: tutorial-vs-code-serverless-python-01.md
             - name: 2. Erstellen der Python-Funktion
               href: tutorial-vs-code-serverless-python-02.md
@@ -44,7 +44,7 @@
       items:
         - name: Verwendung von Visual Studio Code
           items:
-            - name: 1. Einführung und Voraussetzungen
+            - name: 1. Konfigurieren Ihrer Umgebung
               href: tutorial-deploy-app-service-on-linux-01.md
             - name: 2. Vorbereiten Ihrer App
               href: tutorial-deploy-app-service-on-linux-02.md
@@ -80,7 +80,7 @@
   items:
     - name: Verwendung von Visual Studio Code
       items:
-        - name: 1. Einführung und Voraussetzungen
+        - name: 1. Konfigurieren Ihrer Umgebung
           href: tutorial-deploy-containers-01.md
         - name: 2. Bereitstellen des Containerimages
           href: tutorial-deploy-containers-02.md
