@@ -1,9 +1,9 @@
 - name: 'Azure für Java: Schnellstartanleitungen'
-  href: /azure/developer/java/quickstarts
+  href: ./index.yml
   items:
     - name: Compute Services
       href: compute.md
-    - name: Data
+    - name: Daten
       href: data.md
     - name: Storage
       href: storage.md
