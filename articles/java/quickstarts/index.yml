@@ -5,12 +5,12 @@ metadata:
   description: Verwenden Sie diese Schnellstarts, um mit der Entwicklung von Java-Apps für die Cloud zu beginnen.
   ms.topic: landing-page
   ms.date: 04/08/2020
-  ms.openlocfilehash: 302f214a3540012284867931d8b286e042fff147
-  ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+  ms.openlocfilehash: 3a25bcf7d2f45e2d4c109e4aa96316f54c465367
+  ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 07/28/2020
-  ms.locfileid: "87334475"
+  ms.lasthandoff: 09/21/2020
+  ms.locfileid: "90830242"
 landingContent:
 - title: Bereitstellen von Java-Apps
   linkLists:
@@ -19,9 +19,9 @@ landingContent:
     - text: Linux und Tomcat
       url: /azure/app-service/containers/quickstart-java
     - text: Linux und Java SE
-      url: /azure/developer/java/spring-framework/deploy-spring-boot-java-app-with-maven-plugin
+      url: /azure/app-service/quickstart-java?pivots=platform-linux%252cplatform-linux
     - text: Bereitstellen in Linux mithilfe von IntelliJ
-      url: /azure/developer/java/toolkit-for-intellij/create-hello-world-web-app
+      url: ../toolkit-for-intellij/create-hello-world-web-app.md
     - text: Bereitstellen in Linux mithilfe von Visual Studio Code
       url: https://code.visualstudio.com/docs/java/java-webapp
 - title: Serverlose Funktionen
@@ -31,7 +31,7 @@ landingContent:
     - text: Erstellen und Veröffentlichen einer Funktion für Azure
       url: /azure/azure-functions/functions-create-first-java-maven
     - text: Bereitstellen mithilfe von IntelliJ
-      url: /azure/developer/java/toolkit-for-intellij/quickstart-functions
+      url: ../toolkit-for-intellij/quickstart-functions.md
     - text: Bereitstellen mithilfe von Visual Studio Code
       url: /azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-java
 - title: Azure Spring Cloud
@@ -109,4 +109,4 @@ landingContent:
     - text: App-Cache mit Jedis
       url: /azure/azure-cache-for-redis/cache-java-get-started
     - text: Spring Data Redis (reaktiv)
-      url: /azure/developer/java/spring-framework/configure-spring-boot-initializer-java-app-with-redis-cache
+      url: ../spring-framework/configure-spring-boot-initializer-java-app-with-redis-cache.md

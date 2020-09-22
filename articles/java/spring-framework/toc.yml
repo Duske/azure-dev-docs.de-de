@@ -70,7 +70,7 @@
     - name: Tutorials
       items:
         - name: Bereitstellen für App Service mit Maven
-          href: deploy-spring-boot-java-app-with-maven-plugin.md
+          href: /azure/app-service/quickstart-java?pivots=platform-linux%252cplatform-linux
         - name: Bereitstellen in Kubernetes
           href: deploy-spring-boot-java-app-on-kubernetes.md
         - name: Bereitstellen in Web-Apps für Container
