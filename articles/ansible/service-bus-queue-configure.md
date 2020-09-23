@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, Bash, Playbook, Service Bus, Warteschlange
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 438c5787469a31403285f8884452d5293f1460f4
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 2f58dac776de66d0d4f449bf4fe34a7c9d30c8fe
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88239992"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681989"
 ---
 # <a name="tutorial-configure-queues-in-azure-service-bus-using-ansible"></a>Tutorial: Konfigurieren von Warteschlangen in Azure Service Bus mithilfe von Ansible
 
@@ -69,7 +69,7 @@ Speichern Sie das folgende Playbook als `servicebus_queue.yml`:
           var: queue
 ```
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook servicebus_queue.yml
@@ -106,7 +106,7 @@ Speichern Sie das folgende Playbook als `servicebus_queue_policy.yml`:
 Beachten Sie vor dem Ausführen des Playbooks die folgenden Hinweise:
 - Der `rights`-Wert stellt die Berechtigung eines Benutzers für die Warteschlange dar. Geben Sie einen der folgenden Werte an: `manage`, `listen`, `send` oder `listen_send`.
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook servicebus_queue_policy.yml
@@ -139,7 +139,7 @@ Speichern Sie das folgende Playbook als `servicebus_namespace_info.yml`:
 Beachten Sie vor dem Ausführen des Playbooks die folgenden Hinweise:
 - Der `show_sas_policies`-Wert gibt an, ob die SAS-Richtlinien unter dem angegebenen Namespace angezeigt werden. Der Wert ist standardmäßig `False`, um zusätzlichen Netzwerkaufwand zu vermeiden.
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook servicebus_namespace_info.yml
@@ -174,7 +174,7 @@ Speichern Sie das folgende Playbook als `servicebus_queue_info.yml`:
 Beachten Sie vor dem Ausführen des Playbooks die folgenden Hinweise:
 - Der `show_sas_policies`-Wert gibt an, ob die SAS-Richtlinien unter der angegebenen Warteschlange angezeigt werden. Dieser Wert ist standardmäßig auf `False` festgelegt, um zusätzlichen Netzwerkaufwand zu vermeiden.
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook servicebus_queue_info.yml
@@ -203,7 +203,7 @@ Speichern Sie das folgende Playbook als `servicebus_queue_policy_delete.yml`:
           state: absent
 ```
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook servicebus_queue_policy_delete.yml
@@ -241,7 +241,7 @@ Speichern Sie den folgenden Code als `cleanup.yml`:
           force_delete_nonempty: yes
 ```
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook cleanup.yml

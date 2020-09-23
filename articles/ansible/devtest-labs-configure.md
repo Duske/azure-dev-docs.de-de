@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, Bash, Playbook, MySQL, DevTest Labs
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 38acc59a023bc8145d3e1d542b9a2dc7c1a7b146
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: b1b46c8ec92a25d33b810bafdabf8b66979e3c6d
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240322"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682075"
 ---
 # <a name="tutorial-configure-labs-in-azure-devtest-labs-using-ansible"></a>Tutorial: Konfigurieren von Labs in Azure DevTest Labs mithilfe von Ansible
 
@@ -449,7 +449,7 @@ Nehmen Sie vor dem Ausführen des Playbooks die folgenden Änderungen vor:
 - Ersetzen Sie im Abschnitt `vars` den Platzhalter `{{ resource_group_name }}` durch den Namen Ihrer Ressourcengruppe.
 - Speichern Sie das GitHub-Token als Umgebungsvariable namens `GITHUB_ACCESS_TOKEN`.
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook devtestlab-create.yml
@@ -457,27 +457,7 @@ ansible-playbook devtestlab-create.yml
 
 ## <a name="clean-up-resources"></a>Bereinigen von Ressourcen
 
-Löschen Sie die in diesem Artikel erstellten Ressourcen, wenn Sie sie nicht mehr benötigen. 
-
-Speichern Sie den folgenden Code als `cleanup.yml`:
-
-```yml
-- hosts: localhost
-  vars:
-    resource_group: myResourceGroup
-  tasks:
-    - name: Delete a resource group
-      azure_rm_resourcegroup:
-        name: "{{ resource_group }}"
-        force_delete_nonempty: yes
-        state: absent
-```
-
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
-
-```bash
-ansible-playbook cleanup.yml
-```
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>Nächste Schritte
 

@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, Bash, Playbook, Cache, Redis
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: e5e3211dc2625670937a583d3db0018c6222ae19
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 66da31edef14a09a903b3a78d97e1067856098ef
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240332"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681739"
 ---
 # <a name="tutorial-configure-caches-in-azure-cache-for-redis-using-ansible"></a>Tutorial: Konfigurieren von Caches in Azure-Cache für Redis mit Ansible
 
@@ -241,7 +241,7 @@ In diesem Abschnitt führen Sie das Playbook aus, um verschiedene in diesem Arti
 
 Ersetzen Sie im Abschnitt `vars` den Platzhalter `{{ resource_group_name }}` durch den Namen Ihrer Ressourcengruppe.
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook rediscache.yml
@@ -323,28 +323,7 @@ Tuesday 12 March 2019  16:44:14 +0800 (0:00:06.217)       0:23:08.626
 
 ## <a name="clean-up-resources"></a>Bereinigen von Ressourcen
 
-Löschen Sie die in diesem Artikel erstellten Ressourcen, wenn Sie sie nicht mehr benötigen. 
-
-Speichern Sie den folgenden Code als `cleanup.yml`:
-
-```yml
-- hosts: localhost
-  vars:
-    resource_group: "{{ resource_group_name }}"
-  tasks:
-    - name: Delete a resource group
-      azure_rm_resourcegroup:
-        name: "{{ resource_group }}"
-        state: absent
-```
-
-Ersetzen Sie im Abschnitt `vars` den Platzhalter `{{ resource_group_name }}` durch den Namen Ihrer Ressourcengruppe.
-
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
-
-```bash
-ansible-playbook cleanup.yml
-```
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>Nächste Schritte
 

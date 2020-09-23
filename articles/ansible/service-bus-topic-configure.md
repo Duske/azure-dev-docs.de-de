@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, Bash, Playbook, Service Bus, Themen, Abonnemen
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 8dad002f52ded3baaf66d96a516a3d23dac91d56
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: a6cc84b17a5971ba487e304822de9f366826274b
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240062"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681978"
 ---
 # <a name="tutorial-configure-topics-in-azure-service-bus-using-ansible"></a>Tutorial: Konfigurieren von Themen in Azure Service Bus mit Ansible
 
@@ -70,7 +70,7 @@ Speichern Sie das folgende Playbook als `servicebus_topic.yml`:
           var: topic
 ```
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook servicebus_topic.yml
@@ -103,7 +103,7 @@ Mit dem Playbook-Beispielcode wird das Abonnement unter einem Service Bus-Thema 
 
 Speichern Sie das folgende Playbook als `servicebus_subscription.yml`:
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook servicebus_subscription.yml
@@ -140,7 +140,7 @@ Speichern Sie das folgende Playbook als `servicebus_topic_policy.yml`:
           var: policy
 ```
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook servicebus_topic_policy.yml
@@ -173,7 +173,7 @@ Speichern Sie das folgende Playbook als `servicebus_namespace_info.yml`:
 Beachten Sie vor dem Ausführen des Playbooks die folgenden Hinweise:
 - Der `show_sas_policies`-Wert gibt an, ob die SAS-Richtlinien unter dem angegebenen Namespace angezeigt werden. Der Wert ist standardmäßig `False`, um zusätzlichen Netzwerkaufwand zu vermeiden.
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook servicebus_namespace_info.yml
@@ -220,7 +220,7 @@ Speichern Sie das folgende Playbook als `servicebus_list.yml`:
 Beachten Sie vor dem Ausführen des Playbooks die folgenden Hinweise:
 - Der `show_sas_policies`-Wert gibt an, ob die SAS-Richtlinien unter der angegebenen Warteschlange angezeigt werden. Dieser Wert ist standardmäßig auf `False` festgelegt, um zusätzlichen Netzwerkaufwand zu vermeiden.
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook servicebus_list.yml
@@ -249,7 +249,7 @@ Speichern Sie das folgende Playbook als `servicebus_queue_policy_delete.yml`:
           state: absent
 ```
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook servicebus_topic_policy_delete.yml
@@ -295,7 +295,7 @@ Speichern Sie den folgenden Code als `cleanup.yml`:
           force_delete_nonempty: yes
 ```
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook cleanup.yml

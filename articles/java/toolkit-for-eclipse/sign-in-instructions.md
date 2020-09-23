@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 3be8734755455dfaebcf1478f4441058496f7999
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: d0dbc16a16ca3a5ff367e6c67fceabcb37e2cce6
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379974"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534423"
 ---
 # <a name="sign-in-instructions-for-the-azure-toolkit-for-eclipse"></a>Anleitung zur Anmeldung für das Azure-Toolkit für Eclipse
 
@@ -27,20 +27,19 @@ Auch [**Abmeldemethoden**](#sign-out-of-your-azure-account) stehen zur Verfügun
 
 ## <a name="sign-in-to-your-azure-account-by-device-login"></a>Anmelden bei Ihrem Azure-Konto per Geräteanmeldung
 
-Gehen Sie wie folgt vor, um sich per Geräteanmeldung bei Azure anzumelden:
+In diesem Abschnitt wird der Azure-Anmeldeprozess nach Geräteanmeldung erläutert.
 
 1. Öffnen Sie das Projekt in Eclipse.
 
-2. Klicken Sie auf **Extras**, anschließend auf **Azure** und dann auf **Anmelden**.
-   ![Eclipse-Menü für die Anmeldung bei Azure][I01]
+1. Klicken Sie auf **Extras**, anschließend auf **Azure** und dann auf **Anmelden**.
 
-3. Wählen Sie im Fenster **Azure Sign In** (Azure-Anmeldung) die Option **Device Login** (Geräteanmeldung) aus, und klicken Sie anschließend auf **Sign in** (Anmelden).
+      :::image type="content" source="media/sign-in-instructions/eclipse-azure-signin.png" alt-text="Anmelden bei Azure in der Eclipse-IDE":::
+
+1. Wählen Sie im Fenster **Azure Sign In** (Azure-Anmeldung) die Option **Device Login** (Geräteanmeldung) aus, und klicken Sie anschließend auf **Sign in** (Anmelden).
 
    ![Fenster für die Azure Anmeldung mit ausgewählter Geräteanmeldung][I02]
 
-4. Klicken Sie im Dialogfeld **Azure Device Login** (Azure-Geräteanmeldung) auf **Copy&Open** (Kopieren und öffnen).
-
-   ![Dialogfeld für Azure-Anmeldung][I03]
+1. Klicken Sie im Dialogfeld **Azure Device Login** (Azure-Geräteanmeldung) auf **Copy&Open** (Kopieren und öffnen).
 
 > [!NOTE]
 >
@@ -51,13 +50,11 @@ Gehen Sie wie folgt vor, um sich per Geräteanmeldung bei Azure anzumelden:
 > 2. Wählen Sie den gewünschten Browser aus.
 >
 
-5. Fügen Sie im Browser Ihren Gerätecode ein, den Sie im vorherigen Schritt durch Klicken auf **Copy&Open** (Kopieren und öffnen) kopiert haben, und klicken Sie anschließend auf **Next** (Weiter).
+1. Fügen Sie im Browser Ihren Gerätecode ein, den Sie im vorherigen Schritt durch Klicken auf **Copy&Open** (Kopieren und öffnen) kopiert haben, und klicken Sie anschließend auf **Next** (Weiter).
 
-   ![Der Browser für die Geräteanmeldung][I04]
+1. Wählen Sie Ihr Azure-Konto aus, und führen Sie alle erforderlichen Authentifizierungsschritte aus, um sich anzumelden.
 
-6. Wenn schließlich das Dialogfeld **Select Subscriptions** (Abonnements auswählen) angezeigt wird, wählen Sie die Abonnements aus, die Sie verwenden möchten, und klicken Sie dann auf **OK**.
-
-   ![Dialogfeld zum Auswählen von Abonnements][I05]
+1. Schließen Sie nach der Anmeldung den Browser, und wechseln Sie zurück zur Eclipse-IDE. Wählen Sie im Dialogfeld **Abonnements auswählen** die Abonnements aus, die Sie verwenden möchten, und klicken Sie dann auf **OK**.
 
 ## <a name="sign-in-to-your-azure-account-by-service-principal"></a>Anmelden bei Ihrem Azure-Konto per Dienstprinzipal
 
@@ -66,15 +63,14 @@ In diesem Abschnitt erfahren Sie, wie Sie eine Datei mit Anmeldeinformationen er
 1. Öffnen Sie das Projekt in Eclipse.
 
 2. Klicken Sie auf **Extras**, anschließend auf **Azure** und dann auf **Anmelden**.
-   ![Der Eclipse-Befehl für Azure-Anmeldung][A01]
+
+      :::image type="content" source="media/sign-in-instructions/eclipse-azure-signin.png" alt-text="Anmelden bei Azure in der Eclipse-IDE":::
 
 3. In der **Azure Sign In** wählen Sie im Fenster **Dienstprinzipal**. Sollten Sie noch nicht über die Datei für die Dienstprinzipalauthentifizierung verfügen, klicken Sie auf **New** (Neu), um eine zu erstellen. Andernfalls können Sie auf **Browse** (Durchsuchen) klicken und direkt mit Schritt 8 fortfahren.
 
    ![Das Fenster für die Azure-Anmeldung mit ausgewählter Dienstprinzipaloption][A02]
 
 4. Klicken Sie im Dialogfeld **Azure Device Login** (Azure-Geräteanmeldung) auf **Copy&Open** (Kopieren und öffnen).
-
-   ![Dialogfeld für Azure-Anmeldung][A08]
 
 > [!NOTE]
 >
@@ -87,15 +83,9 @@ In diesem Abschnitt erfahren Sie, wie Sie eine Datei mit Anmeldeinformationen er
 
 5. Fügen Sie im Browser Ihren Gerätecode ein, den Sie im vorherigen Schritt durch Klicken auf **Copy&Open** (Kopieren und öffnen) kopiert haben, und klicken Sie anschließend auf **Next** (Weiter).
 
-   ![Der Browser für die Geräteanmeldung][A03]
-
 6. Wählen Sie im Dialogfeld **Create authentication files** (Authentifizierungsdateien erstellen) die gewünschten Abonnements und Ihr Zielverzeichnis aus, und klicken Sie dann auf **Start**.
 
-   ![Fenster zum Erstellen der Authentifizierungsdateien][A04]
-
 7. Klicken Sie im Dialogfeld **Service Principal Creation Status** (Dienstprinzipal-Erstellungsstatus) nach erfolgreicher Erstellung Ihrer Dateien auf **OK**.
-
-   ![Dialogfeld für den Status der Dienstprinzipalerstellung][A05]
 
 8. Die Adresse der erstellten Datei wird im Fenster für die **Azure-Anmeldung** automatisch ausgefüllt. Klicken Sie als Nächstes auf **Sign in** (Anmelden).
 
@@ -103,7 +93,6 @@ In diesem Abschnitt erfahren Sie, wie Sie eine Datei mit Anmeldeinformationen er
 
 9. Wenn schließlich das Dialogfeld **Select Subscriptions** (Abonnements auswählen) angezeigt wird, wählen Sie die Abonnements aus, die Sie verwenden möchten, und klicken Sie dann auf **OK**.
 
-   ![Dialogfeld zum Auswählen von Abonnements][A07]
 
 ## <a name="sign-out-of-your-azure-account"></a>Abmelden von Ihrem Azure-Abonnement
 
@@ -111,11 +100,7 @@ Nachdem Sie Ihr Konto mithilfe der obigen Schritte konfiguriert haben, werden Si
 
 1. Klicken Sie auf **Extras**, anschließend auf **Azure** und dann auf **Abmelden**.
 
-   ![Eclipse-Menü für die Abmeldung bei Azure][L01]
-
 2. Wenn das Dialogfeld **Azure Sign Out** angezeigt wird, klicken Sie auf **Yes**.
-
-   ![Dialogfeld zum Abmelden][L02]
 
 ## <a name="next-steps"></a>Nächste Schritte
 
@@ -126,21 +111,7 @@ Nachdem Sie Ihr Konto mithilfe der obigen Schritte konfiguriert haben, werden Si
 
 <!-- IMG List -->
 
-[I01]: media/sign-in-instructions/I01.png
 [I02]: media/sign-in-instructions/I02.png
-[I03]: media/sign-in-instructions/I03.png
-[I04]: media/sign-in-instructions/I04.png
-[I05]: media/sign-in-instructions/I05.png
 
-[A01]: media/sign-in-instructions/A01.png
 [A02]: media/sign-in-instructions/A02.png
-[A03]: media/sign-in-instructions/A03.png
-[A04]: media/sign-in-instructions/A04.png
-[A05]: media/sign-in-instructions/A05.png
 [A06]: media/sign-in-instructions/A06.png
-[A07]: media/sign-in-instructions/A07.png
-[A08]: media/sign-in-instructions/A08.png
-
-[L01]: media/sign-in-instructions/L01.png
-[L02]: media/sign-in-instructions/L02.png
-[L03]: media/sign-in-instructions/L03.png

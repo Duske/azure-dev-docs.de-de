@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, Bash, Playbook, virtueller Computer, VM-Skalie
 ms.topic: tutorial
 ms.date: 10/14/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: c214daa3f63f88711ace9d41ffb9978d20551fc9
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ad8bfca4030583e67423144dbc650eecb22e5060
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240572"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681970"
 ---
 # <a name="tutorial-create-a-vm-or-virtual-machine-scale-set-from-the-azure-shared-image-gallery-using-ansible"></a>Tutorial: Erstellen einer VM oder einer VM-Skalierungsgruppe über die Azure Shared Image Gallery mit Ansible
 
@@ -101,7 +101,7 @@ Mit dem ersten Playbook `00-prerequisites.yml` werden die Komponenten erstellt, 
           version: latest
 ```
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook 00-prerequisites.yml
@@ -133,7 +133,7 @@ Mit dem nächsten Playbook (`01a-create-generalized-image.yml`) wird die im vorh
         source: "{{ source_vm_name }}"
 ```
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook 01a-create-generalized-image.yml
@@ -160,7 +160,7 @@ Die Image Gallery ist das Repository zum gemeinsamen Nutzen und Verwalten von Im
         description: This is the gallery description.
 ```
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook 02-create-shared-image-gallery.yml
@@ -222,7 +222,7 @@ Imagedefinitionen enthalten den Imagetyp (Windows oder Linux), Versionshinweise 
         var: output
 ```
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook 03a-create-shared-image-generalized.yml
@@ -253,7 +253,7 @@ Führen Sie abschließend `04a-create-vm-using-generalized-image.yml` aus, um ei
         id: "/subscriptions/{{ lookup('env', 'AZURE_SUBSCRIPTION_ID') }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Compute/galleries/{{ shared_gallery_name }}/images/{{ shared_image_name }}/versions/{{ shared_image_version }}"
 ```
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook 04a-create-vm-using-generalized-image.yml
@@ -286,7 +286,7 @@ Sie können basierend auf dem generalisierten Image auch eine VM-Skalierungsgrup
         id: "/subscriptions/{{ lookup('env', 'AZURE_SUBSCRIPTION_ID') }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Compute/galleries/{{ shared_gallery_name }}/images/{{ shared_image_name }}/versions/{{ shared_image_version }}"
 ```
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook 05a-create-vmss-using-generalized-image.yml
@@ -320,7 +320,7 @@ Sie können Informationen zur Gallery und zur Imagedefinition und -version abruf
       name: "{{ shared_image_version }}"
 ```
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook 06-get-info.yml
@@ -359,7 +359,7 @@ Informationen zum Löschen der Gallery-Ressourcen finden Sie im Beispielplaybook
       state: absent
 ```
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook 07-delete-gallery.yml
@@ -367,36 +367,7 @@ ansible-playbook 07-delete-gallery.yml
 
 ## <a name="clean-up-resources"></a>Bereinigen von Ressourcen
 
-Löschen Sie die in diesem Artikel erstellten Ressourcen, wenn Sie sie nicht mehr benötigen. 
-
-Der Playbook-Beispielcode in diesem Abschnitt wird für Folgendes verwendet:
-
-- Löschen der beiden zuvor erstellten Ressourcengruppen
-
-Speichern Sie das folgende Playbook als `cleanup.yml`:
-
-```yml
-- hosts: localhost
-  vars:
-    resource_group: "{{ resource_group_name }}"
-  tasks:
-    - name: Delete a resource group
-      azure_rm_resourcegroup:
-        name: "{{ resource_group }}"
-        force_delete_nonempty: yes
-        state: absent
-```
-
-Hier sind einige wichtige Hinweise aufgeführt, die Sie beim Arbeiten mit dem Beispielplaybook berücksichtigen sollten:
-
-- Ersetzen Sie den Platzhalter `{{ resource_group_name }}` durch den Namen Ihrer Ressourcengruppe.
-- Alle Ressourcen in den beiden angegebenen Ressourcengruppen werden gelöscht.
-
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
-
-```bash
-ansible-playbook cleanup.yml
-```
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>Nächste Schritte
 

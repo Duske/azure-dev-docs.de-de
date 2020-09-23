@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, Bash, Playbook, Netzwerke, Route, Routingtabel
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 28302e5e8fc6a46193d96c791080797559a566e9
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 6eca7aa93716e41d62ca5dae0211fa1467eec2ef
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240022"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682000"
 ---
 # <a name="tutorial-configure-azure-route-tables-using-ansible"></a>Tutorial: Konfigurieren von Azure-Routingtabellen mit Ansible
 
@@ -47,7 +47,7 @@ Speichern Sie das folgende Playbook als `route_table_create.yml`:
         resource_group: "{{ resource_group }}"
 ```
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook route_table_create.yml
@@ -104,7 +104,7 @@ Speichern Sie das folgende Playbook als `route_table_associate.yml`:
         route_table: "{ route_table_name }"
 ```
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook route_table_associate.yml
@@ -133,7 +133,7 @@ Speichern Sie das folgende Playbook als `route_table_dissociate.yml`:
         address_prefix_cidr: "10.1.0.0/24"
 ```
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook route_table_dissociate.yml
@@ -166,7 +166,7 @@ Beachten Sie vor dem Ausführen des Playbooks die folgenden Hinweise:
 * `virtual_network_gateway` ist als `next_hop_type` definiert. Weitere Informationen dazu, wie in Azure Routen ausgewählt werden, finden Sie in der [Routingübersicht](/azure/virtual-network/virtual-networks-udr-overview).
 * `address_prefix` ist als `10.1.0.0/16` definiert. Das Präfix kann in der Routingtabelle nicht dupliziert werden.
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook route_create.yml
@@ -193,7 +193,7 @@ Speichern Sie das folgende Playbook als `route_delete.yml`:
         state: absent
 ```
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook route_delete.yml
@@ -221,7 +221,7 @@ Speichern Sie das folgende Playbook als `route_table_facts.yml`:
          var: query.route_tables[0]
 ```
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook route_table_facts.yml
@@ -250,7 +250,7 @@ Speichern Sie das folgende Playbook als `route_table_delete.yml`:
         state: absent
 ```
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook route_table_delete.yml
