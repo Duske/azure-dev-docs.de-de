@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 11/19/2019
 ms.author: dagrieve
 ms.custom: devx-track-java
-ms.openlocfilehash: 6aa930bb4ee5c6a5019e33b3d8075765b92f0bfc
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 2f7a7777551aadc5ef970d071e93974f1dea17b9
+ms.sourcegitcommit: 4824cea71195b188b4e8036746f58bf8b70dc224
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379784"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89753755"
 ---
 # <a name="transition-from-java-8-to-java-11"></a>Umstellung von Java 8 auf Java 11
 
@@ -126,7 +126,7 @@ Wenn ein Problem im Code behoben werden muss, sollten Sie dies durchführen, abe
 ### <a name="check-command-line-options"></a>Überprüfen der Befehlszeilenoptionen
 
 Führen Sie vor der Ausführung unter Java 11 einen schnellen Scanvorgang für die Befehlszeilenoptionen durch. 
-[Optionen, die entfernt wurden](#unrecognized-options), führen zur Beendigung der Java Virtual Machine (JVM). Diese Überprüfung ist besonders wichtig, wenn Sie GC-Protokollierungsoptionen nutzen, da sich diese gegenüber Java 8 stark geändert haben. Das Tool [JaCoLine](https://jacoline.dev/about) eignet sich gut zum Erkennen von Problemen mit den Befehlszeilenoptionen. 
+[Optionen, die entfernt wurden](#unrecognized-options), führen zur Beendigung der Java Virtual Machine (JVM). Diese Überprüfung ist besonders wichtig, wenn Sie GC-Protokollierungsoptionen nutzen, da sich diese gegenüber Java 8 stark geändert haben. Das Tool „JaCoLine“ eignet sich gut zum Erkennen von Problemen mit den Befehlszeilenoptionen. 
 
 ### <a name="check-third-party-libraries"></a>Überprüfen der Drittanbieterbibliotheken
 

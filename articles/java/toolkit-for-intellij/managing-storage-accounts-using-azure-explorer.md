@@ -2,19 +2,22 @@
 title: Verwalten von Speicherkonten mit dem Azure-Explorer für IntelliJ
 description: Erfahren Sie, wie Sie Ihre Azure-Speicherkonten mit Azure-Explorer für IntelliJ verwalten.
 documentationcenter: java
-ms.date: 02/01/2018
+ms.date: 09/09/2020
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: a692081032781a530d80c8fa2ff77792611e2673
-ms.sourcegitcommit: 300251b3d866bac9c7d2dfc3133efaaea8e0ce04
+ms.openlocfilehash: 5152b1bfedd02c821d2a9138fa3e20325b5ea086
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87438467"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534318"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-intellij"></a>Verwalten von Speicherkonten mithilfe von Azure-Explorer für IntelliJ
+
+> [!NOTE]
+> Das Feature für Speicherkonten im Azure-Explorer ist veraltet. Sie können das Azure-Portal verwenden, um Speicherkonten und Container zu erstellen und zu verwalten. Schnellstartanleitungen zur Verwaltung von Speicherkonten finden Sie in der Dokumentation zu [Azure Storage](/azure/storage/blobs/storage-quickstart-blobs-portal).
 
 Der Azure-Explorer gehört zum Azure-Toolkit für IntelliJ und bietet Java-Entwicklern eine einfach zu bedienende Lösung zum Verwalten von Speicherkonten in ihrem Azure-Konto innerhalb der integrierten Entwicklungsumgebung (IDE) von IntelliJ.
 
@@ -22,7 +25,7 @@ Der Azure-Explorer gehört zum Azure-Toolkit für IntelliJ und bietet Java-Entwi
 
 [!INCLUDE [show-azure-explorer](includes/show-azure-explorer.md)]
 
-## <a name="create-a-storage-account-in-intellij"></a>Erstellen eines Speicherkontos in IntelliJ
+## <a name="create-a-storage-account"></a>Speicherkonto erstellen
 
 Gehen Sie folgendermaßen vor, um ein Speicherkonto mit dem Azure-Explorer zu erstellen:
 
@@ -30,11 +33,7 @@ Gehen Sie folgendermaßen vor, um ein Speicherkonto mit dem Azure-Explorer zu er
 
 2. Erweitern Sie in der Ansicht des **Azure-Explorers** den Knoten **Azure**. Klicken Sie mit der rechten Maustaste auf **Speicherkonten**, und klicken Sie dann auf **Speicherkonto erstellen**.
 
-   ![Befehl „Speicherkonto erstellen“][CS01]
-
 3. Geben Sie im Dialogfeld **Speicherkonto erstellen** folgende Details an:
-
-   ![Dialogfeld „Neues Speicherkonto erstellen“][CS02]
 
    * **Name**: Der Name für das neue Speicherkonto.
 
@@ -54,17 +53,14 @@ Gehen Sie folgendermaßen vor, um ein Speicherkonto mit dem Azure-Explorer zu er
 
 4. Nachdem Sie alle vorstehenden Optionen angegeben haben, klicken Sie auf **OK**.
 
-## <a name="delete-a-storage-account-in-intellij"></a>Löschen eines Speicherkontos in IntelliJ
+## <a name="delete-a-storage-account"></a>Löschen von Speicherkonten
 
 Gehen Sie folgendermaßen vor, um ein Speicherkonto mit dem Azure-Explorer zu löschen:
 
 1. Klicken Sie in der Ansicht des **Azure-Explorers** mit der rechten Maustaste auf das Speicherkonto, und wählen Sie dann **Löschen** aus.
 
-   ![Menü „Speicherkonto löschen“][DS01]
-
 2. Klicken Sie im Bestätigungsfenster auf **Ja**.
 
-   ![Bestätigungsfenster für „Speicherkonto löschen“][DS02]
 
 ## <a name="next-steps"></a>Nächste Schritte
 

@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, Bash, Playbook, Netzwerk, Peering
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 25ca319c735605e6597d4a4717c58f41b69e66c0
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 747b11c9727e0844ac9d9c7b07a8355e8163c75e
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240052"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681953"
 ---
 # <a name="tutorial-configure-azure-virtual-network-peering-using-ansible"></a>Tutorial: Konfigurieren des Azure-VNET-Peerings mit Ansible
 
@@ -289,43 +289,42 @@ localhost                  : ok=12   changed=9    unreachable=0    failed=0    s
 
 ## <a name="clean-up-resources"></a>Bereinigen von Ressourcen
 
-Löschen Sie die in diesem Artikel erstellten Ressourcen, wenn Sie sie nicht mehr benötigen. 
+Löschen Sie die in diesem Artikel erstellten Ressourcen, wenn Sie sie nicht mehr benötigen.    
 
-Der Playbook-Beispielcode in diesem Abschnitt wird für Folgendes verwendet:
+Der Playbook-Beispielcode in diesem Abschnitt wird für Folgendes verwendet:    
 
-- Löschen der beiden zuvor erstellten Ressourcengruppen
+- Löschen der beiden zuvor erstellten Ressourcengruppen   
 
-Speichern Sie das folgende Playbook als `cleanup.yml`:
+Speichern Sie das folgende Playbook als `cleanup.yml`:   
 
-```bash
-- hosts: localhost
-  vars:
-    resource_group: "{{ resource_group_name-1 }}"
-    resource_group_secondary: "{{ resource_group_name-2 }}"
-  tasks:
-    - name: Delete a resource group
-      azure_rm_resourcegroup:
-        name: "{{ resource_group }}"
-        force_delete_nonempty: yes
-        state: absent
+```bash 
+- hosts: localhost  
+  vars: 
+    resource_group: "{{ resource_group_name-1 }}"   
+    resource_group_secondary: "{{ resource_group_name-2 }}" 
+  tasks:    
+    - name: Delete a resource group 
+      azure_rm_resourcegroup:   
+        name: "{{ resource_group }}"    
+        force_delete_nonempty: yes  
+        state: absent   
+    - name: Delete a resource group 
+      azure_rm_resourcegroup:   
+        name: "{{ resource_group_secondary }}"  
+        force_delete_nonempty: yes  
+        state: absent   
+``` 
 
-    - name: Delete a resource group
-      azure_rm_resourcegroup:
-        name: "{{ resource_group_secondary }}"
-        force_delete_nonempty: yes
-        state: absent
-```
+Hier sind einige wichtige Hinweise aufgeführt, die Sie beim Arbeiten mit dem Beispielplaybook berücksichtigen sollten:  
 
-Hier sind einige wichtige Hinweise aufgeführt, die Sie beim Arbeiten mit dem Beispielplaybook berücksichtigen sollten:
+- Ersetzen Sie den Platzhalter `{{ resource_group_name-1 }}` durch den Namen der ersten erstellten Ressourcengruppe.  
+- Ersetzen Sie den Platzhalter `{{ resource_group_name-2 }}` durch den Namen der zweiten erstellten Ressourcengruppe. 
+- Alle Ressourcen in den beiden angegebenen Ressourcengruppen werden gelöscht.   
 
-- Ersetzen Sie den Platzhalter `{{ resource_group_name-1 }}` durch den Namen der ersten erstellten Ressourcengruppe.
-- Ersetzen Sie den Platzhalter `{{ resource_group_name-2 }}` durch den Namen der zweiten erstellten Ressourcengruppe.
-- Alle Ressourcen in den beiden angegebenen Ressourcengruppen werden gelöscht.
+Führen Sie das Playbook aus, indem Sie den Befehl „ansible-playbook“ verwenden:    
 
-Führen Sie das Playbook aus, indem Sie den Befehl „ansible-playbook“ verwenden:
-
-```bash
-ansible-playbook cleanup.yml
+```bash 
+ansible-playbook cleanup.yml    
 ```
 
 ## <a name="next-steps"></a>Nächste Schritte

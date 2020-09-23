@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: c5830ab871b78e586b502e0c6e2331700fa0149d
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 2891b0c09c43b652fd7dd41e354290c2821bad46
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379954"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534563"
 ---
 # <a name="sign-in-instructions-for-the-azure-toolkit-for-intellij"></a>Anleitung zur Anmeldung für das Azure-Toolkit für IntelliJ
 
@@ -31,25 +31,22 @@ Gehen Sie wie folgt vor, um sich per Geräteanmeldung bei Azure anzumelden:
 
 1. Öffnen Sie das Projekt in IntelliJ IDEA.
 
-2. Öffnen Sie über die Seitenleiste den **Azure-Explorer**, und klicken Sie anschließend auf der Leiste am oberen Rand auf das Symbol für die **Azure-Anmeldung**, oder navigieren Sie im IDEA-Menü zu **Tools > Azure > Azure Sign in** (Extras > Azure > Azure-Anmeldung).
+1. Öffnen Sie über die Seitenleiste den **Azure-Explorer**, und klicken Sie anschließend auf der Leiste am oberen Rand auf das Symbol **Azure-Anmeldung** (oder navigieren Sie im IntelliJ-Menü zu **Tools > Azure > Azure Sign in** (Extras > Azure > Azure-Anmeldung)).
 
    ![IntelliJ-Befehl für Azure-Anmeldung][I01]
 
-3. Wählen Sie im Fenster **Azure Sign In** (Azure-Anmeldung) die Option **Device Login** (Geräteanmeldung) aus, und klicken Sie anschließend auf **Sign in** (Anmelden).
+1. Wählen Sie im Fenster **Azure Sign In** (Azure-Anmeldung) die Option **Device Login** (Geräteanmeldung) aus, und klicken Sie anschließend auf **Sign in** (Anmelden).
 
    ![Fenster für die Azure Anmeldung mit ausgewählter Geräteanmeldung][I02]
 
-4. Klicken Sie im Dialogfeld **Azure Device Login** (Azure-Geräteanmeldung) auf **Copy&Open** (Kopieren und öffnen).
+1. Klicken Sie im Dialogfeld **Azure Device Login** (Azure-Geräteanmeldung) auf **Copy&Open** (Kopieren und öffnen).
 
-   ![Dialogfeld für Azure-Anmeldung][I03]
+1. Fügen Sie im Browser Ihren Gerätecode ein, den Sie im vorherigen Schritt durch Klicken auf **Copy&Open** (Kopieren und öffnen) kopiert haben, und klicken Sie anschließend auf **Next** (Weiter).
 
-5. Fügen Sie im Browser Ihren Gerätecode ein, den Sie im vorherigen Schritt durch Klicken auf **Copy&Open** (Kopieren und öffnen) kopiert haben, und klicken Sie anschließend auf **Next** (Weiter).
+1. Wählen Sie Ihr Azure-Konto aus, und führen Sie alle erforderlichen Authentifizierungsschritte aus, um sich anzumelden.
 
-   ![Der Browser für die Geräteanmeldung][I04]
+1. Wenn das Dialogfeld **Select Subscriptions** (Abonnements auswählen) angezeigt wird, wählen Sie die Abonnements aus, die Sie verwenden möchten, und klicken Sie dann auf **OK**.
 
-6. Wenn das Dialogfeld **Select Subscriptions** (Abonnements auswählen) angezeigt wird, wählen Sie die Abonnements aus, die Sie verwenden möchten, und klicken Sie dann auf **OK**.
-
-   ![Dialogfeld zum Auswählen von Abonnements][I05]
 
 ## <a name="sign-in-to-your-azure-account-by-service-principal"></a>Anmelden bei Ihrem Azure-Konto per Dienstprinzipal
 
@@ -57,8 +54,9 @@ In diesem Abschnitt erfahren Sie, wie Sie eine Datei mit Anmeldeinformationen er
 
 1. Öffnen Sie das Projekt in IntelliJ IDEA.
 
-1. Öffnen Sie über die Seitenleiste den **Azure-Explorer**, und klicken Sie anschließend auf der Leiste am oberen Rand auf das Symbol für die **Azure-Anmeldung**, oder navigieren Sie im IDEA-Menü zu **Tools > Azure > Azure Sign in** (Extras > Azure > Azure-Anmeldung).
-   ![IntelliJ-Befehl für Azure-Anmeldung][A01]
+1. Öffnen Sie über die Seitenleiste den **Azure-Explorer**, und klicken Sie anschließend auf der Leiste am oberen Rand auf das Symbol **Azure-Anmeldung** (oder navigieren Sie im IntelliJ-Menü zu **Tools > Azure > Azure Sign in** (Extras > Azure > Azure-Anmeldung)).
+
+   ![IntelliJ-Befehl für Azure-Anmeldung][I01]
 
 1. Wählen Sie im Fenster für die **Azure-Anmeldung** die Option **Dienstprinzipal** aus, und klicken Sie dann auf **Neu**.
 
@@ -66,37 +64,27 @@ In diesem Abschnitt erfahren Sie, wie Sie eine Datei mit Anmeldeinformationen er
 
 1. Klicken Sie im Dialogfeld **Azure Device Login** (Azure-Geräteanmeldung) auf **Copy&Open** (Kopieren und öffnen).
 
-   ![Dialogfeld für Azure-Anmeldung][A03]
-
 1. Fügen Sie im Browser Ihren Gerätecode ein, den Sie im vorherigen Schritt durch Klicken auf **Copy&Open** (Kopieren und öffnen) kopiert haben, und klicken Sie anschließend auf **Next** (Weiter).
 
-   ![Der Browser für die Geräteanmeldung][A04]
+1. Wählen Sie Ihr Azure-Konto aus, und führen Sie alle erforderlichen Authentifizierungsschritte aus, um sich anzumelden. Schließen Sie den Browser nach Abschluss der Authentifizierung, und wechseln Sie zurück zu IntelliJ.
 
 1. Wählen Sie im Dialogfeld **Create authentication files** (Authentifizierungsdateien erstellen) die gewünschten Abonnements und Ihr Zielverzeichnis aus, und klicken Sie dann auf **Start**.
 
-   ![Fenster zum Erstellen der Authentifizierungsdateien][A05]
-
 1. Klicken Sie im Dialogfeld **Service Principal Creation Status** (Dienstprinzipal-Erstellungsstatus) nach erfolgreicher Erstellung Ihrer Dateien auf **OK**.
-
-   ![Dialogfeld für den Status der Dienstprinzipalerstellung][A06]
 
 1. Klicken Sie im Fenster **Azure Sign In** (Azure-Anmeldung) auf **Sign in** (Anmelden). 
 
-   ![Dialogfeld für Azure-Anmeldung][A07]
-
 1. Wenn das Dialogfeld **Select Subscriptions** (Abonnements auswählen) angezeigt wird, wählen Sie die Abonnements aus, die Sie verwenden möchten, und klicken Sie dann auf **OK**.
 
-   ![Dialogfeld zum Auswählen von Abonnements][A08]
-
-> Nachdem Sie die Datei zur Dienstprinzipalauthentifizierung erstellt haben, können Sie mit Schritt 8 beginnen, Ihre Authentifizierungsdatei auswählen und sich anmelden.
+   > [!TIP]
+   > Nachdem Sie die Datei für die Dienstprinzipalauthentifizierung erstellt haben, können Sie mit Schritt 3 beginnen, Ihre Authentifizierungsdatei auswählen und sich anmelden.
 
 ## <a name="sign-out-of-your-azure-account"></a>Abmelden von Ihrem Azure-Abonnement
 
-Nachdem Sie Ihr Konto mithilfe der obigen Schritte konfiguriert haben, werden Sie bei jedem Start von IntelliJ IDEA automatisch angemeldet. Mit den folgenden Schritten können Sie sich bei Bedarf von Ihrem Azure-Konto abmelden.
+Nachdem Sie Ihr Konto mithilfe der obigen Schritte konfiguriert haben, werden Sie bei jedem Start von IntelliJ IDEA automatisch angemeldet. 
 
-* Öffnen Sie in IntelliJ IDEA die Seitenleiste von Azure Explorer, klicken Sie auf das Symbol für **Azure-Abmeldung**, und bestätigen Sie (oder im IDEA-Menü **Tools > Azure > Azure Sign Out** (Extras > Azure > Azure-Abmeldung)).
+Falls Sie sich aber von Ihrem Azure-Konto abmelden möchten, müssen Sie zur Seitenleiste des Azure-Explorers navigieren und auf das Symbol **Azure-Abmeldung** klicken oder im IntelliJ-Menü zu **Tools > Azure > Azure Sign Out** (Extras > Azure > Azure-Abmeldung) navigieren.
 
-   ![IntelliJ-Befehl für Azure-Abmeldung][L01]
 
 ## <a name="next-steps"></a>Nächste Schritte
 
@@ -108,20 +96,6 @@ Nachdem Sie Ihr Konto mithilfe der obigen Schritte konfiguriert haben, werden Si
 
 [I01]: media/sign-in-instructions/I01.png
 [I02]: media/sign-in-instructions/I02.png
-[I03]: media/sign-in-instructions/I03.png
-[I04]: media/sign-in-instructions/I04.png
-[I05]: media/sign-in-instructions/I05.png
 
-[A01]: media/sign-in-instructions/A01.png
 [A02]: media/sign-in-instructions/A02.png
-[A03]: media/sign-in-instructions/A03.png
-[A04]: media/sign-in-instructions/A04.png
-[A05]: media/sign-in-instructions/A05.png
-[A06]: media/sign-in-instructions/A06.png
-[A07]: media/sign-in-instructions/A07.png
-[A08]: media/sign-in-instructions/A08.png
-[A09]: media/sign-in-instructions/A09.png
 
-[L01]: media/sign-in-instructions/L01.png
-[L02]: media/sign-in-instructions/L02.png
-[L03]: media/sign-in-instructions/L03.png

@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: 17a154fe7f41e4079fd9c6dcf1358c2acd50367b
-ms.sourcegitcommit: 035f485f182405fdf3e274ec4f70abfcf5fc9641
+ms.openlocfilehash: efe17eba034b92d771d979a896585d4d5362a11d
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/07/2020
-ms.locfileid: "89511057"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534398"
 ---
 # <a name="tutorial-reading-a-secret-from-azure-key-vault-in-a-spring-boot-application"></a>Tutorial: Einlesen eines Geheimnisses aus Azure Key Vault in eine Spring Boot-Anwendung
 
@@ -34,7 +34,7 @@ In diesem Tutorial wird beschrieben, wie Sie eine Spring Boot-App erstellen, mit
 
 * Ein aktives Azure-Abonnement.
   * Wenn Sie kein Azure-Abonnement besitzen, können Sie ein [kostenloses Konto erstellen](https://azure.microsoft.com/free/).
-* [Installation der Azure CLI, Version 2.0.67 oder höher](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) und der Azure Spring Cloud-Erweiterung mit dem folgenden Befehl: `az extension add --name spring-cloud`
+* [Installation der Azure CLI, Version 2.0.67 oder höher](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) und der Azure Spring Cloud-Erweiterung mit dem folgenden Befehl: `az extension add --name spring-cloud`
 * Ein unterstütztes Java Development Kit (JDK). Weitere Informationen zu den für die Entwicklung in Azure verfügbaren JDKs finden Sie unter <https://aka.ms/azure-jdks>.
 * [Apache Maven](http://maven.apache.org/), Version 3.0 oder höher
 * `curl`-Befehl.  Auf den meisten UNIX-ähnlichen Betriebssystemen ist dieser Befehl vorinstalliert.  Betriebssystemspezifische Clients sind auf der [offiziellen cURL-Website](https://curl.haxx.se/) verfügbar.
@@ -170,7 +170,7 @@ Mit dem folgenden Verfahren wird die Key Vault-Instanz erstellt und initialisier
    "https://contosokv.vault.azure.net/"
    ```
 
-1. Die Konfiguration der Key Vault-Instanz ermöglicht `get`- und `list`-Vorgänge für diese verwaltete Identität.  Der Wert der `object-id` ist die `appId` aus dem obigen Befehl `az ad sp create-for-rbac`.
+1. Konfigurieren Sie die Key Vault-Instanz, um `get`- und `list`-Vorgänge für diese verwaltete Identität zuzulassen.  Der Wert der `object-id` ist die `appId` aus dem obigen Befehl `az ad sp create-for-rbac`.
 
    ```azurecli
    az keyvault set-policy --name contosokv --spn http://ejbcontososp --secret-permissions get list
@@ -185,6 +185,9 @@ Mit dem folgenden Verfahren wird die Key Vault-Instanz erstellt und initialisier
    | name | Der Name der Key Vault-Instanz. |
    | spn | Der Name (`name`) aus der Ausgabe des obigen Befehls `az ad sp create-for-rbac`. |
    | secret-permissions | Die Liste mit den Vorgängen, die für den benannten Prinzipal zulässig sein sollen. |
+
+    > [!NOTE]
+    > Das Prinzip der geringsten Rechte empfiehlt zwar, einer Ressource möglichst wenig Berechtigungen zu gewähren, für die Key Vault-Integration sind jedoch mindestens `get` und `list` erforderlich.
 
 1. Speichern Sie ein Geheimnis in Ihrer neuen Key Vault-Instanz.  Ein häufiger Anwendungsfall ist die Speicherung einer JDBC-Verbindungszeichenfolge.  Beispiel:
 

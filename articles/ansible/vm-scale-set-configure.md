@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, playbook, vm, vm-skalierungsgruppen, vms
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: e9ac4604b10f73e85290162eaf47803f4c4021c0
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 357de61099b8b3673022857a933a18632cff7e40
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240652"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681868"
 ---
 # <a name="tutorial-configure-virtual-machine-scale-sets-in-azure-using-ansible"></a>Tutorial: Konfigurieren von VM-Skalierungsgruppen in Azure mit Ansible
 
@@ -146,7 +146,7 @@ Beachten Sie vor dem Ausführen des Playbooks die folgenden Hinweise:
 
 * Ersetzen Sie im Abschnitt `vars` den Platzhalter `{{ admin_password }}` durch Ihr eigenes Kennwort.
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook vmss-create.yml
@@ -244,7 +244,7 @@ Es gibt zwei Möglichkeiten, das Beispielplaybook abzurufen:
       azure_rm_virtualmachinescaleset: "{{ body }}"
 ```
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook vmss-scale-out.yml

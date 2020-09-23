@@ -3,17 +3,17 @@ title: Installieren des Azure-Toolkits für IntelliJ
 description: Hier erfahren Sie, wie Sie das Plug-In für das Azure-Toolkit für IntelliJ installieren, um in Azure Cloudanwendungen zu erstellen und bereitzustellen.
 documentationcenter: java
 ms.assetid: c6817c7b-f28c-4c06-8216-41c7a8117de3
-ms.date: 02/01/2018
+ms.date: 09/09/2020
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 15e3bdc3f001b3fe93a96b27bf7fc44c7aaa8f3a
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: fe8b07257ff3a9fc5523d13dd13e19982103ab05
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379924"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534462"
 ---
 # <a name="installing-the-azure-toolkit-for-intellij"></a>Installieren des Azure-Toolkits für IntelliJ
 
@@ -53,80 +53,39 @@ Für das Azure-Toolkit für IntelliJ sind folgende Softwarekomponenten erforderl
 -->
 
 
-## <a name="to-install-the-azure-toolkit-for-intellij-from-the-settings-dialog-box"></a>So installieren Sie das Azure-Toolkit für IntelliJ über das Dialogfeld „Einstellungen“
+## <a name="from-the-settings-dialog-box"></a>Über das Dialogfeld „Einstellungen“
 
-1. Starten Sie IntelliJ IDEA.
+1. Klicken Sie auf der IntelliJ-Symbolleiste auf **Datei** und dann auf **Einstellungen**.
 
-1. Wenn IntelliJ IDEA geöffnet wird, klicken Sie auf **File** (Datei), klicken Sie dann auf **Settings** (Einstellungen).
-   
-   ![Das Dialogfeld „Settings“ (Einstellungen) von IntelliJ IDEA öffnen][01a]
+1. Klicken Sie im Dialogfeld „Einstellungen“ im linken Navigationsmenü auf **Plug-Ins**.
 
-1. Klicken Sie im Dialogfeld „Settings“ (Einstellungen) auf **Plugins**, und klicken Sie dann auf **Browse Repositories** (Repositorys durchsuchen).
-   
-   ![Dialogfeld „Settings“ (Einstellungen) von IntelliJ IDEA][02a]
+1. Geben Sie in der **Marketplace**-Suchleiste den Suchbegriff „Azure“ ein, um die Liste mit den Plug-Ins zu filtern. Wählen Sie **Azure Toolkit for IntelliJ** (Azure-Toolkit für IntelliJ) aus, und klicken Sie anschließend auf **Install** (Installieren). Lesen Sie den Text unter *Third-party Plugins Privacy Note* (Datenschutzhinweis für Drittanbieter-Plug-Ins) für IntelliJ, und klicken Sie auf **Accept** (Akzeptieren).
 
-1. Geben Sie im Dialogfeld **Browse Repositories** (Repositorys durchsuchen) in das Suchfeld „Azure“ ein. Markieren Sie **Azure Toolkit for IntelliJ** (Azure Toolkit für IntelliJ), und klicken Sie dann auf **Install** (Installieren).
-   
-   ![Suchen nach dem Azure-Toolkit für IntelliJ][03]
-   
-   IntelliJ IDEA zeigt den Installationsstatus in einem Dialogfeld an.
-   
-   ![Installationsstatus][04]
+   :::image type="content" source="media/installation/03-intellij-search-plugin.png" alt-text="Suchen nach dem Plug-In „Azure-Toolkit für IntelliJ“"::: 
 
-1. Klicken Sie nach Abschluss der Installation auf **Restart IntelliJ IDEA**(IntelliJ IDEA neu starten).
-   
-   ![Restart IntelliJ IDEA][05]
+1. Klicken Sie nach Abschluss der Installation auf **Restart IDE** (IDE neu starten).
 
-1. Klicken Sie auf **OK** , um das Dialogfeld „Settings“ (Einstellungen) zu schließen.
+1. Wenn die Aufforderung zum Neustarten von IntelliJ IDEA angezeigt wird, klicken Sie auf **Restart**(Neu starten).
    
-   ![Das Dialogfeld „Settings“ (Einstellungen) von IntelliJ IDEA schließen][06]
+   :::image type="content" source="media/installation/07-restart-intellij.png" alt-text="Neustarten von IntelliJ IDEA"::: 
 
-1. Wenn Sie gefragt werden, ob Sie IntelliJ IDEA neu starten oder den Neustart später durchführen möchten, klicken Sie auf **Restart**(Neu starten).
-   
-1   ![Restart IntelliJ IDEA][07]
+## <a name="from-the-start-screen"></a>Über den Startbildschirm
 
-## <a name="to-install-the-azure-toolkit-for-intellij-from-the-start-screen"></a>So installieren Sie das Azure-Toolkit für IntelliJ über den Startbildschirm
+1. Klicken Sie auf dem Startbildschirm von IntelliJ IDEA auf **Configure** (Konfigurieren) und anschließend auf **Plugins** (Plug-Ins).
 
-1. Starten Sie IntelliJ IDEA.
+   :::image type="content" source="media/installation/01-intellij-configure-dropdown.png" alt-text="Plug-Ins über den Startbildschirm"::: 
 
-1. Wenn der Startbildschirm von IntelliJ IDEA angezeigt wird, klicken Sie auf **Configure** (Konfigurieren), und klicken Sie dann auf **Plugins**.
-   
-   ![IntelliJ IDEA-Plug-Ins installieren][01b]
+1. Geben Sie in der **Marketplace**-Suchleiste den Suchbegriff „Azure“ ein, um die Liste mit den Plug-Ins zu filtern. Wählen Sie **Azure Toolkit for IntelliJ** (Azure-Toolkit für IntelliJ) aus, und klicken Sie anschließend auf **Install** (Installieren). Lesen Sie den Text unter *Third-party Plugins Privacy Note* (Datenschutzhinweis für Drittanbieter-Plug-Ins) für IntelliJ, und klicken Sie auf **Accept** (Akzeptieren).
 
-1. Klicken Sie im Dialogfeld **Plugins** auf **Browse Repositories** (Repositorys durchsuchen).
-   
-   ![Die Plug-In-Repositorys von IntelliJ IDEA durchsuchen][02b]
+   :::image type="content" source="media/installation/01-intellij-start-screen-marketplace.png" alt-text="Plug-In-Marketplace über den Startbildschirm":::
 
-1. Geben Sie im Dialogfeld **Browse Repositories** (Repositorys durchsuchen) in das Suchfeld „Azure“ ein. Markieren Sie **Azure Toolkit for IntelliJ** (Azure Toolkit für IntelliJ), und klicken Sie dann auf **Install** (Installieren).
-   
-   ![Suchen nach dem Azure-Toolkit für IntelliJ][03]
-   
-   IntelliJ IDEA zeigt den Installationsstatus in einem Dialogfeld an.
-   
-   ![Installationsstatus][04]
+1. Klicken Sie nach Abschluss der Installation auf **Restart IDE** (IDE neu starten).
 
-1. Klicken Sie nach Abschluss der Installation auf **Restart IntelliJ IDEA**(IntelliJ IDEA neu starten).
+1. Wenn die Aufforderung zum Neustarten von IntelliJ IDEA angezeigt wird, klicken Sie auf **Restart**(Neu starten).
    
-   ![Restart IntelliJ IDEA][05]
-
-1. Wenn Sie gefragt werden, ob Sie IntelliJ IDEA neu starten oder den Neustart später durchführen möchten, klicken Sie auf **Restart**(Neu starten).
-   
-   ![Restart IntelliJ IDEA][07]
+   :::image type="content" source="media/installation/01-intellij-start-screen-marketplace-restart.png" alt-text="Neustarten für die Installation über den Startbildschirm":::
 
 ## <a name="next-steps"></a>Nächste Schritte
 
 [!INCLUDE [additional-resources](includes/additional-resources.md)]
 
-<!-- URL List -->
-
-<!-- IMG List -->
-
-[01a]: media/installation/01-intellij-file-settings.png
-[01b]: media/installation/01-intellij-configure-dropdown.png
-[02a]: media/installation/02-intellij-settings-dialog.png
-[02b]: media/installation/02-intellij-plugins-dialog.png
-[03]: media/installation/03-intellij-browse-repositories.png
-[04]: media/installation/04-install-progress.png
-[05]: media/installation/05-restart-intellij.png
-[06]: media/installation/06-intellij-settings-dialog.png
-[07]: media/installation/07-restart-intellij.png

@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 01/22/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: 5bd1611418cca94c5f580b085a067df35d7a1248
-ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
+ms.openlocfilehash: a8e9f883e76f3c79a9b5470c18907276d9262d03
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88725234"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682158"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-app-service"></a>Migrieren von Spring Boot-Anwendungen zu Azure App Service
 
@@ -113,7 +113,7 @@ Sie müssen in Ihrem App Service-Plan für jede ausführbare JAR-Datei, die Sie 
 
 #### <a name="maven-applications"></a>Maven-Anwendungen
 
-Wenn Ihre Anwendung über eine Maven-POM-Datei erstellt wurde, sollten Sie [das Web-App-Plug-In für Maven verwenden](/azure/developer/java/spring-framework/deploy-spring-boot-java-app-with-maven-plugin#configure-maven-plugin-for-azure-app-service), um die Web-App zu erstellen und Ihre Anwendung bereitzustellen.
+Wenn Ihre Anwendung über eine Maven-POM-Datei erstellt wurde, sollten Sie das Web-App-Plug-In für Maven verwenden, um die Web-App zu erstellen und Ihre Anwendung bereitzustellen. Weitere Informationen finden Sie unter [Quickstart: Erstellen einer Java-App in Azure App Service](/azure/app-service/quickstart-java?tabs=javase&pivots=platform-linux).
 
 #### <a name="non-maven-applications"></a>Nicht auf Maven basierende Anwendungen
 

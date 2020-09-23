@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie die Anmeldeinformationsobjekte abrufen, 
 ms.date: 08/18/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 50f13c09d1c3932446d90420399b18c3247f1640
-ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
+ms.openlocfilehash: 746a948077c7def12aae5053355c445b7592eae0
+ms.sourcegitcommit: 4824cea71195b188b4e8036746f58bf8b70dc224
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88614477"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89753750"
 ---
 # <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>Authentifizieren und Autorisieren von Python-Apps in Azure
 
@@ -110,13 +110,13 @@ retrieved_secret = secret_client.get_secret("secret-name-01")
 
 Auch hier wird keine Authentifizierung oder Autorisierung durchgeführt, bis von Ihrem Code über ein Clientobjekt eine spezifische Anforderung an die Azure-REST-API gesendet wird. Mit der Anweisung zum Erstellen von `DefaultAzureCredential` (siehe nächster Abschnitt) wird nur ein clientseitiges Objekt im Arbeitsspeicher erstellt, aber es werden keine weiteren Überprüfungen durchgeführt. 
 
-Für die Erstellung des [`SecretClient`](/python/api/azure-keyvault-secrets/azure.keyvault.secrets.secretclient?view=azure-python)-Objekts des SDK ist auch keine Kommunikation mit der betreffenden Ressource erforderlich. Das `SecretClient`-Objekt ist nur ein Wrapper für die zugrunde liegende Azure-REST-API und nur im Laufzeitarbeitsspeicher der App vorhanden. 
+Für die Erstellung des [`SecretClient`](/python/api/azure-keyvault-secrets/azure.keyvault.secrets.secretclient)-Objekts des SDK ist auch keine Kommunikation mit der betreffenden Ressource erforderlich. Das `SecretClient`-Objekt ist nur ein Wrapper für die zugrunde liegende Azure-REST-API und nur im Laufzeitarbeitsspeicher der App vorhanden. 
 
-Erst wenn im Code die [`get_secret`](/python/api/azure-keyvault-secrets/azure.keyvault.secrets.secretclient?view=azure-python#get-secret-name--version-none----kwargs-)-Methode aufgerufen wird, generiert das Clientobjekt den entsprechenden REST-API-Aufruf an Azure. Der Endpunkt von Azure für `get_secret` authentifiziert dann die Identität des Aufrufers und überprüft die Autorisierung.
+Erst wenn im Code die [`get_secret`](/python/api/azure-keyvault-secrets/azure.keyvault.secrets.secretclient#get-secret-name--version-none----kwargs-)-Methode aufgerufen wird, generiert das Clientobjekt den entsprechenden REST-API-Aufruf an Azure. Der Endpunkt von Azure für `get_secret` authentifiziert dann die Identität des Aufrufers und überprüft die Autorisierung.
 
 ## <a name="authenticate-with-defaultazurecredential"></a>Authentifizieren mit DefaultAzureCredential
 
-Für die meisten Anwendungen ist die [`DefaultAzureCredential`](/python/api/azure-identity/azure.identity.defaultazurecredential?view=azure-python)-Klasse aus der [`azure-identity`](/python/api/azure-identity/azure.identity?view=azure-python)-Bibliothek die einfachste und empfohlene Authentifizierungsmethode. Von `DefaultAzureCredential` wird automatisch die verwaltete Identität der App in der Cloud genutzt, und bei der lokalen Ausführung wird automatisch ein lokaler Dienstprinzipal aus Umgebungsvariablen geladen.
+Für die meisten Anwendungen ist die [`DefaultAzureCredential`](/python/api/azure-identity/azure.identity.defaultazurecredential)-Klasse aus der [`azure-identity`](/python/api/azure-identity/azure.identity)-Bibliothek die einfachste und empfohlene Authentifizierungsmethode. Von `DefaultAzureCredential` wird automatisch die verwaltete Identität der App in der Cloud genutzt, und bei der lokalen Ausführung wird automatisch ein lokaler Dienstprinzipal aus Umgebungsvariablen geladen.
 
 ```python
 import os
@@ -228,7 +228,7 @@ Bei dieser Methode erstellen Sie eine JSON-Datei, die die erforderlichen Anmelde
     Ersetzen Sie die vier Platzhalter durch Ihre Azure-Abonnement-ID, die Mandanten-ID, die Client-ID und das Clientgeheimnis.
 
     > [!TIP]
-    > Wie unter [Konfigurieren der lokalen Entwicklungsumgebung](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development) erläutert wird, können Sie den Befehl [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) mit dem `--sdk-auth`-Parameter verwenden, um dieses JSON-Format direkt zu generieren.
+    > Wie unter [Konfigurieren der lokalen Entwicklungsumgebung](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development) erläutert wird, können Sie den Befehl [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) mit dem `--sdk-auth`-Parameter verwenden, um dieses JSON-Format direkt zu generieren.
 
 1. Speichern Sie die Datei unter einem Namen wie *credentials.json* an einem sicheren Speicherort, auf den Ihr Code zugreifen kann. Um Ihre Anmeldeinformationen zu schützen, müssen Sie diese Datei aus der Quellcodeverwaltung ausschließen und dürfen sie nicht für andere Entwickler freigeben. Das heißt, die Mandanten-ID, die Client-ID und das Clientgeheimnis eines Dienstprinzipals sollten immer auf Ihrer Entwicklungsarbeitsstation isoliert bleiben.
 
@@ -250,7 +250,7 @@ Bei dieser Methode erstellen Sie eine JSON-Datei, die die erforderlichen Anmelde
 
     In diesen Beispielen wird davon ausgegangen, dass die JSON-Datei den Namen *credentials.json* trägt und sich im übergeordneten Ordner Ihres Projekts befindet.
 
-1. Verwenden Sie die Methode [get_client_from_auth_file](/python/api/azure-common/azure.common.client_factory?view=azure-python#get-client-from-auth-file-client-class--auth-path-none----kwargs-), um das Clientobjekt zu erstellen:
+1. Verwenden Sie die Methode [get_client_from_auth_file](/python/api/azure-common/azure.common.client_factory#get-client-from-auth-file-client-class--auth-path-none----kwargs-), um das Clientobjekt zu erstellen:
 
     ```python
     from azure.common.client_factory import get_client_from_auth_file
@@ -302,7 +302,7 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-Statt wie im vorherigen Abschnitt beschrieben eine Datei zu verwenden, können Sie die erforderlichen JSON-Daten in einer Variablen erstellen und [get_client_from_json_dict](/python/api/azure-common/azure.common.client_factory?view=azure-python#get-client-from-json-dict-client-class--config-dict----kwargs-) aufrufen. In diesem Code wird davon ausgegangen, dass Sie die Umgebungsvariablen erstellt haben, die unter [Konfigurieren der lokalen Entwicklungsumgebung](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development) beschrieben werden. Für Code, der in der Cloud bereitgestellt wird, können Sie diese Umgebungsvariablen auf Ihrer Server-VM oder als Anwendungseinstellungen erstellen, wenn Sie einen Plattformdienst wie Azure App Service und Azure Functions verwenden.
+Statt wie im vorherigen Abschnitt beschrieben eine Datei zu verwenden, können Sie die erforderlichen JSON-Daten in einer Variablen erstellen und [get_client_from_json_dict](/python/api/azure-common/azure.common.client_factory#get-client-from-json-dict-client-class--config-dict----kwargs-) aufrufen. In diesem Code wird davon ausgegangen, dass Sie die Umgebungsvariablen erstellt haben, die unter [Konfigurieren der lokalen Entwicklungsumgebung](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development) beschrieben werden. Für Code, der in der Cloud bereitgestellt wird, können Sie diese Umgebungsvariablen auf Ihrer Server-VM oder als Anwendungseinstellungen erstellen, wenn Sie einen Plattformdienst wie Azure App Service und Azure Functions verwenden.
 
 Sie können Werte auch in Azure Key Vault speichern und zur Laufzeit abrufen, anstatt Umgebungsvariablen zu verwenden.
 
@@ -327,7 +327,7 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-Bei dieser Methode erstellen Sie ein [`ServicePrincipalCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.serviceprincipalcredentials?view=azure-python)-Objekt mithilfe von Anmeldeinformationen, die aus sicherem Speicher wie Azure Key Vault oder Umgebungsvariablen abgerufen werden. Im vorherigen Code wird davon ausgegangen, dass Sie die Umgebungsvariablen erstellt haben, die unter [Konfigurieren der lokalen Entwicklungsumgebung](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development) beschrieben werden.
+Bei dieser Methode erstellen Sie ein [`ServicePrincipalCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.serviceprincipalcredentials)-Objekt mithilfe von Anmeldeinformationen, die aus sicherem Speicher wie Azure Key Vault oder Umgebungsvariablen abgerufen werden. Im vorherigen Code wird davon ausgegangen, dass Sie die Umgebungsvariablen erstellt haben, die unter [Konfigurieren der lokalen Entwicklungsumgebung](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development) beschrieben werden.
 
 Mit dieser Methode können Sie eine [Azure-unabhängige oder nationale Cloud](/azure/active-directory/develop/authentication-national-cloud) anstelle der öffentlichen Azure-Cloud verwenden, indem Sie ein `base_url`-Argument für das Clientobjekt angeben:
 
@@ -400,13 +400,13 @@ print(subscription.subscription_id)
 
 Bei dieser Methode erstellen Sie ein Clientobjekt mit den Anmeldeinformationen des Benutzers, der mit dem Azure CLI-Befehl `az login` angemeldet ist. Die Anwendung wird für alle Vorgänge als Benutzer autorisiert.
 
-Das SDK verwendet die Standardabonnement-ID. Alternativ können Sie das Abonnement mit [`az account`](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli) festlegen.
+Für das SDK wird die Standardabonnement-ID verwendet. Sie können das Abonnement aber auch vor dem Ausführen des Codes festlegen, indem Sie Folgendes verwenden: [`az account`](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli). Falls Sie in demselben Skript auf unterschiedliche Abonnements verweisen müssen, sollten Sie die Methode ['get_client_from_auth_file'](#authenticate-with-a-json-file) oder [`get_client_from_json_dict`](#authenticate-with-a-json-dictionary) verwenden, die weiter oben in diesem Artikel beschrieben wurden.
 
-Diese Methode sollte nur für frühe experimentelle- und Entwicklungszwecke verwendet werden, da ein angemeldeter Benutzer in der Regel über Besitzer- oder Administratorrechte verfügt und ohne zusätzliche Berechtigungen auf die meisten Ressourcen zugreifen kann. Weitere Informationen finden Sie im vorherigen Hinweis zum [Verwenden von CLI-Anmeldeinformationen mit `DefaultAzureCredential`](#cli-auth-note).
+Die Funktion `get_client_from_cli_profile` sollte nur für frühzeitige Experimente und Entwicklungszwecke verwendet werden, da ein angemeldeter Benutzer in der Regel über Besitzer- oder Administratorrechte verfügt und ohne zusätzliche Berechtigungen auf die meisten Ressourcen zugreifen kann. Weitere Informationen finden Sie im vorherigen Hinweis zum [Verwenden von CLI-Anmeldeinformationen mit `DefaultAzureCredential`](#cli-auth-note).
 
 ### <a name="deprecated-authenticate-with-userpasscredentials"></a>Veraltet: Authentifizierung mit UserPassCredentials
 
-Bevor die [Azure Active Directory-Authentifizierungsbibliothek (ADAL) für Python](https://github.com/AzureAD/azure-activedirectory-library-for-python) verfügbar war, musste die jetzt veraltete Klasse [`UserPassCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.userpasscredentials?view=azure-python) verwendet werden. Diese Klasse unterstützt keine zweistufige Authentifizierung und sollte nicht mehr verwendet werden.
+Bevor die [Azure Active Directory-Authentifizierungsbibliothek (ADAL) für Python](https://github.com/AzureAD/azure-activedirectory-library-for-python) verfügbar war, musste die jetzt veraltete Klasse [`UserPassCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.userpasscredentials) verwendet werden. Diese Klasse unterstützt keine zweistufige Authentifizierung und sollte nicht mehr verwendet werden.
 
 ## <a name="see-also"></a>Weitere Informationen
 

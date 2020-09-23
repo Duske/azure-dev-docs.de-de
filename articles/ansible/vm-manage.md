@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, Bash, CloudShell, Playbook, Bash
 ms.topic: quickstart
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 354c54191d108dc7a58f2813225a40b75968a4b2
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 896616cff3f2df237de625536981b08d5db9175b
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240622"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681922"
 ---
 # <a name="quickstart-manage-linux-virtual-machines-in-azure-using-ansible"></a>Schnellstart: Verwalten von virtuellen Linux-Computern in Azure mithilfe von Ansible
 
@@ -53,7 +53,7 @@ In diesem Abschnitt heben Sie mithilfe von Ansible die Zuordnung eines virtuelle
 
 1. Speichern Sie die Datei, und beenden Sie den Editor.
 
-1. Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+1. Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
     ```bash
     ansible-playbook azure-vm-stop.yml
@@ -105,7 +105,7 @@ In diesem Abschnitt starten Sie einen virtuellen Azure-Computer, dessen Zuordnun
 
 1. Speichern Sie die Datei, und beenden Sie den Editor.
 
-1. Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+1. Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
     ```bash
     ansible-playbook azure-vm-start.yml

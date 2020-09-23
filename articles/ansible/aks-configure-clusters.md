@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, Bash, Cloud Shell, Playbook, AKS, Container, K
 ms.topic: tutorial
 ms.date: 06/17/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 0e7b42776c0405acf335dc75508ef2759838da21
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: d54febc3e2d4a82b8986f0c64b200a4aaff7ab55
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240042"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682146"
 ---
 # <a name="tutorial-configure-azure-kubernetes-service-aks-clusters-in-azure-using-ansible"></a>Tutorial: Konfigurieren von AKS-Clustern (Azure Kubernetes Service) in Azure mit Ansible
 
@@ -83,9 +83,9 @@ Beachten Sie vor dem Ausführen des Playbooks die folgenden Hinweise:
 - Im ersten Abschnitt von `tasks` wird am Standort `eastus` eine Ressourcengruppe mit dem Namen `myResourceGroup` definiert.
 - Im zweiten Abschnitt von `tasks` wird in der Ressourcengruppe `myResourceGroup` ein AKS-Cluster mit dem Namen `myAKSCluster` definiert.
 - Geben Sie für den Platzhalter `your_ssh_key` Ihren öffentlichen RSA-Schlüssel im einzeiligen Format beginnend mit „ssh-rsa“ (ohne Anführungszeichen) ein.
-- Verwenden Sie für den Platzhalter `aks_version` den Befehl [az aks get-versions](/cli/azure/aks?view=azure-cli-latest#az-aks-get-versions).
+- Verwenden Sie für den Platzhalter `aks_version` den Befehl [az aks get-versions](/cli/azure/aks#az-aks-get-versions).
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook azure_create_aks.yml
@@ -150,7 +150,7 @@ Beachten Sie vor dem Ausführen des Playbooks die folgenden Hinweise:
 
 - Geben Sie für den Platzhalter `your_ssh_key` Ihren öffentlichen RSA-Schlüssel im einzeiligen Format beginnend mit „ssh-rsa“ (ohne Anführungszeichen) ein.
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook azure_configure_aks.yml
@@ -193,7 +193,7 @@ Speichern Sie das folgende Playbook als `azure_delete_aks.yml`:
       state: absent
   ```
 
-Führen Sie das Playbook mithilfe des Befehls `ansible-playbook` aus:
+Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
 
 ```bash
 ansible-playbook azure_delete_aks.yml

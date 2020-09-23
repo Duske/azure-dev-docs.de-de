@@ -2,40 +2,39 @@
 title: Verwalten virtueller Computer mit dem Azure-Explorer für IntelliJ
 description: Erfahren Sie, wie Sie Ihre virtuellen Azure-Computer mit dem Azure-Explorer für IntelliJ verwalten.
 documentationcenter: java
-ms.date: 11/13/2018
+ms.date: 09/09/2020
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 65f0c827fec68bc6a11d7dcaf380738967e16a92
-ms.sourcegitcommit: 300251b3d866bac9c7d2dfc3133efaaea8e0ce04
+ms.openlocfilehash: 058842e8f7d50d885d2a5d28c56ee144072e637a
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87438474"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534359"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-intellij"></a>Verwalten virtueller Computer mit dem Azure-Explorer für IntelliJ
 
 Der Azure-Explorer gehört zum Azure-Toolkit für IntelliJ und bietet Java-Entwicklern eine einfach zu bedienende Lösung zum Verwalten von virtuellen Computern in ihrem Azure-Konto innerhalb der integrierten Entwicklungsumgebung (IDE) von IntelliJ.
 
+In diesem Artikel wird erläutert, wie Sie virtuelle Computer über den Azure-Explorer in IntelliJ erstellen und verwalten.
+
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 
 [!INCLUDE [show-azure-explorer](includes/show-azure-explorer.md)]
 
-## <a name="create-a-virtual-machine-in-intellij"></a>Erstellen eines virtuellen Computers in IntelliJ
+## <a name="create-a-virtual-machine"></a>Erstellen eines virtuellen Computers
 
 Gehen Sie folgendermaßen vor, um einen virtuellen Computer mit dem Azure-Explorer zu erstellen: 
 
 1. Melden Sie sich beim Azure-Konto gemäß den Anweisungen im Artikel [Anleitung zur Anmeldung für das Azure-Toolkit für IntelliJ] an.
 
 2. Erweitern Sie in der Ansicht des **Azure-Explorers** den Knoten **Azure**. Klicken Sie mit der rechten Maustaste auf **Virtuelle Computer**, und klicken Sie dann auf **VM erstellen**. 
-
-   ![Befehl „VM erstellen“][CR01]  
-    Der **Assistent zum Erstellen eines neuen virtuellen Computers** wird geöffnet.
+ 
+   :::image type="content" source="media/managing-virtual-machines-using-azure-explorer/CR01.png" alt-text="Option „VM erstellen“ im Azure-Explorer":::
 
 3. Wählen Sie im Dialogfeld **Abonnement auswählen** Ihr Abonnement aus, und klicken Sie dann auf **Weiter**. 
-
-   ![Fenster „Abonnement auswählen“][CR02]
 
 4. Geben Sie im Fenster **Virtuelles Computerimage auswählen** die folgenden Informationen ein:
 
@@ -53,8 +52,6 @@ Gehen Sie folgendermaßen vor, um einen virtuellen Computer mit dem Azure-Explor
 
       * **Versionsnummer**: Die zu verwendende Version der ausgewählten SKU.
 
-   ![Fenster „Virtuelles Computerimage auswählen“][CR03]
-
 5. Klicken Sie auf **Weiter**. 
 
 6. Geben Sie im Fenster **Grundlegende Einstellungen des virtuellen Computers** die folgenden Informationen ein:
@@ -65,9 +62,7 @@ Gehen Sie folgendermaßen vor, um einen virtuellen Computer mit dem Azure-Explor
 
    * **Benutzername**: Das Administratorkonto, das für die Verwaltung Ihrer VM erstellt werden soll.
 
-   * **Kennwort** und **Bestätigen**: Das Kennwort für Ihr Administratorkonto.
-
-   ![Fenster „Grundlegende Einstellungen des virtuellen Computers“][CR04]
+   * **Kennwort**: Das Kennwort für Ihr Administratorkonto. Geben Sie Ihr Kennwort erneut in das Feld **Bestätigen** ein, um die Anmeldeinformationen zu bestätigen.
 
 7. Klicken Sie auf **Weiter**. 
 
@@ -77,15 +72,9 @@ Gehen Sie folgendermaßen vor, um einen virtuellen Computer mit dem Azure-Explor
       * **Neue erstellen**: Gibt an, dass Sie eine neue Ressourcengruppe erstellen möchten.
       * **Vorhandene verwenden**: Gibt an, dass Sie in einer Liste von Ressourcengruppen, die Ihrem Azure-Konto zugeordnet sind, eine Auswahl treffen möchten.
 
-       ![Fenster „Zugeordnete Ressourcen“][CR07]
-
    * **Speicherkonto**: Das Speicherkonto, das zum Speichern der VM verwendet werden soll. Sie können ein vorhandenes Speicherkonto auswählen oder ein neues erstellen. Wenn Sie **Neu erstellen** auswählen, wird das folgende Dialogfeld angezeigt:
 
-      ![Dialogfeld „Speicherkonto erstellen“][CR05]
-
    * **Virtuelles Netzwerk** und **Subnetz**: Das virtuelle Netzwerk und das Subnetz, mit denen Ihre VM eine Verbindung herstellt. Sie können ein vorhandenes Netzwerk und Subnetz verwenden oder ein neues Netzwerk und Subnetz erstellen. Wenn Sie **Neu erstellen** auswählen, wird das folgende Dialogfeld angezeigt:
-
-      ![Dialogfeld „Virtuelles Netzwerk erstellen“][CR06]
 
    * **Öffentliche IP-Adresse:** Eine externe IP-Adresse für Ihre VM. Sie können eine neue IP-Adresse erstellen oder **(Keine)** auswählen, wenn Ihr virtueller Computer nicht über eine öffentliche IP-Adresse verfügt. 
 
@@ -93,42 +82,33 @@ Gehen Sie folgendermaßen vor, um einen virtuellen Computer mit dem Azure-Explor
 
    * **Verfügbarkeitsgruppe**: Eine optionale Verfügbarkeitsgruppe, der Ihre VM angehören kann. Sie können eine vorhandene Verfügbarkeitsgruppe auswählen, eine neue erstellen oder **(Keine)** auswählen, wenn Ihr virtueller Computer keiner Verfügbarkeitsgruppe angehören soll.
 
-9. Klicken Sie auf **Fertig stellen**.  
-    Der neue virtuelle Computer wird im Toolfenster von Azure-Explorer angezeigt. 
+9. Klicken Sie auf **Fertig stellen**. Der neue virtuelle Computer wird im Toolfenster von Azure-Explorer angezeigt. 
 
-   ![Neuer virtueller Computer in der Azure-Explorer-Ansicht][CR08]
-
-## <a name="restart-a-virtual-machine-in-intellij"></a>Neustarten eines virtuellen Computers in IntelliJ
+## <a name="restart-a-virtual-machine"></a>Neustarten einer VM
 
 Um einen virtuellen Computer mithilfe des Azure-Explorers in IntelliJ neu zu starten, gehen Sie folgendermaßen vor:
 
 1. Klicken Sie in der Ansicht **Azure-Explorer** mit der rechten Maustaste auf den virtuellen Computer, und wählen Sie **Neu starten** aus.
 
-   ![Befehl „Neu starten“ für einen virtuellen Computer][RE01]
-
 2. Klicken Sie im Bestätigungsfenster auf **Ja**. 
 
    ![Bestätigungsfenster für den Neustart eines virtuellen Computers][RE02]
 
-## <a name="shut-down-a-virtual-machine-in-intellij"></a>Herunterfahren eines virtuellen Computers in IntelliJ
+## <a name="shut-down-a-virtual-machine"></a>Herunterfahren eines virtuellen Computers
 
 Um einen ausgeführten virtuellen Computer mithilfe des Azure-Explorers in IntelliJ herunterzufahren, gehen Sie folgendermaßen vor:
 
 1. Klicken Sie in der Ansicht **Azure-Explorer** mit der rechten Maustaste auf den virtuellen Computer, und wählen Sie **Herunterfahren** aus.
 
-   ![Befehl „Herunterfahren“ für einen virtuellen Computer][SH01]
-
 2. Klicken Sie im Bestätigungsfenster auf **Ja**. 
 
    ![Bestätigungsfenster für das Herunterfahren eines virtuellen Computers][SH02]
 
-## <a name="delete-a-virtual-machine-in-intellij"></a>Löschen eines virtuellen Computers in IntelliJ
+## <a name="delete-a-virtual-machine"></a>Löschen einer VM
 
 Um einen virtuellen Computer mithilfe des Azure-Explorers in IntelliJ zu löschen, gehen Sie folgendermaßen vor:
 
 1. Klicken Sie in der Ansicht **Azure-Explorer** mit der rechten Maustaste auf den virtuellen Computer, und wählen Sie **Löschen** aus.
-
-   ![Befehl „Löschen“ für einen virtuellen Computer][DE01]
 
 2. Klicken Sie im Bestätigungsfenster auf **Ja**. 
 

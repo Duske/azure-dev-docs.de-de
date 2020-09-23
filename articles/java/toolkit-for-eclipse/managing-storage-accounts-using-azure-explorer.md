@@ -2,19 +2,22 @@
 title: Verwalten von Speicherkonten mit dem Azure-Explorer für Eclipse
 description: Erfahren Sie, wie Sie Ihre Azure Storage-Konten mit Azure-Explorer für Eclipse verwalten.
 documentationcenter: java
-ms.date: 02/01/2018
+ms.date: 08/25/2020
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: b3772c4d51852f9d77f63b2c998983a43cf00f4e
-ms.sourcegitcommit: 300251b3d866bac9c7d2dfc3133efaaea8e0ce04
+ms.openlocfilehash: 8c7c39fa80568efa3040d5cbfa18c3b0cfcd43bc
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87438338"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534638"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-eclipse"></a>Verwalten von Speicherkonten mithilfe von Azure-Explorer für Eclipse
+
+> [!NOTE]
+> Das Feature für Speicherkonten im Azure-Explorer ist veraltet. Sie können das Azure-Portal verwenden, um Speicherkonten und Container zu erstellen und zu verwalten. Schnellstartanleitungen zur Verwaltung von Speicherkonten finden Sie in der Dokumentation zu [Azure Storage](/azure/storage/blobs/storage-quickstart-blobs-portal).
 
 Der Azure-Explorer gehört zum Azure-Toolkit für Eclipse und bietet Java-Entwicklern eine einfach zu bedienende Lösung zum Verwalten von Speicherkonten in ihrem Azure-Konto innerhalb der integrierten Entwicklungsumgebung (IDE) von Eclipse.
 
@@ -22,19 +25,13 @@ Der Azure-Explorer gehört zum Azure-Toolkit für Eclipse und bietet Java-Entwic
 
 [!INCLUDE [show-azure-explorer](includes/show-azure-explorer.md)]
 
-## <a name="create-a-storage-account-in-eclipse"></a>Erstellen eines Speicherkontos in Eclipse
-
-Gehen Sie folgendermaßen vor, um ein Speicherkonto mit dem Azure-Explorer zu erstellen:
+## <a name="create-a-storage-account"></a>Speicherkonto erstellen
 
 1. Melden Sie sich beim Azure-Konto gemäß den Anweisungen in [Anleitung zur Azure-Anmeldung für das Azure-Toolkit für Eclipse](/azure/developer/java/toolkit-for-eclipse/sign-in-instructions) an.
 
 1. Erweitern Sie in der Ansicht des **Azure-Explorers** den Knoten **Azure**. Klicken Sie mit der rechten Maustaste auf **Speicherkonten**, und klicken Sie dann auf **Speicherkonto erstellen**.
 
-   ![Befehl „Speicherkonto erstellen“][CS01]
-
 1. Geben Sie im Dialogfeld **Speicherkonto erstellen** folgende Details an:
-
-   ![Dialogfeld „Neues Speicherkonto erstellen“][CS02]
 
    * **Name**: Der Name für das neue Speicherkonto.
 
@@ -46,49 +43,26 @@ Gehen Sie folgendermaßen vor, um ein Speicherkonto mit dem Azure-Explorer zu er
 
    * **Region**: Der Standort, an dem Ihr Speicherkonto erstellt wird (z. B. „USA, Westen“).
 
-   * **Kontoart**: Der Typ des zu erstellenden Speicherkontos (z. B. „Blob Storage“). Weitere Informationen finden Sie unter [Informationen zu Azure-Speicherkonten].
+   * **Kontoart**: Der Typ des zu erstellenden Speicherkontos (z. B. „Universell v1“). Weitere Informationen finden Sie unter [Informationen zu Azure-Speicherkonten].
 
-   * **Leistung**: Das zu verwendende Speicherkontoangebot des ausgewählten Herausgebers (z. B. „Premium“). Weitere Informationen finden Sie unter [Skalierbarkeits- und Leistungsziele für Azure Storage].
+   * **Leistung**: Das zu verwendende Speicherkontoangebot des ausgewählten Herausgebers (z. B. „Standard“). Weitere Informationen finden Sie unter [Skalierbarkeits- und Leistungsziele für Azure Storage].
 
-   * **Replikation**: Die Replikation für das Speicherkonto (z. B. „Zonenredundant“). Weitere Informationen finden Sie unter [Azure-Speicherreplikation].
+   * **Replikation**: Die Replikation für das Speicherkonto (z. B. „Lokal redundant“). Weitere Informationen finden Sie unter [Azure-Speicherreplikation].
 
 1. Nachdem Sie alle vorhergehenden Optionen angegeben haben, klicken Sie auf **Erstellen**.
 
-## <a name="create-a-storage-container-in-eclipse"></a>Erstellen eines Speichercontainers in Eclipse
+## <a name="create-and-manage-storage-containers"></a>Erstellen und Verwalten von Speichercontainern
 
-Gehen Sie folgendermaßen vor, um einen Speichercontainer mit dem Azure-Explorer zu erstellen:
+Verwenden Sie zum Erstellen und Verwalten von Speichercontainern das Azure-Portal, oder stellen Sie Ihre Ressourcen programmgesteuert bereit.
 
-1. Klicken Sie in der **Azure-Explorer**-Ansicht mit der rechten Maustaste auf das Speicherkonto, in dem Sie einen Container erstellen möchten, und klicken Sie dann auf **Blobcontainer erstellen**.
+Ein Schritt-für-Schritt-Tutorial zur Verwendung des Azure-Portals zum Erstellen eines Containers in Azure Storage und zum Hoch- und Herunterladen von Blockblobs für diesen Container finden Sie unter [Hochladen, Herunterladen und Auflisten von Blobs mit dem Azure-Portal](/azure/storage/blobs/storage-quickstart-blobs-portal).
 
-   ![Befehl „Blobcontainer erstellen“][CC01]
-
-1. Geben Sie im Dialogfeld **Blobcontainer erstellen** den Namen für Ihren Container ein, und klicken Sie dann auf **OK**. Weitere Informationen zum Benennen von Speichercontainern finden Sie unter [Benennen von Containern, Blobs und Metadaten und Verweisen auf diese].
-
-   ![Dialogfeld „Blobcontainer erstellen“][CC02]
-
-## <a name="delete-a-storage-container-in-eclipse"></a>Löschen eines Speichercontainers in Eclipse
-
-Gehen Sie folgendermaßen vor, um einen Speichercontainer mit dem Azure-Explorer zu löschen:
-
-1. Klicken Sie in der **Azure-Explorer**-Ansicht mit der rechten Maustaste auf den Speichercontainer, und klicken Sie dann auf **Löschen**.
-
-   ![Befehl „Speichercontainer löschen“][DC01]
-
-1. Klicken Sie im Bestätigungsfenster auf **OK**.
-
-   ![Bestätigungsfenster für „Speichercontainer löschen“][DC02]
-
-## <a name="delete-a-storage-account-in-eclipse"></a>Löschen eines Speicherkontos in Eclipse
-
-Gehen Sie folgendermaßen vor, um ein Speicherkonto mit dem Azure-Explorer zu löschen:
+## <a name="delete-a-storage-account"></a>Löschen von Speicherkonten
 
 1. Klicken Sie in der **Azure-Explorers**-Ansicht mit der rechten Maustaste auf das Speicherkonto, und klicken Sie dann auf **Löschen**.
 
-   ![Befehl „Speicherkonto löschen“][DS01]
-
 1. Klicken Sie im Bestätigungsfenster auf **OK**.
 
-   ![Bestätigungsfenster für „Speicherkonto löschen“][DS02]
 
 ## <a name="next-steps"></a>Nächste Schritte
 
@@ -111,7 +85,7 @@ Weitere Informationen zu Azure Storage-Konten sowie Größen und Preisen finden 
 [Informationen zu Azure-Speicherkonten]: /azure/storage/storage-create-storage-account
 [Azure-Speicherreplikation]: /azure/storage/storage-redundancy
 [Skalierbarkeits- und Leistungsziele für Azure Storage]: /azure/storage/storage-scalability-targets
-[Benennen von Containern, BLOBs und Metadaten und Verweisen auf diese]: https://go.microsoft.com/fwlink/?LinkId=255555
+[Naming and referencing containers, blobs, and metadata]: https://go.microsoft.com/fwlink/?LinkId=255555
 
 [Größen für Windows-Speicherkonten in Azure]: https://docs.microsoft.com/azure/virtual-machines/sizes
 [Größen für Linux-Speicherkonten in Azure]: https://docs.microsoft.com/azure/virtual-machines/sizes
