@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 8f757c030849cb89eea36d74b55867dcc2ff98a6
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 4215099ae39963448b7a94d389ded0c9096b1c67
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441355"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772677"
 ---
 Sie können die Ressourcengruppe löschen, indem Sie entweder das [Azure-Portal](https://portal.azure.com) oder die Azure CLI verwenden:
 
@@ -13,5 +13,5 @@ Sie können die Ressourcengruppe löschen, indem Sie entweder das [Azure-Portal]
 - Führen Sie den folgenden Azure CLI-Befehl aus (lokal oder per [Cloud Shell](/azure/cloud-shell/overview)), indem Sie `<resource_group>` durch den Namen der in diesem Tutorial verwendeten Gruppe ersetzen:
 
     ```azurecli
-    az group delete --name <resource_group>
+    az group delete --no-wait --name <resource_group>
     ```

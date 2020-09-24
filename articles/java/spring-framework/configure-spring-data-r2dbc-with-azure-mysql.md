@@ -8,16 +8,16 @@ ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 159f009725d803341e46513bd699d7e3826d6199
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 84dffb21916498e9e80f458512d83251815306c0
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378764"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831236"
 ---
 # <a name="use-spring-data-r2dbc-with-azure-database-for-mysql"></a>Verwenden von Spring Data R2DBC mit Azure Database for MySQL
 
-In diesem Thema wird die Erstellung einer Beispielanwendung veranschaulicht, die [Spring Data R2DBC](https://spring.io/projects/spring-data-r2dbc) verwendet, um Informationen in einer [Azure Database for MySQL-Instanz](https://docs.microsoft.com/azure/mysql/) mithilfe der R2DBC-Implementierung für MySQL aus dem [r2dbc-mysql GitHub-Repository](https://github.com/mirromutth/r2dbc-mysql) zu speichern und abzurufen.
+In diesem Thema wird die Erstellung einer Beispielanwendung veranschaulicht, die [Spring Data R2DBC](https://spring.io/projects/spring-data-r2dbc) verwendet, um Informationen in einer [Azure Database for MySQL-Instanz](/azure/mysql/) mithilfe der R2DBC-Implementierung für MySQL aus dem [r2dbc-mysql GitHub-Repository](https://github.com/mirromutth/r2dbc-mysql) zu speichern und abzurufen.
 
 [R2DBC](https://r2dbc.io/) ermöglicht die Nutzung reaktiver APIs mit herkömmlichen relationalen Datenbanken. Sie können es zusammen mit Spring WebFlux verwenden, um vollständig reaktive Spring Boot-Anwendungen zu erstellen, die nicht blockierende APIs verwenden. Dies bietet bessere Skalierbarkeit als der klassische „Ein-Thread-pro-Verbindung“-Ansatz.
 
@@ -119,4 +119,4 @@ Glückwunsch! Sie haben eine vollständig reaktive Spring Boot-Anwendung erstel
 
 Weitere Informationen zu Spring Data R2DBC finden Sie in der [Referenzdokumentation](https://docs.spring.io/spring-data/r2dbc/docs/current/reference/html/#reference) zu Spring.
 
-Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure für Java-Entwickler](/azure/developer/java/) und [Working with Azure DevOps and Java](/azure/devops/) (Arbeiten mit Azure DevOps und Java).
+Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure für Java-Entwickler](../index.yml) und [Working with Azure DevOps and Java](/azure/devops/) (Arbeiten mit Azure DevOps und Java).

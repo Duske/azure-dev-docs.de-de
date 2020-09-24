@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, Azure Dev Spaces, AKS, Azure Kubernetes Servic
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 505ee15ab181e63576f1bb2c276ac317d8372164
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 39a730507df89186b8934d4ded7d2ff92c07b420
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240852"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831376"
 ---
 # <a name="tutorial-use-azure-dev-spaces-with-azure-kubernetes-service"></a>Tutorial: Verwenden von Azure Dev Spaces mit Azure Kubernetes Service
 
@@ -38,7 +38,7 @@ In diesem Tutorial werden gewisse Kenntnisse im Zusammenhang mit gängigen Azure
 
 * [Installation der Azure-Befehlszeilenschnittstelle](/cli/azure/install-azure-cli?view=azure-cli-latest) (Version 2.0.43 oder höher)
 
-* Ein Jenkins-Masterserver. Sollten Sie noch nicht über einen Jenkins-Masterserver verfügen, stellen Sie [Jenkins](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins) mithilfe dieser [Schnellstartanleitung](https://docs.microsoft.com/azure/jenkins/install-jenkins-solution-template) in Azure bereit. 
+* Ein Jenkins-Masterserver. Sollten Sie noch nicht über einen Jenkins-Masterserver verfügen, stellen Sie [Jenkins](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins) mithilfe dieser [Schnellstartanleitung](/azure/jenkins/install-jenkins-solution-template) in Azure bereit. 
 
 * Der Jenkins-Server muss sowohl über Helm als auch über kubectl verfügen und für das Jenkins-Konto verfügbar sein, wie weiter unten in diesem Tutorial erläutert.
 
@@ -50,8 +50,8 @@ In diesem Tutorial werden gewisse Kenntnisse im Zusammenhang mit gängigen Azure
 In diesem Abschnitt werden folgende Azure-Ressourcen erstellt:
 
 * Eine Ressourcengruppe für alle in diesem Tutorial verwendeten Azure-Ressourcen
-* Einen AKS-Cluster ([Azure Kubernetes Service](https://docs.microsoft.com/azure/aks/))
-* Eine Instanz von [Azure Container Registry](https://docs.microsoft.com/azure/container-registry/) (ACR) zum Erstellen (mithilfe von ACR Tasks) und Speichern von Docker-Images
+* Einen AKS-Cluster ([Azure Kubernetes Service](/azure/aks/))
+* Eine Instanz von [Azure Container Registry](/azure/container-registry/) (ACR) zum Erstellen (mithilfe von ACR Tasks) und Speichern von Docker-Images
 
 1. Erstellen Sie eine Ressourcengruppe.
 
@@ -82,7 +82,7 @@ In diesem Abschnitt werden folgende Azure-Ressourcen erstellt:
 
 In diesem Abschnitt richten Sie einen Entwicklungsbereich ein und stellen eine Beispielanwendung für den AKS-Cluster bereit, den Sie im vorherigen Abschnitt erstellt haben. Die Anwendung besteht aus zwei Teilen: *webfrontend* und *mywebapi*. Beide Komponenten werden in einem Entwicklungsbereich bereitgestellt. Im weiteren Verlauf dieses Tutorials wird ein Pull Request für „mywebapi“ übermittelt, um die CI-Pipeline in Jenkins auszulösen.
 
-Weitere Informationen zur Verwendung von Azure Dev Spaces sowie zur Entwicklung mit mehreren Diensten mit Azure Dev Spaces finden Sie unter [Erste Schritte in Azure Dev Spaces mit Java](https://docs.microsoft.com/azure/dev-spaces/get-started-java) sowie unter [Entwicklung mit mehreren Diensten mit Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/multi-service-java). In diesen Tutorials werden zusätzliche Hintergrundinformationen bereitgestellt, die hier nicht enthalten sind.
+Weitere Informationen zur Verwendung von Azure Dev Spaces sowie zur Entwicklung mit mehreren Diensten mit Azure Dev Spaces finden Sie unter [Erste Schritte in Azure Dev Spaces mit Java](/azure/dev-spaces/get-started-java) sowie unter [Entwicklung mit mehreren Diensten mit Azure Dev Spaces](/azure/dev-spaces/multi-service-java). In diesen Tutorials werden zusätzliche Hintergrundinformationen bereitgestellt, die hier nicht enthalten sind.
 
 1. Laden Sie das Repository https://github.com/Azure/dev-spaces aus GitHub herunter.
 
@@ -132,7 +132,7 @@ Weitere Informationen zur Verwendung von Azure Dev Spaces sowie zur Entwicklung 
     * In einem [Helm-Diagramm](https://helm.sh/docs/topics/charts/) unter `./charts/webfrontend` wird veranschaulicht, wie der Container für Kubernetes bereitgestellt wird.
     * `./azds.yaml` ist die Konfigurationsdatei von Azure Dev Spaces.
 
-    Weitere Informationen finden Sie unter [Funktionsweise und Konfiguration von Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/how-dev-spaces-works).
+    Weitere Informationen finden Sie unter [Funktionsweise und Konfiguration von Azure Dev Spaces](/azure/dev-spaces/how-dev-spaces-works).
 
 6. Verwenden Sie den Befehl `azds up`, um die Anwendung in AKS zu erstellen und auszuführen:
 

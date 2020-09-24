@@ -3,12 +3,12 @@ title: Tools für Entwickler, die das Azure SDK für Go nutzen
 description: Tools zur Verwendung mit dem Azure SDK für Go und Azure-Diensten
 ms.date: 09/05/2018
 ms.topic: conceptual
-ms.openlocfilehash: b08a578c3e5ceb7381cc1643b2967405b292376e
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: e52845218de7d874e045a11c004360b7a35baa03
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80319437"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831306"
 ---
 # <a name="tools-for-developers-using-the-azure-sdk-for-go"></a>Tools für Entwickler, die das Azure SDK für Go nutzen
 
@@ -16,7 +16,7 @@ Hier finden Sie einige Empfehlungen für Tools, mit denen Sie Go-Code effizient 
 
 ## <a name="azure-cli"></a>Azure-Befehlszeilenschnittstelle
 
-Die Azure CLI stellt eine Befehlszeilenschnittstelle zum Erstellen und Konfigurieren von Azure-Ressourcen in Ihren Abonnements bereit. Die CLI erleichtert Ihnen den schnellen Einstieg in die Erstellung allgemeiner und gemeinsam genutzter Azure-Ressourcen, sodass Sie sich auf die komplexere Nutzung von Diensten konzentrieren können. Die CLI bietet Abfrage- und Filterfunktionen, sodass Sie Ausgaben direkt an Ihre bevorzugten Befehlszeilentools weiterreichen können. Die CLI steht für die Installation auf Ihrem lokalen System, als Docker-Image oder über [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) zur Verfügung.
+Die Azure CLI stellt eine Befehlszeilenschnittstelle zum Erstellen und Konfigurieren von Azure-Ressourcen in Ihren Abonnements bereit. Die CLI erleichtert Ihnen den schnellen Einstieg in die Erstellung allgemeiner und gemeinsam genutzter Azure-Ressourcen, sodass Sie sich auf die komplexere Nutzung von Diensten konzentrieren können. Die CLI bietet Abfrage- und Filterfunktionen, sodass Sie Ausgaben direkt an Ihre bevorzugten Befehlszeilentools weiterreichen können. Die CLI steht für die Installation auf Ihrem lokalen System, als Docker-Image oder über [Azure Cloud Shell](/azure/cloud-shell/overview) zur Verfügung.
 
 > [!div class="nextstepaction"]
 > [Installieren der Azure-Befehlszeilenschnittstelle](/cli/azure/install-azure-cli)

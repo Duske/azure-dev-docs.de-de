@@ -8,16 +8,16 @@ ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: c76dd7a91340c603bdb4ce921457013229a26c4c
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 6e4371e4d375c663f61f59707c553ac0e2d6e237
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378874"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831226"
 ---
 # <a name="use-spring-data-jpa-with-azure-database-for-mysql"></a>Verwenden von Spring Data-JPA mit Azure Database for MySQL
 
-In diesem Thema wird die Erstellung einer Beispielanwendung veranschaulicht, die [Spring Data-JPA](https://spring.io/projects/spring-data-jpa) verwendet, um Informationen in [Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/) zu speichern bzw. daraus abzurufen.
+In diesem Thema wird die Erstellung einer Beispielanwendung veranschaulicht, die [Spring Data-JPA](https://spring.io/projects/spring-data-jpa) verwendet, um Informationen in [Azure Database for MySQL](/azure/mysql/) zu speichern bzw. daraus abzurufen.
 
 [Die Java-Persistenz-API (JPA)](https://en.wikipedia.org/wiki/Java_Persistence_API) ist die Standard-Java-API für die objektrelationale Zuordnung.
 
@@ -86,4 +86,4 @@ Glückwunsch! Sie haben eine Spring Boot-Anwendung erstellt, die JPA zum Speich
 
 Weitere Informationen zu Spring Data-JPA finden Sie in der [Referenzdokumentation](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#reference) zu Spring.
 
-Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure für Java-Entwickler](/azure/developer/java/) und [Working with Azure DevOps and Java](/azure/devops/) (Arbeiten mit Azure DevOps und Java).
+Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure für Java-Entwickler](../index.yml) und [Working with Azure DevOps and Java](/azure/devops/) (Arbeiten mit Azure DevOps und Java).

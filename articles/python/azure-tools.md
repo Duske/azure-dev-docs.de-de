@@ -4,12 +4,12 @@ description: IDE-Integrationen und Befehlszeilenschnittstellen für Python-Entwi
 ms.topic: conceptual
 ms.date: 08/06/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: cd81a4dcceb4d13630fd5cad60162729028eb91e
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: e1157d69cd2bec72c88202175f0cb0b1f537bb19
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982572"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90829966"
 ---
 # <a name="azure-tools-for-python-developers"></a>Azure-Tools für Python-Entwickler
 
@@ -41,4 +41,4 @@ Azure PowerShell bietet wie die Azure CLI PowerShell-Befehle zum Erstellen und K
 
 Visual Studio unter Windows bietet über die Entwicklungs- und Data Science-Workloads für Python (Visual Studio 2017 und höher) und die kostenlose Erweiterung „Python Tools für Visual Studio“ (Visual Studio 2015 und ältere Versionen) Open-Source-Unterstützung für Python. Visual Studio wird üblicherweise von Entwicklern verwendet, die sowohl mit Python als auch mit C++ arbeiten, da die Anwendung eine erstklassige sprachübergreifende Entwicklungs- und Debuggingunterstützung bietet.
 
-[Installieren der Python-Unterstützung in Visual Studio](https://docs.microsoft.com/visualstudio/python/installation)
+[Installieren der Python-Unterstützung in Visual Studio](/visualstudio/python/installation)

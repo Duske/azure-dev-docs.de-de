@@ -4,12 +4,12 @@ ms.service: ansible
 ms.topic: include
 ms.date: 09/15/2020
 ms.author: tarcher
-ms.openlocfilehash: 4c4bb046496f80a7280aed429a8cd251e533a8db
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.openlocfilehash: 885764615beed7a623db03499b4ff6a6ab705ba7
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90681663"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831170"
 ---
 #### <a name="ansible"></a>[Ansible](#tab/ansible)
 
@@ -40,13 +40,13 @@ ms.locfileid: "90681663"
     
 #### <a name="azure-cli"></a>[Azure-Befehlszeilenschnittstelle](#tab/azure-cli)
 
-1. Führen Sie [az group delete](https://docs.microsoft.com/cli/azure/group#az_group_delete) aus, um die Ressourcengruppe zu löschen. Alle Ressourcen innerhalb der Ressourcengruppe werden gelöscht.
+1. Führen Sie [az group delete](/cli/azure/group#az_group_delete) aus, um die Ressourcengruppe zu löschen. Alle Ressourcen innerhalb der Ressourcengruppe werden gelöscht.
 
     ```azurecli
     az group delete --name <resource_group>
     ```
 
-1. Überprüfen Sie mithilfe von [az group show](https://docs.microsoft.com/cli/azure/group#az_group_show), ob die Ressourcengruppe gelöscht wurde.
+1. Überprüfen Sie mithilfe von [az group show](/cli/azure/group#az_group_show), ob die Ressourcengruppe gelöscht wurde.
 
     ```azurecli
     az group show --name <resource_group>
@@ -54,13 +54,13 @@ ms.locfileid: "90681663"
 
 #### <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
 
-1. Führen Sie [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/Remove-AzResourceGroup) aus, um die Ressourcengruppe zu löschen. Alle Ressourcen innerhalb der Ressourcengruppe werden gelöscht.
+1. Führen Sie [Remove-AzResourceGroup](/powershell/module/az.resources/Remove-AzResourceGroup) aus, um die Ressourcengruppe zu löschen. Alle Ressourcen innerhalb der Ressourcengruppe werden gelöscht.
 
     ```azurepowershell
     Remove-AzResourceGroup -Name <resource_group>
     ```
 
-1. Überprüfen Sie mithilfe von [Get-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/Get-AzResourceGroup), ob die Ressourcengruppe gelöscht wurde.
+1. Überprüfen Sie mithilfe von [Get-AzResourceGroup](/powershell/module/az.resources/Get-AzResourceGroup), ob die Ressourcengruppe gelöscht wurde.
 
     ```azurepowershell
     Get-AzResourceGroup -Name <resource_group>

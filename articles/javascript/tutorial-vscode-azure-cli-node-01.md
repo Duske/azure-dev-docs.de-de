@@ -4,27 +4,27 @@ description: 'Teil 1 des Tutorials: Einführung und Voraussetzungen.'
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 51fb29a80ba69dd59ca18dd94eaaeb6f09e53074
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.openlocfilehash: e720cd1ca6f29a42bfd9bf6c79c6184338c2621a
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218071"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772883"
 ---
 # <a name="deploy-to-azure-app-service-using-the-azure-cli"></a>Bereitstellen in Azure App Service mit der Azure-Befehlszeilenschnittstelle
 
-In diesem Tutorial stellen Sie eine Node.js-Anwendung mithilfe der von allen Betriebssystemen unterstützten [Azure-Befehlszeilenschnittstelle (Azure CLI) ](https://docs.microsoft.com/cli/azure/overview?view=azure-cli-latest) in Azure App Service bereit. Mit der CLI können Sie Azure-Ressourcen erstellen, eine Bereitstellungspipeline zwischen einem Git-Repository und Azure einrichten und die `console.log`-Ausgabe der App anzeigen.
+In diesem Tutorial stellen Sie eine Node.js-Anwendung mithilfe der von allen Betriebssystemen unterstützten [Azure-Befehlszeilenschnittstelle (Azure CLI) ](/cli/azure/overview?view=azure-cli-latest) in Azure App Service bereit. Mit der CLI können Sie Azure-Ressourcen erstellen, eine Bereitstellungspipeline zwischen einem Git-Repository und Azure einrichten und die `console.log`-Ausgabe der App anzeigen.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
 - Ein [Azure-Abonnement](#azure-subscription).
 - [Node.js und npm 6.x oder höher](https://nodejs.org/en/download), Node.js-Paket-Manager
 - [Git](https://git-scm.com/downloads) (danach sollte der Befehl `git --version` eine Versionsnummer anzeigen)
-- Die [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli)
+- Die [Azure CLI](/cli/azure/install-azure-cli)
 
 Alternativ können Sie die [Azure CLI-Erweiterung für Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli) verwenden, die beim Schreiben von Azure CLI-Skripts Syntax farbig hervorhebt und IntelliSense (Vervollständigungen) sowie Codeausschnitte bietet.
 
-Eine zweite Alternative ist [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview), ein Dienst, den Sie in Visual Studio Code mithilfe der [Azure-Kontoerweiterung](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account) verwenden können.
+Eine zweite Alternative ist [Azure Cloud Shell](/azure/cloud-shell/overview), ein Dienst, den Sie in Visual Studio Code mithilfe der [Azure-Kontoerweiterung](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account) verwenden können.
 
 ### <a name="azure-subscription"></a>Azure-Abonnement
 

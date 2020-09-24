@@ -2,14 +2,14 @@
 title: 'Schritt 5: Bereitstellen von Azure Functions in Python mit VS Code'
 description: 'Tutorialschritt 5: Bereitstellen von Python-Funktionscode in Azure, Streamen von Protokollen und Synchronisieren von Einstellungen zwischen einem lokalen Projekt und Azure'
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: e4108ff7b705be96f62c06a02e301bce9247c048
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 8acf168ecc858410677b8f55b7b84ed14416c005
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473595"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772863"
 ---
 # <a name="5-deploy-azure-functions-in-python"></a>5: Bereitstellen von Azure Functions in Python
 
@@ -23,7 +23,9 @@ Außerdem erfordert eine Funktions-App ein Azure Storage-Konto für Daten und ei
 
     ![Bereitstellen der Python-Funktion in einer Azure-Funktions-App](media/tutorial-vs-code-serverless-python/deploy-a-python-fuction-to-azure-function-app.png)
 
-1. Wenn Sie dazu aufgefordert werden, wählen Sie **Neue Funktions-App in Azure erstellen** aus, und geben Sie einen Namen an, der in Azure eindeutig ist (in der Regel verwenden Sie Ihren persönlichen Namen oder Firmennamen zusammen mit anderen eindeutigen Bezeichnern; Sie können Buchstaben, Ziffern und Bindestriche verwenden). Wenn Sie zuvor eine Funktions-App erstellt haben, wird der zugehörige Name in dieser Liste von Optionen angezeigt.
+1. Wenn Sie dazu aufgefordert werden, wählen Sie **Neue Funktions-App in Azure erstellen** aus, und geben Sie einen Namen an, der in Azure eindeutig ist (in der Regel verwenden Sie Ihren persönlichen Namen oder Firmennamen zusammen mit anderen eindeutigen Bezeichnern; Sie können Buchstaben, Ziffern und Bindestriche verwenden).
+
+    Wenn Sie zuvor eine Funktions-App erstellt haben, wird der zugehörige Name in dieser Liste von Optionen angezeigt.
 
 1. Wählen Sie bei entsprechender Aufforderung eine Python-Version und einen Azure-Standort aus.
 
@@ -75,4 +77,3 @@ Um alle Änderungen zu übernehmen, die Sie über das Portal oder den **Azure-Ex
 > [!div class="nextstepaction"]
 > [Ich habe die Funktionen bereitgestellt: Fahren Sie mit Schritt 6 fort. >>>](tutorial-vs-code-serverless-python-06.md)
 
-Sie haben Probleme? Übermitteln Sie ein GitHub-Problem, indem Sie unten auf dieser Seite die Feedbackoption „Diese Seite“ verwenden.

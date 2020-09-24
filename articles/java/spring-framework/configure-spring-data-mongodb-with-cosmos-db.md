@@ -8,12 +8,12 @@ ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: f3b7f08bd8fe0db177ac9989e49c5b3f5cca69c7
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 529fab3977f0398014d74140abcbd807ac129fa5
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378814"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831426"
 ---
 # <a name="how-to-use-spring-data-mongodb-api-with-azure-cosmos-db"></a>Verwenden der Spring Data-MongoDB-API mit Azure Cosmos DB
 
@@ -137,7 +137,7 @@ In diesem Tutorial haben Sie eine Java-Beispielanwendung erstellt, die Spring Da
 Weitere Informationen zu Spring und Azure finden Sie im Dokumentationscenter zu Spring in Azure.
 
 > [!div class="nextstepaction"]
-> [Spring Framework in Azure](/azure/developer/java/spring-framework)
+> [Spring Framework in Azure](./index.yml)
 
 ### <a name="additional-resources"></a>Weitere Ressourcen
 
@@ -145,7 +145,7 @@ Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure 
 
 <!-- URL List -->
 
-[Azure für Java-Entwickler]: /azure/developer/java/
+[Azure für Java-Entwickler]: ../index.yml
 [kostenloses Azure-Konto]: https://azure.microsoft.com/pricing/free-trial/
 [Working with Azure DevOps and Java]: /azure/devops/ (Arbeiten mit Azure DevOps und Java)
 [MSDN-Abonnentenvorteile]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/

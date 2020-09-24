@@ -5,12 +5,12 @@ keywords: Azure, Chef, Devops, virtuelle Computer, Übersicht, Automatisieren, I
 ms.date: 03/19/2019
 ms.topic: article
 ms.custom: devx-track-chef
-ms.openlocfilehash: 0c50cd07473565609084db24b9e537519194a0c2
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: baabe7530c2f54d89b1d14023a4f9a34e4eeb809
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240722"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831446"
 ---
 # <a name="use-inspec-for-compliance-automation-of-your-azure-infrastructure"></a>Verwenden Sie InSpec für die Automatisierung der Konformität der Azure-Infrastruktur
 
@@ -30,7 +30,7 @@ Der InSpec-Erkennungsmodus ohne Agent ermöglicht Ihnen – je nach Umfang – d
 
 ## <a name="audit-azure-virtual-machines-with-policy-guest-configuration"></a>Überwachen von virtuellen Azure-Computern mit der Azure Policy-Gastkonfiguration
 
-Azure unterstützt direkt die Verwendung von Chef InSpec-Definitionen zum Überwachen virtueller Azure-Computer über die [Azure Policy-Gastkonfiguration](https://docs.microsoft.com/azure/governance/policy/concepts/guest-configuration). Die Gastkonfiguration wertet einen virtuellen Linux-Computer als bereitgestellte Chef InSpec-Definition aus und gibt Berichte zur Konformität über Azure Policy zurück. Die Ergebnisse dieser Überwachungen werden auch über Azure Monitor-Protokolle gemeldet, wodurch Warnungen und andere Automationsszenarien aktiviert werden.
+Azure unterstützt direkt die Verwendung von Chef InSpec-Definitionen zum Überwachen virtueller Azure-Computer über die [Azure Policy-Gastkonfiguration](/azure/governance/policy/concepts/guest-configuration). Die Gastkonfiguration wertet einen virtuellen Linux-Computer als bereitgestellte Chef InSpec-Definition aus und gibt Berichte zur Konformität über Azure Policy zurück. Die Ergebnisse dieser Überwachungen werden auch über Azure Monitor-Protokolle gemeldet, wodurch Warnungen und andere Automationsszenarien aktiviert werden.
 
 ## <a name="satisfy-audits"></a>Erfüllen der Anforderungen von Überwachungen+
 

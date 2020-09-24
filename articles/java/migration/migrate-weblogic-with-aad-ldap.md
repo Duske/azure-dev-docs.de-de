@@ -5,12 +5,12 @@ author: edburns
 ms.author: edburns
 ms.topic: tutorial
 ms.date: 08/10/2020
-ms.openlocfilehash: b1437362601e990b560dc0385420605ef01a426a
-ms.sourcegitcommit: 4049dc6109600a8308ba5617cc122a5b32cc4ca1
+ms.openlocfilehash: 2ee3e7c03d0fd7f7048037fb27f2cfacfe39671d
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056279"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831386"
 ---
 # <a name="end-user-authorization-and-authentication-for-migrating-java-apps-on-weblogic-server-to-azure"></a>Autorisierung und Authentifizierung von Endbenutzern für die Migration von Java-Apps in WebLogic Server zu Azure
 
@@ -209,4 +209,4 @@ Nun können Sie unter [Konfigurieren von Secure LDAP (LDAPS) für eine verwalte
 Erkunden Sie andere Aspekte der Migration von WebLogic Server-Apps zu Azure.
 
 > [!div class="nextstepaction"]
-> [Migrieren von WebLogic Server-Anwendungen zu virtuellen Azure-Computern](/azure/developer/java/migration/migrate-weblogic-to-virtual-machines)
+> [Migrieren von WebLogic Server-Anwendungen zu virtuellen Azure-Computern](./migrate-weblogic-to-virtual-machines.md)

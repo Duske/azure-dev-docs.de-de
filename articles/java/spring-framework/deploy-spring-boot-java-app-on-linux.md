@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: fadb42994486bf9b9f6aa20d87f84ad07867ced2
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: 97f6ef6e1d53b8923a8d29aa7747442ee6ac7efc
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534498"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90830066"
 ---
 # <a name="deploy-a-spring-boot-application-to-linux-on-azure-app-service"></a>Bereitstellen einer Spring Boot-Anwendung für Linux in Azure App Service
 
@@ -242,7 +242,7 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 Weitere Informationen zu Spring und Azure finden Sie im Dokumentationscenter zu Spring in Azure.
 
 > [!div class="nextstepaction"]
-> [Spring Framework in Azure](/azure/developer/java/spring-framework)
+> [Spring Framework in Azure](./index.yml)
 
 ### <a name="additional-resources"></a>Zusätzliche Ressourcen
 
@@ -265,7 +265,7 @@ Weitere Beispiele zur Vorgehensweise bei der Verwendung benutzerdefinierter Dock
 
 [Azure-Befehlszeilenschnittstelle (CLI)]: /cli/azure/overview
 [Azure Container Service (AKS)]: https://azure.microsoft.com/services/container-service/
-[Azure für Java-Entwickler]: /azure/developer/java/
+[Azure für Java-Entwickler]: ../index.yml
 [Azure portal]: https://portal.azure.com/
 [Erstellen einer privaten Docker-Containerregistrierung im Azure-Portal]: /azure/container-registry/container-registry-get-started-portal
 [Verwenden eines benutzerdefinierten Docker-Images für Azure-Web-Apps unter Linux]: /azure/app-service/tutorial-custom-container
@@ -279,7 +279,7 @@ Weitere Beispiele zur Vorgehensweise bei der Verwendung benutzerdefinierter Dock
 [Spring Boot on Docker Getting Started]: https://github.com/spring-guides/gs-spring-boot-docker (Erste Schritte mit Spring Boot in Docker)
 [Spring Framework]: https://spring.io/
 
-[Java Development Kit (JDK)]: https://aka.ms/azure-jdks
+[Java Development Kit (JDK)]: ../fundamentals/java-jdk-long-term-support.md
 <!-- http://www.oracle.com/technetwork/java/javase/downloads/ -->
 
 <!-- IMG List -->

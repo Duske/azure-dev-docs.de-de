@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, playbook, vm, vm-skalierungsgruppen, vms
 ms.topic: tutorial
 ms.date: 01/13/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 161592c9f437de0f72204051b222c7ed8c5f99e0
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 2ea2dbf740025797e6dd8514330e5b0c0de0df84
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240842"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831096"
 ---
 # <a name="tutorial-deploy-apps-to-virtual-machine-scale-sets-in-azure-using-ansible"></a>Tutorial: Bereitstellen von Apps für VM-Skalierungsgruppen in Azure mit Ansible
 
@@ -33,7 +33,7 @@ ms.locfileid: "88240842"
 [!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)] 
 [!INCLUDE [ansible-prereqs-vm-scale-set.md](includes/ansible-prereqs-vm-scale-set.md)]
 - **Git** - [Git](https://git-scm.com) wird verwendet, um ein in diesem Tutorial verwendetes Java-Beispiel herunterzuladen.
-- **Java SE Development Kit (JDK)** : Mit dem [JDK](https://aka.ms/azure-jdks) wird das Java-Beispielprojekt erstellt.
+- **Java SE Development Kit (JDK)** : Mit dem [JDK](../java/fundamentals/java-jdk-long-term-support.md) wird das Java-Beispielprojekt erstellt.
 - **Apache Maven** - [Apache Maven](https://maven.apache.org/download.cgi) wird verwendet, um das Java-Beispielprojekt zu erstellen.
 
 ## <a name="get-host-information"></a>Abrufen der Hostinformationen

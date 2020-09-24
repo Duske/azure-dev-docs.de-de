@@ -8,16 +8,16 @@ ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 17487e2440d42bc048a7058183e924febe0a0d33
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 3a17e09f257bb4d06320fea8aaa6b423c4f2027b
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378864"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90830964"
 ---
 # <a name="use-spring-data-jpa-with-azure-database-for-postgresql"></a>Verwenden von Spring Data-JPA mit Azure Database for PostgreSQL
 
-In diesem Thema wird die Erstellung einer Beispielanwendung veranschaulicht, die [Spring Data-JPA](https://spring.io/projects/spring-data-jpa) verwendet, um Informationen in [Azure Database for PostgreSQL](https://docs.microsoft.com/azure/postgresql/) zu speichern bzw. daraus abzurufen.
+In diesem Thema wird die Erstellung einer Beispielanwendung veranschaulicht, die [Spring Data-JPA](https://spring.io/projects/spring-data-jpa) verwendet, um Informationen in [Azure Database for PostgreSQL](/azure/postgresql/) zu speichern bzw. daraus abzurufen.
 
 [Die Java-Persistenz-API (JPA)](https://en.wikipedia.org/wiki/Java_Persistence_API) ist die Standard-Java-API für die objektrelationale Zuordnung.
 
@@ -83,4 +83,4 @@ Glückwunsch! Sie haben eine Spring Boot-Anwendung erstellt, die JPA zum Speich
 
 Weitere Informationen zu Spring Data-JPA finden Sie in der [Referenzdokumentation](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#reference) zu Spring.
 
-Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure für Java-Entwickler](/azure/developer/java/) und [Working with Azure DevOps and Java](/azure/devops/) (Arbeiten mit Azure DevOps und Java).
+Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure für Java-Entwickler](../index.yml) und [Working with Azure DevOps and Java](/azure/devops/) (Arbeiten mit Azure DevOps und Java).

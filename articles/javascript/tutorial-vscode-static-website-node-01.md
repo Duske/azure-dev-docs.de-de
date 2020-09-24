@@ -3,16 +3,17 @@ title: Bereitstellen einer statischen Node.js-Website in Azure in Visual Studio
 description: 'Teil 1 des Tutorials: Einführung und Voraussetzungen.'
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: c63ff76f3572a7815b385b08b05e223eb681fbbe
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: d2c66383e654624cf7edce542461340cc248ba62
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791885"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90773088"
 ---
 # <a name="deploy-a-static-website-to-azure-from-visual-studio-code"></a>Bereitstellen einer statischen Website in Azure in Visual Studio Code
 
-In diesem Tutorial erstellen Sie mit [Azure Storage](https://docs.microsoft.com/azure/storage) eine statische Website und stellen sie in Azure bereit. Eine statische Website besteht aus HTML-, CSS-, JavaScript- und anderen statischen Dateien wie beispielsweise Bildern oder Schriftarten. In der Regel ist eine statische Website eine in Angular, React oder Vue geschriebene Single-Page-Webanwendung (Single-Page Application, [SPA](https://en.wikipedia.org/wiki/Single-page_application)). Sie entwerfen Ihre App jedoch so, dass diese Dateien direkt im _Speicher_ und nicht mit einem Webserver gehostet und verarbeitet werden. Das Hosting im Speicher ist einfacher und kostengünstiger als die Wartung eines Webservers.
+In diesem Tutorial erstellen Sie mit [Azure Storage](/azure/storage) eine statische Website und stellen sie in Azure bereit. Eine statische Website besteht aus HTML-, CSS-, JavaScript- und anderen statischen Dateien wie beispielsweise Bildern oder Schriftarten. In der Regel ist eine statische Website eine in Angular, React oder Vue geschriebene Single-Page-Webanwendung (Single-Page Application, [SPA](https://en.wikipedia.org/wiki/Single-page_application)). Sie entwerfen Ihre App jedoch so, dass diese Dateien direkt im _Speicher_ und nicht mit einem Webserver gehostet und verarbeitet werden. Das Hosting im Speicher ist einfacher und kostengünstiger als die Wartung eines Webservers.
 
 ## <a name="walkthrough-video"></a>Video mit exemplarischer Vorgehensweise
 

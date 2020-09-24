@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, virtueller Computer, CI/CD, Azure DevOps Servi
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 458acc31d4cb56215dff036bd3952090052eb5a1
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 3eedcc72a7c272f1cacf97b9071e750aab5a446e
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241072"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831326"
 ---
 # <a name="tutorial-deploy-to-linux-virtual-machine-using-jenkins-and-azure-devops-services"></a>Tutorial: Bereitstellen eines virtuellen Linux-Computers mit Jenkins und Azure DevOps Services
 
@@ -18,7 +18,7 @@ Continuous Integration (CI) und Continuous Deployment (CD) bilden eine Pipeline,
 
 In diesem Tutorial erstellen Sie mithilfe von Jenkins eine Node.js-Web-App. Anschließend stellen Sie diese mit Azure DevOps
 
-für eine [Bereitstellungsgruppe](https://docs.microsoft.com/azure/devops/pipelines/release/deployment-groups/index?view=vsts) bereit, die virtuelle Linux-Computer (VMs) enthält. Folgendes wird vermittelt:
+für eine [Bereitstellungsgruppe](/azure/devops/pipelines/release/deployment-groups/index?view=vsts) bereit, die virtuelle Linux-Computer (VMs) enthält. Folgendes wird vermittelt:
 
 > [!div class="checklist"]
 > * Abrufen der Beispiel-App
@@ -32,17 +32,17 @@ für eine [Bereitstellungsgruppe](https://docs.microsoft.com/azure/devops/pipeli
 
 ## <a name="before-you-begin"></a>Voraussetzungen
 
-* Sie benötigen Zugriff auf einen Jenkins-Server. Falls Sie noch keinen Jenkins-Server erstellt haben, lesen Sie unter [Erstellen eines Jenkins-Masters auf einem virtuellen Azure-Computer](https://docs.microsoft.com/azure/jenkins/install-jenkins-solution-template) weiter. 
+* Sie benötigen Zugriff auf einen Jenkins-Server. Falls Sie noch keinen Jenkins-Server erstellt haben, lesen Sie unter [Erstellen eines Jenkins-Masters auf einem virtuellen Azure-Computer](/azure/jenkins/install-jenkins-solution-template) weiter. 
 
 * Melden Sie sich bei Ihrer Azure DevOps Services-Organisation an (**https://{yourorganization}.visualstudio.com**). 
   Sie können eine [kostenlose Azure DevOps-Organisation](https://go.microsoft.com/fwlink/?LinkId=307137&clcid=0x409&wt.mc_id=o~msft~vscom~home-vsts-hero~27308&campaign=o~msft~vscom~home-vsts-hero~27308) erhalten.
 
   > [!NOTE]
-  > Weitere Informationen finden Sie unter [Herstellen einer Verbindung mit Azure DevOps Services](https://docs.microsoft.com/azure/devops/organizations/projects/connect-to-projects?view=vsts).
+  > Weitere Informationen finden Sie unter [Herstellen einer Verbindung mit Azure DevOps Services](/azure/devops/organizations/projects/connect-to-projects?view=vsts).
 
-*  Sie benötigen einen virtuellen Linux-Computer für ein Bereitstellungsziel.  Weitere Informationen finden Sie unter [Erstellen und Verwalten virtueller Linux-Computer mit der Azure-Befehlszeilenschnittstelle](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-manage-vm).
+*  Sie benötigen einen virtuellen Linux-Computer für ein Bereitstellungsziel.  Weitere Informationen finden Sie unter [Erstellen und Verwalten virtueller Linux-Computer mit der Azure-Befehlszeilenschnittstelle](/azure/virtual-machines/linux/tutorial-manage-vm).
 
-*  Öffnen Sie den eingehenden Port 80 für den virtuellen Computer. Weitere Informationen finden Sie unter [Erstellen von Netzwerksicherheitsgruppen über das Azure-Portal](https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic).
+*  Öffnen Sie den eingehenden Port 80 für den virtuellen Computer. Weitere Informationen finden Sie unter [Erstellen von Netzwerksicherheitsgruppen über das Azure-Portal](/azure/virtual-network/tutorial-filter-network-traffic).
 
 ## <a name="get-the-sample-app"></a>Abrufen der Beispiel-App
 
@@ -90,7 +90,7 @@ Als Erstes müssen zwei Jenkins-Plug-Ins konfiguriert werden: **NodeJS** und **V
  
 1.  Erstellen Sie ein persönliches Zugriffstoken in Ihrer Azure DevOps Services-Organisation, wenn Sie noch keines besitzen. In Jenkins sind diese Informationen für den Zugriff auf Ihre Azure DevOps Services-Organisation erforderlich. Speichern Sie die Tokeninformationen für die folgenden Schritte in diesem Abschnitt.
   
-    Informationen zum Generieren eines Tokens finden Sie unter [Authentifizieren Zugriffs mit persönlichen Zugriffstoken für Azure DevOps Services](https://docs.microsoft.com/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=vsts).
+    Informationen zum Generieren eines Tokens finden Sie unter [Authentifizieren Zugriffs mit persönlichen Zugriffstoken für Azure DevOps Services](/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=vsts).
 2. Klicken Sie auf der Registerkarte **Post-build Actions** (Postbuildaktionen) auf **Add post-build action** (Postbuildaktion hinzufügen). Klicken Sie auf **Archive the artifacts** (Artefakte archivieren).
 3. Geben Sie für **Files to archive** (Dateien zur Archivierung) den Wert `**/*` ein, um alle Dateien einzuschließen.
 4. Klicken Sie zum Erstellen einer weiteren Aktion auf **Add post-build action** (Postbuildaktion hinzufügen).
@@ -177,7 +177,7 @@ In diesem Tutorial haben Sie die Bereitstellung einer App in Azure mit Jenkins (
 > * Erstellen einer Bereitstellungsgruppe für die virtuellen Azure-Computer
 > * Erstellen einer Azure Pipeline-Instanz zum Konfigurieren der virtuellen Computer und zum Bereitstellen der App.
 
-Informationen zur Verwendung von Azure Pipelines für Build- und Releaseschritte finden Sie [hier](https://docs.microsoft.com/azure/devops/pipelines/apps/cd/deploy-linuxvm-deploygroups).
+Informationen zur Verwendung von Azure Pipelines für Build- und Releaseschritte finden Sie [hier](/azure/devops/pipelines/apps/cd/deploy-linuxvm-deploygroups).
 
 Informationen zum Erstellen einer YAML-basierten CI/CD-Pipeline für die Bereitstellung auf virtuellen Computern finden Sie im nächsten Tutorial.
 

@@ -4,18 +4,18 @@ description: 'Teil 2 des Tutorials: Erstellen der Azure Functions-App'
 ms.topic: conceptual
 ms.date: 09/23/2019
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 2aca9c53e254eca7c8a070cc50a88426d3886cdd
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.openlocfilehash: 7ea1b39086a6cd824084e9bbb3839ab41a24eaad
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218394"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772623"
 ---
 # <a name="create-the-local-functions-app"></a>Erstellen der lokalen Funktions-App
 
 [Vorheriger Schritt: Einführung und Voraussetzungen](tutorial-vscode-serverless-node-01.md)
 
-In diesem Schritt erstellen Sie eine lokale Azure Functions-Anwendung, die eine Funktion mit einem [HTTP-Trigger](https://docs.microsoft.com/azure/azure-functions/functions-reference-node#http-triggers-and-bindings) enthält. Eine Azure Functions-App kann viele Funktionen mit [unterschiedlichen Triggern](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings) enthalten. Der HTTP-Trigger behandelt insbesondere eingehenden HTTP-Datenverkehr.
+In diesem Schritt erstellen Sie eine lokale Azure Functions-Anwendung, die eine Funktion mit einem [HTTP-Trigger](/azure/azure-functions/functions-reference-node#http-triggers-and-bindings) enthält. Eine Azure Functions-App kann viele Funktionen mit [unterschiedlichen Triggern](/azure/azure-functions/functions-triggers-bindings) enthalten. Der HTTP-Trigger behandelt insbesondere eingehenden HTTP-Datenverkehr.
 
 1. Führen Sie an einem Terminal oder einer Eingabeaufforderung Visual Studio Code in einem geeigneten Ordner für das Projekt aus:
 

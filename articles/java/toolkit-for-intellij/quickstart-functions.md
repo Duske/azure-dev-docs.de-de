@@ -4,12 +4,12 @@ description: Hier wird beschrieben, wie Sie mit dem Azure-Toolkit für IntelliJ 
 ms.topic: quickstart
 ms.date: 03/26/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 1260d5cbaec821149468ef524af35e081c06ec52
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: b27655657d763e295a1817acf200a67c090ff67d
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379964"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831406"
 ---
 # <a name="quickstart-create-an-azure-functions-project-using-intellij-idea"></a>Schnellstart: Erstellen eines Azure Functions-Projekts mit IntelliJ IDEA
 
@@ -20,7 +20,7 @@ In diesem Artikel verwenden Sie IntelliJ IDEA zum Erstellen einer Funktion, die 
 Vergewissern Sie sich zunähst, dass Folgendes vorhanden ist:
 
 + Ein Azure-Konto mit einem aktiven Abonnement. Sie können [kostenlos ein Konto erstellen](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
-+ Ein von [Azure unterstütztes Java Development Kit (JDK)](https://aka.ms/azure-jdks) für Java 8
++ Ein von [Azure unterstütztes Java Development Kit (JDK)](../fundamentals/java-jdk-long-term-support.md) für Java 8
 + Eine installierte Instanz von [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) (Ultimate Edition oder Community Edition)
 + [Maven 3.5.0 oder höher](https://maven.apache.org/download.cgi)
 + Aktuelle Version von [Function Core Tools](https://github.com/Azure/azure-functions-core-tools)

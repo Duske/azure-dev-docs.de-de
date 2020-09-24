@@ -2,14 +2,14 @@
 title: 'Schritt 7: Hinzufügen einer Speicherbindung für Azure Functions in Python mit VS Code'
 description: 'Tutorialschritt 7: Hinzufügen einer Bindung in Python zum Schreiben von Meldungen in Azure Storage'
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: a8e320b42221b1f1d30859d41b8e56f52c18072a
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: ad242e5c9c2258e438846a7d393163871d14db9e
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473615"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772853"
 ---
 # <a name="7-add-a-storage-binding-for-azure-functions-in-python"></a>7: Hinzufügen einer Speicherbindung für Azure Functions in Python
 
@@ -21,7 +21,9 @@ Eine Bindung wird in der Datei *function.json* definiert und kann sowohl die Ein
 
 In diesem Abschnitt fügen Sie der HttpExample-Funktion, die Sie zuvor in diesem Tutorial erstellt haben, eine Speicherbindung hinzu. Die Funktion verwendet diese Bindung, um mit jeder Anforderung Meldungen in den Speicher zu schreiben. Der fragliche Speicher verwendet das gleiche Standardspeicherkonto, das von der Funktions-App verwendet wird. Wenn Sie jedoch den Speicher stark nutzen möchten, sollten Sie das Erstellen eines separaten Kontos in Erwägung ziehen.
 
-1. Synchronisieren Sie die Remoteeinstellungen für das Azure Functions-Projekt in Ihrer *local.settings.json*-Datei, indem Sie die Befehlspalette öffnen und **Azure Functions: Remoteeinstellungen herunterladen** auswählen. Öffnen Sie *local.settings.json*, und überprüfen Sie, ob sie einen Wert für `AzureWebJobsStorage` enthält. Der Wert ist die Verbindungszeichenfolge für das Speicherkonto.
+1. Synchronisieren Sie die Remoteeinstellungen für das Azure Functions-Projekt in Ihrer *local.settings.json*-Datei, indem Sie die Befehlspalette öffnen und **Azure Functions: Remoteeinstellungen herunterladen** auswählen.
+ 
+    Öffnen Sie *local.settings.json*, und überprüfen Sie, ob sie einen Wert für `AzureWebJobsStorage` enthält. Der Wert ist die Verbindungszeichenfolge für das Speicherkonto.
 
 1. Klicken Sie im Ordner `HttpExample` mit der rechten Maustaste auf *function.json*, und wählen Sie **Bindung hinzufügen** aus:
 
@@ -49,7 +51,9 @@ In diesem Abschnitt fügen Sie der HttpExample-Funktion, die Sie zuvor in diesem
         }
     ```
 
-1. Nachdem Sie die Bindung konfiguriert haben, können Sie sie in Ihrem Funktionscode verwenden. Wiederum wird die neu definierte Bindung in Ihrem Code als Argument der `main`-Funktion in *\_\_init\_\_.py* angezeigt. Beispielsweise können Sie die Datei *\_\_init\_\_.py* in HttpExample so ändern, dass sie der folgenden entspricht, die die Verwendung des `msg`-Arguments zum Schreiben einer Meldung mit Zeitstempel mit dem in der Anforderung verwendeten Namen zeigt. In den Kommentaren werden die spezifischen Änderungen erläutert:
+1. Nachdem Sie die Bindung konfiguriert haben, können Sie sie in Ihrem Funktionscode verwenden. Wiederum wird die neu definierte Bindung in Ihrem Code als Argument der `main`-Funktion in *\_\_init\_\_.py* angezeigt.
+
+    Beispielsweise können Sie die Datei *\_\_init\_\_.py* in HttpExample so ändern, dass sie der folgenden entspricht, die die Verwendung des `msg`-Arguments zum Schreiben einer Meldung mit Zeitstempel mit dem in der Anforderung verwendeten Namen zeigt. In den Kommentaren werden die spezifischen Änderungen erläutert:
 
     ```python
     import logging
@@ -82,7 +86,9 @@ In diesem Abschnitt fügen Sie der HttpExample-Funktion, die Sie zuvor in diesem
             )
     ```
 
-1. Um diese Änderungen lokal zu testen, starten Sie den Debugger erneut in Visual Studio Code, indem Sie F5 drücken oder den Menübefehl **Debuggen** > **Debuggen starten** auswählen. Im **Ausgabe**-Fenster sollten nun wie zuvor die Endpunkte im Projekt angezeigt werden.
+1. Um diese Änderungen lokal zu testen, starten Sie den Debugger erneut in Visual Studio Code, indem Sie F5 drücken oder den Menübefehl **Debuggen** > **Debuggen starten** auswählen.
+
+    Im **Ausgabe**-Fenster sollten nun wie zuvor die Endpunkte im Projekt angezeigt werden.
 
 1. Rufen Sie in einem Browser die URL `http://localhost:7071/api/HttpExample?name=VS%20Code` auf, um eine Anforderung an den HttpExample-Endpunkt zu erstellen, die auch in eine Meldung in der Warteschlange schreiben sollte.
 
@@ -99,4 +105,3 @@ In diesem Abschnitt fügen Sie der HttpExample-Funktion, die Sie zuvor in diesem
 > [!div class="nextstepaction"]
 > [Ich habe eine Speicherbindung hinzugefügt: Fahren Sie mit Schritt 8 fort. >>>](tutorial-vs-code-serverless-python-08.md)
 
-Sie haben Probleme? Übermitteln Sie ein GitHub-Problem, indem Sie unten auf dieser Seite die Feedbackoption „Diese Seite“ verwenden.

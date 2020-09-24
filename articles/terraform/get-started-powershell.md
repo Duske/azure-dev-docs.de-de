@@ -5,12 +5,12 @@ keywords: Azure DevOps Terraform installieren konfigurieren Windows init planen 
 ms.topic: quickstart
 ms.date: 08/18/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: e58c53876ed05416f16a40d0ee23344bcde43b39
-ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
+ms.openlocfilehash: 401a6c4cc8827e48858a936a10c9c7f62af15aab
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88614519"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90830056"
 ---
 # <a name="quickstart-configure-terraform-using-azure-powershell"></a>Schnellstart: Konfigurieren von Terraform mithilfe von Azure PowerShell
  
@@ -39,13 +39,13 @@ In diesem Artikel werden folgende Vorgehensweisen behandelt:
 
 ## <a name="configure-your-environment"></a>Konfigurieren Ihrer Umgebung
 
-1. Das aktuelle PowerShell-Modul, das die Interaktion mit Azure-Ressourcen ermöglicht, heißt [Azure PowerShell Az-Modul](https://docs.microsoft.com/powershell/azure/new-azureps-module-az). Wenn Sie das Azure PowerShell Az-Modul verwenden, wird auf allen Plattformen mindestens Version 7 von PowerShell empfohlen. Wenn Sie PowerShell installiert haben, können Sie die Version überprüfen, indem Sie den folgenden Befehl an einer PowerShell-Eingabeaufforderung eingeben:
+1. Das aktuelle PowerShell-Modul, das die Interaktion mit Azure-Ressourcen ermöglicht, heißt [Azure PowerShell Az-Modul](/powershell/azure/new-azureps-module-az). Wenn Sie das Azure PowerShell Az-Modul verwenden, wird auf allen Plattformen mindestens Version 7 von PowerShell empfohlen. Wenn Sie PowerShell installiert haben, können Sie die Version überprüfen, indem Sie den folgenden Befehl an einer PowerShell-Eingabeaufforderung eingeben:
 
     ```powershell
     $PSVersionTable.PSVersion
     ```
 
-1. [Installieren Sie PowerShell.](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7) Diese Demo wurde mithilfe von PowerShell 7.0.2 unter Windows 10 getestet.
+1. [Installieren Sie PowerShell.](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7) Diese Demo wurde mithilfe von PowerShell 7.0.2 unter Windows 10 getestet.
 
 1. Für die [Authentifizierung von Terraform bei Azure](https://www.terraform.io/docs/providers/azurerm/guides/azure_cli.html) müssen Sie die [Azure CLI installieren](/cli/azure/install-azure-cli-windows?view=azure-cli-latest). Diese Demo wurde mit der Azure CLI-Version 2.9.1 getestet.
 
@@ -70,9 +70,9 @@ Bei Verwendung von PowerShell und Terraform müssen Sie sich mithilfe eines Dien
 
 Wenn Sie sich mithilfe eines Dienstprinzipals bei einem Azure-Abonnement anmelden möchten, benötigen Sie zunächst Zugriff auf einen Dienstprinzipal. Wenn Sie bereits einen Dienstprinzipal haben, können Sie diesen Abschnitt überspringen.
 
-Beim [Erstellen eines Dienstprinzipals mit PowerShell](https://docs.microsoft.com/powershell/azure/create-azure-service-principal-azureps) stehen zahlreiche Optionen zur Verfügung. In diesem Artikel wird ein Dienstprinzipal mit der Rolle **Mitwirkender** erstellt. Die Rolle **Mitwirkender** (die Standardrolle) verfügt über uneingeschränkte Berechtigungen für Lese- und Schreibvorgänge in einem Azure-Konto. Weitere Informationen zur rollenbasierten Zugriffssteuerung (Role-Based Access Control, RBAC) finden Sie unter [Integrierte Integrierte Rollen](/azure/active-directory/role-based-access-built-in-roles).
+Beim [Erstellen eines Dienstprinzipals mit PowerShell](/powershell/azure/create-azure-service-principal-azureps) stehen zahlreiche Optionen zur Verfügung. In diesem Artikel wird ein Dienstprinzipal mit der Rolle **Mitwirkender** erstellt. Die Rolle **Mitwirkender** (die Standardrolle) verfügt über uneingeschränkte Berechtigungen für Lese- und Schreibvorgänge in einem Azure-Konto. Weitere Informationen zur rollenbasierten Zugriffssteuerung (Role-Based Access Control, RBAC) finden Sie unter [Integrierte Integrierte Rollen](/azure/active-directory/role-based-access-built-in-roles).
 
-Durch Aufrufen von [New-AzADServicePrincipal](https://docs.microsoft.com/powershell/module/Az.Resources/New-AzADServicePrincipal) wird ein Dienstprinzipal für das angegebene Abonnement erstellt. Nach erfolgreichem Abschluss werden die Informationen des Dienstprinzipals (z. B. die Dienstprinzipalnamen und der Anzeigename) angezeigt. Wenn Sie `New-AzADServicePrincipal` ohne Angabe von Anmeldeinformationen für die Authentifizierung aufrufen, wird automatisch ein Kennwort generiert. Dieses Kennwort wird jedoch nicht angezeigt, weil es im Typ `SecureString` zurückgegeben wird. Daher müssen Sie `New-AzADServicePrincipal` aufrufen und dabei die Ergebnisse an eine Variable übergeben. Anschließend können Sie die Variable in Nur-Text konvertieren, um sie anzuzeigen.
+Durch Aufrufen von [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) wird ein Dienstprinzipal für das angegebene Abonnement erstellt. Nach erfolgreichem Abschluss werden die Informationen des Dienstprinzipals (z. B. die Dienstprinzipalnamen und der Anzeigename) angezeigt. Wenn Sie `New-AzADServicePrincipal` ohne Angabe von Anmeldeinformationen für die Authentifizierung aufrufen, wird automatisch ein Kennwort generiert. Dieses Kennwort wird jedoch nicht angezeigt, weil es im Typ `SecureString` zurückgegeben wird. Daher müssen Sie `New-AzADServicePrincipal` aufrufen und dabei die Ergebnisse an eine Variable übergeben. Anschließend können Sie die Variable in Nur-Text konvertieren, um sie anzuzeigen.
 
 1. Rufen Sie die Abonnement-ID für das zu verwendende Azure-Abonnement ab. Wenn Sie die Abonnement-ID nicht kennen, können Sie den Wert aus dem [Azure-Portal](https://portal.azure.com/) abrufen.
 
@@ -82,7 +82,7 @@ Durch Aufrufen von [New-AzADServicePrincipal](https://docs.microsoft.com/powersh
 
 1. Starten Sie PowerShell.
 
-1. Erstellen Sie mithilfe von [New-AzADServicePrincipal](https://docs.microsoft.com/powershell/module/az.resources/new-azadserviceprincipal) einen neuen Dienstprinzipal. Ersetzen Sie `<azure_subscription_id>` durch die ID des Azure-Abonnements, das Sie verwenden möchten:
+1. Erstellen Sie mithilfe von [New-AzADServicePrincipal](/powershell/module/az.resources/new-azadserviceprincipal) einen neuen Dienstprinzipal. Ersetzen Sie `<azure_subscription_id>` durch die ID des Azure-Abonnements, das Sie verwenden möchten:
 
     ```powershell
     $sp = New-AzADServicePrincipal -Scope /subscriptions/<azure_subscription_id>
@@ -94,7 +94,7 @@ Durch Aufrufen von [New-AzADServicePrincipal](https://docs.microsoft.com/powersh
     $sp.ServicePrincipalNames
     ```
 
-1. Zeigen Sie das automatisch generierte Kennwort als Text ([ConvertFrom-SecureString](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/convertfrom-securestring)) an:
+1. Zeigen Sie das automatisch generierte Kennwort als Text ([ConvertFrom-SecureString](/powershell/module/microsoft.powershell.security/convertfrom-securestring)) an:
 
     ```powershell
     $UnsecureSecret = ConvertFrom-SecureString -SecureString $sp.Secret -AsPlainText
@@ -103,17 +103,17 @@ Durch Aufrufen von [New-AzADServicePrincipal](https://docs.microsoft.com/powersh
 **Hinweise**:
 
 - Die Werte für Dienstprinzipalnamen und Kennwort sind erforderlich, um sich mit Ihrem Dienstprinzipal beim Abonnement anzumelden.
-- Dieses Kennwort kann nicht erneut abgerufen werden. Es empfiehlt sich daher, das Kennwort an einem sicheren Ort zu speichern. Sollten Sie Ihr Kennwort vergessen, müssen Sie die [Anmeldeinformationen des Dienstprinzipals zurücksetzen](https://docs.microsoft.com/powershell/azure/create-azure-service-principal-azureps#reset-credentials).
+- Dieses Kennwort kann nicht erneut abgerufen werden. Es empfiehlt sich daher, das Kennwort an einem sicheren Ort zu speichern. Sollten Sie Ihr Kennwort vergessen, müssen Sie die [Anmeldeinformationen des Dienstprinzipals zurücksetzen](/powershell/azure/create-azure-service-principal-azureps#reset-credentials).
 
 ## <a name="log-in-to-azure-using-a-service-principal"></a>Anmelden bei Azure mithilfe eines Dienstprinzipals
 
-Wenn Sie sich mithilfe eines Dienstprinzipals bei einem Azure-Abonnement anmelden möchten, rufen Sie [Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/Connect-AzAccount) auf, und geben Sie ein Objekt vom Typ [PsCredential](https://docs.microsoft.com/dotnet/api/system.management.automation.pscredential) an.
+Wenn Sie sich mithilfe eines Dienstprinzipals bei einem Azure-Abonnement anmelden möchten, rufen Sie [Connect-AzAccount](/powershell/module/az.accounts/Connect-AzAccount) auf, und geben Sie ein Objekt vom Typ [PsCredential](/dotnet/api/system.management.automation.pscredential) an.
 
 1. Starten Sie PowerShell.
 
-1. Verwenden Sie eins der folgenden Verfahren, um ein Objekt vom Typ [PsCredential](https://docs.microsoft.com/dotnet/api/system.management.automation.pscredential) zu erhalten:
+1. Verwenden Sie eins der folgenden Verfahren, um ein Objekt vom Typ [PsCredential](/dotnet/api/system.management.automation.pscredential) zu erhalten:
 
-    1. Rufen Sie [Get-Credential](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-credential) auf, und geben Sie bei entsprechender Aufforderung Dienstprinzipalname und -kennwort ein:
+    1. Rufen Sie [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential) auf, und geben Sie bei entsprechender Aufforderung Dienstprinzipalname und -kennwort ein:
 
         ```powershell
         $spCredential = Get-Credential
@@ -213,7 +213,7 @@ In diesem Abschnitt erstellen Sie einen *Ausführungsplan* und wenden ihn auf Ih
     terraform apply QuickstartTerraformTest.tfplan
     ```
 
-1. Wenn der Ausführungsplan angewendet wurde, können Sie mithilfe von [Get-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/Get-AzResourceGroup) testen, ob die Ressourcengruppe erstellt wurde.
+1. Wenn der Ausführungsplan angewendet wurde, können Sie mithilfe von [Get-AzResourceGroup](/powershell/module/az.resources/Get-AzResourceGroup) testen, ob die Ressourcengruppe erstellt wurde.
 
     ```powershell
     Get-AzResourceGroup -Name QuickstartTerraformTest-rg
@@ -245,7 +245,7 @@ Löschen Sie die in diesem Artikel erstellten Ressourcen, wenn Sie sie nicht meh
     terraform apply QuickstartTerraformTest.destroy.tfplan
     ```
 
-1. Überprüfen Sie mithilfe von [Get-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/Get-AzResourceGroup), ob die Ressourcengruppe gelöscht wurde.
+1. Überprüfen Sie mithilfe von [Get-AzResourceGroup](/powershell/module/az.resources/Get-AzResourceGroup), ob die Ressourcengruppe gelöscht wurde.
 
     ```powershell
     Get-AzResourceGroup -Name QuickstartTerraformTest-rg

@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, Bash, CloudShell, dynamischer Bestand
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 53cf2e25a89081b314826cda4322e2556fc38c39
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.openlocfilehash: d4532a0727a70dc1a92c6df21b5ff9f0d92ab850
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90682065"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831196"
 ---
 # <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>Tutorial: Konfigurieren von dynamischen Beständen Ihrer Azure-Ressourcen mit Ansible
 
@@ -35,7 +35,7 @@ Mit Ansible können Bestandsinformationen aus verschiedenen Quellen (einschließ
 
 1. Melden Sie sich beim [Azure-Portal](https://go.microsoft.com/fwlink/p/?LinkID=525040) an.
 
-1. Öffnen Sie [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
+1. Öffnen Sie [Cloud Shell](/azure/cloud-shell/overview).
 
 1. Erstellen Sie für die virtuellen Computer dieses Tutorials eine Azure-Ressourcengruppe.
 
@@ -66,7 +66,7 @@ Mit Ansible können Bestandsinformationen aus verschiedenen Quellen (einschließ
 
 ## <a name="tag-a-vm"></a>Kennzeichnen eines virtuellen Computers
 
-Sie können [Ihre Azure-Ressourcen mithilfe von Tags nach benutzerdefinierten Kategorien organisieren](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags#azure-cli).
+Sie können [Ihre Azure-Ressourcen mithilfe von Tags nach benutzerdefinierten Kategorien organisieren](/azure/azure-resource-manager/resource-group-using-tags#azure-cli).
 
 ### <a name="using-ansible-version--28"></a>Verwendung einer früheren Version als Ansible 2.8
 Geben Sie den folgenden Befehl vom Typ [az resource tag](/cli/azure/resource#az-resource-tag) ein, um den virtuellen Computer `ansible-inventory-test-vm1` mit dem Schlüssel `nginx` zu markieren:
@@ -276,7 +276,7 @@ Das Tag ermöglicht die schnelle und einfache Verwendung von Untergruppen virtue
 
 Dieser Abschnitt beschreibt ein Verfahren, mit dem Sie sich vergewissern können, dass Nginx auf Ihrem virtuellen Computer installiert ist.
 
-1. Rufen Sie mithilfe des Befehls [az vm list-ip-addresses](https://docs.microsoft.com/cli/azure/vm#az-vm-list-ip-addresses) die IP-Adresse des virtuellen Computers `ansible-inventory-test-vm1` ab. Der zurückgegebene Wert (die IP-Adresse des virtuellen Computers) wird dann als Parameter für den SSH-Befehl verwendet, um die Verbindung mit dem virtuellen Computer herzustellen.
+1. Rufen Sie mithilfe des Befehls [az vm list-ip-addresses](/cli/azure/vm#az-vm-list-ip-addresses) die IP-Adresse des virtuellen Computers `ansible-inventory-test-vm1` ab. Der zurückgegebene Wert (die IP-Adresse des virtuellen Computers) wird dann als Parameter für den SSH-Befehl verwendet, um die Verbindung mit dem virtuellen Computer herzustellen.
 
     ```azurecli-interactive
     ssh `az vm list-ip-addresses \

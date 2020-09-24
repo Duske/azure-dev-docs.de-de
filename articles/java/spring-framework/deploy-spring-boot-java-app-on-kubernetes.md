@@ -9,12 +9,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: b2cc66d13cd5248604e61b5322f53c358c15a7d8
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.openlocfilehash: b4b36df09811e8e9e6a9bae944119e280258d751
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90681598"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90830076"
 ---
 # <a name="deploy-spring-boot-application-to-the-azure-kubernetes-service"></a>Bereitstellen von Spring Boot-Anwendungen in Azure Kubernetes Service
 
@@ -291,7 +291,7 @@ In diesem Tutorial wird die App mit `kubectl` bereitgestellt. Anschließend kön
 Weitere Informationen zu Spring und Azure finden Sie im Dokumentationscenter zu Spring in Azure.
 
 > [!div class="nextstepaction"]
-> [Spring Framework in Azure](/azure/developer/java/spring-framework)
+> [Spring Framework in Azure](./index.yml)
 
 ### <a name="additional-resources"></a>Weitere Ressourcen
 
@@ -330,7 +330,7 @@ Weitere Informationen zum iterativen Ausführen und Debuggen von Containern mit 
 [Dashboard-Authentifizierung]: https://github.com/kubernetes/dashboard/wiki/Access-control
 [Azure-Befehlszeilenschnittstelle (CLI)]: /cli/azure/overview
 [Azure Kubernetes Service (AKS)]: https://azure.microsoft.com/services/kubernetes-service/
-[Azure für Java-Entwickler]: /azure/developer/java/
+[Azure für Java-Entwickler]: ../index.yml
 [Azure portal]: https://portal.azure.com/
 [Create a private Docker container registry using the Azure portal]: /azure/container-registry/container-registry-get-started-portal
 [Verwenden eines benutzerdefinierten Docker-Images für Azure-Web-Apps unter Linux]: /azure/app-service/tutorial-custom-container
@@ -349,7 +349,7 @@ Weitere Informationen zum iterativen Ausführen und Debuggen von Containern mit 
 [Namespaces]: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
 [Pulling an Image from a Private Registry]: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/ (Übertragen eines Images aus einer privaten Registrierung per Pull)
 
-[Java Development Kit (JDK)]: https://aka.ms/azure-jdks
+[Java Development Kit (JDK)]: ../fundamentals/java-jdk-long-term-support.md
 <!-- http://www.oracle.com/technetwork/java/javase/downloads/ -->
 
 <!-- Newly added -->

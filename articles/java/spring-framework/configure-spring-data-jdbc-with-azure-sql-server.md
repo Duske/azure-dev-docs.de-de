@@ -8,16 +8,16 @@ ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: a6eabc4e7aca4a79ba41b0061721bf8431d312bf
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: abf197e0626925dd836243a207ddf0c49ee32470
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378904"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831246"
 ---
 # <a name="use-spring-data-jdbc-with-azure-sql-database"></a>Verwenden von Spring Data-JDBC mit Azure SQL-Datenbank
 
-In diesem Thema wird die Erstellung einer Beispielanwendung veranschaulicht, die [Spring Data-JDBC](https://spring.io/projects/spring-data-jdbc) verwendet, um Informationen in [Azure SQL-Datenbank](https://docs.microsoft.com/azure/sql-database/) zu speichern bzw. daraus abzurufen.
+In diesem Thema wird die Erstellung einer Beispielanwendung veranschaulicht, die [Spring Data-JDBC](https://spring.io/projects/spring-data-jdbc) verwendet, um Informationen in [Azure SQL-Datenbank](/azure/sql-database/) zu speichern bzw. daraus abzurufen.
 
 [JDBC](https://en.wikipedia.org/wiki/Java_Database_Connectivity) ist die Standard-Java-API, um eine Verbindung mit herkömmlichen relationalen Datenbanken herzustellen.
 
@@ -99,4 +99,4 @@ Glückwunsch! Sie haben eine Spring Boot-Anwendung erstellt, die JDBC zum Speic
 
 Weitere Informationen zu Spring Data-JDBC finden Sie in der [Referenzdokumentation](https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/#reference) zu Spring.
 
-Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure für Java-Entwickler](/azure/developer/java/) und [Working with Azure DevOps and Java](/azure/devops/) (Arbeiten mit Azure DevOps und Java).
+Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure für Java-Entwickler](../index.yml) und [Working with Azure DevOps and Java](/azure/devops/) (Arbeiten mit Azure DevOps und Java).

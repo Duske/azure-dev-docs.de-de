@@ -2,14 +2,14 @@
 title: 'Schritt 3: Untersuchen der Python-Codedateien für Azure Functions in VS Code'
 description: 'Tutorialschritt 3: Grundlegendes zum Python-Vorlagencode, der von Azure Functions bereitgestellt wird'
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 29802cf346a53d7230a2b6f46e8f39127be70d0a
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 1734a89ed2c71604fba5583020e0e93810c900a0
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473535"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772523"
 ---
 # <a name="3-examine-the-python-code-files-in-visual-studio-code"></a>3: Untersuchen der Python-Codedateien in Visual Studio Code
 
@@ -86,11 +86,10 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 Die wichtigen Teile des Codes lauten wie folgt:
 
 - Sie müssen das Modul `azure.functions` importieren. Das Importieren des Protokollierungsmoduls ist optional, wird jedoch empfohlen.
-- Die erforderliche `main`-Python-Funktion empfängt ein `func.HttpRequest`-Objekt mit dem Namen `req` und gibt einen Wert vom Typ `func.HttpResponse` zurück. Weitere Informationen zu den Funktionen dieser Objekte finden Sie in den Referenzen zu [func.HttpRequest](/python/api/azure-functions/azure.functions.httprequest?view=azure-python) und [func.HttpResponse](/python/api/azure-functions/azure.functions.httpresponse?view=azure-python).
+- Die erforderliche `main`-Python-Funktion empfängt ein `func.HttpRequest`-Objekt mit dem Namen `req` und gibt einen Wert vom Typ `func.HttpResponse` zurück. Weitere Informationen zu den Funktionen dieser Objekte finden Sie in den Referenzen zu [func.HttpRequest](/python/api/azure-functions/azure.functions.httprequest?view=azure-python&preserve-view=true) und [func.HttpResponse](/python/api/azure-functions/azure.functions.httpresponse?view=azure-python&preserve-view=true).
 - Der Text von `main` verarbeitet dann die Anforderung und generiert eine Antwort. In diesem Fall sucht der Code in der URL nach einem `name`-Parameter. Wenn dies nicht gelingt, wird überprüft, ob der Anforderungstext JSON-Code enthält (mit `func.HttpRequest.get_json`) und ob der JSON-Code einen `name`-Wert enthält (mit der `get`-Methode des von `get_json` zurückgegebenen JSON-Objekts).
 - Wenn ein Name gefunden wird, gibt der Code die Zeichenfolge „Hello“ mit angefügtem Namen zurück. Andernfalls wird eine generische Meldung zurückgegeben.
 
 > [!div class="nextstepaction"]
 > [Ich habe die Codedateien untersucht: Fahren Sie mit Schritt 4 fort. >>>](tutorial-vs-code-serverless-python-04.md)
 
-Sie haben Probleme? Übermitteln Sie ein GitHub-Problem, indem Sie unten auf dieser Seite die Feedbackoption „Diese Seite“ verwenden.

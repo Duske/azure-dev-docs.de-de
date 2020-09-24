@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, Storage, CI/CD, Buildartefakte
 ms.topic: article
 ms.date: 08/13/2019
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 783d6870eff461ccf4936aff9bfd76577816e5bf
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: e3e290b7135f1207ffa91e8a228e2af91e91f878
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240972"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831356"
 ---
 # <a name="tutorial-use-azure-storage-for-build-artifacts"></a>Tutorial: Verwenden von Azure Storage für Buildartefakte
 
@@ -135,7 +135,7 @@ In diesem Abschnitt erhalten Sie einen Überblick über die Komponenten des Blob
 
 * **Storage Account** (Speicherkonto): Alle Zugriffe auf den Azure-Speicher erfolgen über ein Speicherkonto. Ein Speicherkonto ist die höchste Ebene des Namespaces für den Zugriff auf Blobs. Ein Konto kann eine beliebige Anzahl von Containern enthalten, solange deren Gesamtgröße 100 TB nicht überschreitet.
 * **Container**: Ein Container stellt eine Gruppierung eines Blob-Satzes bereit. Alle BLOBs müssen sich in einem Container befinden. Ein Konto kann eine unbegrenzte Anzahl von Containern enthalten. In einem Container kann eine unbegrenzte Anzahl von BLOBs gespeichert werden.
-* **Blob**: Eine Datei eines beliebigen Typs und beliebiger Größe. Es gibt zwei Arten von BLOBs, die im Azure-Speicher gespeichert werden können: Blockblobs und Seitenblobs. Die meisten Dateien sind Block-BLOBs. Ein einzelner Block-Blob kann bis zu 200 GB groß sein. In diesem Tutorial werden Block-BLOBs verwendet. Der andere Blob-Typ, Seiten-Blobs, kann bis zu 1 TB groß sein und ist effizienter, wenn Byte-Bereiche in einer Datei häufig geändert werden. Weitere Informationen zu Blobs finden Sie unter [Understanding Block Blobs, Append Blobs, and Page Blobs](https://msdn.microsoft.com/library/azure/ee691964.aspx) (Grundlegendes zu Block-, Anfüge- und Seitenblobs).
+* **Blob**: Eine Datei eines beliebigen Typs und beliebiger Größe. Es gibt zwei Arten von BLOBs, die im Azure-Speicher gespeichert werden können: Blockblobs und Seitenblobs. Die meisten Dateien sind Block-BLOBs. Ein einzelner Block-Blob kann bis zu 200 GB groß sein. In diesem Tutorial werden Block-BLOBs verwendet. Der andere Blob-Typ, Seiten-Blobs, kann bis zu 1 TB groß sein und ist effizienter, wenn Byte-Bereiche in einer Datei häufig geändert werden. Weitere Informationen zu Blobs finden Sie unter [Understanding Block Blobs, Append Blobs, and Page Blobs](/rest/api/storageservices/Understanding-Block-Blobs--Append-Blobs--and-Page-Blobs) (Grundlegendes zu Block-, Anfüge- und Seitenblobs).
 * **URL-Format:** Blobs können über das folgende URL-Format aufgerufen werden:
   
     `http://storageaccount.blob.core.windows.net/container_name/blob_name`

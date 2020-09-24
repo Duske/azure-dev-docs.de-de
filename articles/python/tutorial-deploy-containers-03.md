@@ -4,12 +4,12 @@ description: 'Tutorialschritt 3: einfache Schritte zum erneuten Erstellen und B
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 6a2c09e861da9fedaa90f1229f212f02f95a349e
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 79498685492d57a22884b30c551c3a28b6e0fe15
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473490"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772633"
 ---
 # <a name="2-redeploy-a-container-to-azure-app-service-after-making-changes"></a>2: Erneutes Bereitstellen eines Containers in Azure App Service, nachdem Änderungen vorgenommen wurden
 
@@ -31,5 +31,3 @@ Da Sie unweigerlich Änderungen an Ihrer App vornehmen, müssen Sie den Containe
 
 > [!div class="nextstepaction"]
 > [Ich habe Änderungen vorgenommen und eine erneute Bereitstellung durchgeführt: Fahren Sie mit Schritt 4 fort. >>>](tutorial-deploy-containers-04.md)
-
-Sie haben Probleme? Übermitteln Sie ein GitHub-Problem, indem Sie unten auf dieser Seite die Feedbackoption „Diese Seite“ verwenden.

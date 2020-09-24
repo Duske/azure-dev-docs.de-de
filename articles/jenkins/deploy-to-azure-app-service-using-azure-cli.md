@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, App Service, CLI
 ms.topic: tutorial
 ms.date: 08/08/2020
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 9c5f3b30507cda764dd29f0c133d4997dbc2bb53
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 4a6fde1eb8830c897c438fa89e7da6fe93b5a3a8
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240952"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831336"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-with-jenkins-and-the-azure-cli"></a>Tutorial: Bereitstellen an Azure App Service mit Jenkins und der Azure CLI
 
@@ -47,7 +47,7 @@ sudo apt-get install -y maven
 Eine Azure-Anmeldeinformation ist erforderlich, um die Azure CLI auszuführen.
 
 * Klicken Sie im Jenkins-Dashboard auf **Credentials -> System ->** (Anmeldeinformationen -> System ->). Klicken Sie auf **Global credentials (unrestricted)** (Globale Anmeldeinformationen (uneingeschränkt)).
-* Klicken Sie auf **Add Credentials** (Anmeldeinformationen hinzufügen), um einen [Microsoft Azure-Dienstprinzipal](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?toc=%2fazure%2fazure-resource-manager%2ftoc.json) hinzuzufügen, indem Sie die Abonnement-ID, die Client-ID, den geheimen Clientschlüssel und den OAuth 2.0-Token-Endpunkt hinzufügen. Stellen Sie eine ID zur Verwendung im nächsten Schritt bereit.
+* Klicken Sie auf **Add Credentials** (Anmeldeinformationen hinzufügen), um einen [Microsoft Azure-Dienstprinzipal](/cli/azure/create-an-azure-service-principal-azure-cli?toc=%252fazure%252fazure-resource-manager%252ftoc.json) hinzuzufügen, indem Sie die Abonnement-ID, die Client-ID, den geheimen Clientschlüssel und den OAuth 2.0-Token-Endpunkt hinzufügen. Stellen Sie eine ID zur Verwendung im nächsten Schritt bereit.
 
 ![Hinzufügen von Anmeldeinformationen](./media/deploy-to-azure-app-service-using-azure-cli/add-credentials.png)
 
