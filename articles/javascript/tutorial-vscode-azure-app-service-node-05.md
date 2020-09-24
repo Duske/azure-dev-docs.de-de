@@ -3,14 +3,15 @@ title: Bereinigen der Ressourcen nach dem Bereitstellen in Azure App Service i
 description: 'Teil 5 des Tutorials: Bereinigen der Ressourcen'
 ms.topic: conceptual
 ms.date: 03/04/2020
-ms.openlocfilehash: 1c3b277270bf6f8f7cb5884b7bb56ce2c9b3368c
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: fc420d98121816157e75017ee453aa42929f68e6
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792074"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "90772893"
 ---
-# <a name="clean-up-resources"></a>Bereinigen von Ressourcen
+# <a name="part-5-clean-up-resources"></a>Teil 5: Bereinigen von Ressourcen
 
 [Vorheriger Schritt: Streamen von Protokollen](tutorial-vscode-azure-app-service-node-04.md)
 
