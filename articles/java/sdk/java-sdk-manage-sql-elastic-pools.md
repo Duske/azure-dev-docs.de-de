@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
 ms.custom: devx-track-java
-ms.openlocfilehash: 5d48192ba940e7afb019de5afad045eb4e8ed12a
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 37a04c66d3ef71686983d9513a40299a0e8aabdd
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379434"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831766"
 ---
 # <a name="manage-azure-sql-databases-in-elastic-pools-from-your-java-applications"></a>Verwalten von Azure SQL-Datenbanken in Pools für elastische Datenbanken über Ihre Java-Anwendungen
 
@@ -20,7 +20,7 @@ ms.locfileid: "86379434"
 
 ## <a name="run-the-sample"></a>Ausführen des Beispiels
 
-Erstellen Sie eine [Authentifizierungsdatei](https://docs.microsoft.com/azure/java/java-sdk-azure-authenticate#mgmt-file), und legen Sie die Umgebungsvariable `AZURE_AUTH_LOCATION` mit dem vollständigen Pfad zur Datei auf Ihrem Computer fest. Führen Sie dann Folgendes aus:
+Erstellen Sie eine [Authentifizierungsdatei](/azure/java/java-sdk-azure-authenticate#mgmt-file), und legen Sie die Umgebungsvariable `AZURE_AUTH_LOCATION` mit dem vollständigen Pfad zur Datei auf Ihrem Computer fest. Führen Sie dann Folgendes aus:
 
 ```
 git clone https://github.com/Azure-Samples/sql-database-java-manage-sql-dbs-in-elastic-pool

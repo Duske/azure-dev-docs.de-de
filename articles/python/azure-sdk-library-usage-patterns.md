@@ -1,15 +1,15 @@
 ---
 title: Verwendungsmuster mit den Azure-Bibliotheken für Python
 description: Hier finden Sie eine Übersicht über gängige Verwendungsmuster mit den Azure SDK-Bibliotheken für Python.
-ms.date: 06/09/2020
+ms.date: 09/21/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: cf44dc4458014972b6c6e16a28acab164d8f0f89
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 63cd6c85e15fa0ffb44a4da01ffcc27d4ae08f17
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983321"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831796"
 ---
 # <a name="azure-libraries-for-python-usage-patterns"></a>Azure-Bibliotheken für Python: Verwendungsmuster
 
@@ -138,7 +138,7 @@ Bei Verwendung von JSON wird der JSON-Inline-Code durch die Azure-Bibliotheken a
 
 Objekte können auch geschachtelte Objektargumente besitzen, und in diesem Fall können Sie dann auch geschachtelten JSON-Code verwenden.
 
-Angenommen, Sie haben beispielsweise eine Instanz des [`KeyVaultManagementClient`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.keyvaultmanagementclient?view=azure-python)-Objekts und rufen seine [`create_or_update`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.operations.vaultsoperations?view=azure-python#create-or-update-resource-group-name--vault-name--parameters--custom-headers-none--raw-false--polling-true----operation-config-)-Methode auf. In diesem Fall ist das dritte Argument vom Typ [`VaultCreateOrUpdateParameters`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.vaultcreateorupdateparameters?view=azure-python), das wiederum selbst ein Argument vom Typ [`VaultProperties`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.vaultproperties?view=azure-python) enthält. `VaultProperties` wiederum enthält Objektargumente vom Typ [`Sku`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.sku?view=azure-python) und [`list[AccessPolicyEntry`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.accesspolicyentry?view=azure-python). Eine `Sku` enthält ein [`SkuName`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.skuname?view=azure-python)-Objekt, und jeder `AccessPolicyEntry` enthält ein [`Permissions`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.permissions?view=azure-python)-Objekt.
+Angenommen, Sie haben beispielsweise eine Instanz des [`KeyVaultManagementClient`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.keyvaultmanagementclient?view=azure-python)-Objekts und rufen seine [`create_or_update`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.operations.vaultsoperations?view=azure-python#create-or-update-resource-group-name--vault-name--parameters--custom-headers-none--raw-false--polling-true----operation-config-)-Methode auf. In diesem Fall ist das dritte Argument vom Typ [`VaultCreateOrUpdateParameters`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.vaultcreateorupdateparameters?view=azure-python), das wiederum selbst ein Argument vom Typ [`VaultProperties`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.vaultproperties?view=azure-python) enthält. `VaultProperties` wiederum enthält Objektargumente vom Typ [`Sku`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.sku?view=azure-python) und [`list[AccessPolicyEntry]`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.accesspolicyentry?view=azure-python). Eine `Sku` enthält ein [`SkuName`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.skuname?view=azure-python)-Objekt, und jeder `AccessPolicyEntry` enthält ein [`Permissions`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.permissions?view=azure-python)-Objekt.
 
 Wenn Sie `create_or_update` mit eingebetteten Objekten aufrufen möchten, müssen Sie Code wie den folgenden verwenden (vorausgesetzt, `tenant_id` und `object_id` sind bereits definiert). Die erforderlichen Objekte können auch vor dem Funktionsaufruf erstellt werden.
 

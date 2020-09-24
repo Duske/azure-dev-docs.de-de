@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
 ms.custom: seo-java-august2019, devx-track-java
-ms.openlocfilehash: d8f173fca56af289fb83012a101bc5cb99e4ed12
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 9ae476b38768789eb8ecef915d3c68d93302bdc6
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379514"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831786"
 ---
 # <a name="get-started-with-cloud-development-using-java-on-azure"></a>Erste Schritte bei der Cloudentwicklung mit Java in Azure
 
@@ -144,7 +144,7 @@ Fügen Sie unter dem Element `project` der obersten Ebene einen Eintrag vom Typ 
 
 ### <a name="install-the-azure-toolkit-for-intellij"></a>Installieren des Azure-Toolkits für IntelliJ
 
-Das [Azure-Toolkit](/azure/developer/java/toolkit-for-intellij/installation) ist erforderlich, wenn Sie Web-Apps oder APIs programmgesteuert bereitstellen, wird derzeit jedoch nicht für andere Bereitstellungsarten verwendet. Es folgt eine Zusammenfassung des Installationsvorgangs. Eine Schnellstartanleitung finden Sie unter [Erstellen einer „Hello World“-Web-App für Azure mit IntelliJ](/azure/developer/java/toolkit-for-intellij/create-hello-world-web-app).
+Das [Azure-Toolkit](../toolkit-for-intellij/installation.md) ist erforderlich, wenn Sie Web-Apps oder APIs programmgesteuert bereitstellen, wird derzeit jedoch nicht für andere Bereitstellungsarten verwendet. Es folgt eine Zusammenfassung des Installationsvorgangs. Eine Schnellstartanleitung finden Sie unter [Erstellen einer „Hello World“-Web-App für Azure mit IntelliJ](../toolkit-for-intellij/create-hello-world-web-app.md).
 
 - Wählen Sie im Menü **Datei** die Option **Einstellungen...** aus.
 
@@ -154,7 +154,7 @@ Das [Azure-Toolkit](/azure/developer/java/toolkit-for-intellij/installation) ist
 
 ### <a name="install-the-azure-toolkit-for-eclipse"></a>Installieren des Azure-Toolkits für Eclipse
 
-Das [Azure-Toolkit](/azure/developer/java/toolkit-for-eclipse) ist erforderlich, wenn Sie Web-Apps oder APIs programmgesteuert bereitstellen, wird derzeit jedoch nicht für andere Bereitstellungsarten verwendet. Es folgt eine Zusammenfassung des Installationsvorgangs. Eine Schnellstartanleitung finden Sie unter [Erstellen einer „Hello World“-Web-App für Azure mit Eclipse](/azure/developer/java/toolkit-for-eclipse/create-hello-world-web-app).
+Das [Azure-Toolkit](../toolkit-for-eclipse/index.yml) ist erforderlich, wenn Sie Web-Apps oder APIs programmgesteuert bereitstellen, wird derzeit jedoch nicht für andere Bereitstellungsarten verwendet. Es folgt eine Zusammenfassung des Installationsvorgangs. Eine Schnellstartanleitung finden Sie unter [Erstellen einer „Hello World“-Web-App für Azure mit Eclipse](../toolkit-for-eclipse/create-hello-world-web-app.md).
 
 - Klicken Sie auf das Menü **Help** (Hilfe) und dann auf **Install New Software** (Neue Software installieren).
 

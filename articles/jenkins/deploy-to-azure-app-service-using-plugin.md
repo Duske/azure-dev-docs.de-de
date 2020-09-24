@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, App Service
 ms.topic: tutorial
 ms.date: 08/10/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: f165c1b4402d49ca0c52d6229c4b3ded45842e2f
-ms.sourcegitcommit: f65561589d22b9ba2d69b290daee82eb47b0b20f
+ms.openlocfilehash: 1be8e126a5fee2dd83682ece559998a45645ac36
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88162079"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831686"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-using-the-jenkins-plugin"></a>Tutorial: Durchführen der Bereitstellung in Azure App Service mit dem Jenkins-Plug-In
 
@@ -280,4 +280,4 @@ Wenn bei den Jenkins-Plug-Ins Fehler auftreten, melden Sie das Problem auf der [
 ## <a name="next-steps"></a>Nächste Schritte
 
 > [!div class="nextstepaction"]
-> [Jenkins in Azure](/azure/developer/jenkins)
+> [Jenkins in Azure](./index.yml)

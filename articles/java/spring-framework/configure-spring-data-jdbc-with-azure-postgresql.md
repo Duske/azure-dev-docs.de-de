@@ -8,12 +8,12 @@ ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: e6c95da37584db483d5acedaf738bfb0512a1de3
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: c700d78fa8cb7568e207fd020714cda25abb2bc5
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378914"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831816"
 ---
 # <a name="use-spring-data-jdbc-with-azure-database-for-postgresql"></a>Verwenden von Spring Data-JDBC mit Azure Database for PostgreSQL
 
@@ -99,4 +99,4 @@ Glückwunsch! Sie haben eine Spring Boot-Anwendung erstellt, die JDBC zum Speic
 
 Weitere Informationen zu Spring Data-JDBC finden Sie in der [Referenzdokumentation](https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/#reference) zu Spring.
 
-Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure für Java-Entwickler](/azure/developer/java/) und [Working with Azure DevOps and Java](/azure/devops/) (Arbeiten mit Azure DevOps und Java).
+Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure für Java-Entwickler](../index.yml) und [Working with Azure DevOps and Java](/azure/devops/) (Arbeiten mit Azure DevOps und Java).

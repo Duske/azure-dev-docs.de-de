@@ -4,12 +4,12 @@ description: Verwenden Sie die Azure SDK für Python-Bibliotheken, um einen Blob
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: b774d986b886aae528c97c4583511a8d6c0ba0a5
-ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
+ms.openlocfilehash: ff2064d7113e78cda69d240ca526db569c9d14e0
+ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89275204"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110480"
 ---
 # <a name="example-provision-azure-storage-using-the-azure-libraries-for-python"></a>Beispiel: Bereitstellen von Azure Storage mit den Azure-Bibliotheken für Python
 
@@ -157,7 +157,7 @@ Es kann ein oder zwei Minuten dauern, bis das Skript abgeschlossen ist.
 
 1. Wenn Sie diese bereitgestellten Ressourcen über Anwendungscode verwenden möchten, fahren Sie mit [Beispiel: Verwenden von Azure Storage](azure-sdk-example-storage-use.md).
 
-Ein weiteres Beispiel mit der Azure Storage-Verwaltungsbibliothek finden Sie unter [Erste Schritte mit der Azure Storage-Verwaltung in Python](https://docs.microsoft.com/samples/azure-samples/storage-python-manage/storage-python-manage/).
+Ein weiteres Beispiel mit der Azure Storage-Verwaltungsbibliothek finden Sie unter [Erste Schritte mit der Azure Storage-Verwaltung in Python](/samples/azure-samples/storage-python-manage/storage-python-manage/).
 
 ### <a name="for-reference-equivalent-azure-cli-commands"></a>Zur Referenz: äquivalente Azure CLI-Befehle
 
@@ -220,7 +220,7 @@ Falls Sie die Ressourcen in App-Code verwenden möchten, wie im Artikel [Beispie
 Führen Sie andernfalls den folgenden Befehl aus, um laufende Gebühren in Ihrem Abonnement zu vermeiden:
 
 ```azurecli
-az group delete -n PythonAzureExample-Storage-rg
+az group delete -n PythonAzureExample-Storage-rg  --no-wait
 ```
 
 Sie können auch die [`ResourceManagementClient.resource_groups.delete`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations?view=azure-python#delete-resource-group-name--custom-headers-none--raw-false--polling-true----operation-config-)-Methode verwenden, um eine Ressourcengruppe aus dem Code zu löschen.

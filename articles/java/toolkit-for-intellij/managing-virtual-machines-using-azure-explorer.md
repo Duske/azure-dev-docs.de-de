@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 058842e8f7d50d885d2a5d28c56ee144072e637a
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: 43aa5efc8a783887c4af0e62f2da7d3b51f652fe
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534359"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831931"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-intellij"></a>Verwalten virtueller Computer mit dem Azure-Explorer für IntelliJ
 
@@ -130,8 +130,8 @@ Weitere Informationen zu den Größen und Preisen für virtuelle Azure-Computer 
 <!-- URL List -->
 
 [Anleitung zur Anmeldung für das Azure-Toolkit für IntelliJ]: ./sign-in-instructions.md
-[Größen für virtuelle Windows-Computer in Azure]: https://docs.microsoft.com/azure/virtual-machines/sizes
-[Größen für virtuelle Linux-Computer in Azure]: https://docs.microsoft.com/azure/virtual-machines/sizes
+[Größen für virtuelle Windows-Computer in Azure]: /azure/virtual-machines/sizes
+[Größen für virtuelle Linux-Computer in Azure]: /azure/virtual-machines/sizes
 [Preise von virtuellen Windows-Computern]: https://azure.microsoft.com/pricing/details/virtual-machines/windows/
 [Preise von virtuellen Linux-Computern]: https://azure.microsoft.com/pricing/details/virtual-machines/linux/
 

@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: seo-java-july2019, seo-java-august2019, devx-track-java
-ms.openlocfilehash: c8ee810df90ed9b0de12e92c336898fb700e1c67
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.openlocfilehash: 960b9c0d8606e14487dab6d505bc701968dc4b0a
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90681634"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831646"
 ---
 # <a name="use-maven-for-azure-web-apps-to-deploy-a-containerized-spring-boot-app-to-azure"></a>Bereitstellen einer containerbasierten Spring Boot-App in Azure mithilfe von Maven für Azure-Web-Apps
 
@@ -308,7 +308,7 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 Weitere Informationen zu Spring und Azure finden Sie im Dokumentationscenter zu Spring in Azure.
 
 > [!div class="nextstepaction"]
-> [Spring Framework in Azure](/azure/developer/java/spring-framework)
+> [Spring Framework in Azure](./index.yml)
 
 ### <a name="additional-resources"></a>Weitere Ressourcen
 
@@ -331,7 +331,7 @@ Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure 
 <!-- URL List -->
 
 [Azure-Befehlszeilenschnittstelle (CLI)]: /cli/azure/overview
-[Azure für Java-Entwickler]: /azure/developer/java/
+[Azure für Java-Entwickler]: ../index.yml
 [Azure portal]: https://portal.azure.com/
 [Docker]: https://www.docker.com/
 [Docker plugin for Maven]: https://github.com/spotify/docker-maven-plugin (Docker-Plug-In für Maven)
@@ -345,7 +345,7 @@ Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure 
 [Spring Framework]: https://spring.io/
 [Maven Plugin for Azure Web Apps]: https://github.com/Microsoft/azure-maven-plugins/tree/master/azure-webapp-maven-plugin (Maven-Plug-In für Azure-Web-Apps)
 
-[Java Development Kit (JDK)]: https://aka.ms/azure-jdks
+[Java Development Kit (JDK)]: ../fundamentals/java-jdk-long-term-support.md
 <!-- http://www.oracle.com/technetwork/java/javase/downloads/ -->
 
 <!-- IMG List -->

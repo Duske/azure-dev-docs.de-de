@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
 ms.custom: devx-track-java
-ms.openlocfilehash: 4ef0dee190947fc77d65b46a56289185ac60d128
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 0a4eef1097ca94f22b716a1c8382487169164c56
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379354"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831896"
 ---
 # <a name="manage-azure-virtual-machines-from-your-java-applications"></a>Verwalten von virtuellen Azure-Computern über Ihre Java-Anwendungen
 
@@ -20,7 +20,7 @@ In [diesem Beispiel](https://github.com/Azure-Samples/compute-java-manage-vm/) w
 
 ## <a name="run-the-sample"></a>Ausführen des Beispiels
 
-Erstellen Sie eine [Authentifizierungsdatei](https://docs.microsoft.com/azure/java/java-sdk-azure-authenticate#mgmt-file), und legen Sie die Umgebungsvariable `AZURE_AUTH_LOCATION` mit dem vollständigen Pfad zur Datei auf Ihrem Computer fest. Führen Sie dann Folgendes aus:
+Erstellen Sie eine [Authentifizierungsdatei](/azure/java/java-sdk-azure-authenticate#mgmt-file), und legen Sie die Umgebungsvariable `AZURE_AUTH_LOCATION` mit dem vollständigen Pfad zur Datei auf Ihrem Computer fest. Führen Sie dann Folgendes aus:
 
 ```
 git clone https://github.com/Azure-Samples/compute-java-manage-vm.git

@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie die Bibliotheken des Azure SDK für Pyt
 ms.date: 08/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 8bbbb03a4bbbdb24e2c45692a0a982341fbcd7a5
-ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
+ms.openlocfilehash: 161e27f1323053b45c687e60ade90e863ce71c64
+ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89275134"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110492"
 ---
 # <a name="example-access-azure-storage-using-the-azure-libraries-for-python"></a>Beispiel: Zugriff auf Azure Storage mit den Azure-Bibliotheken für Python
 
@@ -197,7 +197,7 @@ Wechseln Sie nach dem Ausführen des Codes einer der beiden Methoden zum [Azure-
 ## <a name="6-clean-up-resources"></a>6: Bereinigen von Ressourcen
 
 ```azurecli
-az group delete -n PythonAzureExample-Storage-rg
+az group delete -n PythonAzureExample-Storage-rg  --no-wait
 ```
 
 Führen Sie diesen Befehl aus, wenn Sie die in diesem Beispiel bereitgestellten Ressourcen nicht behalten müssen, und Sie in Ihrem Abonnement laufende Gebühren vermeiden möchten.

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/13/2018
 ms.custom: devx-track-java
-ms.openlocfilehash: 6807374dac927d8a93e1ecf1ac2b1e3fa54877ac
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 2f40f013d7323c51c25d5ecf97f097824d75e914
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379544"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831676"
 ---
 # <a name="adding-a-root-certificate-to-the-java-ca-certificates-store"></a>Hinzufügen eines Stammzertifikats zum Java-ZS-Zertifikatspeicher
 
@@ -79,6 +79,6 @@ Nachdem Sie das Stammzertifikat erfolgreich Ihrem JDK hinzugefügt haben, könne
 
 Weitere Informationen zum keytool-Hilfsprogramm finden Sie unter <https://docs.oracle.com/javase/7/docs/technotes/tools/windows/keytool.html>.
 
-Weitere Informationen zu Java finden Sie im Artikel [Azure für Java-Entwickler](/azure/developer/java).
+Weitere Informationen zu Java finden Sie im Artikel [Azure für Java-Entwickler](../index.yml).
 
 Weitere Informationen zu den unterstützten JDKs, die für die Entwicklung in Azure verfügbar sind, finden Sie unter <https://aka.ms/azure-jdks>.

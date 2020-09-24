@@ -2,14 +2,14 @@
 title: 'Schritt 8: Bereinigen der mit dem Python-Code verwendeten Ressourcen in Azure Functions'
 description: 'Tutorialschritt 8: Bereinigen von Azure-Ressourcen, um laufende Gebühren zu vermeiden'
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: fe4f9b0ef5789b307cbeb3c680dfde2eb46a0046
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 885ff8b79ac219d4adaf4760e31fe439d010f9d5
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473515"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90832006"
 ---
 # <a name="8-clean-up-azure-resources-for-azure-functions"></a>8: Bereinigen von Azure-Ressourcen für Azure Functions
 
@@ -31,7 +31,7 @@ Wie bereits erwähnt, können Sie mehr über die Functions-Erweiterung erfahren,
 
 Lesen Sie die [Einführung in Azure Functions](/azure/azure-functions/functions-overview), um die verschiedenen Trigger zu untersuchen, die Sie verwenden können.
 
-Weitere Informationen zu Azure-Diensten, die Sie von Python aus verwenden können, einschließlich Datenspeicherung sowie KI und Machine Learning-Diensten, finden Sie unter [Azure für Python-Cloudentwickler](/azure/python/?view=azure-python).
+Weitere Informationen zu Azure-Diensten, die Sie von Python aus verwenden können, einschließlich Datenspeicherung sowie KI und Machine Learning-Diensten, finden Sie unter [Azure für Python-Cloudentwickler](./index.yml).
 
 Es gibt auch andere Azure-Erweiterungen für Visual Studio Code, die möglicherweise für Sie hilfreich sind. Suchen Sie einfach im Erweiterungen-Explorer nach „Azure“:
 
@@ -45,6 +45,4 @@ Einige beliebte Erweiterungen sind:
 - [Azure Resource Manager Tools](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
 
 > [!div class="nextstepaction"]
-> [Ich bin fertig!](https://docs.microsoft.com/python/azure/?view=azure-python)
-
-Sie haben Probleme? Übermitteln Sie ein GitHub-Problem, indem Sie unten auf dieser Seite die Feedbackoption „Diese Seite“ verwenden.
+> [Ich bin fertig!](/python/azure/?preserve-view=true&view=azure-python)

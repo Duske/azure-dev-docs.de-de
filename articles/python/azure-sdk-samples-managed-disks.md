@@ -4,18 +4,18 @@ description: Erstellen, Ändern der Größe und Aktualisieren eines verwalteten 
 ms.topic: conceptual
 ms.date: 6/15/2017
 ms.custom: devx-track-python
-ms.openlocfilehash: 0e319d56f1391d193979c79750025a99b565134a
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: b1973276f6cf080006f61ddc3a2805c345591e89
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983242"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831526"
 ---
 # <a name="managed-disks"></a>Managed Disks
 
 Azure Managed Disks bietet eine einfachere Datenträgerverwaltung, mehr Flexibilität sowie höhere Sicherheit und eine bessere Skalierung. Ein Speicherkonto für Datenträger ist nicht mehr erforderlich, sodass sich Kunden bei der Skalierung keine Gedanken um die mit Speicherkonten einhergehenden Einschränkungen machen müssen. Dieser Artikel enthält eine kurze Einführung und Referenz zur Nutzung des Diensts über Python.
 
-Aus Entwicklerperspektive entspricht die Managed Disks-Umgebung in der Azure CLI der CLI-Umgebung in anderen plattformübergreifenden Tools. Für die Verwaltung von Managed Disks können Sie das [Azure Python](https://azure.microsoft.com/develop/python/) SDK und [azure-mgmt-compute-Paket 0.33.0](https://pypi.python.org/pypi/azure-mgmt-compute) verwenden. Ein Computeclient kann anhand [dieses Tutorials](https://docs.microsoft.com/python/api/overview/azure/virtualmachines?view=azure-python) erstellt werden.
+Aus Entwicklerperspektive entspricht die Managed Disks-Umgebung in der Azure CLI der CLI-Umgebung in anderen plattformübergreifenden Tools. Für die Verwaltung von Managed Disks können Sie das [Azure Python](https://azure.microsoft.com/develop/python/) SDK und [azure-mgmt-compute-Paket 0.33.0](https://pypi.python.org/pypi/azure-mgmt-compute) verwenden. Ein Computeclient kann anhand [dieses Tutorials](/python/api/overview/azure/virtualmachines?view=azure-python) erstellt werden.
 
 ## <a name="standalone-managed-disks"></a>Eigenständige verwaltete Datenträger
 

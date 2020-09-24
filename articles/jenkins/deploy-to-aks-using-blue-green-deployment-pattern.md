@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, Kubernetes, K8s, AKS, Blau/Grün-Bereitstellun
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 9a81b47d0e3828bb7c1cd809a66b2245f5a83771
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 6a33227f7a5a0aa3e82e48d821e9f37bdfeadd6e
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240992"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90832046"
 ---
 # <a name="tutorial-deploy-to-azure-kubernetes-service-aks-using-the-bluegreen-deployment-pattern"></a>Tutorial: Durchführen der Bereitstellung in Azure Kubernetes Service (AKS) mit dem Blau/Grün-Bereitstellungsmuster
 
@@ -29,7 +29,7 @@ Dieses Tutorial umfasst die folgenden Aspekte:
 
 ## <a name="prerequisites"></a>Voraussetzungen
 - [GitHub-Konto](https://github.com): Sie benötigen ein GitHub-Konto, um das Beispielrepository zu klonen.
-- [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest): Sie erstellen mit der Azure CLI 2.0 den Kubernetes-Cluster.
+- [Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest): Sie erstellen mit der Azure CLI 2.0 den Kubernetes-Cluster.
 - [Chocolatey](https://chocolatey.org): Mit diesem Paket-Manager installieren Sie kubectl.
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/): Mit dieser Befehlszeilenschnittstelle führen Sie Befehle für Kubernetes-Cluster aus.
 - [jq](https://stedolan.github.io/jq/download/): Dies ist ein schlanker befehlszeilenbasierter JSON-Prozessor.
@@ -81,7 +81,7 @@ In diesem Abschnitt führen Sie die folgenden Schritte aus:
 - Sie erstellen eine Instanz des Azure Container Registry-Diensts.
 
 ### <a name="use-the-azure-cli-20-to-create-a-managed-kubernetes-cluster"></a>Verwenden der Azure CLI 2.0, um einen verwalteten Kubernetes-Cluster zu erstellen
-Um einen verwalteten Kubernetes-Cluster mit der [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) zu erstellen, müssen Sie die Azure CLI-Version 2.0.25 oder höher verwenden.
+Um einen verwalteten Kubernetes-Cluster mit der [Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest) zu erstellen, müssen Sie die Azure CLI-Version 2.0.25 oder höher verwenden.
 
 1. Melden Sie sich bei Ihrem Azure-Konto an. Nachdem Sie den folgenden Befehl eingegeben haben, erhalten Sie Anweisungen zum Abschließen der Anmeldung. 
     

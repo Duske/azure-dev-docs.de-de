@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 8c7c39fa80568efa3040d5cbfa18c3b0cfcd43bc
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: e5b5c946b5ed4d2480b1040d0925507453cc2408
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534638"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831746"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-eclipse"></a>Verwalten von Speicherkonten mithilfe von Azure-Explorer für Eclipse
 
@@ -27,7 +27,7 @@ Der Azure-Explorer gehört zum Azure-Toolkit für Eclipse und bietet Java-Entwic
 
 ## <a name="create-a-storage-account"></a>Speicherkonto erstellen
 
-1. Melden Sie sich beim Azure-Konto gemäß den Anweisungen in [Anleitung zur Azure-Anmeldung für das Azure-Toolkit für Eclipse](/azure/developer/java/toolkit-for-eclipse/sign-in-instructions) an.
+1. Melden Sie sich beim Azure-Konto gemäß den Anweisungen in [Anleitung zur Azure-Anmeldung für das Azure-Toolkit für Eclipse](./sign-in-instructions.md) an.
 
 1. Erweitern Sie in der Ansicht des **Azure-Explorers** den Knoten **Azure**. Klicken Sie mit der rechten Maustaste auf **Speicherkonten**, und klicken Sie dann auf **Speicherkonto erstellen**.
 
@@ -87,8 +87,8 @@ Weitere Informationen zu Azure Storage-Konten sowie Größen und Preisen finden 
 [Skalierbarkeits- und Leistungsziele für Azure Storage]: /azure/storage/storage-scalability-targets
 [Naming and referencing containers, blobs, and metadata]: https://go.microsoft.com/fwlink/?LinkId=255555
 
-[Größen für Windows-Speicherkonten in Azure]: https://docs.microsoft.com/azure/virtual-machines/sizes
-[Größen für Linux-Speicherkonten in Azure]: https://docs.microsoft.com/azure/virtual-machines/sizes
+[Größen für Windows-Speicherkonten in Azure]: /azure/virtual-machines/sizes
+[Größen für Linux-Speicherkonten in Azure]: /azure/virtual-machines/sizes
 [Preise von Windows-Speicherkonten]: https://azure.microsoft.com/pricing/details/virtual-machines/windows/
 [Preise von Linux-Speicherkonten]: https://azure.microsoft.com/pricing/details/virtual-machines/linux/
 

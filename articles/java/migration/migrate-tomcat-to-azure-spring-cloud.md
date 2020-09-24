@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 6/16/2020
-ms.openlocfilehash: 7b8a29c2769b3c4b04a40053d0470bfc6b1a0cca
-ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
+ms.openlocfilehash: a718c7b8b481b99f5a4b1303acac7147c88d1550
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89275184"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831666"
 ---
 # <a name="migrate-a-tomcat-application-to-azure-spring-cloud"></a>Migrieren einer Tomcat-Anwendungen zu Azure Spring Cloud
 
@@ -131,7 +131,7 @@ Die folgende Tabelle zeigt eine Zusammenfassung der erforderlichen Migrationen u
 
 1. Erstellen Sie alle anderen JNDI-Abhängigkeiten mit [Spring-Beans](https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-spring-beans-and-dependency-injection) neu. Bevorzugen Sie die Verwendung von Spring-idiomatischen Mechanismen, z. B. die Verwendung von [Spring JMS](https://spring.io/guides/gs/messaging-jms/) für Messaging.
 
-1. Ersetzen Sie Tomcat-Bereiche durch [Spring Security](https://docs.spring.io/spring-security/site/docs/current/reference/html5/#servlet-filters-review). Erwägen Sie die Verwendung von Azure Active Directory für die Autorisierungsverwaltung über [Spring Boot Starter für Active Directory](/azure/developer/java/spring-framework/spring-boot-starters-for-azure#azure-active-directory).
+1. Ersetzen Sie Tomcat-Bereiche durch [Spring Security](https://docs.spring.io/spring-security/site/docs/current/reference/html5/#servlet-filters-review). Erwägen Sie die Verwendung von Azure Active Directory für die Autorisierungsverwaltung über [Spring Boot Starter für Active Directory](../spring-framework/spring-boot-starters-for-azure.md#azure-active-directory).
 
 1. Erstellen Sie in *web.xml* konfigurierte Servlet-Filter mit [Spring-Beans](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto-add-a-servlet-filter-or-listener-as-spring-bean) oder [Klassenpfadscans](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto-add-a-servlet-filter-or-listener-using-scanning) neu.
 

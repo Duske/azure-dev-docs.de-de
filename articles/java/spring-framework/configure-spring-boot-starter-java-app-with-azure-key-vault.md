@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: efe17eba034b92d771d979a896585d4d5362a11d
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: d3504137c2c9a8ee2b1af960a17deb902be95d7a
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534398"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831986"
 ---
 # <a name="tutorial-reading-a-secret-from-azure-key-vault-in-a-spring-boot-application"></a>Tutorial: Einlesen eines Geheimnisses aus Azure Key Vault in eine Spring Boot-Anwendung
 
@@ -34,7 +34,7 @@ In diesem Tutorial wird beschrieben, wie Sie eine Spring Boot-App erstellen, mit
 
 * Ein aktives Azure-Abonnement.
   * Wenn Sie kein Azure-Abonnement besitzen, können Sie ein [kostenloses Konto erstellen](https://azure.microsoft.com/free/).
-* [Installation der Azure CLI, Version 2.0.67 oder höher](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) und der Azure Spring Cloud-Erweiterung mit dem folgenden Befehl: `az extension add --name spring-cloud`
+* [Installation der Azure CLI, Version 2.0.67 oder höher](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest) und der Azure Spring Cloud-Erweiterung mit dem folgenden Befehl: `az extension add --name spring-cloud`
 * Ein unterstütztes Java Development Kit (JDK). Weitere Informationen zu den für die Entwicklung in Azure verfügbaren JDKs finden Sie unter <https://aka.ms/azure-jdks>.
 * [Apache Maven](http://maven.apache.org/), Version 3.0 oder höher
 * `curl`-Befehl.  Auf den meisten UNIX-ähnlichen Betriebssystemen ist dieser Befehl vorinstalliert.  Betriebssystemspezifische Clients sind auf der [offiziellen cURL-Website](https://curl.haxx.se/) verfügbar.

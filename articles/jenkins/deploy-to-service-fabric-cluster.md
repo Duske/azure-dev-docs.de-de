@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, CI/CD, Linux, Service Fabric, Cluster
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 6ce3714220a5c1cdff3a40cb8590a36356167616
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: cc42d33b68b0c8e8417d5eb0245b33d12bb53b52
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240862"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831546"
 ---
 # <a name="tutorial-deploy-to-a-service-fabric-cluster"></a>Tutorial: Durchführen der Bereitstellung in einem Service Fabric-Cluster
 
@@ -280,12 +280,12 @@ Für Produktionsumgebungen wird ausdrücklich die Konfiguration von Azure-Anmeld
 
 Für Entwicklungs- und Testumgebungen können Sie Azure-Anmeldeinformationen konfigurieren oder den Clusterverwaltungsendpunkt verwenden, um Ihre Anwendung bereitzustellen. Ausführliche Informationen zum Konfigurieren eines Clusterverwaltungsendpunkts finden Sie unter [Konfigurieren einer Bereitstellung mithilfe eines Clusterverwaltungsendpunkts](#configure-deployment-using-cluster-management-endpoint).   
 
-1. Um einen Azure Active Directory-Dienstprinzipal zu erstellen und diesem Berechtigungen in Ihrem Azure-Abonnement zuzuweisen, führen Sie die Schritte unter [Erstellen einer Azure Active Directory-Anwendung und eines Dienstprinzipals mit Ressourcenzugriff mithilfe des Portals](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal) durch. Berücksichtigen Sie dabei folgende Hinweise:
+1. Um einen Azure Active Directory-Dienstprinzipal zu erstellen und diesem Berechtigungen in Ihrem Azure-Abonnement zuzuweisen, führen Sie die Schritte unter [Erstellen einer Azure Active Directory-Anwendung und eines Dienstprinzipals mit Ressourcenzugriff mithilfe des Portals](/azure/azure-resource-manager/resource-group-create-service-principal-portal) durch. Berücksichtigen Sie dabei folgende Hinweise:
 
    * Achten Sie darauf, die folgenden Werte zu kopieren und zu speichern, während Sie die Schritte im Thema befolgen: *Anwendungs-ID*, *Anwendungsschlüssel*, *Verzeichnis-ID (Mandanten-ID)* und *Abonnement-ID*. Sie benötigen diese für die Konfiguration der Azure-Anmeldeinformationen in Jenkins.
-   * Wenn Sie keine der [erforderlichen Berechtigungen](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions) für Ihr Verzeichnis besitzen, müssen Sie sich an einen Administrator wenden, der Ihnen diese Berechtigungen gewähren oder den Dienstprinzipal für Sie erstellen kann. Anderenfalls müssen Sie den Verwaltungsendpunkt für Ihren Cluster auf der Registerkarte **Post-Build Actions** (Aktionen nach dem Erstellen) für Ihren Auftrag in Jenkins konfigurieren.
-   * Im Abschnitt [Erstellen einer Azure Active Directory-Anwendung](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#create-an-azure-active-directory-application) können Sie eine beliebige wohlgeformte URL für die **Anmelde-URL** eingeben.
-   * Im Abschnitt [Zuweisen einer Anwendung zur Rolle](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal) können Sie Ihrer Anwendung die *Leserolle* für die Ressourcengruppe für Ihren Cluster zuweisen.
+   * Wenn Sie keine der [erforderlichen Berechtigungen](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions) für Ihr Verzeichnis besitzen, müssen Sie sich an einen Administrator wenden, der Ihnen diese Berechtigungen gewähren oder den Dienstprinzipal für Sie erstellen kann. Anderenfalls müssen Sie den Verwaltungsendpunkt für Ihren Cluster auf der Registerkarte **Post-Build Actions** (Aktionen nach dem Erstellen) für Ihren Auftrag in Jenkins konfigurieren.
+   * Im Abschnitt [Erstellen einer Azure Active Directory-Anwendung](/azure/azure-resource-manager/resource-group-create-service-principal-portal#create-an-azure-active-directory-application) können Sie eine beliebige wohlgeformte URL für die **Anmelde-URL** eingeben.
+   * Im Abschnitt [Zuweisen einer Anwendung zur Rolle](/azure/azure-resource-manager/resource-group-create-service-principal-portal) können Sie Ihrer Anwendung die *Leserolle* für die Ressourcengruppe für Ihren Cluster zuweisen.
 
 1. Klicken Sie zurück im Jenkins-Auftrag auf die Registerkarte **Post-build Actions** (Aktionen nach dem Erstellen).
 1. Wählen Sie in der Dropdownliste **Post-Build Actions** (Aktionen nach dem Erstellen) die Option **Deploy Service Fabric Project** (Service Fabric-Projekt bereitstellen). 

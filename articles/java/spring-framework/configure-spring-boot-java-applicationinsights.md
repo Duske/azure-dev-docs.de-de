@@ -10,12 +10,12 @@ ms.service: azure-monitor
 ms.tgt_pltfrm: application-insights
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 687ecf87894a22e9300bf8ff4681e790db5a0d48
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 97825b81869ac6d2845576bd77a972d4573a624d
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379374"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831756"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-application-insights"></a>Konfigurieren einer Spring Boot Initializer-App für die Verwendung von Application Insights
 
@@ -268,7 +268,7 @@ Innerhalb weniger Sekunden sollten alle Spring-Protokolle angezeigt werden, die 
 Weitere Informationen zu Spring und Azure finden Sie im Dokumentationscenter zu Spring in Azure.
 
 > [!div class="nextstepaction"]
-> [Spring Framework in Azure](/azure/developer/java/spring-framework)
+> [Spring Framework in Azure](./index.yml)
 
 ### <a name="additional-resources"></a>Weitere Ressourcen
 
@@ -292,7 +292,7 @@ Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure 
 
 <!-- URL List -->
 
-[Azure für Java-Entwickler]: /azure/developer/java/
+[Azure für Java-Entwickler]: ../index.yml
 [kostenloses Azure-Konto]: https://azure.microsoft.com/pricing/free-trial/
 [Working with Azure DevOps and Java]: /azure/devops/ (Arbeiten mit Azure DevOps und Java)
 [MSDN-Abonnentenvorteile]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/

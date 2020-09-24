@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.custom: devx-track-java
-ms.openlocfilehash: 4a19b6dff945cb04d2b726b546e362c261a00595
-ms.sourcegitcommit: 5ab6e90e20a87f9a8baea652befc74158a9b6613
+ms.openlocfilehash: 775e547f61f4f4b2c649505607cf4d7310d0c6c3
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89614331"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831836"
 ---
 # <a name="how-to-use-the-spring-data-gremlin-starter-with-the-azure-cosmos-db-sql-api"></a>Verwenden von Spring Data Gremlin Starter mit der SQL-API von Azure Cosmos DB
 
@@ -171,7 +171,7 @@ Wir replizieren die Konfigurationen des vorhandenen [Azure Spring Data-Gremlin-B
 Weitere Informationen zu Spring in Azure finden Sie in der Dokumentation zu Spring in Azure.
 
 > [!div class="nextstepaction"]
-> [Spring Framework in Azure](/azure/developer/java/spring-framework)
+> [Spring Framework in Azure](./index.yml)
 
 ### <a name="additional-resources"></a>Weitere Ressourcen
 
@@ -208,7 +208,7 @@ Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure 
 <!-- URL List -->
 
 [Dokumentation für Azure Cosmos DB]: /azure/cosmos-db/
-[Azure für Java-Entwickler]: /azure/developer/java/
+[Azure für Java-Entwickler]: ../index.yml
 [Build a SQL API app with Java]: /azure/cosmos-db/create-sql-api-java 
 [Spring-Daten für SQL-API von Azure Cosmos DB]: https://azure.microsoft.com/blog/spring-data-azure-cosmos-db-nosql-data-access-on-azure/
 [Spring Data Gremlin Starter]: https://github.com/Microsoft/spring-data-gremlin
@@ -218,7 +218,7 @@ Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure 
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/
-[Graphpartitionierung]: https://docs.microsoft.com/azure/cosmos-db/graph-partitioning
+[Graphpartitionierung]: /azure/cosmos-db/graph-partitioning
 [azure-spring-data-sample-gremlin]: https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-data-sample-gremlin
 
 <!-- IMG List -->

@@ -8,16 +8,16 @@ ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 481b3fce5d7d5f62cf4639d53d86c092e364a74f
-ms.sourcegitcommit: 04ee2325e3efd9b7797102b4cd9d5db009c38a42
+ms.openlocfilehash: 3bbed7be27854514d76b5cd3e5b905ba5741fa72
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86945808"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831826"
 ---
 # <a name="use-spring-data-jdbc-with-azure-database-for-mysql"></a>Verwenden von Spring Data-JDBC mit Azure Database for MySQL
 
-In diesem Thema wird die Erstellung einer Beispielanwendung veranschaulicht, die [Spring Data JDBC](https://spring.io/projects/spring-data-jdbc) verwendet, um Informationen in bzw. aus [Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/) zu speichern und abzurufen.
+In diesem Thema wird die Erstellung einer Beispielanwendung veranschaulicht, die [Spring Data JDBC](https://spring.io/projects/spring-data-jdbc) verwendet, um Informationen in bzw. aus [Azure Database for MySQL](/azure/mysql/) zu speichern und abzurufen.
 
 [JDBC](https://jcp.org/en/jsr/detail?id=221) ist die Standard-Java-API, um eine Verbindung mit herkömmlichen relationalen Datenbanken herzustellen.
 
@@ -103,4 +103,4 @@ Glückwunsch! Sie haben eine Spring Boot-Anwendung erstellt, die JDBC zum Speic
 
 Weitere Informationen zu Spring Data-JDBC finden Sie in der [Referenzdokumentation](https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/#reference) zu Spring.
 
-Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure für Java-Entwickler](/azure/developer/java/) und [Working with Azure DevOps and Java](/azure/devops/) (Arbeiten mit Azure DevOps und Java).
+Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure für Java-Entwickler](../index.yml) und [Working with Azure DevOps and Java](/azure/devops/) (Arbeiten mit Azure DevOps und Java).

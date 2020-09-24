@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: devx-track-java
-ms.openlocfilehash: 053bca7e41ef9c95a8ad0e20b40d682552d0b384
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: 227e1a98bb14474b444a8d2cfb288b62ed5cf8ed
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534517"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831631"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-eclipse"></a>Erstellen einer „Hello World“-Web-App für Azure App Service mit Eclipse
 
@@ -148,7 +148,7 @@ Weitere Informationen zum Erstellen von Azure-Web-Apps finden Sie unter [Web-App
 
 <!-- URL List -->
 
-[Azure Toolkit for Eclipse]: azure-toolkit-for-eclipse.md
+[Azure Toolkit for Eclipse]: /azure/developer/java/tookit-for-eclipse
 [Azure Toolkit for IntelliJ]: ../toolkit-for-intellij
 [intellij-hello-world]: ../toolkit-for-intellij/create-hello-world-web-app.md
 [Web-Apps – Übersicht]: /azure/app-service/app-service-web-overview

@@ -4,12 +4,12 @@ description: So stellen Sie einen virtuellen Azure-Computer mittels Python und d
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 08e055e282016db1c3cbf57b956a51f17b7a854a
-ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
+ms.openlocfilehash: f51bb154106a50c708d8d37a024144d7d53aec0e
+ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89275194"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110476"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-virtual-machine"></a>Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen eines virtuellen Computers
 
@@ -293,7 +293,7 @@ az vm create -g PythonAzureExample-VM-rg -n ExampleVM -l "centralus" \
 ## <a name="6-clean-up-resources"></a>6: Bereinigen von Ressourcen
 
 ```azurecli
-az group delete -n PythonAzureExample-VM-rg
+az group delete -n PythonAzureExample-VM-rg  --no-wait
 ```
 
 Führen Sie diesen Befehl aus, wenn Sie die in diesem Beispiel erstellten Ressourcen nicht behalten müssen, und Sie in Ihrem Abonnement laufende Gebühren vermeiden möchten.
