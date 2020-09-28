@@ -1,15 +1,15 @@
 ---
 title: 'Tutorial: Erstellen und Bereitstellen einer serverlosen Azure Functions-Instanz in Python mit Visual Studio Code'
-description: 'Tutorial: Schritt 1, Verwenden von Azure Functions, Einführung und Voraussetzungen.'
+description: Schritt 1 im Tutorial, Konfigurieren Ihrer lokalen Umgebung für Azure Functions
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 740a64785c57694be34f37ef6aa6571b0b3304b7
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 8d7b3d29b1bd8860d87505fd6f3b09a20702f904
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473605"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772745"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>Tutorial: Erstellen und Bereitstellen von Azure Functions serverlos in Python mit Visual Studio Code
 
@@ -17,11 +17,11 @@ In diesem Artikel verwenden Sie Visual Studio Code und die Azure Functions-Erwei
 
 Azure Functions führt Ihren Code in einer serverlosen Umgebung aus, ohne dass ein virtueller Computer bereitgestellt oder eine Web-App veröffentlicht werden muss. Die Azure Functions-Erweiterung für Visual Studio Code vereinfacht den Prozess der Verwendung von Funktionen erheblich, indem sie automatisch viele Konfigurationsprobleme löst.
 
-Wenn Sie Probleme mit einem der Schritte in diesem Tutorial haben, würden wir uns über nähere Informationen freuen. Verwenden Sie die Schaltfläche **Ich bin auf ein Problem gestoßen** am Ende jedes Artikels, um Feedback zu geben.
+Wenn Sie Probleme mit einem der Schritte in diesem Tutorial haben, würden wir uns über nähere Informationen freuen. Verwenden Sie die Feedbackschaltfläche **Diese Seite** am Ende jedes Artikels.
 
 Ein Demonstrationsvideo von der virtuellen PyCon 2020 finden Sie unter <a href="https://www.youtube.com/watch?v=9bMsdBYy-D0&feature=youtu.be&ocid=AID3006292" target="_blank">Erstellen von Azure Functions mit VS Code</a> (youtube.com). Möglicherweise interessieren Sie sich auch für die längere Sitzung mit dem Titel <a href="https://www.youtube.com/watch?v=PV7iy6FPjAY&feature=youtu.be&t=13&ocid=AID3006292" target="_blank">Einfache Datenverarbeitung mit Azure Functions</a> (youtube.com). 
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="configure-your-environment"></a>Konfigurieren Ihrer Umgebung
 
 - Ein [Azure-Abonnement](#azure-subscription).
 - Die [Azure Functions Core Tools](#azure-functions-core-tools).
@@ -54,9 +54,19 @@ Installieren Sie folgende Software:
 
 ### <a name="sign-in-to-azure"></a>Anmelden bei Azure
 
-[!INCLUDE [azure-sign-in](includes/azure-sign-in.md)]
+Nachdem Sie die Azure-Erweiterung installiert haben, melden Sie sich bei Ihrem Azure-Konto an, indem Sie zum **Azure**-Explorer navigieren, unter **Functions** die Option **Bei Azure anmelden** auswählen und dann den Anweisungen im Browser folgen.
 
-### <a name="verify-prerequisites"></a>Überprüfen der Voraussetzungen
+![Anmelden bei Azure über VS Code](media/tutorial-vs-code-serverless-python/azure-sign-in.png)
+
+Vergewissern Sie sich nach der Anmeldung, dass auf der Statusleiste **Azure: Angemeldet** angezeigt wird und Sie Ihre Abonnements im **Azure-Explorer** sehen:
+
+![Visual Studio Code-Statusleiste mit Azure-Konto](media/tutorial-vs-code-serverless-python/azure-account-status-bar.png)
+
+![Azure App Service-Explorer in Visual Studio Code mit Abonnements](media/tutorial-vs-code-serverless-python/azure-subscription-view.png)
+
+[!INCLUDE [proxy-config](includes/proxy-config.md)]
+
+### <a name="verify-your-environment"></a>Überprüfen der Umgebung
 
 Um sicherzustellen, dass alle Azure Functions-Tools installiert sind, öffnen Sie die Visual Studio Code-Befehlspalette (**F1**), wählen Sie den Befehl **Terminal: Neues integriertes Terminal erstellen** aus, und führen Sie nach dem Öffnen des Terminals den Befehl `func` aus:
 
@@ -70,5 +80,3 @@ Der Befehl `func` durchläuft die Datei *func.cmd*, die im globalen Node.js-Ordn
 
 > [!div class="nextstepaction"]
 > [Ich habe mich bei Azure angemeldet: Fahren Sie mit Schritt 2 fort. >>>](tutorial-vs-code-serverless-python-02.md)
-
-Sie haben Probleme? Übermitteln Sie ein GitHub-Problem, indem Sie unten auf dieser Seite die Feedbackoption „Diese Seite“ verwenden.

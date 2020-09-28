@@ -1,15 +1,15 @@
 ---
 title: Authentifizieren von Python-Anwendungen mit Azure-Diensten
 description: Hier erfahren Sie, wie Sie die Anmeldeinformationsobjekte abrufen, die erforderlich sind, um eine Python-App mit Azure-Diensten unter Verwendung der Azure-Bibliotheken zu authentifizieren.
-ms.date: 08/18/2020
+ms.date: 09/18/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 746a948077c7def12aae5053355c445b7592eae0
-ms.sourcegitcommit: 4824cea71195b188b4e8036746f58bf8b70dc224
+ms.openlocfilehash: e842e7530cc475e8431fbadfb3767ea56102c33e
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89753750"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831906"
 ---
 # <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>Authentifizieren und Autorisieren von Python-Apps in Azure
 
@@ -151,7 +151,7 @@ In beiden Fällen müssen der verwendeten Identität Berechtigungen für die jew
 ### <a name="using-defaultazurecredential-with-sdk-management-libraries"></a>Verwenden von DefaultAzureCredential mit SDK-Verwaltungsbibliotheken
 
 ```python
-# WARNING: this code presently fails with current release libraries!
+# WARNING: this code fails with azure-mgmt-resource versions < 15
 
 from azure.identity import DefaultAzureCredential
 
@@ -162,21 +162,24 @@ from azure.mgmt.resource import SubscriptionClient
 credential = DefaultAzureCredential()
 subscription_client = SubscriptionClient(credential)
 
-# The following line produces a "no attribute 'signed_session'" error:
+# If using azure-mgmt-resource < version 15 the following line produces
+# a "no attribute 'signed_session'" error:
 subscription = next(subscription_client.subscriptions.list())
 
 print(subscription.subscription_id)
 ```
 
-Zurzeit funktioniert `DefaultAzureCredential` nur mit Azure SDK-Clientbibliotheken („Datenebene“) und Vorschauversionen der Azure SDK-Verwaltungsbibliotheken (d. h. der aktuellen Vorschauversion von Bibliotheken, deren Namen mit `azure-mgmt` beginnen), wie in diesem Codebeispiel gezeigt. Der Aufruf von `subscription_client.subscriptions.list()` schlägt bei Bibliotheken des aktuellen Release mit dem eher vagen folgenden Fehler fehl: „Das DefaultAzureCredential-Objekt hat kein Attribut 'signed_session'.“ Dieser Fehler tritt auf, weil die aktuellen SDK-Verwaltungsbibliotheken davon ausgehen, dass das Anmeldeinformationenobjekt eine `signed_session`-Eigenschaft enthält, die `DefaultAzureCredential` fehlt.
+`DefaultAzureCredential` funktioniert nur mit Azure SDK-Clientbibliotheken (Datenebene) und aktualisierten Versionen der Azure SDK-Verwaltungsbibliotheken, die in der Liste [Bibliotheken mit azure.core](azure-sdk-library-package-index.md#libraries-using-azurecore) enthalten sind.
 
-Sie können den Fehler umgehen, indem Sie Vorschauversionen von Verwaltungsbibliotheken verwenden, wie im Blogbeitrag [Einführung neuer Vorschauversionen für Azure-Verwaltungsbibliotheken](https://devblogs.microsoft.com/azure-sdk/introducing-new-previews-for-azure-management-libraries/) beschrieben.
+Wenn Sie den vorangehenden Code mindestens mit Version 15.0.0 von „azure-mgmt-resource“ ausführen, ist der Aufruf von `subscription_client.subscriptions.list()` erfolgreich. Wenn Sie eine ältere Version der Bibliothek verwenden, tritt beim Aufruf der eher vage folgende Fehler auf: „Das DefaultAzureCredential-Objekt hat kein Attribut 'signed_session'.“ Dieser Fehler tritt auf, weil ältere Versionen von SDK-Verwaltungsbibliotheken davon ausgehen, dass das Anmeldeinformationenobjekt eine `signed_session`-Eigenschaft enthält, die `DefaultAzureCredential` fehlt.
 
-Alternativ können Sie die folgenden Methoden anwenden:
+Sie können den Fehler umgehen, indem Sie die neuesten Versionen der Verwaltungsbibliotheken aus der Liste [Bibliotheken mit azure.core](azure-sdk-library-package-index.md#libraries-using-azurecore). verwenden. Wenn zwei Bibliotheken aufgeführt sind, verwenden Sie die höchste Versionsnummer. Außerdem enthalten die pypi-Seiten für aktualisierte Bibliotheken die Zeile „Credential system has been completely revamped“ (Das System für Anmeldeinformationen wurde vollständig überarbeitet.), um auf die Änderung hinzuweisen.
+
+Wenn die Verwaltungsbibliothek, die Sie verwenden möchten, noch nicht aktualisiert wurde, können Sie die folgenden alternativen Methoden verwenden:
 
 1. Verwenden Sie eine der anderen Authentifizierungsmethoden, die in den nachfolgenden Abschnitten dieses Artikels beschrieben werden, die für Code geeignet ist, der *nur* SDK-Verwaltungsbibliotheken verwendet und nicht in der Cloud bereitgestellt wird. in diesem Fall können Sie nur auf lokale Dienstprinzipale zurückgreifen.
 
-1. Verwenden Sie anstelle von `DefaultAzureCredential` die [CredentialWrapper-Klasse („cred_wrapper.py“)](https://gist.github.com/lmazuel/cc683d82ea1d7b40208de7c9fc8de59d), die von einem Mitglied des Azure SDK-Entwicklungsteams bereitgestellt wird. Nachdem die aktualisierten Verwaltungsbibliotheken veröffentlicht wurden, können Sie einfach wieder zu `DefaultAzureCredential` zurückkehren. Diese Methode hat den Vorteil, dass Sie die gleichen Anmeldeinformationen sowohl mit dem SDK-Client als auch mit den Verwaltungsbibliotheken verwenden können, und sie funktioniert sowohl lokal als auch in der Cloud.
+1. Verwenden Sie anstelle von `DefaultAzureCredential` die [CredentialWrapper-Klasse („cred_wrapper.py“)](https://gist.github.com/lmazuel/cc683d82ea1d7b40208de7c9fc8de59d), die von einem Mitglied des Azure SDK-Entwicklungsteams bereitgestellt wird. Wenn die gewünschte Verwaltungsbibliothek verfügbar ist, wechseln Sie zurück zu `DefaultAzureCredential`. Diese Methode hat den Vorteil, dass Sie die gleichen Anmeldeinformationen sowohl mit dem SDK-Client als auch mit den Verwaltungsbibliotheken verwenden können, und sie funktioniert sowohl lokal als auch in der Cloud.
 
     Wenn Sie eine Kopie von *cred_wrapper. py* in Ihren Projektordner heruntergeladen haben, sieht der vorherige Code wie folgt aus:
 
@@ -190,7 +193,7 @@ Alternativ können Sie die folgenden Methoden anwenden:
     print(subscription.subscription_id)
     ```
 
-    Auch hier können Sie `DefaultAzureCredential` direkt verwenden, nachdem die aktualisierten Verwaltungsbibliotheken veröffentlicht wurden.
+    Wenn aktualisierte Verwaltungsbibliotheken verfügbar sind, können Sie `DefaultAzureCredential` wieder direkt verwenden, wie im ursprünglichen Codebeispiel gezeigt.
 
 ## <a name="other-authentication-methods"></a>Andere Authentifizierungsmethoden
 
@@ -400,7 +403,7 @@ print(subscription.subscription_id)
 
 Bei dieser Methode erstellen Sie ein Clientobjekt mit den Anmeldeinformationen des Benutzers, der mit dem Azure CLI-Befehl `az login` angemeldet ist. Die Anwendung wird für alle Vorgänge als Benutzer autorisiert.
 
-Für das SDK wird die Standardabonnement-ID verwendet. Sie können das Abonnement aber auch vor dem Ausführen des Codes festlegen, indem Sie Folgendes verwenden: [`az account`](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli). Falls Sie in demselben Skript auf unterschiedliche Abonnements verweisen müssen, sollten Sie die Methode ['get_client_from_auth_file'](#authenticate-with-a-json-file) oder [`get_client_from_json_dict`](#authenticate-with-a-json-dictionary) verwenden, die weiter oben in diesem Artikel beschrieben wurden.
+Für das SDK wird die Standardabonnement-ID verwendet. Sie können das Abonnement aber auch vor dem Ausführen des Codes festlegen, indem Sie Folgendes verwenden: [`az account`](/cli/azure/manage-azure-subscriptions-azure-cli). Falls Sie in demselben Skript auf unterschiedliche Abonnements verweisen müssen, sollten Sie die Methode ['get_client_from_auth_file'](#authenticate-with-a-json-file) oder [`get_client_from_json_dict`](#authenticate-with-a-json-dictionary) verwenden, die weiter oben in diesem Artikel beschrieben wurden.
 
 Die Funktion `get_client_from_cli_profile` sollte nur für frühzeitige Experimente und Entwicklungszwecke verwendet werden, da ein angemeldeter Benutzer in der Regel über Besitzer- oder Administratorrechte verfügt und ohne zusätzliche Berechtigungen auf die meisten Ressourcen zugreifen kann. Weitere Informationen finden Sie im vorherigen Hinweis zum [Verwenden von CLI-Anmeldeinformationen mit `DefaultAzureCredential`](#cli-auth-note).
 

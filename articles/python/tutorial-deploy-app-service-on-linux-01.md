@@ -1,21 +1,21 @@
 ---
 title: 'Tutorial: Bereitstellen von Python-Apps in Azure App Service für Linux aus Visual Studio Code'
-description: 'Tutorial: Schritt 1, Verwenden von Web-Apps, Einführung, Voraussetzungen'
+description: Schritt 1 im Tutorial, Konfigurieren Ihrer Umgebung für App Service
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: d4544c6e013f20b606303e56ff2169e87383d88c
-ms.sourcegitcommit: 5ab6e90e20a87f9a8baea652befc74158a9b6613
+ms.openlocfilehash: b35fc41707b31bec8e889d2b60becdad56f4e7d9
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89614324"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90773073"
 ---
 # <a name="tutorial-deploy-python-apps-to-azure-app-service-on-linux-from-visual-studio-code"></a>Tutorial: Bereitstellen von Python-Apps in Azure App Service für Linux aus Visual Studio Code
 
 In diesem Artikel erfahren Sie, wie Sie mithilfe von Visual Studio Code eine Python-Anwendung in Azure App Service für Linux mithilfe der [Azure App Service](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice)-Erweiterung bereitstellen.
 
-Wenn Sie Probleme mit einem der Schritte in diesem Tutorial haben, würden wir uns über nähere Informationen freuen. Verwenden Sie den Link **Ich bin auf ein Problem gestoßen** am Ende jedes Artikels, um Feedback zu geben.
+Wenn Sie Probleme mit einem der Schritte in diesem Tutorial haben, würden wir uns über nähere Informationen freuen. Verwenden Sie den Link **Treten Probleme auf? Informieren Sie uns darüber.** am Ende jedes Artikels, um Feedback zu geben.
 
 Ein Demonstrationsvideo von der virtuellen PyCon 2020 finden Sie unter <a href="https://www.youtube.com/watch?v=dNVvFttc-sA&feature=youtu.be&ocid=AID3006292" target="_blank">Erstellen von WebApps mit VS Code und Azure App Service</a> (youtube.com).
 
@@ -25,7 +25,7 @@ Ein Demonstrationsvideo von der virtuellen PyCon 2020 finden Sie unter <a href=
 > [!TIP]
 > [Azure App Service für Linux](/azure/app-service/overview#app-service-on-linux) führt den Quellcode in einem vordefinierten Docker-Container aus. Dieser Container führt Apps mit Python 3.7 mithilfe des [Gunicorn](https://gunicorn.org)-Webservers aus. Die Eigenschaften dieses Containers werden unter [Konfigurieren von Python-Apps für App Service unter Linux](/azure/app-service/configure-language-python) beschrieben. Die Containerdefinition selbst finden Sie unter [github.com/Azure-App-Service/python](https://github.com/Azure-App-Service/python/tree/master/3.7).
 
-## <a name="prerequisites"></a>Voraussetzungen
+## <a name="configure-your-environment"></a>Konfigurieren Ihrer Umgebung
 
 - Ein [Azure-Abonnement](#azure-subscription).
 - [Visual Studio Code mit der Azure App Service-Erweiterung](#visual-studio-code-python-and-the-azure-app-service-extension)

@@ -3,13 +3,20 @@
   items:
     - name: Azure-Erweiterungen
       href: 'https://github.com/Azure/azure-microprofile'
-    - name: Lernprogramme
+    - name: Tutorials
       expanded: true
       items:
-        - name: Bereitstellen in Azure Container Instances
-          href: deploy-microprofile-to-container-instances.md
-        - name: Bereitstellen in Azure-Web-Apps
-          href: deploy-microprofile-to-web-app-for-containers.md
+        - name: Bereitstellen in Azure App Service mit Maven
+          expanded: false
+          items:
+            - name: Bereitstellen von Quarkus
+              href: deploy-microprofile-quarkus-java-app-with-maven-plugin.md
+            - name: Bereitstellen von Helidon
+              href: deploy-microprofile-helidon-java-app-with-maven-plugin.md
+            - name: Bereitstellen von Payara Micro
+              href: deploy-microprofile-payara-micro-java-app-with-maven-plugin.md
+            - name: Bereitstellen von KumuluzEE
+              href: deploy-microprofile-kumuluzee-java-app-with-maven-plugin.md
         - name: Konfigurationsquelle für Azure Key Vault
           href: configure-microprofile-with-keyvault.md
         - name: CI/CD für MicroProfile-Anwendungen mit Azure Pipelines
@@ -21,7 +28,7 @@
           href: 'https://github.com/azure-samples/microprofile-hello-azure'
         - name: MicroProfile-Konfigurationsquelle für Azure Key Vault
           href: 'https://github.com/Azure-Samples/microprofile-configsource-keyvault'
-    - name: Verweis
+    - name: Referenz
       expanded: true
       items:
         - name: Eclipse MicroProfile

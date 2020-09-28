@@ -4,16 +4,16 @@ description: 'Tutorialschritt 2: Einrichten der Anwendung'
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 9bb25bf6cfef2e6a93efa2ca195f27a10a6ca891
-ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
+ms.openlocfilehash: 36e2c57f556718a0c2d83de90995ce52602a34ad
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88501395"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90832026"
 ---
 # <a name="2-prepare-your-app-for-deployment-to-azure-app-service"></a>2: Vorbereiten Ihrer App für die Bereitstellung in Azure App Service
 
-[Vorheriger Schritt: Voraussetzungen](tutorial-deploy-app-service-on-linux-01.md)
+[Vorheriger Schritt: Konfigurieren Ihrer Umgebung](tutorial-deploy-app-service-on-linux-01.md)
 
 In diesem Artikel bereiten Sie eine App für die Bereitstellung in der Azure App Service-Instanz für dieses Tutorial vor. Sie können eine vorhandene App verwenden oder eine App erstellen bzw. herunterladen.
 
@@ -21,7 +21,19 @@ Wenn Sie bereits über eine App verfügen, mit der Sie arbeiten möchten, stelle
 
 Wenn Sie noch nicht über eine App verfügen, verwenden Sie eine der folgenden Optionen. Überprüfen Sie, ob die App lokal ausgeführt wird.
 
-## <a name="minimal-flask-app"></a>Minimale Flask-App
+## <a name="option-1-vs-code-flask-tutorial-sample"></a>Option 1: VS Code-Beispiel für das Flask-Tutorial
+
+Laden Sie [https://github.com/Microsoft/python-sample-vscode-flask-tutorial](https://github.com/Microsoft/python-sample-vscode-flask-tutorial) herunter, oder klonen Sie diesen Code. Es handelt sich um das Ergebnis des [Flask-Tutorials](https://code.visualstudio.com/docs/python/tutorial-flask).
+
+## <a name="option-2-vs-code-django-tutorial-sample"></a>Option 2: VS Code-Beispiel für das Django-Tutorial
+
+Laden Sie [https://github.com/Microsoft/python-sample-vscode-django-tutorial](https://github.com/Microsoft/python-sample-vscode-django-tutorial) herunter, oder klonen Sie diesen Code. Es handelt sich um das Ergebnis des [Django-Tutorials](https://code.visualstudio.com/docs/python/tutorial-django).
+
+Wenn Ihre Django-App wie in diesem Beispiel eine lokale SQLite-Datenbank verwendet, müssen Sie eine vorinitialisierte und vorab aufgefüllte Kopie der Datei *db.sqlite3* in Ihr Repository einfügen. Der Grund hierfür ist, dass App Service für Linux derzeit nicht über eine Möglichkeit verfügt, den Django-Befehl `migrate` als Teil der Bereitstellung auszuführen, sodass Sie eine vorgefertigte Datenbank bereitstellen müssen. Auch dann ist die Datenbank praktisch schreibgeschützt. Das Schreiben in die Datenbank verursacht darüber hinaus Fehler.
+
+Die beste Option ist in jedem Fall, eine separate Datenbank zu verwenden, die unabhängig vom App-Code bereitgestellt und initialisiert wird.
+
+## <a name="option-3-create-a-minimal-flask-app"></a>Option 3: Erstellen einer minimalen Flask-App
 
 In diesem Abschnitt wird die in dieser exemplarischen Vorgehensweise verwendete minimale Flask-App beschrieben.
 
@@ -39,10 +51,35 @@ In diesem Abschnitt wird die in dieser exemplarischen Vorgehensweise verwendete 
 1. Erstellen Sie eine Datei namens *requirements.txt* mit folgendem Inhalt:
 
     ```text
-    Flask==1.1.1
+    Flask==1.1.2
     ```
 
-1. Befolgen Sie die Anweisungen im [Flask-Tutorial: Erstellen einer Projektumgebung für Flask](https://code.visualstudio.com/docs/python/tutorial-flask#create-a-project-environment-for-flask), um eine virtuelle Umgebung mit installiertem Flask zu erstellen, in der die App lokal ausgeführt werden kann.
+1. Öffnen Sie ein Terminal mithilfe des Menübefehls **Terminal** > **Neues Terminal**.
+
+1. Erstellen und aktivieren Sie im Terminal eine virtuelle Umgebung mit dem Namen `env`:
+
+    # <a name="macoslinux"></a>[macOS/Linux](#tab/linux)
+
+    ```bash
+    sudo apt-get install python3-venv    # If needed
+    python3 -m venv env
+    source env/bin/activate
+    ```
+
+    # <a name="windows"></a>[Windows](#tab/windows)
+
+    ```cmd
+    python -m venv env
+    env\scripts\activate
+    ```
+
+    ---
+
+1. Installieren Sie die Abhängigkeiten der App:
+
+    ```cmd
+    pip install -r requirements.txt
+    ```
 
 1. Legen Sie die Umgebungsvariable FLASK_APP fest, die Flask anweist, wo das App-Objekt zu finden ist:
 
@@ -73,18 +110,6 @@ In diesem Abschnitt wird die in dieser exemplarischen Vorgehensweise verwendete 
     ```
 
 1. Anschließend können Sie die App mithilfe der URL `http://127.0.0.1:5000/` in einem Browser öffnen.
-
-## <a name="vs-code-flask-tutorial-sample"></a>VS Code-Beispiel für das Flask-Tutorial
-
-Laden Sie [python-sample-vscode-flask-tutorial](https://github.com/Microsoft/python-sample-vscode-flask-tutorial) herunter, oder klonen Sie diesen Code. Es handelt sich um das Ergebnis des [Flask-Tutorials](https://code.visualstudio.com/docs/python/tutorial-flask).
-
-## <a name="vs-code-django-tutorial-sample"></a>VS Code-Beispiel für das Django-Tutorial
-
-Laden Sie [python-sample-vscode-django-tutorial](https://github.com/Microsoft/python-sample-vscode-django-tutorial) herunter, oder klonen Sie diesen Code. Es handelt sich um das Ergebnis des [Django-Tutorials](https://code.visualstudio.com/docs/python/tutorial-django).
-
-Wenn Ihre Django-App wie in diesem Beispiel eine lokale SQLite-Datenbank verwendet, müssen Sie eine vorinitialisierte und vorab aufgefüllte Kopie der Datei *db.sqlite3* in Ihr Repository einfügen. Der Grund hierfür ist, dass App Service für Linux derzeit nicht über eine Möglichkeit verfügt, den Django-Befehl `migrate` als Teil der Bereitstellung auszuführen, sodass Sie eine vorgefertigte Datenbank bereitstellen müssen. Auch dann ist die Datenbank praktisch schreibgeschützt. Das Schreiben in die Datenbank verursacht darüber hinaus Fehler.
-
-Die beste Option ist in jedem Fall, eine separate Datenbank zu verwenden, die unabhängig vom App-Code bereitgestellt und initialisiert wird.
 
 > [!div class="nextstepaction"]
 > [Meine App ist bereit: Fahren Sie mit Schritt 3 fort. >>>](tutorial-deploy-app-service-on-linux-03.md)

@@ -1,14 +1,15 @@
 ---
-title: Erstellen der Azure App Service-Instanz in Visual Studio Code
+title: Erstellen der Deno-Azure App Service-Instanz in Visual Studio Code
 description: 'Teil 2 des Tutorials: Erstellen und lokales Ausführen der Deno-App'
 ms.topic: conceptual
 ms.date: 06/01/2020
-ms.openlocfilehash: 32bd9e1f2b30d57ad573eb9be3fa22b9e246b0e9
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 6440f75d11bd4eb68dfbcf4e1dcf6b2b27c0496f
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791779"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "90772923"
 ---
 # <a name="test-local-deno-apps"></a>Testen lokaler Deno-Apps
 

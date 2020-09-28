@@ -3,14 +3,14 @@ title: 'Tutorial: Bereitstellen einer Django-App mit PostgreSQL mithilfe des Azu
 description: Stellen Sie eine Web-App und eine PostgreSQL-Datenbank in Azure sowie App-Code über GitHub bereit.
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 07/23/2020
+ms.date: 09/23/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 19c0dda48b0fb7b5b0c3af75a1d94d3c9b9e4080
-ms.sourcegitcommit: 4824cea71195b188b4e8036746f58bf8b70dc224
+ms.openlocfilehash: 7f363c3e82873e82630cf477ea469627aa528a4e
+ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89753769"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110537"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>Tutorial: Bereitstellen einer Django-Web-App mit PostgreSQL mithilfe des Azure-Portals
 
@@ -47,9 +47,9 @@ Sie erstellen einen Fork dieses Repositorys, damit Sie Änderungen vornehmen und
 
 1. Öffnen Sie das [Azure-Portal](https://portal.azure.com).
 
-1. Wählen Sie **Ressource erstellen**.
+1. Wählen Sie **Ressource erstellen** aus. Daraufhin wird die Seite **Neu** geöffnet.
 
-1. Wählen Sie auf der Seite **Neu** in der Spalte **Beliebt** die Option **Web-App** aus. (Wird **Web-App** nicht sofort angezeigt, wählen Sie unter **Azure Marketplace** die Option **Web** und anschließend unter **Ausgewählte** die Option **Web-App** aus.) 
+1. Suchen Sie nach **Web-App**, und wählen Sie die Option aus.
 
 1. Geben Sie auf der Seite **Web-App erstellen** die folgenden Informationen ein:
 
@@ -74,9 +74,9 @@ Sie erstellen einen Fork dieses Repositorys, damit Sie Änderungen vornehmen und
 
 1. Öffnen Sie ein neues Browserfenster oder eine neue Browserregisterkarte mit dem [Azure-Portal](https://portal.azure.com). Sie verwenden eine neue Registerkarte für die Bereitstellung der Datenbank, da Sie einige Informationen von der Datenbankseite auf die Web-App-Seite übertragen müssen, die noch vom vorherigen Abschnitt geöffnet ist.
 
-1. Wählen Sie **Ressource erstellen**.
+1. Wählen Sie **Ressource erstellen** aus. Daraufhin wird die Seite **Neu** geöffnet.
 
-1. Wählen Sie auf der Seite **Neu** unter **Azure Marketplace** die Option **Datenbank** und anschließend unter **Ausgewählte** die Option **Azure Database for PostgreSQL** aus.
+1. Suchen Sie nach **Azure Database for PostgreSQL**, und wählen Sie die Option aus.
 
 1. Wählen Sie auf der nächsten Seite unter **Einzelserver** die Option **Erstellen** aus.
 
@@ -90,7 +90,7 @@ Sie erstellen einen Fork dieses Repositorys, damit Sie Änderungen vornehmen und
     | Datenquelle | **None** |
     | Standort | Wählen Sie einen Ort in Ihrer Nähe aus. |
     | Version | Übernehmen Sie den Standardwert (die neueste Version). |
-    | Compute + Speicher | Wählen Sie **Server konfigurieren** > **Basic** > **Gen 5** aus. Legen Sie **Virtueller Kern** auf 1 und **Speicher** auf 5 GB fest, und wählen Sie dann **OK** aus. Mit diesen Einstellungen wird der günstigste Server bereitgestellt, der für PostgreSQL in Azure verfügbar ist. |
+    | Compute + Speicher | Wählen Sie **Server konfigurieren** > **Basic** > **Gen 5** aus. Legen Sie **Virtueller Kern** auf 1 und **Speicher** auf 5 GB fest, und wählen Sie dann **OK** aus. Mit diesen Einstellungen wird der günstigste Server bereitgestellt, der für PostgreSQL in Azure verfügbar ist. Unter Umständen verfügen Sie auch über Guthaben in Ihrem Azure-Konto, das die Kosten für den Server abdeckt. |
     | Administratorbenutzername, Kennwort, Kennwort bestätigen | Geben Sie die Anmeldeinformationen für ein Administratorkonto auf dem Datenbankserver ein. Notieren Sie sich diese Anmeldeinformationen, da Sie sie später in diesem Tutorial benötigen. |
 
 1. Wählen Sie **Überprüfen + erstellen** und danach **Erstellen** aus. Das Bereitstellen der Web-App dauert in Azure einige Minuten.
@@ -145,7 +145,7 @@ In diesem Abschnitt erstellen Sie Einstellungen für die Web-App, die für das H
 
     ![Konfiguration der Portaleinstellungen für Web-Apps](media/tutorial-python-postgresql-app-portal/web-app-settings.png)
 
-1. Verwenden Sie die Schaltfläche **Neue Anwendungseinstellung**, um Einstellungen für die folgenden Werte zu erstellen:
+1. Verwenden Sie die Schaltfläche **Neue Anwendungseinstellung**, um Einstellungen für die folgenden Werte zu erstellen (diese werden vom Beispiel „djangoapp“ erwartet):
 
     | Einstellungsname | Wert |
     | --- | --- |
@@ -168,7 +168,7 @@ Nach dem Einrichten der Datenbank und der Verbindungseinstellungen können Sie n
 
 1. Wählen Sie im Browserfenster oder auf der Browserregisterkarte der Web-App **Bereitstellungscenter** aus (auf der linken Seite unter **Bereitstellung**).
 
-1. Wählen Sie im Schritt **Quellcodeverwaltung** die Option **GitHub** aus. Befolgen Sie dann die Anmeldeeingabeaufforderungen, oder wählen Sie **Weiter** aus, um die aktuelle GitHub-Anmeldung zu verwenden.
+1. Wählen Sie im Schritt **Quellcodeverwaltung** die Option **GitHub** und dann **Autorisieren** aus (falls erforderlich). Befolgen Sie dann die Anmeldeaufforderungen, oder wählen Sie **Weiter** aus, um Ihre aktuelle GitHub-Anmeldung zu verwenden.
 
 1. Wählen Sie im Schritt **Buildanbieter** die Option **App Service-Builddienst** und anschließend **Weiter** aus.
 

@@ -2,18 +2,18 @@
 title: 'Schritt 2: Erstellen einer Python-Funktion für Azure Functions mit VS Code'
 description: 'Tutorialschritt 2: Verwenden der Azure Functions-Erweiterung für VS Code'
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 08f301ef4596ae8aac96051a13fd680917bd79be
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: cc0d8f5241cafceb9e087557104a624f5f7adb92
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473565"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90773057"
 ---
 # <a name="2-create-a-python-function-for-azure-functions"></a>2: Erstellen einer Python-Funktion für Azure Functions
 
-[Vorheriger Schritt: Voraussetzungen](tutorial-vs-code-serverless-python-01.md)
+[Vorheriger Schritt: Konfigurieren Ihrer Umgebung](tutorial-vs-code-serverless-python-01.md)
 
 In diesem Artikel erstellen Sie eine Python-Funktion für Azure Functions mit Visual Studio Code. Der Code für Azure Functions wird innerhalb eines Functions-_Projekts_ verwaltet, das Sie vor der Codeerstellung erstellen.
 
@@ -27,7 +27,7 @@ In diesem Artikel erstellen Sie eine Python-Funktion für Azure Functions mit Vi
     | --- | --- | --- |
     | Angeben eines Ordners für das Projekt | Aktuell geöffneter Ordner | Der Ordner, in dem das Projekt erstellt wird. Sie sollten das Projekt in einem Unterordner erstellen. |
     | Auswählen einer Sprache für Ihr Funktions-App-Projekt | **Python** | Die Sprache, die für die Funktion verwendet werden soll, die die für den Code verwendete Vorlage bestimmt. |
-    | Auswählen des Python-Interpreters | (Verwenden Sie den bereitgestellten Standardpfad.) | Der für eine virtuelle Umgebung zu verwendende Python-Interpreter. |
+    | Auswählen des Python-Interpreters zum Erstellen einer virtuellen Umgebung | (Verwenden Sie den angegebenen Standardpfad, oder geben Sie den Pfad zu einem geeigneten Interpreter manuell ein, wenn kein Pfad angegeben ist.) | Der für eine virtuelle Umgebung zu verwendende Python-Interpreter. |
     | Auswählen einer Vorlage für die erste Funktion Ihres Projekts | **HTTP-Trigger** | Eine Funktion, die einen HTTP-Trigger verwendet, wenn eine HTTP-Anforderung an den Endpunkt der Funktion gerichtet wird. (Für Azure Functions gibt es eine Reihe von anderen Triggern. Weitere Informationen finden Sie unter [Welche Möglichkeiten bestehen mit Functions?](/azure/azure-functions/functions-overview#what-can-i-do-with-functions).) |
     | Angeben eines Funktionsnamens | HttpExample | Der Name wird für einen Unterordner verwendet, der den Code der Funktion zusammen mit Konfigurationsdaten enthält, und definiert auch den Namen des HTTP-Endpunkts. Verwenden Sie „HttpExample“ anstelle der Standardeinstellung „HTTPTrigger1“, um die Funktion selbst vom Trigger zu unterscheiden. |
     | Autorisierungsstufe | **Anonym** | Bei der anonymen Autorisierung ist die Funktion für jeden öffentlich zugänglich. |
@@ -48,4 +48,3 @@ In diesem Artikel erstellen Sie eine Python-Funktion für Azure Functions mit Vi
 > [!div class="nextstepaction"]
 > [Ich habe die Funktion erstellt: Fahren Sie mit Schritt 3 fort. >>>](tutorial-vs-code-serverless-python-03.md)
 
-Sie haben Probleme? Übermitteln Sie ein GitHub-Problem, indem Sie unten auf dieser Seite die Feedbackoption „Diese Seite“ verwenden.

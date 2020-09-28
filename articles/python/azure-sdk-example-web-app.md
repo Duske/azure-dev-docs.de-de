@@ -4,12 +4,12 @@ description: Verwenden Sie die Verwaltungsbibliotheken in den Azure SDK-Bibliot
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 9db37e1cc496333c825789cc850ed6750907fa88
-ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
+ms.openlocfilehash: 03a2f8b8f8830916243db0778d16650da1892b04
+ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89275174"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110466"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-and-deploy-a-web-app"></a>Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Web-App
 
@@ -144,7 +144,7 @@ print(f"Provisioned web app {web_app_result.name} at {web_app_result.default_hos
 #
 # You can call this method again to change the repo.
 
-REPO_URL = 'https://github.com/kraigb/python-docs-hello-world'
+REPO_URL = 'https://github.com/<your_fork>/python-docs-hello-world'
 
 poller = app_service_client.web_apps.create_or_update_source_control(RESOURCE_GROUP_NAME,
     WEB_APP_NAME,
@@ -185,14 +185,14 @@ python provision_deploy_web_app.py
 
     Ersetzen Sie „PythonAzureExample-WebApp-12345“ durch den spezifischen Namen Ihrer Web-App.
 
-    „Hello World!“ muss auf dem Browser angezeigt werden.
+    „Hello World!“ muss in dem Browser angezeigt werden.
 
 1. Besuchen Sie das [Azure-Portal](https://portal.azure.com), wählen Sie **Ressourcengruppen** aus, und vergewissern Sie sich, dass „PythonAzureExample-WebApp-rg“ aufgeführt ist. Navigieren Sie dann in diese Liste, um zu überprüfen, ob die erwarteten Ressourcen vorhanden sind, nämlich der App Service-Plan und der App Service.
 
 ## <a name="7-clean-up-resources"></a>7: Bereinigen von Ressourcen
 
 ```azurecli
-az group delete -n PythonAzureExample-WebApp-rg
+az group delete -n PythonAzureExample-WebApp-rg --no-wait
 ```
 
 Führen Sie diesen Befehl aus, wenn Sie die in diesem Beispiel bereitgestellten Ressourcen nicht behalten müssen, und Sie in Ihrem Abonnement laufende Gebühren vermeiden möchten.

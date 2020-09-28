@@ -3,14 +3,15 @@ title: Bereitstellen von Deno-Apps in Azure App Service über die Azure CLI
 description: 'Teil 1 des Tutorials: Einführung und Voraussetzungen.'
 ms.topic: conceptual
 ms.date: 06/01/2020
-ms.openlocfilehash: 817efd11f5eaf072d10a54efa083823e9b73e356
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 0a725c0c1f59f01fd75e76e68ac533c7918a429b
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85791791"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "90772933"
 ---
-# <a name="deploy-to-azure-app-service-using-visual-studio-code"></a>Bereitstellen in Azure App Service mit Visual Studio Code
+# <a name="deploy-deno-to-azure-app-service-using-visual-studio-code"></a>Bereitstellen von Deno in Azure App Service mithilfe von Visual Studio Code
 
 In diesem Tutorial stellen Sie eine Deno-Anwendung mithilfe der Azure CLI für Azure App Service (unter Linux oder Windows) bereit.
 

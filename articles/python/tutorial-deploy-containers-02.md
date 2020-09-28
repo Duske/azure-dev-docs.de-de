@@ -2,18 +2,18 @@
 title: 'Schritt 2: Bereitstellen eines Containerimages in Azure App Service mit Visual Studio Code'
 description: 'Tutorialschritt 2: Bereitstellen des eigentlichen Docker-Images in Azure App Service aus einer Containerregistrierung'
 ms.topic: conceptual
-ms.date: 09/12/2019
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 080f3f5aa82d9944b5f26d3a54fb6f10bfe914cb
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 5255e0d65fda839fbbe86c1743d424ab5801774f
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473545"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90830896"
 ---
 # <a name="2-deploy-a-container-image-to-azure-app-service"></a>2: Bereitstellen eines Containerimages in Azure App Service
 
-[Vorheriger Schritt: Voraussetzungen](tutorial-deploy-containers-01.md)
+[Vorheriger Schritt: Konfigurieren Ihrer Umgebung](tutorial-deploy-containers-01.md)
 
 Mit einem Containerimage in einer Registrierung können Sie die Docker-Erweiterung in VS Code verwenden, um ganz einfach eine Azure App Service-Instanz einzurichten, die in dem Container ausgeführt wird.
 
@@ -29,9 +29,9 @@ Mit einem Containerimage in einer Registrierung können Sie die Docker-Erweiteru
 
     ![Erstellen und Bereitstellen des Images in Azure App Service](media/deploy-containers/deploy-image-to-azure-app-service.gif)
 
-    Eine **Ressourcengruppe** ist eine benannte Sammlung der unterschiedlichen Ressourcen, aus denen eine App besteht. Indem Sie alle Ressourcen der App einer einzelnen Gruppe zuweisen, können Sie diese Ressourcen ganz einfach als eine Einheit verwalten. (Weitere Informationen finden Sie in der Azure-Dokumentation unter [Übersicht über Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview).)
+    Eine **Ressourcengruppe** ist eine benannte Sammlung der unterschiedlichen Ressourcen, aus denen eine App besteht. Indem Sie alle Ressourcen der App einer einzelnen Gruppe zuweisen, können Sie diese Ressourcen ganz einfach als eine Einheit verwalten. (Weitere Informationen finden Sie in der Azure-Dokumentation unter [Übersicht über Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview).)
 
-    In einem **App Service-Plan** werden die physischen Ressourcen (ein zugrunde liegender virtueller Computer), auf denen der ausgeführte Container gehostet wird, definiert. Für dieses Tutorial ist B1 der kostengünstigste Plan, der Docker-Container unterstützt. (Weitere Informationen finden Sie in der Azure-Dokumentation in der [Übersicht über App Service-Pläne](https://docs.microsoft.com/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview).)
+    In einem **App Service-Plan** werden die physischen Ressourcen (ein zugrunde liegender virtueller Computer), auf denen der ausgeführte Container gehostet wird, definiert. Für dieses Tutorial ist B1 der kostengünstigste Plan, der Docker-Container unterstützt. (Weitere Informationen finden Sie in der Azure-Dokumentation in der [Übersicht über App Service-Pläne](/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview).)
 
     Der Name der App Service-Instanz muss in Azure global eindeutig sein. Aus diesem Grund wird häufig der Firmen- oder der eigene Name verwendet. Für Produktionswebsites konfigurieren Sie App Service in der Regel mit einem separat registrierten Domänennamen.
 
@@ -47,5 +47,3 @@ Mit einem Containerimage in einer Registrierung können Sie die Docker-Erweiteru
 
 > [!div class="nextstepaction"]
 > [Ich habe das Image bereitgestellt: Fahren Sie mit Schritt 3 fort. >>>](tutorial-deploy-containers-03.md)
-
-Sie haben Probleme? Übermitteln Sie ein GitHub-Problem, indem Sie unten auf dieser Seite die Feedbackoption „Diese Seite“ verwenden.

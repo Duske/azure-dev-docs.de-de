@@ -4,14 +4,14 @@ description: Hier erfahren Sie, wie Sie die Dienstprinzipalauthentifizierung mit
 ms.topic: article
 ms.date: 06/17/2017
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 9343d1bfaa48e5b2307c5f442107b91613663e94
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.openlocfilehash: 156892d9fd8e8014e3dacaae2492126ac9bf5836
+ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218879"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110429"
 ---
-# <a name="create-an-azure-service-principal-with-nodejs"></a>Erstellen eines Azure-Dienstprinzipals mit Node.js 
+# <a name="create-an-azure-service-principal-for-nodejs"></a>Erstellen eines Azure-Dienstprinzipals für Node.js
 
 Wenn eine App Zugriff auf Ressourcen benötigt, können Sie eine Identität für die App einrichten und sie mit ihren eigenen Anmeldeinformationen authentifizieren. Diese Identität wird als *Dienstprinzipal* bezeichnet. Im Grunde erstellen Sie für Ihr Azure Active Directory-Konto Schlüssel, die Sie an das SDK übergeben, um eine Authentifizierung ohne Benutzereingriff oder die Eingabe von Benutzer/Kennwort zu ermöglichen.
 
@@ -29,7 +29,7 @@ In diesem Thema werden drei Methoden zum Erstellen eines Dienstprinzipals erläu
 
 ## <a name="create-a-service-principal-using-the-azure-portal"></a>Erstellen eines Dienstprinzipals mit dem Azure-Portal
 
-Führen Sie die im Thema [Erstellen einer Azure Active Directory-Anwendung und eines Dienstprinzipals mit Ressourcenzugriff mithilfe des Portals](https://azure.microsoft.com/documentation/articles/resource-group-create-service-principal-portal/) beschriebenen Schritte aus, um den Dienstprinzipal zu erstellen.
+Führen Sie die im Thema [Erstellen einer Azure Active Directory-Anwendung und eines Dienstprinzipals mit Ressourcenzugriff mithilfe des Portals](/azure/active-directory/develop/howto-create-service-principal-portal) beschriebenen Schritte aus, um den Dienstprinzipal zu erstellen.
 
 ## <a name="create-a-service-principal-using-the-azure-cli-20"></a>Erstellen eines Dienstprinzipals mit der Azure CLI 2.0
 
@@ -45,7 +45,8 @@ Bei der Erstellung eines Dienstprinzipals mithilfe der [Azure CLI 2.0](/cli/azur
     $ az login
     ```
 
-4. Durch den Aufruf von `az login` werden eine URL und ein Code zurückgegeben. Navigieren Sie zur angegebenen URL, geben Sie den Code ein, und melden Sie sich mit Ihrer Azure-Identität an. (Dies geschieht unter Umständen automatisch, wenn Sie bereits angemeldet sind.) Sie können dann über die CLI auf Ihr Konto zugreifen.
+4. Durch den Aufruf von `az login` werden eine URL und ein Code zurückgegeben. Navigieren Sie zur angegebenen URL, geben Sie den Code ein, und melden Sie sich mit Ihrer Azure-Identität an. (Dies geschieht unter Umständen automatisch, wenn Sie bereits angemeldet sind.)
+Sie können dann über die CLI auf Ihr Konto zugreifen.
 
 5. Rufen Sie Ihre Abonnement-ID und die Mandanten-ID ab:
 
@@ -93,7 +94,7 @@ Bei der Erstellung eines Dienstprinzipals mithilfe der [Azure CLI 2.0](/cli/azur
 
     **Notieren Sie sich die Werte für Mandant, Name und Kennwort, da sie in Schritt 7 verwendet werden.**
 
-7. Richten Sie die Umgebungsvariablen ein. Ersetzen Sie dabei die Platzhalter „&lt;subscriptionId>“, „&lt;tenant>“, „&lt;name>“ und „&lt;password>“ durch die in den Schritten 4 und 5 abgerufenen Werte. 
+7. Richten Sie die Umgebungsvariablen ein. Ersetzen Sie dabei die Platzhalter „&lt;subscriptionId>“, „&lt;tenant>“, „&lt;name>“ und „&lt;password>“ durch die in den Schritten 4 und 5 abgerufenen Werte.
 
     **Verwenden von Bash**
 
@@ -115,7 +116,7 @@ Bei der Erstellung eines Dienstprinzipals mithilfe der [Azure CLI 2.0](/cli/azur
 
 ## <a name="create-a-service-principal-using-the-azure-sdk-for-nodejs"></a>Erstellen eines Dienstprinzipals mit dem Azure SDK für Node.js
 
-Verwenden Sie zum programmgesteuerten Erstellen eines Dienstprinzipals mit JavaScript das [ServicePrincipal-Skript](https://github.com/Azure/azure-sdk-for-node/tree/master/Documentation/ServicePrincipal).   
+Verwenden Sie zum programmgesteuerten Erstellen eines Dienstprinzipals mit JavaScript das [ServicePrincipal-Skript](https://github.com/Azure/azure-sdk-for-node/tree/master/Documentation/ServicePrincipal).
 
 ## <a name="using-the-service-principal"></a>Verwenden des Dienstprinzipals
 
@@ -138,3 +139,7 @@ MsRest.loginWithServicePrincipalSecret(
   }
 );
 ```
+
+## <a name="next-steps"></a>Nächste Schritte
+
+* [Authentifizieren mit den Azure-Modulen für Node.js](node-sdk-azure-authenticate.md)
