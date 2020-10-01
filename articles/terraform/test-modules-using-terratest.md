@@ -4,12 +4,12 @@ description: Es wird beschrieben, wie Sie Terratest zum Testen Ihrer Terraform-M
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: f174c6c3a4a91fe47ded8ade8826ce9c4c09af65
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ec42182fd20ce073f727b8096d15e2a87a3c1207
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241062"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401700"
 ---
 # <a name="tutorial-test-terraform-modules-in-azure-using-terratest"></a>Tutorial: Testen von Terraform-Modulen in Azure mit Terratest
 
@@ -27,14 +27,12 @@ Wir haben uns alle gängigen Testinfrastrukturen angesehen und uns für das Test
 - **Testfälle werden in Go geschrieben**: Viele Entwickler, die Terraform nutzen, sind Go-Entwickler. Falls Sie ein Go-Entwickler sind, müssen Sie keine andere Programmiersprache lernen, um Terratest zu verwenden.
 - **Erweiterbare Infrastruktur**: Sie können eine Erweiterung auf zusätzliche Funktionen zu Terratest durchführen, z. B. Azure-spezifische Features.
 
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
-
 ## <a name="prerequisites"></a>Voraussetzungen
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 - **Programmiersprache Go**: Terraform-Testfälle werden in [Go](https://golang.org/dl/) geschrieben.
 - **dep**: [dep](https://github.com/golang/dep#installation) ist ein Tool zum Verwalten von Abhängigkeiten für Go.
-- **Azure CLI**: Die [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) ist ein Befehlszeilentool, das Sie zum Verwalten von Azure-Ressourcen verwenden können. (Terraform unterstützt die Authentifizierung für Azure über einen Dienstprinzipal oder die [Azure CLI](https://www.terraform.io/docs/providers/azurerm/authenticating_via_azure_cli.html).)
+- **Azure CLI**: Die [Azure CLI](/cli/azure/install-azure-cli) ist ein Befehlszeilentool, das Sie zum Verwalten von Azure-Ressourcen verwenden können. (Terraform unterstützt die Authentifizierung für Azure über einen Dienstprinzipal oder die [Azure CLI](https://www.terraform.io/docs/providers/azurerm/authenticating_via_azure_cli.html).)
 - **mage**: Wir nutzen die [ausführbare mage-Datei](https://github.com/magefile/mage/releases), um zu veranschaulichen, wie Sie die Ausführung von Terratest-Testfällen vereinfachen können. 
 
 ## <a name="create-a-static-webpage-module"></a>Erstellen eines statischen Webseitenmoduls
@@ -521,6 +519,8 @@ Bei mage können Sie die Schritte auch aufteilen, indem Sie das Go-Paketsystem v
 **Optional: Festlegen von Dienstprinzipal-Umgebungsvariablen zum Durchführen von Akzeptanztests**
  
 Anstatt `az login` vor Tests auszuführen, können Sie die Azure-Authentifizierung auch durchführen, indem Sie die Dienstprinzipal-Umgebungsvariablen festlegen. Terraform veröffentlicht [eine Liste mit Namen von Umgebungsvariablen](https://www.terraform.io/docs/providers/azurerm/index.html#testing). (Nur die ersten vier dieser Umgebungsvariablen sind erforderlich.) Terraform veröffentlicht auch ausführliche Anleitungen, in denen beschrieben wird, wie Sie [die Werte dieser Umgebungsvariablen beschaffen können](https://www.terraform.io/docs/providers/azurerm/authenticating_via_service_principal.html).
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Nächste Schritte
 

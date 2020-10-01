@@ -5,12 +5,12 @@ keywords: Azure DevOps Terraform Application Gateway eingehend AKS Kubernetes
 ms.topic: how-to
 ms.date: 03/09/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 4d83e6720958ff76126c7e71e8cfbbcfb13c666a
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 10e52f4cc05bfa4127ee519ed265f0607d4745be
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241262"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401660"
 ---
 # <a name="create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>Erstellen eines Application Gateway-Eingangscontrollers in Azure Kubernetes Service
 
@@ -27,8 +27,6 @@ In diesem Artikel lernen Sie Folgendes:
 > * Verwenden von Terraform und AKS zum Erstellen eines Kubernetes-Clusters
 > * Verwenden des kubectl-Tools zum Testen der Verfügbarkeit eines Kubernetes-Clusters
 
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
-
 ## <a name="prerequisites"></a>Voraussetzungen
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
@@ -37,7 +35,7 @@ In diesem Artikel lernen Sie Folgendes:
 
 - **Azure-Ressourcengruppe**: Sollten Sie über keine Azure-Ressourcengruppe für die Demo verfügen, [erstellen Sie eine Azure-Ressourcengruppe](/azure/azure-resource-manager/manage-resource-groups-portal#create-resource-groups). Notieren Sie sich Name und Standort der Ressourcengruppe, da diese Werte in der Demo verwendet werden.
 
-- **Azure-Dienstprinzipal:** Befolgen Sie die Anweisungen im Abschnitt **Erstellen des Dienstprinzipals** des Artikels [Erstellen eines Azure-Dienstprinzipals mit der Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest). Notieren Sie sich die Werte für `appId`, `displayName` und `password`.
+- **Azure-Dienstprinzipal:** Befolgen Sie die Anweisungen im Abschnitt **Erstellen des Dienstprinzipals** des Artikels [Erstellen eines Azure-Dienstprinzipals mit der Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli). Notieren Sie sich die Werte für `appId`, `displayName` und `password`.
 
 - **Abrufen der Dienstprinzipalobjekt-ID**: Führen Sie den folgenden Befehl in Cloud Shell aus: `az ad sp list --display-name <displayName>`.
 
@@ -774,6 +772,8 @@ Ersetzen Sie den Platzhalter durch den entsprechenden Wert. Alle Ressourcen inne
 ```azurecli
 az group delete -n <resource-group>
 ```
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Nächste Schritte
 

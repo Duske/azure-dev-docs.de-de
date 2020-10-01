@@ -4,20 +4,18 @@ description: Hier erfahren Sie mehr über die verschiedenen Testoptionen, die Si
 ms.topic: overview
 ms.date: 07/31/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 29f128361030b64da38124f7f7d723619306f582
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 6c782b2a6fed14698aede5a7dbfb6eae5ff9cf4a
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241272"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401670"
 ---
 # <a name="tutorial-terraform-testing-overview"></a>Tutorial: Übersicht über Terraform-Tests
 
 [!INCLUDE [terraform-intro.md](includes/terraform-intro.md)]
 
 Terraform ist ein Infrastructure-as-Code-Tool (IAC). Diese Toolkategorie bezieht sich auf die Tatsache, dass Sie Ihre Terraform-Dateien wie den Quellcode des Projekts behandeln. Teil dieses Prozesses sind die Versionskontrolle und Quellcodeverwaltung. Tests sollten ebenfalls ein Bestandteil Ihres Prozesses sein. Dieser Artikel bietet eine Übersicht über die verschiedenen Arten von Tests, die für ein Terraform-Projekt ausgeführt werden können.
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="integration-testing"></a>Integrationstest
 
@@ -59,3 +57,5 @@ Ein E2E-Test besteht in der Regel aus drei Schritten. Zuerst wird die Konfigurat
 
 > [!div class="nextstepaction"]
 > [Weitere Informationen zu End-to-End-Tests](best-practices-end-to-end-testing.md)
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]

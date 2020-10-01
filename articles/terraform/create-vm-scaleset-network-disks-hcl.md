@@ -4,12 +4,12 @@ description: Es wird beschrieben, wie Sie mit Terraform eine Azure-VM-Skalierung
 ms.topic: how-to
 ms.date: 11/07/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: e6f83d6f4f138b92576e44cadb65c3e4d018dc66
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: d261a5c9ca76dd66c5c79333186079b92ea54bae
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241242"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401630"
 ---
 # <a name="create-an-azure-virtual-machine-scale-set-using-terraform"></a>Erstellen einer Azure-VM-Skalierungsgruppe unter Verwendung von Terraform
 
@@ -26,8 +26,6 @@ In diesem Artikel werden folgende Vorgehensweisen behandelt:
 
 > [!NOTE]
 > Die neueste Version der in diesem Artikel verwendeten Terraform-Konfigurationsdateien befinden sich im [Repository „awesome-terraform“](https://github.com/Azure/awesome-terraform/tree/master/codelab-vmss) auf GitHub.
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -395,10 +393,6 @@ Führen Sie in Cloud Shell die folgenden Schritte aus:
     terraform apply
     ```
 
-    Die Ausgabe des Befehls sollte ungefähr so wie auf dem folgenden Screenshot aussehen:
-
-    ![Terraform-Ressourcengruppe für VM-Skalierungsgruppe](./media/create-vm-scaleset-network-disks-hcl/resource-group-contents.png)
-
 1. Öffnen Sie einen Browser, und stellen Sie eine Verbindung mit dem FQDN her, der durch den Befehl zurückgegeben wurde.
 
     ![Ergebnisse des Navigierens zum FQDN](./media/create-vm-scaleset-network-disks-hcl/browser-fqdn.png)
@@ -504,12 +498,9 @@ Bei einer SSH-*Jumpbox* handelt es sich um einen Einzelserver, durch den Sie soz
    terraform apply
    ```
 
-Nach Abschluss der Bereitstellung sieht der Inhalt der Ressourcengruppe wie derjenige auf dem folgenden Screenshot aus:
+**Hinweise**:
 
-![Terraform-Ressourcengruppe für VM-Skalierungsgruppe](./media/create-vm-scaleset-network-disks-hcl/resource-group-contents-final.png)
-
-> [!NOTE]
-> Die Anmeldung mit einem Kennwort ist für die bereitgestellte Jumpbox und für die bereitgestellte VM-Skalierungsgruppe deaktiviert. Melden Sie sich mit SSH an, um auf die virtuellen Computer zuzugreifen.
+- Die Anmeldung mit einem Kennwort ist für die bereitgestellte Jumpbox und für die bereitgestellte VM-Skalierungsgruppe deaktiviert. Melden Sie sich mit SSH an, um auf die virtuellen Computer zuzugreifen.
 
 ## <a name="environment-cleanup"></a>Bereinigen der Umgebung
 
@@ -520,6 +511,8 @@ terraform destroy
 ```
 
 Die Bereinigung kann einige Minuten dauern.
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Nächste Schritte
 

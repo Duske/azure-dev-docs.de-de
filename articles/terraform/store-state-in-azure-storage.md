@@ -4,12 +4,12 @@ description: Es wird beschrieben, wie Sie den Terraform-Zustand in Azure Storage
 ms.topic: tutorial
 ms.date: 11/07/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: d2fd110fec8d23bd8382669cbb572ce46b6fd1e6
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: a59ba1d24fc59f36e237f5be9a75981b9ae8f8ae
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241182"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401740"
 ---
 # <a name="tutorial-store-terraform-state-in-azure-storage"></a>Tutorial: Speichern des Terraform-Status in Azure Storage
 
@@ -20,8 +20,6 @@ Der Terraform-Status wird verwendet, um bereitgestellte Ressourcen auf Terraform
 - Das lokale Speichern des Zustands erhöht das Risiko einer versehentlichen Löschung.
 
 Terraform unterstützt die Speicherung des Zustands in einem Remotespeicher. Ein solches unterstütztes Back-End ist Azure Storage. In diesem Dokument erfahren Sie, wie Sie Azure Storage zu diesem Zweck konfigurieren und verwenden.
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -126,6 +124,8 @@ Die Sperre wird angezeigt, wenn Sie das Blob über das Azure-Portal oder in ande
 In einem Azure-Blob gespeicherte Daten werden vor dem Speichern verschlüsselt. Bei Bedarf ruft Terraform den Zustand vom Back-End ab und speichert ihn im lokalen Arbeitsspeicher. Bei Verwendung dieses Musters wird der Zustand nie auf Ihren lokalen Datenträger geschrieben.
 
 Weitere Informationen zur Azure Storage-Verschlüsselung finden Sie unter [Azure Storage-Verschlüsselung für ruhende Daten](/azure/storage/common/storage-service-encryption).
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Nächste Schritte
 

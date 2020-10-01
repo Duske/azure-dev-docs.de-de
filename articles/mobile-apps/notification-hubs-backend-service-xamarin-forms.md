@@ -6,12 +6,12 @@ ms.service: mobile-services
 ms.topic: tutorial
 ms.date: 07/27/2020
 ms.author: miparker
-ms.openlocfilehash: 85b8bbc6e0a84e7da47b11eef4f22714912af72f
-ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
+ms.openlocfilehash: f173f8431cc7bed0ae56bf14cfc6efcf37dcf230
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810663"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493266"
 ---
 # <a name="tutorial-send-push-notifications-to-xamarinforms-apps-using-azure-notification-hubs-via-a-backend-service"></a>Tutorial: Senden von Pushbenachrichtigungen an Xamarin.Forms-Apps mit Azure Notification Hubs über einen Back-End-Dienst  
 
@@ -23,7 +23,7 @@ ms.locfileid: "87810663"
 > * [Flutter](notification-hubs-backend-service-flutter.md)
 > * [React Native](notification-hubs-backend-service-react-native.md)
 
-In diesem Tutorial verwenden Sie [Azure Notification Hubs](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-overview), um Pushbenachrichtigungen an eine [Xamarin.Forms](https://dotnet.microsoft.com/apps/xamarin/xamarin-forms)-Anwendung für **Android** und **iOS** zu senden.  
+In diesem Tutorial verwenden Sie [Azure Notification Hubs](/azure/notification-hubs/notification-hubs-push-notification-overview), um Pushbenachrichtigungen an eine [Xamarin.Forms](https://dotnet.microsoft.com/apps/xamarin/xamarin-forms)-Anwendung für **Android** und **iOS** zu senden.  
 
 [!INCLUDE [Notification Hubs Backend Service Introduction](includes/notification-hubs-backend-service-introduction.md)]
 
@@ -62,9 +62,9 @@ Für iOS benötigen Sie Folgendes:
 Sie können die Schritte in diesem Beispiel zu den Grundprinzipien ohne vorherige Erfahrung ausführen. Kenntnisse der folgenden Aspekte sind jedoch von Vorteil.
 
 * [Apple Developer-Portal](https://developer.apple.com)
-* [ASP.NET Core](https://docs.microsoft.com/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1)
+* [ASP.NET Core](/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1)
 * [Google Firebase-Konsole](https://console.firebase.google.com/u/0/)
-* [Microsoft Azure](https://portal.azure.com) und [Senden von Pushbenachrichtigungen an iOS-Apps mit Azure Notification Hubs](https://docs.microsoft.com/azure/notification-hubs/ios-sdk-get-started)
+* [Microsoft Azure](https://portal.azure.com) und [Senden von Pushbenachrichtigungen an iOS-Apps mit Azure Notification Hubs](/azure/notification-hubs/ios-sdk-get-started)
 * [Xamarin](https://dotnet.microsoft.com/apps/xamarin) und [Xamarin.Forms](https://dotnet.microsoft.com/apps/xamarin/xamarin-forms)
 
 Die genannten Schritte gelten für [Visual Studio für Mac](https://visualstudio.microsoft.com/vs/mac/), sie können aber auch mit [Visual Studio 2019](https://visualstudio.microsoft.com/vs) ausgeführt werden.
@@ -85,7 +85,7 @@ In diesem Abschnitt richten Sie **[Firebase Cloud Messaging (FCM)](https://fireb
 
 ## <a name="create-an-aspnet-core-web-api-backend-application"></a>Erstellen einer Anwendung für das ASP.NET Core-Web-API-Back-End
 
-In diesem Abschnitt erstellen Sie das [ASP.NET Core-Web-API](https://dotnet.microsoft.com/apps/aspnet/apis)-Back-End für die [Geräteregistrierung](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-registration-management#what-is-device-registration) und das Senden von Benachrichtigungen an die mobile Xamarin.Forms-App.
+In diesem Abschnitt erstellen Sie das [ASP.NET Core-Web-API](https://dotnet.microsoft.com/apps/aspnet/apis)-Back-End für die [Geräteregistrierung](/azure/notification-hubs/notification-hubs-push-notification-registration-management#what-is-device-registration) und das Senden von Benachrichtigungen an die mobile Xamarin.Forms-App.
 
 [!INCLUDE [Create an ASP.NET Core Web API backend application](includes/notification-hubs-backend-service-web-api.md)]
 
@@ -117,15 +117,15 @@ Sie können jetzt das Senden von Benachrichtigungen über den Back-End-Dienst te
 
 ## <a name="related-links"></a>Verwandte Links
 
-* [Übersicht über Azure Notification Hubs](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-overview)
-* [Installieren von Visual Studio für Mac](https://docs.microsoft.com/visualstudio/mac/installation?view=vsmac-2019)
-* [Installieren von Xamarin unter Windows](https://docs.microsoft.com/xamarin/get-started/installation/windows)
+* [Übersicht über Azure Notification Hubs](/azure/notification-hubs/notification-hubs-push-notification-overview)
+* [Installieren von Visual Studio für Mac](/visualstudio/mac/installation?view=vsmac-2019)
+* [Installieren von Xamarin unter Windows](/xamarin/get-started/installation/windows)
 * [Notification Hubs SDK für Back-End-Vorgänge](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)
 * [Notification Hubs-SDK auf GitHub](https://github.com/Azure/azure-notificationhubs)
-* [Registrieren bei einem Anwendungs-Back-End](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-ios-aspnet-register-user-from-backend-to-push-notification)
-* [Registrierungsverwaltung](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-registration-management)
-* [Arbeiten mit Tags](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-tags-segment-push-message)
-* [Arbeiten mit benutzerdefinierten Vorlagen](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages)
+* [Registrieren bei einem Anwendungs-Back-End](/azure/notification-hubs/notification-hubs-ios-aspnet-register-user-from-backend-to-push-notification)
+* [Registrierungsverwaltung](/azure/notification-hubs/notification-hubs-push-notification-registration-management)
+* [Arbeiten mit Tags](/azure/notification-hubs/notification-hubs-tags-segment-push-message)
+* [Arbeiten mit benutzerdefinierten Vorlagen](/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages)
 
 ## <a name="next-steps"></a>Nächste Schritte
 

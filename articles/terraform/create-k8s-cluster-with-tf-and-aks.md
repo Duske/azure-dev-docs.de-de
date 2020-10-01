@@ -5,12 +5,12 @@ keywords: Azure DevOps Terraform AKS Kubernetes
 ms.topic: how-to
 ms.date: 03/09/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 726f4544f4c417792d784dfaddf93a3d79eaec9e
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ccf5855f414b233f97642f60a4f52c99848b34cd
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241252"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401650"
 ---
 # <a name="create-a-kubernetes-cluster-with-azure-kubernetes-service-using-terraform"></a>Erstellen eines Kubernetes-Clusters mit Azure Kubernetes Service unter Verwendung von Terraform
 
@@ -23,15 +23,13 @@ In diesem Artikel lernen Sie Folgendes:
 > * Verwenden von Terraform und AKS zum Erstellen eines Kubernetes-Clusters
 > * Verwenden des kubectl-Tools zum Testen der Verfügbarkeit eines Kubernetes-Clusters
 
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
-
 ## <a name="prerequisites"></a>Voraussetzungen
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
 - **Konfigurieren von Terraform:** Befolgen Sie die Anweisungen im Artikel [Installieren und Konfigurieren von Terraform zum Bereitstellen von VMs und sonstiger Infrastruktur in Azure](get-started-cloud-shell.md).
 
-- **Azure-Dienstprinzipal:** Befolgen Sie die Anweisungen im Abschnitt **Erstellen des Dienstprinzipals** des Artikels [Erstellen eines Azure-Dienstprinzipals mit der Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest). Notieren Sie sich die Werte für `appId`, `displayName`, `password` und `tenant`.
+- **Azure-Dienstprinzipal:** Befolgen Sie die Anweisungen im Abschnitt **Erstellen des Dienstprinzipals** des Artikels [Erstellen eines Azure-Dienstprinzipals mit der Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli). Notieren Sie sich die Werte für `appId`, `displayName`, `password` und `tenant`.
 
 ## <a name="create-the-directory-structure"></a>Erstellen der Verzeichnisstruktur
 
@@ -401,6 +399,8 @@ Die Kubernetes-Tools können verwendet werden, um den neu erstellten Cluster zu 
 ## <a name="monitor-health-and-logs"></a>Überwachung von Integrität und Protokollen
 
 Beim Erstellen des AKS-Clusters wurde die Überwachung aktiviert, um Integritätsmetriken für die Clusterknoten und die Pods zu erfassen. Diese Integritätsmetriken sind im Azure-Portal verfügbar. Weitere Informationen zur Überwachung der Integrität von Containern finden Sie unter [Überwachen der Integrität von Azure Kubernetes Service](/azure/azure-monitor/insights/container-insights-overview).
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Nächste Schritte
 

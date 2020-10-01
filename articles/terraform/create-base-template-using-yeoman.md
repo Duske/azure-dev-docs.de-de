@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie eine Terraform-Basisvorlage in Azure mit
 ms.topic: how-to
 ms.date: 05/25/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: aa71698735d96bd591b15d6804fd2d142602d326
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: f125f6d1fd5b37fc023343dc045a70dd92084840
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241282"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401720"
 ---
 # <a name="create-a-terraform-base-template-in-azure-using-yeoman"></a>Erstellen einer Terraform-Basisvorlage in Azure mithilfe von Yeoman
 
@@ -21,8 +21,6 @@ In diesem Artikel lernen Sie Folgendes:
 > * Testen der Terraform-Vorlage mit zwei verschiedenen Methoden
 > * Ausführen des Terraform-Moduls unter Verwendung einer Docker-Datei
 > * Natives Ausführen des Terraform-Moduls in Azure Cloud Shell
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -290,6 +288,8 @@ In diesem Abschnitt wird zum Erstellen und Testen eines Moduls in Cloud Shell de
     ```
 
     ![Ergebnisse des Testdurchlaufs](media/create-a-base-template-using-yeoman/ymg-pass.png)
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Nächste Schritte
 

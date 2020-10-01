@@ -4,12 +4,12 @@ description: Es wird beschrieben, wie Sie ein virtuelles Hubnetzwerk (VNET) erst
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 1bc9b2b899157985394165171adc76d988fe7e6a
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: b7276d3807f00e828c89ee00ffcde2e6e2f0b9a5
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241132"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401455"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-appliance-in-azure-using-terraform"></a>Tutorial: Erstellen einer virtuellen Hub-Netzwerkappliance in Azure mit Terraform
 
@@ -24,8 +24,6 @@ In diesem Artikel werden die folgenden Aufgaben behandelt:
 > * Verwenden von Terraform, um einen virtuellen Hub-Netzwerkcomputer zu erstellen, der als Gerät fungiert
 > * Verwenden von Terraform zum Aktivieren von Routen mithilfe der CustomScript-Erweiterung
 > * Verwenden von Terraform, um Routingtabellen für Hub-and-Spoke-Gateways zu erstellen
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -270,6 +268,8 @@ Erstellen Sie die Terraform-Konfigurationsdatei, die das lokale virtuelle Hubnet
     ```
 
 1. Speichern Sie die Datei, und beenden Sie den Editor.
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Nächste Schritte
 

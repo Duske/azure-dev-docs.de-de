@@ -3,22 +3,20 @@ title: Bereitstellen der Infrastruktur mit Azure-Bereitstellungsslots per Terraf
 description: Es wird beschrieben, wie Sie Terraform mit Bereitstellungsslots für Azure-Anbieter verwenden.
 keywords: Azure DevOps Terraform Bereitstellungsslots
 ms.topic: how-to
-ms.date: 03/09/2020
+ms.date: 09/27/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: bed68e64bb6948f4ab021035bd113ea9fb007950
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ad98549bca6b98635d111ee333212bd8b9a9dbba
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241212"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401770"
 ---
 # <a name="provision-infrastructure-with-azure-deployment-slots-using-terraform"></a>Bereitstellen der Infrastruktur mit Azure-Bereitstellungsslots per Terraform
 
 Mit [Azure-Bereitstellungsslots](/azure/app-service/deploy-staging-slots) können Sie zwischen verschiedenen Versionen Ihrer App wechseln. Dadurch lassen sich die Auswirkungen fehlerhafter Bereitstellungen minimieren. 
 
 Dieser Artikel enthält ein Beispiel für die Verwendung von Bereitstellungsslots sowie die Schritte zur Bereitstellung von zwei Apps über GitHub und Azure. Eine App wird in einem Produktionsslot gehostet. Die zweite App wird in einem Stagingslot gehostet. (Die Namen „production“ und „staging“ sind willkürlich gewählt. Sie können beliebige Namen verwenden, die für Ihr Szenario geeignet sind.) Nach dem Konfigurieren Ihrer Bereitstellungsslots verwenden Sie Terraform, um je nach Bedarf zwischen den beiden Slots zu wechseln.
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -303,6 +301,8 @@ terraform apply
 ```
 
 Nach dem Wechsel der App wird wieder die ursprüngliche Konfiguration angezeigt.
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Nächste Schritte
 

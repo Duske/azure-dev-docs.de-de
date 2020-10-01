@@ -11,12 +11,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.custom: devx-track-java
-ms.openlocfilehash: 569b4b1744e1f0ddad18c9553bc7fc3879c39260
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 800e4d45417c7842d12e92c6e18dfdd6a1bc567f
+ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831286"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91586187"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a>Verwendung von Spring Boot Starter mit der SQL-API von Azure Cosmos DB
 
@@ -59,7 +59,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Erstellen einer einfachen Spring Boot-Anwendung mit Spring Initializr
 
-Führen Sie die folgenden Schritte aus, um ein neues Spring Boot-Anwendungsprojekt mit Azure-Unterstützung zu erstellen. Alternativ können Sie das Beispiel [azure-spring-boot-sample-cosmosdb](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-cosmosdb) im Repository [azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java) verwenden. Anschließend können Sie direkt mit dem [Erstellen und Testen der App](#build-and-test-your-app) fortfahren.
+Führen Sie die folgenden Schritte aus, um ein neues Spring Boot-Anwendungsprojekt mit Azure-Unterstützung zu erstellen. Alternativ können Sie das Beispiel [azure-spring-boot-sample-cosmosdb](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-cosmos) im Repository [azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java) verwenden. Anschließend können Sie direkt mit dem [Erstellen und Testen der App](#build-and-test-your-app) fortfahren.
 
 1. Navigieren Sie zu <https://start.spring.io/>.
 
@@ -435,7 +435,7 @@ Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure 
 [Azure für Java-Entwickler]: ../index.yml
 [Build a SQL API app with Java]: /azure/cosmos-db/create-sql-api-java
 [Spring-Daten für SQL-API von Azure Cosmos DB]: https://azure.microsoft.com/blog/spring-data-azure-cosmos-db-nosql-data-access-on-azure/
-[Spring Boot Cosmos DB Starter für Azure]: https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-starter-cosmosdb
+[Spring Boot Cosmos DB Starter für Azure]: https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-starter-cosmos
 [kostenloses Azure-Konto]: https://azure.microsoft.com/pricing/free-trial/
 [Working with Azure DevOps and Java]: https://azure.microsoft.com/services/devops/java/ (Arbeiten mit Azure DevOps und Java)
 [MSDN-Abonnentenvorteile]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/

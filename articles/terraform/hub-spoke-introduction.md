@@ -4,12 +4,12 @@ description: Es wird beschrieben, wie Sie eine vollständige Referenzarchitektur
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 7fd6de18404f6c71184f17510699c6eb2a7be16b
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 5a9c4541d0dc04413e088587791488133fe61ff9
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241122"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401490"
 ---
 # <a name="tutorial-create-a-hub-and-spoke-hybrid-network-topology-in-azure-using-terraform"></a>Tutorial: Erstellen einer hybriden Hub-and-Spoke-Netzwerktopologie in Azure mit Terraform
 
@@ -26,8 +26,6 @@ Dieses Tutorial enthält die folgenden Aufgaben:
 > * Verwenden von Terraform zum Erstellen einzelner Workloads als Spoke-VNets in Azure
 > * Verwenden von Terraform zum Erstellen von Gateways und Verbindungen zwischen dem Standort und Azure-Netzwerken
 > * Verwenden von Terraform zum Erstellen von VNet-Peerings zu Spoke-Netzwerken
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -157,6 +155,8 @@ Erstellen Sie die Terraform-Konfigurationsdatei für allgemeine Variablen, die i
     ```
 
 1. Speichern Sie die Datei, und beenden Sie den Editor.
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Nächste Schritte
 

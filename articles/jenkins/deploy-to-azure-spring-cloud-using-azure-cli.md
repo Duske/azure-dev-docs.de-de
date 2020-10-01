@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, Azure Spring Cloud, Azure CLI
 ms.topic: tutorial
 ms.date: 09/01/2020
 ms.custom: devx-track-jenkins,devx-track-azurecli
-ms.openlocfilehash: 7c6b9d526b2fe42a0210daf70ec8ba919641ced9
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: 7b8eaf783e909e9291dc7b0e6781bf4e8cb0d4c3
+ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89374561"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91586135"
 ---
 # <a name="tutorial-deploy-apps-to-azure-spring-cloud-using-jenkins-and-the-azure-cli"></a>Tutorial: Bereitstellen von Apps in Azure Spring Cloud mithilfe von Jenkins und der Azure-Befehlszeilenschnittstelle
 
@@ -43,19 +43,19 @@ Ihr lokaler Computer muss die gleichen Voraussetzungen erfüllen wie der Jenkins
 
 1. Installieren Sie die Azure Spring Cloud-Erweiterung:
 
-    ```Azure CLI
+    ```azurecli
     az extension add --name spring-cloud
     ```
 
 1. Erstellen Sie eine Ressourcengruppe für Ihren Azure Spring Cloud-Dienst:
 
-    ```Azure CLI
+    ```azurecli
     az group create --location eastus --name <resource group name>
     ```
 
 1. Stellen Sie eine Instanz von Azure Spring Cloud bereit:
 
-    ```Azure CLI
+    ```azurecli
     az spring-cloud create -n <service name> -g <resource group name>
     ```
 
@@ -68,7 +68,7 @@ Ihr lokaler Computer muss die gleichen Voraussetzungen erfüllen wie der Jenkins
 
 1. Richten Sie Ihren Konfigurationsserver ein. Ersetzen Sie „&lt;your GitHub id&gt;“ durch den korrekten Wert.
 
-    ```Azure CLI
+    ```azurecli
     az spring-cloud config-server git set -n <your-service-name> --uri https://github.com/<your GitHub id>/piggymetrics --label config
     ```
 
@@ -81,7 +81,7 @@ Ihr lokaler Computer muss die gleichen Voraussetzungen erfüllen wie der Jenkins
 
 1. Erstellen Sie die drei Microservices **gateway**, **auth-service** und **account-service**:
 
-    ```Azure CLI
+    ```azurecli
     az spring-cloud app create --n gateway -s <service name> -g <resource group name>
     az spring-cloud app create --n auth-service -s <service name> -g <resource group name>
     az spring-cloud app create --n account-service -s <service name> -g <resource group name>
@@ -89,7 +89,7 @@ Ihr lokaler Computer muss die gleichen Voraussetzungen erfüllen wie der Jenkins
 
 1. Stellen Sie die Anwendungen bereit:
 
-    ```Azure CLI
+    ```azurecli
     az spring-cloud app deploy -n gateway -s <service name> -g <resource group name> --jar-path ./gateway/target/gateway.jar
     az spring-cloud app deploy -n account-service -s <service name> -g <resource group name> --jar-path ./account-service/target/account-service.jar
     az spring-cloud app deploy -n auth-service -s <service name> -g <resource group name> --jar-path ./auth-service/target/auth-service.jar
@@ -97,13 +97,13 @@ Ihr lokaler Computer muss die gleichen Voraussetzungen erfüllen wie der Jenkins
 
 1. Weisen Sie den öffentlichen Endpunkt dem Gateway zu:
 
-    ```Azure CLI
+    ```azurecli
     az spring-cloud app update -n gateway -s <service name> -g <resource group name> --is-public true
     ```
 
 1. Fragen Sie die URL der Gatewayanwendung ab, um überprüfen zu können, ob die Anwendung ausgeführt wird.
 
-    ```Azure CLI
+    ```azurecli
     az spring-cloud app show --name gateway | grep url
     ```
     

@@ -4,12 +4,12 @@ description: Hier erhalten Sie Informationen zu Integrationstests und erfahren, 
 ms.topic: tutorial
 ms.date: 07/31/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: d6c8f9c419070d734c3c848163c52e6255d5512a
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 73f7c279948101af509ba5e3120b1af650f38ca1
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831996"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401730"
 ---
 # <a name="tutorial-configure-integration-tests-for-terraform-projects-in-azure"></a>Tutorial: Konfigurieren von Integrationstests für Terraform-Projekte in Azure
 
@@ -25,14 +25,12 @@ In diesem Artikel lernen Sie Folgendes:
 > * Ausführen von `terraform plan`, um Terraform-Konfigurationsdateien aus der Perspektive von Remotediensten zu überprüfen
 > * Automatisieren von Continuous Integration mit einer Azure-Pipeline
 
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
-
 ## <a name="prerequisites"></a>Voraussetzungen
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-- **Azure DevOps-Organisation und -Projekt**: [Erstellen Sie eine Azure DevOps-Organisation](/azure/devops/organizations/projects/create-project?tabs=preview-page&view=azure-devops), falls Sie noch keine haben.
+- **Azure DevOps-Organisation und -Projekt**: [Erstellen Sie eine Azure DevOps-Organisation](/azure/devops/organizations/projects/create-project), falls Sie noch keine haben.
 - **Terraform Build & Release Tasks-Erweiterung**: [Installieren Sie die Terraform Build & Release Tasks-Erweiterung](https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform) in Ihrer Azure DevOps-Organisation.
-- **Gewähren des Zugriffs auf Ihr Azure-Abonnement für Azure DevOps**: Erstellen Sie eine [Azure-Dienstverbindung](/azure/devops/pipelines/library/connect-to-azure?view=azure-devops) mit dem Namen `terraform-basic-testing-azure-connection`, damit Azure-Pipelines eine Verbindung mit Ihren Azure-Abonnements herstellen können.
+- **Gewähren des Zugriffs auf Ihr Azure-Abonnement für Azure DevOps**: Erstellen Sie eine [Azure-Dienstverbindung](/azure/devops/pipelines/library/connect-to-azure) mit dem Namen `terraform-basic-testing-azure-connection`, damit Azure-Pipelines eine Verbindung mit Ihren Azure-Abonnements herstellen können.
 - **Installieren von Terraform**: Führen Sie [den Download und die Installation von Terraform](https://www.terraform.io/downloads.html) entsprechend den Anforderungen Ihrer Umgebung durch.
 - **Forken Sie die Testbeispiele**: Forken Sie das [Terraform-Beispielprojekt auf GitHub](https://github.com/Azure/terraform), und klonen Sie es auf Ihrem Dev/Test-Computer.
 
@@ -195,7 +193,7 @@ Bei Continuous Integration wird im Fall einer Änderung das gesamte System getes
 
     ![Wo befindet sich Ihr Code?](media/best-practices-integration-testing/new-pipeline-where-github-yaml.png)
 
-1. An diesem Punkt müssen Sie Azure DevOps möglicherweise für den Zugriff auf Ihre Organisation autorisieren. Weitere Informationen zu diesem Thema finden Sie im Artikel zum [Erstellen von GitHub-Repositorys](/azure/devops/pipelines/repos/github?view=azure-devops&tabs=yaml).
+1. An diesem Punkt müssen Sie Azure DevOps möglicherweise für den Zugriff auf Ihre Organisation autorisieren. Weitere Informationen zu diesem Thema finden Sie im Artikel zum [Erstellen von GitHub-Repositorys](/azure/devops/pipelines/repos/github).
 
 1. Wählen Sie in der Liste der Repositorys den Fork des Repositorys aus, den Sie in Ihrer GitHub-Organisation erstellt haben.
 
@@ -222,6 +220,8 @@ Sie können die Pipeline manuell über die Azure DevOps-Benutzeroberfläche aus
 Nachdem Sie diesen Schritt ausgeführt haben, zeigen Sie die Details in Azure DevOps an, um sicherzustellen, dass alles korrekt ausgeführt wurde.
 
 ![Azure DevOps-Pipeline mit grünem Status](media/best-practices-integration-testing/azure-devops-green-pipeline.png)
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Nächste Schritte
 

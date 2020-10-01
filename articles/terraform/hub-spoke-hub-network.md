@@ -4,12 +4,12 @@ description: Es wird beschrieben, wie Sie ein virtuelles Hubnetzwerk in Azure er
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 0833497301865506592639838c7d6075813bcf6e
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ee75fe6c7fe49463137f9e0a68e518290f78acce
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241142"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401510"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-in-azure-by-using-terraform"></a>Tutorial: Erstellen eines virtuellen Hubnetzwerks in Azure unter Verwendung von Terraform
 
@@ -22,8 +22,6 @@ In diesem Artikel werden die folgenden Aufgaben behandelt:
 > * Erstellen eines virtuellen Hub-Jumpbox-Computers unter Verwendung von Terraform
 > * Erstellen eines virtuellen privaten Hubnetzwerkgateways unter Verwendung von Terraform
 > * Herstellen von Verbindungen mit hubbasierten und lokalen Gateways unter Verwendung von Terraform
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -227,6 +225,8 @@ Erstellen Sie die Terraform-Konfigurationsdatei, die das virtuelle Hubnetzwerk d
     ```
     
 3. Speichern Sie die Datei, und beenden Sie den Editor.
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Nächste Schritte
 

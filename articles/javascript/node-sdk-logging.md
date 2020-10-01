@@ -1,15 +1,15 @@
 ---
 title: Protokollierung mit dem Azure SDK für JavaScript
 description: Hier erfahren Sie, wie Sie die Protokollierung mit dem Azure SDK für JavaScript-Clientbibliotheken aktivieren.
-ms.topic: article
+ms.topic: how-to
 ms.date: 07/23/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: fb4be05552a5ed1ea239776985f4f35ca6e900fa
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: b635baa1d1c30e21e43c32b8ef08b22eccf1619b
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218847"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364893"
 ---
 # <a name="logging-with-the-azure-sdk-for-javascript"></a>Protokollierung mit dem Azure SDK für JavaScript
 

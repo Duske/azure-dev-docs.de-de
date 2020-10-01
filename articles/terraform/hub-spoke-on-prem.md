@@ -4,12 +4,12 @@ description: Es wird beschrieben, wie Sie in Azure ein lokales virtuelles Netzwe
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 63ad0ef21ee9a6474710bf7ac40282d442105567
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 4faf366a585c7652584e5b70cf10b150a91d1b0e
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241102"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401470"
 ---
 # <a name="tutorial-create-on-premises-virtual-network-in-azure-using-terraform"></a>Tutorial: Erstellen eines lokalen virtuellen Netzwerks in Azure mit Terraform
 
@@ -22,8 +22,6 @@ Die folgenden Aufgaben werden erläutert:
 > * Erstellen von Ressourcen für Hub-Netzwerkappliances mithilfe von Terraform
 > * Erstellen eines lokalen virtuellen Computers mithilfe von Terraform
 > * Erstellen eines lokalen VPN-Gateways mithilfe von Terraform
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -221,6 +219,8 @@ Erstellen Sie die Terraform-Konfigurationsdatei, um ein lokales VNET zu deklarie
     ```
 
 1. Speichern Sie die Datei, und beenden Sie den Editor.
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Nächste Schritte
 

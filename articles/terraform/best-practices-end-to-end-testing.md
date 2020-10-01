@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie mit Terratest End-to-End-Tests für Terr
 ms.topic: tutorial
 ms.date: 07/31/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 182d403ed227eca50961e9db2df0d6766c4b9f54
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: b760908bf1950751b93ba1787f444ca37ee8bf83
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241292"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401710"
 ---
 # <a name="tutorial-setup-end-to-end-terratest-testing-on-terraform-projects"></a>Tutorial: Einrichten von End-to-End-Terratest-Tests für Terraform-Projekte
 
@@ -21,8 +21,6 @@ In diesem Artikel lernen Sie Folgendes:
 > * Grundlegendes zu End-to-End-Tests mit [Terratest](https://github.com/gruntwork-io/terratest)
 > * Schreiben eines End-to-End-Tests mit Golang
 > * Verwenden von Azure DevOps zum automatischen Auslösen von End-to-End-Tests, wenn Code in Ihr Repository committet wird
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -155,6 +153,8 @@ Die Ergebnisse des Tests sehen in etwa wie in der folgenden Ausgabe aus:
 PASS
 ok      test    391.052s
 ```
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Nächste Schritte
 

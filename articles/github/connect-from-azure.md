@@ -7,12 +7,12 @@ ms.topic: reference
 ms.service: azure
 ms.date: 08/31/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: d7c791aec426e139592e8a32e7779b2f02832d5f
-ms.sourcegitcommit: 5205d15c697bbfd4ecb3f45b5de093f709d11979
+ms.openlocfilehash: 4900097ea8d3635c2030f73eab1c63fb46323bc9
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90026411"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493121"
 ---
 # <a name="use-github-actions-to-connect-to-azure"></a>Verwenden von GitHub Actions zum Herstellen einer Verbindung mit Azure
 
@@ -30,7 +30,7 @@ Zur Verwendung der [Azure-Anmeldung](https://github.com/marketplace/actions/azur
 
 In diesem Beispiel erstellen Sie ein Geheimnis mit dem Namen `AZURE_CREDENTIALS`, das Sie für die Authentifizierung bei Azure verwenden können.  
 
-1. Falls Sie nicht über eine bereits vorhandene Anwendung verfügen, sollten Sie eine [neue Active Directory-Anwendung](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal&preserve-view=true) für die Verwendung mit Ihrem Dienstprinzipal registrieren.
+1. Falls Sie nicht über eine bereits vorhandene Anwendung verfügen, sollten Sie eine [neue Active Directory-Anwendung](/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal&preserve-view=true) für die Verwendung mit Ihrem Dienstprinzipal registrieren.
 
     ```azurecli-interactive
         appName="myApp"
@@ -41,7 +41,7 @@ In diesem Beispiel erstellen Sie ein Geheimnis mit dem Namen `AZURE_CREDENTIALS`
         --identifier-uris http://localhost/$appName
     ```
 
-1. [Erstellen Sie im Azure-Portal für Ihre App einen neuen Dienstprinzipal](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest). 
+1. [Erstellen Sie im Azure-Portal für Ihre App einen neuen Dienstprinzipal](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest). 
 
     ```azurecli-interactive
         az ad sp create-for-rbac --name "myApp" --role contributor \
@@ -67,11 +67,11 @@ In diesem Beispiel erstellen Sie ein Geheimnis mit dem Namen `AZURE_CREDENTIALS`
 
 1. Wählen Sie **Geheimnisse** und dann **Neues Geheimnis** aus.
 
-    :::image type="content" source="media/select-secrets.png" alt-text="Auswählen eines Geheimnisses zum Hinzufügen":::
+    :::image type="content" source="media/select-secrets.png" alt-text="Auswählen von „Einstellungen“ im Navigationsbereich":::
 
 1. Fügen Sie Ihr JSON-Objekt für Ihren Dienstprinzipal mit dem Namen `AZURE_CREDENTIALS` ein. 
 
-    :::image type="content" source="media/azure-secret-add.png" alt-text="Hinzufügen eines Geheimnisses in GitHub":::
+    :::image type="content" source="media/azure-secret-add.png" alt-text="Auswählen von „Einstellungen“ im Navigationsbereich":::
 
 1. Speichern Sie die Änderungen, indem Sie die Option **Add secret** (Geheimnis hinzufügen) auswählen.
 
@@ -158,19 +158,19 @@ In den folgenden Artikeln finden Sie ausführliche Informationen zum Herstellen 
 
 ### <a name="azure-active-directory"></a>Azure Active Directory 
 
-- [Tutorial: Integration des einmaligen Anmeldens (Single Sign-On, SSO) von Azure Active Directory mit GitHub](https://docs.microsoft.com/azure/active-directory/saas-apps/github-tutorial)   
+- [Tutorial: Integration des einmaligen Anmeldens (Single Sign-On, SSO) von Azure Active Directory mit GitHub](/azure/active-directory/saas-apps/github-tutorial)   
 
 ### <a name="power-bi"></a>Power BI
 
-- [Herstellen einer Verbindung mit GitHub mithilfe von Power BI](https://docs.microsoft.com/power-bi/service-connect-to-github)   
+- [Herstellen einer Verbindung mit GitHub mithilfe von Power BI](/power-bi/service-connect-to-github)   
 
 ### <a name="connectors"></a>Connectors
 
-- [GitHub-Connector für Azure Logic Apps, Power Automate und Power Apps](https://docs.microsoft.com/connectors/github/)   
+- [GitHub-Connector für Azure Logic Apps, Power Automate und Power Apps](/connectors/github/)   
 
 ### <a name="azure-databricks"></a>Azure Databricks
 
-- [GitHub-Versionskontrolle](https://docs.microsoft.com/azure/databricks/notebooks/github-version-control) 
+- [GitHub-Versionskontrolle](/azure/databricks/notebooks/github-version-control) 
 
 > [!div class="nextstepaction"]
 > [Bereitstellen von Apps aus GitHub in Azure](deploy-to-azure.md)

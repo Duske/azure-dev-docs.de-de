@@ -7,12 +7,12 @@ ms.date: 11/12/2019
 ms.service: app-service
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 22455b8f8215e0c3bfb9d4e9d8f75788cb56d844
-ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
+ms.openlocfilehash: 10d08226e0d97622c492f0e87a1fd0b175c76c4a
+ms.sourcegitcommit: f80537193d3e22eb24cce4a0a5464a996d1e63eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86405631"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91409962"
 ---
 # <a name="deploy-a-spring-app-to-app-service-with-mysql"></a>Bereitstellen einer Spring-App in App Service mit MySQL
 
@@ -182,13 +182,13 @@ set REGION=<region>
 
 Maven verwendet diese Werte, um die Azure-Ressourcen mit den von Ihnen angegebenen Namen zu erstellen. Durch die Verwendung von Umgebungsvariablen können Sie Ihre Kontogeheimnisse aus Ihren Projektdateien heraushalten.
 
-Aktualisieren Sie als nächstes die Datei *pom.xml*, um Maven für eine Azure-Bereitstellung zu konfigurieren. Fügen Sie nach dem zuvor hinzugefügten `<plugin>`-Element den folgenden XML-Code hinzu. Ändern Sie, falls notwendig, `1.9.1` in die aktuelle Version des [Maven-Plug-Ins für Azure App Service](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme).
+Aktualisieren Sie als nächstes die Datei *pom.xml*, um Maven für eine Azure-Bereitstellung zu konfigurieren. Fügen Sie nach dem zuvor hinzugefügten `<plugin>`-Element den folgenden XML-Code hinzu. Ändern Sie, falls notwendig, `1.11.0` in die aktuelle Version des [Maven-Plug-Ins für Azure App Service](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme).
 
 ```xml
 <plugin>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-webapp-maven-plugin</artifactId>
-    <version>1.9.1</version>
+    <version>1.11.0</version>
     <configuration>
         <schemaVersion>v2</schemaVersion>
         <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>
@@ -197,7 +197,7 @@ Aktualisieren Sie als nächstes die Datei *pom.xml*, um Maven für eine Azure-Be
         <region>${REGION}</region>
         <runtime>
             <os>linux</os>
-            <javaVersion>jre8</javaVersion>            
+            <javaVersion>jre8</javaVersion>
             <webContainer>TOMCAT 9.0</webContainer>
         </runtime>
         <deployment>
@@ -390,13 +390,13 @@ Aktualisieren Sie die *pom.xml*-Datei, um MySQL zur aktiven Konfiguration zu mac
 </profile>
 ```
 
-Aktualisieren Sie als nächstes die Datei *pom.xml*, um Maven für eine Azure-Bereitstellung und MySQL-Verwendung zu konfigurieren. Fügen Sie nach dem zuvor hinzugefügten `<plugin>`-Element den folgenden XML-Code hinzu. Ändern Sie, falls notwendig, `1.9.1` in die aktuelle Version des [Maven-Plug-Ins für Azure App Service](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme).
+Aktualisieren Sie als nächstes die Datei *pom.xml*, um Maven für eine Azure-Bereitstellung und MySQL-Verwendung zu konfigurieren. Fügen Sie nach dem zuvor hinzugefügten `<plugin>`-Element den folgenden XML-Code hinzu. Ändern Sie, falls notwendig, `1.11.0` in die aktuelle Version des [Maven-Plug-Ins für Azure App Service](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme).
 
 ```xml
 <plugin>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-webapp-maven-plugin</artifactId>
-    <version>1.9.1</version>
+    <version>1.11.0</version>
     <configuration>
         <schemaVersion>v2</schemaVersion>
         <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>
@@ -405,7 +405,7 @@ Aktualisieren Sie als nächstes die Datei *pom.xml*, um Maven für eine Azure-Be
         <region>${REGION}</region>
         <runtime>
             <os>linux</os>
-            <javaVersion>jre8</javaVersion>            
+            <javaVersion>jre8</javaVersion>
             <webContainer>TOMCAT 9.0</webContainer>
         </runtime>
         <appSettings>

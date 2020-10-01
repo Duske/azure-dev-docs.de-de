@@ -4,12 +4,12 @@ description: Es wird beschrieben, wie Sie zwei virtuelle Spoke-Netzwerke (VNETs)
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 236665b205a602466244a2c5d5cfee5800c51317
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 265c410d8fc8bdb51803406cc8003e6e349014d9
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241092"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401480"
 ---
 # <a name="tutorial-create-a-spoke-network-in-azure-using-terraform"></a>Tutorial: Erstellen eines Spoke-Netzwerks in Azure mit Terraform
 
@@ -21,8 +21,6 @@ Dieses Tutorial enthält die folgenden Aufgaben:
 > * Verwenden von HCL (HashiCorp-Sprache), um die Spoke-VNETs in einer Hub-Spoke-Topologie zu implementieren
 > * Verwenden von Terraform zum Erstellen virtueller Computer in den Spoke-Netzwerke
 > * Verwenden von Terraform für das Peering eines virtuellen Netzwerks mit den Hub-Netzwerken
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -303,6 +301,8 @@ In diesem Abschnitt werden die zwei Spoke-Skripts erstellt. Jedes Skript definie
      
 1. Speichern Sie die Datei, und beenden Sie den Editor.
   
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
+
 ## <a name="next-steps"></a>Nächste Schritte
 
 > [!div class="nextstepaction"] 

@@ -10,12 +10,12 @@ ms.service: azure-monitor
 ms.tgt_pltfrm: application-insights
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 97825b81869ac6d2845576bd77a972d4573a624d
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: ee48999f7d83857c4992e74ad4dc4b248bfe195b
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831756"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365213"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-application-insights"></a>Konfigurieren einer Spring Boot Initializer-App für die Verwendung von Application Insights
 
@@ -102,7 +102,7 @@ Gehen Sie zum Konfigurieren der Anwendung wie folgt vor:
    spring.application.name=[your app name]
    ```
 
-   Weitere Optimierungsoptionen für Application Insights finden Sie in der [Infodatei für Application Insights Spring Boot Starter](https://github.com/Microsoft/ApplicationInsights-Java/blob/master/azure-application-insights-spring-boot-starter/README.md).
+   Weitere Optimierungsoptionen für Application Insights finden Sie in der [Infodatei für Application Insights Spring Boot Starter](https://github.com/MicrosoftDocs/azure-dev-docs/blob/master/articles/java/spring-framework/spring-boot-starters-for-azure.md).
 
    > [!NOTE]
    > 
@@ -282,7 +282,7 @@ Application Insights unterstützt die automatische Erfassung externer Abhängigk
 
 Weitere Informationen zu Azure Application Insights und den verfügbaren Überwachungsfunktionen finden Sie auf der **[Application Insights]** -Homepage.
 
-Weitere Informationen zu weiteren Konfigurationsdetails von Application Insights Spring Boot Starter finden Sie [hier](https://github.com/Microsoft/ApplicationInsights-Java/blob/master/azure-application-insights-spring-boot-starter/README.md).
+Weitere Informationen zu weiteren Konfigurationsdetails von Application Insights Spring Boot Starter finden Sie [hier](https://github.com/MicrosoftDocs/azure-dev-docs/blob/master/articles/java/spring-framework/spring-boot-starters-for-azure.md).
 
 Wenn Sie Funktionen anfragen oder potenzielle Fehler melden möchten, stellen Sie bitte eine entsprechende Anfrage über unser [GitHub-Repository](https://github.com/Microsoft/ApplicationInsights-Java/issues).
 

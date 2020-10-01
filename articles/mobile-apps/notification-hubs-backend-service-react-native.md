@@ -6,12 +6,12 @@ ms.service: mobile-services
 ms.topic: tutorial
 ms.date: 07/27/2020
 ms.author: alstrakh
-ms.openlocfilehash: 1fbfd29cce90222334309cd24339eb196a3aaa36
-ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
+ms.openlocfilehash: b8846a2171c6f99a4796d288774c3b525093238a
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810643"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493246"
 ---
 # <a name="tutorial-send-push-notifications-to-react-native-apps-using-azure-notification-hubs-via-a-backend-service"></a>Tutorial: Senden von Pushbenachrichtigungen an React Native-Apps mit Azure Notification Hubs über einen Back-End-Dienst  
 
@@ -23,7 +23,7 @@ ms.locfileid: "87810643"
 > * [Flutter](notification-hubs-backend-service-flutter.md)
 > * [React Native](notification-hubs-backend-service-react-native.md)
 
-In diesem Tutorial wird [Azure Notification Hubs](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-overview) verwendet, um Pushbenachrichtigungen an eine [React Native](https://reactnative.dev/)-Anwendung für **Android** und **iOS** zu senden.  
+In diesem Tutorial wird [Azure Notification Hubs](/azure/notification-hubs/notification-hubs-push-notification-overview) verwendet, um Pushbenachrichtigungen an eine [React Native](https://reactnative.dev/)-Anwendung für **Android** und **iOS** zu senden.  
 
 [!INCLUDE [Notification Hubs Backend Service Introduction](includes/notification-hubs-backend-service-introduction.md)]
 
@@ -62,9 +62,9 @@ Für iOS benötigen Sie Folgendes:
 Sie können die Schritte in diesem Beispiel zu den Grundprinzipien ohne vorherige Erfahrung ausführen. Kenntnisse der folgenden Aspekte sind jedoch von Vorteil.
 
 * [Apple Developer-Portal](https://developer.apple.com)
-* [ASP.NET Core](https://docs.microsoft.com/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1)
+* [ASP.NET Core](/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1)
 * [Google Firebase-Konsole](https://console.firebase.google.com/u/0/)
-* [Microsoft Azure](https://portal.azure.com) und [Senden von Pushbenachrichtigungen an iOS-Apps mit Azure Notification Hubs](https://docs.microsoft.com/azure/notification-hubs/ios-sdk-get-started)
+* [Microsoft Azure](https://portal.azure.com) und [Senden von Pushbenachrichtigungen an iOS-Apps mit Azure Notification Hubs](/azure/notification-hubs/ios-sdk-get-started)
 * [React Native](https://reactnative.dev/docs/getting-started)
 
 Die angegebenen Schritte gelten für [Visual Studio für Mac](https://visualstudio.microsoft.com/vs/mac/) sowie für [Visual Studio Code](https://code.visualstudio.com/download), können aber auch in [Visual Studio 2019](https://visualstudio.microsoft.com/vs) verwendet werden.
@@ -85,7 +85,7 @@ In diesem Abschnitt richten Sie **[Firebase Cloud Messaging (FCM)](https://fireb
 
 ## <a name="create-an-aspnet-core-web-api-backend-application"></a>Erstellen einer Anwendung für das ASP.NET Core-Web-API-Back-End
 
-In diesem Abschnitt wird das [ASP.NET Core-Web-API](https://dotnet.microsoft.com/apps/aspnet/apis)-Back-End für die [Geräteregistrierung](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-registration-management#what-is-device-registration) und das Senden von Benachrichtigungen an die mobile React Native-App erstellt.
+In diesem Abschnitt wird das [ASP.NET Core-Web-API](https://dotnet.microsoft.com/apps/aspnet/apis)-Back-End für die [Geräteregistrierung](/azure/notification-hubs/notification-hubs-push-notification-registration-management#what-is-device-registration) und das Senden von Benachrichtigungen an die mobile React Native-App erstellt.
 
 [!INCLUDE [Create an ASP.NET Core Web API backend application](includes/notification-hubs-backend-service-web-api.md)]
 
@@ -117,16 +117,16 @@ Sie können jetzt das Senden von Benachrichtigungen über den Back-End-Dienst te
 
 ## <a name="related-links"></a>Verwandte Links
 
-* [Übersicht über Azure Notification Hubs](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-overview)
-* [Installieren von Visual Studio für Mac](https://docs.microsoft.com/visualstudio/mac/installation?view=vsmac-2019)
+* [Übersicht über Azure Notification Hubs](/azure/notification-hubs/notification-hubs-push-notification-overview)
+* [Installieren von Visual Studio für Mac](/visualstudio/mac/installation?view=vsmac-2019)
 * [Herunterladen von Visual Studio Code](https://code.visualstudio.com/download)
 * [Einrichten der Entwicklungsumgebung](https://reactnative.dev/docs/environment-setup)
 * [Notification Hubs SDK für Back-End-Vorgänge](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)
 * [Notification Hubs-SDK auf GitHub](https://github.com/Azure/azure-notificationhubs)
-* [Registrieren bei einem Anwendungs-Back-End](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-ios-aspnet-register-user-from-backend-to-push-notification)
-* [Registrierungsverwaltung](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-registration-management)
-* [Arbeiten mit Tags](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-tags-segment-push-message)
-* [Arbeiten mit benutzerdefinierten Vorlagen](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages)
+* [Registrieren bei einem Anwendungs-Back-End](/azure/notification-hubs/notification-hubs-ios-aspnet-register-user-from-backend-to-push-notification)
+* [Registrierungsverwaltung](/azure/notification-hubs/notification-hubs-push-notification-registration-management)
+* [Arbeiten mit Tags](/azure/notification-hubs/notification-hubs-tags-segment-push-message)
+* [Arbeiten mit benutzerdefinierten Vorlagen](/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages)
 
 ## <a name="next-steps"></a>Nächste Schritte
 

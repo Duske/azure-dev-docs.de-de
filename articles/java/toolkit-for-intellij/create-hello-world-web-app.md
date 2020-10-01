@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: devx-track-java
-ms.openlocfilehash: b340802d861ad1dbe1b4f118734e527cdefeec21
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: af85a31f39f87c38e378fc1cf4254053447b9dbd
+ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831606"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91586173"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-intellij"></a>Erstellen einer „Hello World“-Web-App für Azure App Service mit IntelliJ
 
@@ -61,7 +61,7 @@ Im Folgenden wird Schritt für Schritt beschrieben, wie Sie den Azure-Anmeldepro
 
 1. Wählen Sie im Dialogfeld **Neues Projekt** die Option **Maven** aus, und vergewissern Sie sich, dass die Option **Aus Archetyp erstellen** aktiviert ist. Wählen Sie in der Liste den Eintrag **maven-archetype-webapp** aus, und klicken Sie anschließend auf **Weiter**.
 
-   :::image type="content" source="media/create-hello-world-web-app/maven-archetype-webapp.png" alt-text="Auswählen der Option „maven-archetype-webapp“"::: 
+   :::image type="content" source="media/create-hello-world-web-app/maven-archetype-webapp.png" alt-text="Anmelden bei Azure mit IntelliJ"::: 
 
 1. Erweitern Sie das Dropdownmenü **Artifact Coordinates** (Artefaktkoordinaten), um alle Eingabefelder anzuzeigen, und geben Sie die unten aufgeführten Informationen für Ihre neue Web-App an. Klicken Sie anschließend auf **Weiter**:
 
@@ -80,7 +80,7 @@ Im Folgenden wird Schritt für Schritt beschrieben, wie Sie den Azure-Anmeldepro
     </body>
    </html>
    ```
-   :::image type="content" source="media/create-hello-world-web-app/open-index-page.png" alt-text="Öffnen der Datei „index.jsp“":::
+   :::image type="content" source="media/create-hello-world-web-app/open-index-page.png" alt-text="Anmelden bei Azure mit IntelliJ":::
 
 ## <a name="deploying-web-app-to-azure"></a>Bereitstellen der Web-App in Azure
 
@@ -90,7 +90,7 @@ Im Folgenden wird Schritt für Schritt beschrieben, wie Sie den Azure-Anmeldepro
 
    a. Klicken Sie auf **No available webapp, click to create a new one** (Keine Web-App verfügbar. Klicken Sie hier, um eine neue zu erstellen.), um eine neue Web-App zu erstellen. Wählen Sie andernfalls im Web-App-Dropdownmenü die Option **Create New WebApp** (Neue Web-App erstellen) aus, falls Ihr Abonnement vorhandene Web-Apps enthält.
 
-      :::image type="content" source="media/create-hello-world-web-app/deploy-to-azure-webapps.png" alt-text="Dialogfeld „Deploy to Azure“ (In Azure bereitstellen)":::
+      :::image type="content" source="media/create-hello-world-web-app/deploy-to-azure-webapps.png" alt-text="Anmelden bei Azure mit IntelliJ":::
 
    Geben Sie im Popupdialogfeld **Create WebApp** (Web-App erstellen) die folgenden Informationen an, und klicken Sie auf **OK**: 
 
@@ -107,7 +107,7 @@ Im Folgenden wird Schritt für Schritt beschrieben, wie Sie den Azure-Anmeldepro
 
 1. Sie können über den Link in der Statusmeldung zu Ihrer Web-App navigieren.
 
-   :::image type="content" source="media/create-hello-world-web-app/browse-web-app.png" alt-text="Durchsuchen Ihrer Web-App":::
+   :::image type="content" source="media/create-hello-world-web-app/browse-web-app.png" alt-text="Anmelden bei Azure mit IntelliJ":::
 
 ## <a name="managing-deploy-configurations"></a>Verwalten von Bereitstellungskonfigurationen
 
@@ -116,7 +116,7 @@ Im Folgenden wird Schritt für Schritt beschrieben, wie Sie den Azure-Anmeldepro
 
 1. Vor dem Ausführen des Bereitstellungsvorgangs für Ihre Web-App können Sie die Standardeinstellungen ändern, indem Sie auf das Dropdownmenü für Ihre Web-App klicken und die Option **Konfigurationen bearbeiten** auswählen.
 
-   :::image type="content" source="media/create-hello-world-web-app/edit-configuration-menu.png" alt-text="Menü „Konfiguration bearbeiten“":::
+   :::image type="content" source="media/create-hello-world-web-app/edit-configuration-menu.png" alt-text="Anmelden bei Azure mit IntelliJ":::
 
 1. Im Dialogfeld **Konfigurationen ausführen/debuggen** können Sie die Standardeinstellungen ändern. Klicken Sie auf **OK**, um die Einstellungen zu speichern.
 
@@ -145,7 +145,6 @@ Weitere Informationen zum Erstellen von Azure-Web-Apps finden Sie unter [Web-App
 [Web-Apps – Übersicht]: /azure/app-service/app-service-web-overview
 [Apache Tomcat]: http://tomcat.apache.org/
 [Jetty]: http://www.eclipse.org/jetty/
-[Legacy Version]: create-hello-world-web-app-legacy-version.md
 [intelliJ-sign-in-instructions]: sign-in-instructions.md
 
 <!-- IMG List -->

@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: 1f994464e6d0cb1c90bc1078eee5061cb91e6778
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: d3c472b66ffc622fb3ff3e5d149a902f99fcd6f1
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87401456"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493264"
 ---
 ### <a name="validate-package-name-and-permissions"></a>Überprüfen von Paketname und Berechtigungen
 
@@ -111,7 +111,7 @@ ms.locfileid: "87401456"
     ```
 
     > [!NOTE]
-    > Diese Klasse bietet eine eindeutige ID (unter Verwendung von [Secure.AndroidId](https://docs.microsoft.com/dotnet/api/android.provider.settings.secure.androidid?view=xamarin-android-sdk-9)) als Teil der Nutzlast der Benachrichtigungshubregistrierung.
+    > Diese Klasse bietet eine eindeutige ID (unter Verwendung von [Secure.AndroidId](/dotnet/api/android.provider.settings.secure.androidid?view=xamarin-android-sdk-9)) als Teil der Nutzlast der Benachrichtigungshubregistrierung.
 
 1. Fügen Sie dem Ordner **Dienste** mit dem Namen *PushNotificationFirebaseMessagingService.cs* eine weitere **leere Klasse** hinzu, und fügen Sie dann die folgende Implementierung hinzu.
 

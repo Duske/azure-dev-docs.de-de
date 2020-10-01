@@ -5,12 +5,12 @@ keywords: Azure DevOps Terraform VM virtueller Computer Cluster
 ms.topic: how-to
 ms.date: 03/09/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: b0de2ed0c82f26902470835658ba7bb34f1acd7a
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 1e383cbe7c7cb8a19f59ba1768f9f598f0e6dc94
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241202"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401640"
 ---
 # <a name="create-an-azure-vm-cluster-with-terraform-and-hcl"></a>Erstellen eines Azure-VM-Clusters mit Terraform und HCL
 
@@ -26,8 +26,6 @@ Dabei lernen Sie Folgendes:
 > * Initialisieren Sie Terraform.
 > * Erstellen eines Terraform-Ausführungsplans
 > * Anwenden des Terraform-Ausführungsplans, um die Azure-Ressourcen zu erstellen
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -252,6 +250,8 @@ Wenn Sie einen zuvor gespeicherten Ausführungsplan anwenden möchten, führen S
   ```
 
 ![Anwenden eines Terraform-Ausführungsplans](media/create-vm-cluster-with-infrastructure/terraform-apply.png)
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Nächste Schritte
 

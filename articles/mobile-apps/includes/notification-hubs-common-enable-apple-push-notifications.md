@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: f83e5ae060ee6b13523af8dbb271906dff02e027
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: 07778fad0d390b297850a10b544f08d9e5ec3569
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87401500"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493147"
 ---
 ### <a name="register-your-ios-app-for-push-notifications"></a>Registrieren der iOS-App für Pushbenachrichtigungen
 
@@ -51,7 +51,7 @@ Ein Zertifikat ist erforderlich, damit der Benachrichtigungshub mit **Apple Push
 
 1. [Erstellen eines P8-Zertifikats, das für die tokenbasierte Authentifizierung verwendet werden kann](#option-2-creating-a-p8-certificate-that-can-be-used-for-token-based-authentication) (*der neuere und empfohlene Ansatz*)
 
-Die neuere Methode bietet eine Reihe von Vorteilen. Diese sind unter [Tokenbasierte Authentifizierung (HTTP/2) für APNS](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-http2-token-authentification) dokumentiert. Es sind weniger Schritte erforderlich, sie ist zudem aber für bestimmte Szenarien vorgeschrieben. Es werden jedoch die Schritte für beide Ansätze beschrieben, da beide für die Zwecke dieses Tutorials funktionieren.
+Die neuere Methode bietet eine Reihe von Vorteilen. Diese sind unter [Tokenbasierte Authentifizierung (HTTP/2) für APNS](/azure/notification-hubs/notification-hubs-push-notification-http2-token-authentification) dokumentiert. Es sind weniger Schritte erforderlich, sie ist zudem aber für bestimmte Szenarien vorgeschrieben. Es werden jedoch die Schritte für beide Ansätze beschrieben, da beide für die Zwecke dieses Tutorials funktionieren.
 
 ##### <a name="option-1-creating-a-p12-push-certificate-that-can-be-uploaded-directly-to-notification-hub"></a>OPTION 1: Erstellen eines P12-Pushzertifikats, das direkt in den Notification Hub hochgeladen werden kann
 
@@ -168,7 +168,7 @@ Nach Abschluss dieser Schritte verfügen Sie über folgende Informationen, die S
 1. Wählen Sie im Fenster **Select certificates** (Zertifikate auswählen) das Entwicklungszertifikat aus, das Sie für die Codesignierung verwenden, und wählen Sie dann **Continue** (Weiter).
 
     > [!NOTE]
-    > Bei diesem Zertifikat handelt es sich nicht um das im [vorherigen Schritt](#creating-a-certificate-for-notification-hubs) erstellte Pushzertifikat, sondern um Ihr Entwicklungszertifikat. Wenn kein solches vorhanden ist, müssen Sie es erstellen, da dies eine [Voraussetzung](#prerequisites) für dieses Tutorial ist. Entwicklerzertifikate können im [Apple-Entwicklerportal](https://developer.apple.com) über [Xcode-](https://developer.apple.com/library/archive/documentation/ToolsLanguages/Conceptual/YourFirstAppStoreSubmission/ProvisionYourDevicesforDevelopment/ProvisionYourDevicesforDevelopment.html) oder in [Visual Studio](https://docs.microsoft.com/xamarin/ios/get-started/installation/device-provisioning/) erstellt werden.
+    > Bei diesem Zertifikat handelt es sich nicht um das im [vorherigen Schritt](#creating-a-certificate-for-notification-hubs) erstellte Pushzertifikat, sondern um Ihr Entwicklungszertifikat. Wenn kein solches vorhanden ist, müssen Sie es erstellen, da dies eine [Voraussetzung](#prerequisites) für dieses Tutorial ist. Entwicklerzertifikate können im [Apple-Entwicklerportal](https://developer.apple.com) über [Xcode-](https://developer.apple.com/library/archive/documentation/ToolsLanguages/Conceptual/YourFirstAppStoreSubmission/ProvisionYourDevicesforDevelopment/ProvisionYourDevicesforDevelopment.html) oder in [Visual Studio](/xamarin/ios/get-started/installation/device-provisioning/) erstellt werden.
 
 1. Wechseln Sie zurück zur Seite **Zertifikate, Bezeichner und Profile**, wählen Sie im Menü auf der linken Seite **Profile** und dann **+** aus, um ein neues Profil zu erstellen. Der Bildschirm zum **Registrieren eines neuen Bereitstellungsprofils** wird angezeigt.
 
