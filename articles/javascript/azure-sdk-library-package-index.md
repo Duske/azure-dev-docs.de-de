@@ -1,15 +1,15 @@
 ---
 title: Azure SDK-Bibliotheken für JavaScript
 description: Hier finden Sie eine Liste der Paketnamen, NPM-Links sowie Links zu Dokumentationen und Quellcode für alle Bibliotheken im Azure SDK für JavaScript.
-ms.date: 09/16/2020
+ms.date: 09/30/2020
 ms.topic: reference
 ms.custom: devx-track-js
-ms.openlocfilehash: 24e73206552161f5a020b53f8df64d975a955814
-ms.sourcegitcommit: 4af22924a0eaf01e6902631c0714045c02557de4
+ms.openlocfilehash: a4ca35dbc4a89855e3fd4da100fe1d7b685d2f01
+ms.sourcegitcommit: 0b1c751c5a4a837977fec1c777bca5ad15cf2fc7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91208741"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91621681"
 ---
 # <a name="azure-libraries-packages-for-javascript"></a>Azure-Bibliothekspakete für JavaScript
 
@@ -17,9 +17,10 @@ Die Azure-Bibliotheken für JavaScript stehen hier zur Installation zur Verfügu
 * [NPM](https://www.npmjs.com/)
 * [YARN](https://yarnpkg.com/)
 
-Pakete, die einen Bereich verwenden (etwa `@azure`), sind die modernen Bibliotheken.
 
-## <a name="libraries-using-azurecore"></a>Bibliotheken mit azure.core
+[!INCLUDE [Types of SDK client libraries](includes/azure-sdk-types.md)]
+
+## <a name="modern-javascripttypescript-libraries"></a>Moderne JavaScript-/TypeScript-Bibliotheken
 
 [!INCLUDE [javascript-new-releases](../includes/javascript-new.md)]
 
