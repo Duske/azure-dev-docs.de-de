@@ -108,8 +108,6 @@
       items:
         - name: Authentifizieren von Apps mit Azure
           href: azure-sdk-authenticate.md
-        - name: Zuweisen von Rollenberechtigungen zu Sicherheitsprinzipalen
-          href: how-to-assign-role-permissions.md
         - name: Verwalten von Dienstprinzipalen
           href: how-to-manage-service-principals.md
         - name: Schritt-für-Schritt-Tutorial
