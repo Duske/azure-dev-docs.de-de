@@ -4,12 +4,12 @@ description: Übersicht über die Features und Funktionen der Azure-Bibliotheken
 ms.date: 09/19/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 81bda5dbe4c39341c2c799ecdbac10c2f0347bcc
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.openlocfilehash: 3c1cd0deb0c1df31ef3b191a9526bc99ad01fbc1
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91364433"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764694"
 ---
 # <a name="use-the-azure-libraries-sdk-for-python"></a>Verwenden der Azure-Bibliotheken (SDK) für Python
 
@@ -31,7 +31,7 @@ Die Open-Source-basierten Azure-Bibliotheken für Python vereinfachen die Bereit
   - [Bereitstellen und Verwalten von Azure-Ressourcen mit Verwaltungsbibliotheken](#provision-and-manage-azure-resources-with-management-libraries)
   - [Verbinden mit und Verwenden von Azure-Ressourcen mit Clientbibliotheken](#connect-to-and-use-azure-resources-with-client-libraries)
 
-- Dokumentationsmaterial für die Bibliotheken finden Sie in der nach Azure-Dienst strukturierten [Referenz](/python/api/overview/azure/?view=azure-python) oder im nach Paketname strukturierten [Python-API-Browser](/python/api/?view=azure-python). Derzeit müssen Sie häufig auf eine Reihe von Ebenen klicken, um zu den Klassen und Methoden zu gelangen, die Sie interessieren. Wir möchten uns im Voraus für diese unterdurchschnittliche Erfahrung entschuldigen. Wir arbeiten an einer Verbesserung!
+- Dokumentationsmaterial für die Bibliotheken finden Sie in der nach Azure-Dienst strukturierten [Referenz](/python/api/overview/azure/) oder im nach Paketname strukturierten [Python-API-Browser](/python/api/). Derzeit müssen Sie häufig auf eine Reihe von Ebenen klicken, um zu den Klassen und Methoden zu gelangen, die Sie interessieren. Wir möchten uns im Voraus für diese unterdurchschnittliche Erfahrung entschuldigen. Wir arbeiten an einer Verbesserung!
 
 - Wenn Sie die Bibliotheken selbst ausprobieren möchten, sollten Sie zunächst [Ihre lokale Entwicklungsumgebung einrichten](configure-local-development-environment.md). Anschließend können Sie eines der folgenden eigenständigen Beispiele ausprobieren. Die Reihenfolge spielt dabei keine Rolle: [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Ressourcengruppe](azure-sdk-example-resource-group.md), [Beispiel: Verwenden der Azure-Bibliotheken mit Azure Storage](azure-sdk-example-storage.md), [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Web-App](azure-sdk-example-web-app.md), [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Datenbank](azure-sdk-example-database.md) und [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen eines virtuellen Computers](azure-sdk-example-virtual-machines.md).
 
@@ -65,13 +65,13 @@ Die *Verwaltungs*bibliotheken des SDK (oder die „Verwaltungsebene“), deren N
 
 Mit den Verwaltungsbibliotheken können Sie Konfigurations- und Bereitstellungsskripts schreiben, um dieselben Aufgaben auszuführen, die Sie auch über das [Azure-Portal](https://portal.azure.com) oder mithilfe der [Azure CLI](/cli/azure/install-azure-cli) durchführen können. (Wie zuvor erwähnt, ist die Azure CLI in Python geschrieben und verwendet die Verwaltungsbibliotheken, um ihre verschiedenen Befehle zu implementieren.)
 
-Ausführliche Informationen zur Verwendung der Verwaltungsbibliotheken finden Sie im [SDK-GitHub-Repository](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk) in der Datei *README.md* oder *README.rst*, die sich im Projektordner der jeweiligen Bibliothek befindet. Weitere Codeausschnitte stehen in der [Referenzdokumentation](/python/api?view=azure-python) sowie in den [Azure-Beispielen](/samples/browse/?languages=python&products=azure) zur Verfügung.
+Ausführliche Informationen zur Verwendung der Verwaltungsbibliotheken finden Sie im [SDK-GitHub-Repository](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk) in der Datei *README.md* oder *README.rst*, die sich im Projektordner der jeweiligen Bibliothek befindet. Weitere Codeausschnitte stehen in der [Referenzdokumentation](/python/api) sowie in den [Azure-Beispielen](/samples/browse/?languages=python&products=azure) zur Verfügung.
 
 ## <a name="connect-to-and-use-azure-resources-with-client-libraries"></a>Verbinden mit und Verwenden von Azure-Ressourcen mit Clientbibliotheken
 
 Die *Client*bibliotheken (oder die „Datenebene“) helfen Ihnen beim Schreiben von Python-Anwendungscode, um mit bereits bereitgestellten Diensten zu interagieren. Clientbibliotheken sind nur für Dienste mit Client-API-Unterstützung vorhanden.
 
-Ausführliche Informationen zur Verwendung der Clientbibliotheken finden Sie im [GitHub-Repository des SDK](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk) in der Datei *README.md* oder *README.rst*, die sich im Projektordner der jeweiligen Bibliothek befindet. Weitere Codeausschnitte stehen in der [Referenzdokumentation](/python/api?view=azure-python) sowie in den [Azure-Beispielen](/samples/browse/?languages=python&products=azure) zur Verfügung.
+Ausführliche Informationen zur Verwendung der Clientbibliotheken finden Sie im [GitHub-Repository des SDK](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk) in der Datei *README.md* oder *README.rst*, die sich im Projektordner der jeweiligen Bibliothek befindet. Weitere Codeausschnitte stehen in der [Referenzdokumentation](/python/api) sowie in den [Azure-Beispielen](/samples/browse/?languages=python&products=azure) zur Verfügung.
 
 ## <a name="get-help-and-connect-with-the-sdk-team"></a>Hilfe erhalten und das SDK-Team kontaktieren
 
