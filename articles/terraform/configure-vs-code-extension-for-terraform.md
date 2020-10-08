@@ -4,12 +4,12 @@ description: Erfahren Sie, wie Sie die Azure Terraform-Erweiterung in Visual Stu
 ms.topic: how-to
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: dbb76f2bcdce12ebb55d9ae6002747701858751e
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ac8c5c765237a065fbb2531f71de7f39644b70dc
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241322"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401760"
 ---
 # <a name="configure-the-azure-terraform-visual-studio-code-extension"></a>Konfigurieren der Azure Terraform-Erweiterung für Visual Studio Code
 
@@ -20,8 +20,6 @@ In diesem Artikel werden folgende Vorgehensweisen behandelt:
 > * Automatisieren der Bereitstellung von Azure-Diensten mithilfe von Terraform
 > * Installieren und Verwenden der Terraform-Erweiterung für Visual Studio Code für Azure-Dienste
 > * Verwenden von Visual Studio Code zum Schreiben, Planen und Ausführen von Terraform-Plänen
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -137,8 +135,6 @@ In dieser Übung erstellen Sie eine grundlegende Terraform-Konfigurationsdatei, 
 1. Wählen Sie auf der Menüleiste **Ansicht > Befehlspalette > Azure Terraform: Init** aus.
 
 1. Klicken Sie in der angezeigten Bestätigung auf **OK**.
-
-    ![Bestätigungsdialogfeld für das Öffnen von Cloud Shell](media/configure-vs-code-extension-for-terraform/tf-do-you-want-to-open-cloud-shell.png)
 
 1. Wenn Sie Cloud Shell zum ersten Mal über einen neuen Ordner starten, werden Sie zur Erstellung einer Webanwendung aufgefordert. Wählen Sie **Open**(Öffnen).
 
@@ -270,11 +266,9 @@ Bevor Sie die Terraform-Befehle in Visual Studio Code verwenden können, müssen
 
 1. Wählen Sie in der Liste der Testtypoptionen **lint** aus.
 
-    ![Auswählen des Testtyps](media/configure-vs-code-extension-for-terraform/tf-select-type-of-test-lint.png)
+    ![Auswählen von „lint“ als Testtyp](media/configure-vs-code-extension-for-terraform/tf-select-type-of-test-lint.png)
 
 1. Klicken Sie in der angezeigten Bestätigung auf **OK**, und folgen Sie den Anweisungen auf dem Bildschirm.
-
-    ![Bestätigungsdialogfeld für das Öffnen von Cloud Shell](media/configure-vs-code-extension-for-terraform/tf-do-you-want-to-open-cloudshell-small.png)
 
 >[!NOTE]
 >Wenn Sie den **lint**- oder den **end to end**-Test durchführen, verwendet Azure einen Containerdienst, um einen Testcomputer für den eigentlichen Test bereitzustellen. Deshalb kann es mehrere Minuten dauern, bis Ihre Testergebnisse zurückgegeben werden.
@@ -289,11 +283,9 @@ Nach einigen Augenblicken wird eine Liste im Terminalbereich angezeigt, die folg
 
 1. Wählen Sie aus der Liste der Testtypoptionen **end to end** aus.
 
-    ![Auswählen des Testtyps](media/configure-vs-code-extension-for-terraform/tf-select-type-of-test-end-to-end.png)
+    ![Auswählen von „end to end“ als Testtyp](media/configure-vs-code-extension-for-terraform/tf-select-type-of-test-end-to-end.png)
 
 1. Klicken Sie in der angezeigten Bestätigung auf **OK**, und folgen Sie den Anweisungen auf dem Bildschirm.
-
-    ![Bestätigungsdialogfeld für das Öffnen von Cloud Shell](media/configure-vs-code-extension-for-terraform/tf-do-you-want-to-open-cloudshell-small.png)
 
 >[!NOTE]
 >Wenn Sie den **lint**- oder den **end to end**-Test durchführen, verwendet Azure einen Containerdienst, um einen Testcomputer für den eigentlichen Test bereitzustellen. Deshalb kann es mehrere Minuten dauern, bis Ihre Testergebnisse zurückgegeben werden.
@@ -302,6 +294,9 @@ Nach einigen Augenblicken wird eine Liste im Terminalbereich angezeigt, die folg
 
 ![Testergebnisse](media/configure-vs-code-extension-for-terraform/tf-end-to-end-test-results.png)
 
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
+
 ## <a name="next-steps"></a>Nächste Schritte
+
 > [!div class="nextstepaction"]
 > [Liste der für Azure (und andere unterstützte Anbieter) verfügbaren Terraform-Module](https://registry.terraform.io/)

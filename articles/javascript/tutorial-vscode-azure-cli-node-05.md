@@ -1,15 +1,15 @@
 ---
 title: Streamen von Protokollen aus Azure App Service
-description: 'Teil 5 des Tutorials: Anzeigen von Protokollen'
-ms.topic: conceptual
+description: 'Teil 5 des Azure CLI-Tutorials: Anzeigen von Protokollen'
+ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 7a962f7e6dc7cdb572f78e40b25e1ff98f102ea3
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 0cb28cc7bafd7d0d713fc980c72a7a41474d5060
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88217903"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365143"
 ---
 # <a name="stream-logs-from-app-service"></a>Streamen von Protokollen aus App Service
 

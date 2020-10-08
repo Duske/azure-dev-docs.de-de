@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: d3504137c2c9a8ee2b1af960a17deb902be95d7a
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: e06d09d4f44366ba995ecaa401df901dc6270c6d
+ms.sourcegitcommit: f80537193d3e22eb24cce4a0a5464a996d1e63eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831986"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91409972"
 ---
 # <a name="tutorial-reading-a-secret-from-azure-key-vault-in-a-spring-boot-application"></a>Tutorial: Einlesen eines Geheimnisses aus Azure Key Vault in eine Spring Boot-Anwendung
 
@@ -398,7 +398,7 @@ Führen Sie die folgenden Schritte aus, um Ihre POM-Instanz für die Bereitstell
     <plugin>
      <groupId>com.microsoft.azure</groupId>
      <artifactId>azure-webapp-maven-plugin</artifactId>
-     <version>1.9.1</version>
+     <version>1.11.0</version>
     </plugin>
    ```
 
@@ -412,7 +412,9 @@ Führen Sie die folgenden Schritte aus, um Ihre POM-Instanz für die Bereitstell
    mvn azure-webapp:config
    ```
 
-1. Stellen Sie sicher, dass als Betriebssystem `linux` ausgewählt ist.
+1. Vergewissern Sie sich, dass Sie für das Abonnement (`Subscription`) die gleiche Abonnement-ID mit der von Ihnen erstellten Key Vault-Instanz ausgewählt haben.
+1. Für die Web-App (`Web App`) können Sie entweder eine vorhandene Web-App oder aber `<create>` auswählen, um eine neue Web-App zu erstellen. Bei Verwendung einer vorhandenen Web-App gelangen Sie direkt zum letzten **Bestätigungsschritt**.
+1. Für das Betriebssystem (`OS`) muss `linux` ausgewählt werden.
 1. Stellen Sie für `javaVersion` sicher, dass die Java-Version angegeben ist, die Sie in Spring Initializr ausgewählt haben.  Da wir oben `11` ausgewählt haben, wählen wir hier ebenfalls „11“ aus.
 1. Übernehmen Sie für die restlichen Fragen jeweils die Standardwerte.
 1. Wenn Sie zur Bestätigung aufgefordert werden, können Sie „Y“ auswählen, um fortzufahren. (Bei Auswahl von „N“ beginnt die Beantwortung der Fragen erneut.)  Nachdem die Ausführung des Plug-Ins abgeschlossen ist, können Sie die POM-Datei bearbeiten.
@@ -437,9 +439,10 @@ Führen Sie die folgenden Schritte aus, um die weiteren erforderlichen Änderung
      <plugin> 
        <groupId>com.microsoft.azure</groupId>  
        <artifactId>azure-webapp-maven-plugin</artifactId>  
-       <version>1.9.1</version>  
+       <version>1.11.0</version>  
        <configuration>
          <schemaVersion>V2</schemaVersion>
+         *<subscriptionId>********-****-****-****-************</subscriptionId>
          *<resourceGroup>contosorg</resourceGroup>
          *<appName>contosokeyvault</appName>
          <pricingTier>P1v2</pricingTier>

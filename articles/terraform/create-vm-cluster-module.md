@@ -1,111 +1,72 @@
 ---
-title: Erstellen eines Azure-VM-Clusters mit Terraform mithilfe der Modulregistrierung
+title: Konfigurieren eines Azure-VM-Clusters mithilfe von Terraform
 description: Es wird beschrieben, wie Sie in Azure mit Terraform-Modulen einen Cluster mit virtuellen Windows-Computern erstellen.
 keywords: Azure DevOps Terraform VM virtueller Computer Cluster Modul Registrierung
 ms.topic: how-to
-ms.date: 03/09/2020
+ms.date: 09/27/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 794551aea159318b37426bb5d5dd7e1a13cca3d1
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 73f375090a2178b38b0fc7e0afd4eb8c6b514672
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241232"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401584"
 ---
-# <a name="create-an-azure-vm-cluster-with-terraform-using-the-module-registry"></a>Erstellen eines Azure-VM-Clusters mit Terraform mithilfe der Modulregistrierung
+# <a name="configure-an-azure-vm-cluster-using-terraform"></a>Konfigurieren eines Azure-VM-Clusters mithilfe von Terraform
 
-Dieser Artikel führt Sie durch die Erstellung eines kleinen VM-Clusters mit dem [Azure Compute-Modul](https://registry.terraform.io/modules/Azure/compute/azurerm/1.0.2) für Terraform. In diesem Artikel wird Folgendes behandelt:
-
-> [!div class="checklist"]
-> * Einrichten der Authentifizierung mit Azure
-> * Erstellen der Terraform-Vorlage
-> * Visualisieren der Änderungen mit plan
-> * Anwenden der Konfiguration zum Erstellen des VM-Clusters
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
+Dieser Artikel enthält Terraform-Beispielcode zum Erstellen eines VM-Clusters in Azure.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-## <a name="set-up-authentication-with-azure"></a>Einrichten der Authentifizierung mit Azure
+[!INCLUDE [terraform-configure-environment.md](includes/terraform-configure-environment.md)]
 
-> [!TIP]
-> Falls Sie [Terraform-Umgebungsvariablen verwenden](get-started-cloud-shell.md) oder dieses Beispiel in [Azure Cloud Shell](/azure/cloud-shell/overview) ausführen, überspringen Sie diesen Schritt.
-
- Unter [Installieren von Terraform und Konfigurieren des Zugriffs auf Azure](get-started-cloud-shell.md) finden Sie Informationen zum Erstellen eines Azure-Dienstprinzipals. Verwenden Sie diesen Dienstprinzipal, um folgenden Code in die neue Datei `azureProviderAndCreds.tf` in einem leeren Verzeichnis einzufügen:
+## <a name="configure-an-azure-vm-cluster"></a>Konfigurieren eines Azure-VM-Clusters
 
 ```hcl
-variable subscription_id {}
-variable tenant_id {}
-variable client_id {}
-variable client_secret {}
-
-provider "azurerm" {
-    version = "~>1.40"
-
-    subscription_id = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    tenant_id = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    client_id = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    client_secret = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-}
-```
-
-## <a name="create-the-template"></a>Erstellen der Vorlage
-
-Erstellen Sie mit folgendem Code eine neue Terraform-Vorlage mit dem Namen `main.tf`:
-
-```hcl
-module mycompute {
-    source = "Azure/compute/azurerm"
-    resource_group_name = "myResourceGroup"
-    location = "East US 2"
-    admin_password = "ComplxP@assw0rd!"
-    vm_os_simple = "WindowsServer"
-    is_windows_image = "true"
-    remote_port = "3389"
-    nb_instances = 2
-    public_ip_dns = ["unique_dns_name"]
-    vnet_subnet_id = module.network.vnet_subnets[0]
+module "windowsservers" {
+  source              = "Azure/compute/azurerm"
+  resource_group_name = azurerm_resource_group.rg.name
+  is_windows_image    = true
+  vm_hostname         = "mywinvm"                         // Line can be removed if only one VM module per resource group
+  admin_password      = "ComplxP@ssw0rd!"                 // See note following code about storing passwords in config files
+  vm_os_simple        = "WindowsServer"
+  public_ip_dns       = ["winsimplevmips"]                // Change to a unique name per data center region
+  vnet_subnet_id      = module.network.vnet_subnets[0]
+    
+  depends_on = [azurerm_resource_group.rg]
 }
 
 module "network" {
-    source = "Azure/network/azurerm"
-    location = "East US 2"
-    resource_group_name = "myResourceGroup"
+  source              = "Azure/network/azurerm"
+  resource_group_name = azurerm_resource_group.rg.name
+  subnet_prefixes     = ["10.0.1.0/24"]
+  subnet_names        = ["subnet1"]
+
+  depends_on = [azurerm_resource_group.rg]
 }
 
-output "vm_public_name" {
-    value = module.mycompute.public_ip_dns_name
+output "windows_vm_public_name" {
+  value = module.windowsservers.public_ip_dns_name
 }
 
 output "vm_public_ip" {
-    value = module.mycompute.public_ip_address
+  value = module.windowsservers.public_ip_address
 }
 
 output "vm_private_ips" {
-    value = module.mycompute.network_interface_private_ip
+  value = module.windowsservers.network_interface_private_ip
 }
 ```
 
-Führen Sie `terraform init` in Ihrem Konfigurationsverzeichnis aus. Bei Terraform-Versionen ab 0.10.6 wird die folgende Ausgabe angezeigt:
+**Hinweise**:
 
-![Terraform-Initialisierung](media/create-vm-cluster-module/terraform-init-with-modules.png)
+- Im obigen Codebeispiel wird der Variablen `admin_password` der Einfachheit halber ein Literalwert zugewiesen. Es gibt viele Möglichkeiten, sensible Daten wie Kennwörter zu speichern. Die Entscheidung, wie Sie Ihre Daten schützen möchten, hängt von individuellen Aspekten der jeweiligen Umgebung sowie davon ab, wie wichtig es für Sie ist, dass diese Daten nicht offengelegt werden. Wenn Sie beispielsweise eine Datei wie diese in der Quellcodeverwaltung speichern, besteht die Gefahr, dass Dritte das Kennwort sehen. HashiCorp hat verschiedene Methoden zum [Deklarieren von Eingabevariablen](https://www.terraform.io/docs/configuration/variables.html) sowie Techniken zum [Verwalten sensibler Daten (beispielsweise Kennwörter)](https://www.terraform.io/docs/state/sensitive-data.html) dokumentiert.
 
-## <a name="visualize-the-changes-with-plan"></a>Visualisieren der Änderungen mit plan
-
-Führen Sie `terraform plan` aus, um eine Vorschau der Infrastruktur des virtuellen Computers anzuzeigen, die durch die Vorlage erstellt wird.
-
-![terraform plan](media/create-vm-cluster-with-infrastructure/terraform-plan.png)
-
-
-## <a name="create-the-virtual-machines-with-apply"></a>Erstellen der virtuellen Computer mit apply
-
-Führen Sie `terraform apply` aus, um die VMs in Azure bereitzustellen.
-
-![terraform apply](media/create-vm-cluster-with-infrastructure/terraform-apply.png)
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Nächste Schritte
 
 > [!div class="nextstepaction"] 
-> Sehen Sie sich die Liste der [Azure Terraform-Module](https://registry.terraform.io/modules/Azure) an.
+> [Weitere Informationen zur Verwendung von Terraform in Azure](/azure/terraform)

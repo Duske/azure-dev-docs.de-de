@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: seo-java-july2019, seo-java-august2019, devx-track-java
-ms.openlocfilehash: 960b9c0d8606e14487dab6d505bc701968dc4b0a
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 48a7369a1dce0fe89964ecaaac960a9bb09fb16c
+ms.sourcegitcommit: f80537193d3e22eb24cce4a0a5464a996d1e63eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831646"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91409982"
 ---
 # <a name="use-maven-for-azure-web-apps-to-deploy-a-containerized-spring-boot-app-to-azure"></a>Bereitstellen einer containerbasierten Spring Boot-App in Azure mithilfe von Maven für Azure-Web-Apps
 
@@ -169,13 +169,14 @@ Wenn Sie ein Docker-Konto besitzen, können Sie das Docker-Containerimage lokal 
 
 1. Öffnen Sie die Datei `pom.xml` für Ihre Spring Boot-Anwendung in einem Text-Editor.
 
-1. Suchen Sie das untergeordnete Element `<imageName>` des `<containerSettings>`-Elements.
+1. Suchen Sie das untergeordnete Element `<image>` des `<runtime>`-Elements.
 
 1. Aktualisieren Sie den Wert `${docker.image.prefix}` mit dem Namen Ihres Docker-Kontos:
    ```xml
-   <containerSettings>
-      <imageName>mydockeraccountname/${project.artifactId}</imageName>
-   </containerSettings>
+   <runtime>
+      ...
+      <image>mydockeraccountname/${project.artifactId}</image>
+   </runtime>
    ```
 
 1. Wählen Sie eine der folgenden Bereitstellungsmethoden aus:
@@ -199,17 +200,19 @@ Wenn Sie ein Docker-Konto besitzen, können Sie das Docker-Containerimage lokal 
    <plugin>
       <groupId>com.microsoft.azure</groupId>
       <artifactId>azure-webapp-maven-plugin</artifactId>
-      <version>0.1.3</version>
+      <version>1.11.0</version>
       <configuration>
-         <authentication>
+         <schemaVersion>V2</schemaVersion>
+         <auth>
             <serverId>azure-auth</serverId>
-         </authentication>
+         </auth>
          <resourceGroup>maven-plugin</resourceGroup>
          <appName>maven-linux-app-${maven.build.timestamp}</appName>
          <region>westus</region>
-         <containerSettings>
-            <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-         </containerSettings>
+         <runtime>
+            <os>docker</os>
+            <image>${docker.image.prefix}/${project.artifactId}</image>
+         </runtime>
          <appSettings>
             <property>
                <name>PORT</name>
@@ -224,8 +227,8 @@ Für das Maven-Plug-In können mehrere Werte angepasst werden. Eine ausführlich
 
 | Element | BESCHREIBUNG |
 |---|---|
-| `<version>` | Gibt die Version des [Maven Plugin for Azure Web Apps] an. Überprüfen Sie die im [zentralen Maven-Repository](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22) angegebene Version, um sicherzustellen, dass Sie die neueste Version verwenden. |
-| `<authentication>` | Gibt die Authentifizierungsinformationen für Azure an, die in diesem Beispiel ein `<serverId>`-Element enthalten, das `azure-auth` enthält. Maven nutzt diesen Wert, um die Azure-Dienstprinzipalwerte in Ihrer Maven-Datei *settings.xml* abzurufen, die Sie weiter oben in diesem Artikel festgelegt haben. |
+| `<version>` | Gibt die Version des [Maven Plugin for Azure Web Apps] an. Es wird empfohlen, `V2` zu verwenden. |
+| `<auth>` | Gibt die Authentifizierungsinformationen für Azure an, die in diesem Beispiel ein `<serverId>`-Element enthalten, das `azure-auth` enthält. Maven nutzt diesen Wert, um die Azure-Dienstprinzipalwerte in Ihrer Maven-Datei *settings.xml* abzurufen, die Sie weiter oben in diesem Artikel festgelegt haben. |
 | `<resourceGroup>` | Gibt die Zielressourcengruppe an (in diesem Beispiel: `maven-plugin`). Wenn die Ressourcengruppe nicht bereits vorhanden ist, wird sie während der Bereitstellung erstellt. |
 | `<appName>` | Gibt den Zielnamen für Ihre Web-App an. In diesem Beispiel lautet der Zielname `maven-linux-app-${maven.build.timestamp}`. Dabei wird das Suffix `${maven.build.timestamp}` angehängt, um Konflikte zu vermeiden. (Der Zeitstempel ist optional. Sie können eine beliebige eindeutige Zeichenfolge für den App-Namen angeben.) |
 | `<region>` | Gibt die Zielregion an (in diesem Beispiel: `westus`). (Eine vollständige Liste finden Sie in der Dokumentation zum [Maven Plugin for Azure Web Apps].) |

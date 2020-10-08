@@ -1,15 +1,15 @@
 ---
 title: Bereitstellen einer statischen Node.js-Website in Azure in Visual Studio Code
-description: 'Teil 1 des Tutorials: Einführung und Voraussetzungen.'
-ms.topic: conceptual
+description: 'Teil 1 des Tutorials zu statischen Web-Apps: Einführung und Voraussetzungen'
+ms.topic: tutorial
 ms.date: 09/23/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: d2c66383e654624cf7edce542461340cc248ba62
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.custom: devx-track-js
+ms.openlocfilehash: bb3c0c552a25729e569abeba86d29d75570bb5e6
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90773088"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365083"
 ---
 # <a name="deploy-a-static-website-to-azure-from-visual-studio-code"></a>Bereitstellen einer statischen Website in Azure in Visual Studio Code
 

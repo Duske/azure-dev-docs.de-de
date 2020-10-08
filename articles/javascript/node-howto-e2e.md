@@ -1,15 +1,15 @@
 ---
 title: Bereitstellen einer Node.js-Container-App mit VS Code und Azure
 description: Enthält ein umfassendes End-to-End-Tutorial zur Vorgehensweise beim Erstellen, Containerisieren und Bereitstellen einer Node.js-App in Azure.
-ms.topic: article
+ms.topic: how-to
 ms.date: 06/25/2017
-ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-javascript
-ms.openlocfilehash: c036adcd759f26dfafda5126f475e251b503a831
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js
+ms.openlocfilehash: 9d23e9dc578b89058c0fadeb98978de96712cab6
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218925"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364903"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>Entwickeln und Bereitstellen einer Node.js-Container-App mit Visual Studio Code und Azure
 
@@ -114,7 +114,7 @@ Die MongoDB-Verbindungszeichenfolge ist in der Deklaration der Eigenschaft `data
 
 Beachten Sie Folgendes: Bei der manuellen Eingabe des Codes (anstelle von Kopieren und Einfügen) werden in Visual Studio Code die verfügbaren Elemente für die globale API des Node.js-Prozesses angezeigt, wenn Sie den Punkt nach `process` eingeben.
 
-![Automatische Anzeige der API-Elemente bei AutoVervollständigen](./media/node-howto-e2e/visual-studio-code-process-env.png)
+![VS Code-Umgebungsvariablen mit „process“ und „env“](./media/node-howto-e2e/visual-studio-code-process-env.png)
 
 AutoVervollständigen funktioniert, weil von Visual Studio Code im Hintergrund TypeScript verwendet wird (auch für JavaScript). So werden Typinformationen angegeben, die dann während der Eingabe für die Vervollständigungsliste genutzt werden können. Visual Studio Code erkennt, dass es sich um ein Node.js-Projekt handelt, und die TypeScript-Typisierungsdatei für [Node.js wird automatisch von NPM heruntergeladen](https://www.npmjs.com/package/@types/node). Mit der Typisierungsdatei können Sie die automatische Vervollständigung auch für andere globale Node.js-Elemente, z. B. `Buffer` und `setTimeout`, sowie alle integrierten Module, etwa `fs` und `http`, nutzen.
 

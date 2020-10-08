@@ -1,16 +1,16 @@
 ---
 title: 'Schnellstart: Konfigurieren von Terraform mit Azure Cloud Shell'
-description: In dieser Schnellstartanleitung erfahren Sie, wie Sie Terraform für die Erstellung von Azure-Ressourcen installieren und konfigurieren.
+description: In dieser Schnellstartanleitung erfahren Sie, wie Sie Terraform mithilfe von Azure Cloud Shell installieren und konfigurieren.
 keywords: Azure DevOps Terraform installieren konfigurieren Cloud Shell init planen anwenden Ausführung Portal anmelden Anmeldung RBAC Dienstprinzipal automatisiertes Skript
 ms.topic: quickstart
-ms.date: 08/08/2020
+ms.date: 09/27/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: d8cec2954357269b5605a7b35c96030b8e8b5fa0
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: f5b1b242479ede712cccb178a8ee25b0b557173c
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241172"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401610"
 ---
 # <a name="quickstart-configure-terraform-using-azure-cloud-shell"></a>Schnellstart: Konfigurieren von Terraform mithilfe von Azure Cloud Shell
  
@@ -20,15 +20,13 @@ In diesem Artikel werden die ersten Schritte mit [Terraform in Azure](https://ww
 
 In diesem Artikel werden folgende Vorgehensweisen behandelt:
 > [!div class="checklist"]
-> * Authentifizierung bei Azure mit `az login`
+> * Authentifizierung bei Azure
 > * Erstellen eines Azure-Dienstprinzipals mit der Azure CLI
 > * Authentifizieren bei Azure mit einem Dienstprinzipal
 > * Festlegen des aktuellen Azure-Abonnements für die Verwendung, wenn Sie über mehrere Abonnements verfügen
-> * Schreiben eines Terraform-Skripts zum Erstellen einer Azure-Ressourcengruppe
+> * Erstellen einer grundlegenden Terraform-Konfigurationsdatei
 > * Erstellen und Anwenden eines Terraform-Ausführungsplans
-> * Verwenden des `terraform plan -destroy`-Flags zum Umkehren eines Ausführungsplans
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
+> * Umkehren eines Ausführungsplans
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -122,134 +120,15 @@ Ein Microsoft-Konto kann mehreren Azure-Abonnements zugeordnet sein. Die folgend
 
     - Die Ergebnisse des Wechsels zum angegebenen Azure-Abonnement werden durch den Aufruf von `az account set` nicht angezeigt. Sie können sich jedoch mithilfe von `az account show` vergewissern, dass sich das aktuelle Azure-Abonnement geändert hat.
 
-## <a name="create-a-terraform-configuration-file"></a>Erstellen einer Terraform-Konfigurationsdatei
+[!INCLUDE [terraform-create-base-config-file.md](includes/terraform-create-base-config-file.md)]
 
-In diesem Abschnitt erfahren Sie, wie Sie eine Terraform-Konfigurationsdatei erstellen, die eine Azure-Ressourcengruppe erstellt.
+[!INCLUDE [terraform-create-and-apply-execution-plan.md](includes/terraform-create-and-apply-execution-plan.md)]
 
-1. Wechseln Sie zum Verzeichnis der eingebundenen Dateifreigabe, in der Ihre Arbeit in Cloud Shell gespeichert wird. Weitere Informationen zur Dateispeicherung durch Cloud Shell finden Sie unter [Herstellen einer Verbindung mit dem Microsoft Azure Files-Speicher](/azure/cloud-shell/overview#connect-your-microsoft-azure-files-storage).
+[!INCLUDE [terraform-reverse-execution-plan.md](includes/terraform-reverse-execution-plan.md)]
 
-    ```bash
-    cd clouddrive
-    ```
-
-1. Erstellen Sie ein Verzeichnis für die Terraform-Dateien aus dieser Demo.
-
-    ```bash
-    mkdir QuickstartTerraformTest
-    ```
-
-1. Wechseln Sie zu diesem Demoverzeichnis.
-
-    ```bash
-    cd QuickstartTerraformTest
-    ```
-
-1. Erstellen Sie mithilfe Ihres bevorzugten Editors eine Terraform-Konfigurationsdatei. In diesem Artikel wird der integrierte [Cloud Shell-Editor](/azure/cloud-shell/using-cloud-shell-editor) verwendet.
-
-    ```bash
-    code QuickstartTerraformTest.tf
-    ```
- 
-1. Fügen Sie den folgenden HCL-Code in die neue Datei ein:
-
-    ```hcl
-    provider "azurerm" {
-      # The "feature" block is required for AzureRM provider 2.x.
-      # If you are using version 1.x, the "features" block is not allowed.
-      version = "~>2.0"
-      features {}
-    }
-    resource "azurerm_resource_group" "rg" {
-            name = "QuickstartTerraformTest-rg"
-            location = "eastus"
-    }
-    ```
-
-    **Hinweise:**
-
-    - Der Block `provider` dient zum Angeben der Verwendung des [Azure-Anbieters (`azurerm`)](https://www.terraform.io/docs/providers/azurerm/index.html).
-    - Innerhalb des Anbieterblocks `azurerm` werden die Attribute `version` und `features` festgelegt. Wie Sie dem Kommentar entnehmen können, ist deren Verwendung versionsspezifisch. Weitere Informationen zum Festlegen dieser Attribute für Ihre Umgebung finden Sie unter [Version 2.0 des AzureRM-Anbieters](https://www.terraform.io/docs/providers/azurerm/guides/2.0-upgrade-guide.html).
-    - Die einzige [Ressourcendeklaration](https://www.terraform.io/docs/configuration/resources.html) betrifft den Ressourcentyp [azurerm_resource_group](https://www.terraform.io/docs/providers/azurerm/r/resource_group.html). Für `azure_resource_group` sind die Argumente `name` und `location` erforderlich.
-
-1. Drücken Sie **STRG+S**, um die Datei zu speichern.
-
-1. Drücken Sie **STRG+Q**, um den Editor zu beenden.
-
-## <a name="create-and-apply-a-terraform-execution-plan"></a>Erstellen und Anwenden eines Terraform-Ausführungsplans
-
-In diesem Abschnitt erstellen Sie einen *Ausführungsplan* und wenden ihn auf Ihre Cloudinfrastruktur an.
-
-1. Initialisieren Sie die Terraform-Bereitstellung mithilfe des Befehls [terraform init](https://www.terraform.io/docs/commands/init.html). Mit diesem Schritt werden die Azure-Module heruntergeladen, die zum Erstellen einer Azure-Ressourcengruppe erforderlich sind.
-
-    ```bash
-    terraform init
-    ```
-
-1. Führen Sie [terraform plan](https://www.terraform.io/docs/commands/plan.html) aus, um auf der Grundlage Ihrer Terraform-Konfigurationsdatei einen Ausführungsplan zu erstellen.
-
-    ```bash
-    terraform plan -out QuickstartTerraformTest.tfplan
-    ```
-
-    **Hinweise:**
-    - Durch den Befehl `terraform plan` wird ein Ausführungsplan erstellt, aber nicht ausgeführt. Stattdessen werden die Aktionen ermittelt, die erforderlich sind, um die in Ihren Konfigurationsdateien angegebene Konfiguration zu erstellen. Mit diesem Muster können Sie überprüfen, ob der Ausführungsplan Ihren Erwartungen entspricht, bevor Sie Änderungen an den eigentlichen Ressourcen vornehmen.
-    - Der optionale Parameter `-out` ermöglicht die Angabe einer Ausgabedatei für den Plan. Durch die Verwendung des Parameters `-out` wird sichergestellt, dass genau der von Ihnen überprüfte Plan angewendet wird.
-    - Weitere Informationen zum Speichern von Ausführungsplänen und zur Sicherheit finden Sie im [Abschnitt mit der Sicherheitswarnung](https://www.terraform.io/docs/commands/plan.html#security-warning).
-
-1. Führen Sie zum Anwenden des Ausführungsplans den Befehl [terraform apply](https://www.terraform.io/docs/commands/apply.html) aus.
-
-    ```bash
-    terraform apply QuickstartTerraformTest.tfplan
-    ```
-
-1. Wenn der Ausführungsplan angewendet wurde, können Sie mithilfe von [az group show](/cli/azure/group?#az-group-show) testen, ob die Ressourcengruppe erfolgreich erstellt wurde.
-
-    ```azurecli
-    az group show -n "QuickstartTerraformTest-rg"
-    ```
-
-    **Hinweise**:
-
-    - War der Vorgang erfolgreich, zeigt `az group show` verschiedene Eigenschaften der neu erstellten Ressourcengruppe an.
-
-## <a name="clean-up-resources"></a>Bereinigen von Ressourcen
-
-Löschen Sie die in diesem Artikel erstellten Ressourcen, wenn Sie sie nicht mehr benötigen.
-
-1. Führen Sie [terraform plan](https://www.terraform.io/docs/commands/plan.html) aus, um einen Ausführungsplan zu erstellen und die in der Terraform-Konfigurationsdatei angegebenen Ressourcen zu zerstören.
-
-    ```bash
-    terraform plan -destroy -out QuickstartTerraformTest.destroy.tfplan
-    ```
-
-    **Hinweise**:
-    - Durch den Befehl `terraform plan` wird ein Ausführungsplan erstellt, aber nicht ausgeführt. Stattdessen werden die Aktionen ermittelt, die erforderlich sind, um die in Ihren Konfigurationsdateien angegebene Konfiguration zu erstellen. Mit diesem Muster können Sie überprüfen, ob der Ausführungsplan Ihren Erwartungen entspricht, bevor Sie Änderungen an den eigentlichen Ressourcen vornehmen.
-    - Mit dem Parameter `-destroy` wird ein Plan zum Zerstören der Ressourcen generiert.
-    - Der optionale Parameter `-out` ermöglicht die Angabe einer Ausgabedatei für den Plan. Durch die Verwendung des Parameters `-out` wird sichergestellt, dass genau der von Ihnen überprüfte Plan angewendet wird.
-    - Weitere Informationen zum Speichern von Ausführungsplänen und zur Sicherheit finden Sie im [Abschnitt mit der Sicherheitswarnung](https://www.terraform.io/docs/commands/plan.html#security-warning).
-
-1. Führen Sie zum Anwenden des Ausführungsplans den Befehl [terraform apply](https://www.terraform.io/docs/commands/apply.html) aus.
-
-    ```bash
-    terraform apply QuickstartTerraformTest.destroy.tfplan
-    ```
-
-1. Überprüfen Sie mithilfe von [az group show](/cli/azure/group?#az-group-show), ob die Ressourcengruppe gelöscht wurde.
-
-    ```azurecli
-    az group show -n "QuickstartTerraformTest-rg"
-    ```
-
-    **Hinweise**:
-    - War der Vorgang erfolgreich, zeigt `az group show` an, dass die Ressourcengruppe nicht vorhanden ist.
-
-1. Wechseln Sie zum übergeordneten Verzeichnis, und entfernen Sie das Demoverzeichnis. Durch den Parameter `-r` wird vor dem Entfernen des Verzeichnisses der Inhalt des Verzeichnisses entfernt. Zu den Verzeichnisinhalten gehören die weiter oben erstellte Konfigurationsdatei sowie die Terraform-Zustandsdateien.
-
-    ```bash
-    cd .. && rm -r QuickstartTerraformTest
-    ```
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Nächste Schritte
 
 > [!div class="nextstepaction"]
-> [Erstellen eines virtuellen Azure-Computers mit Terraform](create-linux-virtual-machine-with-infrastructure.md)
+> [Erstellen einer Linux-VM mit Infrastruktur in Azure mit Terraform](create-linux-virtual-machine-with-infrastructure.md)

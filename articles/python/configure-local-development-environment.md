@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie eine lokale Python-Entwicklungsumgebung 
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: d95584758900eae2c50df5e731fd84f8bca00897
-ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
+ms.openlocfilehash: 14955bc63ab44884254e2304b0e5ceb97e7bcb0d
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88614499"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764813"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>Konfigurieren Ihrer lokalen Python-Entwicklungsumgebung für Azure
 
@@ -122,7 +122,7 @@ Jeder Entwickler in Ihrer Organisation sollte diese Schritte einzeln ausführen.
 
     Ersetzen Sie die in diesen Befehlen angezeigten Werte durch die Werte Ihres spezifischen Dienstprinzipals.
 
-    Um Ihre Abonnement-ID abzurufen, führen Sie den Befehl [`az account show`](/cli/azure/account?view=azure-cli-latest#az-account-show) aus, und suchen Sie in der Ausgabe nach der Eigenschaft `id`.
+    Um Ihre Abonnement-ID abzurufen, führen Sie den Befehl [`az account show`](/cli/azure/account#az-account-show) aus, und suchen Sie in der Ausgabe nach der Eigenschaft `id`.
 
     Erstellen Sie als Erleichterung eine Befehlszeilen-Skriptdatei (z. B. *setenv.sh* unter macOS/Linux oder *setenv.cmd* unter Windows), die diese Befehle enthält. Anschließend können Sie das Skript jeweils ausführen, um die Variablen festzulegen, wenn Sie ein Terminal oder eine Eingabeaufforderung für lokale Tests öffnen. Fügen Sie auch diese Skriptdatei nicht der Quellcodeverwaltung hinzu, damit sie nur unter Ihrem Benutzerkonto vorhanden ist.
 
@@ -138,7 +138,7 @@ Jeder Entwickler in Ihrer Organisation sollte diese Schritte einzeln ausführen.
 
 Durch den Befehl `az ad create-for-rbac` wird ein Dienstprinzipal für die rollenbasierte Authentifizierung (RBAC) erstellt.
 
-- `ad` bedeutet Azure Active Directory, `sp` bedeutet „Dienstprinzipal“, und `create-for-rbac` bedeutet „Für rollenbasierte Zugriffssteuerung erstellen“, die primäre Form der Autorisierung in Azure. Informationen finden Sie in der Referenz zum Befehl [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac).
+- `ad` bedeutet Azure Active Directory, `sp` bedeutet „Dienstprinzipal“, und `create-for-rbac` bedeutet „Für rollenbasierte Zugriffssteuerung erstellen“, die primäre Form der Autorisierung in Azure. Informationen finden Sie in der Referenz zum Befehl [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac).
 
 - Das Argument `--name` sollte innerhalb Ihrer Organisation eindeutig sein und in der Regel den Namen des Entwicklers verwenden, der den Dienstprinzipal verwendet. Wenn Sie dieses Argument weglassen, verwendet die Azure CLI einen generischen Namen der Form `azure-cli-<timestamp>`. Sie können den Dienstprinzipal auch über das Azure-Portal umbenennen, wenn Sie möchten.
 
@@ -238,7 +238,7 @@ git init
 
 Von dort aus können Sie Befehle wie `git add` und `git commit` ausführen, um Änderungen zu übertragen. Durch regelmäßige Commits von Änderungen erstellen Sie einen Commitverlauf, über den Sie jeden vorherigen Zustand wiederherstellen können.
 
-Um eine Onlinesicherung Ihres Projekts zu erstellen, empfehlen wir außerdem, dass Sie Ihr Repository auf [GitHub](https://github.com) oder [Azure DevOps](/azure/devops/user-guide/code-with-git?view=azure-devops) hochladen. Wenn Sie zuerst ein lokales Repository initialisiert haben, verwenden Sie `git remote add`, um das lokale Repository an GitHub oder Azure DevOps anzufügen.
+Um eine Onlinesicherung Ihres Projekts zu erstellen, empfehlen wir außerdem, dass Sie Ihr Repository auf [GitHub](https://github.com) oder [Azure DevOps](/azure/devops/user-guide/code-with-git?view=azure-devops&preserve-view=true) hochladen. Wenn Sie zuerst ein lokales Repository initialisiert haben, verwenden Sie `git remote add`, um das lokale Repository an GitHub oder Azure DevOps anzufügen.
 
 Dokumentation zu git finden Sie auf [git-scm.com/docs](https://git-scm.com/docs) und im Internet.
 

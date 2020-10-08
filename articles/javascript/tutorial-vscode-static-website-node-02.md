@@ -1,16 +1,16 @@
 ---
 title: Erstellen der statischen Node.js-App in Visual Studio Code
-description: 'Teil 2 des Tutorials: Erstellen der Beispiel-App'
-ms.topic: conceptual
+description: 'Teil 2 des Tutorials zu statischen Web-Apps: Erstellen der Beispiel-App'
+ms.topic: tutorial
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 4d35a46323639aa42e7f220b8609f913f57d9027
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: a46fd8c35cf76de65e60a175fb3ccd70767a5dc4
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218221"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364633"
 ---
 # <a name="create-the-app"></a>Erstellen der App
 
@@ -140,7 +140,7 @@ Werden Sie von der CLI zur Eingabe von Konfigurationswerten aufgefordert, drück
 
 1. Öffnen Sie in einem Browser `http://localhost:5000`, um zu überprüfen, ob die App ausgeführt wird:
 
-    ![Ausgeführte Vue-Beispiel-App](media/static-website/local-app-svelte.png)
+    ![Ausgeführte Svelte-Beispiel-App](media/static-website/local-app-svelte.png)
 
 1. Halten Sie den Server an, indem Sie im Terminal oder an der Eingabeaufforderung **STRG**+**C** drücken.
 

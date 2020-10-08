@@ -4,12 +4,12 @@ description: Es wird beschrieben, wie Terraform Sie beim Bereitstellen und Versi
 ms.topic: overview
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: d5089a9e27f9f17ebde6a2e9847908157018e08c
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 0b38c7c2d518087f7a49c0d7e4f462d7da7eaf76
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241052"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401750"
 ---
 # <a name="terraform-with-azure"></a>Terraform mit Azure
 
@@ -41,6 +41,7 @@ Terraform kann eine Infrastruktur für mehrere Cloudanbieter bereitstellen. Terr
 
 Nachdem Sie nun eine Übersicht über Terraform und seine Vorteile haben, folgen hier die empfohlenen nächsten Schritte:
 
-- Erste Schritte durch die [Installation von Terraform und seiner Konfiguration für die Verwendung von Azure](get-started-cloud-shell.md)
-- [Erstellen eines virtuellen Azure-Computers mit Terraform](create-linux-virtual-machine-with-infrastructure.md)
-- Untersuchen des [Azure Resource Manager-Moduls für Terraform](https://www.terraform.io/docs/providers/azurerm/) 
+Installieren und konfigurieren Sie Terraform basierend auf Ihrer Umgebung:
+
+- [Schnellstart: Konfigurieren von Terraform mithilfe von Azure Cloud Shell](get-started-cloud-shell.md)
+- [Konfigurieren von Terraform mithilfe von Azure PowerShell](get-started-powershell.md)

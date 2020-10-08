@@ -1,16 +1,16 @@
 ---
 title: Bereitstellen von Änderungen an einer statischen Node.js-Website in Visual Studio Code
-description: 'Teil 5 des Tutorials: Vornehmen von Änderungen und erneutes Bereitstellen'
-ms.topic: conceptual
+description: 'Teil 5 des Tutorials zu statischen Web-Apps: Vornehmen von Änderungen und erneutes Bereitstellen'
+ms.topic: tutorial
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 918f96376a03d17792c7a462d37ea47330e60d39
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 5d7a2af9dca7a775ee812b457012fa432c461d9a
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218324"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365283"
 ---
 # <a name="part-5-make-changes-and-redeploy"></a>Teil 5: Vornehmen von Änderungen und erneutes Bereitstellen
 
@@ -32,7 +32,7 @@ In diesem Schritt nehmen Sie eine einfache Änderung am Quellcode der App vor un
 
 1. Aktualisieren Sie nach Abschluss der Bereitstellung die Website im Browser, um die Änderungen anzuzeigen:
 
-    ![Änderungen in der App nach der erneuten Bereitstellung](media/static-website/updated-azure-app-angular.png)
+    ![Angular: Aktualisieren Sie nach Abschluss der Bereitstellung die Website im Browser, um die Änderungen anzuzeigen.](media/static-website/updated-azure-app-angular.png)
 
 # <a name="react"></a>[React](#tab/react)
 
@@ -48,7 +48,7 @@ In diesem Schritt nehmen Sie eine einfache Änderung am Quellcode der App vor un
 
 1. Aktualisieren Sie nach Abschluss der Bereitstellung die Website im Browser, um die Änderungen anzuzeigen:
 
-    ![Änderungen in der App nach der erneuten Bereitstellung](media/static-website/updated-azure-app-react.png)
+    ![React: Änderungen in der App nach der erneuten Bereitstellung](media/static-website/updated-azure-app-react.png)
 
 # <a name="vue"></a>[Vue](#tab/vue)
 
@@ -64,7 +64,7 @@ In diesem Schritt nehmen Sie eine einfache Änderung am Quellcode der App vor un
 
 1. Aktualisieren Sie nach Abschluss der Bereitstellung die Website im Browser, um die Änderungen anzuzeigen:
 
-    ![Änderungen in der App nach der erneuten Bereitstellung](media/static-website/updated-azure-app-vue.png)
+    ![Vue: Änderungen in der App nach der erneuten Bereitstellung](media/static-website/updated-azure-app-vue.png)
 
 # <a name="svelte"></a>[Svelte](#tab/svelte)
 
@@ -95,7 +95,7 @@ In diesem Schritt nehmen Sie eine einfache Änderung am Quellcode der App vor un
 
 1. Aktualisieren Sie nach Abschluss der Bereitstellung die Website im Browser, um die Änderungen anzuzeigen:
 
-    ![Änderungen in der App nach der erneuten Bereitstellung](media/static-website/updated-azure-app-svelte.png)
+    ![Svelte: Änderungen in der App nach der erneuten Bereitstellung](media/static-website/updated-azure-app-svelte.png)
 
 ---
 

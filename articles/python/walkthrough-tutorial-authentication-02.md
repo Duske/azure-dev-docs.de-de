@@ -4,12 +4,12 @@ description: Eine Erläuterung der unterschiedlichen Authentifizierungsanforderu
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: c6719e3c86b590edff551d98e5a961fd08f857c3
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: 2e3755f7049fd091c05cd2aca5ddf8276cebff95
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379540"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764434"
 ---
 # <a name="part-2-authentication-needs-in-the-scenario"></a>Teil 2: Authentifizierungsanforderungen im Szenario
 
@@ -33,7 +33,7 @@ Glücklicherweise macht die integrierte Authentifizierung bei Azure Active Direc
 
 ## <a name="integrated-authentication-with-managed-identity"></a>Integrierte Authentifizierung mit verwalteter Identität
 
-Viele Azure-Dienste wie Storage und Key Vault sind in Azure Active Directory (Azure AD) integriert, sodass beim Authentifizieren der Anwendung bei Azure AD mithilfe einer [verwalteten Identität](/azure/active-directory/managed-identities-azure-resources/overview) automatisch die Authentifizierung bei anderen verbundenen Ressourcen erfolgt. Die Autorisierung für die Identität erfolgt über [rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC)](how-to-assign-role-permissions.md) und gelegentlich über andere Zugriffsrichtlinien.
+Viele Azure-Dienste wie Storage und Key Vault sind in Azure Active Directory (Azure AD) integriert, sodass beim Authentifizieren der Anwendung bei Azure AD mithilfe einer [verwalteten Identität](/azure/active-directory/managed-identities-azure-resources/overview) automatisch die Authentifizierung bei anderen verbundenen Ressourcen erfolgt. Die Autorisierung für die Identität erfolgt über [rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC)](/azure/role-based-access-control/role-assignments-steps) und gelegentlich über andere Zugriffsrichtlinien.
 
 Diese Integration bedeutet, dass Sie keine Azure-bezogenen Anmeldeinformationen in Ihrem App-Code verarbeiten müssen, und dass diese Anmeldeinformationen niemals auf Entwicklerarbeitsstationen oder in der Quellcodeverwaltung angezeigt werden. Außerdem wird die Verarbeitung von Schlüsseln für APIs und Dienste von Drittanbietern vollständig zur Laufzeit durchgeführt, sodass diese Schlüssel sicher bleiben.
 
@@ -51,7 +51,7 @@ Wenn Sie diese Schritte für den lokalen Dienstprinzipal ausführen, funktionier
 
 Im restlichen Teil dieses Tutorials werden alle Details des Prozesses im Zusammenhang mit dem Beispielszenario und der zugehörige Beispielcode veranschaulicht.
 
-Im Bereitstellungsskript des Beispiels werden alle Ressourcen in einer Ressourcengruppe mit dem Namen `auth-scenario-rg` erstellt. Diese Gruppe wird mit dem Azure CLI-Befehl [`az group create`](/cli/azure/group?view=azure-cli-latest#az-group-create) erstellt.
+Im Bereitstellungsskript des Beispiels werden alle Ressourcen in einer Ressourcengruppe mit dem Namen `auth-scenario-rg` erstellt. Diese Gruppe wird mit dem Azure CLI-Befehl [`az group create`](/cli/azure/group#az-group-create) erstellt.
 
 > [!div class="nextstepaction"]
 > [Teil 3: Beispiel für die Implementierung einer Drittanbieter-API >>>](walkthrough-tutorial-authentication-03.md)

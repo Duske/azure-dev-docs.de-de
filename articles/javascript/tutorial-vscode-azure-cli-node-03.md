@@ -1,15 +1,15 @@
 ---
 title: Erstellen der Azure App Service-Instanz zum Hosten der App mit der Azure-Befehlszeilenschnittstelle
-description: 'Teil 3 des Tutorials: Erstellen der App Service-Instanz'
-ms.topic: conceptual
+description: 'Teil 3 des Azure CLI-Tutorials: Erstellen der App Service-Instanz'
+ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: d48ee9ba1b1ddb813b0dd7f0f48da52e0cf96e15
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 3279c215b1822b3e989eeacb66a725c91e023a34
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88217937"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364793"
 ---
 # <a name="create-the-app-service"></a>Erstellen der App Service-Instanz
 

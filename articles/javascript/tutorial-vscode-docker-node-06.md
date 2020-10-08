@@ -1,15 +1,15 @@
 ---
 title: Erneutes Bereitstellen eines Containers in Azure App Service, nachdem Änderungen in Visual Studio Code vorgenommen wurden
-description: 'Schritt 6 des Tutorials: Einfache Schritte zum erneuten Erstellen und Bereitstellen eines Containerimages.'
-ms.topic: conceptual
+description: 'Schritt 6 des Docker-Tutorials: Einfache Schritte zum erneuten Erstellen und Bereitstellen eines Containerimages'
+ms.topic: tutorial
 ms.date: 09/20/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 27bfc943ee64cbf6708fc2665ad9593b0fb28647
-ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
+ms.custom: devx-track-js
+ms.openlocfilehash: 29f07936d69d971c9ea139b019ac4ee272871342
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88501405"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365103"
 ---
 # <a name="make-changes-and-redeploy-a-container-using-visual-studio-code"></a>Vornehmen von Änderungen und erneutes Bereitstellen eines Containers mit Visual Studio Code
 

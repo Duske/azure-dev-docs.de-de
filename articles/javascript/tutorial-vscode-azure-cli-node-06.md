@@ -1,15 +1,15 @@
 ---
 title: Ändern des App-Codes und erneutes Bereitstellen in Azure
-description: 'Teil 6 des Tutorials: Vornehmen von Änderungen und erneutes Bereitstellen'
-ms.topic: conceptual
+description: 'Teil 6 des Azure CLI-Tutorials: Vornehmen von Änderungen und erneutes Bereitstellen'
+ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: e6747551ec80fc7b04873445557e2d2153e3b358
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 1ceec642f0e8eab517e8fee464ac604f760c9229
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88217927"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364753"
 ---
 # <a name="part-6-make-changes-and-redeploy"></a>Teil 6: Vornehmen von Änderungen und erneutes Bereitstellen
 

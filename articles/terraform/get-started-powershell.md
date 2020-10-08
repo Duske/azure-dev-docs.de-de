@@ -1,16 +1,16 @@
 ---
 title: 'Schnellstart: Konfigurieren von Terraform mit Azure PowerShell'
-description: In dieser Schnellstartanleitung erfahren Sie, wie Sie Terraform für die Erstellung von Azure-Ressourcen installieren und konfigurieren.
+description: In dieser Schnellstartanleitung erfahren Sie, wie Sie Terraform mithilfe von Azure PowerShell installieren und konfigurieren.
 keywords: Azure DevOps Terraform installieren konfigurieren Windows init planen anwenden Ausführung anmelden Anmeldung RBAC Dienstprinzipal automatisiertes Skript PowerShell
 ms.topic: quickstart
-ms.date: 08/18/2020
+ms.date: 09/27/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 401a6c4cc8827e48858a936a10c9c7f62af15aab
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 8f95d0bb09d7e9e7ea789b90a27178cdf5426d74
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90830056"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401546"
 ---
 # <a name="quickstart-configure-terraform-using-azure-powershell"></a>Schnellstart: Konfigurieren von Terraform mithilfe von Azure PowerShell
  
@@ -27,11 +27,9 @@ In diesem Artikel werden folgende Vorgehensweisen behandelt:
 > * Erstellen eines Azure-Dienstprinzipals für Authentifizierungszwecke
 > * Anmelden bei Azure mit dem Dienstprinzipal 
 > * Festlegen von Umgebungsvariablen, damit Terraform ordnungsgemäß bei Ihrem Azure-Abonnement authentifiziert wird
-> * Schreiben eines Terraform-Skripts zum Erstellen einer Azure-Ressourcengruppe
+> * Erstellen einer grundlegenden Terraform-Konfigurationsdatei
 > * Erstellen und Anwenden eines Terraform-Ausführungsplans
-> * Verwenden des `terraform plan -destroy`-Flags zum Umkehren eines Ausführungsplans
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
+> * Umkehren eines Ausführungsplans
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -45,9 +43,9 @@ In diesem Artikel werden folgende Vorgehensweisen behandelt:
     $PSVersionTable.PSVersion
     ```
 
-1. [Installieren Sie PowerShell.](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7) Diese Demo wurde mithilfe von PowerShell 7.0.2 unter Windows 10 getestet.
+1. [Installieren Sie PowerShell.](/powershell/scripting/install/installing-powershell-core-on-windows) Diese Demo wurde mithilfe von PowerShell 7.0.2 unter Windows 10 getestet.
 
-1. Für die [Authentifizierung von Terraform bei Azure](https://www.terraform.io/docs/providers/azurerm/guides/azure_cli.html) müssen Sie die [Azure CLI installieren](/cli/azure/install-azure-cli-windows?view=azure-cli-latest). Diese Demo wurde mit der Azure CLI-Version 2.9.1 getestet.
+1. Für die [Authentifizierung von Terraform bei Azure](https://www.terraform.io/docs/providers/azurerm/guides/azure_cli.html) müssen Sie die [Azure CLI installieren](/cli/azure/install-azure-cli-windows). Diese Demo wurde mit der Azure CLI-Version 2.9.1 getestet.
 
 1. [Laden Sie Terraform herunter](https://www.terraform.io/downloads.html).
 
@@ -64,9 +62,15 @@ In diesem Artikel werden folgende Vorgehensweisen behandelt:
     **Hinweise**:
     - Wenn die ausführbare Terraform-Datei gefunden wird, werden die Syntax und verfügbare Befehle aufgelistet.
 
-## <a name="create-an-azure-service-principal"></a>Erstellen eines Azure-Dienstprinzipals
+## <a name="authenticate-to-azure"></a>Authentifizierung bei Azure
 
-Bei Verwendung von PowerShell und Terraform müssen Sie sich mithilfe eines Dienstprinzipals anmelden.
+Bei Verwendung von PowerShell und Terraform müssen Sie sich mithilfe eines Dienstprinzipals anmelden. In den nächsten beiden Abschnitten werden die folgenden Aufgaben veranschaulicht:
+
+- [Erstellen eines Azure-Dienstprinzipals](#create-an-azure-service-principal)
+- [Anmelden bei Azure mithilfe eines Dienstprinzipals](#log-in-to-azure-using-a-service-principal)
+
+
+### <a name="span-idcreate-an-azure-service-principalcreate-an-azure-service-principal"></a><span id="create-an-azure-service-principal"/>Erstellen eines Azure-Dienstprinzipals
 
 Wenn Sie sich mithilfe eines Dienstprinzipals bei einem Azure-Abonnement anmelden möchten, benötigen Sie zunächst Zugriff auf einen Dienstprinzipal. Wenn Sie bereits einen Dienstprinzipal haben, können Sie diesen Abschnitt überspringen.
 
@@ -105,7 +109,7 @@ Durch Aufrufen von [New-AzADServicePrincipal](/powershell/module/Az.Resources/Ne
 - Die Werte für Dienstprinzipalnamen und Kennwort sind erforderlich, um sich mit Ihrem Dienstprinzipal beim Abonnement anzumelden.
 - Dieses Kennwort kann nicht erneut abgerufen werden. Es empfiehlt sich daher, das Kennwort an einem sicheren Ort zu speichern. Sollten Sie Ihr Kennwort vergessen, müssen Sie die [Anmeldeinformationen des Dienstprinzipals zurücksetzen](/powershell/azure/create-azure-service-principal-azureps#reset-credentials).
 
-## <a name="log-in-to-azure-using-a-service-principal"></a>Anmelden bei Azure mithilfe eines Dienstprinzipals
+### <a name="span-idlog-in-to-azure-using-a-service-principallog-in-to-azure-using-a-service-principal"></a><span id="log-in-to-azure-using-a-service-principal"/>Anmelden bei Azure mithilfe eines Dienstprinzipals
 
 Wenn Sie sich mithilfe eines Dienstprinzipals bei einem Azure-Abonnement anmelden möchten, rufen Sie [Connect-AzAccount](/powershell/module/az.accounts/Connect-AzAccount) auf, und geben Sie ein Objekt vom Typ [PsCredential](/dotnet/api/system.management.automation.pscredential) an.
 
@@ -143,124 +147,15 @@ $env:ARM_SUBSCRIPTION_ID="<azure_subscription_id>"
 $env:ARM_TENANT_ID="<azure_subscription_tenant_id>"
 ```
 
-## <a name="create-a-terraform-configuration-file"></a>Erstellen einer Terraform-Konfigurationsdatei
+[!INCLUDE [terraform-create-base-config-file.md](includes/terraform-create-base-config-file.md)]
 
-In diesem Abschnitt erstellen Sie eine Terraform-Konfigurationsdatei, die eine Azure-Ressourcengruppe erstellt.
+[!INCLUDE [terraform-create-and-apply-execution-plan.md](includes/terraform-create-and-apply-execution-plan.md)]
 
-1. Erstellen Sie ein Verzeichnis für die Terraform-Dateien aus dieser Demo.
+[!INCLUDE [terraform-reverse-execution-plan.md](includes/terraform-reverse-execution-plan.md)]
 
-    ```powershell
-    mkdir QuickstartTerraformTest
-    ```
-
-1. Wechseln Sie zu diesem Demoverzeichnis.
-
-    ```powershell
-    cd QuickstartTerraformTest
-    ```
-
-1. Erstellen Sie mithilfe Ihres bevorzugten Editors eine Terraform-Konfigurationsdatei. In diesem Artikel wird [Visual Studio Code](https://code.visualstudio.com/Download) verwendet.
-
-    ```powershell
-    code QuickstartTerraformTest.tf
-    ```
-
-1. Fügen Sie den folgenden HCL-Code in die neue Datei ein. Weitere Informationen finden Sie in den Hinweisen nach dem Code.
-
-    ```hcl
-    provider "azurerm" {
-      # The "feature" block is required for AzureRM provider 2.x.
-      # If you're using version 1.x, the "features" block isn't allowed.
-      version = "~>2.0"
-      features {}
-    }
-
-    resource "azurerm_resource_group" "rg" {
-      name     = "QuickstartTerraformTest-rg"
-      location = "eastus"
-    }
-    ```
-
-    **Hinweise**:
-    - Der Anbieterblock gibt an, dass der [Azure-Anbieter (azurerm)](https://www.terraform.io/docs/providers/azurerm/index.html) verwendet wird.
-    - Innerhalb des Anbieterblocks `azurerm` werden die Attribute `version` und `features` festgelegt. Wie Sie dem Kommentar entnehmen können, ist deren Verwendung versionsspezifisch. Weitere Informationen zum Festlegen dieser Attribute finden Sie unter [Version 2.0 des AzureRM-Anbieters](https://www.terraform.io/docs/providers/azurerm/guides/2.0-upgrade-guide.html).
-    - Die einzige [Ressourcendeklaration](https://www.terraform.io/docs/configuration/resources.html) betrifft den Ressourcentyp [azurerm_resource_group](https://www.terraform.io/docs/providers/azurerm/r/resource_group.html). Die beiden erforderlichen Argumente für azure_resource_group sind der Name und der Speicherort.
-
-## <a name="create-and-apply-a-terraform-execution-plan"></a>Erstellen und Anwenden eines Terraform-Ausführungsplans
-
-In diesem Abschnitt erstellen Sie einen *Ausführungsplan* und wenden ihn auf Ihre Cloudinfrastruktur an.
-
-1. Initialisieren Sie die Terraform-Bereitstellung mithilfe des Befehls [terraform init](https://www.terraform.io/docs/commands/init.html). Mit diesem Schritt werden die Azure-Module heruntergeladen, die zum Erstellen einer Azure-Ressourcengruppe erforderlich sind.
-
-    ```powershell
-    terraform init
-    ```
-
-1. Führen Sie [terraform plan](https://www.terraform.io/docs/commands/plan.html) aus, um auf der Grundlage Ihrer Terraform-Konfigurationsdatei einen Ausführungsplan zu erstellen.
-
-    ```powershell
-    terraform plan -out QuickstartTerraformTest.tfplan
-    ```
-
-    **Hinweise:**
-    - Durch den Befehl `terraform plan` wird ein Ausführungsplan erstellt, aber nicht ausgeführt. Stattdessen werden die Aktionen ermittelt, die erforderlich sind, um die in Ihren Konfigurationsdateien angegebene Konfiguration zu erstellen. Mit diesem Muster können Sie überprüfen, ob der Ausführungsplan Ihren Erwartungen entspricht, bevor Sie Änderungen an den eigentlichen Ressourcen vornehmen.
-    - Der optionale Parameter `-out` ermöglicht die Angabe einer Ausgabedatei für den Plan. Durch die Verwendung des Parameters `-out` wird sichergestellt, dass genau der von Ihnen überprüfte Plan angewendet wird.
-    - Weitere Informationen zum Speichern von Ausführungsplänen und zur Sicherheit finden Sie im [Abschnitt mit der Sicherheitswarnung](https://www.terraform.io/docs/commands/plan.html#security-warning).
-
-1. Führen Sie zum Anwenden des Ausführungsplans den Befehl [terraform apply](https://www.terraform.io/docs/commands/apply.html) aus.
-
-    ```powershell
-    terraform apply QuickstartTerraformTest.tfplan
-    ```
-
-1. Wenn der Ausführungsplan angewendet wurde, können Sie mithilfe von [Get-AzResourceGroup](/powershell/module/az.resources/Get-AzResourceGroup) testen, ob die Ressourcengruppe erstellt wurde.
-
-    ```powershell
-    Get-AzResourceGroup -Name QuickstartTerraformTest-rg
-    ```
-
-    **Hinweise**:
-
-    - War der Vorgang erfolgreich, werden verschiedene Eigenschaften der neu erstellten Ressourcengruppe angezeigt.
-
-## <a name="clean-up-resources"></a>Bereinigen von Ressourcen
-
-Löschen Sie die in diesem Artikel erstellten Ressourcen, wenn Sie sie nicht mehr benötigen.
-
-1. Führen Sie [terraform plan](https://www.terraform.io/docs/commands/plan.html) aus, um einen Ausführungsplan zu erstellen und die in der Terraform-Konfigurationsdatei angegebenen Ressourcen zu zerstören.
-
-    ```powershell
-    terraform plan -destroy -out QuickstartTerraformTest.destroy.tfplan
-    ```
-
-    **Hinweise:**
-    - Durch den Befehl `terraform plan` wird ein Ausführungsplan erstellt, aber nicht ausgeführt. Stattdessen werden die Aktionen ermittelt, die erforderlich sind, um die in Ihren Konfigurationsdateien angegebene Konfiguration zu erstellen. Mit diesem Muster können Sie überprüfen, ob der Ausführungsplan Ihren Erwartungen entspricht, bevor Sie Änderungen an den eigentlichen Ressourcen vornehmen.
-    - Mit dem Parameter `-destroy` wird ein Plan zum Zerstören der Ressourcen generiert.
-    - Der optionale Parameter `-out` ermöglicht die Angabe einer Ausgabedatei für den Plan. Durch die Verwendung des Parameters `-out` wird sichergestellt, dass genau der von Ihnen überprüfte Plan angewendet wird.
-    - Weitere Informationen zum Speichern von Ausführungsplänen und zur Sicherheit finden Sie im [Abschnitt mit der Sicherheitswarnung](https://www.terraform.io/docs/commands/plan.html#security-warning).
-
-1. Führen Sie zum Anwenden des Ausführungsplans den Befehl [terraform apply](https://www.terraform.io/docs/commands/apply.html) aus.
-
-    ```powershell
-    terraform apply QuickstartTerraformTest.destroy.tfplan
-    ```
-
-1. Überprüfen Sie mithilfe von [Get-AzResourceGroup](/powershell/module/az.resources/Get-AzResourceGroup), ob die Ressourcengruppe gelöscht wurde.
-
-    ```powershell
-    Get-AzResourceGroup -Name QuickstartTerraformTest-rg
-    ```
-
-    **Hinweise**:
-    - War der Vorgang erfolgreich, zeigt `Get-AzResourceGroup` an, dass die Ressourcengruppe nicht vorhanden ist.
-
-1. Wechseln Sie zum übergeordneten Verzeichnis, und entfernen Sie das Demoverzeichnis. Durch den Parameter `-r` wird vor dem Entfernen des Verzeichnisses der Inhalt des Verzeichnisses entfernt. Zu den Verzeichnisinhalten gehören die weiter oben erstellte Konfigurationsdatei sowie die Terraform-Zustandsdateien.
-
-    ```powershell
-    cd .. && rm -r QuickstartTerraformTest
-    ```
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Nächste Schritte
 
 > [!div class="nextstepaction"]
-> [Erstellen eines virtuellen Azure-Computers mit Terraform](create-linux-virtual-machine-with-infrastructure.md)
+> [Erstellen einer Linux-VM mit Infrastruktur in Azure mit Terraform](create-linux-virtual-machine-with-infrastructure.md)

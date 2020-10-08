@@ -4,12 +4,12 @@ description: Schritt 4 des Tutorials, der den App Service anweist, wie die Web-
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 45c24711131f03c2475d3ecb2a5538cadd6e7c56
-ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
+ms.openlocfilehash: 6aa1f03b562eeea01e6e71441e8a12339eeaad26
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88501425"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764802"
 ---
 # <a name="4-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>4: Konfigurieren einer benutzerdefinierten Startdatei für Python-Apps in Azure App Service
 
@@ -48,7 +48,7 @@ Wenn Sie eine benutzerdefinierte Startdatei benötigen, führen Sie die folgende
 
 1. Die App Service-Instanz wird neu gestartet, wenn Sie Änderungen speichern. Da Sie Ihren App-Code noch nicht bereitgestellt haben, wird jedoch auf der Website zu diesem Zeitpunkt ein Anwendungsfehler angezeigt. Diese Fehlermeldung gibt an, dass der Gunicorn-Server gestartet wurde, die App jedoch nicht finden konnte und daher keine Antworten auf HTTP-Anforderungen erfolgen. Sie stellen Ihren App-Code im nächsten Schritt bereit.
 
-Sie können auch einen Startbefehl mit dem Azure CLI-[Befehl `az webapp create`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create) angeben, indem Sie das Argument `--startup-file` verwenden.
+Sie können auch einen Startbefehl mit dem Azure CLI-[Befehl `az webapp create`](/cli/azure/webapp#az-webapp-create) angeben, indem Sie das Argument `--startup-file` verwenden.
 
 ## <a name="django-startup-commands"></a>Django-Startbefehle
 

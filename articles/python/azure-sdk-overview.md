@@ -4,12 +4,12 @@ description: Übersicht über die Features und Funktionen der Azure-Bibliotheken
 ms.date: 09/19/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 6dab8085cd9d18f34ea1dc307a414fa18cdbcb83
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 81bda5dbe4c39341c2c799ecdbac10c2f0347bcc
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90829956"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364433"
 ---
 # <a name="use-the-azure-libraries-sdk-for-python"></a>Verwenden der Azure-Bibliotheken (SDK) für Python
 

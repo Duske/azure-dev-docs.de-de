@@ -4,12 +4,12 @@ description: Eine Beschreibung des Codes für den API-Endpunkt der Haupt-App, de
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: e026eca0216147c6614582e0cd070cee81daf99c
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: b6a54f51c53889ba95f86ba194232262f31c2d99
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379523"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764700"
 ---
 # <a name="part-7-main-application-api-endpoint"></a>Teil 7: API-Endpunkt der Hauptanwendung
 
@@ -52,7 +52,7 @@ Angenommen, der API-Befehl wird erfolgreich ausgeführt gibt einen numerischen W
 
 Die `code`-Variable hier enthält die vollständige JSON-Antwort für die API der App, die sowohl den Codewert als auch einen Zeitstempel enthält. Ein Beispiel für eine Antwort ist `{"code":"ojE-161-pTv","timestamp":"2020-04-15 16:54:48.816549"}`.
 
-Vor dem Zurückgeben dieser Antwort schreiben wir jedoch mithilfe der [`send_message`](/python/api/azure-storage-queue/azure.storage.queue.queueclient?view=azure-python#send-message-content----kwargs-)-Methode des Warteschlangenclients eine Meldung in die Speicherwarteschlange:
+Vor dem Zurückgeben dieser Antwort schreiben wir jedoch mithilfe der [`send_message`](/python/api/azure-storage-queue/azure.storage.queue.queueclient#send-message-content----kwargs-)-Methode des Warteschlangenclients eine Meldung in die Speicherwarteschlange:
 
 ```python
     queue_client.send_message(code)
@@ -62,7 +62,7 @@ Vor dem Zurückgeben dieser Antwort schreiben wir jedoch mithilfe der [`send_mes
 
 ## <a name="processing-queue-messages"></a>Verarbeiten von Warteschlangenmeldungen
 
-In der Warteschlange gespeicherte Meldungen können über das [Azure-Portal](/azure/storage/queues/storage-quickstart-queues-portal#view-message-properties) oder mit dem Azure CLI-Befehl [`az storage message get`](/cli/azure/storage/message?view=azure-cli-latest#az-storage-message-get)angezeigt und verwaltet werden. Das Beispielrepository enthält ein Skript (*test.cmd* und *test.sh*), um einen Code vom App-Endpunkt anzufordern und dann die Meldungswarteschlange zu überprüfen. Es gibt auch ein Skript, um die Warteschlange mit dem Befehl [`az storage message clear`](/cli/azure/storage/message?view=azure-cli-latest#az-storage-message-clear) zu löschen.
+In der Warteschlange gespeicherte Meldungen können über das [Azure-Portal](/azure/storage/queues/storage-quickstart-queues-portal#view-message-properties) oder mit dem Azure CLI-Befehl [`az storage message get`](/cli/azure/storage/message#az-storage-message-get)angezeigt und verwaltet werden. Das Beispielrepository enthält ein Skript (*test.cmd* und *test.sh*), um einen Code vom App-Endpunkt anzufordern und dann die Meldungswarteschlange zu überprüfen. Es gibt auch ein Skript, um die Warteschlange mit dem Befehl [`az storage message clear`](/cli/azure/storage/message#az-storage-message-clear) zu löschen.
 
 Üblicherweise hat eine Anwendung wie dieses Beispiel einen anderen Prozess, um asynchrone Meldungen zur weiteren Verarbeitung aus der Warteschlange abzurufen. Wie bereits erwähnt, kann die von diesem API-Endpunkt generierte Antwort an anderer Stelle in der App mit zweistufiger Benutzerauthentifizierung verwendet werden. In diesem Fall muss die App den Code nach einem bestimmten Zeitraum, z. B. 10 Minuten, ungültig machen. Eine einfache Möglichkeit, diese Aufgabe auszuführen, ist das Pflegen einer Tabelle mit gültigen Codes für die zweistufige Authentifizierung, die von der Benutzeranmeldungsprozedur verwendet werden. Die App hätte dann einen einfachen Warteschlangen-Überwachungsprozess mit der folgenden Logik (in Pseudocode):
 
@@ -76,7 +76,7 @@ else:
     call queue_client.send_message(code, visibility_timeout=600)
 </pre>
 
-In diesem Pseudocode wird der optionale `visibility_timeout`-Parameter der [`send_message`](/python/api/azure-storage-queue/azure.storage.queue.queueclient?view=azure-python#send-message-content----kwargs-)-Methode verwendet, der die Anzahl der Sekunden angibt, bevor die Meldung in der Warteschlange sichtbar wird. Da das Standardzeitlimit NULL ist, werden Meldungen, die anfänglich vom API-Endpunkt geschrieben werden, sofort für den Warteschlangen-Überwachungsprozess sichtbar. Folglich speichert dieser Prozess sie sofort in der Tabelle mit gültigen Codes. Wenn die gleiche Meldung erneut mit dem Timeout in die Warteschlange eingereiht wird, weiß der Prozess, dass der Code 10 Minuten später erneut empfangen wird. An diesem Punkt wird er aus der Tabelle entfernt.
+In diesem Pseudocode wird der optionale `visibility_timeout`-Parameter der [`send_message`](/python/api/azure-storage-queue/azure.storage.queue.queueclient#send-message-content----kwargs-)-Methode verwendet, der die Anzahl der Sekunden angibt, bevor die Meldung in der Warteschlange sichtbar wird. Da das Standardzeitlimit NULL ist, werden Meldungen, die anfänglich vom API-Endpunkt geschrieben werden, sofort für den Warteschlangen-Überwachungsprozess sichtbar. Folglich speichert dieser Prozess sie sofort in der Tabelle mit gültigen Codes. Wenn die gleiche Meldung erneut mit dem Timeout in die Warteschlange eingereiht wird, weiß der Prozess, dass der Code 10 Minuten später erneut empfangen wird. An diesem Punkt wird er aus der Tabelle entfernt.
 
 ## <a name="implementing-the-main-app-api-endpoint-in-azure-functions"></a>Implementieren des API-Endpunkts der Haupt-App in Azure Functions
 
@@ -90,7 +90,7 @@ Ein Teil der Implementierung, der einfacher wird, ist die Authentifizierung bei 
 
 Anhand dieses Beispiels haben Sie gelernt, wie sich Apps bei anderen Azure-Diensten authentifizieren, und wie Apps mithilfe von Azure Key Vault alle anderen notwendigen Geheimnisse für APIs von Drittanbietern speichern können.
 
-Das gleiche Muster, das hier mit Azure Key Vault und Azure Storage dargestellt wird, gilt auch für alle anderen Azure-Dienste. Der entscheidende Schritt besteht darin, dass Sie die richtigen Rollenberechtigungen für die App auf der Seite des jeweiligen Diensts im Azure-Portal oder über die Azure CLI festlegen. (Siehe [Zuweisen von Rollenberechtigungen](how-to-assign-role-permissions.md).) Lesen Sie unbedingt die Dienstdokumentation, um zu erfahren, ob Sie weitere Zugriffsrichtlinien konfigurieren müssen.
+Das gleiche Muster, das hier mit Azure Key Vault und Azure Storage dargestellt wird, gilt auch für alle anderen Azure-Dienste. Der entscheidende Schritt besteht darin, dass Sie die richtigen Rollenberechtigungen für die App auf der Seite des jeweiligen Diensts im Azure-Portal oder über die Azure CLI festlegen. (Siehe [Zuweisen von Rollenberechtigungen](/azure/role-based-access-control/role-assignments-steps).) Lesen Sie unbedingt die Dienstdokumentation, um zu erfahren, ob Sie weitere Zugriffsrichtlinien konfigurieren müssen.
 
 Denken Sie immer daran, dass Sie allen Dienstprinzipalen, die für die lokale Entwicklung verwendet werden, dieselben Rollen und Zugriffsrichtlinien zuweisen müssen.
 

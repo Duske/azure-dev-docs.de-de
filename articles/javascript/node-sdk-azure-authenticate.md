@@ -1,67 +1,55 @@
 ---
 title: Authentifizieren mit den Azure-Verwaltungsmodulen für Node.js
 description: Authentifizieren mit einem Dienstprinzipal bei den Azure-Verwaltungsmodulen für Node.js
-ms.topic: article
+ms.topic: how-to
 ms.date: 06/17/2017
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 1d3f0d2930d397c24177f0cee7a9e276c4df9d67
-ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
+ms.custom: devx-track-js
+ms.openlocfilehash: 150b00c4dbb21d0514d1d7c7d34813272bbf06e1
+ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110427"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91586117"
 ---
-# <a name="authenticate-with-the-azure-modules-for-nodejs"></a>Authentifizieren mit den Azure-Modulen für Node.js
+# <a name="authenticate-with-the-azure-management-modules-for-javascript"></a>Authentifizieren mit den Azure-Verwaltungsmodulen für JavaScript
 
-Für alle Dienst-APIs ist bei der Instanziierung die Authentifizierung mit einem `credentials`-Objekt erforderlich. Es gibt drei Möglichkeiten, die erforderlichen Anmeldeinformationen über das Azure SDK für Node.js zu authentifizieren und zu erstellen:
+Es gibt zwei Gruppen von Verwaltungspaketen für Azure-Dienste, die Sie bei der Ressourcenverwaltung unterstützen.
+- Azure SDK für Node.js
+- Azure SDK für JavaScript
 
-- Standardauthentifizierung
-- Interaktive Anmeldung
-- Dienstprinzipalauthentifizierung
+Das Azure SDK für Node.js ist die ältere Gruppe von Verwaltungspaketen für Azure-Dienste, für die Folgendes gilt: 
+- Nur in Node.js und nicht in Browsern verwendbar
+- Geschrieben in JavaScript mit von Hand geschriebenen Typdeklarationsdateien
+- Nicht in der aktiven Entwicklung und zugunsten der Pakete des Azure SDK für JavaScript als veraltet markiert
+- Namen von Paketen beginnen mit `azure-arm-`
+- Paket [ms-rest-azure](https://www.npmjs.com/package/ms-rest-azure) zur Erstellung von Anmeldeinformationen erforderlich, die dann an die Clientklassen in den Paketen übergeben werden können, um die Authentifizierung mit Azure Active Directory durchzuführen
+- Live im Repository https://github.com/Azure/azure-sdk-for-node
+
+Das Azure SDK für JavaScript ist die neuere Gruppe von Verwaltungspaketen für Azure-Dienste, für die Folgendes gilt:
+- Sowohl in Node.js als auch in Browsern verwendbar
+- In TypeScript geschrieben und sowohl in JavaScript- als auch in TypeScript-Projekten verwendbar
+- In der aktiven Entwicklung und mit Bereitstellung von Updates, wenn die Ressourcenverwaltungs-APIs von Azure-Diensten aktualisiert werden
+- Namen von Paketen beginnen mit `@azure/arm-`
+- Paket [@azure/ms-rest-nodeauth](https://www.npmjs.com/package/@azure/ms-rest-nodeauth) zur Erstellung von Anmeldeinformationen erforderlich, die dann an die Clientklassen in den Paketen übergeben werden können, um die Authentifizierung mit Azure Active Directory durchzuführen. Wenn Ihre Anwendung im Browser ausgeführt wird, verwenden Sie stattdessen [@azure/ms-rest-browserauth](https://www.npmjs.com/package/@azure/ms-rest-browserauth).
+- Live im Repository https://github.com/Azure/azure-sdk-for-js
+
+Die beiden Gruppen lassen sich ganz einfach durch einen Blick auf die Paketnamen unterscheiden.
+
+Für alle Dienst-APIs ist bei der Instanziierung die Authentifizierung mit einem `credentials`-Objekt erforderlich. Es gibt mehrere Möglichkeiten, die Authentifizierung durchzuführen und die erforderlichen Anmeldeinformationen für Pakete im Azure SDK für Node.js und im Azure SDK für JavaScript zu erstellen.
+
+Zu den gängigen Methoden zählen unter anderem folgende:
+
+- Standardauthentifizierung unter Verwendung von Benutzername und Kennwort
+- Interaktive Anmeldung. Dies ist die einfachste Authentifizierungsmethode, erfordert jedoch die Anmeldung mit einem Benutzerkonto.
+- Dienstprinzipalauthentifizierung. Im Thema [Erstellen eines Azure-Dienstprinzipals mit Node.js](./node-sdk-azure-authenticate-principal.md) werden verschiedene Techniken zum Erstellen eines Dienstprinzipals beschrieben. 
+
+Die Infodatei der folgenden Pakete enthält jeweils ausführliche Informationen zu den verschiedenen Methoden, mit denen Sie ein Anmeldeinformationsobjekt erhalten.
+- [@azure/ms-rest-nodeauth](https://www.npmjs.com/package/@azure/ms-rest-nodeauth) bei Verwendung eines Verwaltungspakets im Azure SDK für JavaScript in Node.js
+- [@azure/ms-rest-browserauth](https://www.npmjs.com/package/@azure/ms-rest-browserauth) bei Verwendung eines Verwaltungspakets im Azure SDK für JavaScript in einem Browser
+- [ms-rest-azure](https://www.npmjs.com/package/ms-rest-azure) bei Verwendung eines Verwaltungspakets im älteren Azure SDK für Node.js
 
 [!INCLUDE [chrome-note](includes/chrome-note.md)]
 
-## <a name="basic-authentication"></a>Standardauthentifizierung
-
-Verwenden Sie die Funktion `loginWithUsernamePassword`, um die programmgesteuerte Authentifizierung mit den Anmeldeinformationen für Ihr Azure-Konto durchzuführen. Der folgende JavaScript-Codeausschnitt veranschaulicht, wie Sie die einfache Authentifizierung mit Anmeldeinformationen nutzen, die als Umgebungsvariablen gespeichert sind.
-
-```javascript
-const Azure = require('azure');
-const MsRest = require('ms-rest-azure');
-
-MsRest.loginWithUsernamePassword(process.env.AZURE_USER,
-                                 process.env.AZURE_PASS,
-                                 (err, credentials) => {
-  if (err) throw err;
-
-  let storageClient = Azure.createARMStorageManagementClient(credentials,
-                                                             '<azure-subscription-id>');
-
-  // ..use the client instance to manage service resources.
-});
-```
-
-## <a name="interactive-login"></a>Interaktive Anmeldung
-
-Bei der interaktiven Anmeldung werden ein Link und ein Code bereitgestellt, und mit diesen Angaben können sich Benutzer über einen Browser authentifizieren. Nutzen Sie diese Methode, wenn von demselben Skript mehrere Konten verwendet werden oder wenn der Benutzereingriff gewünscht ist.
-
-```javascript
-const Azure = require('azure');
-const MsRest = require('ms-rest-azure');
-
-MsRest.interactiveLogin((err, credentials) => {
-  if (err) throw err;
-
-  let storageClient = Azure.createARMStorageManagementClient(credentials, '<azure-subscription-id>');
-
-  // ..use the client instance to manage service resources.
-});
-```
-
-## <a name="service-principal-authentication"></a>Dienstprinzipalauthentifizierung
-
-Die [interaktive Anmeldung](#interactive-login) ist die einfachste Möglichkeit, die Authentifizierung durchzuführen. Bei der Verwendung des Node.js SDK kann es dagegen ratsam sein, die Dienstprinzipalauthentifizierung zu nutzen, anstatt die Anmeldeinformationen für Ihr Konto anzugeben. Im Thema [Erstellen eines Azure-Dienstprinzipals mit Node.js](./node-sdk-azure-authenticate-principal.md) werden verschiedene Techniken zum Erstellen (und Verwenden) eines Dienstprinzipals beschrieben.
-
-## <a name="next-steps"></a>Nächste Schritte
+## <a name="next-steps"></a>Nächste Schritte   
 
 * [Bereitstellen einer statischen Website in Azure in Visual Studio Code](tutorial-vscode-static-website-node-01.md)

@@ -4,18 +4,18 @@ description: Erstellen, Ändern der Größe und Aktualisieren eines verwalteten 
 ms.topic: conceptual
 ms.date: 6/15/2017
 ms.custom: devx-track-python
-ms.openlocfilehash: 53f93098840c2635b388df2c2fd97fe6b3c8af48
-ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
+ms.openlocfilehash: b81f9cb848e1b3505e50cd3fde35e1afff16d493
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91493061"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764507"
 ---
 # <a name="managed-disks"></a>Managed Disks
 
 Azure Managed Disks bietet eine einfachere Datenträgerverwaltung, mehr Flexibilität sowie höhere Sicherheit und eine bessere Skalierung. Ein Speicherkonto für Datenträger ist nicht mehr erforderlich, sodass sich Kunden bei der Skalierung keine Gedanken um die mit Speicherkonten einhergehenden Einschränkungen machen müssen. Dieser Artikel enthält eine kurze Einführung und Referenz zur Nutzung des Diensts über Python.
 
-Aus Entwicklerperspektive entspricht die Managed Disks-Umgebung in der Azure CLI der CLI-Umgebung in anderen plattformübergreifenden Tools. Für die Verwaltung von Managed Disks können Sie das [Azure Python](https://azure.microsoft.com/develop/python/) SDK und [azure-mgmt-compute-Paket 0.33.0](https://pypi.python.org/pypi/azure-mgmt-compute) verwenden. Ein Computeclient kann anhand [dieses Tutorials](/python/api/overview/azure/virtualmachines?view=azure-python) erstellt werden.
+Aus Entwicklerperspektive entspricht die Managed Disks-Umgebung in der Azure CLI der CLI-Umgebung in anderen plattformübergreifenden Tools. Für die Verwaltung von Managed Disks können Sie das [Azure Python](https://azure.microsoft.com/develop/python/) SDK und [azure-mgmt-compute-Paket 0.33.0](https://pypi.python.org/pypi/azure-mgmt-compute) verwenden. Ein Computeclient kann anhand [dieses Tutorials](/python/api/overview/azure/virtualmachines) erstellt werden.
 
 ## <a name="standalone-managed-disks"></a>Eigenständige verwaltete Datenträger
 

@@ -4,12 +4,12 @@ description: Eine Beschreibung der Implementierung von Drittanbieter-APIs mithil
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 84078a455843cb28f80a633bb5344bc5ab645ac7
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: 7c0098988265fef5b6b0f5e4a654f54c9bed4594
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379533"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764499"
 ---
 # <a name="part-3-example-third-party-api-implementation"></a>Teil 3: Beispiel für die Implementierung einer Drittanbieter-API
 
@@ -42,9 +42,9 @@ Im Beispielrepository befindet sich dieser Code unter *third_party_api/RandomNum
 
 Zum Bereitstellen des Codes führt das Bereitstellungsskript des Beispiels die folgenden Schritte aus:
 
-1. Erstellen eines unterstützenden Speicherkontos für Azure Functions mit dem Azure CLI-Befehl [`az storage account create`](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create)
+1. Erstellen eines unterstützenden Speicherkontos für Azure Functions mit dem Azure CLI-Befehl [`az storage account create`](/cli/azure/storage/account#az-storage-account-create)
 
-1. Erstellen einer Azure Functions-„App“ mit dem Azure CLI-Befehl [`az function app create`](/cli/azure/functionapp?view=azure-cli-latest#az-functionapp-create)
+1. Erstellen einer Azure Functions-„App“ mit dem Azure CLI-Befehl [`az function app create`](/cli/azure/functionapp#az-functionapp-create)
 
 1. Nachdem 60 Sekunden auf die vollständige Bereitstellung des Codes gewartet wurde, wird der Code mit dem [Azure Functions Core Tools](/azure/azure-functions/functions-run-local?tabs=linux%2Ccsharp%2Cbash)-Befehl [`func azure functionapp publish`](/azure/azure-functions/functions-run-local?tabs=linux%2Ccsharp%2Cbash#project-file-deployment) bereitgestellt.
 

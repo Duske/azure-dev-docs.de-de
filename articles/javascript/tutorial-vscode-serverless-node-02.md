@@ -1,15 +1,15 @@
 ---
 title: Erstellen der Azure Functions-Anwendung in Visual Studio Code
-description: 'Teil 2 des Tutorials: Erstellen der Azure Functions-App'
-ms.topic: conceptual
+description: 'Teil 2 des serverlosen Tutorials: Erstellen der Azure Functions-App'
+ms.topic: tutorial
 ms.date: 09/23/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 7ea1b39086a6cd824084e9bbb3839ab41a24eaad
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.custom: devx-track-js
+ms.openlocfilehash: 39481fc2b5472bd2f9e54946d3ab1dd6051f00d1
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90772623"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365113"
 ---
 # <a name="create-the-local-functions-app"></a>Erstellen der lokalen Funktions-App
 
@@ -42,7 +42,7 @@ In diesem Schritt erstellen Sie eine lokale Azure Functions-Anwendung, die eine
 
 1. Wählen Sie an der Eingabeaufforderung **Autorisierungsstufe** die Option **Anonym** aus:
 
-    ![Eingeben eines Funktionsnamens](media/functions-extension/create-function-anonymous-auth.png)
+    ![ Auswählen von „Anonym“ an der Eingabeaufforderung „Autorisierungsstufe“](media/functions-extension/create-function-anonymous-auth.png)
 
 1. Nach einigen Augenblicken ist VS Code mit der Erstellung des Projekts fertig. Sie haben nun einen für die Funktion benannten Ordner *HttpExample*, der drei Dateien enthält:
 

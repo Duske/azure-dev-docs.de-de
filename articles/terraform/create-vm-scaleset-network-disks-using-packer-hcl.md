@@ -4,12 +4,12 @@ description: Hier wird beschrieben, wie Sie mit Terraform eine Azure-VM-Skalieru
 ms.topic: how-to
 ms.date: 11/07/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: de8f22311edefcef1f25571731f17e5e5bc96348
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 7d81c80f1051b615dcfd089205f8c685ecaf1589
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241192"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401600"
 ---
 # <a name="create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image-by-using-terraform"></a>Erstellen einer Azure-VM-Skalierungsgruppe auf der Grundlage eines benutzerdefinierten Packer-Images unter Verwendung von Terraform
 
@@ -24,8 +24,6 @@ In diesem Artikel werden folgende Vorgehensweisen behandelt:
 > * Erstellen eines benutzerdefinierten VM-Images mit Packer
 > * Erstellen und Bereitstellen einer VM-Skalierungsgruppe unter Verwendung des benutzerdefinierten Images
 > * Erstellen und Bereitstellen einer Jumpbox
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -329,12 +327,7 @@ Stellen Sie die zusätzlichen Ressourcen in Azure bereit:
 terraform apply 
 ```
 
-Der Inhalt der Ressourcengruppe sieht wie in der folgenden Abbildung aus:
-
-![Terraform-Ressourcengruppe für VM-Skalierungsgruppe](./media/create-vm-scaleset-network-disks-using-packer-hcl/tf-create-vmss-step6-apply.png)
-
-Öffnen Sie einen Browser, und stellen Sie eine Verbindung mit dem vollqualifizierten Domänennamen her, der durch den Befehl zurückgegeben wurde. 
-
+Öffnen Sie einen Browser, und stellen Sie eine Verbindung mit dem vollqualifizierten Domänennamen her, der durch den Befehl zurückgegeben wurde.
 
 ## <a name="add-a-jumpbox-to-the-existing-network"></a>Hinzufügen einer Jumpbox zum vorhandenen Netzwerk 
 
@@ -434,12 +427,9 @@ Stellen Sie die Jumpbox bereit.
 terraform apply 
 ```
 
-Nach Abschluss der Bereitstellung sieht der Inhalt der Ressourcengruppe wie folgt aus:
+**Hinweise**:
 
-![Terraform-Ressourcengruppe für VM-Skalierungsgruppe](./media/create-vm-scaleset-network-disks-using-packer-hcl/tf-create-create-vmss-step8.png)
-
-> [!NOTE]
-> Die Anmeldung mit einem Kennwort ist für die bereitgestellte Jumpbox und für die bereitgestellte VM-Skalierungsgruppe deaktiviert. Melden Sie sich mit SSH an, um auf die virtuellen Computer zuzugreifen.
+- Die Anmeldung mit einem Kennwort ist für die bereitgestellte Jumpbox und für die bereitgestellte VM-Skalierungsgruppe deaktiviert. Melden Sie sich mit SSH an, um auf die virtuellen Computer zuzugreifen.
 
 ## <a name="clean-up-the-environment"></a>Bereinigen der Umgebung
 
@@ -450,6 +440,8 @@ terraform destroy
 ```
 
 Geben Sie *yes* (Ja) ein, wenn Sie aufgefordert werden, das Löschen der Ressourcen zu bestätigen. Die Bereinigung kann einige Minuten dauern.
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>Nächste Schritte
 

@@ -4,12 +4,12 @@ description: Eine Erörterung der Abhängigkeiten der Haupt-App (hauptsächlich 
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 2da18ac4b1d27e976d0713fba16dbfc0ba644168
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: 9c6204afd17d86cd8677022a59641e5343c6a543
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379484"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764727"
 ---
 # <a name="part-5-main-app-dependencies-import-statements-and-environment-variables"></a>Teil 5: Abhängigkeiten der Haupt-App, Importanweisungen und Umgebungsvariablen
 
@@ -19,7 +19,7 @@ Dieser Teil enthält Informationen zu den in die Haupt-App eingefügten Python-B
 
 ## <a name="dependencies-and-import-statements"></a>Abhängigkeiten und Importanweisungen
 
-Der App-Code erfordert eine Reihe von Bibliotheken: Flask, die Standardbibliothek für HTTP-Anforderungen, und die Azure-Bibliotheken für Active Directory ([azure.identity](/python/api/overview/azure/identity-readme?view=azure-python)), Key Vault ([azure.keyvault.secrets](/python/api/overview/azure/keyvault-secrets-readme?view=azure-python)) und Queue Storage ([azure.storage.queue](/python/api/overview/azure/storage-queue-readme?view=azure-python)). Diese Bibliotheken sind in der Datei *requirements.txt* der App enthalten:
+Der App-Code erfordert eine Reihe von Bibliotheken: Flask, die Standardbibliothek für HTTP-Anforderungen, und die Azure-Bibliotheken für Active Directory ([azure.identity](/python/api/overview/azure/identity-readme)), Key Vault ([azure.keyvault.secrets](/python/api/overview/azure/keyvault-secrets-readme)) und Queue Storage ([azure.storage.queue](/python/api/overview/azure/storage-queue-readme)). Diese Bibliotheken sind in der Datei *requirements.txt* der App enthalten:
 
 ```txt
 flask
@@ -57,7 +57,7 @@ Bei der lokalen Ausführung erstellen Sie diese Variablen in der von Ihnen verwe
 
 Beim Bereitstellen in Azure App Service haben Sie jedoch keinen Zugriff auf den Server selbst. In diesem Fall erstellen Sie *Anwendungseinstellungen* mit denselben Namen, die der App dann als Umgebungsvariablen angezeigt werden. 
 
-Die Bereitstellungsskripts erstellen diese Einstellungen mit dem Azure CLI-Befehl [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set). Alle vier Variablen werden mit einem einzigen Befehl festgelegt.
+Die Bereitstellungsskripts erstellen diese Einstellungen mit dem Azure CLI-Befehl [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings#az-webapp-config-appsettings-set). Alle vier Variablen werden mit einem einzigen Befehl festgelegt.
 
 Informationen zum Erstellen von Einstellungen über das Azure-Portal finden Sie unter [Konfigurieren einer App Service-App im Azure-Portal](/azure/app-service/configure-common).
 

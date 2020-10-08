@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: 9d7db7db5a1b7323bd10e7e9cc87ca3b9a95826a
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: 06fc0e0986a41b2d37aa38d5557b0efbae08994e
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87401482"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493151"
 ---
 ### <a name="create-a-web-project"></a>Erstellen eines Webprojekts
 
@@ -36,9 +36,7 @@ ms.locfileid: "87401482"
 
 1. Löschen Sie **WeatherForecast.cs**.
 
-1. **CONTROL** + **Klicken** Sie auf das Projekt **PushDemoApi**, und wählen Sie dann **Neue Datei...** aus dem Menü **Hinzufügen** aus.
-
-1. Richten Sie mit dem [Geheimnis-Manager-Tool](https://docs.microsoft.com/aspnet/core/security/app-secrets?view=aspnetcore-3.1&tabs=linux#secret-manager) lokale Konfigurationswerte ein. Indem Sie die Kopplung der geheimen Schlüssel mit der Lösung aufheben, wird sichergestellt, dass sie nicht in die Quellcodeverwaltung geraten. Öffnen Sie **Terminal**, wechseln Sie dann zum Verzeichnis der Projektdatei, und führen Sie die folgenden Befehle aus:
+1. Richten Sie mit dem [Geheimnis-Manager-Tool](/aspnet/core/security/app-secrets?view=aspnetcore-3.1&tabs=linux#secret-manager) lokale Konfigurationswerte ein. Indem Sie die Kopplung der geheimen Schlüssel mit der Lösung aufheben, wird sichergestellt, dass sie nicht in die Quellcodeverwaltung geraten. Öffnen Sie **Terminal**, wechseln Sie dann zum Verzeichnis der Projektdatei, und führen Sie die folgenden Befehle aus:
 
     ```bash
     dotnet user-secrets init
@@ -59,7 +57,7 @@ ms.locfileid: "87401482"
 
 ### <a name="authenticate-clients-using-an-api-key-optional"></a>Authentifizieren von Clients mit einem API-Schlüssel (optional)
 
-API-Schlüssel sind nicht so sicher wie Token, sind aber für die Zwecke dieses Tutorials ausreichend. Ein API-Schlüssel kann problemlos über die [ASP.NET-Middleware](https://docs.microsoft.com/aspnet/core/fundamentals/middleware/?view=aspnetcore-3.1) konfiguriert werden.
+API-Schlüssel sind nicht so sicher wie Token, sind aber für die Zwecke dieses Tutorials ausreichend. Ein API-Schlüssel kann problemlos über die [ASP.NET-Middleware](/aspnet/core/fundamentals/middleware/?view=aspnetcore-3.1) konfiguriert werden.
 
 1. Fügen Sie den **API-Schlüssel** zu den lokalen Konfigurationswerten hinzu.
 
@@ -150,7 +148,7 @@ API-Schlüssel sind nicht so sicher wie Token, sind aber für die Zwecke dieses 
     ```
 
     > [!NOTE]
-    > Ein [Authentifizierungs-Handler](https://docs.microsoft.com/aspnet/core/security/authentication/?view=aspnetcore-3.1#authentication-handler) ist ein Typ, der das Verhalten eines Schemas implementiert, in diesem Fall ein benutzerdefiniertes API-Schlüssel-Schema.
+    > Ein [Authentifizierungs-Handler](/aspnet/core/security/authentication/?view=aspnetcore-3.1#authentication-handler) ist ein Typ, der das Verhalten eines Schemas implementiert, in diesem Fall ein benutzerdefiniertes API-Schlüssel-Schema.
 
 1. Fügen Sie dem Ordner **Authentication** mit dem Namen *ApiKeyAuthenticationBuilderExtensions.cs* eine weitere **leere Klasse** hinzu, und fügen Sie dann die folgende Implementierung hinzu.
 
@@ -181,6 +179,8 @@ API-Schlüssel sind nicht so sicher wie Token, sind aber für die Zwecke dieses 
 1. Aktualisieren Sie in **Startup.cs** die Methode **ConfigureServices**, um die API-Schlüsselauthentifizierung unterhalb des Aufrufs der Methode **services.AddControllers**.
 
     ```csharp
+    using PushDemoApi.Authentication;
+    
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllers();
@@ -223,7 +223,7 @@ API-Schlüssel sind nicht so sicher wie Token, sind aber für die Zwecke dieses 
 
 ### <a name="add-dependencies-and-configure-services"></a>Hinzufügen von Abhängigkeiten und Konfigurieren von Diensten
 
-ASP.NET Core unterstützt das Softwareentwurfsmuster [Abhängigkeitsinjektion (Dependency Injection, DI)](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.1). Mit dieser Technik kann eine [Umkehrung der Steuerung (Inversion of Control, IoC)](https://docs.microsoft.com/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion) zwischen Klassen und ihren Abhängigkeiten erreicht werden.  
+ASP.NET Core unterstützt das Softwareentwurfsmuster [Abhängigkeitsinjektion (Dependency Injection, DI)](/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.1). Mit dieser Technik kann eine [Umkehrung der Steuerung (Inversion of Control, IoC)](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion) zwischen Klassen und ihren Abhängigkeiten erreicht werden.  
 
 Die Verwendung des Benachrichtigungshubs und des [Notification Hubs SDK für Back-End-Vorgänge](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/) ist innerhalb eines Diensts gekapselt. Der Dienst wird durch eine geeignete Abstraktion registriert und verfügbar gemacht.
 
@@ -260,9 +260,9 @@ Die Verwendung des Benachrichtigungshubs und des [Notification Hubs SDK für Bac
     ```
 
     > [!NOTE]
-    > Diese Klasse enthält die tokenisierten Benachrichtigungsnutzlasten für die für dieses Szenario erforderlichen generischen und automatischen Benachrichtigungen. Die Nutzlasten werden außerhalb der [Installation](https://docs.microsoft.com/dotnet/api/microsoft.azure.notificationhubs.installation?view=azure-dotnet) definiert, um Experimente zuzulassen, ohne vorhandene Installationen über den Dienst aktualisieren zu müssen. Die Verarbeitung von Änderungen an Installationen auf diese Weise ist nicht Gegenstand dieses Tutorials. Ziehen Sie für die Produktion [benutzerdefinierte Vorlagen](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages) in Betracht.
+    > Diese Klasse enthält die tokenisierten Benachrichtigungsnutzlasten für die für dieses Szenario erforderlichen generischen und automatischen Benachrichtigungen. Die Nutzlasten werden außerhalb der [Installation](/dotnet/api/microsoft.azure.notificationhubs.installation?view=azure-dotnet) definiert, um Experimente zuzulassen, ohne vorhandene Installationen über den Dienst aktualisieren zu müssen. Die Verarbeitung von Änderungen an Installationen auf diese Weise ist nicht Gegenstand dieses Tutorials. Ziehen Sie für die Produktion [benutzerdefinierte Vorlagen](/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages) in Betracht.
 
-1. Wählen Sie **Allgemein** > **Leere Klassen** aus, geben Sie *DeviceInstallation.cs* als **Namen** ein, und klicken Sie dann auf **Neu** unter Hinzufügung der folgenden Implementierung.
+1. Fügen Sie dem Ordner **Modelle** mit dem Namen *DeviceInstallation.cs* eine weitere **leere Klasse** hinzu, und fügen Sie dann die folgende Implementierung hinzu.
 
     ```csharp
     using System.Collections.Generic;
@@ -326,6 +326,7 @@ Die Verwendung des Benachrichtigungshubs und des [Notification Hubs SDK für Bac
 1. Fügen Sie zum Ordner **Dienste** eine **leere Schnittstelle** namens *INotificationService.cs* hinzu, und fügen Sie dann die folgende Implementierung hinzu.
 
     ```csharp
+    using System.Threading;
     using System.Threading.Tasks;
     using PushDemoApi.Models;
 
@@ -510,7 +511,7 @@ Die Verwendung des Benachrichtigungshubs und des [Notification Hubs SDK für Bac
     ```
 
     > [!NOTE]
-    > Der für **SendTemplateNotificationAsync** bereitgestellte Tagausdruck ist auf 20 Tags beschränkt. Er ist für die meisten Operatoren auf 6 begrenzt, aber der Ausdruck enthält in diesem Fall nur ORs (||). Wenn die Anforderung mehr als 20 Tags enthält, muss sie in mehrere Anforderungen aufgeteilt werden. Weitere Details finden Sie in der Dokumentation [Weiterleitung und Tagausdrücke](https://msdn.microsoft.com/library/azure/Dn530749.aspx?f=255&MSPPError=-2147217396).
+    > Der für **SendTemplateNotificationAsync** bereitgestellte Tagausdruck ist auf 20 Tags beschränkt. Er ist für die meisten Operatoren auf 6 begrenzt, aber der Ausdruck enthält in diesem Fall nur ORs (||). Wenn die Anforderung mehr als 20 Tags enthält, muss sie in mehrere Anforderungen aufgeteilt werden. Weitere Details finden Sie in der Dokumentation [Weiterleitung und Tagausdrücke](/previous-versions/azure/azure-services/dn530749(v=azure.100)?f=255&MSPPError=-2147217396).
 
 1. Aktualisieren Sie die Methode**ConfigureServices** in **Startup.cs**, um **NotificationHubsService** als Singleton-Implementierung von **INotificationService** hinzuzufügen.
 
@@ -606,7 +607,7 @@ Die Verwendung des Benachrichtigungshubs und des [Notification Hubs SDK für Bac
     >
     > Wenn Sie eine Warnung der **SSL-Zertifikatüberprüfung** erhalten, können Sie die **[Postman](https://www.postman.com/downloads)** -Einstellung zum Anfordern der SSL-Zertifikatüberprüfung unter **Einstellungen** deaktivieren.
 
-1. Ersetzen Sie die vorlagenbasierte Klassenmethoden durch den folgenden Code.
+1. Ersetzen Sie die vorlagenbasierten Klassenmethoden in **NotificationsController.cs** durch den folgenden Code:
 
     ```csharp
     [HttpPut]
@@ -669,7 +670,7 @@ Die Verwendung des Benachrichtigungshubs und des [Notification Hubs SDK für Bac
 
 ### <a name="create-the-api-app"></a>Erstellen der API-App
 
-Sie erstellen jetzt eine [API-App](https://azure.microsoft.com/services/app-service/api/) in [Azure App Service](https://docs.microsoft.com/azure/app-service/) zum Hosten des Back-End-Diensts.  
+Sie erstellen jetzt eine [API-App](https://azure.microsoft.com/services/app-service/api/) in [Azure App Service](/azure/app-service/) zum Hosten des Back-End-Diensts.  
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 

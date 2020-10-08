@@ -5,12 +5,12 @@ author: edburns
 ms.author: edburns
 ms.topic: tutorial
 ms.date: 08/10/2020
-ms.openlocfilehash: 2ee3e7c03d0fd7f7048037fb27f2cfacfe39671d
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 277f34fecfd976135077243252bc31aace11dd61
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831386"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365013"
 ---
 # <a name="end-user-authorization-and-authentication-for-migrating-java-apps-on-weblogic-server-to-azure"></a>Autorisierung und Authentifizierung von Endbenutzern für die Migration von Java-Apps in WebLogic Server zu Azure
 
@@ -168,7 +168,7 @@ Wenn Sie eine der in [Oracle WebLogic Server: Azure-Anwendungen](/azure/virtual-
 |----------------|---------------|---------|
 | `aadsServerHost` | Serverhost | Dieser Wert ist der öffentliche DNS-Name, den Sie unter [Tutorial: Erstellen und Konfigurieren einer verwalteten Azure Active Directory Domain Services-Domäne](/azure/active-directory-domain-services/tutorial-create-instance) gespeichert haben. |
 | `aadsPublicIP` | Externe Secure LDAP-IP-Adresse | Bei diesem Wert handelt es sich um die **externe Secure LDAP-IP-Adresse**, die Sie im Abschnitt [Konfigurieren einer DNS-Zone für den externen Zugriff](/azure/active-directory-domain-services/tutorial-configure-ldaps#configure-dns-zone-for-external-access) gespeichert haben.|
-| `wlsLDAPPrincipal` | Prinzipal   | Kehren Sie zu *LDP.exe* zurück.  Führen Sie die folgenden Schritte aus, um einen zusätzlichen Wert für `wlsLDAPPrincipal` zu erhalten. <ol><li>Wählen Sie im Menü **Ansicht** die Option **Struktur** aus.</li><li>Lassen Sie im Dialogfeld **Strukturansicht** den Wert **BaseDN** leer, und wählen Sie **OK** aus.</li><li>Klicken Sie mit der rechten Maustaste auf den rechten Bereich, und wählen Sie **Ausgabe löschen** aus.</li><li>Erweitern Sie die Strukturansicht auf der linken Seite, und wählen Sie den Eintrag aus, der mit „OU=AADDC Users“ beginnt.</li><li>Wählen Sie im Menü **Durchsuchen** die Option **Suchen** aus.</li><li>Übernehmen Sie im angezeigten Dialogfeld die Standardeinstellungen, und wählen Sie **Ausführen** aus.</li><li>Warten Sie, bis im rechten Bereich eine Ausgabe angezeigt wird, und wählen Sie anschließend neben **Ausführen** die Option **Schließen** aus.</li><li>Überprüfen Sie die Ausgabe für den Eintrag **Dn**, der dem Benutzer entspricht, den Sie der Gruppe „AAD DC Administrators“ (AAD-DC-Administratoren) hinzugefügt haben.  Er beginnt mit **Dn: CN=&lt;Benutzername&gt;OU=AADDC Users"** .</li></ol> |
+| `wlsLDAPPrincipal` | Prinzipal   | Kehren Sie zu *LDP.exe* zurück.  Führen Sie die folgenden Schritte aus, um einen zusätzlichen Wert für `wlsLDAPPrincipal` zu erhalten. <ol><li>Wählen Sie im Menü **Ansicht** die Option **Struktur** aus.</li><li>Lassen Sie im Dialogfeld **Strukturansicht** den Wert **BaseDN** leer, und wählen Sie **OK** aus.</li><li>Klicken Sie mit der rechten Maustaste auf den rechten Bereich, und wählen Sie **Ausgabe löschen** aus.</li><li>Erweitern Sie die Strukturansicht auf der linken Seite, und wählen Sie den Eintrag aus, der mit „OU=AADDC Users“ beginnt.</li><li>Wählen Sie im Menü **Durchsuchen** die Option **Suchen** aus.</li><li>Übernehmen Sie im angezeigten Dialogfeld die Standardeinstellungen, und wählen Sie **Ausführen** aus.</li><li>Warten Sie, bis im rechten Bereich eine Ausgabe angezeigt wird, und wählen Sie anschließend neben **Ausführen** die Option **Schließen** aus.</li><li>Überprüfen Sie die Ausgabe für den Eintrag **Dn**, der dem Benutzer entspricht, den Sie der Gruppe „AAD DC Administrators“ (AAD-DC-Administratoren) hinzugefügt haben.  Er beginnt mit **Dn: CN=&lt;Benutzername&gt;OU=AADDC Users**.</li></ol> |
 | `wlsLDAPGroupBaseDN` und `wlsLDAPUserBaseDN` | Benutzerbasis-DN und Gruppenbasis-DN | Im Rahmen dieses Tutorials werden für beide Eigenschaften die gleichen Werte verwendet (der Teil von **wlsLDAPPrincipal** nach dem ersten Komma).|
 | `wlsLDAPPrincipalPassword` | Kennwort für Prinzipal | Dieser Wert ist das Kennwort für den Benutzer, der der Gruppe **AAD DC Administrators** (AAD-DC-Administratoren) hinzugefügt wurde. |
 | `wlsLDAPProviderName` | Anbietername | Für diesen Wert kann der Standardwert beibehalten werden.  Er wird als Name des Authentifizierungsanbieters in WLS verwendet. |

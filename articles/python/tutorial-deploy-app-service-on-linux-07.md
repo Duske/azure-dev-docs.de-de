@@ -4,12 +4,12 @@ description: 'Tutorialschritt 7: Bereinigen von Azure-Ressourcen'
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 523a1bb305fbaf566181f87c4affa0dd251e93a5
-ms.sourcegitcommit: 4af22924a0eaf01e6902631c0714045c02557de4
+ms.openlocfilehash: cbecb9771a1b4dcc8460b7c7296ae06928930a34
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91209370"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764755"
 ---
 # <a name="7-clean-up-resources-after-deploying-to-azure-app-service-on-linux-from-visual-studio-code"></a>7: Bereinigen von Ressourcen nach der Bereitstellung in Azure App Service für Linux aus Visual Studio Code
 
@@ -25,7 +25,7 @@ Herzlichen Glückwunsch zum Absolvieren dieser exemplarische Vorgehensweise zum 
 
 Wie bereits erwähnt, können Sie mehr über die App Service-Erweiterung erfahren, indem Sie das zugehörige GitHub-Repository [vscode-azureappservice](https://github.com/Microsoft/vscode-azureappservice) besuchen. Beschreibungen von Problemen und sonstige Beiträge sind ebenfalls willkommen.
 
-Weitere Informationen zu Azure-Diensten, die Sie von Python aus verwenden können, einschließlich Datenspeicherung sowie KI und Machine Learning-Diensten, finden Sie unter [Azure für Python-Cloudentwickler](/python/azure/?view=azure-python).
+Weitere Informationen zu Azure-Diensten, die Sie von Python aus verwenden können, einschließlich Datenspeicherung sowie KI und Machine Learning-Diensten, finden Sie unter [Azure für Python-Cloudentwickler](/python/azure/).
 
 Es gibt auch andere Azure-Erweiterungen für VS Code, die möglicherweise für Sie hilfreich sind. Suchen Sie einfach im Erweiterungen-Explorer nach „Azure“:
 
@@ -39,6 +39,6 @@ Einige beliebte Erweiterungen sind:
 - [ARM-Tools (Azure Resource Manager)](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
 
 > [!div class="nextstepaction"]
-> [Ich bin fertig!](/python/azure/?view=azure-python) 
+> [Ich bin fertig!](/python/azure/) 
 
 [Treten Probleme auf? Informieren Sie uns darüber.](https://aka.ms/FlaskVSCQuickstartHelp)

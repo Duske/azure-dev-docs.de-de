@@ -6,12 +6,12 @@ ms.author: ushan
 ms.topic: reference
 ms.service: azure
 ms.date: 05/05/2020
-ms.openlocfilehash: b1f28c83a9ee24347edfc275ec5a07f4c137b20f
-ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
+ms.openlocfilehash: 67093168d1daa18350f20a181eed438c6d253a04
+ms.sourcegitcommit: 8fcb6c2d17be63064090f801f46c9c754821f979
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91493101"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91805931"
 ---
 # <a name="deploy-apps-from-github-to-azure"></a>Bereitstellen von Apps aus GitHub in Azure 
 
@@ -30,4 +30,4 @@ Die folgenden Artikel unterstützen Sie bei der Bereitstellung von Apps aus GitH
 ## <a name="azure-kubernetes-service"></a>Azure Kubernetes Service
 
 - [GitHub Actions für die Bereitstellung in Kubernetes Service](/azure/aks/kubernetes-action)  
-- [GitHub-Aktionen und Azure Kubernetes Service (Vorschau)](//azure/dev-spaces/how-to/github-actions)
+- [GitHub-Aktionen und Azure Kubernetes Service (Vorschau)](https://docs.microsoft.com/azure/dev-spaces/how-to/github-actions)

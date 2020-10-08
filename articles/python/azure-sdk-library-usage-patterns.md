@@ -4,12 +4,12 @@ description: Hier finden Sie eine Übersicht über gängige Verwendungsmuster mi
 ms.date: 09/21/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 63cd6c85e15fa0ffb44a4da01ffcc27d4ae08f17
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: ae51bee0aea2717c09242f8928a617bf8211f372
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831796"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764776"
 ---
 # <a name="azure-libraries-for-python-usage-patterns"></a>Azure-Bibliotheken für Python: Verwendungsmuster
 
@@ -37,9 +37,9 @@ Von `pip install` wird die neueste Version einer Bibliothek in Ihrer aktuellen P
 
 ## <a name="asynchronous-operations"></a>Asynchrone Vorgänge
 
-Viele Vorgänge, die Sie über Client- und Verwaltungsclientobjekte aufrufen (z. B. [`WebSiteManagementClient.web_apps.create_or_update`](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.operations.webappsoperations?view=azure-python#create-or-update-resource-group-name--name--site-envelope--custom-headers-none--raw-false--polling-true----operation-config-)), geben ein Objekt vom Typ `AzureOperationPoller[<type>]` zurück, wobei `<type>` für den betreffenden Vorgang spezifisch ist.
+Viele Vorgänge, die Sie über Client- und Verwaltungsclientobjekte aufrufen (z. B. [`WebSiteManagementClient.web_apps.create_or_update`](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.operations.webappsoperations#create-or-update-resource-group-name--name--site-envelope--custom-headers-none--raw-false--polling-true----operation-config-)), geben ein Objekt vom Typ `AzureOperationPoller[<type>]` zurück, wobei `<type>` für den betreffenden Vorgang spezifisch ist.
 
-Ein [`AzureOperationPoller`](/python/api/msrestazure/msrestazure.azure_operation.azureoperationpoller?view=azure-python)-Rückgabetyp bedeutet, dass der Vorgang asynchron ist. Dementsprechend müssen Sie die `result`-Methode dieses Pollers so aufrufen, dass sie wartet, bis das tatsächliche Ergebnis des Vorgangs verfügbar wird.
+Ein [`AzureOperationPoller`](/python/api/msrestazure/msrestazure.azure_operation.azureoperationpoller)-Rückgabetyp bedeutet, dass der Vorgang asynchron ist. Dementsprechend müssen Sie die `result`-Methode dieses Pollers so aufrufen, dass sie wartet, bis das tatsächliche Ergebnis des Vorgangs verfügbar wird.
 
 Der folgende Code stammt aus [Beispiel: Bereitstellen und Implementieren einer Web-App](azure-sdk-example-web-app.md) und zeigt ein Beispiel für die Verwendung des Pollers, damit auf ein Ergebnis gewartet wird:
 
@@ -58,7 +58,7 @@ poller = app_service_client.web_apps.create_or_update(RESOURCE_GROUP_NAME,
 web_app_result = poller.result()
 ```
 
-In diesem Fall ist der Rückgabewert von `create_or_update` vom Typ `AzureOperationPoller[Site]`. Dies bedeutet, dass der Rückgabewert von `poller.result()` ein [Site](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.models.site?view=azure-python)-Objekt ist.
+In diesem Fall ist der Rückgabewert von `create_or_update` vom Typ `AzureOperationPoller[Site]`. Dies bedeutet, dass der Rückgabewert von `poller.result()` ein [Site](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.models.site)-Objekt ist.
 
 ## <a name="exceptions"></a>Ausnahmen
 
@@ -112,7 +112,7 @@ Einzelne Bibliotheken sind nicht verpflichtet, diese Argumente zu unterstützen,
 
 Bei vielen Vorgängen innerhalb der Azure-Bibliotheken können Objektargumente als diskrete Objekte oder als JSON-Inline-Code ausgedrückt werden.
 
-Angenommen, Sie verfügen über ein [`ResourceManagementClient`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.resourcemanagementclient?view=azure-python)-Objekt, über das Sie eine Ressourcengruppe mit seiner [`create_or_update`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations?view=azure-python#create-or-update-resource-group-name--parameters--custom-headers-none--raw-false----operation-config-)-Methode erstellen. Das zweite Argument für diese Methode ist vom Typ [`ResourceGroup`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.models.resourcegroup?view=azure-python).
+Angenommen, Sie verfügen über ein [`ResourceManagementClient`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.resourcemanagementclient)-Objekt, über das Sie eine Ressourcengruppe mit seiner [`create_or_update`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations#create-or-update-resource-group-name--parameters--custom-headers-none--raw-false----operation-config-)-Methode erstellen. Das zweite Argument für diese Methode ist vom Typ [`ResourceGroup`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.models.resourcegroup).
 
 Um `create_or_update` aufzurufen, können Sie eine diskrete Instanz von `ResourceGroup` direkt mit den erforderlichen Argumenten erstellen (in diesem Fall`location`):
 
@@ -138,7 +138,7 @@ Bei Verwendung von JSON wird der JSON-Inline-Code durch die Azure-Bibliotheken a
 
 Objekte können auch geschachtelte Objektargumente besitzen, und in diesem Fall können Sie dann auch geschachtelten JSON-Code verwenden.
 
-Angenommen, Sie haben beispielsweise eine Instanz des [`KeyVaultManagementClient`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.keyvaultmanagementclient?view=azure-python)-Objekts und rufen seine [`create_or_update`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.operations.vaultsoperations?view=azure-python#create-or-update-resource-group-name--vault-name--parameters--custom-headers-none--raw-false--polling-true----operation-config-)-Methode auf. In diesem Fall ist das dritte Argument vom Typ [`VaultCreateOrUpdateParameters`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.vaultcreateorupdateparameters?view=azure-python), das wiederum selbst ein Argument vom Typ [`VaultProperties`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.vaultproperties?view=azure-python) enthält. `VaultProperties` wiederum enthält Objektargumente vom Typ [`Sku`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.sku?view=azure-python) und [`list[AccessPolicyEntry]`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.accesspolicyentry?view=azure-python). Eine `Sku` enthält ein [`SkuName`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.skuname?view=azure-python)-Objekt, und jeder `AccessPolicyEntry` enthält ein [`Permissions`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.permissions?view=azure-python)-Objekt.
+Angenommen, Sie haben beispielsweise eine Instanz des [`KeyVaultManagementClient`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.keyvaultmanagementclient)-Objekts und rufen seine [`create_or_update`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.operations.vaultsoperations#create-or-update-resource-group-name--vault-name--parameters--custom-headers-none--raw-false--polling-true----operation-config-)-Methode auf. In diesem Fall ist das dritte Argument vom Typ [`VaultCreateOrUpdateParameters`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.vaultcreateorupdateparameters), das wiederum selbst ein Argument vom Typ [`VaultProperties`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.vaultproperties) enthält. `VaultProperties` wiederum enthält Objektargumente vom Typ [`Sku`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.sku) und [`list[AccessPolicyEntry]`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.accesspolicyentry). Eine `Sku` enthält ein [`SkuName`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.skuname)-Objekt, und jeder `AccessPolicyEntry` enthält ein [`Permissions`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.permissions)-Objekt.
 
 Wenn Sie `create_or_update` mit eingebetteten Objekten aufrufen möchten, müssen Sie Code wie den folgenden verwenden (vorausgesetzt, `tenant_id` und `object_id` sind bereits definiert). Die erforderlichen Objekte können auch vor dem Funktionsaufruf erstellt werden.
 

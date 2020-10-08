@@ -1,15 +1,15 @@
 ---
 title: Erstellen der Node.js-Azure App Service-Instanz in Visual Studio Code
-description: 'Teil 2 des Tutorials: Erstellen und lokales Ausführen der Node.js-App'
-ms.topic: conceptual
+description: 'Teil 2 des Node.js-Tutorials: Erstellen und lokales Ausführen der Node.js-App'
+ms.topic: tutorial
 ms.date: 03/04/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 66299059f03219dc45ff5f2dbcb51e8b61144340
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 7d627d97987ed41f90972362ab38d436a6157d33
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218540"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365243"
 ---
 # <a name="create-and-run-a-local-nodejs-app"></a>Erstellen und Ausführen einer lokalen Node.js-App
 
