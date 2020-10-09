@@ -6,12 +6,12 @@ metadata:
   description: Spring ist ein von VMware entwickeltes Open-Source-Anwendungsframework, das ein vereinfachtes, modulares Verfahren für die Erstellung von Java-Anwendungen bereitstellt.
   ms.date: 03/13/2020
   ms.topic: landing-page
-  ms.openlocfilehash: 8260997ed17f456b2307a4e2d4092104847ceb6e
-  ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+  ms.openlocfilehash: ec6211311b5eb5eef04af15b5ffe82dbade42ae9
+  ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 09/21/2020
-  ms.locfileid: "90831556"
+  ms.lasthandoff: 10/08/2020
+  ms.locfileid: "91846381"
 landingContent:
 - title: Leitfäden mit ersten Schritten
   linkLists:
@@ -47,10 +47,6 @@ landingContent:
       url: deploy-spring-boot-java-app-on-kubernetes.md
     - text: Bereitstellen einer App in Web-Apps für Container
       url: deploy-spring-boot-java-app-on-linux.md
-    - text: Bereitstellen in Web-Apps für Container mithilfe von Maven
-      url: deploy-containerized-spring-boot-java-app-with-maven-plugin.md
-    - text: Bereitstellen einer App aus ACR in Azure
-      url: deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md
 - title: Codebeispiele
   linkLists:
   - linkListType: sample
