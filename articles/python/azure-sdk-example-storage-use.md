@@ -4,18 +4,18 @@ description: Hier erfahren Sie, wie Sie die Bibliotheken des Azure SDK für Pyt
 ms.date: 08/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 161e27f1323053b45c687e60ade90e863ce71c64
-ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
+ms.openlocfilehash: ee9469b4b400879ee5a0b66d16572bc22686ba54
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110492"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764455"
 ---
 # <a name="example-access-azure-storage-using-the-azure-libraries-for-python"></a>Beispiel: Zugriff auf Azure Storage mit den Azure-Bibliotheken für Python
 
 In diesem Beispiel erfahren Sie, wie Sie die Azure-Clientbibliotheken in Python-Anwendungscode verwenden, um eine Datei in diesen Blobspeichercontainer hochzuladen. In dem Beispiel wird davon ausgegangen, dass Sie die Ressourcen aus [Beispiel: Verwenden der Azure-Bibliotheken mit Azure Storage](azure-sdk-example-storage.md) bereitgestellt haben.
 
-Alle Befehle in diesem Artikel funktionieren in Linux-/Mac OS-bash- und Windows-Befehlsshells identisch, sofern nicht anders angegeben.
+Alle Befehle in diesem Artikel funktionieren in Linux-/macOS-Bash- und Windows-Befehlsshells identisch, sofern nicht anders angegeben.
 
 ## <a name="1-set-up-your-local-development-environment"></a>1: Einrichten Ihrer lokalen Entwicklungsumgebung
 
@@ -115,8 +115,8 @@ Aus diesen Gründen empfiehlt es sich, in Produktionscode die Authentifizierungs
     ```
 
     Referenzlinks:
-      - [DefaultAzureCredential (azure.identity)](/python/api/azure-identity/azure.identity.defaultazurecredential?view=azure-python)
-      - [BlobClient (azure.storage.blob)](/python/api/azure-storage-blob/azure.storage.blob.blobclient?view=azure-python)
+      - [DefaultAzureCredential (azure.identity)](/python/api/azure-identity/azure.identity.defaultazurecredential)
+      - [BlobClient (azure.storage.blob)](/python/api/azure-storage-blob/azure.storage.blob.blobclient)
 
 1. Versuchen Sie, den Code auszuführen (bei dem absichtlich ein Fehler auftritt):
 
@@ -126,7 +126,7 @@ Aus diesen Gründen empfiehlt es sich, in Produktionscode die Authentifizierungs
 
     Da der lokale Dienstprinzipal, den Sie verwenden, nicht über die Berechtigung für den Zugriff auf den Blobcontainer verfügt, wird der folgende Fehler angezeigt: „Diese Anforderung ist nicht berechtigt, diesen Vorgang mit dieser Berechtigung auszuführen.“
 
-1. Um dem Dienstprinzipal Containerberechtigungen zu gewähren, verwenden Sie den Azure CLI-Befehl [az role assignment create](/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create) (ein langer Befehl!):
+1. Um dem Dienstprinzipal Containerberechtigungen zu gewähren, verwenden Sie den Azure CLI-Befehl [az role assignment create](/cli/azure/role/assignment#az-role-assignment-create) (ein langer Befehl!):
 
     # <a name="cmd"></a>[cmd](#tab/cmd)
 
@@ -154,7 +154,7 @@ Aus diesen Gründen empfiehlt es sich, in Produktionscode die Authentifizierungs
 
 1. Wenn Sie ein bis zwei Minuten gewartet haben, dass die Berechtigungen weitergegeben wurden, führen Sie den Code erneut aus, um zu überprüfen, ob er nun funktioniert. Wird der Berechtigungsfehler erneut angezeigt wird, warten Sie etwas länger, und führen Sie den Code dann erneut aus.
 
-Weitere Informationen zu Umfängen und Rollenzuweisungen finden Sie unter [Zuweisen von Rollenberechtigungen](how-to-assign-role-permissions.md).
+Weitere Informationen zu Rollenzuweisungen finden Sie unter [Hinzufügen oder Entfernen von Azure-Rollenzuweisungen mithilfe der Azure-Befehlszeilenschnittstelle](/azure/role-based-access-control/role-assignments-cli).
 
 ### <a name="4b-use-blob-storage-with-a-connection-string"></a>4b: Verwenden von Blob Storage mit einer Verbindungszeichenfolge
 
@@ -202,7 +202,7 @@ az group delete -n PythonAzureExample-Storage-rg  --no-wait
 
 Führen Sie diesen Befehl aus, wenn Sie die in diesem Beispiel bereitgestellten Ressourcen nicht behalten müssen, und Sie in Ihrem Abonnement laufende Gebühren vermeiden möchten.
 
-Sie können auch die [`ResourceManagementClient.resource_groups.delete`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations?view=azure-python#delete-resource-group-name--custom-headers-none--raw-false--polling-true----operation-config-)-Methode verwenden, um eine Ressourcengruppe aus dem Code zu löschen.
+[!INCLUDE [resource_group_begin_delete](includes/resource-group-begin-delete.md)]
 
 ## <a name="see-also"></a>Weitere Informationen
 

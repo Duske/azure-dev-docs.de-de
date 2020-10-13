@@ -1,15 +1,15 @@
 ---
 title: Konfigurieren Ihrer lokalen JavaScript-Umgebung für die Azure-Entwicklung
 description: Hier erfahren Sie, wie Sie eine lokale JavaScript-Entwicklungsumgebung für die Arbeit mit Azure einrichten – einschließlich einem Editor, den Azure SDK-Bibliotheken, optionalen Tools und den erforderlichen Anmeldeinformationen für die Bibliothekauthentifizierung.
-ms.date: 09/22/2020
+ms.date: 09/30/2020
 ms.topic: conceptual
-ms.custom: devx-track-js
-ms.openlocfilehash: 6d9f86b026a7104e79228d78d5ac27649049a8a4
-ms.sourcegitcommit: 4af22924a0eaf01e6902631c0714045c02557de4
+ms.custom: devx-track-js, azure-sdk-ai-text-analytics-5.0.0
+ms.openlocfilehash: baf9634395d4e0ad7225abb9bebddfa1aa14fe6d
+ms.sourcegitcommit: 8fcb6c2d17be63064090f801f46c9c754821f979
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91208681"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91805941"
 ---
 # <a name="configure-your-local-javascript-dev-environment-for-azure"></a>Konfigurieren Ihrer lokalen JavaScript-Entwicklungsumgebung für Azure
 
@@ -21,8 +21,11 @@ Dieser Artikel enthält die Einrichtungsanweisungen zum Erstellen und Überprüf
 
 Azure-Ressourcen werden innerhalb eines Abonnements erstellt, bei dem es sich um die Abrechnungseinheit für die Verwendung von Azure handelt. Sie können zwar kostenlose Ressourcen erstellen (jedes Abonnement bietet eine kostenlose Ressource für die meisten Dienste), die Erstellung von kostenpflichtigen Ressourcen wird jedoch empfohlen, wenn Sie Ihre Ressource in der Produktionsumgebung bereitstellen möchten.
 
-* Wenn Sie bereits ein Abonnement haben, müssen Sie kein neues erstellen. Greifen Sie über das [Azure-Portal](https://portal.azure.com) auf Ihr vorhandenes Abonnement zu.
-* [Abonnement mit kostenloser Testversion starten](https://azure.microsoft.com/free/cognitive-services)
+|type|BESCHREIBUNG|
+|--|--|
+|[Abonnement für die Testversion](https://azure.microsoft.com/free/cognitive-services)|Erstellen Sie ein _kostenloses_ Testabonnement.|
+|[Bestehendes Abonnement](https://portal.azure.com)|Wenn Sie bereits über ein Abonnement verfügen, greifen Sie im Azure-Portal, über die Azure CLI oder über JavaScript auf das vorhandene Abonnement zu.|
+|[Mehrere Abonnements](/azure/governance/management-groups/create-management-group-javascript)|Wenn Sie mehrere Abonnements verwalten müssen, lesen Sie, wie Sie eine Verwaltungsgruppe mit JavaScript erstellen.|
 
 ## <a name="one-time-installation"></a>Einmalige Installation
 
@@ -48,44 +51,39 @@ Die folgenden allgemeinen Installationen lokaler Arbeitsstationen sind optional,
 
 ## <a name="one-time-configuration-of-service-principal"></a>Einmalkonfiguration des Dienstprinzipals
 
-Jeder Azure-Dienst verfügt über einen Authentifizierungsmechanismus. Dazu können Schlüssel und Endpunkte, Verbindungszeichenfolgen oder andere Mechanismen zählen. Um bewährten Methoden zu entsprechen, erstellen Sie Ressourcen und authentifizieren Sie sich bei Ressourcen mithilfe eines Dienstprinzipals. Mit einem Dienstprinzipal können Sie den Zugriffsbereich für den unmittelbaren Entwicklungsbedarf konkret definieren.
+Jeder Azure-Dienst verfügt über einen Authentifizierungsmechanismus. Dazu können Schlüssel und Endpunkte, Verbindungszeichenfolgen oder andere Mechanismen zählen. Gemäß den bewährten Methoden erstellen Sie Ressourcen und authentifizieren sich bei Ressourcen mithilfe eines [Dienstprinzipals](node-sdk-azure-authenticate-principal.md). Mit einem Dienstprinzipal können Sie den Zugriffsbereich für den unmittelbaren Entwicklungsbedarf konkret definieren.
 
-Konzeptionell umfassen die Erstellung und Verwendung eines Dienstprinzipals folgende Schritte:
+Schritte zum **Erstellen des Dienstprinzipals**: 
 
-* Melden Sie sich mit Ihrem einzelnen Benutzerkonto, z. B. joe@microsoft.com, bei Azure an.
-* Erstellen Sie einen benannten Dienstprinzipal mit einem bestimmten Bereich. Da Sie in den meisten Schnellstarts aufgefordert werden, eine Azure-Ressource zu erstellen, muss der Dienstprinzipal Ressourcen erstellen können.
-* Melden Sie sich mit Ihrem Benutzerkonto bei Azure ab.
-* Authentifizieren Sie sich mit dem Dienstprinzipal programmgesteuert bei Azure.
-* Der Dienstprinzipal erstellt eine Azure-Ressource und verwendet den Dienst, der dem Dienst zugeordnet ist.
+1. Melden Sie sich mit Ihrem Benutzerkonto bei Azure an.
+1. Erstellen Sie einen _benannten_ Dienstprinzipal mit einem bestimmten Bereich. Da Sie in den meisten Schnellstarts aufgefordert werden, eine Azure-Ressource zu erstellen, muss der Dienstprinzipal Ressourcen erstellen können.
+1. Melden Sie sich mit Ihrem Benutzerkonto bei Azure ab.
 
-### <a name="create-service-principal"></a>Erstellen eines Dienstprinzipals
+Schritte zum **Verwenden eines Dienstprinzipals**:
 
-Informieren Sie sich, wie Sie [einen Dienstprinzipal erstellen](node-sdk-azure-authenticate-principal.md). Speichern Sie unbedingt die Antwort aus dem Erstellungsschritt. Sie benötigen die Werte für `appId`, `tenant` und `password`, damit der Dienstprinzipal verwendet werden kann.
+1. Authentifizieren Sie sich mit dem Dienstprinzipal und mit einem Zertifikat, mit Umgebungsvariablen oder mit einer Datei vom Typ `.json` programmgesteuert bei Azure. 
+1. Erstellen Sie mit dem Dienstprinzipal Azure-Ressourcen, und verwenden Sie den Dienst.
+
+Informieren Sie sich, wie Sie [einen Dienstprinzipal erstellen](node-sdk-azure-authenticate-principal.md). Speichern Sie unbedingt die Antwort aus dem Erstellungsschritt. Sie benötigen die Werte für `appId`, `tenant` und `password` der Antwort, damit der Dienstprinzipal verwendet werden kann.
+
+[Erstellen Sie Azure-Ressourcen mit Ihrem Dienstprinzipal.](/cli/azure/create-an-azure-service-principal-azure-cli#create-a-resource-using-service-principal)
 
 ## <a name="steps-for-each-new-development-project-setup"></a>Schritte für die Einrichtung aller neuen Entwicklungsprojekte
 
-Da die Azure SDK-Bibliotheken für jeden Dienst einzeln bereitgestellt werden, gibt es nicht ein einziges herunterladbares Paket für den Zugriff auf alle Azure-Ressourcen. Sie installieren jede Bibliothek basierend auf dem Azure-Dienst, den Sie verwenden möchten.
+Die [Azure SDK-Bibliotheken](azure-sdk-library-package-index.md) werden für jeden Dienst einzeln bereitgestellt. Sie installieren jede Bibliothek basierend auf dem Azure-Dienst, den Sie verwenden müssen.
 
 Für jedes neue Projekt mit Azure müssen folgende Aktionen ausgeführt werden:
-- Erstellen von Azure-Ressourcen oder Suchen nach Authentifizierungsinformationen für vorhandene Azure-Ressourcen
-- Installieren von Azure SDK-Bibliotheken aus npm oder Yarn. Informationen zu [Bibliotheksversionen](#library-versions).
-- Sicheres Verwalten von Authentifizierungsinformationen innerhalb des Projekts. Eine gängige Methode ist die Verwendung von **[Dotenv](https://www.npmjs.com/package/dotenv)** , um Umgebungsvariablen aus einer `.env`-Datei zu lesen. Hinzufügen der `.env`-Datei zur `.gitignore`-Datei, damit die `.env`-Datei nicht in die Quellcodeverwaltung eingecheckt wird.
+- Erstellen Sie Azure-Ressourcen, und speichern Sie zugehörige Schlüssel oder die Konfiguration an einem [sicheren Speicherort]().
+- Installieren von Azure SDK-Bibliotheken aus npm oder Yarn. 
+- Verwenden Sie den Dienstprinzipal für die Authentifizierung bei Azure SDKs, und verwenden Sie anschließend Konfigurationsinformationen für den Zugriff auf bestimmte Dienste.
 
-### <a name="library-versions"></a>Bibliotheksversionen
+## <a name="securing-configuration-information"></a>Schützen von Konfigurationsinformationen
 
-[Azure-Bibliotheken](azure-sdk-library-package-index.md) verwenden in der Regel den Bereich `@azure`.
+Sie haben mehrere Optionen zum Speichern von Konfigurationsinformationen:
+- [Dotenv](https://www.npmjs.com/package/dotenv) ist ein beliebtes npm-Paket zum Lesen von Umgebungsvariablen aus einer Datei vom Typ `.env`. Hinzufügen der `.env`-Datei zur `.gitignore`-Datei, damit die `.env`-Datei nicht in die Quellcodeverwaltung eingecheckt wird.
+- [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/) zum Erstellen und Verwalten von Schlüsseln für den Zugriff auf und die Verschlüsselung von Cloudressourcen, Apps und Lösungen
 
-Die aktuellen Bibliotheken verwenden den Bereich `@azure`. Ältere Pakete von Microsoft beginnen in der Regel mit `azure-`. Viele Pakete, die nicht von Microsoft erstellt werden, beginnen mit diesem Namen. Stellen Sie sicher, dass der Besitzer des Pakets entweder Microsoft oder Azure ist.
-
-## <a name="create-azure-resource-with-service-principal"></a>Erstellen einer Azure-Ressource mit einem Dienstprinzipal
-
-Verwenden Sie die Azure-Befehlszeilenschnittstelle, um [eine Azure-Ressource mithilfe des Dienstprinzipals zu erstellen](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest#create-a-resource-using-service-principal).
-
-## <a name="use-service-principal-in-javascript"></a>Verwenden des Dienstprinzipals in JavaScript
-
-[Verwenden Sie den Dienstprinzipal](node-sdk-azure-authenticate-principal.md#using-the-service-principal), wenn Sie sich bei einer Azure-Clientbibliothek authentifizieren, und nicht Ihr persönliches Benutzerkonto.
-
-## <a name="create-environment-variables-for-the-azure-libraries"></a>Erstellen von Umgebungsvariablen für die Azure-Bibliotheken
+### <a name="create-environment-variables-for-the-azure-libraries"></a>Erstellen von Umgebungsvariablen für die Azure-Bibliotheken
 
 Zum Verwenden der Azure-Einstellungen, die von den Azure SDK-Bibliotheken für den Zugriff auf die Azure-Cloud benötigt werden, legen Sie die gängigsten Werte auf Umgebungsvariablen fest. Mit den folgenden Befehlen werden die Umgebungsvariablen auf die lokale Arbeitsstation festgelegt. Ein weiterer gebräuchlicher Mechanismus ist die Verwendung des NPM-Pakets `DOTENV`, um eine `.env`-Datei für diese Einstellungen zu erstellen. Wenn Sie eine `.env`-Datei verwenden möchten, achten Sie darauf, die Datei nicht in die Quellcodeverwaltung einzuchecken. Das Hinzufügen der `.env`-Datei zur `.ignore`-Datei von Git ist die Standardmethode, um sicherzustellen, dass diese Einstellungen in die Quellcodeverwaltung eingecheckt werden.
 
@@ -113,7 +111,7 @@ set AZURE_CLIENT_SECRET=abcdef00-4444-5555-6666-1234567890ab
 
 Ersetzen Sie die in diesen Befehlen angezeigten Werte durch die Werte Ihres spezifischen Dienstprinzipals.
 
-## <a name="install-npm-packages"></a>Installieren von npm-Paketen
+## <a name="install-npm-packages"></a>NPM-Pakete installieren
 
 Wir empfehlen, für jedes Projekt immer einen separaten Order und eine eigene `package.json`-Datei zu erstellen. Dazu gehen Sie folgendermaßen vor:
 

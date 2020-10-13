@@ -4,12 +4,12 @@ description: Eine Übersicht über die Implementierung der Haupt-App, einschlie�
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 0b7ffa1fb855d4b676813f49c545071209f6ce79
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: e2a43f7e204ba3f077beea7cc878076111f71313
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379485"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764743"
 ---
 # <a name="part-4-example-main-application-implementation"></a>Teil 4: Beispiel für die Implementierung einer Hauptanwendung
 
@@ -23,13 +23,13 @@ Die Haupt-App bietet auch eine einfache Startseite, auf der ein Link zum API-End
 
 Das Bereitstellungskript des Beispiels führt folgende Schritte aus:
 
-1. Erstellen des App Service-Hosts und Bereitstellen des Codes mit dem Azure CLI Befehl [`az webapp up`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-up)
+1. Erstellen des App Service-Hosts und Bereitstellen des Codes mit dem Azure CLI Befehl [`az webapp up`](/cli/azure/webapp#az-webapp-up)
 
-1. Bereitstellen eines Azure Storage-Kontos für die Haupt-App (mit [`az storage account create`](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create))
+1. Bereitstellen eines Azure Storage-Kontos für die Haupt-App (mit [`az storage account create`](/cli/azure/storage/account#az-storage-account-create))
 
-1. Erstellen einer Warteschlange im Speicherkonto mit dem Namen „code-requests“ (mit [`az storage queue create`](/cli/azure/storage/queue?view=azure-cli-latest#az-storage-queue-create))
+1. Erstellen einer Warteschlange im Speicherkonto mit dem Namen „code-requests“ (mit [`az storage queue create`](/cli/azure/storage/queue#az-storage-queue-create))
 
-1. Um sicherzustellen, dass die App in die Warteschlange schreiben kann, verwenden Sie [`az role assignment create`](/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create), um der App die Rolle „Mitwirkender an Storage-Warteschlangendaten“ zuzuweisen. Weitere Informationen zu Rollen finden Sie unter [Zuweisen von Rollenberechtigungen](how-to-assign-role-permissions.md).
+1. Um sicherzustellen, dass die App in die Warteschlange schreiben kann, verwenden Sie [`az role assignment create`](/cli/azure/role/assignment#az-role-assignment-create), um der App die Rolle „Mitwirkender an Storage-Warteschlangendaten“ zuzuweisen. Weitere Informationen zu Rollen finden Sie unter [Hinzufügen oder Entfernen von Azure-Rollenzuweisungen mithilfe der Azure-Befehlszeilenschnittstelle](/azure/role-based-access-control/role-assignments-cli).
 
 Der Haupt-App-Code lautet wie folgt; Erläuterungen zu wichtigen Details finden Sie in den nächsten Abschnitten dieser Reihe.
 

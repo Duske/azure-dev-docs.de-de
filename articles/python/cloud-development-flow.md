@@ -1,15 +1,15 @@
 ---
 title: Azure-Entwicklungsablauf
 description: Eine Übersicht über den Cloudentwicklungszyklus in Azure, der die Bereitstellung, Codierung, Tests, Implementierung und Verwaltung umfasst.
-ms.date: 06/04/2020
+ms.date: 10/06/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 1f3ba98815f572dc6efe6ea0c4195142e204478e
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 149bf0c56de95d2f1230e2bc527c64da780bd5ad
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983232"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764769"
 ---
 # <a name="the-azure-development-flow-provision-code-test-deploy-and-manage"></a>Der Azure-Entwicklungsablauf: Bereitstellung, Codierung, Tests, Implementierung und Verwaltung
 
@@ -31,17 +31,19 @@ Wie im [vorherigen Artikel dieser Reihe](cloud-development-provisioning.md) besc
 
 Die Bereitstellung beginnt mit dem Erstellen einer Ressourcengruppe in einer geeigneten Azure-Region. Sie können eine Ressourcengruppe über das Azure-Portal, über die Azure-Befehlszeilenschnittstelle oder mit einem benutzerdefinierten Skript erstellen, das die Azure-Bibliotheken (oder die REST-API) verwendet.
 
-Innerhalb dieser Ressourcengruppe können Sie dann die einzelnen benötigten Ressourcen über das Portal, über die Befehlszeilenschnittstelle oder über die Azure-Bibliotheken bereitstellen und konfigurieren. Die Konfiguration umfasst das Festlegen von Zugriffsrichtlinien, die steuern, welche Identitäten (Dienstprinzipale und/oder Anwendungs-IDs) auf diese Ressourcen zugreifen können.
+Innerhalb dieser Ressourcengruppe können Sie dann die einzelnen benötigten Ressourcen über das Portal, über die Befehlszeilenschnittstelle oder über die Azure-Bibliotheken bereitstellen und konfigurieren. (Eine Übersicht über die Typen verfügbarer Ressourcen finden Sie wieder im [Azure-Entwicklerhandbuch](/azure/guides/developer/azure-developer-guide).)
 
-Für die meisten Anwendungsszenarien erstellen Sie wahrscheinlich Bereitstellungsskripts mit der Azure CLI und/oder Python-Code unter Verwendung der Azure-Bibliotheken. Solche Skripts beschreiben die Gesamtheit des Ressourcenbedarfs Ihrer Anwendung. Mit einem Skript können Sie auf einfache Weise denselben Satz von Ressourcen in verschiedenen Entwicklungs-, Test-, Staging- und Produktionsumgebungen erneut erstellen, anstatt viele wiederholte Schritte im Azure-Portal manuell auszuführen. Mit solchen Skripts wird außerdem die Bereitstellung einer Umgebung in einer anderen Region oder die Verwendung anderer Ressourcengruppen vereinfacht. Sie können diese Skripts auch in Quellcodeverwaltungsrepositorys verwalten, sodass Sie über einen vollständigen Überwachungs- und Änderungsverlauf verfügen.
+Die Konfiguration umfasst das Festlegen von Zugriffsrichtlinien, die steuern, welche Identitäten (Dienstprinzipale und/oder Anwendungs-IDs) auf diese Ressourcen zugreifen können. Zugriffsrichtlinien werden im Allgemeinen über die [rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC)](/azure/role-based-access-control/overview) verwaltet. Einige Dienste verfügen jedoch auch über spezifischere Zugriffssteuerungen. Als Cloudentwickler, der mit Azure arbeitet, sollten Sie sich mit der rollenbasierten Zugriffssteuerung vertraut machen, da Sie sie mit nahezu allen Ressourcen verwenden, bei denen Sicherheitsrisiken bestehen.
+
+Für die meisten Anwendungsszenarien erstellen Sie in der Regel Bereitstellungsskripts mit der Azure CLI und/oder Python-Code unter Verwendung der Azure-Bibliotheken. Diese Skripts beschreiben die Gesamtheit des Ressourcenbedarfs Ihrer Anwendung (und definieren im Wesentlichen den benutzerdefinierten Cloudcomputer, auf dem Sie die Anwendung bereitstellen). Mit einem Skript können Sie auf einfache Weise denselben Satz von Ressourcen in verschiedenen Entwicklungs-, Test-, Staging- und Produktionsumgebungen erneut erstellen, anstatt viele wiederholte Schritte im Azure-Portal manuell auszuführen. Mit solchen Skripts wird außerdem die Bereitstellung einer Umgebung in einer anderen Region oder die Verwendung anderer Ressourcengruppen vereinfacht. Wenn Sie diese Skripts in Quellcodeverwaltungsrepositorys verwalten, verfügen Sie über einen vollständigen Überwachungs- und Änderungsverlauf.
 
 ## <a name="step-2-write-your-app-code-to-use-resources"></a>Schritt 2: Schreiben des App-Codes für die Verwendung von Ressourcen
 
-Nachdem Sie die Ressourcen bereitgestellt haben, die Sie für Ihre Anwendung benötigen, schreiben Sie den Anwendungscode, um mit diesen Ressourcen zu arbeiten (ausgenommen der Ressourcen, für die Sie den Code selbst bereitstellen).
+Nachdem Sie die für Ihre Anwendung benötigten Ressourcen bereitgestellt haben, schreiben Sie den Anwendungscode, um mit den Laufzeitaspekten dieser Ressourcen zu arbeiten.
 
-Beispielsweise haben Sie im Bereitstellungsschritt möglicherweise ein Azure-Speicherkonto erstellt, einen Blobcontainer in diesem Konto angelegt und Zugriffsrichtlinien für die Anwendung für diesen Container festgelegt. Aus Ihrem Code können Sie sich jetzt mit diesem Speicherkonto authentifizieren und dann Blobs in diesem Container erstellen, aktualisieren oder löschen. (Dieser Vorgang wird unter [Beispiel: Verwenden von Azure Storage](azure-sdk-example-storage.md) veranschaulicht.) Sie haben analog dazu möglicherweise auch eine Datenbank mit einem Schema und entsprechenden Berechtigungen bereitgestellt, damit der Anwendungscode eine Verbindung mit der Datenbank herstellen und die üblichen CRUD-Vorgänge (Erstellen, Lesen, Aktualisieren und Löschen) ausführen kann.
+Beispielsweise haben Sie im Bereitstellungsschritt möglicherweise ein Azure-Speicherkonto erstellt, einen Blobcontainer in diesem Konto angelegt und Zugriffsrichtlinien für die Anwendung für diesen Container festgelegt. Dieser Bereitstellungsprozess wird unter [Beispiel: Bereitstellen von Azure Storage mit den Azure-Bibliotheken für Python](azure-sdk-example-storage.md) erläutert. Aus Ihrem Code können Sie sich dann mit diesem Speicherkonto authentifizieren und Blobs in diesem Container erstellen, aktualisieren oder löschen. Dieser Laufzeitprozess wird unter [Beispiel: Bereitstellen von Azure Storage mit den Azure-Bibliotheken für Python](azure-sdk-example-storage.md) veranschaulicht. Sie haben analog dazu möglicherweise auch eine Datenbank mit einem Schema und entsprechenden Berechtigungen bereitgestellt (wie unter [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Datenbank](azure-sdk-example-database.md) erläutert), damit der Anwendungscode eine Verbindung mit der Datenbank herstellen und die üblichen CRUD-Abfragen (Erstellen, Lesen, Aktualisieren und Löschen) ausführen kann.
 
-App-Code verwendet in der Regel Umgebungsvariablen, um die Namen und URLs der zu verwendenden Ressourcen zu identifizieren. Mit Umgebungsvariablen können Sie problemlos zwischen Cloudumgebungen (Entwicklung, Test, Staging und Produktion) wechseln, ohne dass Änderungen am Code vorgenommen werden müssen.
+App-Code verwendet in der Regel Umgebungsvariablen, um die Namen und URLs der zu verwendenden Ressourcen zu identifizieren. Mit Umgebungsvariablen können Sie problemlos zwischen Cloudumgebungen (Entwicklung, Test, Staging und Produktion) wechseln, ohne dass Änderungen am Code vorgenommen werden müssen. Die verschiedenen Azure-Dienste, die Anwendungscode hosten, bieten die Möglichkeit, die erforderlichen Variablen zu definieren. Beispielsweise definieren Sie in Azure App Service (zum Hosten von Web-Apps) und Azure Functions (serverloser Host von Azure) *Anwendungseinstellungen* über das Azure-Portal oder die Azure CLI, die dann als Umgebungsvariablen für den Code bereitgestellt werden.
 
 Als Python-Entwickler schreiben Sie Ihren Anwendungscode wahrscheinlich in Python unter Verwendung der Azure-Bibliotheken für Python. Allerdings können alle unabhängigen Teile einer Cloudanwendung in einer beliebigen unterstützten Sprache geschrieben werden. Wenn Sie in einem Team mit einer Vielzahl von Sprachkenntnissen arbeiten, ist es beispielsweise durchaus möglich, dass einige Teile der Anwendung in Python geschrieben werden, einige in JavaScript, einige in Java und wieder andere in C#.
 

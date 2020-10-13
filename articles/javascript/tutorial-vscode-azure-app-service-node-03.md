@@ -4,12 +4,12 @@ description: 'Teil 3 des Node.js-Tutorials: Bereitstellen der Website'
 ms.topic: tutorial
 ms.date: 03/04/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 4907a8466828ccaaef0891394ac4f33694264ccf
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.openlocfilehash: 4c96aedf678fb4e28875ceb211c6d2c505afea6f
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91365253"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764560"
 ---
 # <a name="deploy-the-app-to-azure"></a>Bereitstellen der Anwendung in Azure
 
@@ -23,7 +23,7 @@ In diesem Schritt stellen Sie Ihre Node.js-App in Azure bereit, indem Sie die Gi
     code .
     ```
 
-1. Wählen Sie in VS Code das Symbol für die Quellcodeverwaltung aus, um den Explorer für die **Quellcodeverwaltung** zu öffnen, und anschließend **+** , um ein lokales Git-Repository zu initialisieren:
+1. Wählen Sie in VS Code das Symbol für die Quellcodeverwaltung aus, um den Explorer für die **Quellcodeverwaltung** zu öffnen. Wählen Sie anschließend **Repository initialisieren** aus, um ein lokales Git-Repository zu initialisieren:
 
     ![Initialisieren eines Git-Repositorys](media/deploy-azure/git-init.png)
 

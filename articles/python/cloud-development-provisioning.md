@@ -1,21 +1,21 @@
 ---
 title: Bereitstellen und Verwalten von und Zugreifen auf Ressourcen in Azure
 description: Hier finden Sie eine Übersicht über die Methoden zur Verwendung von Azure-Ressourcen. Dazu zählen das Azure-Portal, die Azure-Befehlszeilenschnittstelle und die Azure-Bibliotheken (SDK).
-ms.date: 05/27/2020
+ms.date: 10/06/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 457970eb359be9f10c6269e1ea98efec76612009
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 0dd8de6c1d42ecbb77f34f48034cc9e4c43cd9e3
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983212"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764721"
 ---
 # <a name="provisioning-accessing-and-managing-resources-on-azure"></a>Bereitstellen und Verwalten von und Zugreifen auf Ressourcen in Azure
 
 [Vorheriger Artikel: Übersicht](cloud-development-overview.md)
 
-Wie im vorherigen Artikel dieser Reihe beschrieben, besteht ein wesentlicher Bestandteil der Entwicklung einer Cloudanwendung darin, die erforderlichen Ressourcen in Azure bereitzustellen, mit denen Sie dann Ihren Code und Ihre Daten bereitstellen können.
+Wie im vorherigen Artikel dieser Reihe beschrieben, besteht ein wesentlicher Bestandteil der Entwicklung einer Cloudanwendung darin, die erforderlichen Ressourcen in Azure bereitzustellen, mit denen Sie dann Ihren Code und Ihre Daten bereitstellen können. Das bedeutet Folgendes: Die Entwicklung einer Cloudanwendung beginnt mit der Entwicklung des Systems, das im Grunde der Zielcloudcomputer ist, auf dem Sie Ihre Anwendung bereitstellen. (Informationen zu den Typen verfügbarer Ressourcen finden Sie im [Azure-Entwicklerhandbuch](/azure/guides/developer/azure-developer-guide).)
 
 Wie genau erfolgt diese Bereitstellung? Wie weisen Sie Azure an, Ressourcen für Ihre Anwendung zuzuordnen, und wie können Sie diese Ressourcen dann konfigurieren und anderweitig darauf zugreifen? Kurz gesagt: Wie kommunizieren Sie mit Azure, um all diese Ressourcen anzufordern und bereitzustellen?
 
@@ -38,11 +38,11 @@ Das [Azure-Portal](https://portal.azure.com) ist die vollständig anpassbare, br
 
 **Vorteile:** Die Benutzeroberfläche erleichtert das Durchsuchen von Diensten und Ermitteln ihrer verschiedenen Konfigurationsoptionen. Das Festlegen von Konfigurationswerten ist sicher, da keine Informationen auf der lokalen Arbeitsstation gespeichert werden.
 
-**Nachteile:** Das Arbeiten mit dem Portal ist ein manueller Vorgang, der nicht automatisiert werden kann. Um beispielsweise nachvollziehen zu können, welche Aktionen Sie zum Ändern einer Konfiguration ausgeführt haben, müssen Sie die jeweiligen Schritte in einem separaten Dokument aufzeichnen.
+**Nachteile:** Das Arbeiten mit dem Portal ist ein manueller Vorgang, der nicht einfach automatisiert werden kann. Um beispielsweise nachvollziehen zu können, welche Aktionen Sie zum Ändern einer Konfiguration ausgeführt haben, zeichnen Sie in der Regel die jeweiligen Schritte in einem separaten Dokument auf.
 
 ## <a name="azure-cli"></a>Azure CLI
 
-Die [Azure CLI](/cli/azure/?view=azure-cli-latest) ist die [Open-Source](https://github.com/Azure/azure-cli)-Befehlszeilenschnittstelle von Azure. Nachdem Sie sich bei der CLI angemeldet haben (mit dem Befehl `az login`), können Sie dieselben Aufgaben ausführen, die Sie auch über das Portal ausführen können.
+Die [Azure CLI](/cli/azure/) ist die [Open-Source](https://github.com/Azure/azure-cli)-Befehlszeilenschnittstelle von Azure. Nachdem Sie sich bei der CLI angemeldet haben (mit dem Befehl `az login`), können Sie dieselben Aufgaben ausführen, die Sie auch über das Portal ausführen können.
   
 **Vorteile:** Einfache Automatisierung durch Skripts und die Verarbeitung von Ausgaben. Bietet Befehle auf höherer Ebene, die mehrere Ressourcen gemeinsam für häufige Aufgaben bereitstellen, z. B. für das Bereitstellen einer Web-App. Skripts können in der Quellcodeverwaltung verwaltet werden.
 
@@ -50,15 +50,17 @@ Die [Azure CLI](/cli/azure/?view=azure-cli-latest) ist die [Open-Source](https:/
 
 Sie können auch [Azure PowerShell](/powershell/) anstelle der Azure CLI verwenden, obwohl die Befehle der Azure CLI im Linux-Stil Python-Entwicklern in der Regel vertrauter sind.
 
-Anstatt der lokalen CLI oder PowerShell können Sie Azure Cloud Shell direkt über [https://shell.azure.com/](https://shell.azure.com/) verwenden. Die Cloud Shell ist praktisch, da Sie automatisch bei Azure authentifiziert wird, nachdem Sie geöffnet wurde, und die gleichen Funktionen wie das Azure-Portal aufweist. Da es sich bei der Cloud Shell jedoch nicht um eine lokale Umgebung handelt, eignet sie sich eher für einzelne Vorgänge, wie Sie sie über das Portal ausführen würden, als für eine skriptbasierte Automatisierung.
+Anstatt der lokalen CLI oder PowerShell können Sie Azure Cloud Shell direkt über [https://shell.azure.com/](https://shell.azure.com/) verwenden. Die Cloud Shell ist praktisch, da Sie automatisch bei Azure authentifiziert wird, nachdem Sie geöffnet wurde, und die gleichen Funktionen wie das Azure-Portal aufweist. Cloud Shell ist außerdem mit zahlreichen verschiedenen Tools vorkonfiguriert, deren lokale Installation insbesondere dann unpraktisch wäre, wenn Sie nur ein oder zwei Befehle ausführen müssen.
+
+Da es sich bei Cloud Shell nicht um eine lokale Umgebung handelt, eignet sie sich eher für einzelne Vorgänge, wie Sie sie über das Portal ausführen würden, als für eine skriptbasierte Automatisierung. Dennoch können Sie in Cloud Shell Quellrepositorys (z. B. GitHub-Repositorys) klonen. Infolgedessen können Sie Automatisierungsskripts lokal entwickeln, in einem Repository speichern, das Repository in Cloud Shell klonen und dann dort ausführen.
 
 ## <a name="azure-rest-api-and-azure-libraries"></a>Azure-REST-API und Azure-Bibliotheken
 
-Die [Azure-REST-API](/rest/api/?view=Azure) ist die programmgesteuerte Schnittstelle von Azure, die über Secure REST über HTTP bereitgestellt wird, da die Rechenzentren von Azure grundsätzlich mit dem Internet verbunden sind. Jeder Ressource wird eine eindeutige URL zugewiesen, die eine ressourcenspezifische API unterstützt. Dies gilt für strikte Authentifizierungsprotokolle und Zugriffsrichtlinien. (Das Azure-Portal und die Azure CLI erledigen ihre Aufgaben letztlich über die REST-API.)
+Die [Azure-REST-API](/rest/api/?view=Azure&preserve-view=true) ist die programmgesteuerte Schnittstelle von Azure, die über Secure REST über HTTP bereitgestellt wird, da die Rechenzentren von Azure grundsätzlich mit dem Internet verbunden sind. Jeder Ressource wird eine eindeutige URL zugewiesen, die eine ressourcenspezifische API unterstützt. Dies gilt für strikte Authentifizierungsprotokolle und Zugriffsrichtlinien. (Das Azure-Portal und die Azure CLI erledigen ihre Aufgaben letztlich über die REST-API.)
 
-Für Entwickler bieten die Azure-Bibliotheken sprachspezifische Bibliotheken, die die Funktionen der REST-API in weitaus praktischere Programmierparadigmen (z. B. Klassen und Objekte) übersetzen. Für Python installieren Sie immer einzelne Bibliotheken mit `pip install`, anstatt ein eigenständiges SDK als Ganzes zu installieren. (Informationen zu anderen Sprachen finden Sie unter [Downloads](https://azure.microsoft.com/downloads/).)
+Für Entwickler bieten die Azure-Bibliotheken (manchmal als Azure SDKs bezeichnet) sprachspezifische Bibliotheken, die die Funktionen der REST-API in weitaus praktischere Programmierparadigmen (z. B. Klassen und Objekte) übersetzen. Für Python installieren Sie immer einzelne Bibliotheken mit `pip install`, anstatt ein eigenständiges SDK als Ganzes zu installieren. (Informationen zu anderen Sprachen finden Sie unter [Downloads](https://azure.microsoft.com/downloads/).)
 
-**Vorteile:** Genaue Kontrolle über alle Vorgänge, einschließlich einer viel direkteren Methode zur Verwendung von Ausgaben eines Vorgangs als Eingaben für einen anderen Vorgang. Python-Entwickler können mit vertrauten Sprachparadigmen arbeiten, anstatt die CLI zu verwenden. Kann auch aus Anwendungscode zum Automatisieren von Verwaltungsszenarien verwendet werden.
+**Vorteile:** Genaue Kontrolle über alle Vorgänge, einschließlich einer viel direkteren Methode zur Verwendung von Ausgaben eines Vorgangs als Eingaben für einen anderen Vorgang im Vergleich zur Azure CLI. Python-Entwickler können mit vertrauten Sprachparadigmen arbeiten, anstatt die CLI zu verwenden. Kann auch aus Anwendungscode zum Automatisieren von detaillierten Verwaltungsszenarien verwendet werden.
   
 **Nachteile:** Für Vorgänge, die mit einem CLI-Befehl durchgeführt werden können, sind in der Regel mehrere Codezeilen erforderlich, die fehlerhaft sein können. Es werden keine Vorgänge auf höherer Ebene wie mit der Azure CLI bereitgestellt.
 

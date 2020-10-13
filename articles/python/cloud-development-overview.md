@@ -1,15 +1,15 @@
 ---
 title: 'Cloudentwicklung mit Azure: Was ist Azure?'
 description: Eine Übersicht über die Entwicklung von Cloudanwendungen in Microsoft Azure, beginnend mit der Beziehung zwischen Rechenzentren, Diensten und Ressourcen.
-ms.date: 05/12/2020
+ms.date: 10/06/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: e776ce3aa84921dcfcb1be1e8613ae7332fe61a8
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: f2bf8c0c8b35881c31fcf88c0faf38669cb261b3
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983174"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764532"
 ---
 # <a name="cloud-development-on-azure"></a>Cloudentwicklung in Azure
 
@@ -25,9 +25,11 @@ Im Fall von Azure ist die Hardware des Computers nicht ein einzelner Rechner, so
 
 Ressourcen sind die Bausteine einer Cloudanwendung. Der Cloudentwicklungsprozess beginnt daher mit der Erstellung der entsprechenden Umgebung, in der Sie die verschiedenen Teile der Anwendung bereitstellen können. Vereinfacht ausgedrückt, können Sie keinen Code und keine Daten in Azure bereitstellen, bevor Sie nicht eine geeignete Zielressource zugewiesen und konfiguriert (also *bereitgestellt*) haben, z. B. einen virtuellen Computer, eine Datenbank, ein Speicherkonto, eine Containerregistrierung, einen Containerorchestrator, einen Webhost, ein virtuelles Netzwerk, KI- und Analyse-Engines usw.
 
-Der Prozess der Erstellung des Umfelds für Ihre Anwendung umfasst also die Identifizierung der relevanten Dienste und Ressourcentypen, die beteiligt sind, und die anschließende Bereitstellung dieser Ressourcen (ab diesem Zeitpunkt beginnen Sie, diese bei Azure zu mieten). In der Tat stehen Ihnen Hunderte verschiedener Arten von Ressourcen zur Verfügung, von grundlegenden „Infrastrukturressourcen“ wie virtuellen Computern, bei denen Sie die volle Kontrolle und Verantwortung für die von Ihnen bereitgestellte Software behalten, bis hin zu übergeordneten „Plattformdiensten“, die eine stärker verwaltete Umgebung bieten, in der Sie sich nur um Daten und Anwendungscode kümmern.
+Der Prozess der Erstellung des Umfelds für Ihre Anwendung umfasst also die Identifizierung der relevanten Dienste und Ressourcentypen, die beteiligt sind, und die anschließende Bereitstellung dieser Ressourcen (ab diesem Zeitpunkt beginnen Sie, diese bei Azure zu mieten). Der Bereitstellungsprozess ist im Wesentlichen die Art und Weise, wie Sie das Computingsystem erstellen, in dem Sie Ihre Anwendung bereitstellen.
 
-Es kann schwierig sein, die richtigen Dienste für Ihre Anwendung zu finden und die relativen Kosten auszugleichen. Dies ist aber auch ein Teil des kreativen Aspekts bei der Cloudentwicklung. Andere Artikel in diesem Developer Center helfen Ihnen, Ihre Auswahl zu verstehen. In der Zwischenzeit soll erläutert werden, wie Sie tatsächlich mit all diesen Diensten und Ressourcen arbeiten.
+Ihnen stehen Hunderte verschiedener Arten von Ressourcen zur Verfügung, von grundlegenden „Infrastrukturressourcen“ wie virtuellen Computern, bei denen Sie die volle Kontrolle und Verantwortung für die von Ihnen bereitgestellte Software behalten, bis hin zu übergeordneten „Plattformdiensten“, die eine stärker verwaltete Umgebung bieten, in der Sie sich nur um Daten und Anwendungscode kümmern.
+
+Es kann schwierig sein, die richtigen Dienste für Ihre Anwendung zu finden und die relativen Kosten auszugleichen. Dies ist aber auch ein Teil des kreativen Aspekts bei der Cloudentwicklung. Informationen zu den zahlreichen Optionen finden Sie im [Azure-Entwicklerhandbuch](/azure/guides/developer/azure-developer-guide). Als Nächstes soll erläutert werden, wie Sie tatsächlich mit all diesen Diensten und Ressourcen arbeiten.
 
 > [!NOTE]
 > Wahrscheinlich haben Sie die Begriffe „IaaS“ (Infrastructure-as-a-Service), „PaaS“ (Platform-as-a-Service) usw. schon einmal gehört und sind ihrer bereits überdrüssig. Der „as-a-Service“-Teil dieser Begriffe spiegelt die Tatsache wider, dass Sie im Allgemeinen keinen physischen Zugriff auf die Rechenzentren selbst besitzen. Stattdessen verwenden Sie Tools wie das Azure-Portal, die Azure CLI oder die REST-API von Azure, um „Infrastrukturressourcen“, „Plattformressourcen“ usw. bereitzustellen. Als „Dienst“ steht Azure immer zur Verfügung und wartet darauf, Ihre Anforderungen zu empfangen.
