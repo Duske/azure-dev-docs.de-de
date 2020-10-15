@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie eine lokale JavaScript-Entwicklungsumgeb
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: devx-track-js, azure-sdk-ai-text-analytics-5.0.0
-ms.openlocfilehash: baf9634395d4e0ad7225abb9bebddfa1aa14fe6d
-ms.sourcegitcommit: 8fcb6c2d17be63064090f801f46c9c754821f979
+ms.openlocfilehash: d7f179898c974b1eaf00916bde6ce9df107e0083
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91805941"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846711"
 ---
 # <a name="configure-your-local-javascript-dev-environment-for-azure"></a>Konfigurieren Ihrer lokalen JavaScript-Entwicklungsumgebung für Azure
 
@@ -36,7 +36,7 @@ Um mit einer Azure-Ressource und JavaScript auf Ihrer lokalen Arbeitsstation ent
 |[Node.js](https://www.npmjs.com/)|Installieren Sie die aktuelle Laufzeitumgebung mit langfristigem Support (Long-Term Support, LTS) für die Entwicklung auf lokalen Arbeitsstationen. |
 | npm (mit modernen Versionen von Node.js installiert) oder [Yarn](https://yarnpkg.com/)|Paket-Manager zum Installieren von Azure SDK-Bibliotheken.|
 |[Visual Studio Code](https://code.visualstudio.com/)| Visual Studio Code bietet eine großartige JavaScript-Integrationsumgebung und -Codierungsumgebung, ist aber nicht erforderlich. Sie können einen beliebigen Code-Editor verwenden. Wenn Sie einen anderen Editor verwenden, beachten Sie die Informationen in diesem Dokument zur Integration in Azure, oder verwenden Sie die Azure CLI.|
-|[Azure-Befehlszeilenschnittstelle](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest)|Sie können die Azure CLI verwenden, um Azure-Ressourcen über eine Befehlszeile, ein Terminal oder eine Bash-Shell zu erstellen und zu verwalten.|
+|[Azure-Befehlszeilenschnittstelle](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest)|Sie können die Azure CLI verwenden, um Azure-Ressourcen über eine Befehlszeile, ein Terminal oder eine Bash-Shell zu erstellen und zu verwalten.|
 
 > [!CAUTION]
 > Wenn Sie eine Azure-Ressource als Laufzeitumgebung für Ihren Code verwenden möchten, z. B. eine Azure-Web-App oder eine Azure-Containerinstanz, sollten Sie überprüfen, ob Ihre lokale Node.js-Entwicklungsumgebung der Azure-Ressourcenlaufzeit entspricht, die Sie verwenden möchten.

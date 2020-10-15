@@ -3,21 +3,19 @@ title: Verwenden der Spring Data-MongoDB-API mit Azure Cosmos DB
 description: Erfahren Sie, wie Sie die Spring Data-MongoDB-API mit Azure Cosmos DB verwenden.
 services: cosmos-db
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 10/10/2020
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 529fab3977f0398014d74140abcbd807ac129fa5
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 1d710c6146568011214a330ae0ce4957c6134b3b
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831426"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92009952"
 ---
 # <a name="how-to-use-spring-data-mongodb-api-with-azure-cosmos-db"></a>Verwenden der Spring Data-MongoDB-API mit Azure Cosmos DB
-
-## <a name="overview"></a>Übersicht
 
 In diesem Artikel wird die Erstellung einer Beispielanwendung veranschaulicht, die [Spring Data] verwendet, um Informationen mithilfe der [MongoDB-API für Azure Cosmos DB](/azure/cosmos-db/mongodb-introduction) zu speichern und abzurufen.
 
@@ -27,7 +25,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 * Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile] anwenden oder sich für ein [Kostenloses Azure-Konto] registrieren
 * Ein unterstütztes Java Development Kit (JDK). Weitere Informationen zu den für die Entwicklung in Azure verfügbaren JDKs finden Sie unter <https://aka.ms/azure-jdks>.
-* [Apache Maven](http://maven.apache.org/), Version 3.0 oder höher
+* [Maven](http://maven.apache.org/) von Apache (ab Version 3.0)
 * Einen [Git-Client](https://git-scm.com/downloads)
 
 ## <a name="create-an-azure-cosmos-db-account"></a>Erstellen eines Azure Cosmos DB-Kontos
@@ -78,7 +76,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    git clone https://github.com/spring-guides/gs-accessing-data-mongodb.git
    ```
 
-1. Erstellen Sie ein Verzeichnis *resources* im Verzeichnis *&lt;Projektstamm&gt;/complete/src/main* des Beispielprojekts und eine Datei *application.properties*  im Verzeichnis *resources*.
+1. Erstellen Sie ein Verzeichnis *resources* im Verzeichnis *&lt;Projektstamm&gt;/complete/src/main* des Beispielprojekts und eine Datei *application.properties * im Verzeichnis *resources*.
 
 1. Öffnen Sie die Datei *application.properties* in einem Text-Editor, und fügen Sie die folgenden Zeilen in der Datei hinzu. Ersetzen Sie dabei die Beispielwerte durch die entsprechenden Werte, die Sie zuvor festgelegt haben:
 
@@ -132,6 +130,10 @@ Navigieren Sie zum Erstellen der Anwendung zum Verzeichnis */gs-accessing-data-m
 
 In diesem Tutorial haben Sie eine Java-Beispielanwendung erstellt, die Spring Data verwendet, um Informationen mithilfe der MongoDB-API für Azure Cosmos DB zu speichern und abzurufen.
 
+## <a name="clean-up-resources"></a>Bereinigen von Ressourcen
+
+Verwenden Sie das [Azure-Portal](https://portal.azure.com/), um die in diesem Artikel erstellten Ressourcen zu löschen, wenn Sie sie nicht mehr benötigen, um unerwartete Gebühren zu vermeiden.
+
 ## <a name="next-steps"></a>Nächste Schritte
 
 Weitere Informationen zu Spring und Azure finden Sie im Dokumentationscenter zu Spring in Azure.
@@ -151,7 +153,6 @@ Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure 
 [MSDN-Abonnentenvorteile]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Data]: https://spring.io/projects/spring-data
-[Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/
 
 <!-- IMG List -->

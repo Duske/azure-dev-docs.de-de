@@ -3,12 +3,12 @@ title: Authentifizierung mit dem Azure SDK für Go
 description: Hier erfahren Sie, welche Authentifizierungsmethoden im Azure SDK für Go zur Verfügung stehen und wie Sie sie verwenden.
 ms.date: 09/05/2018
 ms.topic: conceptual
-ms.openlocfilehash: 61353f2b7f2c13764f4e736105b15127d1355e29
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 554a647d222f41b26627f3bfe8cbc49912628779
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831316"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846671"
 ---
 # <a name="authentication-methods-in-the-azure-sdk-for-go"></a>Authentifizierungsmethoden im Azure SDK für Go
 
@@ -175,5 +175,5 @@ Erstellen Sie einen Authentifikator mit der entsprechenden `New`-Funktion, und r
 ```go
 import "github.com/Azure/go-autorest/autorest/azure/auth"
 certificateAuthorizer := auth.NewClientCertificateConfig(certificatePath, certificatePassword, clientID, tenantID)
-authorizerToken, err := certificateAuthorizer.Authorize()
+authorizerToken, err := certificateAuthorizer.Authorizer()
 ```

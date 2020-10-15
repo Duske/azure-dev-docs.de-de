@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 17aa931e10f68e08a1d87017a4cdd1238baa7f1f
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 2ce0a20ffd33ba2311de73578338005666779a9d
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379934"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010148"
 ---
 # <a name="managing-redis-caches-using-the-azure-explorer-for-intellij"></a>Verwalten von Redis Caches mit dem Azure-Explorer für IntelliJ
 
@@ -54,7 +54,7 @@ Mit den folgenden Schritten werden die Schritte zum Erstellen eines Redis Cache 
 
 Nachdem Ihr Redis Cache erstellt wurde, wird er im Azure-Explorer angezeigt.
 
-   ![Redis Cache im Azure-Explorer][CR03]
+    ![Redis Cache in Azure Explorer][CR03]
 
 > [!NOTE]
 >

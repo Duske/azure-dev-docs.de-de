@@ -8,12 +8,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 27793d827b60a5977968529377b20c7033170ffe
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: be90cbf867cfbbb475e1a80655d2ef925069b90a
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534660"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010210"
 ---
 # <a name="installing-the-azure-toolkit-for-eclipse"></a>Installieren des Azure-Toolkits für Eclipse
 
@@ -48,8 +48,7 @@ Mit dem Assistenten für den Eclipse-Marketplace in der Eclipse-IDE können Benu
    |---|---| 
    | **Application Insights Plugin for Java** (Application Insights-Plug-In für Java) | Ermöglicht Ihnen die Verwendung der Telemetriedatenprotokollierung und der Analysedienste von Azure für Ihre Anwendungen und Serverinstanzen. | 
    | **Azure Common Plugin** (Allgemeines Azure-Plug-In) | Stellt die allgemeine Funktionalität bereit, die für andere Komponenten des Toolkits erforderlich ist. | 
-   | **Azure Container Tools for Eclipse** (Azure-Containertools für Eclipse) | Ermöglicht das Erstellen und Bereitstellen einer WAR-Datei als Docker-Container auf einem Docker-Computer. | 
-   | **Azure Containers for Eclipse** (Azure-Container für Eclipse) | Ermöglicht das Bereitstellen eines WAR- oder JAR-Artefakts als Docker-Container auf einem virtuellen Azure-Computer. | 
+   | **Azure Container Tools for Eclipse** (Azure-Containertools für Eclipse) | Ermöglicht das Erstellen und Bereitstellen einer WAR-Datei als Docker-Container auf einem Docker-Computer. |
    | **Azure Explorer for Eclipse** (Azure Explorer für Eclipse) | Bietet eine dem Explorer ähnliche Oberfläche zum Verwalten Ihrer Azure-Ressourcen. | 
    | **Azure HDInsight-Plug-In für Java** | Ermöglicht die Apache Spark-Anwendungsentwicklung in Scala. |
    | **Microsoft JDBC-Treiber 6.1 für SQL Server** | Stellt die JDBC-API für SQL Server und Microsoft Azure SQL-Datenbank für Java Platform Enterprise Edition 8 bereit. | 
@@ -69,7 +68,7 @@ Sie können das Azure-Toolkit für Eclipse direkt über das Menü *Hilfe* als ne
 
 1. Klicken Sie auf das Menü **Hilfe** und dann auf **Neue Software installieren**.
 
-   :::image type="content" source="media/installation/eclipse-install-software-button.png" alt-text="Installieren neuer Software: Menü „Hilfe“"::: 
+   :::image type="content" source="media/installation/eclipse-install-software-button.png" alt-text="Marketplace-Fenster: Menü „Hilfe“"::: 
 
 1. Geben Sie im Dialogfeld **Verfügbare Software** im Textfeld **Arbeiten mit** den Text `http://dl.microsoft.com/eclipse/` ein.
 
@@ -83,8 +82,7 @@ Sie können das Azure-Toolkit für Eclipse direkt über das Menü *Hilfe* als ne
    |---|---| 
    | **Application Insights Plugin for Java** (Application Insights-Plug-In für Java) | Ermöglicht Ihnen die Verwendung der Telemetriedatenprotokollierung und der Analysedienste von Azure für Ihre Anwendungen und Serverinstanzen. | 
    | **Azure Common Plugin** (Allgemeines Azure-Plug-In) | Stellt die allgemeine Funktionalität bereit, die für andere Komponenten des Toolkits erforderlich ist. | 
-   | **Azure Container Tools for Eclipse** (Azure-Containertools für Eclipse) | Ermöglicht das Erstellen und Bereitstellen einer WAR-Datei als Docker-Container auf einem Docker-Computer. | 
-   | **Azure Containers for Eclipse** (Azure-Container für Eclipse) | Ermöglicht das Bereitstellen eines WAR- oder JAR-Artefakts als Docker-Container auf einem virtuellen Azure-Computer. | 
+   | **Azure Container Tools for Eclipse** (Azure-Containertools für Eclipse) | Ermöglicht das Erstellen und Bereitstellen einer WAR-Datei als Docker-Container auf einem Docker-Computer. |
    | **Azure Explorer for Eclipse** (Azure Explorer für Eclipse) | Bietet eine dem Explorer ähnliche Oberfläche zum Verwalten Ihrer Azure-Ressourcen. | 
    | **Azure HDInsight-Plug-In für Java** | Ermöglicht die Apache Spark-Anwendungsentwicklung in Scala. |
    | **Microsoft JDBC-Treiber 6.1 für SQL Server** | Stellt die JDBC-API für SQL Server und Microsoft Azure SQL-Datenbank für Java Platform Enterprise Edition 8 bereit. | 

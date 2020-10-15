@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: b9032685e00798f6a1600909b266b88674920e99
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 413b4b75e1eb22fb0a6f6a8fc1cd90a52a1de0e0
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378194"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010193"
 ---
 # <a name="managing-redis-caches-using-the-azure-explorer-for-eclipse"></a>Verwalten von Redis Caches mit dem Azure-Explorer für Eclipse
 
@@ -38,13 +38,13 @@ Mit den folgenden Schritten werden die Schritte zum Erstellen eines Redis Cache 
 
    a. **DNS-Name**: Gibt die DNS-Unterdomäne für den neuen Redis Cache an. Sie wird „.redis.cache.windows.net“ vorangestellt, z.B.: *wingtiptoys.redis.cache.windows.net*.
 
-   b. **Abonnement:** Wählen Sie das Azure-Abonnement aus, das Sie für den neuen Redis Cache verwenden möchten.
+   b. **Abonnement**: Wählen Sie das Azure-Abonnement aus, das Sie für den neuen Redis Cache verwenden möchten.
 
-   c. **Ressourcengruppe**: Gibt die Ressourcengruppe für den neuen Redis Cache an. Sie müssen eine der folgenden Optionen auswählen:
-      * **Create New**: Gibt an, dass Sie eine neue Ressourcengruppe erstellen möchten.
-      * **Vorhandene verwenden:** Gibt an, dass Sie in einer Liste von Ressourcengruppen, die Ihrem Azure-Konto zugeordnet sind, eine Auswahl treffen möchten.
+   c. **Ressourcengruppe**: Gibt die Ressourcengruppe für den Redis Cache an. Sie müssen eine der folgenden Optionen auswählen:
+      * **Neue erstellen**: Gibt an, dass Sie eine neue Ressourcengruppe erstellen möchten.
+      * **Vorhandene verwenden**: Gibt an, dass Sie in einer Liste von Ressourcengruppen, die Ihrem Azure-Konto zugeordnet sind, eine Auswahl treffen.
 
-   d. **Ort**: Gibt den Ort an, an dem Ihr Redis Cache erstellt wird, z.B. *USA, Westen*.
+   d. **Standort**: Gibt den Ort an, an dem Ihr Redis Cache erstellt wird, z. B. *USA, Westen*.
 
    e. **Tarif**: Gibt an, welcher Tarif für Ihren Redis Cache verwendet wird. Diese Einstellung bestimmt die Anzahl von Clientverbindungen. (Weitere Informationen finden Sie unter [Redis Cache – Preise].)
 
@@ -54,7 +54,7 @@ Mit den folgenden Schritten werden die Schritte zum Erstellen eines Redis Cache 
 
 Nachdem Ihr Redis Cache erstellt wurde, wird er im Azure-Explorer angezeigt.
 
-   ![Redis Cache im Azure-Explorer][CR03]
+      ![Redis Cache in Azure Explorer][CR03]
 
 > [!NOTE]
 >
