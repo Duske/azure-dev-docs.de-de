@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: d0dbc16a16ca3a5ff367e6c67fceabcb37e2cce6
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: d9e3b0de0c6ea20996c54b6ab5cb03083ed25a65
+ms.sourcegitcommit: d5dabc6dde727ed167a9dc8a4eaaf21025b3efa8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534423"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91947545"
 ---
 # <a name="sign-in-instructions-for-the-azure-toolkit-for-eclipse"></a>Anleitung zur Anmeldung für das Azure-Toolkit für Eclipse
 

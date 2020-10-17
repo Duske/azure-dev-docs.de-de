@@ -4,29 +4,29 @@ description: In diesem Artikel wird die Verwendung von Spring Cloud Azure Stream
 author: seanli1988
 manager: kyliel
 ms.author: seal
-ms.date: 08/21/2019
+ms.date: 10/10/2020
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 1ecedc4f3b3fb3eb92b66403f00aa14660323ce2
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 0df477d203031fecac389660b93e93f00d8e262a
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379044"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010007"
 ---
 # <a name="how-to-use-spring-cloud-azure-stream-binder-for-azure-service-bus"></a>Verwenden von Spring Cloud Azure Stream Binder für Azure Service Bus
 
 [!INCLUDE [spring-boot-20-note.md](includes/spring-boot-20-note.md)]
 
-Azure stellt eine asynchrone Nachrichtenplattform namens [Azure Service Bus](/azure/service-bus-messaging/service-bus-messaging-overview) (auch „Service Bus“) bereit, die auf dem Standard [AMQP 1.0](http://www.amqp.org/) („Advanced Message Queueing Protocol 1.0“) basiert. Service Bus kann für alle unterstützten Azure-Plattformen verwendet werden.
-
 In diesem Artikel wird veranschaulicht, wie Spring Cloud Stream Binder zum Senden und Empfangen von Nachrichten von `queues` und `topics` von Service Bus verwendet wird.
+
+Azure stellt eine asynchrone Nachrichtenplattform namens [Azure Service Bus](/azure/service-bus-messaging/service-bus-messaging-overview) (auch „Service Bus“) bereit, die auf dem Standard [AMQP 1.0](http://www.amqp.org/) („Advanced Message Queueing Protocol 1.0“) basiert. Service Bus kann für alle unterstützten Azure-Plattformen verwendet werden.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
 Die folgenden Voraussetzungen müssen für diesen Artikel erfüllt sein:
 
-1. Wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/) aktivieren oder sich für ein [kostenloses Konto](https://azure.microsoft.com/free/) registrieren.
+1. Ein Azure-Abonnement. Wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/) anwenden oder sich für ein [kostenloses Konto](https://azure.microsoft.com/free/) registrieren
 
 1. Sie benötigen ein unterstütztes Java Development Kit (JDK) der Version 8 oder höher. Weitere Informationen zu den für die Entwicklung in Azure verfügbaren JDKs finden Sie unter <https://aka.ms/azure-jdks>.
 
@@ -40,7 +40,10 @@ Die folgenden Voraussetzungen müssen für diesen Artikel erfüllt sein:
 
 1. Wenn Sie noch keine Service Bus-Warteschlange oder -Thema konfiguriert haben, verwenden Sie das Azure-Portal, um [eine Service Bus-Warteschlange zu erstellen](/azure/service-bus-messaging/service-bus-quickstart-portal) oder [ein Service Bus-Thema zu erstellen](/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal). Stellen Sie sicher, dass der Namespace die Anforderungen des vorherigen Schritts erfüllt. Notieren Sie sich auch die Verbindungszeichenfolge im Namespace, da Sie sie für die Test-App dieses Tutorials benötigen.
 
-1. Wenn Sie über keine Spring Boot-Anwendung verfügen, [erstellen Sie mit dem Spring-Initialisierer ein **Maven**-Projekt](https://start.spring.io/). Denken Sie daran, dass Sie **Maven-Projekt** auswählen und unter **Abhängigkeiten** die Abhängigkeit **Web** hinzuzufügen müssen.
+1. Wenn Sie über keine Spring Boot-Anwendung verfügen, erstellen Sie mit [Spring Initializr](https://start.spring.io/) ein **Maven**-Projekt. Denken Sie daran, dass Sie **Maven-Projekt** auswählen und unter **Abhängigkeiten** die Abhängigkeit **Web** hinzuzufügen müssen. Wählen Sie Java-Version **8** aus.
+
+    > [!NOTE]
+    > Spring Initializr nutzt als Standardversion Java 11. Um die in diesem Thema beschriebenen Spring Boot Starter verwenden zu können, müssen Sie stattdessen Java 8 auswählen.
 
 ## <a name="use-the-spring-cloud-stream-binder-starter"></a>Verwenden des Spring Cloud Stream Binder-Starters
 
@@ -48,7 +51,7 @@ Die folgenden Voraussetzungen müssen für diesen Artikel erfüllt sein:
 
     `C:\SpringBoot\servicebus\pom.xml`
 
-    Oder
+    - oder -
 
     `/users/example/home/servicebus/pom.xml`
 
@@ -68,7 +71,7 @@ Die folgenden Voraussetzungen müssen für diesen Artikel erfüllt sein:
 
     ![Bearbeiten Sie die Datei „pom.xml“ für die Service Bus-Warteschlange.](media/configure-spring-cloud-stream-binder-java-app-with-service-bus/add-stream-binder-starter-pom-file-dependency-for-service-bus-queue.png)
 
-    **Service Bus-Thema**
+    **Service Bus-Topic**
 
     ```xml
     <dependency>
@@ -108,7 +111,7 @@ Sie können Ihre App entweder basierend auf der Verbindungszeichenfolge oder auf
     spring.cloud.stream.servicebus.queue.bindings.input.consumer.checkpoint-mode=MANUAL
     ```
 
-    **Service Bus-Thema**
+    **Service Bus-Topic**
 
     ```yaml
     spring.cloud.azure.servicebus.connection-string=<ServiceBusNamespaceConnectionString>
@@ -126,8 +129,8 @@ Sie können Ihre App entweder basierend auf der Verbindungszeichenfolge oder auf
     |               `spring.cloud.stream.bindings.input.destination`                 |                            Geben Sie Service Bus-Warteschlange oder das Service Bus-Thema an, das Sie in diesem Tutorial verwendet haben.                         |
     |                  `spring.cloud.stream.bindings.input.group`                    |                                            Wenn Sie ein Service Bus-Thema verwendet haben, geben Sie das Themenabonnement an.                                |
     |               `spring.cloud.stream.bindings.output.destination`                |                               Geben Sie denselben Wert an, den Sie für das Eingabeziel verwendet haben.                        |
-    | `spring.cloud.stream.servicebus.queue.bindings.input.consumer.checkpoint-mode` |                                                       Geben Sie `MANUAL` an.                                                   |
-    | `spring.cloud.stream.servicebus.topic.bindings.input.consumer.checkpoint-mode` |                                                       Geben Sie `MANUAL` an.                                                   |
+    | `spring.cloud.stream.servicebus.queue.bindings.input.consumer.checkpoint-mode` |                                                       Geben Sie `MANUAL`an.                                                   |
+    | `spring.cloud.stream.servicebus.topic.bindings.input.consumer.checkpoint-mode` |                                                       Geben Sie `MANUAL`an.                                                   |
 
 1. Speichern und schließen Sie die Datei *application.properties*.
 
@@ -242,7 +245,7 @@ In diesem Abschnitt erstellen Sie die Java-Klassen, die erforderlich sind, um Na
 
     `cd C:\SpringBoot\servicebus`
 
-    Oder
+    - oder -
 
     `cd /users/example/home/servicebus`
 

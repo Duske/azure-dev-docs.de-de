@@ -9,12 +9,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: df71e27850a467e03ab58edf6beaf085b195803b
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 2b6e4e6e40d5fe7904e43b36edacd14494e92b0f
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831976"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010095"
 ---
 # <a name="deploy-java-app-to-azure-web-apps-for-containers-using-azure-toolkit-for-intellij"></a>Bereitstellen einer Java-App in Azure-Web-Apps für Container mithilfe des Azure-Toolkits für IntelliJ
 
@@ -50,7 +50,7 @@ Im Folgenden wird Schritt für Schritt beschrieben, wie Sie den Azure-Anmeldepro
 
 1. Wählen Sie Ihr Azure-Konto aus, und führen Sie alle erforderlichen Authentifizierungsschritte aus, um sich anzumelden.
 
-1. Schließen Sie nach der Anmeldung den Browser, und wechseln Sie zurück zur IntelliJ-IDE. Wählen Sie im Dialogfeld **Abonnements auswählen** die Abonnements aus, die Sie verwenden möchten, und klicken Sie dann auf **OK**.
+1. Schließen Sie nach der Anmeldung den Browser, und wechseln Sie zurück zur IntelliJ-IDE. Wählen Sie im Dialogfeld **Abonnements auswählen** die Abonnements aus, die Sie verwenden möchten, und klicken Sie dann auf **Auswählen**.
 
 ## <a name="creating-a-new-web-app-project"></a>Erstellen eines neuen Web-App-Projekts
 
@@ -58,7 +58,7 @@ Im Folgenden wird Schritt für Schritt beschrieben, wie Sie den Azure-Anmeldepro
 
 1. Wählen Sie im Dialogfeld **Neues Projekt** die Option **Maven** aus, und vergewissern Sie sich, dass die Option **Aus Archetyp erstellen** aktiviert ist. Wählen Sie in der Liste den Eintrag **maven-archetype-webapp** aus, und klicken Sie anschließend auf **Weiter**.
 
-   :::image type="content" source="media/create-hello-world-web-app/maven-archetype-webapp.png" alt-text="Auswählen der Option „maven-archetype-webapp“"::: 
+   :::image type="content" source="media/create-hello-world-web-app/maven-archetype-webapp.png" alt-text="Anmelden bei Azure mit IntelliJ"::: 
 
 1. Erweitern Sie das Dropdownmenü **Artifact Coordinates** (Artefaktkoordinaten), um alle Eingabefelder anzuzeigen, und geben Sie die unten aufgeführten Informationen für Ihre neue Web-App an. Klicken Sie anschließend auf **Weiter**:
 
@@ -68,7 +68,7 @@ Im Folgenden wird Schritt für Schritt beschrieben, wie Sie den Azure-Anmeldepro
 
 1. Passen Sie alle gewünschten Maven-Einstellungen an, oder übernehmen Sie die Standardeinstellungen, und klicken Sie dann auf **Fertig stellen**.
 
-1. Navigieren Sie links auf der Registerkarte **Projekt** zu Ihrem Projekt, und öffnen Sie die Datei **src/main/webapp/WEB-INF/index.jsp**. Ersetzen Sie den Code durch Folgendes, und **speichern Sie die Änderungen**:
+1. Navigieren Sie links auf der Registerkarte **Projekt** zu Ihrem Projekt, und öffnen Sie die Datei **src/main/webapp/index.jsp**. Ersetzen Sie den Code durch Folgendes, und **speichern Sie die Änderungen**:
 
    ```html
    <html>
@@ -77,7 +77,7 @@ Im Folgenden wird Schritt für Schritt beschrieben, wie Sie den Azure-Anmeldepro
     </body>
    </html>
    ```
-   :::image type="content" source="media/create-hello-world-web-app/open-index-page.png" alt-text="Öffnen der Datei „index.jsp“":::
+   :::image type="content" source="media/create-hello-world-web-app/open-index-page.png" alt-text="Anmelden bei Azure mit IntelliJ":::
 
 ## <a name="create-an-azure-container-registry-to-use-as-a-private-docker-registry"></a>Erstellen einer Azure-Containerregistrierung, die als private Docker-Registrierung verwendet werden soll
 
@@ -112,13 +112,13 @@ Die folgende Anleitung führt Sie durch die Verwendung des Azure-Portals zur Ers
 
 ## <a name="deploy-your-web-app-in-a-docker-container"></a>Bereitstellen Ihrer Web-App in einem Docker-Container
 
-Mit den folgenden Schritten wird die Konfiguration der Docker-Unterstützung für Ihre Web-App und die Bereitstellung der Web-App beschrieben.
+Mit den folgenden Schritten wird die Konfiguration der Docker-Unterstützung für Ihre Web-App und die Bereitstellung der Web-App in einem Docker-Container beschrieben.
 
 1. Navigieren Sie auf der linken Registerkarte **Projekt** zu Ihrem Projekt, und klicken Sie mit der rechten Maustaste darauf. Erweitern Sie **Azure**, und klicken Sie auf **Add Docker Support** (Docker-Unterstützung hinzufügen).
 
    Damit wird automatisch eine Docker-Datei mit einer Standardkonfiguration erstellt.
 
-   :::image type="content" source="media/hello-world-web-app-linux/docker-support-file.png" alt-text="Datei für Docker-Unterstützung":::
+   :::image type="content" source="media/hello-world-web-app-linux/docker-support-file.png" alt-text="Anmelden bei Azure mit IntelliJ":::
 
 1. Nachdem Sie die Docker-Unterstützung hinzugefügt haben, können Sie wie folgt vorgehen: Klicken Sie im Projekt-Explorer mit der rechten Maustaste auf Ihr Projekt, erweitern Sie die Option **Azure**, und klicken Sie dann auf **Run on Web App for Containers** (In Web-App für Container ausführen).
 
@@ -148,7 +148,7 @@ Mit den folgenden Schritten wird die Konfiguration der Docker-Unterstützung fü
 
 1. Nachdem Sie Ihre Web-App veröffentlicht haben, werden die Einstellungen als Standard gespeichert. Sie können Ihre Anwendung in Azure ausführen, indem Sie auf der Symbolleiste auf den grünen Pfeil klicken. Sie können diese Einstellungen ändern, indem Sie auf das Dropdownmenü für Ihre Web-App und dann auf **Konfigurationen bearbeiten** klicken.
 
-    :::image type="content" source="media/create-hello-world-web-app/edit-configuration-menu.png" alt-text="Menü „Konfiguration bearbeiten“":::
+    :::image type="content" source="media/create-hello-world-web-app/edit-configuration-menu.png" alt-text="Anmelden bei Azure mit IntelliJ":::
 
 1. Wenn das Dialogfeld für die **Ausführungs-/Debugkonfigurationen** angezeigt wird, können Sie beliebige Standardeinstellungen ändern. Klicken Sie anschließend auf **OK**.
 

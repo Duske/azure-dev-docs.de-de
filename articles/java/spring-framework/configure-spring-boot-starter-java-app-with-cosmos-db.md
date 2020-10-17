@@ -5,18 +5,18 @@ services: cosmos-db
 documentationcenter: java
 author: KarlErickson
 ms.author: karler
-ms.date: 10/02/2019
+ms.date: 10/06/2020
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.custom: devx-track-java
-ms.openlocfilehash: 800e4d45417c7842d12e92c6e18dfdd6a1bc567f
-ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
+ms.openlocfilehash: bc7754cf3f35bf8d6bc0d0a427dc1c532ff6e834
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91586187"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846531"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a>Verwendung von Spring Boot Starter mit der SQL-API von Azure Cosmos DB
 
@@ -37,7 +37,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Klicken Sie auf **Datenbanken** und anschließend auf **Azure Cosmos DB**.
 
-    ![Azure-Portal][AZ02]
+    ![Auswählen von Azure Cosmos DB im Azure-Portal][AZ02]
 
 1. Geben Sie auf der Seite **Azure Cosmos DB** die folgenden Informationen ein:
 
@@ -49,13 +49,13 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
     Klicken Sie nach Angabe dieser Optionen auf **Überprüfen und erstellen**, überprüfen Sie Ihre Angaben, und klicken Sie anschließend auf **Erstellen**.
 
-    ![Azure-Portal][AZ03]
+    ![Auswählen von „Überprüfen und erstellen“ zum Fortsetzen des Vorgangs][AZ03]
 
 1. Wenn Ihre Datenbank erstellt wurde, wird Sie in Ihrem Azure-**Dashboard** sowie auf den Seiten **Alle Ressourcen** und **Azure Cosmos DB** aufgeführt. Sie können in Ihrer Datenbank auf eine beliebige Stelle klicken, um die Eigenschaftenseite für Ihren Cache zu öffnen.
 
 1. Wenn die Eigenschaftenseite für Ihre Datenbank angezeigt wird, klicken Sie auf **Schlüssel**, und kopieren Sie Ihren URI sowie Ihre Zugriffsschlüssel für Ihre Datenbank. Diese Werte verwenden Sie in Ihrer Spring Boot-Anwendung.
 
-    ![Azure-Portal][AZ05]
+    ![Kopieren des URI und der Zugriffsschlüssel im Abschnitt „Schlüssel“][AZ05]
 
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Erstellen einer einfachen Spring Boot-Anwendung mit Spring Initializr
 
@@ -421,7 +421,7 @@ Weitere Informationen zur Verwendung von Spring Boot-Anwendungen in Azure finden
 
 * [Spring Boot Cosmos DB Starter für Azure]
 
-* [Bereitstellen von Spring Boot-Anwendungen in Azure App Service](deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md)
+* [Bereitstellen einer Spring Boot-Anwendung für Linux in Azure App Service](deploy-spring-boot-java-app-on-linux.md)
 
 * [Ausführen einer Spring Boot-Anwendung in einem Kubernetes-Cluster in Azure Container Service](deploy-spring-boot-java-app-on-kubernetes.md)
 

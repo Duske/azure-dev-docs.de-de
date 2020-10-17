@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: devx-track-java
-ms.openlocfilehash: 57cb6f2b731ee6d9522787d70efbaf35e029c632
-ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
+ms.openlocfilehash: a318d5aa7f411add20ee201d48d3640983efefee
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91586148"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010261"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-eclipse"></a>Erstellen einer „Hello World“-Web-App für Azure App Service mit Eclipse
 
@@ -53,7 +53,7 @@ Im Folgenden wird Schritt für Schritt beschrieben, wie Sie den Azure-Anmeldepro
 
 1. Wählen Sie Ihr Azure-Konto aus, und führen Sie alle erforderlichen Authentifizierungsschritte aus, um sich anzumelden.
 
-1. Schließen Sie nach der Anmeldung den Browser, und wechseln Sie zurück zur Eclipse-IDE. Wählen Sie im Dialogfeld **Abonnements auswählen** die Abonnements aus, die Sie verwenden möchten, und klicken Sie dann auf **OK**.
+1. Schließen Sie nach der Anmeldung den Browser, und wechseln Sie zurück zur Eclipse-IDE. Wählen Sie im Dialogfeld **Abonnements auswählen** die Abonnements aus, die Sie verwenden möchten, und klicken Sie dann auf **Auswählen**.
 
 ### <a name="install-required-software-optional"></a>Installieren der erforderlichen Software *(optional)*
 

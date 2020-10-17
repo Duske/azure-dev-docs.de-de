@@ -4,12 +4,12 @@ description: Verwenden Sie die Ressourcenverwaltungsbibliothek im Azure SDK für
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 8a3eb230e40954d25a890db53d33382c07899b7d
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 24450fb8b7db3f9df3d08086c90cdf26265b474a
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764627"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010287"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-resource-group"></a>Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Ressourcengruppe
 
@@ -21,7 +21,7 @@ Alle Befehle in diesem Artikel funktionieren in Linux-/macOS-Bash- und Windows-B
 
 Wenn Sie dies noch nicht getan haben, befolgen Sie sämtliche der Anweisungen unter [Konfigurieren Ihrer lokalen Python-Entwicklungsumgebung für Azure](configure-local-development-environment.md).
 
-Stellen Sie sicher, dass Sie einen Dienstprinzipal für die lokale Entwicklung erstellen und eine virtuelle Umgebung für dieses Projekt erstellen und aktivieren.
+Achten Sie darauf, eine virtuelle Umgebung für dieses Projekt zu erstellen und zu aktivieren.
 
 ## <a name="2-install-the-azure-library-packages"></a>2: Installieren der Azure-Bibliothekspakete
 
@@ -90,6 +90,7 @@ print(f"Provisioned resource group {rg_result.name} in the {rg_result.location} 
 
 ### <a name="reference-links-for-classes-used-in-the-code"></a>Referenzlinks für im Code verwendete Klassen
 
+- [AzureCliCredential (azure.identity)](/python/api/azure-identity/azure.identity.azureclicredential)
 - [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient)
 
 ## <a name="4-run-the-script"></a>4: Führen Sie das Skript aus.
@@ -130,6 +131,7 @@ az group create -n PythonAzureExample-rg -l centralus
 
 ## <a name="see-also"></a>Weitere Informationen
 
+- [Beispiel: Auflisten von Ressourcengruppen in einem Abonnement](azure-sdk-example-list-resource-groups.md)
 - [Beispiel: Verwenden der Azure-Bibliotheken mit Azure Storage](azure-sdk-example-storage.md)
 - [Beispiel: Verwenden der Azure-Bibliotheken mit Azure Storage](azure-sdk-example-storage-use.md)
 - [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Web-App](azure-sdk-example-web-app.md)

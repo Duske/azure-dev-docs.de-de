@@ -3,14 +3,14 @@ title: 'Schnellstart: Konfigurieren von Ansible über die Azure-Befehlszeilensch
 description: In diesem Schnellstart erfahren Sie, wie Sie Ansible für die Verwaltung von Azure-Ressourcen unter Ubuntu, CentOS und SLES installieren und konfigurieren.
 keywords: Ansible, Azure, DevOps, Bash, Cloud Shell, Playbook, Azure CLI
 ms.topic: quickstart
-ms.date: 08/13/2020
+ms.date: 09/30/2020
 ms.custom: devx-track-ansible,devx-track-cli
-ms.openlocfilehash: bdda836789e9230cffdc14a6ee4bd87ddb2ce5ef
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: aba725cee4b61aeae98ed8d0eb89b3090241ff49
+ms.sourcegitcommit: 0b1c751c5a4a837977fec1c777bca5ad15cf2fc7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831171"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91621626"
 ---
 # <a name="quickstart-configure-ansible-using-azure-cli"></a>Schnellstart: Konfigurieren von Ansible über die Azure-Befehlszeilenschnittstelle
 
@@ -66,7 +66,7 @@ Mit den folgenden Schritten wird die Erstellung eines SSH-Schlüsselpaars beschr
     az group create --name QuickstartAnsible-rg --location eastus
     ```
 
-1. Erstellen Sie mit dem Befehl [az vm create](/cli/azure/vm#az-vm-create) einen virtuellen Computer.
+1. Erstellen Sie mit dem Befehl [az vm create](/cli/azure/vm#az-vm-create) einen virtuellen Computer. Ersetzen Sie den Platzhalter durch den vollqualifizierten Dateinamen des **öffentlichen** SSH-Schlüssels.
 
     ```azurecli
     az vm create \
@@ -108,7 +108,7 @@ az vm extension set \
 
 ## <a name="connect-to-your-virtual-machine-via-ssh"></a>Herstellen einer Verbindung mit Ihrem virtuellen Computer per SSH
 
-Verwenden Sie den SSH-Befehl, um eine Verbindung mit Ihrem virtuellen Computer herzustellen.
+Verwenden Sie den SSH-Befehl, um eine Verbindung mit Ihrem virtuellen Computer herzustellen. Ersetzen Sie die Platzhalter durch die entsprechenden zurückgegebenen Werte.
 
 ```azurecli
 ssh -i <ssh_private_key_filename> azureuser@<vm_ip_address>
@@ -126,15 +126,15 @@ Wenn Sie Ansible Tower oder Jenkins verwenden, deklarieren Sie die Werte für de
 Konfigurieren Sie die Ansible-Anmeldeinformationen mithilfe einer der folgenden Methoden:
 
 - [Erstellen einer Datei mit Ansible-Anmeldeinformationen](#file-credentials)
-- [Verwenden von Ansible-Umgebungsvariablen](#env-credentials)
+- [Definieren von Ansible-Umgebungsvariablen](#env-credentials)
 
-### <a name="span-idfile-credentials-create-ansible-credentials-file"></a><span id="file-credentials"/> Erstellen einer Datei mit Ansible-Anmeldeinformationen
+#### <a name="span-idfile-credentials-create-ansible-credentials-file"></a><span id="file-credentials"/> Erstellen einer Datei mit Ansible-Anmeldeinformationen
 
 In diesem Abschnitt erstellen Sie eine lokale Datei mit Anmeldeinformationen, um Anmeldeinformationen für Ansible bereitzustellen.
 
 Weitere Informationen zum Definieren von Ansible-Anmeldeinformationen finden Sie unter [Bereitstellen von Anmeldeinformationen für Azure-Module](https://docs.ansible.com/ansible/guide_azure.html#providing-credentials-to-azure-modules).
 
-1. Erstellen Sie für eine Entwicklungsumgebung eine Datei mit dem Namen `credentials` auf dem virtuellen Hostcomputer:
+1. Nachdem Sie erfolgreich eine Verbindung mit dem virtuellen Hostcomputer hergestellt haben, erstellen und öffnen Sie eine Datei mit dem Namen `credentials`:
 
     ```bash
     mkdir ~/.azure
@@ -153,20 +153,16 @@ Weitere Informationen zum Definieren von Ansible-Anmeldeinformationen finden Sie
 
 1. Speichern und schließen Sie die Datei.
 
-### <a name="span-idenv-credentialsuse-ansible-environment-variables"></a><span id="env-credentials"/>Verwenden von Ansible-Umgebungsvariablen
+#### <a name="span-idenv-credentialsdefine-ansible-environment-variables"></a><span id="env-credentials"/>Definieren von Ansible-Umgebungsvariablen
 
-In diesem Abschnitt exportieren Sie die Werte für den Dienstprinzipal, um Ihre Ansible-Anmeldeinformationen zu konfigurieren.
+Exportieren Sie auf dem virtuellen Hostcomputer die Werte für den Dienstprinzipal, um Ihre Ansible-Anmeldeinformationen zu konfigurieren.
 
-1. Öffnen Sie ein Terminalfenster.
-
-1. Exportieren Sie die Werte des Dienstprinzipals:
-
-    ```bash
-    export AZURE_SUBSCRIPTION_ID=<your-subscription_id>
-    export AZURE_CLIENT_ID=<security-principal-appid>
-    export AZURE_SECRET=<security-principal-password>
-    export AZURE_TENANT=<security-principal-tenant>
-    ```
+```bash
+export AZURE_SUBSCRIPTION_ID=<your-subscription_id>
+export AZURE_CLIENT_ID=<security-principal-appid>
+export AZURE_SECRET=<security-principal-password>
+export AZURE_TENANT=<security-principal-tenant>
+```
 
 ## <a name="test-ansible-installation"></a>Testen der Ansible-Installation
 

@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: e457d4fe152f9fa5fa64bafaa4f49311e8ff4475
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 82dce0ada2824a00e75e9bb00d8943458e09e44f
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831886"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010180"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-eclipse"></a>Verwalten virtueller Computer mit dem Azure-Explorer für Eclipse
 
@@ -103,7 +103,7 @@ Um einen virtuellen Computer mithilfe des Azure-Explorers in Eclipse zu löschen
 
 1. Klicken Sie in der Ansicht **Azure-Explorer** mit der rechten Maustaste auf den virtuellen Computer, und wählen Sie **Löschen** aus.
 
-1. Klicken Sie im Bestätigungsfenster auf **Ja**.
+1. Klicken Sie im Bestätigungsfenster auf **OK**.
 
    ![Bestätigungsfenster für das Löschen eines virtuellen Computers](media/managing-virtual-machines-using-azure-explorer/DE02.png)
 

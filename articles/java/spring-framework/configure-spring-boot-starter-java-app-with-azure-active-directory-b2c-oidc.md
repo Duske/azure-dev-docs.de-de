@@ -6,22 +6,20 @@ documentationcenter: java
 author: panli
 manager: kevinzha
 ms.author: edburns
-ms.date: 06/04/2020
+ms.date: 10/10/2020
 ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: 3835d51bbbc7f3226a1b77ba415d5e965ac8a609
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: df9b9f659d504c18c9dfd9afb3b5f201448d4866
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831916"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010141"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>Tutorial: Schützen einer Java-Web-App mithilfe von Spring Boot Starter für Azure Active Directory B2C
-
-## <a name="overview"></a>Übersicht
 
 In diesem Artikel erfahren Sie, wie Sie eine Java-App mit [Spring Initializr](https://start.spring.io/) erstellen. Spring Initializr verwendet Spring Boot Starter für Azure Active Directory (Azure AD).
 
@@ -49,11 +47,15 @@ In diesem Tutorial lernen Sie Folgendes:
 
     * Wählen Sie unter **Projekt** die Option **Maven-Projekt** aus.
     * Wählen Sie unter **Sprache** die Option **Java** aus.
-    * Wählen Sie unter **Spring Boot** die Option **2.2.7** aus.
+    * Wählen Sie unter **Spring Boot** die Option **2.3.4** aus.
     * Geben Sie unter **Gruppe**, **Artefakt** und **Name** denselben Wert mit einer kurzen beschreibenden Zeichenfolge ein. Die Benutzeroberfläche kann einige dieser Werte während der Eingabe automatisch ausfüllen.
     * Wählen Sie im Bereich **Abhängigkeiten** die Option **Abhängigkeiten hinzufügen** aus. Verwenden Sie die Benutzeroberfläche, um Abhängigkeiten für **Spring Web** und **Spring Security** hinzuzufügen.
 
-   ![Eingeben der Werte, um das Projekt zu generieren](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/si-n.png)
+   ![Eingeben der Werte, um das Projekt zu generieren](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/fill-in-the-values-to-generate-the-project.png)
+
+    > [!NOTE]
+    > Spring Initializr nutzt als Standardversion Java 11. Um die in diesem Thema beschriebenen Spring Boot Starter verwenden zu können, müssen Sie stattdessen Java 8 auswählen.
+
 
 3. Klicken Sie auf **Projekt generieren**, und laden Sie das Projekt dann in einen Pfad auf dem lokalen Computer herunter. Verschieben Sie die heruntergeladene Datei in ein Verzeichnis, das nach dem Projekt benannt ist, und entpacken Sie die Datei. Das Dateilayout sollte in etwa wie folgt aussehen, wobei der Wert, den Sie für **Gruppe** eingegeben haben, `yourProject` ersetzt.
 
@@ -152,11 +154,11 @@ In diesem Tutorial lernen Sie Folgendes:
 
     Führen Sie die Schritte unter [Tutorial: Erstellen von Benutzerflows in Azure Active Directory B2C](/azure/active-directory-b2c/tutorial-create-user-flows) aus, um Benutzerflows für „Registrierung und Anmeldung“, „Profilbearbeitung“ und „Kennwortzurücksetzung“ zu erstellen.
 
-    Von AAD B2C werden sowohl lokale Konten als auch soziale Netzwerke als Identitätsanbieter unterstützt. Ein Beispiel für die Erstellung eines GitHub-Identitätsanbieters finden Sie unter [Einrichten der Registrierung und Anmeldung mit einem GitHub-Konto mithilfe von Azure Active Directory B2C](/azure/active-directory-b2c/identity-provider-github).
+    Von Azure AD B2C werden sowohl lokale Konten als auch soziale Netzwerke als Identitätsanbieter unterstützt. Ein Beispiel für die Erstellung eines GitHub-Identitätsanbieters finden Sie unter [Einrichten der Registrierung und Anmeldung mit einem GitHub-Konto mithilfe von Azure Active Directory B2C](/azure/active-directory-b2c/identity-provider-github).
 
 ## <a name="configure-and-compile-your-app"></a>Konfigurieren und Kompilieren Ihrer App
 
-Nachdem Sie nun die AAD B2C-Instanz und einige Benutzerflows erstellt haben, verbinden Sie Ihre Spring-App mit der AAD B2C-Instanz.
+Nachdem Sie nun die Azure AD B2C-Instanz und einige Benutzerflows erstellt haben, verbinden Sie Ihre Spring-App mit der Azure AD B2C-Instanz.
 
 1. Wechseln Sie in der Befehlszeile mit „cd“ zu dem Verzeichnis, in das Sie die ZIP-Datei entpackt haben, die Sie von Spring Initializr heruntergeladen haben.
 
@@ -182,9 +184,9 @@ Nachdem Sie nun die AAD B2C-Instanz und einige Benutzerflows erstellt haben, ver
     </dependency>
     ```
 
-    Verwenden Sie für die Angabe `azure-active-directory-b2c-spring-boot-starter` die neueste verfügbare Version. Möglicherweise können Sie [mvnrepository.com](https://mvnrepository.com/ artifact/com.microsoft.azure/azure-active-directory-spring-boot-starter) verwenden, um diese Angabe nachzuschlagen. Zum Zeitpunkt der Erstellung dieses Artikels ist die neueste Version `2.2.4`.
+    Verwenden Sie für die Angabe `azure-active-directory-b2c-spring-boot-starter` die neueste verfügbare Version. Möglicherweise können Sie [mvnrepository.com](https://mvnrepository.com/ artifact/com.microsoft.azure/azure-active-directory-spring-boot-starter) verwenden, um diese Angabe nachzuschlagen. Ab diesem Update ist die neueste Version `2.3.5`.
 
-    Verwenden Sie für `spring-boot-starter-thymeleaf` die Version, die der oben ausgewählten Version von Spring Boot entspricht, z. B. `2.2.7.RELASE`.
+    Verwenden Sie für `spring-boot-starter-thymeleaf` die Version, die der oben ausgewählten Version von Spring Boot entspricht, z. B. `2.3.4.RELASE`.
 
     Verwenden Sie für `thymeleaf-extras-springsecurity5` die neueste verfügbare Version. Möglicherweise können Sie [mvnrepository.com](https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity5) verwenden, um diese Angabe nachzuschlagen. Zum Zeitpunkt der Erstellung dieses Artikels ist die neueste Version `3.0.4.RELEASE`.
 
@@ -353,6 +355,10 @@ Nachdem Sie nun die AAD B2C-Instanz und einige Benutzerflows erstellt haben, ver
 ## <a name="summary"></a>Zusammenfassung
 
 In diesem Tutorial haben Sie mit Azure Active Directory B2C Starter eine neue Java-Webanwendung erstellt, einen neuen Azure AD B2C-Mandanten konfiguriert und eine neue Anwendung darin registriert. Anschließend haben Sie Ihre Anwendung zur Verwendung der Spring-Anmerkungen und -Klassen zum Schützen der Web-App konfiguriert.
+
+## <a name="clean-up-resources"></a>Bereinigen von Ressourcen
+
+Verwenden Sie das [Azure-Portal](https://portal.azure.com/), um die in diesem Artikel erstellten Ressourcen zu löschen, wenn Sie sie nicht mehr benötigen, um unerwartete Gebühren zu vermeiden.
 
 ## <a name="next-steps"></a>Nächste Schritte
 

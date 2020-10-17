@@ -3,18 +3,18 @@ title: Bereitstellen einer Spring Boot-Web-App für Linux in Azure App Service
 description: In diesem Tutorial werden die Schritte zum Bereitstellen einer Spring Boot-Anwendung als Linux-Webanwendung in Microsoft Azure erläutert.
 services: azure app service
 documentationcenter: java
-ms.date: 12/31/2019
+ms.date: 10/06/2020
 ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: 97f6ef6e1d53b8923a8d29aa7747442ee6ac7efc
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: ec24ba4ab6b10bd615af06c2cdbd37397d0b2a83
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90830066"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846451"
 ---
 # <a name="deploy-a-spring-boot-application-to-linux-on-azure-app-service"></a>Bereitstellen einer Spring Boot-Anwendung für Linux in Azure App Service
 
@@ -174,7 +174,7 @@ Die folgende Anleitung führt Sie durch die Verwendung des Azure-Portals zur Ers
 
    * Klicken Sie auf **Weiter: Docker**.
 
-   ![Konfigurieren von Einstellungen für Web-Apps][LX02]
+   ![Klicken Sie auf die Schaltfläche „Weiter: Docker“, um den Vorgang fortzusetzen.][LX02]
 
       Wählen Sie auf der Seite **Web-App** die Option **Docker** aus, und geben Sie die folgenden Informationen ein:
 
@@ -190,7 +190,7 @@ Die folgende Anleitung führt Sie durch die Verwendung des Azure-Portals zur Ers
 
    Nachdem Sie alle oben genannten Informationen eingegeben haben, klicken Sie auf **Bewerten + erstellen**.
 
-   ![Konfigurieren von Einstellungen für Web-Apps][LX02-A]
+   ![Wählen Sie abschließend „Überprüfen und erstellen“ aus.][LX02-A]
 
    * Klicken Sie auf **Überprüfen + erstellen**.
 
@@ -248,12 +248,11 @@ Weitere Informationen zu Spring und Azure finden Sie im Dokumentationscenter zu 
 
 Weitere Informationen zur Verwendung von Spring Boot-Anwendungen in Azure finden Sie in den folgenden Artikeln:
 
-* [Bereitstellen von Spring Boot-Anwendungen in Azure App Service](deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md)
-* [Deploy a Spring Boot Application on a Kubernetes Cluster in the Azure Container Service](deploy-spring-boot-java-app-on-kubernetes.md) (Bereitstellen einer Spring Boot-Anwendung in einem Kubernetes-Cluster in Azure Container Service)
+* [Bereitstellen einer Spring Boot-Anwendung in einem Kubernetes-Cluster in Azure Container Service](deploy-spring-boot-java-app-on-kubernetes.md)
 
 Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure für Java-Entwickler] und [Working with Azure DevOps and Java] (Arbeiten mit Azure DevOps und Java).
 
-Weitere Informationen zum Spring Boot-Beispielprojekt in Docker finden Sie unter [Spring Boot on Docker Getting Started].
+Weitere Informationen zum Spring Boot-Beispielprojekt in Docker finden Sie unter [Erste Schritte mit Spring Boot].
 
 Hilfe zu den ersten Schritten mit eigenen Spring Boot-Anwendungen finden Sie bei **Spring Initializr** unter https://start.spring.io/.
 

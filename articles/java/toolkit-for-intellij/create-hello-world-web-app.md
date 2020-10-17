@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: devx-track-java
-ms.openlocfilehash: af85a31f39f87c38e378fc1cf4254053447b9dbd
-ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
+ms.openlocfilehash: 6506aae7aacf26d08bcb6c47ef947dfb8f6cef46
+ms.sourcegitcommit: d5dabc6dde727ed167a9dc8a4eaaf21025b3efa8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91586173"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91947515"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-intellij"></a>Erstellen einer „Hello World“-Web-App für Azure App Service mit IntelliJ
 
@@ -53,7 +53,7 @@ Im Folgenden wird Schritt für Schritt beschrieben, wie Sie den Azure-Anmeldepro
 
 1. Wählen Sie Ihr Azure-Konto aus, und führen Sie alle erforderlichen Authentifizierungsschritte aus, um sich anzumelden.
 
-1. Schließen Sie nach der Anmeldung den Browser, und wechseln Sie zurück zur IntelliJ-IDE. Wählen Sie im Dialogfeld **Abonnements auswählen** die Abonnements aus, die Sie verwenden möchten, und klicken Sie dann auf **OK**.
+1. Schließen Sie nach der Anmeldung den Browser, und wechseln Sie zurück zur IntelliJ-IDE. Wählen Sie im Dialogfeld **Abonnements auswählen** die Abonnements aus, die Sie verwenden möchten, und klicken Sie dann auf **Auswählen**.
 
 ## <a name="creating-a-new-web-app-project"></a>Erstellen eines neuen Web-App-Projekts
 
@@ -71,7 +71,7 @@ Im Folgenden wird Schritt für Schritt beschrieben, wie Sie den Azure-Anmeldepro
 
 1. Passen Sie alle gewünschten Maven-Einstellungen an, oder übernehmen Sie die Standardeinstellungen, und klicken Sie dann auf **Fertig stellen**.
 
-1. Navigieren Sie links auf der Registerkarte **Projekt** zu Ihrem Projekt, und öffnen Sie die Datei **src/main/webapp/WEB-INF/index.jsp**. Ersetzen Sie den Code durch Folgendes, und **speichern Sie die Änderungen**:
+1. Navigieren Sie links auf der Registerkarte **Projekt** zu Ihrem Projekt, und öffnen Sie die Datei **src/main/webapp/index.jsp**. Ersetzen Sie den Code durch Folgendes, und **speichern Sie die Änderungen**:
 
    ```html
    <html>

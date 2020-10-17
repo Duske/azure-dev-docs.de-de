@@ -5,17 +5,17 @@ services: Application-Insights
 documentationcenter: java
 author: dhaval24
 ms.author: dhdoshi
-ms.date: 11/29/2019
+ms.date: 10/06/2020
 ms.service: azure-monitor
 ms.tgt_pltfrm: application-insights
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: ee48999f7d83857c4992e74ad4dc4b248bfe195b
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.openlocfilehash: 59600fa46f463d4fef78de8ebf335c530f26b81e
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91365213"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846551"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-application-insights"></a>Konfigurieren einer Spring Boot Initializer-App für die Verwendung von Application Insights
 
@@ -67,7 +67,7 @@ Gehen Sie zum Erstellen einer Application Insights-Ressource wie folgt vor:
 
    Klicken Sie nach Angabe dieser Optionen auf **Überprüfen und erstellen**.
 
-   ![Azure][AZ03]
+   ![Überprüfen und erstellen, Application Insights][AZ03]
 
 * Überprüfen Sie Ihre Angaben, und klicken Sie auf **Erstellen**.
 
@@ -75,7 +75,7 @@ Die erstellte Ressource wird auf Ihrem **Azure-Dashboard** sowie auf den Seiten 
 
 Kopieren Sie auf der Übersichtsseite den **Instrumentierungsschlüssel**.
 
-   ![Azure][AZ04]
+   ![Kopieren des Instrumentationsschlüssels][AZ04]
 
 ## <a name="configure-your-downloaded-spring-boot-application-to-use-application-insights"></a>Konfigurieren Ihrer heruntergeladenen Spring Boot-Anwendung für die Verwendung von Application Insights
 
@@ -179,11 +179,11 @@ Gehen Sie zum Konfigurieren der Anwendung wie folgt vor:
 
    Die Daten sollten nach wenigen Sekunden in Azure angezeigt werden. 
 
-   ![Azure][AZ05]
+   ![Datenanzeige im Azure-Portal][AZ05]
 
 Klicken Sie auf die Kachel **Anwendungsübersicht**, um übergeordnete Komponenten und deren Interaktionen anzuzeigen. Hier können Sie sich einen allgemeinen Überblick über die gesamte Anwendung verschaffen. Jeder Spring Boot-Microservice wird anhand des Spring-Anwendungsnamens erkannt. Vergessen Sie nicht, ihn festzulegen.
 
-   ![Azure][AZ08] 
+   ![Anzeige der Anwendungsübersicht][AZ08] 
 
 ## <a name="configure-springboot-application-to-send-log4j-logs-to-application-insights"></a>Konfigurieren der Spring Boot-Anwendung zum Senden von log4j-Protokollen an Application Insights
 
@@ -261,7 +261,7 @@ Gehen Sie wie folgt vor, um die Anwendung zum Senden von Protokollen zu konfigur
 
 Innerhalb weniger Sekunden sollten alle Spring-Protokolle angezeigt werden, die in Azure verfügbar sind. Sie können sich die ausführlichen Protokollmeldungen ansehen und Analysen im Analytics-Portal durchführen.
 
-![Azure][AZ07]
+![Protokollmeldungen im Analytics-Portal][AZ07]
 
 ## <a name="next-steps"></a>Nächste Schritte
 
@@ -274,7 +274,7 @@ Weitere Informationen zu Spring und Azure finden Sie im Dokumentationscenter zu 
 
 Weitere Informationen zur Verwendung von Spring Boot-Anwendungen in Azure finden Sie in den folgenden Artikeln:
 
-* [Bereitstellen von Spring Boot-Anwendungen in Azure App Service](deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md)
+* [Bereitstellen einer Spring Boot-Anwendung für Linux in Azure App Service](deploy-spring-boot-java-app-on-linux.md)
 
 * [Ausführen einer Spring Boot-Anwendung in einem Kubernetes-Cluster in Azure Container Service](deploy-spring-boot-java-app-on-kubernetes.md)
 

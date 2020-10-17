@@ -3,14 +3,14 @@ title: 'Tutorial: Bereitstellen einer Django-App mit PostgreSQL mithilfe des Azu
 description: Stellen Sie eine Web-App und eine PostgreSQL-Datenbank in Azure sowie App-Code über GitHub bereit.
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 09/23/2020
+ms.date: 10/09/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 7f363c3e82873e82630cf477ea469627aa528a4e
-ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
+ms.openlocfilehash: 77cb35d31f80b52d1e79c2650c79635dc039e72d
+ms.sourcegitcommit: d5dabc6dde727ed167a9dc8a4eaaf21025b3efa8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110537"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91947535"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>Tutorial: Bereitstellen einer Django-Web-App mit PostgreSQL mithilfe des Azure-Portals
 
@@ -57,7 +57,7 @@ Sie erstellen einen Fork dieses Repositorys, damit Sie Änderungen vornehmen und
     | --- | --- |
     | Subscription | Wählen Sie das zu verwendende Abonnement aus, falls dieses von der Standardeinstellung abweicht. |
     | Resource group | Wählen Sie **Neu erstellen** aus, und geben Sie „DjangoPostgres-Tutorial-rg“ ein. |
-    | App-Name | Ein Name für Ihre Web-App, der überall in Azure eindeutig ist (die URL der App lautet `https://\<app-name>.azurewebsites.net`). Gültige Zeichen sind `A`-`Z`, `0`-`9` und `-`. Ein bewährtes Muster ist eine Kombination aus Ihrem Firmennamen und einer App-ID. |
+    | App-Name | Ein Name für Ihre Web-App, der überall in Azure eindeutig ist (die URL der App lautet `https://<app-name>.azurewebsites.net`). Gültige Zeichen sind `A`-`Z`, `0`-`9` und `-`. Ein bewährtes Muster ist eine Kombination aus Ihrem Firmennamen und einer App-ID. |
     | Veröffentlichen | Wählen Sie **Code** aus. |
     | Laufzeitstapel | Wählen Sie in der Dropdownliste den Eintrag **Python 3.8** aus. |
     | Region | Wählen Sie einen Ort in Ihrer Nähe aus. |
@@ -86,7 +86,7 @@ Sie erstellen einen Fork dieses Repositorys, damit Sie Änderungen vornehmen und
     | --- | --- |
     | Subscription | Wählen Sie das zu verwendende Abonnement aus, falls dieses von der Standardeinstellung abweicht. |
     | Resource group | Wählen Sie die im vorherigen Abschnitt erstellte Gruppe „DjangoPostgres-Tutorial-rg“ aus. |
-    | Servername | Ein Name für den Datenbankserver, der überall in Azure eindeutig ist (die URL der App lautet `https://\<server-name>.postgres.database.azure.com`). Gültige Zeichen sind `A`-`Z`, `0`-`9` und `-`. Ein bewährtes Muster ist eine Kombination aus Ihrem Firmennamen und einer Server-ID. |
+    | Servername | Ein Name für den Datenbankserver, der überall in Azure eindeutig ist (die URL des Datenbankservers lautet `https://<server-name>.postgres.database.azure.com`). Gültige Zeichen sind `A`-`Z`, `0`-`9` und `-`. Ein bewährtes Muster ist eine Kombination aus Ihrem Firmennamen und einer Server-ID. |
     | Datenquelle | **None** |
     | Standort | Wählen Sie einen Ort in Ihrer Nähe aus. |
     | Version | Übernehmen Sie den Standardwert (die neueste Version). |
@@ -119,7 +119,7 @@ In diesem Abschnitt stellen Sie eine Verbindung mit dem Datenbankserver in Azure
     psql --host=<server-name>.postgres.database.azure.com --port=5432 --username=<user-name>@<server-name> --dbname=postgres
     ```
 
-    Ersetzen Sie `<server-name>` und `<user-name>` durch die Namen, die im vorherigen Abschnitt beim Konfigurieren des Servers verwendet wurden. Beachten Sie, dass der vollständige Wert für den Benutzernamen `<user-name>@<server-name>` ist.
+    Ersetzen Sie `<server-name>` und `<user-name>` durch die Namen, die im vorherigen Abschnitt beim Konfigurieren des Servers verwendet wurden. Beachten Sie, dass der vollständige Wert für den Benutzernamen, der für Postgres erforderlich ist, `<user-name>@<server-name>` lautet.
 
     Sie können den Befehl oben kopieren und in Cloud Shell einfügen. Klicken Sie dazu mit der rechten Maustaste, und wählen Sie **Einfügen** aus.
 
@@ -150,9 +150,9 @@ In diesem Abschnitt erstellen Sie Einstellungen für die Web-App, die für das H
     | Einstellungsname | Wert |
     | --- | --- |
     | DJANGO_ENV | `production` (Dieser Wert weist die App an, eine Produktionskonfiguration zu verwenden, wie weiter oben in der [Beispielübersicht](#fork-the-sample-repository) beschrieben.) |
-    | DBHOST | Die URL des Datenbankservers aus dem vorherigen Abschnitt im Format `<server-name>.postgres.database.azure.com`. Sie können die gesamte URL auf der Übersichtsseite des Datenbankservers kopieren. |
+    | DBHOST | Der Name des Datenbankservers aus dem vorherigen Abschnitt, d. h. der Teil `<server-name>` der Server-URL, der `.postgres.database.azure.com` vorangestellt ist. (Der Code in *azuresite/production.py* erstellt die vollständige URL automatisch.) |
     | DBNAME | `pollsdb` |
-    | DBUSER | Der vollständige Administratorbenutzername, der im vorherigen Abschnitt verwendet wurde. Der vollständige Benutzername lautet wieder `<user-name>@<server-name>`. |
+    | DBUSER | Der Benutzername des Administrators, der bei der Bereitstellung der Datenbank verwendet wurde. (Im Beispielcode wird automatisch der Teil `@<server-name>` hinzugefügt, siehe *azuresite/production.py*.) |
     | DBPASS | Das Administratorkennwort, das Sie zuvor erstellt haben |
 
 1. Wählen Sie **Speichern** und anschließend **Weiter** aus, um diese Einstellungen zu übernehmen.
