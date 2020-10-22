@@ -4,12 +4,12 @@ description: 'Tutorialschritt 8: Bereinigen von Azure-Ressourcen, um laufende G
 ms.topic: conceptual
 ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 885ff8b79ac219d4adaf4760e31fe439d010f9d5
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: ec97faa440dcfb79240b0805e44de7d3d3447bad
+ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90832006"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92137209"
 ---
 # <a name="8-clean-up-azure-resources-for-azure-functions"></a>8: Bereinigen von Azure-Ressourcen für Azure Functions
 
@@ -46,3 +46,5 @@ Einige beliebte Erweiterungen sind:
 
 > [!div class="nextstepaction"]
 > [Ich bin fertig!](/python/azure/?preserve-view=true&view=azure-python)
+
+[Treten Probleme auf? Informieren Sie uns darüber.](https://aka.ms/python-functions-qs-ms-survey)

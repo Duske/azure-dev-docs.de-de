@@ -4,12 +4,12 @@ description: 'Tutorialschritt 2: Verwenden der Azure Functions-Erweiterung für
 ms.topic: conceptual
 ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 24e158023ba748e6137471ae4833a970a185853b
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: c21207e9269326ba2189da3c2b5bbbcba1b23c02
+ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846731"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92137139"
 ---
 # <a name="2-create-a-python-function-for-azure-functions"></a>2: Erstellen einer Python-Funktion für Azure Functions
 
@@ -47,3 +47,5 @@ In diesem Artikel erstellen Sie eine Python-Funktion für Azure Functions mit Vi
 
 > [!div class="nextstepaction"]
 > [Ich habe die Funktion erstellt: Fahren Sie mit Schritt 3 fort. >>>](tutorial-vs-code-serverless-python-03.md)
+
+[Treten Probleme auf? Informieren Sie uns darüber.](https://aka.ms/python-functions-qs-ms-survey)

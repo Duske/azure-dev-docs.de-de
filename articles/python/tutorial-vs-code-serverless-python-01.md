@@ -4,12 +4,12 @@ description: Schritt 1 im Tutorial, Konfigurieren Ihrer lokalen Umgebung für A
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 8d7b3d29b1bd8860d87505fd6f3b09a20702f904
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.openlocfilehash: 69f66c51a6e55eff91a7de780ebd0bd6f5500f68
+ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90772745"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92137219"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>Tutorial: Erstellen und Bereitstellen von Azure Functions serverlos in Python mit Visual Studio Code
 
@@ -80,3 +80,5 @@ Der Befehl `func` durchläuft die Datei *func.cmd*, die im globalen Node.js-Ordn
 
 > [!div class="nextstepaction"]
 > [Ich habe mich bei Azure angemeldet: Fahren Sie mit Schritt 2 fort. >>>](tutorial-vs-code-serverless-python-02.md)
+
+[Treten Probleme auf? Informieren Sie uns darüber.](https://aka.ms/python-functions-qs-ms-survey)

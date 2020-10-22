@@ -2,18 +2,18 @@
 title: Verwenden von Spring Data-JPA mit Azure Database for MySQL
 description: Erfahren Sie, wie Sie Spring Data-JPA mit einer Azure Database for MySQL-Datenbank verwenden.
 documentationcenter: java
-ms.date: 06/16/2020
+ms.date: 10/12/2020
 ms.service: mysql
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 6e4371e4d375c663f61f59707c553ac0e2d6e237
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 5df2d48a10c3d4c312c4106a73fb719943f12b85
+ms.sourcegitcommit: 76f1a47c58810486856e0d128bd154cf7d355e65
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831226"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92200573"
 ---
 # <a name="use-spring-data-jpa-with-azure-database-for-mysql"></a>Verwenden von Spring Data-JPA mit Azure Database for MySQL
 
@@ -34,8 +34,11 @@ In diesem Artikel wird eine Beispielanwendung codiert. Wenn Sie schneller vorgeh
 Generieren der Anwendung an der Befehlszeile durch Eingeben von:
 
 ```bash
-curl https://start.spring.io/starter.tgz -d dependencies=web,data-jpa,mysql -d baseDir=azure-database-workshop -d bootVersion=2.3.1.RELEASE -d javaVersion=8 | tar -xzvf -
+curl https://start.spring.io/starter.tgz -d dependencies=web,data-jpa,mysql -d baseDir=azure-database-workshop -d bootVersion=2.3.4.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
+
+> [!NOTE]
+> Spring Initializr nutzt als Standardversion Java 11. Um die in diesem Thema beschriebenen Spring Boot Starter verwenden zu können, müssen Sie stattdessen Java 8 auswählen.
 
 ### <a name="configure-spring-boot-to-use-azure-database-for-mysql"></a>Konfigurieren von Spring Boot für die Verwendung von Azure Database for MySQL
 
