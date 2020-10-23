@@ -4,13 +4,13 @@
     - name: Erste Schritte in Azure mit JavaScript
       items:
         - name: Einrichten Ihrer Entwicklungsumgebung
-          href: configure-local-development-environment.md
+          href: core/configure-local-development-environment.md
         - name: Einrichten des Dienstprinzipals
-          href: node-sdk-azure-authenticate-principal.md
+          href: core/node-sdk-azure-authenticate-principal.md
         - name: Authentifizierung bei Azure
-          href: node-sdk-azure-authenticate.md
+          href: core/node-sdk-azure-authenticate.md
     - name: Schnellstarts
-      expanded: true
+      expanded: false
       items:
         - name: App-Hosting
           items:
@@ -30,8 +30,6 @@
               href: /azure/aks/kubernetes-walkthrough?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
             - name: Virtuelle Linux-Computer
               href: /azure/virtual-machines/linux/quick-create-cli?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Express.js mit MongoDB
-              href: tutorial-visualstudiocode-app-service-mongodb/tutorial-azure-web-app-mongodb-feedback.yml
         - name: DevOps
           items:
             - name: Azure Repos
@@ -104,6 +102,10 @@
               href: node-sdk-logging.md
     - name: Tutorials
       items:
+        - name: Hochladen eines Images in Speicherblobs
+          href: tutorial/browser-file-upload.yml?preview=tutorialFeedback
+        - name: Express.js mit MongoDB
+          href: tutorial/web-app-mongodb.yml?preview=tutorialFeedback
         - name: Bereitstellen von Azure Functions mit VS Code
           items:
             - name: Einführung und Voraussetzungen
@@ -128,10 +130,6 @@
               href: tutorial-vscode-azure-app-service-node-04.md
             - name: Bereinigen von Ressourcen
               href: tutorial-vscode-azure-app-service-node-05.md
-        - name: Hochladen eines Images in Speicherblobs
-          href: tutorial-visualstudiocode-browser-file-upload-feedback.yml?preview=tutorialFeedback
-        - name: Express.js mit MongoDB
-          href: tutorial-visualstudiocode-app-service-mongodb/tutorial-azure-web-app-mongodb-feedback.yml?tabs=bash&preview=tutorialFeedback
         - name: Bereitstellen von Deno in App Service mit VS Code
           items:
             - name: Einführung und Voraussetzungen
@@ -195,19 +193,19 @@
     - name: Anleitungen
       items:
         - name: End-to-End-Verwendung von Node.js mit VS Code
-          href: node-howto-e2e.md
+          href: how-to/develop-nodejs-on-azure.md
         - name: Bereitstellen einer Web-App
-          href: node-howto-deploy-web-app.md
+          href: how-to/deploy-web-app.md
         - name: Bereitstellen von Containern
-          href: node-howto-deploy-containers.md
+          href: how-to/deploy-containers.md
         - name: Bereitstellen über Continuous Delivery
           href: /azure/devops/pipelines/languages/javascript?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
         - name: Integrieren in Datenbanken
-          href: node-howto-integrate-databases.md
+          href: how-to/integrate-database.md
         - name: Schreiben von serverlosem Code
-          href: node-howto-write-serverless-code.md
+          href: how-to/develop-serverless-apps.md
         - name: Erstellen einer statischen Website (JAMstack)
-          href: node-howto-create-static-site-jamstack.md
+          href: how-to/create-static-site.md
         - name: Automatisieren der Überwachung
           href: /azure/azure-monitor/learn/nodejs-quick-start?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
         - name: Erstellen einer REST-API
