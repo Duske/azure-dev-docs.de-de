@@ -3,17 +3,17 @@ title: Erstellen einer Spring Cloud Stream Binder-Anwendung mit Azure Event Hubs
 description: Erfahren Sie, wie Sie eine mit Spring Boot Initializer erstellte Java-basierte Spring Cloud Stream Binder-Anwendung mit Azure Event Hubs konfigurieren.
 services: event-hubs
 documentationcenter: java
-ms.date: 09/11/2020
+ms.date: 10/13/2020
 ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: f19f3a8d3e101b6cd8d6e9173e2dd99eae590ef9
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 609c848fee2243b132166781e9b2c6cd8f107787
+ms.sourcegitcommit: ced8331ba36b28e6e2eacd23a64b39ddc7ffe6ab
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831276"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92337158"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>Erstellen einer Spring Cloud Stream Binder-Anwendung mit Azure Event Hubs
 
@@ -21,16 +21,12 @@ In diesem Artikel wird beschrieben, wie Sie eine mit Spring Boot Initializer ers
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-Für die Durchführung der Schritte in diesem Artikel müssen folgende Voraussetzungen erfüllt sein:
-
 * Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile] anwenden oder sich für ein [Kostenloses Azure-Konto] registrieren
 * Ein unterstütztes Java Development Kit (JDK). Weitere Informationen zu den für die Entwicklung in Azure verfügbaren JDKs finden Sie unter <https://aka.ms/azure-jdks>.
 * [Apache Maven](http://maven.apache.org/), Version 3.0 oder höher
 
 > [!IMPORTANT]
->
-> Für die Schritte in diesem Artikel wird mindestens die Spring Boot-Version 2.0 benötigt.
->
+> Für die Schritte in diesem Artikel wird mindestens die Spring Boot-Version 2.2 benötigt.
 
 ## <a name="create-an-azure-event-hub-using-the-azure-portal"></a>Erstellen eines Azure Event Hubs über das Azure-Portal
 
@@ -90,7 +86,7 @@ Gehen Sie wie folgt vor, um ein Speicherkonto für Event Hub-Prüfpunkte zu ers
    * Legen Sie fest, ob eine neue **Ressourcengruppe** für Ihr Speicherkonto erstellt werden soll, oder wählen Sie eine vorhandene Ressourcengruppe aus.
    * Geben Sie unter **Name** einen eindeutigen Namen für das Speicherkonto ein.
    * Geben Sie den **Speicherort** für das Speicherkonto an.
-   
+
    >[!div class="mx-imgBorder"]
    >![Angeben der Optionen für das Azure-Speicherkonto][IMG08]
 
@@ -109,17 +105,16 @@ Gehen Sie zum Erstellen einer Spring Boot-Anwendung wie folgt vor:
    * Generieren Sie ein **Maven**-Projekt mit **Java**.
    * Geben Sie eine **Spring Boot**-Version ab 2.2 an.
    * Geben Sie Namen für die **Gruppe** und das **Artefakt** für Ihre Anwendung an.
+   * Wählen Sie **8** als Java-Version aus.
    * Fügen Sie die *Web*-Abhängigkeit hinzu.
 
    >[!div class="mx-imgBorder"]
    >![Grundlegende Spring Initializr-Optionen][SI01]
 
    > [!NOTE]
-   >
    > Spring Initializr verwendet zur Erstellung des Paketnamens die Namen für die **Gruppe** und das **Artefakt**, beispielsweise *com.contoso.eventhubs.sample*.
-   >
 
-1. Wählen Sie nach Angabe der obigen Optionen **GENERIEREN STRG +** aus.
+1. Wählen Sie nach Angabe der obigen Optionen **GENERIEREN**  aus.
 
 1. Laden Sie das Projekt nach entsprechender Aufforderung unter einem Pfad auf dem lokalen Computer herunter.
 
@@ -142,6 +137,22 @@ Gehen Sie zum Erstellen einer Spring Boot-Anwendung wie folgt vor:
       <groupId>com.microsoft.azure</groupId>
       <artifactId>spring-cloud-azure-eventhubs-stream-binder</artifactId>
       <version>1.2.7</version>
+   </dependency>
+   ```
+
+1. Wenn Sie JDK Version 9 oder höher verwenden, fügen Sie die folgenden Abhängigkeiten hinzu:
+
+   ```xml
+   <dependency>
+       <groupId>javax.xml.bind</groupId>
+       <artifactId>jaxb-api</artifactId>
+       <version>2.3.1</version>
+   </dependency>
+   <dependency>
+       <groupId>org.glassfish.jaxb</groupId>
+       <artifactId>jaxb-runtime</artifactId>
+       <version>2.3.1</version>
+       <scope>runtime</scope>
    </dependency>
    ```
 
@@ -432,5 +443,4 @@ Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure 
 [IMG02]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-02.png
 [IMG05]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-05.png
 [IMG08]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-08.png
-
 [SI01]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-project-01.png

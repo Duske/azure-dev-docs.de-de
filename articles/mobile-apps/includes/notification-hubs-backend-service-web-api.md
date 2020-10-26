@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: 06fc0e0986a41b2d37aa38d5557b0efbae08994e
-ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
+ms.openlocfilehash: 3103fd6c75dbaeed3b5a0dd23d7cd68b6394ee76
+ms.sourcegitcommit: ced8331ba36b28e6e2eacd23a64b39ddc7ffe6ab
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91493151"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92337183"
 ---
 ### <a name="create-a-web-project"></a>Erstellen eines Webprojekts
 
@@ -180,7 +180,9 @@ API-Schlüssel sind nicht so sicher wie Token, sind aber für die Zwecke dieses 
 
     ```csharp
     using PushDemoApi.Authentication;
-    
+    using PushDemoApi.Models;
+    using PushDemoApi.Services;
+
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllers();
@@ -534,6 +536,9 @@ Die Verwendung des Benachrichtigungshubs und des [Notification Hubs SDK für Bac
 
 1. Wählen Sie **ASP.NET Core** > **Web-API-Controller-Klasse** aus, geben Sie *NotificationsController* als **Namen** ein, und klicken Sie dann auf **Neu**.
 
+    > [!NOTE]
+    > Wenn Sie mit [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) arbeiten, wählen Sie die Vorlage **API-Controller mit Lese-/Schreibaktionen** aus.
+
 1. Fügen Sie am Anfang der Datei die folgenden Namespaces hinzu.
 
     ```csharp
@@ -559,7 +564,7 @@ Die Verwendung des Benachrichtigungshubs und des [Notification Hubs SDK für Bac
     ```
 
     > [!NOTE]
-    > Die Basisklasse **Controller** bietet Unterstützung für Ansichten, aber dies ist in diesem Fall nicht erforderlich, sodass stattdessen **ControllerBase** verwendet werden kann.
+    > Die Basisklasse **Controller** bietet Unterstützung für Ansichten, aber dies ist in diesem Fall nicht erforderlich, sodass stattdessen **ControllerBase** verwendet werden kann. Wenn Sie mit [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) arbeiten, können Sie diesen Schritt überspringen.
 
 1. Wenn Sie entschieden haben, die Schritte im Abschnitt [Authentifizieren von Clients mit einem API-Schlüssel](#authenticate-clients-using-an-api-key-optional) durchzuführen, sollten Sie **NotificationsController** auch mit dem **Authorize**-Attribut ergänzen.
 
@@ -585,14 +590,14 @@ Die Verwendung des Benachrichtigungshubs und des [Notification Hubs SDK für Bac
     > [!NOTE]
     > Visual Studio startet die App möglicherweise nicht automatisch im Browser. Sie verwenden [Postman](https://www.postman.com/downloads), um die API von diesem Punkt an zu testen.
 
-1. Legen Sie auf einer neuen **[Postman](https://www.postman.com/downloads)** -Registerkarte die Anforderung auf **GET** fest, und geben Sie die Adresse unten ein.
+1. Legen Sie auf einer neuen **[Postman](https://www.postman.com/downloads)** -Registerkarte die Anforderung auf **GET** fest. Geben Sie die folgende Adresse ein, und ersetzen Sie dabei den Platzhalter **&lt;ApplicationUrl>** durch die HTTPS-**ApplicationUrl** unter **Eigenschaften** > **launchSettings.json**.
 
     ```bash
-    https://localhost:5001/api/notifications
+    <applicationUrl>/api/notifications
     ```
 
     > [!NOTE]
-    > Die localhost-Adresse sollte mit dem **applicationUrl**-Wert unter **Eigenschaften** > **launchSettings.json** übereinstimmen. Der Standardwert sollte `https://localhost:5001;http://localhost:5000` sein, aber dies muss überprüft werden, wenn Sie eine 404-Antwort erhalten.
+    > Die **ApplicationUrl** muss für das Standardprofil „https://localhost:5001“ sein. Wenn Sie **IIS** verwenden (Standard in [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) unter Windows), sollten Sie stattdessen die **ApplicationUrl** verwenden, die im Element **iisSettings** angegeben wird. Sie erhalten eine Antwort vom Typ 404, wenn die Adresse falsch ist.
 
 1. Wenn Sie sich entschieden haben, die Schritte im Abschnitt [Authentifizieren von Clients mit einem API-Schlüssel](#authenticate-clients-using-an-api-key-optional) durchzuführen, stellen Sie sicher, dass die Anforderungsheader Ihren **apikey**-Wert enthalten.
 
@@ -722,6 +727,9 @@ Sie erstellen jetzt eine [API-App](https://azure.microsoft.com/services/app-serv
 
 Als Nächstes wird die App der API-App bereitgestellt, damit sie für alle Geräte zur Verfügung steht.  
 
+>[!NOTE]
+> Die folgenden Schritte gelten speziell für [Visual Studio für Mac](https://visualstudio.microsoft.com/vs/mac/). Wenn Sie mit [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) unter Windows arbeiten, ist der Veröffentlichungsfluss anders. Weitere Informationen dazu finden Sie unter [Veröffentlichen in Azure App Service unter Windows](https://docs.microsoft.com/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019#publish-to-azure-app-service-on-windows).
+
 1. Ändern Sie die Konfiguration von **Debuggen** in **Release**, wenn Sie dies noch nicht getan haben.
 
 1. **CONTROL** + **Klicken** Sie auf das Projekt **PushDemoApi**, und wählen Sie dann **In Azure veröffentlichen...** aus dem Menü **Veröffentlichen** aus.
@@ -734,7 +742,7 @@ Nach Abschluss des Assistenten wird die App in Azure veröffentlicht und anschli
 
 ### <a name="validating-the-published-api"></a>Überprüfen der veröffentlichten API
 
-1. Öffnen Sie auf der Registerkarte **[Postman](https://www.postman.com/downloads)** eine neue Registerkarte, legen Sie die Anforderung auf **POST** fest, und geben Sie die Adresse unten ein. Ersetzen Sie den Platzhalter durch die Basisadresse, die Sie im vorherigen Abschnitt [Veröffentlichung des Back-End-Diensts](#publish-the-backend-service) notiert haben.
+1. Öffnen Sie auf der Registerkarte **[Postman](https://www.postman.com/downloads)** eine neue Registerkarte, legen Sie die Anforderung auf **PUT** fest, und geben Sie die Adresse unten ein. Ersetzen Sie den Platzhalter durch die Basisadresse, die Sie im vorherigen Abschnitt [Veröffentlichung des Back-End-Diensts](#publish-the-backend-service) notiert haben.
 
     ```csharp
     https://<app_name>.azurewebsites.net/api/notifications/installations
@@ -758,9 +766,9 @@ Nach Abschluss des Assistenten wird die App in Azure veröffentlicht und anschli
 1. Klicken Sie auf **Send**.
 
     > [!NOTE]
-    > Sie sollten eine Statusmeldung **400 – Ungültige Anforderung** Status vom Dienst erhalten.
+    > Sie sollten eine Statusmeldung **422 UnprocessableEntity** vom Dienst erhalten.
 
-1. Führen Sie die Schritte 1-4 noch einmal aus, aber dieses Mal erhalten Sie bei Angabe des zu validierenden Anforderungsendpunkts dieselbe **400 – Ungültige Anforderung**-Antwort.
+1. Führen Sie die Schritte 1 bis 4 noch einmal aus, aber dieses Mal erhalten Sie bei Angabe des zu validierenden Anforderungsendpunkts eine Antwort **400 Bad Request** (Ungültige Anforderung).
 
     ```bash
     https://<app_name>.azurewebsites.net/api/notifications/requests

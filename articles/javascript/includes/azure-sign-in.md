@@ -1,13 +1,17 @@
 ---
 ms.custom: devx-track-js
-ms.openlocfilehash: 659f538569d2e2155c0eccd3c08684ee835e7449
-ms.sourcegitcommit: 4af22924a0eaf01e6902631c0714045c02557de4
+ms.topic: include
+ms.date: 010/16/2020
+ms.openlocfilehash: fb1c04fe82b67076ca38ef353daf7260544a5881
+ms.sourcegitcommit: 8a2a7df568c69fff2080ffab248409040efda1ac
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91208777"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92179315"
 ---
-Nachdem Sie die Azure-Erweiterung in VS Code installiert haben, melden Sie sich bei Ihrem Azure-Konto an, indem Sie zum **Azure**-Explorer navigieren, **Bei Azure anmelden** auswählen und dann den Anweisungen folgen. (Wenn Sie mehrere Azure-Erweiterungen installiert haben, wählen Sie die Erweiterung für den Bereich aus, in dem Sie arbeiten, z. B. App Service, Functions usw.)
+Wenn Sie die Azure-Diensterweiterungen bereits verwenden, sollten Sie bereits angemeldet sein, und Sie können diesen Schritt überspringen. Wenn Sie die Azure-Diensterweiterungen nicht verwenden, fahren Sie mit diesem Abschnitt fort, um sich bei Azure anzumelden.
+
+Nachdem Sie die Azure-Diensterweiterung in Visual Studio Code installiert haben, müssen Sie sich bei Ihrem Azure-Konto anmelden, indem Sie zum **Azure**-Explorer navigieren, **Bei Azure anmelden** auswählen und dann den Anweisungen folgen. (Wenn Sie mehrere Azure-Erweiterungen installiert haben, wählen Sie die Erweiterung für den Bereich aus, in dem Sie arbeiten, z. B. App Service, Functions usw.)
 
 ![Anmelden bei Azure über VS Code](../media/deploy-azure/azure-sign-in.png)
 

@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: article
 ms.workload: storage
 ms.custom: devx-track-java
-ms.openlocfilehash: a944739722a657636200d31bd7bf04242c8ea040
-ms.sourcegitcommit: a4131409651d6d4f56733fe8311ca77b2004bc59
+ms.openlocfilehash: 18b02ab5ffbb5fc84878685d4301f284d431a216
+ms.sourcegitcommit: ced8331ba36b28e6e2eacd23a64b39ddc7ffe6ab
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88830404"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92337148"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>Verwenden von Spring Boot Starter für Azure Storage
 
@@ -107,6 +107,22 @@ Gehen Sie wie folgt vor, um die Spring Boot-Anwendung für die Verwendung von A
       <groupId>com.microsoft.azure</groupId>
       <artifactId>spring-starter-azure-storage</artifactId>
       <version>1.2.7</version>
+   </dependency>
+   ```
+
+1. Wenn Sie JDK Version 9 oder höher verwenden, fügen Sie die folgenden Abhängigkeiten hinzu:
+
+   ```xml
+   <dependency>
+       <groupId>javax.xml.bind</groupId>
+       <artifactId>jaxb-api</artifactId>
+       <version>2.3.1</version>
+   </dependency>
+   <dependency>
+       <groupId>org.glassfish.jaxb</groupId>
+       <artifactId>jaxb-runtime</artifactId>
+       <version>2.3.1</version>
+       <scope>runtime</scope>
    </dependency>
    ```
 

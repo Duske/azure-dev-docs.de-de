@@ -5,18 +5,18 @@ services: cosmos-db
 documentationcenter: java
 author: KarlErickson
 ms.author: karler
-ms.date: 10/06/2020
+ms.date: 10/13/2020
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.custom: devx-track-java
-ms.openlocfilehash: bc7754cf3f35bf8d6bc0d0a427dc1c532ff6e834
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: fdc0892298c18e3be5db1b97b1ad5fe77ac6a537
+ms.sourcegitcommit: 76f1a47c58810486856e0d128bd154cf7d355e65
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846531"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92200622"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a>Verwendung von Spring Boot Starter mit der SQL-API von Azure Cosmos DB
 
@@ -25,8 +25,6 @@ Azure Cosmos DB ist ein global verteilter Datenbankdienst, der Entwicklern durch
 Dieser Artikel zeigt, wie zuerst über das Azure-Portal eine Azure Cosmos DB-Instanz und anschließend mit **[Spring Initializr]** eine benutzerdefinierte Spring Boot-Anwendung erstellt wird. Anschließend wird veranschaulicht, wie [Spring Boot Cosmos DB Starter für Azure] zu Ihrer benutzerdefinierten Anwendung hinzugefügt wird, um Daten mithilfe von Spring Data und der Cosmos DB-SQL-API in Ihrer Azure Cosmos DB-Instanz zu speichern und daraus abzurufen.
 
 ## <a name="prerequisites"></a>Voraussetzungen
-
-Für die Durchführung der Schritte in diesem Artikel müssen folgende Voraussetzungen erfüllt sein:
 
 * Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile] anwenden oder sich für ein [Kostenloses Azure-Konto] registrieren
 * Ein unterstütztes Java Development Kit (JDK). Weitere Informationen zu den für die Entwicklung in Azure verfügbaren JDKs finden Sie unter <https://aka.ms/azure-jdks>.
@@ -63,12 +61,21 @@ Führen Sie die folgenden Schritte aus, um ein neues Spring Boot-Anwendungsproj
 
 1. Navigieren Sie zu <https://start.spring.io/>.
 
-1. Geben Sie an, dass Sie ein **Maven-Projekt** mit **Java** generieren möchten, und geben Sie Ihre **Spring Boot**-Version sowie die Namen für **Gruppe** und **Artefakt** für Ihre Anwendung ein. Fügen Sie in den Abhängigkeiten **Azure-Support** hinzu, und klicken Sie anschließend auf die Schaltfläche **Projekt generieren**.
+1. Verwenden Sie die folgenden Optionen:
 
-    ![Grundlegende Spring Initializr-Optionen][SI01]
+   * Generieren Sie ein **Maven**-Projekt mit **Java**.
+   * Geben Sie Ihre **Spring Boot**-Version an.
+   * Geben Sie Namen für die **Gruppe** und das **Artefakt** für Ihre Anwendung an.
+   * Wählen Sie **8** als Java-Version aus.
+   * Fügen Sie **Azure-Support** in den Abhängigkeiten hinzu.
 
-    > [!NOTE]
-    > Spring Initializr verwendet zur Erstellung des Paketnamens die Namen für **Gruppe** und **Artefakt** (also beispielsweise *com.example.wintiptoysdata*).
+   >[!div class="mx-imgBorder"]
+   >![Grundlegende Spring Initializr-Optionen][SI01]
+
+   > [!NOTE]
+   > Spring Initializr verwendet zur Erstellung des Paketnamens die Namen für **Gruppe** und **Artefakt** (also beispielsweise *com.example.wintiptoysdata*).
+
+1. Wählen Sie nach Angabe der obigen Optionen **GENERIEREN**  aus.
 
 1. Laden Sie das Projekt nach entsprechender Aufforderung in einen Pfad auf dem lokalen Computer herunter, und extrahieren Sie die Dateien.
 

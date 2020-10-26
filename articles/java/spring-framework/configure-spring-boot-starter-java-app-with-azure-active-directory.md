@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: 762e40aa656ddff76f3bc8e1b38b8845e8f20cdd
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 0e247a912429f8f798c174af3e79bb074e3da2ed
+ms.sourcegitcommit: ced8331ba36b28e6e2eacd23a64b39ddc7ffe6ab
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90830096"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92337168"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>Tutorial: Schützen einer Java-Web-App mithilfe von Spring Boot Starter für Azure Active Directory
 
@@ -163,7 +163,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Klicken Sie auf der Seite **Übersicht** Ihrer Active Directory-Instanz auf **Gruppen** und dann auf **Neue Gruppe**. Geben Sie die Gruppe an, die Sie in Ihrer Anwendung für die Autorisierung verwenden möchten.
 
-1. Klicken Sie anschließend auf **Keine Mitglieder ausgewählt**. (Für dieses Tutorial erstellen wir eine Gruppe mit dem Namen *users*.)  Suchen Sie nach dem Benutzer, der im vorherigen Schritt erstellt wurde.  Klicken Sie auf **Auswählen**, um den Benutzer der Gruppe hinzuzufügen.  Klicken Sie anschließend auf **Erstellen**, um die neue Gruppe zu erstellen.
+1. Klicken Sie anschließend auf **Keine Mitglieder ausgewählt**. (Für dieses Tutorial erstellen wir eine Gruppe mit dem Namen *Users*.)  Suchen Sie nach dem Benutzer, der im vorherigen Schritt erstellt wurde.  Klicken Sie auf **Auswählen**, um den Benutzer der Gruppe hinzuzufügen.  Klicken Sie anschließend auf **Erstellen**, um die neue Gruppe zu erstellen.
    
    >[!div class="mx-imgBorder"]
    >![Auswählen des Benutzers für die Gruppe][create-user-03]
