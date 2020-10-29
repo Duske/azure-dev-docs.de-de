@@ -3,13 +3,13 @@ title: Bereitstellen und Verwalten von und Zugreifen auf Ressourcen in Azure
 description: Hier finden Sie eine Übersicht über die Methoden zur Verwendung von Azure-Ressourcen. Dazu zählen das Azure-Portal, die Azure-Befehlszeilenschnittstelle und die Azure-Bibliotheken (SDK).
 ms.date: 10/06/2020
 ms.topic: conceptual
-ms.custom: devx-track-python
-ms.openlocfilehash: 0dd8de6c1d42ecbb77f34f48034cc9e4c43cd9e3
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.custom: devx-track-python, devx-track-azurecli
+ms.openlocfilehash: 6ccbfb953cb28cceec08a70af4431e66e6e8b8ca
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764721"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688867"
 ---
 # <a name="provisioning-accessing-and-managing-resources-on-azure"></a>Bereitstellen und Verwalten von und Zugreifen auf Ressourcen in Azure
 
@@ -74,17 +74,17 @@ Weitere Informationen finden Sie in Azure Architecture Center unter [Automatisch
 
 Sie können sich vorstellen, dass Sie im Ressourcenmodell von Azure im Laufe der Zeit viele verschiedene Ressourcen für zahlreiche Azure-Dienste für verschiedene Anwendungen bereitstellen. Es gibt drei Hierarchieebenen, die Sie verwenden können, um diese Ressourcen zu organisieren:
 
-1. **Abonnements**: Jedes Azure-Abonnement verfügt über ein eigenes Abrechnungskonto und stellt häufig ein bestimmtes Team oder eine Abteilung innerhalb einer Organisation dar. Im Allgemeinen stellen Sie alle benötigten Ressourcen für eine bestimmte Anwendung innerhalb desselben Abonnements bereit, sodass sie von Features wie der freigegebenen Authentifizierung profitieren kann. Da jedoch über öffentliche URLs und die erforderlichen Autorisierungstoken auf alle Ressourcen zugegriffen werden kann, ist es sicherlich möglich, Ressourcen über mehrere Abonnements zu verteilen.
+1. **Abonnements** : Jedes Azure-Abonnement verfügt über ein eigenes Abrechnungskonto und stellt häufig ein bestimmtes Team oder eine Abteilung innerhalb einer Organisation dar. Im Allgemeinen stellen Sie alle benötigten Ressourcen für eine bestimmte Anwendung innerhalb desselben Abonnements bereit, sodass sie von Features wie der freigegebenen Authentifizierung profitieren kann. Da jedoch über öffentliche URLs und die erforderlichen Autorisierungstoken auf alle Ressourcen zugegriffen werden kann, ist es sicherlich möglich, Ressourcen über mehrere Abonnements zu verteilen.
 
-1. **Ressourcengruppen**: Innerhalb eines Abonnements sind Ressourcengruppen Container für andere Ressourcen, die Sie dann als eine Gruppe verwalten können. (Aus diesem Grund bezieht sich eine Ressourcengruppe in der Regel auf ein bestimmtes Projekt.) Jedes Mal, wenn Sie eine Ressource bereitstellen, müssen Sie in der Tat die Gruppe angeben, zu der sie gehört. Der erste Schritt bei einem neuen Projekt besteht in der Regel darin, eine geeignete Ressourcengruppe zu erstellen. Wenn Sie die Ressourcengruppe löschen, heben Sie die Zuordnung aller enthaltenen Ressourcen auf, anstatt jede Ressource einzeln löschen zu müssen. Vertrauen Sie uns, wenn wir sagen, dass die Vernachlässigung der Organisation Ihrer Ressourcengruppen später zu vielen Schwierigkeiten führen kann, wenn Sie nicht mehr wissen, welche Ressource zu welchem Projekt gehört!
+1. **Ressourcengruppen** : Innerhalb eines Abonnements sind Ressourcengruppen Container für andere Ressourcen, die Sie dann als eine Gruppe verwalten können. (Aus diesem Grund bezieht sich eine Ressourcengruppe in der Regel auf ein bestimmtes Projekt.) Jedes Mal, wenn Sie eine Ressource bereitstellen, müssen Sie in der Tat die Gruppe angeben, zu der sie gehört. Der erste Schritt bei einem neuen Projekt besteht in der Regel darin, eine geeignete Ressourcengruppe zu erstellen. Wenn Sie die Ressourcengruppe löschen, heben Sie die Zuordnung aller enthaltenen Ressourcen auf, anstatt jede Ressource einzeln löschen zu müssen. Vertrauen Sie uns, wenn wir sagen, dass die Vernachlässigung der Organisation Ihrer Ressourcengruppen später zu vielen Schwierigkeiten führen kann, wenn Sie nicht mehr wissen, welche Ressource zu welchem Projekt gehört!
 
-1. **Benennen von Ressourcen**: innerhalb einer Ressourcengruppe können Sie dann die gewünschten Benennungsstrategien verwenden, um Gemeinsamkeiten oder Beziehungen zwischen Ressourcen auszudrücken. Da der Name häufig in der URL der Ressource verwendet wird, gibt es möglicherweise Einschränkungen hinsichtlich der Zeichen, die Sie verwenden können. (Einige Namen lassen z. B. nur Buchstaben und Ziffern zu, wohingegen in anderen Bindestriche und Unterstriche zulässig sind.)
+1. **Benennen von Ressourcen** : innerhalb einer Ressourcengruppe können Sie dann die gewünschten Benennungsstrategien verwenden, um Gemeinsamkeiten oder Beziehungen zwischen Ressourcen auszudrücken. Da der Name häufig in der URL der Ressource verwendet wird, gibt es möglicherweise Einschränkungen hinsichtlich der Zeichen, die Sie verwenden können. (Einige Namen lassen z. B. nur Buchstaben und Ziffern zu, wohingegen in anderen Bindestriche und Unterstriche zulässig sind.)
 
 Während der Arbeit mit Azure entwickeln Sie Ihre eigenen Präferenzen für die Organisation Ihrer Ressourcen und Ihre eigenen Konventionen für die Benennung von Abonnements, Ressourcengruppen und einzelnen Ressourcen.
 
 ### <a name="regions-and-geographies"></a>Regionen und geografische Regionen
 
-Ein wichtiges Merkmal einer Ressourcengruppe besteht darin, dass Sie immer einem bestimmten Azure-*Region* zugeordnet ist. Dies ist der Standort des jeweiligen Rechenzentrums. Alle Ressourcen in derselben Gruppe befinden sich gemeinsam in diesem Rechenzentrum und können so viel effizienter interagieren, als wenn sie sich in verschiedenen Regionen befinden würden. Entwickler wählen häufig Regionen aus, die ihren Kunden am nächsten liegen, und optimieren so die Reaktionsfähigkeit einer Anwendung. Azure bietet auch Features für die Georeplikation, um Kopien Ihrer Anwendung und Datenbanken in mehreren Regionen zu synchronisieren, sodass Sie eine globale Kundenbasis besser bedienen können.
+Ein wichtiges Merkmal einer Ressourcengruppe besteht darin, dass Sie immer einem bestimmten Azure- *Region* zugeordnet ist. Dies ist der Standort des jeweiligen Rechenzentrums. Alle Ressourcen in derselben Gruppe befinden sich gemeinsam in diesem Rechenzentrum und können so viel effizienter interagieren, als wenn sie sich in verschiedenen Regionen befinden würden. Entwickler wählen häufig Regionen aus, die ihren Kunden am nächsten liegen, und optimieren so die Reaktionsfähigkeit einer Anwendung. Azure bietet auch Features für die Georeplikation, um Kopien Ihrer Anwendung und Datenbanken in mehreren Regionen zu synchronisieren, sodass Sie eine globale Kundenbasis besser bedienen können.
 
 Aufgrund lokaler Gesetze und Vorschriften, die durch die *Geografie* bestimmt werden, in der Sie ein Abonnement erstellen, haben Sie möglicherweise nur Zugang zu bestimmten Regionen, und diese Regionen unterstützen möglicherweise nicht alle Azure-Dienste. Weitere Informationen finden Sie unter [Globale Azure-Infrastruktur](https://azure.microsoft.com/global-infrastructure/).
 

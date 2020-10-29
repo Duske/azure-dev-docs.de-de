@@ -4,13 +4,13 @@ description: Hier erfahren Sie, wie Sie Bereitstellungen in Azure Kubernetes Ser
 keywords: Jenkins, Azure, DevOps, Kubernetes, K8s, AKS, Blau/Grün-Bereitstellung, Continuous Delivery, CD
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.custom: devx-track-jenkins
-ms.openlocfilehash: 6a33227f7a5a0aa3e82e48d821e9f37bdfeadd6e
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: devx-track-jenkins, devx-track-azurecli
+ms.openlocfilehash: 1ddf85a5ad1a9415d4143873f674b7104a4bd4d8
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90832046"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688662"
 ---
 # <a name="tutorial-deploy-to-azure-kubernetes-service-aks-using-the-bluegreen-deployment-pattern"></a>Tutorial: Durchführen der Bereitstellung in Azure Kubernetes Service (AKS) mit dem Blau/Grün-Bereitstellungsmuster
 
@@ -50,7 +50,7 @@ Im Microsoft-Repository in GitHub finden Sie eine Beispiel-App, die die Bereitst
 
     ![Screenshot vom GitHub-Kontonamen und vom Hinweis](./media/deploy-to-aks-using-blue-green-deployment-pattern/github-sample-msft-forked.png)
 
-1. Wählen Sie **Clone or download**aus.
+1. Wählen Sie **Clone or download** aus.
 
     ![Screenshot von der GitHub-Option zum Klonen oder Herunterladen eines Repositorys](./media/deploy-to-aks-using-blue-green-deployment-pattern/github-sample-clone.png)
 
@@ -112,7 +112,7 @@ Um einen verwalteten Kubernetes-Cluster mit der [Azure CLI 2.0](/cli/azure/insta
 Sie können eine Blau/Grün-Bereitstellung manuell oder mit einem Setupskript (im zuvor geklonten Beispiel enthalten) ausführen. In diesem Abschnitt werden beide Möglichkeiten erläutert.
 
 #### <a name="set-up-the-kubernetes-cluster-via-the-sample-setup-script"></a>Einrichten des Kubernetes-Clusters über das Beispielsetupskript
-1. Bearbeiten Sie die Datei **deploy/aks/setup/setup.sh**, und ersetzen Sie die folgenden Platzhalter durch die entsprechenden Werte für Ihre Umgebung: 
+1. Bearbeiten Sie die Datei **deploy/aks/setup/setup.sh** , und ersetzen Sie die folgenden Platzhalter durch die entsprechenden Werte für Ihre Umgebung: 
 
    - **&lt;Name-Ihrer-Ressourcengruppe**
    - **&lt;Name-Ihres-Kubernetes-Clusters>**
@@ -134,9 +134,9 @@ Sie können eine Blau/Grün-Bereitstellung manuell oder mit einem Setupskript (i
     az aks get-credentials -g <your-resource-group-name> -n <your-kubernetes-cluster-name> --admin
     ```
 
-1. Ändern Sie in das Verzeichnis in das Verzeichnis **deploy/aks/setup**. 
+1. Ändern Sie in das Verzeichnis in das Verzeichnis **deploy/aks/setup** . 
 
-1. Führen Sie die folgenden **kubectl**-Befehle aus, um die Dienste für den öffentlichen Endpunkt und die beiden Testendpunkte einzurichten.
+1. Führen Sie die folgenden **kubectl** -Befehle aus, um die Dienste für den öffentlichen Endpunkt und die beiden Testendpunkte einzurichten.
 
     ```bash
     kubectl apply -f  service-green.yml
@@ -215,7 +215,7 @@ In diesem Abschnitt erfahren Sie, wie Sie den Jenkins-Server für die Ausführun
     1. Wählen Sie **Manage Jenkins > Manage Plugins > Available** (Jenkins verwalten > Plug-Ins verwalten >Verfügbar) aus.
     1. Suchen Sie das Azure Container Service-Plug-In, und installieren Sie es.
 
-1. Fügen Sie Anmeldeinformationen hinzu, um Ressourcen in Azure zu verwalten. Installieren Sie das **Azure-Anmeldeinformationen**-Plug-In (falls noch nicht vorhanden).
+1. Fügen Sie Anmeldeinformationen hinzu, um Ressourcen in Azure zu verwalten. Installieren Sie das **Azure-Anmeldeinformationen** -Plug-In (falls noch nicht vorhanden).
 
 1. Fügen Sie die Anmeldeinformationen für Ihren Azure-Dienstprinzipal als Typ **Microsoft Azure Service Principal** hinzu.
 

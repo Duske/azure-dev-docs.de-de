@@ -7,13 +7,13 @@ ms.date: 12/19/2018
 ms.service: storage
 ms.topic: article
 ms.workload: storage
-ms.custom: devx-track-java
-ms.openlocfilehash: 18b02ab5ffbb5fc84878685d4301f284d431a216
-ms.sourcegitcommit: ced8331ba36b28e6e2eacd23a64b39ddc7ffe6ab
+ms.custom: devx-track-java, devx-track-azurecli
+ms.openlocfilehash: 3ea7c5ef098cbf9a6bed2b541db00b09451a12d6
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92337148"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688705"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>Verwenden von Spring Boot Starter für Azure Storage
 
@@ -39,7 +39,7 @@ Gehen Sie zum Erstellen eines Azure-Speicherkontos und eines Containers wie folg
 
 1. Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>, und melden Sie sich an.
 
-1. Klicken Sie auf **+ Ressource erstellen**, auf **Speicher** und dann auf **Speicherkonto**.
+1. Klicken Sie auf **+ Ressource erstellen** , auf **Speicher** und dann auf **Speicherkonto** .
 
    ![Erstellen eines Azure-Speicherkontos][IMG01]
 
@@ -47,13 +47,13 @@ Gehen Sie zum Erstellen eines Azure-Speicherkontos und eines Containers wie folg
 
    * Wählen Sie **Abonnement** aus.
    * Wählen Sie **Ressourcengruppe** aus, oder erstellen Sie eine neue Ressourcengruppe.
-   * Geben Sie unter **Speicherkontoname** einen eindeutigen Namen ein. Dieser wird als Teil des URI für Ihr Speicherkonto verwendet. Beispiel: Wenn Sie **wingtiptoysstorage** für **Name** eingegeben haben, lautet der URI *wingtiptoysstorage.core.windows.net*.
+   * Geben Sie unter **Speicherkontoname** einen eindeutigen Namen ein. Dieser wird als Teil des URI für Ihr Speicherkonto verwendet. Beispiel: Wenn Sie **wingtiptoysstorage** für **Name** eingegeben haben, lautet der URI *wingtiptoysstorage.core.windows.net* .
    * Geben Sie den **Speicherort** für das Speicherkonto an.
-1. Klicken Sie nach Angabe der obigen Optionen auf **Überprüfen + erstellen**. 
-1. Überprüfen Sie die Angaben, und klicken Sie anschließend auf **Erstellen**, um Ihr Speicherkonto zu erstellen.
-1. Klicken Sie nach Abschluss der Bereitstellung auf **Zu Ressource wechseln**.
-1. Klicken Sie auf **Container**.
-1. Klicken Sie auf **+ Container**.
+1. Klicken Sie nach Angabe der obigen Optionen auf **Überprüfen + erstellen** . 
+1. Überprüfen Sie die Angaben, und klicken Sie anschließend auf **Erstellen** , um Ihr Speicherkonto zu erstellen.
+1. Klicken Sie nach Abschluss der Bereitstellung auf **Zu Ressource wechseln** .
+1. Klicken Sie auf **Container** .
+1. Klicken Sie auf **+ Container** .
    * Geben Sie dem Container einen Namen.
    * Wählen Sie in der Dropdownliste die Option *Blob* aus.
 
@@ -69,20 +69,20 @@ Gehen Sie zum Erstellen der Spring Boot-Anwendung wie folgt vor:
 
 1. Verwenden Sie die folgenden Optionen:
 
-   * Generieren Sie ein Projekt vom Typ **Maven**.
+   * Generieren Sie ein Projekt vom Typ **Maven** .
    * Geben Sie **Java** an.
-   * Geben Sie eine **Spring Boot**-Version ab 2.0 an.
+   * Geben Sie eine **Spring Boot** -Version ab 2.0 an.
    * Geben Sie Namen für die **Gruppe** und das **Artefakt** für Ihre Anwendung an.
-   * Fügen Sie die **Web**-Abhängigkeit hinzu.
+   * Fügen Sie die **Web** -Abhängigkeit hinzu.
 
       ![Grundlegende Spring Initializr-Optionen][SI01]
 
    > [!NOTE]
    >
-   > Spring Initializr verwendet zur Erstellung des Paketnamens die Namen für die **Gruppe** und das **Artefakt**, beispielsweise *com.wingtiptoys.storage*.
+   > Spring Initializr verwendet zur Erstellung des Paketnamens die Namen für die **Gruppe** und das **Artefakt** , beispielsweise *com.wingtiptoys.storage* .
    >
 
-1. Klicken Sie nach Angabe der obigen Optionen auf **Generieren**.
+1. Klicken Sie nach Angabe der obigen Optionen auf **Generieren** .
 
 1. Laden Sie das Projekt nach entsprechender Aufforderung unter einem Pfad auf dem lokalen Computer herunter.
 
@@ -92,7 +92,7 @@ Gehen Sie zum Erstellen der Spring Boot-Anwendung wie folgt vor:
 
 Gehen Sie wie folgt vor, um die Spring Boot-Anwendung für die Verwendung von Azure Storage zu konfigurieren:
 
-1. Suchen Sie im Stammverzeichnis Ihrer App nach der Datei *pom.xml*. Beispiel:
+1. Suchen Sie im Stammverzeichnis Ihrer App nach der Datei *pom.xml* . Beispiel:
 
    `C:\SpringBoot\storage\pom.xml`
 
@@ -126,7 +126,7 @@ Gehen Sie wie folgt vor, um die Spring Boot-Anwendung für die Verwendung von A
    </dependency>
    ```
 
-1. Speichern und schließen Sie die Datei *pom.xml*.
+1. Speichern und schließen Sie die Datei *pom.xml* .
 
 ## <a name="create-an-azure-credential-file"></a>Erstellen einer Azure-Anmeldeinformationsdatei
 
@@ -188,7 +188,7 @@ Gehen Sie zum Erstellen der Azure-Anmeldeinformationsdatei wie folgt vor:
    az ad sp create-for-rbac --sdk-auth > my.azureauth
    ```
 
-   Dieser Befehl erstellt im Verzeichnis *resources* eine Datei *my.azureauth*, deren Inhalt in etwa wie folgt aussieht:
+   Dieser Befehl erstellt im Verzeichnis *resources* eine Datei *my.azureauth* , deren Inhalt in etwa wie folgt aussieht:
 
    ```json
    {
@@ -209,7 +209,7 @@ Gehen Sie zum Erstellen der Azure-Anmeldeinformationsdatei wie folgt vor:
 
 Gehen Sie wie folgt vor, um die Spring Boot-Anwendung für die Verwendung Ihres Azure-Speicherkontos zu konfigurieren:
 
-1. Suchen Sie im Verzeichnis *resources* Ihrer App nach der Datei *application.properties*. Beispiel:
+1. Suchen Sie im Verzeichnis *resources* Ihrer App nach der Datei *application.properties* . Beispiel:
 
    `C:\SpringBoot\storage\src\main\resources\application.properties`
 
@@ -236,7 +236,7 @@ Gehen Sie wie folgt vor, um die Spring Boot-Anwendung für die Verwendung Ihres
    |   `spring.cloud.azure.storage.account`    |            Gibt das Azure-Speicherkonto an, das Sie zuvor in diesem Tutorial erstellt haben.             |
    |                   `blob`                  |           Gibt die Namen des Containers und des Blobs an, in denen Sie die Daten speichern möchten.         |
     
-3. Speichern und schließen Sie die Datei *application.properties*.
+3. Speichern und schließen Sie die Datei *application.properties* .
 
 ## <a name="add-sample-code-to-implement-basic-azure-storage-functionality"></a>Hinzufügen von Beispielcode zum Implementieren grundlegender Azure-Speicherfunktionen
 

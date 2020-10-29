@@ -3,13 +3,13 @@ title: Erstellen einer Node.js-App zur Bereitstellung in Azure mit der Azure-Bef
 description: 'Teil 2 des Azure CLI-Tutorials: Erstellen des App-Codes'
 ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-js
-ms.openlocfilehash: 6d11f21dfda82a5881e177908c5f16c948df78cf
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.custom: devx-track-js, devx-track-azurecli
+ms.openlocfilehash: 89e979dabca91e47083f48e42543453facc57130
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91365193"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689145"
 ---
 # <a name="create-the-app-code-using-express"></a>Erstellen des App-Codes mit Express
 
@@ -17,7 +17,7 @@ ms.locfileid: "91365193"
 
 In diesem Schritt erstellen Sie mithilfe des [Express-Generators](https://expressjs.com/en/starter/generator.html) eine einfache Node.js-App mit [Express](https://www.expressjs.com).
 
-1. Verwenden Sie den folgenden Befehl, um den Express-Generator auszuführen und das Gerüst für eine neue Express-App namens „myExpressApp“ zu erstellen. (Die `--view pug --git`-Parameter weisen den Generator an, die Vorlagenengine [pug](https://pugjs.org/api/getting-started.html) (früher als Jade bezeichnet) zu verwenden und eine *.gitignore*-Datei zu erstellen.)
+1. Verwenden Sie den folgenden Befehl, um den Express-Generator auszuführen und das Gerüst für eine neue Express-App namens „myExpressApp“ zu erstellen. (Die `--view pug --git`-Parameter weisen den Generator an, die Vorlagenengine [pug](https://pugjs.org/api/getting-started.html) (früher als Jade bezeichnet) zu verwenden und eine *.gitignore* -Datei zu erstellen.)
 
     ```bash
     npx express-generator myExpressApp --view pug –git

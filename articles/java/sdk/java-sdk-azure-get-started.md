@@ -7,13 +7,13 @@ ms.date: 04/16/2017
 ms.topic: article
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
-ms.custom: seo-java-august2019, devx-track-java
-ms.openlocfilehash: 9ae476b38768789eb8ecef915d3c68d93302bdc6
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: seo-java-august2019, devx-track-java, devx-track-azurecli
+ms.openlocfilehash: a2dbb6a83837e716f48304a8013ba198280e9624
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831786"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689180"
 ---
 # <a name="get-started-with-cloud-development-using-java-on-azure"></a>Erste Schritte bei der Cloudentwicklung mit Java in Azure
 
@@ -71,10 +71,10 @@ graphURL=https\://graph.windows.net/
 
 Ersetzen Sie die ersten vier Werte durch Folgendes:
 
-- subscription: Verwenden Sie den *id*-Wert aus `az account show` in der Azure CLI 2.0.
-- client: Verwenden Sie den *appId*-Wert aus der Dienstprinzipalausgabe.
-- key: Verwenden Sie den *password*-Wert aus der Dienstprinzipalausgabe.
-- tenant: Verwenden Sie den *tenant*-Wert aus der Dienstprinzipalausgabe.
+- subscription: Verwenden Sie den *id* -Wert aus `az account show` in der Azure CLI 2.0.
+- client: Verwenden Sie den *appId* -Wert aus der Dienstprinzipalausgabe.
+- key: Verwenden Sie den *password* -Wert aus der Dienstprinzipalausgabe.
+- tenant: Verwenden Sie den *tenant* -Wert aus der Dienstprinzipalausgabe.
 
 Speichern Sie diese Datei an einem sicheren Ort in Ihrem System, an dem sie vom Code gelesen werden kann. Sie können diese Datei für künftigen Code verwenden. Daher wird empfohlen, sie außerhalb der Anwendung in diesem Artikel zu speichern.
 
@@ -148,7 +148,7 @@ Das [Azure-Toolkit](../toolkit-for-intellij/installation.md) ist erforderlich, w
 
 - Wählen Sie im Menü **Datei** die Option **Einstellungen...** aus.
 
-- Klicken Sie auf **Browse repositories...** (Repositorys durchsuchen), suchen Sie nach „Azure“, und installieren Sie dann das **Azure-Toolkit für IntelliJ**.
+- Klicken Sie auf **Browse repositories...** (Repositorys durchsuchen), suchen Sie nach „Azure“, und installieren Sie dann das **Azure-Toolkit für IntelliJ** .
 
 - Starten Sie IntelliJ neu.
 

@@ -6,13 +6,13 @@ ms.author: karler
 ms.date: 11/12/2019
 ms.service: app-service
 ms.topic: article
-ms.custom: devx-track-java
-ms.openlocfilehash: 5ef1c3cb94064d26ca4081b8bcd1cdebd344a46a
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.custom: devx-track-java, devx-track-azurecli
+ms.openlocfilehash: a8e0614547fa7bfca3a8d66af8a1c1d4240fe161
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010191"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689174"
 ---
 # <a name="deploy-a-spring-app-to-app-service-with-mysql"></a>Bereitstellen einer Spring-App in App Service mit MySQL
 
@@ -182,13 +182,13 @@ set REGION=<region>
 
 Maven verwendet diese Werte, um die Azure-Ressourcen mit den von Ihnen angegebenen Namen zu erstellen. Durch die Verwendung von Umgebungsvariablen können Sie Ihre Kontogeheimnisse aus Ihren Projektdateien heraushalten.
 
-Aktualisieren Sie als nächstes die Datei *pom.xml*, um Maven für eine Azure-Bereitstellung zu konfigurieren. Fügen Sie nach dem zuvor hinzugefügten `<plugin>`-Element den folgenden XML-Code hinzu. Ändern Sie, falls notwendig, `1.11.0` in die aktuelle Version des [Maven-Plug-Ins für Azure App Service](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme).
+Aktualisieren Sie als nächstes die Datei *pom.xml* , um Maven für eine Azure-Bereitstellung zu konfigurieren. Fügen Sie nach dem zuvor hinzugefügten `<plugin>`-Element den folgenden XML-Code hinzu. Ändern Sie, falls notwendig, `1.11.0` in die aktuelle Version des [Maven-Plug-Ins für Azure App Service](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme).
 
 ```xml
 <plugin>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-webapp-maven-plugin</artifactId>
-    <version>1.11.0</version>
+    <version>1.12.0</version>
     <configuration>
         <schemaVersion>v2</schemaVersion>
         <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>
@@ -370,7 +370,7 @@ MySQL ist jetzt zur Verwendung bereit.
 
 Als Nächstes fügen wir die Verbindungsinformationen zur MySQL-Version der App hinzu und stellen Sie dann für App Service bereit.
 
-Aktualisieren Sie die *pom.xml*-Datei, um MySQL zur aktiven Konfiguration zu machen. Entfernen Sie das `<activation>`-Element aus dem HSQLDB-Profil, und fügen Sie es stattdessen in das MySQL-Profil ein, wie hier gezeigt. Der Rest des Codeausschnitts zeigt die vorhandene Konfiguration. Beachten Sie, wie die zuvor festgelegten Umgebungsvariablen von Maven verwendet werden, um Ihren MySQL-Zugriff zu konfigurieren.
+Aktualisieren Sie die *pom.xml* -Datei, um MySQL zur aktiven Konfiguration zu machen. Entfernen Sie das `<activation>`-Element aus dem HSQLDB-Profil, und fügen Sie es stattdessen in das MySQL-Profil ein, wie hier gezeigt. Der Rest des Codeausschnitts zeigt die vorhandene Konfiguration. Beachten Sie, wie die zuvor festgelegten Umgebungsvariablen von Maven verwendet werden, um Ihren MySQL-Zugriff zu konfigurieren.
 
 ```xml
 <profile>
@@ -390,13 +390,13 @@ Aktualisieren Sie die *pom.xml*-Datei, um MySQL zur aktiven Konfiguration zu mac
 </profile>
 ```
 
-Aktualisieren Sie als nächstes die Datei *pom.xml*, um Maven für eine Azure-Bereitstellung und MySQL-Verwendung zu konfigurieren. Fügen Sie nach dem zuvor hinzugefügten `<plugin>`-Element den folgenden XML-Code hinzu. Ändern Sie, falls notwendig, `1.11.0` in die aktuelle Version des [Maven-Plug-Ins für Azure App Service](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme).
+Aktualisieren Sie als nächstes die Datei *pom.xml* , um Maven für eine Azure-Bereitstellung und MySQL-Verwendung zu konfigurieren. Fügen Sie nach dem zuvor hinzugefügten `<plugin>`-Element den folgenden XML-Code hinzu. Ändern Sie, falls notwendig, `1.11.0` in die aktuelle Version des [Maven-Plug-Ins für Azure App Service](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme).
 
 ```xml
 <plugin>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-webapp-maven-plugin</artifactId>
-    <version>1.11.0</version>
+    <version>1.12.0</version>
     <configuration>
         <schemaVersion>v2</schemaVersion>
         <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>

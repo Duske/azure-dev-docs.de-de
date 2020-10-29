@@ -5,13 +5,13 @@ author: mnriem
 ms.author: manriem
 ms.topic: conceptual
 ms.date: 4/10/2020
-ms.custom: devx-track-java
-ms.openlocfilehash: 4d3da50042074b724f614b718ceb0edc7fb83077
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: devx-track-java, devx-track-azurecli
+ms.openlocfilehash: 77ad38a4fb1290e392ee933a04aaf802a910e577
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831706"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689047"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-kubernetes-service"></a>Migrieren von Spring Boot-Anwendungen zu Azure Kubernetes Service
 
@@ -49,7 +49,7 @@ Gehen Sie bei Anwendungen, die Spring Boot 1.x verwenden, wie im [Migrationsha
 
 ### <a name="review-your-database-properties"></a>Überprüfen Ihrer Datenbankeigenschaften
 
-Falls Ihre Anwendung eine Datenbank verwendet, überprüfen Sie die Datenbankeigenschaften in der Datei *application.properties*, und vergewissern Sie sich, dass Ihre Spring Boot-Anwendung nach der Migration zu AKS weiterhin auf die Datenbank zugreifen kann. Im Falle einer lokalen Datenbank muss entweder eine Cloudmigration durchgeführt oder eine Verbindung mit Ihrer lokalen Datenbank hergestellt werden.
+Falls Ihre Anwendung eine Datenbank verwendet, überprüfen Sie die Datenbankeigenschaften in der Datei *application.properties* , und vergewissern Sie sich, dass Ihre Spring Boot-Anwendung nach der Migration zu AKS weiterhin auf die Datenbank zugreifen kann. Im Falle einer lokalen Datenbank muss entweder eine Cloudmigration durchgeführt oder eine Verbindung mit Ihrer lokalen Datenbank hergestellt werden.
 
 ### <a name="identify-log-aggregation-solutions"></a>Ermitteln von Protokollaggregationslösungen
 
@@ -65,13 +65,13 @@ Ermitteln Sie, ob Ihre Anwendung explizite Zipkin-Abhängigkeiten aufweist. Such
 
 ### <a name="inventory-external-resources"></a>Bestand: Externe Ressourcen
 
-Identifizieren Sie externe Ressourcen, z. B. Datenquellen, JMS-Nachrichtenbroker und URLs anderer Dienste. Bei Spring Boot-Anwendungen befindet sich die Konfiguration solcher Ressourcen üblicherweise im Ordner *src/main/directory* in einer Datei namens *application.properties* oder *application.yml*. Überprüfen Sie außerdem die Umgebungsvariablen der Produktionsbereitstellung auf relevante Konfigurationseinstellungen.
+Identifizieren Sie externe Ressourcen, z. B. Datenquellen, JMS-Nachrichtenbroker und URLs anderer Dienste. Bei Spring Boot-Anwendungen befindet sich die Konfiguration solcher Ressourcen üblicherweise im Ordner *src/main/directory* in einer Datei namens *application.properties* oder *application.yml* . Überprüfen Sie außerdem die Umgebungsvariablen der Produktionsbereitstellung auf relevante Konfigurationseinstellungen.
 
 [!INCLUDE [inventory-databases-spring-boot](includes/inventory-databases-spring-boot.md)]
 
 [!INCLUDE [identify-jms-brokers-in-spring](includes/identify-jms-brokers-in-spring.md)]
 
-Nachdem Sie den oder die verwendeten Broker ermittelt haben, können Sie nach den entsprechenden Einstellungen suchen. Bei Spring Boot-Anwendungen befinden sich diese in der Regel im Anwendungsverzeichnis in den Dateien *application.properties* und *application.yml*.
+Nachdem Sie den oder die verwendeten Broker ermittelt haben, können Sie nach den entsprechenden Einstellungen suchen. Bei Spring Boot-Anwendungen befinden sich diese in der Regel im Anwendungsverzeichnis in den Dateien *application.properties* und *application.yml* .
 
 [!INCLUDE [jms-broker-settings-examples-in-spring](includes/jms-broker-settings-examples-in-spring.md)]
 

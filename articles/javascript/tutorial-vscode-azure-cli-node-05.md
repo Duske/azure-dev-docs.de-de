@@ -3,13 +3,13 @@ title: Streamen von Protokollen aus Azure App Service
 description: 'Teil 5 des Azure CLI-Tutorials: Anzeigen von Protokollen'
 ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-js
-ms.openlocfilehash: 0cb28cc7bafd7d0d713fc980c72a7a41474d5060
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.custom: devx-track-js, devx-track-azurecli
+ms.openlocfilehash: f8da719269e157a2ab498834f00e4a360120b8a9
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91365143"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688606"
 ---
 # <a name="stream-logs-from-app-service"></a>Streamen von Protokollen aus App Service
 
@@ -37,7 +37,7 @@ In diesem Schritt zeigen Sie die Protokolle der ausgeführten App Service-Insta
     GET / 304 2.435 ms - -
     </pre>
 
-1. Drücken Sie **STRG**+**C**, um die Protokollierungssitzung zu beenden.
+1. Drücken Sie **STRG**+**C** , um die Protokollierungssitzung zu beenden.
 
 > [!div class="nextstepaction"]
 > [Ich sehe die Protokolle.](tutorial-vscode-azure-cli-node-06.md) [Es ist ein Problem aufgetreten.](https://www.research.net/r/PWZWZ52?tutorial=node-deployment&step=tailing-logs)

@@ -3,13 +3,13 @@ title: Bereitstellen von Node.js-Apps in Azure App Service mit der Azure-Befeh
 description: 'Teil 1 des Azure CLI-Tutorials: Einführung und Voraussetzungen'
 ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-js
-ms.openlocfilehash: 4ca11ffff1889d69ef8a1ee7fbca991b714f2163
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.custom: devx-track-js, devx-track-azurecli
+ms.openlocfilehash: a23a09cfdd36cd67b8fc09a1cb3bac266c2db813
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91365203"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688678"
 ---
 # <a name="deploy-to-azure-app-service-using-the-azure-cli"></a>Bereitstellen in Azure App Service mit der Azure-Befehlszeilenschnittstelle
 

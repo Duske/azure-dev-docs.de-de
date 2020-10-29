@@ -8,13 +8,13 @@ ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: identity
-ms.custom: devx-track-java
-ms.openlocfilehash: e06d09d4f44366ba995ecaa401df901dc6270c6d
-ms.sourcegitcommit: f80537193d3e22eb24cce4a0a5464a996d1e63eb
+ms.custom: devx-track-java, devx-track-azurecli
+ms.openlocfilehash: c6a81f5fb08985626909fe499584e67351a70ad0
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91409972"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688840"
 ---
 # <a name="tutorial-reading-a-secret-from-azure-key-vault-in-a-spring-boot-application"></a>Tutorial: Einlesen eines Geheimnisses aus Azure Key Vault in eine Spring Boot-Anwendung
 
@@ -238,11 +238,11 @@ In diesem Abschnitt wird veranschaulicht, wie Sie Spring Initializr und `RestCon
 1. Wählen Sie die Optionen so aus, wie dies in der Abbildung unterhalb dieser Liste dargestellt ist.
    1. **Project** (Projekt): `Maven Project`
    1. **Language** (Sprache): `Java`
-   1. **Spring Boot**: `2.3.3`
-   1. **Gruppe**: `com.contoso` (Sie können hier einen beliebigen gültigen Java-Paketnamen eingeben.)
+   1. **Spring Boot** : `2.3.3`
+   1. **Gruppe** : `com.contoso` (Sie können hier einen beliebigen gültigen Java-Paketnamen eingeben.)
    1. **Artifact** (Artefakt): *keyvault* (Sie können hier einen beliebigen gültigen Java-Klassennamen eingeben.)
    1. **Packaging** (Verpackung): `Jar`
-   1. **Java**: `11` (Sie können auch „8“ auswählen, aber für dieses Tutorial wurde „11“ verwendet.)
+   1. **Java** : `11` (Sie können auch „8“ auswählen, aber für dieses Tutorial wurde „11“ verwendet.)
 1. Wählen Sie **Add Dependencies...** (Abhängigkeiten hinzufügen...) aus.
 1. Geben Sie im Textfeld `Spring Web` ein, und drücken Sie STRG+EINGABE.
 1. Geben Sie im Textfeld `Azure Key Vault` ein, und drücken Sie die EINGABETASTE.  Auf Ihrem Bildschirm sollte nun Folgendes angezeigt werden.
@@ -252,7 +252,7 @@ In diesem Abschnitt wird veranschaulicht, wie Sie Spring Initializr und `RestCon
 
 Führen Sie die folgenden Schritte aus, um die Anwendung zu untersuchen und lokal auszuführen.
 
-1. Entzippen Sie die Datei *keyvault.zip*.  Die Datei enthält das unten angegebene Layout.  In diesem Tutorial ignorieren wir das Verzeichnis *test* und dessen Inhalt.
+1. Entzippen Sie die Datei *keyvault.zip* .  Die Datei enthält das unten angegebene Layout.  In diesem Tutorial ignorieren wir das Verzeichnis *test* und dessen Inhalt.
 
    ```bash
    ├── HELP.md
@@ -261,15 +261,15 @@ Führen Sie die folgenden Schritte aus, um die Anwendung zu untersuchen und loka
    ├── pom.xml
    └── src
        ├── main
-       │   ├── java
-       │   │   └── com
-       │   │       └── contoso
-       │   │           └── keyvault
-       │   │               └── KeyvaultApplication.java
-       │   └── resources
-       │       ├── application.properties
-       │       ├── static
-       │       └── templates
+       │   ├── java
+       │   │   └── com
+       │   │       └── contoso
+       │   │           └── keyvault
+       │   │               └── KeyvaultApplication.java
+       │   └── resources
+       │       ├── application.properties
+       │       ├── static
+       │       └── templates
    ```
 
 1. Öffnen Sie die Datei *KeyvaultApplication.java* in einem Text-Editor.  Ändern Sie die Datei so, dass Sie wie folgt aussieht.
@@ -323,7 +323,7 @@ Im nächsten Abschnitt wird veranschaulicht, wie Sie die Key Vault-Integration I
 
 Die folgenden Schritte verdeutlichen die erforderlichen Änderungen, die an der Spring Boot-Anwendung `KeyvaultApplication` vorgenommen werden müssen.
 
-Ebenso wie für die Key Vault-Instanz das Externalisieren von Geheimnissen möglich ist, können Sie bei der Spring-Konfiguration die Konfigurationsdaten ebenfalls für den Code externalisieren.  Die einfachste Form der Spring-Konfiguration ist die Datei *application.properties*.  In einem Maven-Projekt befindet sich diese Datei unter *src/main/resources/application.properties*.  Als Hilfe wird von Spring Initializr an diesem Speicherort eine Datei mit Nulllänge eingefügt.
+Ebenso wie für die Key Vault-Instanz das Externalisieren von Geheimnissen möglich ist, können Sie bei der Spring-Konfiguration die Konfigurationsdaten ebenfalls für den Code externalisieren.  Die einfachste Form der Spring-Konfiguration ist die Datei *application.properties* .  In einem Maven-Projekt befindet sich diese Datei unter *src/main/resources/application.properties* .  Als Hilfe wird von Spring Initializr an diesem Speicherort eine Datei mit Nulllänge eingefügt.
 
 Führen Sie die folgenden Schritte aus, um dieser Datei die erforderliche Konfiguration hinzuzufügen.
 
@@ -391,21 +391,21 @@ Führen Sie die Schritte in diesem Abschnitt aus, um `KeyvaultApplication` für 
 
 Führen Sie die folgenden Schritte aus, um Ihre POM-Instanz für die Bereitstellung von `KeyvaultApplication` in Azure App Service vorzubereiten.
 
-1. Öffnen Sie im Verzeichnis *keyvault* der obersten Ebene die Datei *pom.xml*.
+1. Öffnen Sie im Verzeichnis *keyvault* der obersten Ebene die Datei *pom.xml* .
 1. Fügen Sie im Abschnitt `<build><plugins>` das `azure-webapp-maven-plugin` hinzu, indem Sie den folgenden XML-Code einfügen.
 
    ```xml
     <plugin>
      <groupId>com.microsoft.azure</groupId>
      <artifactId>azure-webapp-maven-plugin</artifactId>
-     <version>1.11.0</version>
+     <version>1.12.0</version>
     </plugin>
    ```
 
    > [!NOTE]
    > Die Formatierung müssen Sie hierbei nicht beachten.  Während dieses Prozesses wird per `azure-webapp-maven-plugin` die gesamte POM-Datei neu formatiert.
 
-1. Speichern und schließen Sie die Datei *pom.xml*.
+1. Speichern und schließen Sie die Datei *pom.xml* .
 1. Rufen Sie in der Befehlszeile das Ziel `config` des neu hinzugefügten Plug-Ins auf.  Vom Maven-Plug-In werden einige Fragen gestellt, und die Datei *pom.xml* wird anhand der Antworten geändert.  Sie nehmen für die POM-Datei noch weitere Änderungen vor.
 
    ```bash
@@ -413,7 +413,7 @@ Führen Sie die folgenden Schritte aus, um Ihre POM-Instanz für die Bereitstell
    ```
 
 1. Vergewissern Sie sich, dass Sie für das Abonnement (`Subscription`) die gleiche Abonnement-ID mit der von Ihnen erstellten Key Vault-Instanz ausgewählt haben.
-1. Für die Web-App (`Web App`) können Sie entweder eine vorhandene Web-App oder aber `<create>` auswählen, um eine neue Web-App zu erstellen. Bei Verwendung einer vorhandenen Web-App gelangen Sie direkt zum letzten **Bestätigungsschritt**.
+1. Für die Web-App (`Web App`) können Sie entweder eine vorhandene Web-App oder aber `<create>` auswählen, um eine neue Web-App zu erstellen. Bei Verwendung einer vorhandenen Web-App gelangen Sie direkt zum letzten **Bestätigungsschritt** .
 1. Für das Betriebssystem (`OS`) muss `linux` ausgewählt werden.
 1. Stellen Sie für `javaVersion` sicher, dass die Java-Version angegeben ist, die Sie in Spring Initializr ausgewählt haben.  Da wir oben `11` ausgewählt haben, wählen wir hier ebenfalls „11“ aus.
 1. Übernehmen Sie für die restlichen Fragen jeweils die Standardwerte.
@@ -421,7 +421,7 @@ Führen Sie die folgenden Schritte aus, um Ihre POM-Instanz für die Bereitstell
 
 Führen Sie die folgenden Schritte aus, um die weiteren erforderlichen Änderungen an der POM-Datei vorzunehmen.
 
-1. Öffnen Sie im Verzeichnis *keyvault* der obersten Ebene die Datei *pom.xml*.
+1. Öffnen Sie im Verzeichnis *keyvault* der obersten Ebene die Datei *pom.xml* .
 1. Suchen Sie im Abschnitt <plugins> nach dem Eintrag `azure-webapp-maven-plugin`.
 1. Ändern Sie jeweils den Wert für `<resourceGroup>`, `<appName>` und `<region>`.  
    1. Legen Sie den Wert für `<resourceGroup>` auf den Wert fest, den Sie beim Erstellen der Key Vault-Instanz angegeben haben.
@@ -439,7 +439,7 @@ Führen Sie die folgenden Schritte aus, um die weiteren erforderlichen Änderung
      <plugin> 
        <groupId>com.microsoft.azure</groupId>  
        <artifactId>azure-webapp-maven-plugin</artifactId>  
-       <version>1.11.0</version>  
+       <version>1.12.0</version>  
        <configuration>
          <schemaVersion>V2</schemaVersion>
          *<subscriptionId>********-****-****-****-************</subscriptionId>
@@ -449,8 +449,8 @@ Führen Sie die folgenden Schritte aus, um die weiteren erforderlichen Änderung
          *<region>eastus</region>
          <runtime>
            <os>linux</os>
-           <javaVersion>java11</javaVersion>
-           <webContainer>java11</webContainer>
+           <javaVersion>java 11</javaVersion>
+           <webContainer>Java SE</webContainer>
          </runtime>
          *<!-- Begin of App Settings  -->
          *<appSettings>

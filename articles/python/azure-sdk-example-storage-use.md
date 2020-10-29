@@ -3,13 +3,13 @@ title: Verwenden von Speicherblobs Azure Storage mit dem Azure SDK für Python
 description: Hier erfahren Sie, wie Sie die Bibliotheken des Azure SDK für Python verwenden, um auf einen vorab bereitgestellten Blobcontainer in einem Azure Storage-Konto zuzugreifen und eine Datei in diesen Container hochzuladen.
 ms.date: 08/05/2020
 ms.topic: conceptual
-ms.custom: devx-track-python
-ms.openlocfilehash: 13ca0d10ac24780e5f7f053f85616781553253f5
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.custom: devx-track-python, devx-track-azurecli
+ms.openlocfilehash: f1ada9de2cdf52fac1b4219f1f9b8253d58ca881
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010278"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689236"
 ---
 # <a name="example-access-azure-storage-using-the-azure-libraries-for-python"></a>Beispiel: Zugriff auf Azure Storage mit den Azure-Bibliotheken für Python
 
@@ -63,7 +63,7 @@ Bei der [ersten Methode (Abschnitt 4a unten)](#4a-use-blob-storage-with-authent
 
 Bei der [zweiten Methode (Abschnitt 4b unten)](#4b-use-blob-storage-with-a-connection-string) wird eine Verbindungszeichenfolge verwendet, um direkt auf das Speicherkonto zuzugreifen. Obwohl diese Methode einfacher erscheint, hat Sie zwei bedeutende Nachteile:
 
-- Eine Verbindungszeichenfolge authentifiziert den Verbindungs-Agent von Natur aus mit dem Speicher*konto* anstatt mit einzelnen Ressourcen innerhalb dieses Kontos. Folglich stellt eine Verbindungszeichenfolge eine umfassendere Autorisierung bereit, als sie möglicherweise erforderlich ist.
+- Eine Verbindungszeichenfolge authentifiziert den Verbindungs-Agent von Natur aus mit dem Speicher *konto* anstatt mit einzelnen Ressourcen innerhalb dieses Kontos. Folglich stellt eine Verbindungszeichenfolge eine umfassendere Autorisierung bereit, als sie möglicherweise erforderlich ist.
 
 - Eine Verbindungszeichenfolge enthält einen Zugriffsschlüssel als Klartext und stellt daher potenzielle Sicherheitsrisiken dar, wenn sie mangelhaft aufgebaut oder ungenügend geschützt ist. Wenn eine solche Verbindungszeichenfolge verfügbar gemacht wird, kann sie für den Zugriff auf eine Vielzahl von Ressourcen im Speicherkonto verwendet werden.
 

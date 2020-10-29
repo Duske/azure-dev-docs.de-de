@@ -4,13 +4,13 @@ description: Es wird beschrieben, wie Sie Jenkins für Continuous Integration (C
 keywords: Jenkins, Azure, DevOps, App Service
 ms.topic: tutorial
 ms.date: 08/10/2020
-ms.custom: devx-track-jenkins
-ms.openlocfilehash: ef404f1d2e3d1ed042a99eccd2469fdd112e931b
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: devx-track-jenkins, devx-track-azurecli
+ms.openlocfilehash: 30b916cadc2c15f1226ab06f6925a87f6be4b3a7
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90832016"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688683"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-app-service-using-jenkins"></a>Tutorial: Bereitstellen über GitHub in Azure App Service mit Jenkins
 
@@ -125,7 +125,7 @@ Führen Sie zum Erstellen dieses Dienstprinzipals den Azure CLI-Befehl [az ad sp
 az ad sp create-for-rbac
 ```
 
-**Hinweise**:
+**Hinweise** :
 
 - Nach dem erfolgreichen Abschluss werden von `az ad sp create-for-rbac` verschiedene Werte angezeigt. Die Werte `name`, `password` und `tenant` werden im nächsten Schritt verwendet.
 - Ein Dienstprinzipal wird standardmäßig mit der Rolle **Mitwirkender** erstellt, die über vollständige Berechtigungen zum Lesen und Schreiben in einem Azure-Konto verfügt. Weitere Informationen zur rollenbasierten Zugriffssteuerung (Role-Based Access Control, RBAC) finden Sie unter [Integrierte Integrierte Rollen](/azure/active-directory/role-based-access-built-in-roles).
@@ -154,7 +154,7 @@ az ad sp create-for-rbac
    | **Tenant ID** | <*yourAzureActiveDirectoryTenant-ID*> | Der `tenant`-GUID-Wert für Ihren Azure Active Directory-Mandanten. | 
    | **ID** | <*yourAzureServicePrincipalName*> | Der `displayName`-Wert für Ihren Azure-Dienstprinzipal. | 
 
-1. Wählen Sie **Verify Service Principal** (Dienstprinzipal überprüfen) aus, um zu überprüfen, ob Ihr Dienstprinzipal funktioniert. Wenn Sie fertig sind, wählen Sie **OK**.
+1. Wählen Sie **Verify Service Principal** (Dienstprinzipal überprüfen) aus, um zu überprüfen, ob Ihr Dienstprinzipal funktioniert. Wenn Sie fertig sind, wählen Sie **OK** .
 
 Erstellen Sie als Nächstes die Jenkins-Pipeline, die Ihre App erstellt und bereitstellt.
 
@@ -184,7 +184,7 @@ Erstellen Sie in Jenkins den Pipelineauftrag für die Erstellung und Bereitstell
 
       ![Auswählen einer Umgebung für die Ausführung und Festlegen der Umgebungsvariablen](media/deploy-from-github-to-azure-app-service/prepare-environment-for-jenkins-run.png)
 
-1. Klicken Sie auf **Speichern**, wenn Sie fertig sind.
+1. Klicken Sie auf **Speichern** , wenn Sie fertig sind.
 
 Erstellen Sie als Nächstes Build- und Bereitstellungsskripts für Jenkins.
 
@@ -257,7 +257,7 @@ Geben Sie nun das Build- und Bereitstellungsskript an, das von Jenkins verwendet
 
    ![Verweisen der Jenkins-Pipeline auf das Skript](media/deploy-from-github-to-azure-app-service/set-up-jenkins-github.png)
 
-1. Klicken Sie auf **Speichern**, wenn Sie fertig sind.
+1. Klicken Sie auf **Speichern** , wenn Sie fertig sind.
 
 Erstellen Sie als Nächstes Ihre App, und stellen Sie sie in Azure App Service bereit. 
 

@@ -4,13 +4,13 @@ description: In dieser Schnellstartanleitung erfahren Sie, wie Sie Terraform mit
 keywords: Azure DevOps Terraform installieren konfigurieren Cloud Shell init planen anwenden Ausführung Portal anmelden Anmeldung RBAC Dienstprinzipal automatisiertes Skript
 ms.topic: quickstart
 ms.date: 09/27/2020
-ms.custom: devx-track-terraform
-ms.openlocfilehash: f5b1b242479ede712cccb178a8ee25b0b557173c
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.custom: devx-track-terraform, devx-track-azurecli
+ms.openlocfilehash: 70a7c1dc9db76c51d5923fc3b82200eca2976b2c
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401610"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688914"
 ---
 # <a name="quickstart-configure-terraform-using-azure-cloud-shell"></a>Schnellstart: Konfigurieren von Terraform mithilfe von Azure Cloud Shell
  
@@ -44,7 +44,7 @@ In diesem Artikel werden folgende Vorgehensweisen behandelt:
 
 1. Falls Sie Cloud Shell bislang noch nicht verwendet haben, konfigurieren Sie die Umgebungs- und Speichereinstellungen. In diesem Artikel wird die Bash-Umgebung verwendet.
 
-**Hinweise**:
+**Hinweise** :
 - Für Cloud Shell wird automatisch die neueste Version von Terraform installiert. Darüber hinaus werden von Terraform automatisch Informationen aus dem aktuellen Azure-Abonnement verwendet. Daher ist keine Installation oder Konfiguration erforderlich.
 
 ## <a name="authenticate-to-azure"></a>Authentifizierung bei Azure
@@ -64,14 +64,14 @@ Wenn Sie `az login` ohne Parameter ausführen, werden eine URL und ein Code ange
 az login
 ```
 
-**Hinweise**:
+**Hinweise** :
 
 - Nach erfolgreicher Anmeldung zeigt `az login` eine Liste der Azure-Abonnements an, die mit dem angemeldeten Microsoft-Konto verknüpft sind.
 - Für die einzelnen verfügbaren Azure-Abonnements wird jeweils eine Liste mit Eigenschaften angezeigt. Die Eigenschaft `isDefault` gibt das verwendete Azure-Abonnement an. Im Abschnitt [Festlegen des aktuellen Azure-Abonnements](#set-the-current-azure-subscription) erfahren Sie, wie Sie zu einem anderen Azure-Abonnement wechseln.
 
 ### <a name="authenticate-via-azure-service-principal"></a>Authentifizieren über den Azure-Dienstprinzipal
 
-**Erstellen Sie einen Azure-Dienstprinzipal**: Wenn Sie sich mithilfe eines Dienstprinzipals bei einem Azure-Abonnement anmelden möchten, benötigen Sie zunächst Zugriff auf einen Dienstprinzipal. Wenn Sie bereits über einen Dienstprinzipal verfügen, können Sie diesen Teil des Abschnitts überspringen.
+**Erstellen Sie einen Azure-Dienstprinzipal** : Wenn Sie sich mithilfe eines Dienstprinzipals bei einem Azure-Abonnement anmelden möchten, benötigen Sie zunächst Zugriff auf einen Dienstprinzipal. Wenn Sie bereits über einen Dienstprinzipal verfügen, können Sie diesen Teil des Abschnitts überspringen.
 
 Automatisierte Tools wie Terraform, die Azure-Dienste bereitstellen oder verwenden, sollten stets über eingeschränkte Berechtigungen verfügen. Azure bietet Dienstprinzipale, um zu vermeiden, dass sich Anwendungen als Benutzer mit uneingeschränkten Berechtigungen anmelden. Sollten Sie noch nicht über einen Dienstprinzipal für die Anmeldung verfügen, können Sie sich mit Ihren Benutzeranmeldeinformationen anmelden und anschließend einen Dienstprinzipal erstellen. Nach Erstellung des Dienstprinzipals können Sie dessen Informationen für zukünftige Anmeldungen verwenden.
 
@@ -83,7 +83,7 @@ Geben Sie den folgenden Befehl ein, und ersetzen Sie dabei `<subscription_id>` d
 az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscription_id>"
 ```
 
-**Hinweise**:
+**Hinweise** :
 
 - Nach dem erfolgreichen Abschluss werden von `az ad sp create-for-rbac` verschiedene Werte angezeigt. Die Werte `name`, `password` und `tenant` werden im nächsten Schritt verwendet.
 - Dieses Kennwort kann nicht erneut abgerufen werden. Es empfiehlt sich daher, das Kennwort an einem sicheren Ort zu speichern. Sollten Sie Ihr Kennwort vergessen, müssen Sie die [Anmeldeinformationen des Dienstprinzipals zurücksetzen](/cli/azure/create-an-azure-service-principal-azure-cli#reset-credentials).

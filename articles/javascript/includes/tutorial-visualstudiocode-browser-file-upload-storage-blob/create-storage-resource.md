@@ -4,12 +4,12 @@ description: include file create-storage-resource.md
 ms.date: 10/13/2020
 ms.topic: include
 ms.custom: devx-track-javascript
-ms.openlocfilehash: a4eb48afd578de7ddc3426a3907b8b4192387cbb
-ms.sourcegitcommit: ced8331ba36b28e6e2eacd23a64b39ddc7ffe6ab
+ms.openlocfilehash: 6862d9cf56ee86f7137495b021144b518459d979
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92344172"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92755543"
 ---
 In diesem Abschnitt des Tutorials erstellen Sie die Azure Storage-Ressource mit einer Visual Studio-Erweiterung und konfigurieren die Ressource dann im Azure-Portal. 
 
@@ -71,8 +71,8 @@ Generieren Sie das SAS-Token, bevor Sie CORS konfigurieren.
 Der SAS-Tokenwert ist eine partielle Abfragezeichenfolge, die in der URL verwendet wird, wenn Abfragen der cloudbasierten Ressource vorgenommen werden.
 
 Das Tokenformat hängt davon ab, welches Tool Sie verwendet haben, um das Token zu erstellen: 
-* **Azure-Portal**: Wenn Sie das SAS-Token im Portal erstellen, enthält das Token `?` als erstes Zeichen der Zeichenfolge.
-* **Azure CLI**: Wenn Sie das SAS-Token mit dem Azure CLI erstellen, enthält der zurückgegebene Wert nicht `?` als erstes Zeichen der Zeichenfolge. 
+* **Azure-Portal** : Wenn Sie das SAS-Token im Portal erstellen, enthält das Token `?` als erstes Zeichen der Zeichenfolge.
+* **Azure CLI** : Wenn Sie das SAS-Token mit dem Azure CLI erstellen, enthält der zurückgegebene Wert nicht `?` als erstes Zeichen der Zeichenfolge. 
 
 1. Entfernen Sie `?`, wenn dies das erste Zeichen des Tokens ist. Die Codedatei stellt `?` für Sie bereit, sodass Sie das Fragezeichen nicht im Token benötigen.
 
@@ -123,9 +123,9 @@ Ihr SAS-Token und der Name des Speicherkontos werden in der Datei `src/uploadToB
 ## <a name="want-to-know-more"></a>Möchten Sie mehr erfahren? 
 
 Weitere Möglichkeiten zum Konfigurieren des Storage-Kontos:
-* SAS-Token mit [PowerShell](/azure/powershell/module/azure.storage/new-azurestorageblobsastoken)
+* SAS-Token mit [PowerShell](/powershell/module/azure.storage/new-azurestorageblobsastoken)
 * SAS-Token mit Portal
-* CORS mit [PowerShell](/azure/powershell/module/azure.storage/set-azurestoragecorsrule)
+* CORS mit [PowerShell](/powershell/module/azure.storage/set-azurestoragecorsrule)
 * CORS mit Portal
 
-Weitere Informationen zu [SAS (Shared Access Signature)](/azure/storage/common/storage-sas-overview.md).
+Weitere Informationen zu [SAS (Shared Access Signature)](/azure/storage/common/storage-sas-overview).

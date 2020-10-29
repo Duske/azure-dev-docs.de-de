@@ -3,13 +3,13 @@ title: Bereitstellen eines virtuellen Computers mithilfe der Azure SDK-Biblioth
 description: So stellen Sie einen virtuellen Azure-Computer mittels Python und den Azure SDK-Verwaltungsbibliotheken bereit.
 ms.date: 10/05/2020
 ms.topic: conceptual
-ms.custom: devx-track-python
-ms.openlocfilehash: e01121047d42200e956345df611f82706b1e081e
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.custom: devx-track-python, devx-track-azurecli
+ms.openlocfilehash: 7074b23a3a0c5f47624e821e02fe5093ad98149b
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010224"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689237"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-virtual-machine"></a>Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen eines virtuellen Computers
 
@@ -28,7 +28,7 @@ Stellen Sie sicher, dass Sie einen Dienstprinzipal für die lokale Entwicklung e
 
 ## <a name="2-install-the-needed-azure-library-packages"></a>2: Installieren der erforderlichen Azure-Bibliothekspakete
 
-1. Erstellen Sie eine Datei *requirements.txt*, in der die in diesem Beispiel verwendeten Verwaltungsbibliotheken aufgeführt sind:
+1. Erstellen Sie eine Datei *requirements.txt* , in der die in diesem Beispiel verwendeten Verwaltungsbibliotheken aufgeführt sind:
 
     ```txt
     azure-mgmt-resource

@@ -4,13 +4,13 @@ description: Erfahren Sie, wie Sie Ansible zum Konfigurieren der VM-Sicherheit m
 keywords: Ansible, Azure, DevOps, Schlüsseltresor, Sicherheit, Anmeldeinformationen, Geheimnisse, Schlüssel, Zertifikate, Ansible-Module für Azure, Ressourcengruppe, azure_rm_resourcegroup,
 ms.topic: tutorial
 ms.date: 04/20/2020
-ms.custom: devx-track-ansible
-ms.openlocfilehash: 4891b277f8c1f9fcd7fe4c1d54ed13b39f19d2e4
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.custom: devx-track-ansible, devx-track-azurecli
+ms.openlocfilehash: 472a155b172de06cff4df99db7a4861f1cb60f52
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90682016"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688948"
 ---
 # <a name="tutorial-use-azure-key-vault-with-a-linux-virtual-machine-in-ansible"></a>Tutorial: Verwenden von Azure Key Vault mit einem virtuellen Linux-Computer in Ansible
 
@@ -40,7 +40,7 @@ In diesem Tutorial wird gezeigt, wie Sie die Ansible-Sammlung für Azure-Module 
 
 Verwenden Sie die Azure-Befehlszeilenschnittstelle, um die erforderlichen Azure-Abonnementinformationen abzurufen, die zum Verwenden der Ansible-Module für Azure erforderlich sind. 
 
-1. Rufen Sie die Azure-Abonnement-ID und die ID des Azure-Abonnementmandanten mithilfe des Befehls `az account show` ab. Geben Sie für den `<Subscription>`-Platzhalter entweder den Namen des Azure-Abonnements oder die Azure-Abonnement-ID an. Der Befehl zeigt viele der Schlüsselwerte an, die dem Azure-Standardabonnement zugeordnet sind. Wenn Sie über mehrere Abonnements verfügen, müssen Sie möglicherweise das aktuelle Abonnement mithilfe des Befehls [az account set](/cli/azure/account#az-account-set) festlegen. Notieren Sie sich sowohl den **ID**- als auch den **tenantID**-Wert aus der Ausgabe des Befehls.
+1. Rufen Sie die Azure-Abonnement-ID und die ID des Azure-Abonnementmandanten mithilfe des Befehls `az account show` ab. Geben Sie für den `<Subscription>`-Platzhalter entweder den Namen des Azure-Abonnements oder die Azure-Abonnement-ID an. Der Befehl zeigt viele der Schlüsselwerte an, die dem Azure-Standardabonnement zugeordnet sind. Wenn Sie über mehrere Abonnements verfügen, müssen Sie möglicherweise das aktuelle Abonnement mithilfe des Befehls [az account set](/cli/azure/account#az-account-set) festlegen. Notieren Sie sich sowohl den **ID** - als auch den **tenantID** -Wert aus der Ausgabe des Befehls.
 
     ```azurecli
     az account show --subscription "<Subscription>" --query tenantId
@@ -109,7 +109,7 @@ Der folgende Codeausschnitt aus einem Playbook erstellt eine eindeutig benannte 
 **Hinweise:**
 
 - In dieser Demo wird der Schlüsseltresor als einzige Ressource in einer Ressourcengruppe erstellt. Es ist üblich, den Schlüsseltresor von den Ressourcen zu trennen, die ihn verwenden. Dieses Muster hilft dabei, beim Löschen anderer Ressourcen die versehentliche Löschung des Schlüsseltresors zu verhindern.
-- Da der Name des Schlüsseltresors in Azure eindeutig sein muss, erstellt die Demo einen zufälligen *postfix*-Wert. Dieser Wert wird an den Namen der Schlüsseltresor-Ressourcengruppe und des Schlüsseltresors (die im nächsten Abschnitt erstellt werden) angefügt. Der Code in der Aufgabe `Prepare random postfix` generiert den zufälligen Postfix-Wert, der der `rpfx`-Variablen zugewiesen wird.
+- Da der Name des Schlüsseltresors in Azure eindeutig sein muss, erstellt die Demo einen zufälligen *postfix* -Wert. Dieser Wert wird an den Namen der Schlüsseltresor-Ressourcengruppe und des Schlüsseltresors (die im nächsten Abschnitt erstellt werden) angefügt. Der Code in der Aufgabe `Prepare random postfix` generiert den zufälligen Postfix-Wert, der der `rpfx`-Variablen zugewiesen wird.
 - In der Aufgabe `Set facts` wird der `lookup`-Befehl verwendet, um die Azure-Abonnement-ID abzurufen, die als Umgebungsvariable gespeichert ist.
 - Das [azure_rm_resourcegroup-Modul](https://docs.ansible.com/ansible/latest/modules/azure_rm_resourcegroup_module.html) wird verwendet, um die neue Ressourcengruppe zu erstellen.
 - Eine `debug`-Aufgabe am Ende des Playbooks zeigt den Namen der neuen Ressourcengruppe an.
@@ -167,7 +167,7 @@ Wenn Sie die Geheimnisse des Schlüsseltresors anzeigen möchten oder sich durch
 
 1. Wählen Sie den im vorherigen Abschnitt erstellten Schlüsseltresor aus. (Der Name wurde vom Playbook an stdout ausgegeben.)
 
-1. Klicken Sie auf **Zugriffsrichtlinien**.
+1. Klicken Sie auf **Zugriffsrichtlinien** .
 
 1. Es wird eine einzelne Zugriffsrichtlinie mit Ihrer Azure Active Directory-ID angezeigt, die den von Ihnen angegebenen Dienstprinzipal darstellt.
 
@@ -179,11 +179,11 @@ Wenn Sie die Geheimnisse des Schlüsseltresors anzeigen möchten oder sich durch
 
 1. Wählen Sie in der gefilterten Liste den entsprechenden Eintrag aus.
 
-1. Die Informationen für den ausgewählten Benutzer werden in die Liste **Ausgewähltes Mitglied** kopiert. Wählen Sie **Auswählen**.
+1. Die Informationen für den ausgewählten Benutzer werden in die Liste **Ausgewähltes Mitglied** kopiert. Wählen Sie **Auswählen** .
 
-1. Wählen Sie die passenden Optionen für **Schlüsselberechtigungen**, **Geheimnisberechtigungen** und **Zertifikatberechtigungen** aus. Für die Zwecke dieser Demo ist es ausreichend, **Geheimnisberechtigungen** und dann **Get** (Abrufen), **List** (Auflisten) und **Set** (Festlegen) auszuwählen.
+1. Wählen Sie die passenden Optionen für **Schlüsselberechtigungen** , **Geheimnisberechtigungen** und **Zertifikatberechtigungen** aus. Für die Zwecke dieser Demo ist es ausreichend, **Geheimnisberechtigungen** und dann **Get** (Abrufen), **List** (Auflisten) und **Set** (Festlegen) auszuwählen.
 
-1. Wählen Sie **Hinzufügen**.
+1. Wählen Sie **Hinzufügen** .
 
 1. Die neue Zugriffsrichtlinie für den ausgewählten Benutzer wird jetzt auf der Seite **Zugriffsrichtlinien** angezeigt.
 

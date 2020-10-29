@@ -4,13 +4,13 @@ description: Es wird beschrieben, wie Sie Ansible zum Erstellen und Konfiguriere
 keywords: ansible, azure, devops, bash, playbook, vm, vm-skalierungsgruppen, vmss
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.custom: devx-track-ansible
-ms.openlocfilehash: 357de61099b8b3673022857a933a18632cff7e40
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.custom: devx-track-ansible, devx-track-azurecli
+ms.openlocfilehash: 64bf3cbd79f2b2b1e68a3019669bce1115ac7333
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90681868"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689221"
 ---
 # <a name="tutorial-configure-virtual-machine-scale-sets-in-azure-using-ansible"></a>Tutorial: Konfigurieren von VM-Skalierungsgruppen in Azure mit Ansible
 
@@ -35,13 +35,13 @@ ms.locfileid: "90681868"
 
 Mit dem Playbookcode in diesem Abschnitt werden die folgenden Ressourcen definiert:
 
-* **Die Ressourcengruppe**, in der Ihre gesamten Ressourcen bereitgestellt werden.
+* **Die Ressourcengruppe** , in der Ihre gesamten Ressourcen bereitgestellt werden.
 * **Das virtuelle Netzwerk** im Adressraum 10.0.0.0/16
 * **Das Subnetz** innerhalb des virtuellen Netzwerks
-* **Die öffentliche IP-Adresse**, über die Sie auf Ressourcen im Internet zugreifen können
-* **Die Netzwerksicherheitsgruppe**, mit der der Fluss des ein- und ausgehenden Netzwerkdatenverkehrs Ihrer Skalierungsgruppe gesteuert wird.
-* **Das Lastenausgleichsmodul**, das den Datenverkehr auf der Grundlage von Lastenausgleichsregeln auf eine Gruppe definierter VMs verteilt.
-* **Die VM-Skalierungsgruppe**, die alle erstellten Ressourcen verwendet
+* **Die öffentliche IP-Adresse** , über die Sie auf Ressourcen im Internet zugreifen können
+* **Die Netzwerksicherheitsgruppe** , mit der der Fluss des ein- und ausgehenden Netzwerkdatenverkehrs Ihrer Skalierungsgruppe gesteuert wird.
+* **Das Lastenausgleichsmodul** , das den Datenverkehr auf der Grundlage von Lastenausgleichsregeln auf eine Gruppe definierter VMs verteilt.
+* **Die VM-Skalierungsgruppe** , die alle erstellten Ressourcen verwendet
 
 Es gibt zwei Möglichkeiten, das Beispielplaybook abzurufen:
 

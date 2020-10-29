@@ -3,13 +3,13 @@ title: Bereitstellen des App-Codes in Azure App Service mit der Azure-Befehlsz
 description: 'Teil 4 des Azure CLI-Tutorials: Bereitstellen der Website'
 ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-js
-ms.openlocfilehash: 8e6075b8a1e526f916ab43c9a1f52ef1b66e8614
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.custom: devx-track-js, devx-track-azurecli
+ms.openlocfilehash: 6006c25b9f2cb77ed472d8e4cb7d0eb96e85da48
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91364783"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689123"
 ---
 # <a name="deploy-the-app-to-app-service"></a>Bereitstellen der App in App Service
 
@@ -45,7 +45,7 @@ In diesem Schritt stellen Sie den Code Ihrer Node.js-App in Azure App Service 
     }
     </pre>
 
-1. Führen Sie den folgenden Befehl aus, um einen neuen Remotespeicherort in Git mit dem Namen `azure` festzulegen. Verwenden Sie dazu die URL aus dem vorherigen Schritt *ohne den Benutzernamen*. Wenn Sie das Beispiel im vorherigen Schritt verwenden, lautet der Befehl wie folgt:
+1. Führen Sie den folgenden Befehl aus, um einen neuen Remotespeicherort in Git mit dem Namen `azure` festzulegen. Verwenden Sie dazu die URL aus dem vorherigen Schritt *ohne den Benutzernamen* . Wenn Sie das Beispiel im vorherigen Schritt verwenden, lautet der Befehl wie folgt:
 
     ```bash
     git remote add azure https://msdocs-node-cli.scm.azurewebsites.net/msdocs-node-cli.git
