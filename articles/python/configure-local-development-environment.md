@@ -3,13 +3,13 @@ title: Konfigurieren Ihrer lokalen Python-Umgebung für die Azure-Entwicklung
 description: Hier erfahren Sie, wie Sie eine lokale Python-Entwicklungsumgebung für die Arbeit mit Azure einrichten – einschließlich Visual Studio Code, den Azure SDK-Bibliotheken und den erforderlichen Anmeldeinformationen für die Bibliothekauthentifizierung.
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.custom: devx-track-python
-ms.openlocfilehash: e3ddedf44c339aaf4f30933d99d5b27052f1aea3
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.custom: devx-track-python, devx-track-azurecli
+ms.openlocfilehash: 8f18d579259e1510c0aac0f7d66bb219cb327d1b
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846751"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688585"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>Konfigurieren Ihrer lokalen Python-Entwicklungsumgebung für Azure
 
@@ -29,7 +29,7 @@ Dieses Setup für die lokale Entwicklung ist von der [Bereitstellung von Ressour
 
 ### <a name="required-components"></a>Erforderliche Komponenten
 
-| Name/Installationsprogramm | BESCHREIBUNG |
+| Name/Installationsprogramm | Beschreibung |
 | --- | --- |
 | [Azure-Konto mit einem aktiven Abonnement](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=python-dev-center&mktingSource=environment-setup) | Konten/Abonnements sind kostenlos und umfassen viele kostenlose Dienste. |
 | [Python 2.7+ oder 3.5.3+](https://www.python.org/downloads) | Die Runtime der Programmiersprache Python. Wir empfehlen die aktuelle Version von Python 3.x, es sei denn, Sie haben besondere Anforderungen an die Version. |
@@ -42,7 +42,7 @@ Hinweise:
 
 ### <a name="recommended-components"></a>Empfohlene Komponenten
 
-| Name/Installationsprogramm | BESCHREIBUNG |
+| Name/Installationsprogramm | Beschreibung |
 | --- | --- |
 | [Visual Studio Code](https://code.visualstudio.com) | Obwohl Sie mit jedem passenden Editor oder jeder geeigneten IDE arbeiten können, ist die kostenlose, schlanke IDE von Microsoft bei Python-Entwicklern sehr beliebt. Eine Einführung finden Sie unter [Python in VS Code](https://code.visualstudio.com/docs/python/python-tutorial). |
 | [Python-Erweiterungen für VS Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python) | Fügt VS Code Python-Unterstützung hinzu. |
@@ -51,7 +51,7 @@ Hinweise:
 
 ### <a name="optional-components"></a>Optionale Komponenten
 
-| Name/Installationsprogramm | BESCHREIBUNG |
+| Name/Installationsprogramm | Beschreibung |
 | --- | --- |
 | [Docker-Erweiterung für VS Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python) | Fügt VS Code Docker-Unterstützung hinzu, was hilfreich ist, wenn Sie regelmäßig mit Containern arbeiten. |
 

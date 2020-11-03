@@ -5,12 +5,12 @@ ms.devlang: python
 ms.topic: tutorial
 ms.date: 10/09/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 77cb35d31f80b52d1e79c2650c79635dc039e72d
-ms.sourcegitcommit: d5dabc6dde727ed167a9dc8a4eaaf21025b3efa8
+ms.openlocfilehash: 333cda811133e9ce4e83730b038a7d84b40b7fa1
+ms.sourcegitcommit: ca7b58f60dd02709977b35175b43be582b868b03
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91947535"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92629934"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>Tutorial: Bereitstellen einer Django-Web-App mit PostgreSQL mithilfe des Azure-Portals
 
@@ -49,7 +49,7 @@ Sie erstellen einen Fork dieses Repositorys, damit Sie Änderungen vornehmen und
 
 1. Wählen Sie **Ressource erstellen** aus. Daraufhin wird die Seite **Neu** geöffnet.
 
-1. Suchen Sie nach **Web-App**, und wählen Sie die Option aus.
+1. Suchen Sie nach **Web-App** , und wählen Sie die Option aus.
 
 1. Geben Sie auf der Seite **Web-App erstellen** die folgenden Informationen ein:
 
@@ -76,7 +76,7 @@ Sie erstellen einen Fork dieses Repositorys, damit Sie Änderungen vornehmen und
 
 1. Wählen Sie **Ressource erstellen** aus. Daraufhin wird die Seite **Neu** geöffnet.
 
-1. Suchen Sie nach **Azure Database for PostgreSQL**, und wählen Sie die Option aus.
+1. Suchen Sie nach **Azure Database for PostgreSQL** , und wählen Sie die Option aus.
 
 1. Wählen Sie auf der nächsten Seite unter **Einzelserver** die Option **Erstellen** aus.
 
@@ -91,7 +91,7 @@ Sie erstellen einen Fork dieses Repositorys, damit Sie Änderungen vornehmen und
     | Standort | Wählen Sie einen Ort in Ihrer Nähe aus. |
     | Version | Übernehmen Sie den Standardwert (die neueste Version). |
     | Compute + Speicher | Wählen Sie **Server konfigurieren** > **Basic** > **Gen 5** aus. Legen Sie **Virtueller Kern** auf 1 und **Speicher** auf 5 GB fest, und wählen Sie dann **OK** aus. Mit diesen Einstellungen wird der günstigste Server bereitgestellt, der für PostgreSQL in Azure verfügbar ist. Unter Umständen verfügen Sie auch über Guthaben in Ihrem Azure-Konto, das die Kosten für den Server abdeckt. |
-    | Administratorbenutzername, Kennwort, Kennwort bestätigen | Geben Sie die Anmeldeinformationen für ein Administratorkonto auf dem Datenbankserver ein. Notieren Sie sich diese Anmeldeinformationen, da Sie sie später in diesem Tutorial benötigen. |
+    | Administratorbenutzername, Kennwort, Kennwort bestätigen | Geben Sie die Anmeldeinformationen für ein Administratorkonto auf dem Datenbankserver ein. Notieren Sie sich diese Anmeldeinformationen, da Sie sie später in diesem Tutorial benötigen. Hinweis: Verwenden Sie das Zeichen `$` nicht im Benutzernamen oder Kennwort. Später erstellen Sie Umgebungsvariablen mit diesen Werten. Dabei hat das Zeichen `$` innerhalb des Linux-Containers, der zum Ausführen von Python-Apps verwendet wird, eine besondere Bedeutung. |
 
 1. Wählen Sie **Überprüfen + erstellen** und danach **Erstellen** aus. Das Bereitstellen der Web-App dauert in Azure einige Minuten.
 
@@ -103,7 +103,7 @@ Sie erstellen einen Fork dieses Repositorys, damit Sie Änderungen vornehmen und
 
 In diesem Abschnitt stellen Sie eine Verbindung mit dem Datenbankserver in Azure Cloud Shell her und verwenden einen PostgreSQL-Befehl, um die Datenbank „pollsdb“ auf dem Server zu erstellen. Diese Datenbank wird vom Code der Beispiel-App erwartet.
 
-1. Wählen Sie auf der Übersichtsseite des PostgreSQL-Servers **Verbindungssicherheit** aus (auf der linken Seite unter **Einstellungen**).
+1. Wählen Sie auf der Übersichtsseite des PostgreSQL-Servers **Verbindungssicherheit** aus (auf der linken Seite unter **Einstellungen** ).
 
     ![Portalseite „Verbindungssicherheit“ für Firewallregeln](media/tutorial-python-postgresql-app-portal/server-firewall-rules.png)
 
@@ -141,11 +141,11 @@ In diesem Abschnitt erstellen Sie Einstellungen für die Web-App, die für das H
 
 1. Wechseln Sie zurück zur Browserregisterkarte oder zum Browserfenster für die Web-App, die Sie in einem vorherigen Abschnitt erstellt haben.
 
-1. Wählen Sie **Konfiguration** (auf der linken Seite unter **Einstellungen**) und dann oben auf der Seite **Anwendungseinstellungen** aus.
+1. Wählen Sie **Konfiguration** (auf der linken Seite unter **Einstellungen** ) und dann oben auf der Seite **Anwendungseinstellungen** aus.
 
     ![Konfiguration der Portaleinstellungen für Web-Apps](media/tutorial-python-postgresql-app-portal/web-app-settings.png)
 
-1. Verwenden Sie die Schaltfläche **Neue Anwendungseinstellung**, um Einstellungen für die folgenden Werte zu erstellen (diese werden vom Beispiel „djangoapp“ erwartet):
+1. Verwenden Sie die Schaltfläche **Neue Anwendungseinstellung** , um Einstellungen für die folgenden Werte zu erstellen (diese werden vom Beispiel „djangoapp“ erwartet):
 
     | Einstellungsname | Wert |
     | --- | --- |
@@ -154,6 +154,8 @@ In diesem Abschnitt erstellen Sie Einstellungen für die Web-App, die für das H
     | DBNAME | `pollsdb` |
     | DBUSER | Der Benutzername des Administrators, der bei der Bereitstellung der Datenbank verwendet wurde. (Im Beispielcode wird automatisch der Teil `@<server-name>` hinzugefügt, siehe *azuresite/production.py*.) |
     | DBPASS | Das Administratorkennwort, das Sie zuvor erstellt haben |
+
+    Wie bereits erwähnt, darf das Zeichen `$` nicht im Benutzernamen oder Kennwort verwendet werden, da dieses Zeichen innerhalb von Umgebungsvariablen in dem Linux-Container, der als Host für Python-Apps fungiert, mit Escapezeichen versehen wird.
 
 1. Wählen Sie **Speichern** und anschließend **Weiter** aus, um diese Einstellungen zu übernehmen.
 
@@ -166,7 +168,7 @@ In diesem Abschnitt erstellen Sie Einstellungen für die Web-App, die für das H
 
 Nach dem Einrichten der Datenbank und der Verbindungseinstellungen können Sie nun die Web-App so konfigurieren, dass sie Code direkt über ein GitHub-Repository bereitstellt.
 
-1. Wählen Sie im Browserfenster oder auf der Browserregisterkarte der Web-App **Bereitstellungscenter** aus (auf der linken Seite unter **Bereitstellung**).
+1. Wählen Sie im Browserfenster oder auf der Browserregisterkarte der Web-App **Bereitstellungscenter** aus (auf der linken Seite unter **Bereitstellung** ).
 
 1. Wählen Sie im Schritt **Quellcodeverwaltung** die Option **GitHub** und dann **Autorisieren** aus (falls erforderlich). Befolgen Sie dann die Anmeldeaufforderungen, oder wählen Sie **Weiter** aus, um Ihre aktuelle GitHub-Anmeldung zu verwenden.
 
@@ -190,7 +192,7 @@ Nach dem Einrichten der Datenbank und der Verbindungseinstellungen können Sie n
 
 Wurden Code und Datenbank bereitgestellt, ist die App fast bereit für die Verwendung. Nun muss nur noch das erforderliche Schema in der Datenbank selbst eingerichtet werden. Hierzu können Sie die Datenmodelle in der Django-App zur Datenbank migrieren.
 
-1. Wählen Sie im Browserfenster oder auf der Registerkarte für die Web-App die Option **SSH** (links unter **Entwicklungstools**) und dann **Starten** aus, um auf dem Web-App-Server eine SSH-Konsole zu öffnen. Es kann eine Minute dauern, bis die Verbindung zum ersten Mal hergestellt wird, da der Web-App-Container gestartet werden muss.
+1. Wählen Sie im Browserfenster oder auf der Registerkarte für die Web-App die Option **SSH** (links unter **Entwicklungstools** ) und dann **Starten** aus, um auf dem Web-App-Server eine SSH-Konsole zu öffnen. Es kann eine Minute dauern, bis die Verbindung zum ersten Mal hergestellt wird, da der Web-App-Container gestartet werden muss.
 
 1. Navigieren Sie in der Konsole zum Ordner der Web-App:
 
@@ -222,7 +224,7 @@ Wurden Code und Datenbank bereitgestellt, ist die App fast bereit für die Verwe
     python manage.py createsuperuser
    ```
 
-    Mit dem Befehl `createsuperuser` werden Sie zur Eingabe von Django-Superuser-Anmeldeinformationen (oder Administratoranmeldeinformationen) aufgefordert, die in der Web-App verwendet werden. Verwenden Sie für dieses Tutorial den Standardbenutzernamen `root`, drücken Sie für die E-Mail-Adresse die **EINGABETASTE**, um sie leer zu lassen, und geben Sie `Pollsdb1` als Kennwort ein.
+    Mit dem Befehl `createsuperuser` werden Sie zur Eingabe von Django-Superuser-Anmeldeinformationen (oder Administratoranmeldeinformationen) aufgefordert, die in der Web-App verwendet werden. Verwenden Sie für dieses Tutorial den Standardbenutzernamen `root`, drücken Sie für die E-Mail-Adresse die **EINGABETASTE** , um sie leer zu lassen, und geben Sie `Pollsdb1` als Kennwort ein.
 
 [Treten Probleme auf? Informieren Sie uns darüber.](https://aka.ms/DjangoPortalTutorialHelp)
 
@@ -264,7 +266,7 @@ Wenn Sie jedoch die Datenmodelle der Django-App ändern, müssen Sie diese Ände
 
 Auf die generierten Konsolenprotokolle kann innerhalb des Containers zugegriffen werden, in dem die App in Azure gehostet wird.
 
-Wählen Sie im Azure-Portal auf der Seite der Web-App die Option **Protokollstream** aus (auf der linken Seite unter **Überwachung**). Die Protokolle werden als Konsolenausgabe angezeigt.
+Wählen Sie im Azure-Portal auf der Seite der Web-App die Option **Protokollstream** aus (auf der linken Seite unter **Überwachung** ). Die Protokolle werden als Konsolenausgabe angezeigt.
 
 Sie können die Protokolldateien auch im Browser unter `https://<app-name>.scm.azurewebsites.net/api/logs/docker` untersuchen.
 

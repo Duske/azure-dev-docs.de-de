@@ -4,12 +4,12 @@ description: 'Tutorialschritt 2: Einrichten der Anwendung'
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 464807b8a4e637db7a0911d23770246dfc7fb0ae
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: 4aaaa1833a42c40786fc6923b10876561adac859
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846691"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688889"
 ---
 # <a name="2-prepare-your-app-for-deployment-to-azure-app-service"></a>2: Vorbereiten Ihrer App für die Bereitstellung in Azure App Service
 
@@ -23,7 +23,7 @@ Wenn Sie noch nicht über eine App verfügen, verwenden Sie eine der folgenden O
 
 ## <a name="option-1-vs-code-flask-tutorial-sample"></a>Option 1: VS Code-Beispiel für das Flask-Tutorial
 
-Laden Sie [https://github.com/Microsoft/python-sample-vscode-flask-tutorial](https://github.com/Microsoft/python-sample-vscode-flask-tutorial) herunter, oder klonen Sie diesen Code. Es handelt sich um das Ergebnis des [Flask-Tutorials](https://code.visualstudio.com/docs/python/tutorial-flask).
+Laden Sie [https://github.com/Microsoft/python-sample-vscode-flask-tutorial](https://github.com/Microsoft/python-sample-vscode-flask-tutorial) herunter, oder klonen Sie diesen Code. Es handelt sich um das Ergebnis des [Flask-Tutorials](https://code.visualstudio.com/docs/python/tutorial-flask). Beachten Sie, dass sich der App-Code im Ordner *hello_app* befindet. Informationen zum lokalen Ausführen der App finden Sie in der Datei *readme.md* des Beispiels.
 
 ## <a name="option-2-vs-code-django-tutorial-sample"></a>Option 2: VS Code-Beispiel für das Django-Tutorial
 
