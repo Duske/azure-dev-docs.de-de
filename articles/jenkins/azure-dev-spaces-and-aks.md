@@ -4,13 +4,13 @@ description: Hier erfahren Sie, wie Sie das Azure Dev Spaces-Plug-In in einer 
 keywords: Jenkins, Azure, DevOps, Azure Dev Spaces, AKS, Azure Kubernetes Service
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.custom: devx-track-jenkins
-ms.openlocfilehash: 39a730507df89186b8934d4ded7d2ff92c07b420
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: devx-track-jenkins, devx-track-azurecli
+ms.openlocfilehash: b5de1c470b5b47184b1c8fe33c31e6958e0a45e9
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831376"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689105"
 ---
 # <a name="tutorial-use-azure-dev-spaces-with-azure-kubernetes-service"></a>Tutorial: Verwenden von Azure Dev Spaces mit Azure Kubernetes Service
 
@@ -38,7 +38,7 @@ In diesem Tutorial werden gewisse Kenntnisse im Zusammenhang mit gängigen Azure
 
 * [Installation der Azure-Befehlszeilenschnittstelle](/cli/azure/install-azure-cli?view=azure-cli-latest) (Version 2.0.43 oder höher)
 
-* Ein Jenkins-Masterserver. Sollten Sie noch nicht über einen Jenkins-Masterserver verfügen, stellen Sie [Jenkins](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins) mithilfe dieser [Schnellstartanleitung](/azure/jenkins/install-jenkins-solution-template) in Azure bereit. 
+* Ein Jenkins-Masterserver. Sollten Sie noch nicht über einen Jenkins-Masterserver verfügen, stellen Sie [Jenkins](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins) mithilfe der in [dieser Schnellstartanleitung](/azure/jenkins/install-jenkins-solution-template) beschriebenen Schritte in Azure bereit. 
 
 * Der Jenkins-Server muss sowohl über Helm als auch über kubectl verfügen und für das Jenkins-Konto verfügbar sein, wie weiter unten in diesem Tutorial erläutert.
 
@@ -118,7 +118,7 @@ Weitere Informationen zur Verwendung von Azure Dev Spaces sowie zur Entwicklung 
     }
     ```
 
-4. Klicken Sie auf **Ansicht** > **Terminal**, um das in VS Code integrierte Terminal zu öffnen.
+4. Klicken Sie auf **Ansicht**  > **Terminal** , um das in VS Code integrierte Terminal zu öffnen.
 
 5. Führen Sie den Befehl `azds prep` aus, um Ihre Anwendung für die Ausführung in einem Entwicklungsbereich vorzubereiten. Dieser Befehl muss unter `dev-spaces/samples/java/getting-started/webfrontend` ausgeführt werden, damit die Anwendung ordnungsgemäß vorbereitet wird:
 
@@ -203,7 +203,7 @@ In der Beispielpipeline werden Helm und kubectl verwendet, um den Entwicklungsbe
 
 ### <a name="add-credentials-to-jenkins"></a>Hinzufügen von Anmeldeinformationen zu Jenkins
 
-1. Jenkins benötigt einen Azure-Dienstprinzipal für die Authentifizierung und den Zugriff auf Azure-Ressourcen. Wie Sie einen Dienstprinzipal erstellen, erfahren Sie im Abschnitt  [Erstellen eines Dienstprinzipals](deploy-from-github-to-azure-app-service.md#create-service-principal) des Bereitstellungstutorials für Azure App Service. Speichern Sie unbedingt eine Kopie der Ausgabe von `create-for-rbac`. Diese Informationen werden im nächsten Schritt benötigt. Die Ausgabe sieht in etwa wie folgt aus:
+1. Jenkins benötigt einen Azure-Dienstprinzipal für die Authentifizierung und den Zugriff auf Azure-Ressourcen. Wie Sie einen Dienstprinzipal erstellen, erfahren Sie im Abschnitt [Erstellen eines Dienstprinzipals](deploy-from-github-to-azure-app-service.md#create-service-principal) des Bereitstellungstutorials für Azure App Service. Speichern Sie unbedingt eine Kopie der Ausgabe von `create-for-rbac`. Diese Informationen werden im nächsten Schritt benötigt. Die Ausgabe sieht in etwa wie folgt aus:
 
     ```json
     {
@@ -221,7 +221,7 @@ In der Beispielpipeline werden Helm und kubectl verwendet, um den Entwicklungsbe
 
     ![Hinzufügen von Dienstprinzipal-Anmeldeinformationen zu Jenkins](media/azure-dev-spaces-and-aks/add-service-principal-credentials.png)
 
-    Die Angabe einer **Beschreibung**ist optional. Eine ausführlichere Anleitung finden Sie im Abschnitt [Hinzufügen des Dienstprinzipals zu Jenkins](deploy-from-github-to-azure-app-service.md#add-service-principal-to-jenkins) des Bereitstellungstutorials für Azure App Service. 
+    Die Angabe einer **Beschreibung** ist optional. Eine ausführlichere Anleitung finden Sie im Abschnitt [Hinzufügen des Dienstprinzipals zu Jenkins](deploy-from-github-to-azure-app-service.md#add-service-principal-to-jenkins) des Bereitstellungstutorials für Azure App Service. 
 
 
 
@@ -267,7 +267,7 @@ Die Phasen in der CI-Pipeline werden durch die Jenkins-Pipelinekonfiguration und
 
 ![Jenkins-Pipelinefluss](media/azure-dev-spaces-and-aks/jenkins-pipeline-flow.png)
 
-1. Laden Sie unter [https://github.com/azure-devops/mywebapi](https://github.com/azure-devops/mywebapi) eine geänderte Version des Projekts *mywebapi* herunter. Dieses Projekt enthält mehrere Dateien, die zum Erstellen einer Pipeline benötigt werden – einschließlich *Jenkinsfile*, *Dockerfiles* und Helm-Diagramm.
+1. Laden Sie unter [https://github.com/azure-devops/mywebapi](https://github.com/azure-devops/mywebapi) eine geänderte Version des Projekts *mywebapi* herunter. Dieses Projekt enthält mehrere Dateien, die zum Erstellen einer Pipeline benötigt werden – einschließlich *Jenkinsfile* , *Dockerfiles* und Helm-Diagramm.
 
 2. Melden Sie sich bei Jenkins an. Wählen Sie im Menü auf der linken Seite die Option **Add Item** (Element hinzufügen) aus.
 
