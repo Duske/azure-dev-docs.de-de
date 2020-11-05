@@ -3,14 +3,14 @@ title: 'Tutorial: Bereitstellen über GitHub in Azure Kubernetes Service mit Jen
 description: Es wird beschrieben, wie Sie Jenkins für Continuous Integration (CI) über GitHub und Continuous Deployment (CD) in Azure Kubernetes Service (AKS) konfigurieren.
 keywords: Jenkins, Azure, DevOps, AKS, Azure Kubernetes Service, GitHub
 ms.topic: article
-ms.date: 01/09/2019
+ms.date: 10/29/2019
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 5d72a9bd05683f50375204db9cc95b012db6dfa3
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 51b0531946d4fde0e9141744e62bab35a3e1a734
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688639"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192502"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-kubernetes-service-using-jenkins"></a>Tutorial: Bereitstellen über GitHub in Azure Kubernetes Service mit Jenkins
 
@@ -106,7 +106,7 @@ Zum Bereitstellen der Beispielanwendung in Ihrem AKS-Cluster können Sie die Kub
 ```yaml
 containers:
 - name: azure-vote-front
-  image: microsoft/azure-vote-front:v1
+  image: azuredocs/azure-vote-front
 ```
 
 Stellen Sie als Nächstes die Anwendung mithilfe des Befehls [kubectl apply](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply) in Ihrem AKS-Cluster bereit:
@@ -155,7 +155,7 @@ Enter the following to Unlock Jenkins:
 
 - Wählen Sie **Install suggested plugins** (Vorgeschlagene Plug-Ins installieren) aus.
 - Erstellen Sie den ersten Administratorbenutzer. Geben Sie einen Benutzernamen (z.B. *azureuser* ) und anschließend ein eigenes sicheres Kennwort ein. Geben Sie abschließend einen vollständigen Namen und eine E-Mail-Adresse an.
-- Klicken Sie auf **Speichern und Beenden** .
+- Klicken Sie auf **Speichern und Beenden**.
 - Klicken Sie auf **Start using Jenkins** (Jenkins verwenden), sobald Jenkins bereit ist.
     - Sollte in Ihrem Browser beim Start von Jenkins eine leere Seite angezeigt werden, starten Sie den Jenkins-Dienst neu. Um den Dienst neu zu starten, öffnen Sie mit SSH eine Verbindung mit der öffentlichen IP-Adresse Ihrer Jenkins-Instanz, und geben Sie `sudo service jenkins restart` ein. Aktualisieren Sie nach dem Neustart des Diensts Ihren Webbrowser.
 - Melden Sie sich mit dem Benutzernamen und dem Kennwort, die Sie während der Installation erstellt haben, bei Jenkins an.
@@ -173,7 +173,7 @@ Eine Jenkins-Umgebungsvariable wird verwendet, um den Namen des ACR-Anmeldeserve
 
 ## <a name="create-a-jenkins-credential-for-acr"></a>Erstellen von Jenkins-Anmeldeinformationen für ACR
 
-Um Jenkins das Erstellen aktualisierter Containerimages und das anschließende Pushen an ACR zu ermöglichen, müssen Sie Anmeldeinformationen für ACR angeben. Für diese Authentifizierung können Azure Active Directory-Dienstprinzipale verwendet werden. In den Voraussetzungen haben Sie den Dienstprinzipal für Ihren AKS-Cluster mit den Berechtigungen *Leser* in Ihrer ACR-Registrierung konfiguriert. Durch diese Berechtigungen kann der AKS-Cluster Images aus der ACR-Registrierung *pullen* . Während des CI/CD-Vorgangs erstellt Jenkins neue Containerimages basierend auf Anwendungsupdates. Diese müssen dann in die ACR-Registrierung *gepusht* werden. Konfigurieren Sie für die Trennung von Rollen und Berechtigungen nun einen Dienstprinzipal für Jenkins mit den Berechtigungen *Mitwirkender* in Ihrer ACR.
+Um Jenkins das Erstellen aktualisierter Containerimages und das anschließende Pushen an ACR zu ermöglichen, müssen Sie Anmeldeinformationen für ACR angeben. Für diese Authentifizierung können Azure Active Directory-Dienstprinzipale verwendet werden. In den Voraussetzungen haben Sie den Dienstprinzipal für Ihren AKS-Cluster mit den Berechtigungen *Leser* in Ihrer ACR-Registrierung konfiguriert. Durch diese Berechtigungen kann der AKS-Cluster Images aus der ACR-Registrierung *pullen*. Während des CI/CD-Vorgangs erstellt Jenkins neue Containerimages basierend auf Anwendungsupdates. Diese müssen dann in die ACR-Registrierung *gepusht* werden. Konfigurieren Sie für die Trennung von Rollen und Berechtigungen nun einen Dienstprinzipal für Jenkins mit den Berechtigungen *Mitwirkender* in Ihrer ACR.
 
 ### <a name="create-a-service-principal-for-jenkins-to-use-acr"></a>Erstellen eines Dienstprinzipals für die Verwendung von ACR durch Jenkins
 
@@ -228,8 +228,8 @@ Klicken Sie auf **OK** , und kehren Sie zum Jenkins-Portal zurück.
 Wählen Sie auf der Startseite des im Jenkins-Portal links **New item** (Neues Element) aus:
 
 1. Geben Sie als Auftragsnamen *azure-vote* ein. Wählen Sie **Freestyle Project** und anschließend **OK** aus.
-1. Wählen Sie im Abschnitt **Allgemein** die Option **GitHub-Projekt** aus, und geben Sie die URL Ihres geforkten Repositorys ein, z. B. *https:\//github.com/\<your-github-account\>/azure-voting-app-redis* .
-1. Wählen Sie im Abschnitt **Quellcodeverwaltung** die Option **Git** aus, und geben Sie die *.git* -URL Ihres geforkten Repositorys ein, z. B. *https:\//github.com/\<your-github-account\>/azure-voting-app-redis.git* .
+1. Wählen Sie im Abschnitt **Allgemein** die Option **GitHub-Projekt** aus, und geben Sie die URL Ihres geforkten Repositorys ein, z. B. *https:\//github.com/\<your-github-account\>/azure-voting-app-redis*.
+1. Wählen Sie im Abschnitt **Quellcodeverwaltung** die Option **Git** aus, und geben Sie die *.git* -URL Ihres geforkten Repositorys ein, z. B. *https:\//github.com/\<your-github-account\>/azure-voting-app-redis.git*.
 
 1. Wählen Sie im Bereich **Build Triggers** (Buildtrigger) die Option **GitHub hook trigger for GITscm polling** (GitHub-Hooktrigger für GITscm-Abruf) aus.
 1. Wählen Sie unter **Build Environment** (Buildumgebung) die Option **Use secret texts or files** (Geheime Texte oder Dateien verwenden) aus.
@@ -256,7 +256,7 @@ Wählen Sie auf der Startseite des im Jenkins-Portal links **New item** (Neues E
     kubectl set image deployment/azure-vote-front azure-vote-front=$WEB_IMAGE_NAME --kubeconfig /var/lib/jenkins/config
     ```
 
-1. Klicken Sie nach Abschluss des Vorgangs auf **Save** .
+1. Klicken Sie nach Abschluss des Vorgangs auf **Save**.
 
 ## <a name="test-the-jenkins-build"></a>Testen des Jenkins-Builds
 
@@ -270,7 +270,7 @@ Der erste Build dauert einen Moment, während die Docker-Imageebenen beim Jenkin
 
 Während des Buildvorgangs wird das GitHub-Repository auf dem Jenkins-Buildserver geklont. Ein neues Containerimage wird erstellt und per Pushvorgang in die ACR übertragen. Abschließend wird die Azure Vote-Anwendung, die im AKS-Cluster ausgeführt wird, aktualisiert, damit das neue Image verwendet wird. Da am Anwendungscode keine Änderungen vorgenommen wurden, wird die Anwendung nicht geändert, wenn Sie die Beispiel-App in einem Webbrowser anzeigen.
 
-Nachdem der Buildauftrag abgeschlossen ist, klicken Sie im Buildverlauf auf **build #1** . Wählen Sie **Console Output** (Konsolenausgabe) aus, und zeigen Sie die Ausgabe des Buildvorgangs an. In der letzten Zeile sollte die erfolgreiche Durchführung des Builds angezeigt werden.
+Nachdem der Buildauftrag abgeschlossen ist, klicken Sie im Buildverlauf auf **build #1**. Wählen Sie **Console Output** (Konsolenausgabe) aus, und zeigen Sie die Ausgabe des Buildvorgangs an. In der letzten Zeile sollte die erfolgreiche Durchführung des Builds angezeigt werden.
 
 ## <a name="create-a-github-webhook"></a>Erstellen eines GitHub-Webhooks
 
@@ -293,7 +293,7 @@ Nun können Sie die gesamte CI/CD-Pipeline testen. Wenn Sie einen Codecommit nac
 1. Dieses neue Containerimage wird an Azure Container Registry gepusht.
 1. Ihre bei Azure Kubernetes Service bereitgestellte Anwendung wird mit dem letzten Containerimage aus der Azure Container Registry aktualisiert.
 
-Öffnen Sie auf dem Entwicklungscomputer die geklonte Anwendung mit einem Code-Editor. Öffnen Sie im Verzeichnis */azure-vote/azure-vote* die Datei mit dem Namen **config_file.cfg** . Aktualisieren Sie die vote-Werte in dieser Datei auf andere Werte als „cats“ und „dogs“, wie im folgenden Beispiel gezeigt:
+Öffnen Sie auf dem Entwicklungscomputer die geklonte Anwendung mit einem Code-Editor. Öffnen Sie im Verzeichnis */azure-vote/azure-vote* die Datei mit dem Namen **config_file.cfg**. Aktualisieren Sie die vote-Werte in dieser Datei auf andere Werte als „cats“ und „dogs“, wie im folgenden Beispiel gezeigt:
 
 ```
 # UI Configurations

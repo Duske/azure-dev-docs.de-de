@@ -4,12 +4,12 @@ description: Es wird beschrieben, wie Sie den Terraform-Zustand in Azure Storage
 ms.topic: tutorial
 ms.date: 11/07/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: a59ba1d24fc59f36e237f5be9a75981b9ae8f8ae
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: d3d2ab0ff605883926260928d3e7174a5c526781
+ms.sourcegitcommit: 5541f993c01ce356e1b0eaa8f95aea9051c3c21e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401740"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93278415"
 ---
 # <a name="tutorial-store-terraform-state-in-azure-storage"></a>Tutorial: Speichern des Terraform-Status in Azure Storage
 
@@ -43,7 +43,7 @@ az group create --name $RESOURCE_GROUP_NAME --location eastus
 az storage account create --resource-group $RESOURCE_GROUP_NAME --name $STORAGE_ACCOUNT_NAME --sku Standard_LRS --encryption-services blob
 
 # Get storage account key
-ACCOUNT_KEY=$(az storage account keys list --resource-group $RESOURCE_GROUP_NAME --account-name $STORAGE_ACCOUNT_NAME --query [0].value -o tsv)
+ACCOUNT_KEY=$(az storage account keys list --resource-group $RESOURCE_GROUP_NAME --account-name $STORAGE_ACCOUNT_NAME --query '[0].value' -o tsv)
 
 # Create blob container
 az storage container create --name $CONTAINER_NAME --account-name $STORAGE_ACCOUNT_NAME --account-key $ACCOUNT_KEY
@@ -59,10 +59,10 @@ Notieren Sie sich den Speicherkontonamen, den Containernamen und den Speicherzug
 
 Das Terraform-Zustands-Back-End wird konfiguriert, wenn Sie den Befehl `terraform init` ausführen. Zum Konfigurieren des Zustands-Back-Ends benötigen Sie folgende Daten:
 
-- **storage_account_name**: Der Name des Azure Storage-Kontos.
-- **container_name**: Der Name des Blobcontainers.
-- **key**: Der Name der Zustandsspeicherdatei, die erstellt werden soll.
-- **access_key**: Der Speicherzugriffsschlüssel.
+- **storage_account_name** : Der Name des Azure Storage-Kontos.
+- **container_name** : Der Name des Blobcontainers.
+- **key** : Der Name der Zustandsspeicherdatei, die erstellt werden soll.
+- **access_key** : Der Speicherzugriffsschlüssel.
 
 Jeder dieser Werte kann in der Terraform-Konfigurationsdatei oder über die Befehlszeile angegeben werden. Wir empfehlen, für den Wert `access_key` eine Umgebungsvariable zu verwenden. Durch die Verwendung einer Umgebungsvariablen wird verhindert, dass der Schlüssel auf den Datenträger geschrieben wird.
 

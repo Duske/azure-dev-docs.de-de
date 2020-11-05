@@ -3,14 +3,14 @@ title: Erstellen eines Application Gateway-Eingangscontrollers in Azure Kubernet
 description: Es wird beschrieben, wie Sie einen Kubernetes-Cluster mit Azure Kubernetes Service mit Application Gateway als Eingangscontroller erstellen.
 keywords: Azure DevOps Terraform Application Gateway eingehend AKS Kubernetes
 ms.topic: how-to
-ms.date: 03/09/2020
+ms.date: 10/30/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 10e52f4cc05bfa4127ee519ed265f0607d4745be
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: fe4f7b06388a7a26f61067e4a67e6b310e2a1958
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401660"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192552"
 ---
 # <a name="create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>Erstellen eines Application Gateway-Eingangscontrollers in Azure Kubernetes Service
 
@@ -33,11 +33,11 @@ In diesem Artikel lernen Sie Folgendes:
 
 - **Konfigurieren von Terraform:** Befolgen Sie die Anweisungen im Artikel [Installieren und Konfigurieren von Terraform zum Bereitstellen von VMs und sonstiger Infrastruktur in Azure](get-started-cloud-shell.md).
 
-- **Azure-Ressourcengruppe**: Sollten Sie über keine Azure-Ressourcengruppe für die Demo verfügen, [erstellen Sie eine Azure-Ressourcengruppe](/azure/azure-resource-manager/manage-resource-groups-portal#create-resource-groups). Notieren Sie sich Name und Standort der Ressourcengruppe, da diese Werte in der Demo verwendet werden.
+- **Azure-Ressourcengruppe** : Sollten Sie über keine Azure-Ressourcengruppe für die Demo verfügen, [erstellen Sie eine Azure-Ressourcengruppe](/azure/azure-resource-manager/manage-resource-groups-portal#create-resource-groups). Notieren Sie sich Name und Standort der Ressourcengruppe, da diese Werte in der Demo verwendet werden.
 
 - **Azure-Dienstprinzipal:** Befolgen Sie die Anweisungen im Abschnitt **Erstellen des Dienstprinzipals** des Artikels [Erstellen eines Azure-Dienstprinzipals mit der Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli). Notieren Sie sich die Werte für `appId`, `displayName` und `password`.
 
-- **Abrufen der Dienstprinzipalobjekt-ID**: Führen Sie den folgenden Befehl in Cloud Shell aus: `az ad sp list --display-name <displayName>`.
+- **Abrufen der Dienstprinzipalobjekt-ID** : Führen Sie den folgenden Befehl in Cloud Shell aus: `az ad sp list --display-name <displayName>`.
 
 ## <a name="create-the-directory-structure"></a>Erstellen der Verzeichnisstruktur
 
@@ -90,7 +90,7 @@ Erstellen Sie die Terraform-Konfigurationsdatei, die den Azure-Anbieter deklarie
     }
     ```
 
-1. Speichern Sie die Datei ( **&lt;STRG+S**), und beenden Sie den Editor ( **&lt;STRG+Q**).
+1. Speichern Sie die Datei ( **&lt;STRG+S** ), und beenden Sie den Editor ( **&lt;STRG+Q** ).
 
 ## <a name="define-input-variables"></a>Definieren von Eingabevariablen
 
@@ -131,42 +131,42 @@ Erstellen Sie die Terraform-Konfigurationsdatei, in der alle für diese Bereitst
     }
 
     variable "virtual_network_address_prefix" {
-      description = "Containers DNS server IP address."
+      description = "VNET address prefix"
       default     = "15.0.0.0/8"
     }
 
     variable "aks_subnet_name" {
-      description = "AKS Subnet Name."
+      description = "Subnet Name."
       default     = "kubesubnet"
     }
 
     variable "aks_subnet_address_prefix" {
-      description = "Containers DNS server IP address."
+      description = "Subnet address prefix."
       default     = "15.0.0.0/16"
     }
 
     variable "app_gateway_subnet_address_prefix" {
-      description = "Containers DNS server IP address."
+      description = "Subnet server IP address."
       default     = "15.1.0.0/16"
     }
 
     variable "app_gateway_name" {
-      description = "Name of the Application Gateway."
+      description = "Name of the Application Gateway"
       default = "ApplicationGateway1"
     }
 
     variable "app_gateway_sku" {
-      description = "Name of the Application Gateway SKU."
+      description = "Name of the Application Gateway SKU"
       default = "Standard_v2"
     }
 
     variable "app_gateway_tier" {
-      description = "Tier of the Application Gateway SKU."
+      description = "Tier of the Application Gateway tier"
       default = "Standard_v2"
     }
 
     variable "aks_name" {
-      description = "Name of the AKS cluster."
+      description = "AKS cluster name"
       default     = "aks-cluster1"
     }
     variable "aks_dns_prefix" {
@@ -185,27 +185,27 @@ Erstellen Sie die Terraform-Konfigurationsdatei, in der alle für diese Bereitst
     }
 
     variable "aks_agent_vm_size" {
-      description = "The size of the Virtual Machine."
+      description = "VM size"
       default     = "Standard_D3_v2"
     }
 
     variable "kubernetes_version" {
-      description = "The version of Kubernetes."
+      description = "Kubernetes version"
       default     = "1.11.5"
     }
 
     variable "aks_service_cidr" {
-      description = "A CIDR notation IP range from which to assign service cluster IPs."
+      description = "CIDR notation IP range from which to assign service cluster IPs"
       default     = "10.0.0.0/16"
     }
 
     variable "aks_dns_service_ip" {
-      description = "Containers DNS server IP address."
+      description = "DNS server IP address"
       default     = "10.0.0.10"
     }
 
     variable "aks_docker_bridge_cidr" {
-      description = "A CIDR notation IP for Docker bridge."
+      description = "CIDR notation IP for Docker bridge."
       default     = "172.17.0.1/16"
     }
 
@@ -233,10 +233,11 @@ Erstellen Sie die Terraform-Konfigurationsdatei, in der alle für diese Bereitst
     }
     ```
 
-1. Speichern Sie die Datei ( **&lt;STRG+S**), und beenden Sie den Editor ( **&lt;STRG+Q**).
+1. Speichern Sie die Datei ( **&lt;STRG+S** ), und beenden Sie den Editor ( **&lt;STRG+Q** ).
 
-## <a name="define-the-resources"></a>Definieren der Ressourcen 
-Erstellen Sie die Terraform-Konfigurationsdatei für die Erstellung der Ressourcen. 
+## <a name="define-the-resources"></a>Definieren der Ressourcen
+
+Erstellen Sie die Terraform-Konfigurationsdatei für die Erstellung der Ressourcen.
 
 1. Erstellen Sie in Cloud Shell eine Datei namens `resources.tf`.
 
@@ -473,7 +474,7 @@ Erstellen Sie die Terraform-Konfigurationsdatei für die Erstellung der Ressourc
 
     ```
 
-1. Speichern Sie die Datei ( **&lt;STRG+S**), und beenden Sie den Editor ( **&lt;STRG+Q**).
+1. Speichern Sie die Datei ( **&lt;STRG+S** ), und beenden Sie den Editor ( **&lt;STRG+Q** ).
 
 Der in diesem Abschnitt aufgeführte Code legt den Namen des Clusters, den Speicherort und „resource_group_name“ fest. Der Wert `dns_prefix` wird festgelegt, der Teil des vollqualifizierten Domänennamens (FQDN) ist, der für den Zugriff auf den Cluster verwendet wird.
 
@@ -531,7 +532,7 @@ Mit [Terraform-Ausgaben](https://www.terraform.io/docs/configuration/outputs.htm
     }
     ```
 
-1. Speichern Sie die Datei ( **&lt;STRG+S**), und beenden Sie den Editor ( **&lt;STRG+Q**).
+1. Speichern Sie die Datei ( **&lt;STRG+S** ), und beenden Sie den Editor ( **&lt;STRG+Q** ).
 
 ## <a name="configure-azure-storage-to-store-terraform-state"></a>Konfigurieren von Azure-Speicher zum Speichern des Terraform-Status
 
@@ -591,7 +592,7 @@ In diesem Abschnitt erfahren Sie, wie der Befehl `terraform init` verwendet wird
         
     ```
 
-1. Speichern Sie die Datei ( **&lt;STRG+S**), und beenden Sie den Editor ( **&lt;STRG+Q**).
+1. Speichern Sie die Datei ( **&lt;STRG+S** ), und beenden Sie den Editor ( **&lt;STRG+Q** ).
 
 1. Führen Sie den Befehl `terraform plan` aus, um den Terraform-Plan zu erstellen, der die Infrastrukturelemente definiert. 
 

@@ -4,13 +4,13 @@ description: In diesem Schnellstart erfahren Sie, wie Sie Ansible für die Verwa
 keywords: Ansible, Azure, DevOps, Bash, Cloud Shell, Playbook, Azure CLI
 ms.topic: quickstart
 ms.date: 09/30/2020
-ms.custom: devx-track-ansible,devx-track-cli, devx-track-azurecli
-ms.openlocfilehash: 7103c40c0b95ae07c60fcccff03ea60e9667a331
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.custom: devx-track-ansible, devx-track-azurecli
+ms.openlocfilehash: b01cf6925f19ae6dc561358546f9ee3b945cad4f
+ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688957"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93066249"
 ---
 # <a name="quickstart-configure-ansible-using-azure-cli"></a>Schnellstart: Konfigurieren von Ansible über die Azure-Befehlszeilenschnittstelle
 
@@ -45,7 +45,7 @@ Mit den folgenden Schritten wird die Erstellung eines SSH-Schlüsselpaars beschr
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 
-1. Öffnen Sie [Azure Cloud Shell](/azure/cloud-shell/overview), und wechseln Sie, falls noch nicht geschehen, zu **Bash** .
+1. Öffnen Sie [Azure Cloud Shell](/azure/cloud-shell/overview), und wechseln Sie, falls noch nicht geschehen, zu **Bash**.
 
 1. Erstellen Sie einen SSH-Schlüssel, indem Sie [ssh-keygen](https://www.ssh.com/ssh/keygen/) verwenden.
 

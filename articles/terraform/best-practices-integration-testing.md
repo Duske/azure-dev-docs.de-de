@@ -2,14 +2,14 @@
 title: 'Tutorial: Integrationstests mit Terraform und Azure'
 description: Hier erhalten Sie Informationen zu Integrationstests und erfahren, wie Sie Azure DevOps zum Konfigurieren von Continuous Integration für Terraform-Projekte verwenden.
 ms.topic: tutorial
-ms.date: 07/31/2020
+ms.date: 10/08/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 73f7c279948101af509ba5e3120b1af650f38ca1
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: bd05bfa2a07ee6cfa2f4a5dc4f4771559af9a2e7
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401730"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192562"
 ---
 # <a name="tutorial-configure-integration-tests-for-terraform-projects-in-azure"></a>Tutorial: Konfigurieren von Integrationstests für Terraform-Projekte in Azure
 
@@ -28,11 +28,11 @@ In diesem Artikel lernen Sie Folgendes:
 ## <a name="prerequisites"></a>Voraussetzungen
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-- **Azure DevOps-Organisation und -Projekt**: [Erstellen Sie eine Azure DevOps-Organisation](/azure/devops/organizations/projects/create-project), falls Sie noch keine haben.
-- **Terraform Build & Release Tasks-Erweiterung**: [Installieren Sie die Terraform Build & Release Tasks-Erweiterung](https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform) in Ihrer Azure DevOps-Organisation.
-- **Gewähren des Zugriffs auf Ihr Azure-Abonnement für Azure DevOps**: Erstellen Sie eine [Azure-Dienstverbindung](/azure/devops/pipelines/library/connect-to-azure) mit dem Namen `terraform-basic-testing-azure-connection`, damit Azure-Pipelines eine Verbindung mit Ihren Azure-Abonnements herstellen können.
-- **Installieren von Terraform**: Führen Sie [den Download und die Installation von Terraform](https://www.terraform.io/downloads.html) entsprechend den Anforderungen Ihrer Umgebung durch.
-- **Forken Sie die Testbeispiele**: Forken Sie das [Terraform-Beispielprojekt auf GitHub](https://github.com/Azure/terraform), und klonen Sie es auf Ihrem Dev/Test-Computer.
+- **Azure DevOps-Organisation und -Projekt** : [Erstellen Sie eine Azure DevOps-Organisation](/azure/devops/organizations/projects/create-project), falls Sie noch keine haben.
+- **Terraform Build & Release Tasks-Erweiterung** : [Installieren Sie die Terraform Build & Release Tasks-Erweiterung](https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform) in Ihrer Azure DevOps-Organisation.
+- **Gewähren des Zugriffs auf Ihr Azure-Abonnement für Azure DevOps** : Erstellen Sie eine [Azure-Dienstverbindung](/azure/devops/pipelines/library/connect-to-azure) mit dem Namen `terraform-basic-testing-azure-connection`, damit Azure-Pipelines eine Verbindung mit Ihren Azure-Abonnements herstellen können.
+- **Installieren von Terraform** : Führen Sie [den Download und die Installation von Terraform](https://www.terraform.io/downloads.html) entsprechend den Anforderungen Ihrer Umgebung durch.
+- **Forken Sie die Testbeispiele** : Forken Sie das [Terraform-Beispielprojekt auf GitHub](https://github.com/Azure/terraform), und klonen Sie es auf Ihrem Dev/Test-Computer.
 
 ## <a name="validate-a-local-terraform-configuration"></a>Überprüfen einer lokalen Terraform-Konfiguration
 

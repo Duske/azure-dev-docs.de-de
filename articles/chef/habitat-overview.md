@@ -5,35 +5,11 @@ keywords: Azure, Chef, Devops, virtuelle Computer, Übersicht, automatisieren, H
 ms.date: 05/15/2018
 ms.topic: article
 ms.custom: devx-track-chef
-ms.openlocfilehash: d2a834c631986b70a13c95f1403e84e82886a5f2
-ms.sourcegitcommit: 95fdc444c424f4a7d7d53437837e9532a0b897e9
+ms.openlocfilehash: 5945c83d421bf2f2a4d4e1a0f5f621832a869395
+ms.sourcegitcommit: 3c904d8d89d0cb4f13209cde3425c5307b83237c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88662941"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "93024154"
 ---
-# <a name="use-habitat-to-deploy-your-application-to-azure"></a>Verwenden von Habitat zum Bereitstellen Ihrer Anwendung in Azure
-
-[Habitat](https://www.habitat.sh/) ist ein Anwendungspaket und Laufzeitsystem, die Anwendung mit ihrer Automatisierung als Einheit der Bereitstellung gemeinsam bündelt. Dies ermöglicht ultimative Portabilität für die Anwendung, Container, was wiederum deren Bereitstellung in Containern, virtuellen Computern, auf Bare-Metal oder in PaaS gestattet, ohne dass alles neu geschrieben oder gepackt werden müsste.
-
-Dieser Artikel beschreibt die Hauptvorteile der Verwendung von Habitat.
-
-## <a name="modernize-and-move-legacy-applications"></a>Modernisieren und Verschieben von Legacyanwendungen
-
-Befreien Sie Legacyanwendungen von älteren Betriebssystemen und Middleware, indem Sie sie mit Habitat neu packen. Das resultierende Artefakt ist portierbar und lässt sich einfach auf einer Plattform in einer neueren Infrastruktur bereitstellen, z. B. virtuellen Computern oder Containern, die in der Cloud ausgeführt werden.
-
-## <a name="accelerate-container-adoption"></a>Beschleunigen der Containereinführung
-
-Habitat löst die kontinuierliche Bereitstellung komplexer, Microservice-orientierter Anwendungen durch die genaue Darstellung von Laufzeitabhängigkeiten. Gehen Sie über einfache Blau/Grün-Bereitstellung einzelner Komponenten hinaus, und entwerfen Sie die Architektur für ein anspruchsvolles Bereitstellungsverhalten, ohne komplexe Orchestrierungsflows generieren zu müssen.
-
-## <a name="run-any-application-anywhere"></a>Ausführen einer beliebigen Anwendung – und zwar überall
-
-Mit Habitat können Anwendungen unverändert in allen Laufzeitumgebungen ausgeführt werden. Dies umfasst alles: von Bare-Metal-Computern und virtuellen Computern bis hin zu Containern (z. B. Docker), Clusterverwaltungssystemen (z. B. Mesosphere oder Kubernetes) und PaaS-Systemen (z. B. VMware Tanzu Application Service (vormals Pivotal Cloud Foundry)).
-
-## <a name="integrate-into-the-chef-devops-workflow"></a>Integration in den Chef DevOps-Workflow
-
-Das Habitat-Projekt ist eins der Open Source-Projekte von Chef Software, das große Unterstützung von der Community erhält. Habitat nutzt die weitreichenden Erfahrungen von Chef mit Infrastrukturautomatisierung, um beispiellose Automatisierungsmöglichkeiten für Anwendungen zu schaffen. Chef bietet kommerzielle Unterstützung für Habitat und erzeugt eine nahtlose Integration zwischen Habitat und Chef Automate, um den Anwendungsfreigabezyklus von der Entwicklung bis zur Bereitstellung vollständig zu automatisieren.
-
-## <a name="next-steps"></a>Nächste Schritte
-
-* [Habitat testen](https://www.habitat.sh/learn/)
+[!INCLUDE [chef-software-redirect.md](includes/chef-software-redirect.md)]
