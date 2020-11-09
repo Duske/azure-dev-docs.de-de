@@ -6,18 +6,18 @@ documentationcenter: java
 author: panli
 manager: kevinzha
 ms.author: edburns
-ms.date: 10/10/2020
+ms.date: 10/23/2020
 ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: 7cd477bfa511f44cf8dfacbd7d10e0f6299ad4f5
-ms.sourcegitcommit: 3d3ee59f73c966da7df65bada49e059d02e74b91
+ms.openlocfilehash: aa2d60f969895acbcb56f74e909993ceb9b0d7d5
+ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92898778"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93066301"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>Tutorial: Schützen einer Java-Web-App mithilfe von Spring Boot Starter für Azure Active Directory B2C
 
@@ -88,15 +88,15 @@ In diesem Tutorial lernen Sie Folgendes:
 
 1. Melden Sie sich bei <https://portal.azure.com> an.
 
-2. Wählen Sie **Ressource erstellen** und **Identität** und dann **Alle anzeigen** aus. Suchen Sie nach **Azure Active Directory B2C** .
+2. Wählen Sie **Ressource erstellen** und **Identität** und dann **Alle anzeigen** aus. Suchen Sie nach **Azure Active Directory B2C**.
 
     ![Erstellen einer neuen Azure Active Directory B2C-Instanz](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/az-1-n.png)
 
-3. Klicken Sie auf **Erstellen** .
+3. Klicken Sie auf **Erstellen**.
 
     ![Abrufen des Namens Ihres B2C-Mandanten](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/az-5-n.png)
 
-4. Wählen Sie **Neuen Azure AD B2C-Mandanten erstellen** .
+4. Wählen Sie **Neuen Azure AD B2C-Mandanten erstellen**.
 
     ![Erstellen einer neuen Azure Active Directory-Instanz](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/az-2-n.png)
 
@@ -110,29 +110,31 @@ In diesem Tutorial lernen Sie Folgendes:
 
 ### <a name="add-an-application-registration-for-your-spring-boot-app"></a>Hinzufügen einer Anwendungsregistrierung für Ihre Spring Boot-App
 
-1. Wählen Sie im Bereich **Verwalten** auf der linken Seite **Anwendungen** aus, und wählen Sie dann **Hinzufügen** aus.
+1. Wählen Sie auf der linken Seite unter **Verwalten** die Option **App-Registrierungen** und dann **Neue Registrierung** aus.
 
-    ![Hinzufügen einer neuen App-Registrierung](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c1-n.png)
+   ![Screenshot: Fenster mit Azure AD B2C-App-Registrierungen im Azure-Portal](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c1-n.png)
 
-2. Geben Sie im Feld **Name** den oben genannten Wert für **Gruppe** ein, und legen Sie das Steuerelement **include web app/web API** auf **Ja** fest.
+2. Geben Sie im Feld **Name** den oben ermittelten Wert für **Gruppe** ein. Legen Sie anschließend den **Umleitungs-URI (empfohlen)** auf *http://localhost:8080/home* fest, und wählen Sie die Option **Registrieren** aus.
 
-3. Legen Sie **Antwort-URL** auf `http://localhost:8080/home` fest.
+   ![Konfigurieren einer neuen App-Registrierung](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c4-n.png)
 
-4. Behalten Sie für die anderen Felder die Standardwerte bei.
+3. Wählen Sie im Bereich **Verwalten** die Option **Anwendungen (Legacy)** und dann den von Ihnen erstellten Anwendungsnamen aus.
 
-5. Klicken Sie auf **Erstellen** . Es kann einen Moment dauern, bis die Anwendung angezeigt wird.
+   ![Aktualisieren der Anwendung](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c5-n.png)
 
-    ![Hinzufügen des Umleitungs-URIs der Anwendung](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c2-n.png)
+4. Wählen Sie **Eigenschaften** aus, und legen Sie **Impliziten Ablauf zulassen** auf **Ja** fest.
+   
+5. Behalten Sie für die anderen Felder die Standardwerte bei.
+    
+6. Wählen Sie **Speichern** aus. Es kann einen Moment dauern, bis die Anwendung bereit ist.
+    
+   ![Aktualisieren des App-Schlüssels](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c6-n.png)
 
-6. Wählen Sie **Übersicht** und dann **Anwendungen** aus.
+7. Wählen Sie im Bereich **Allgemein** die Option **Schlüssel** und dann **Schlüssel generieren** aus.
 
-7. Wählen Sie in der Tabelle der Anwendungen die Zeile mit dem Namen Ihres Projekts aus.
+8. Legen Sie **App-Schlüssel** auf den Wert fest, den Sie oben für **Gruppe** eingegeben haben.
 
-8. Wählen Sie im Bereich **Allgemein** die Option „Schlüssel“ aus, und wählen Sie dann **Schlüssel generieren** aus.
-
-9. Legen Sie **App-Schlüssel** auf `yourGroupIdkey`fest, und ersetzen Sie `yourGroupId` durch den Wert, den Sie oben für **Gruppe** eingegeben haben.
-
-10. Wählen Sie **Speichern** aus. Warten Sie, bis der Schlüssel im Abschnitt „App-Schlüssel“ angezeigt wird, und kopieren Sie ihn dann zur späteren Verwendung in diesem Artikel.
+9. Wählen Sie **Speichern** aus. Warten Sie, bis der Schlüssel im Abschnitt „App-Schlüssel“ angezeigt wird, und kopieren Sie ihn dann zur späteren Verwendung in diesem Artikel.
 
     > [!NOTE]
     > Wenn Sie den Abschnitt **Schlüssel** verlassen und anschließend zurückkehren, wird der Schlüsselwert nicht angezeigt. In diesem Fall müssen Sie einen weiteren Schlüssel erstellen und ihn zur späteren Verwendung kopieren.
@@ -140,11 +142,11 @@ In diesem Tutorial lernen Sie Folgendes:
 
     ![Erstellen des Geheimnisses](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c3-n.png)
 
-11. Wählen Sie **Übersicht** .
+10. Wählen Sie **Übersicht**.
 
-12. Wählen Sie im linken Bereich im Abschnitt **Richtlinien** die Option **Benutzerflow** aus, und wählen Sie dann **Neuer Benutzerflow** aus.
+11. Wählen Sie im linken Bereich im Abschnitt **Richtlinien** die Option **Benutzerflow** aus, und wählen Sie dann **Neuer Benutzerflow** aus.
 
-13. Sie verlassen jetzt dieses Tutorial, führen ein weiteres Tutorial aus und kehren zu diesem Tutorial zurück, wenn Sie damit fertig sind. Im Folgenden finden Sie einige Punkte, die Sie beachten sollten, wenn Sie das andere Tutorial durcharbeiten.
+12. Sie verlassen jetzt dieses Tutorial, führen ein weiteres Tutorial aus und kehren zu diesem Tutorial zurück, wenn Sie damit fertig sind. Im Folgenden finden Sie einige Punkte, die Sie beachten sollten, wenn Sie das andere Tutorial durcharbeiten.
 
     * Beginnen Sie mit dem Schritt, in dem Sie aufgefordert werden, **Neuer Benutzerflow** auszuwählen.
     * Wenn sich dieses Tutorial auf `webapp1`bezieht, verwenden Sie stattdessen den Wert, den Sie für **Gruppe** eingegeben haben.
@@ -190,7 +192,7 @@ Nachdem Sie nun die Azure AD B2C-Instanz und einige Benutzerflows erstellt haben
 
     Verwenden Sie für `thymeleaf-extras-springsecurity5` die neueste verfügbare Version. Möglicherweise können Sie [mvnrepository.com](https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity5) verwenden, um diese Angabe nachzuschlagen. Zum Zeitpunkt der Erstellung dieses Artikels ist die neueste Version `3.0.4.RELEASE`.
 
-4. Speichern und schließen Sie die Datei *pom.xml* .
+4. Speichern und schließen Sie die Datei *pom.xml*.
 
     * Überprüfen Sie, ob ihre Abhängigkeiten richtig sind, indem Sie `mvn -DskipTests clean install` ausführen. Wenn `BUILD SUCCESS` nicht angezeigt wird, beheben und lösen Sie das Problem, bevor Sie fortfahren.
 
@@ -236,7 +238,7 @@ Nachdem Sie nun die Azure AD B2C-Instanz und einige Benutzerflows erstellt haben
     >
     > Die Datei *application.yml* ist im [Azure Active Directory B2C Spring Boot-Beispiel](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-active-directory-b2c-oidc/src/main/resources/application.yml) auf GitHub verfügbar.
 
-7. Speichern und schließen Sie die Datei *application.yml* .
+7. Speichern und schließen Sie die Datei *application.yml*.
 
 8. Erstellen Sie einen Ordner mit dem Namen *controller* in *src/main/java/<yourGroupId>/<yourGroupId>* , und ersetzen Sie `<yourGroupId>` durch den Wert, den Sie für **Gruppe** eingegeben haben.
 

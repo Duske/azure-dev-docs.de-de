@@ -4,12 +4,12 @@ description: Es wird beschrieben, wie Sie mit Terraform eine Azure-VM-Skalierung
 ms.topic: how-to
 ms.date: 11/07/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: d261a5c9ca76dd66c5c79333186079b92ea54bae
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: d157a9aa6b59281dc34f172fb58eedd87f06ffae
+ms.sourcegitcommit: 5541f993c01ce356e1b0eaa8f95aea9051c3c21e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401630"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93278445"
 ---
 # <a name="create-an-azure-virtual-machine-scale-set-using-terraform"></a>Erstellen einer Azure-VM-Skalierungsgruppe unter Verwendung von Terraform
 
@@ -31,9 +31,9 @@ In diesem Artikel werden folgende Vorgehensweisen behandelt:
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-- **Installieren von Terraform**: Befolgen Sie die Anweisungen im Artikel [Installieren und Konfigurieren von Terraform zum Bereitstellen von VMs und sonstiger Infrastruktur in Azure](get-started-cloud-shell.md).
+- **Installieren von Terraform** : Befolgen Sie die Anweisungen im Artikel [Installieren und Konfigurieren von Terraform zum Bereitstellen von VMs und sonstiger Infrastruktur in Azure](get-started-cloud-shell.md).
 
-- **Erstellen eines SSH-Schlüsselpaars**: Weitere Informationen finden Sie unter [Erstellen und Verwenden eines SSH-Schlüsselpaars (öffentlich und privat) für virtuelle Linux-Computer in Azure](/azure/virtual-machines/linux/mac-create-ssh-keys).
+- **Erstellen eines SSH-Schlüsselpaars** : Weitere Informationen finden Sie unter [Erstellen und Verwenden eines SSH-Schlüsselpaars (öffentlich und privat) für virtuelle Linux-Computer in Azure](/azure/virtual-machines/linux/mac-create-ssh-keys).
 
 ## <a name="create-the-directory-structure"></a>Erstellen der Verzeichnisstruktur
 
@@ -94,7 +94,7 @@ Führen Sie in der Azure Cloud Shell-Instanz die folgenden Schritte aus:
    }
    ```
 
-1. Speichern Sie die Datei ( **&lt;STRG+S**), und beenden Sie den Editor ( **&lt;STRG+Q**).
+1. Speichern Sie die Datei ( **&lt;STRG+S** ), und beenden Sie den Editor ( **&lt;STRG+Q** ).
 
 ## <a name="create-the-output-definitions-file"></a>Erstellen der Ausgabedefinitionsdatei
 In diesem Abschnitt erstellen Sie die Datei, die die Ausgabe nach der Bereitstellung definiert.
@@ -116,7 +116,7 @@ Führen Sie in der Azure Cloud Shell-Instanz die folgenden Schritte aus:
     }
    ```
 
-1. Speichern Sie die Datei ( **&lt;STRG+S**), und beenden Sie den Editor ( **&lt;STRG+Q**).
+1. Speichern Sie die Datei ( **&lt;STRG+S** ), und beenden Sie den Editor ( **&lt;STRG+Q** ).
 
 ## <a name="define-the-network-infrastructure-in-a-template"></a>Definieren der Netzwerkinfrastruktur in einer Vorlage
 In diesem Abschnitt erstellen Sie in einer neuen Azure-Ressourcengruppe die folgende Netzwerkinfrastruktur:
@@ -174,7 +174,7 @@ Führen Sie in der Azure Cloud Shell-Instanz die folgenden Schritte aus:
    }
    ```
 
-1. Speichern Sie die Datei ( **&lt;STRG+S**), und beenden Sie den Editor ( **&lt;STRG+Q**).
+1. Speichern Sie die Datei ( **&lt;STRG+S** ), und beenden Sie den Editor ( **&lt;STRG+Q** ).
 
 ## <a name="provision-the-network-infrastructure"></a>Bereitstellen der Netzwerkinfrastruktur
 Führen Sie unter Verwendung der Azure Cloud Shell-Instanz in dem Verzeichnis, in dem Sie die Konfigurationsdateien (TF-Dateien) erstellt haben, die folgenden Schritte aus:
@@ -323,11 +323,7 @@ Führen Sie in Cloud Shell die folgenden Schritte aus:
    }
    ```
 
-1. Speichern Sie die Datei, und geben Sie den folgenden Befehl ein, um den vi-Editor zu schließen:
-
-    ```bash
-    :wq
-    ```
+1. Speichern Sie die Datei ( **&lt;STRG+S** ), und beenden Sie den Editor ( **&lt;STRG+Q** ).
 
 1. Erstellen Sie eine Datei mit dem Namen `web.conf`. Sie dient als Cloud-Init-Konfiguration für die virtuellen Computer, die zur Skalierungsgruppe gehören.
 
@@ -343,11 +339,7 @@ Führen Sie in Cloud Shell die folgenden Schritte aus:
     - nginx
    ```
 
-1. Speichern Sie die Datei, und geben Sie den folgenden Befehl ein, um den vi-Editor zu schließen:
-
-     ```bash
-     :wq
-     ```
+1. Speichern Sie die Datei ( **&lt;STRG+S** ), und beenden Sie den Editor ( **&lt;STRG+Q** ).
 
 1. Öffnen Sie die `variables.tf`-Konfigurationsdatei.
 
@@ -355,7 +347,7 @@ Führen Sie in Cloud Shell die folgenden Schritte aus:
     code variables.tf
     ```
 
-1. Gehen Sie ans Ende der Datei und drücken Sie die A-TASTE, um den Anfügemodus zu starten.
+1. Navigieren Sie zum Ende der Datei.
 
 1. Passen Sie die Bereitstellung an, indem Sie am Ende der Datei den folgenden Code einfügen:
 
@@ -375,7 +367,7 @@ Führen Sie in Cloud Shell die folgenden Schritte aus:
     }
     ```
 
-1. Speichern Sie die Datei ( **&lt;STRG+S**), und beenden Sie den Editor ( **&lt;STRG+Q**).
+1. Speichern Sie die Datei ( **&lt;STRG+S** ), und beenden Sie den Editor ( **&lt;STRG+Q** ).
 
 1. Erstellen Sie einen Terraform-Plan, um die Bereitstellung der VM-Skalierungsgruppe zu visualisieren. (Hierbei ist die Angabe eines Kennworts und eines Speicherorts für Ihre Ressourcen erforderlich.)
 
@@ -398,7 +390,7 @@ Führen Sie in Cloud Shell die folgenden Schritte aus:
     ![Ergebnisse des Navigierens zum FQDN](./media/create-vm-scaleset-network-disks-hcl/browser-fqdn.png)
 
 ## <a name="add-an-ssh-jumpbox"></a>Hinzufügen einer SSH-Jumpbox
-Bei einer SSH-*Jumpbox* handelt es sich um einen Einzelserver, durch den Sie sozusagen „springen“, um auf andere Server im Netzwerk zuzugreifen. In diesem Schritt konfigurieren Sie die folgenden Ressourcen:
+Bei einer SSH- *Jumpbox* handelt es sich um einen Einzelserver, durch den Sie sozusagen „springen“, um auf andere Server im Netzwerk zuzugreifen. In diesem Schritt konfigurieren Sie die folgenden Ressourcen:
 
 - Eine Netzwerkschnittstelle (oder Jumpbox), die mit dem gleichen Subnetz verbunden ist wie die VM-Skalierungsgruppe
 
@@ -410,7 +402,7 @@ Bei einer SSH-*Jumpbox* handelt es sich um einen Einzelserver, durch den Sie soz
    code vmss.tf
    ```
 
-1. Gehen Sie ans Ende der Datei und drücken Sie die A-TASTE, um den Anfügemodus zu starten.
+1. Navigieren Sie zum Ende der Datei.
 
 1. Fügen Sie am Ende der Datei den folgenden Code hinzu:
 
@@ -473,6 +465,7 @@ Bei einer SSH-*Jumpbox* handelt es sich um einen Einzelserver, durch den Sie soz
     tags = var.tags
    }
    ```
+1. Speichern Sie die Datei ( **&lt;STRG+S** ), und beenden Sie den Editor ( **&lt;STRG+Q** ).
 
 1. Öffnen Sie die `output.tf`-Konfigurationsdatei.
 
@@ -480,7 +473,7 @@ Bei einer SSH-*Jumpbox* handelt es sich um einen Einzelserver, durch den Sie soz
    code output.tf
    ```
 
-1. Gehen Sie ans Ende der Datei und drücken Sie die A-TASTE, um den Anfügemodus zu starten.
+1. Navigieren Sie zum Ende der Datei.
 
 1. Fügen Sie am Ende der Datei den folgenden Code hinzu, um nach Abschluss der Bereitstellung den Hostnamen der Jumpbox anzuzeigen:
 
@@ -490,7 +483,7 @@ Bei einer SSH-*Jumpbox* handelt es sich um einen Einzelserver, durch den Sie soz
    }
    ```
 
-1. Speichern Sie die Datei ( **&lt;STRG+S**), und beenden Sie den Editor ( **&lt;STRG+Q**).
+1. Speichern Sie die Datei ( **&lt;STRG+S** ), und beenden Sie den Editor ( **&lt;STRG+Q** ).
 
 1. Stellen Sie die Jumpbox bereit.
 
@@ -498,7 +491,7 @@ Bei einer SSH-*Jumpbox* handelt es sich um einen Einzelserver, durch den Sie soz
    terraform apply
    ```
 
-**Hinweise**:
+**Hinweise** :
 
 - Die Anmeldung mit einem Kennwort ist für die bereitgestellte Jumpbox und für die bereitgestellte VM-Skalierungsgruppe deaktiviert. Melden Sie sich mit SSH an, um auf die virtuellen Computer zuzugreifen.
 
