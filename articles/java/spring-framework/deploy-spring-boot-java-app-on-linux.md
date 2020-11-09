@@ -3,18 +3,18 @@ title: Bereitstellen einer Spring Boot-Web-App für Linux in Azure App Service
 description: In diesem Tutorial werden die Schritte zum Bereitstellen einer Spring Boot-Anwendung als Linux-Webanwendung in Microsoft Azure erläutert.
 services: azure app service
 documentationcenter: java
-ms.date: 10/06/2020
+ms.date: 10/14/2020
 ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: ec24ba4ab6b10bd615af06c2cdbd37397d0b2a83
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: c0baf7ee7b1b672d7eb17bc3a689cc7d58401834
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846451"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192492"
 ---
 # <a name="deploy-a-spring-boot-application-to-linux-on-azure-app-service"></a>Bereitstellen einer Spring Boot-Anwendung für Linux in Azure App Service
 
@@ -27,7 +27,7 @@ Zur Durchführung der Schritte in diesem Tutorial benötigen Sie Folgendes:
 * Ein Azure-Abonnement – wenn Sie noch kein Azure-Abonnement besitzen, können Sie Ihre [MSDN-Abonnentenvorteile] anwenden oder sich für ein [Kostenloses Azure-Konto] registrieren
 * Die [Azure-Befehlszeilenschnittstelle (CLI)]
 * Ein unterstütztes Java Development Kit (JDK). Weitere Informationen zu den für die Entwicklung in Azure verfügbaren JDKs finden Sie unter <https://aka.ms/azure-jdks>.
-* Das Erstellungstool Apache [Maven] (Version 3)
+* Erstellungstool [Apache Maven] (Version 3)
 * Einen [Git-Client]
 * Einen [Docker]-Client
 
@@ -93,17 +93,17 @@ Die folgende Anleitung führt Sie durch die Verwendung des Azure-Portals zur Ers
 
    Nachdem Sie sich im Azure-Portal bei Ihrem Konto angemeldet haben, führen Sie die Schritte im Artikel [Erstellen einer privaten Docker-Containerregistrierung im Azure-Portal] aus, die im Folgenden aus Gründen der Zweckmäßigkeit umschrieben werden.
 
-1. Klicken Sie auf das Menüsymbol für **+ Neu**, auf **Container** und anschließend auf **Azure Container Registry**.
+1. Klicken Sie auf das Menüsymbol für **Neu** , und wählen Sie die Option **Container** und anschließend **Azure Container Registry** aus.
 
    ![Erstellen einer neuen Azure-Containerregistrierung][AR01]
 
-1. Wenn die Seite **Containerregistrierung erstellen** angezeigt wird, geben Sie Werte für **Registrierungsname**, **Abonnement**, **Ressourcengruppe** und **Standort** ein. Klicken Sie dann auf **Erstellen**.
+1. Wenn die Seite **Containerregistrierung erstellen** angezeigt wird, geben Sie Werte für **Registrierungsname** , **Abonnement** , **Ressourcengruppe** und **Standort** ein. Klicken Sie anschließend auf **Erstellen**.
 
    ![Konfigurieren der Einstellungen für die Azure-Containerregistrierung][AR03]
 
 ## <a name="configure-maven-to-build-image-to-your-azure-container-registry"></a>Konfigurieren von Maven für die Erstellung eines Images für Ihre Azure Container Registry-Instanz
 
-1. Navigieren Sie zu dem abgeschlossenen Projektverzeichnis für Ihre Spring Boot-Anwendung (z. B. „*C:\SpringBoot\gs-spring-boot-docker\complete*“ oder „ */users/robert/SpringBoot/gs-spring-boot-docker/complete*“), und öffnen Sie die Datei *pom.xml* mit einem Texteditor.
+1. Navigieren Sie zu dem abgeschlossenen Projektverzeichnis für Ihre Spring Boot-Anwendung (z. B. „ *C:\SpringBoot\gs-spring-boot-docker\complete* “ oder „ */users/robert/SpringBoot/gs-spring-boot-docker/complete* “), und öffnen Sie die Datei *pom.xml* mit einem Texteditor.
 
 1. Aktualisieren Sie die Auflistung `<properties>` in der Datei *pom.xml* mit der aktuellen Version von [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin), dem Wert des Anmeldeservers und den Zugriffseinstellungen für Ihre Azure Container Registry-Instanz aus dem vorherigen Abschnitt dieses Tutorials. Beispiel:
 
@@ -152,7 +152,7 @@ Die folgende Anleitung führt Sie durch die Verwendung des Azure-Portals zur Ers
 
 1. Navigieren Sie zum [Azure portal], und melden Sie sich an.
 
-2. Klicken Sie auf das Menüsymbol für **+ Ressource erstellen** > **Compute** > **Web-App für Container**.
+2. Klicken Sie auf das Menüsymbol für **Ressource erstellen** , und wählen Sie die Option **Compute** und dann **Web-App für Container** aus.
    
    ![Erstellen einer neuen Web-App im Azure-Portal][LX01]
 
@@ -170,7 +170,7 @@ Die folgende Anleitung führt Sie durch die Verwendung des Azure-Portals zur Ers
 
    * Wählen Sie **Region** aus.
 
-   * Wählen Sie unter **Linux-Plan** einen vorhandenen **App Service-Plan** aus. Klicken Sie alternativ auf **Neu erstellen**, um einen neuen App Service-Plan zu erstellen.
+   * Wählen Sie unter **Linux-Plan** einen vorhandenen **App Service-Plan** aus. Wählen Sie alternativ die Option **Neu erstellen** aus, um einen neuen App Service-Plan zu erstellen.
 
    * Klicken Sie auf **Weiter: Docker**.
 
@@ -180,23 +180,23 @@ Die folgende Anleitung führt Sie durch die Verwendung des Azure-Portals zur Ers
 
    * Wählen Sie **Einzelner Container** aus.
 
-   * **Registrierung**: Wählen Sie Ihren Container aus, etwa *wingtiptoysregistry*.
+   * **Registrierung** : Wählen Sie Ihren Container aus, etwa *wingtiptoysregistry*.
 
-   * **Image**: Wählen Sie das zuvor erstellte Image aus, etwa *gs-spring-boot-docker*.
+   * **Image** : Wählen Sie das zuvor erstellte Image aus, etwa *gs-spring-boot-docker*.
 
    * **Tag:** Wählen Sie das Tag für das Image aus, etwa *latest*.
 
-   * **Startbefehl**: Lassen Sie dieses Feld leer, da das Image bereits den Startbefehl enthält.
+   * **Startbefehl** : Lassen Sie dieses Feld leer, da das Image bereits den Startbefehl enthält.
 
-   Nachdem Sie alle oben genannten Informationen eingegeben haben, klicken Sie auf **Bewerten + erstellen**.
+   Nachdem Sie alle oben genannten Informationen eingegeben haben, wählen Sie **Bewerten + erstellen** aus.
 
    ![Wählen Sie abschließend „Überprüfen und erstellen“ aus.][LX02-A]
 
    * Klicken Sie auf **Überprüfen + erstellen**.
 
-Prüfen Sie die Informationen, und klicken Sie auf **Erstellen**.
+Überprüfen Sie die Informationen, und wählen Sie **Erstellen** aus.
 
-Klicken Sie nach Abschluss der Bereitstellung auf **Zu Ressource wechseln**.  Auf der Bereitstellungsseite wird die URL für den Zugriff auf die Anwendung angezeigt.
+Wählen Sie nach Abschluss der Bereitstellung die Option **Zu Ressourcengruppe wechseln**.  Auf der Bereitstellungsseite wird die URL für den Zugriff auf die Anwendung angezeigt.
 
    ![Abrufen der Bereitstellungs-URL][LX02-B]
 
@@ -206,13 +206,13 @@ Klicken Sie nach Abschluss der Bereitstellung auf **Zu Ressource wechseln**.  Au
 >
 > 1. Navigieren Sie zum [Azure portal], und melden Sie sich an.
 >
-> 2. Klicken Sie auf das Symbol für **Web-Apps**, und wählen Sie auf der Seite **App Services** Ihre Web-App aus.
+> 2. Wählen Sie das Symbol für **Web-Apps** und auf der Seite **App Services** Ihre App aus.
 >
-> 3. Klicken Sie im Navigationsbereich auf der linken Seite auf **Konfiguration**.
+> 3. Wählen Sie im Navigationsbereich auf der linken Seite die Option **Konfiguration** aus.
 >
 > 4. Fügen Sie im Abschnitt **Anwendungseinstellungen** eine neue Einstellung mit dem Namen **WEBSITES_PORT** hinzu, und geben Sie Ihre benutzerdefinierte Portnummer für den Wert ein.
 >
-> 5. Klicken Sie auf **OK**. Klicken Sie anschließend auf **Speichern**.
+> 5. Klicken Sie auf **OK**. Klicken Sie dann auf **Speichern**.
 >
 > ![Speichern einer benutzerdefinierten Portnummer im Azure-Portal][LX03]
 
@@ -236,6 +236,10 @@ The embedded Tomcat server in the sample Spring Boot application is configured t
 
 1. Save and close the *application.yml* file.
 -->
+
+## <a name="clean-up-resources"></a>Bereinigen von Ressourcen
+
+Verwenden Sie das [Azure-Portal](https://portal.azure.com/), um die in diesem Artikel erstellten Ressourcen zu löschen, wenn Sie sie nicht mehr benötigen, um unerwartete Gebühren zu vermeiden.
 
 ## <a name="next-steps"></a>Nächste Schritte
 

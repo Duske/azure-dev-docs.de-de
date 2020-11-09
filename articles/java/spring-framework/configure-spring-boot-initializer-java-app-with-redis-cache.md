@@ -3,17 +3,17 @@ title: 'Erstellen einer Spring Boot Initializer-App: Redis Cache'
 description: Konfigurieren Sie eine mit Spring Initializr erstellte Spring Boot-Anwendung für die Verwendung von Redis in der Cloud mit Azure Redis Cache.
 services: redis-cache
 documentationcenter: java
-ms.date: 10/06/2020
+ms.date: 10/13/2020
 ms.service: cache
 ms.tgt_pltfrm: cache-redis
 ms.topic: conceptual
 ms.custom: devx-track-java
-ms.openlocfilehash: cd8dd2a841a1ccf43f18374f34963c23f1369658
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: 7d8ee875339adb741fbddeba6d4328eb22cd3e46
+ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846601"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93066273"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-redis-in-the-cloud-with-azure-redis-cache"></a>Konfigurieren einer Spring Boot Initializer-App für die Verwendung von Redis in der Cloud mit Azure Redis Cache
 
@@ -31,16 +31,16 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Navigieren Sie zu <https://start.spring.io/>.
 
-1. Geben Sie an, dass Sie ein **Maven**-Projekt mit **Java** generieren möchten, und geben Sie die Namen für **Gruppe** und **Artefakt** für Ihre Anwendung ein.
+1. Geben Sie an, dass Sie ein **Maven** -Projekt mit **Java** generieren möchten, wählen Sie Java-Version **8** aus, und geben Sie die Namen für **Gruppe** und **Artefakt** für Ihre Anwendung ein.
 
-1. Fügen Sie Abhängigkeiten für den Abschnitt **Spring Web** hinzu, und aktivieren Sie das Kontrollkästchen für **Web**. Scrollen Sie dann nach unten zum Abschnitt **NoSQL**, und aktivieren Sie das Kontrollkästchen für **Spring Data Reactive Redis** (Spring Data Redis (reaktiv)). 
+1. Fügen Sie Abhängigkeiten für den Abschnitt **Spring Web** hinzu, und aktivieren Sie das Kontrollkästchen für **Web**. Scrollen Sie dann nach unten zum Abschnitt **NoSQL** , und aktivieren Sie das Kontrollkästchen für **Spring Data Reactive Redis** (Spring Data Redis (reaktiv)). 
 1. Klicken Sie am unteren Seitenrand auf die Schaltfläche **Projekt generieren**.
 
    ![Grundlegende Spring Initializr-Optionen][SI01]
 
    > [!NOTE]
    >
-   > Spring Initializr verwendet zur Erstellung des Paketnamens die Namen für **Gruppe** und **Artefakt**, z. B. *com.contoso.myazuredemo*.
+   > Spring Initializr verwendet zur Erstellung des Paketnamens die Namen für **Gruppe** und **Artefakt** , z. B. *com.contoso.myazuredemo*.
    >
 
 1. Laden Sie das Projekt nach entsprechender Aufforderung unter einem Pfad auf dem lokalen Computer herunter.
@@ -55,14 +55,14 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>, und klicken Sie auf **+Neu**.
 
-1. Klicken Sie auf **Datenbank**, und klicken Sie dann auf **Redis Cache**.
+1. Klicken Sie auf **Datenbank** , und klicken Sie dann auf **Redis Cache**.
 
    ![Auswählen von Redis Cache im Azure-Portal][AZ02]
 
 1. Geben Sie auf der Seite **Neuer Redis Cache** Folgendes an:
 
    * Geben Sie den **DNS-Namen** für den Cache ein.
-   * Geben Sie Ihre Informationen zu **Abonnement**, **Ressourcengruppe**, **Standort** und **Tarif** an.
+   * Geben Sie Ihre Informationen zu **Abonnement** , **Ressourcengruppe** , **Standort** und **Tarif** an.
    * Wählen Sie für dieses Tutorial **Unblock port 6379** aus.
 
    > [!NOTE]
@@ -74,17 +74,17 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
    ![Erstellen des Cache im Azure-Portal][AZ03]
 
-1. Nachdem Ihr Cache abgeschlossen wurde, wird er auf Ihrem Azure-**Dashboard** sowie auf den Seiten **Alle Ressourcen** und **Redis-Caches** aufgeführt. Sie können an jedem dieser Orte auf Ihren Cache klicken, um die Seite „Eigenschaften“ für den Cache zu öffnen.
+1. Nachdem Ihr Cache abgeschlossen wurde, wird er auf Ihrem Azure- **Dashboard** sowie auf den Seiten **Alle Ressourcen** und **Redis-Caches** aufgeführt. Sie können an jedem dieser Orte auf Ihren Cache klicken, um die Seite „Eigenschaften“ für den Cache zu öffnen.
 
    ![Im Azure-Portal bereitgestellte Ressourcen][AZ04]
 
-1. Wenn die Seite mit der Liste der Eigenschaften für den Cache angezeigt wird, klicken Sie auf **Zugriffsschlüssel**, und kopieren Sie die Zugriffsschlüssel für Ihren Cache.
+1. Wenn die Seite mit der Liste der Eigenschaften für den Cache angezeigt wird, klicken Sie auf **Zugriffsschlüssel** , und kopieren Sie die Zugriffsschlüssel für Ihren Cache.
 
    ![Kopieren der Zugriffsschlüssel im Abschnitt „Zugriffsschlüssel“][AZ05]
 
 ## <a name="configure-your-custom-spring-boot-to-use-your-redis-cache"></a>Konfigurieren Ihres benutzerdefinierten Spring Boot für die Verwendung von Redis Cache
 
-1. Suchen Sie die Datei *application.properties* im *Ressourcen*-Verzeichnis Ihrer App, oder erstellen Sie diese Datei, wenn sie noch nicht vorhanden ist.
+1. Suchen Sie die Datei *application.properties* im *Ressourcen* -Verzeichnis Ihrer App, oder erstellen Sie diese Datei, wenn sie noch nicht vorhanden ist.
 
    ![Suchen der Datei „application.properties“][RE01]
 
@@ -131,7 +131,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
    `/users/example/home/myazuredemo/src/main/java/com/contoso/myazuredemo/controller`
 
-1. Erstellen Sie eine neue Datei mit dem Namen *HelloController.java* im *controller*-Ordner. Öffnen Sie die Datei in einem Text-Editor, und fügen Sie den folgenden Code hinzu:
+1. Erstellen Sie eine neue Datei mit dem Namen *HelloController.java* im *controller* -Ordner. Öffnen Sie die Datei in einem Text-Editor, und fügen Sie den folgenden Code hinzu:
 
    ```java
    package com.contoso.myazuredemo;

@@ -7,12 +7,12 @@ ms.author: seal
 ms.date: 08/21/2019
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: efccf07733cb4ae509753f5e384453a46e2bf678
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 1d849ed17a2201be1595b6bc80e613691ac778c8
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379214"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192452"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-service-bus-jms"></a>Verwenden von Spring Boot-Starters für Azure Service Bus JMS
 
@@ -42,11 +42,11 @@ Die folgenden Voraussetzungen müssen für diesen Artikel erfüllt sein:
 
 1. Wenn Sie noch keine Service Bus-Warteschlange oder -Thema konfiguriert haben, verwenden Sie das Azure-Portal, um [eine Service Bus-Warteschlange zu erstellen](/azure/service-bus-messaging/service-bus-quickstart-portal) oder [ein Service Bus-Thema zu erstellen](/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal). Stellen Sie sicher, dass der Namespace die Anforderungen des vorherigen Schritts erfüllt. Notieren Sie sich auch die Verbindungszeichenfolge im Namespace, da Sie sie für die Test-App dieses Tutorials benötigen.
 
-1. Wenn Sie über keine Spring Boot-Anwendung verfügen, [erstellen Sie mit dem Spring-Initialisierer ein **Maven**-Projekt](https://start.spring.io/). Denken Sie daran, dass Sie **Maven-Projekt** auswählen und unter **Abhängigkeiten** die Abhängigkeit **Web** hinzuzufügen müssen.
+1. Wenn Sie über keine Spring Boot-Anwendung verfügen, [erstellen Sie mit dem Spring-Initialisierer ein **Maven** -Projekt](https://start.spring.io/). Denken Sie daran, dass Sie **Maven-Projekt** auswählen und unter **Abhängigkeiten** die Abhängigkeit **Web** hinzuzufügen müssen.
 
 ## <a name="use-the-azure-service-bus-jms-starter"></a>Verwenden des Azure Service Bus JMS-Starters
 
-1. Suchen Sie im übergeordneten Verzeichnis Ihrer App nach der Datei *pom.xml*, z. B.:
+1. Suchen Sie im übergeordneten Verzeichnis Ihrer App nach der Datei *pom.xml* , z. B.:
 
     `C:\SpringBoot\servicebus\pom.xml`
 
@@ -86,7 +86,7 @@ In diesem Abschnitt erfahren Sie, wie Sie Ihre App so konfigurieren, dass sie en
 
 1. Öffnen Sie die Datei *application.properties* in einem Text-Editor.
 
-1. Fügen Sie den folgenden Code am Ende der Datei *application.properties* ein. Ersetzen Sie die Beispielwerte durch die entsprechenden Werte für Ihre Service Bus-Instanz:
+1. Fügen Sie den folgenden Code am Ende der Datei *application.properties* ein. Ersetzen Sie die Platzhalterwerte durch die entsprechenden Werte für Ihren Service Bus, und setzen Sie sie nicht in Anführungszeichen.
 
     ```yml
     spring.jms.servicebus.connection-string=<ServiceBusNamespaceConnectionString>
@@ -114,11 +114,11 @@ In diesem Abschnitt erfahren Sie, wie Sie Ihre App so konfigurieren, dass sie en
 
 1. Öffnen Sie die Datei *application.properties* in einem Text-Editor.
 
-1. Fügen Sie den folgenden Code am Ende der Datei *application.properties* ein. Ersetzen Sie die Beispielwerte durch die entsprechenden Werte für Ihre Service Bus-Instanz:
+1. Fügen Sie den folgenden Code am Ende der Datei *application.properties* ein. Ersetzen Sie die Platzhalterwerte durch die entsprechenden Werte für Ihren Service Bus, und setzen Sie sie nicht in Anführungszeichen.
 
     ```yml
     spring.jms.servicebus.connection-string=<ServiceBusNamespaceConnectionString>
-    spring.jms.servicebus.topic-client-id=<ServiceBusTopicClientId>
+    spring.jms.servicebus.topic-client-id=<ServiceBusSubscriptionID>
     spring.jms.servicebus.idle-timeout=<IdleTimeout>
     ```
 
@@ -127,7 +127,7 @@ In diesem Abschnitt erfahren Sie, wie Sie Ihre App so konfigurieren, dass sie en
     | Feld                                     | BESCHREIBUNG                                                                                       |
     |-------------------------------------------|---------------------------------------------------------------------------------------------------|
     | `spring.jms.servicebus.connection-string` | Geben Sie die Verbindungszeichenfolge an, die Sie im Service Bus-Namespace vom Azure-Portal erhalten haben.   |
-    | `spring.jms.servicebus.topic-client-id`   | Geben Sie die JMS-Client-ID an, wenn Sie ein Azure Service Bus-Thema mit einem dauerhaften Abonnement verwenden. |
+    | `spring.jms.servicebus.topic-client-id`   | Geben Sie die JMS-Client-ID an. Dies ist Ihre Service Bus-Abonnement-ID im Azure-Portal.                | 
     | `spring.jms.servicebus.idle-timeout`      | Legen Sie das Leerlauftimeout in Millisekunden fest. Für dieses Tutorial wird der Wert 1.800.000 empfohlen.     |
 
 1. Speichern und schließen Sie die Datei *application.properties*.
@@ -318,7 +318,7 @@ In diesem Abschnitt erstellen Sie die notwendigen Java-Klassen, um Nachrichten a
 
 ## <a name="build-and-test-your-application"></a>Erstellen und Testen der Anwendung
 
-1. Öffnen Sie eine Eingabeaufforderung, und ändern Sie das Verzeichnis in den Speicherort Ihrer Datei *pom.xml*, z. B.:
+1. Öffnen Sie eine Eingabeaufforderung, und ändern Sie das Verzeichnis in den Speicherort Ihrer Datei *pom.xml* , z. B.:
 
     `cd C:\SpringBoot\servicebus`
 

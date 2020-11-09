@@ -3,26 +3,24 @@ title: Verwenden von Spring Data Gremlin Starter mit der SQL-API von Azure Cosmo
 description: Hier erfahren Sie, wie eine mit Spring Boot Initializr erstellte Anwendung mit der SQL-API von Azure Cosmos DB konfiguriert wird.
 services: cosmos-db
 documentationcenter: java
-ms.date: 08/03/2020
+ms.date: 10/14/2020
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.custom: devx-track-java
-ms.openlocfilehash: b1fe15704e325316febc405289df27be1cfea37c
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: b00a3a3f0f5e6f4f391cd70d2e7d2a2904c089eb
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846581"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192466"
 ---
 # <a name="how-to-use-the-spring-data-gremlin-starter-with-the-azure-cosmos-db-sql-api"></a>Verwenden von Spring Data Gremlin Starter mit der SQL-API von Azure Cosmos DB
 
-## <a name="overview"></a>Übersicht
+In diesem Artikel wird veranschaulicht, wie Sie das Azure-Portal zum Erstellen einer Azure Cosmos DB-Ressource für die Verwendung mit der Gremlin-API nutzen. Anschließend wird gezeigt, wie Sie [Spring Initializr] zum Erstellen einer benutzerdefinierten Java-Anwendung verwenden und anschließend die Spring Data Gremlin Starter-Funktionalität hinzufügen, um mit Gremlin auf Ihre Daten zuzugreifen.
 
 Spring Data Gremlin Starter bietet Spring-Datenunterstützung für die Gremlin-Abfragesprache von Apache, die Entwickler für jeden beliebigen, mit Gremlin kompatiblen Datenspeicher verwenden können.
-
-Dieser Artikel zeigt, wie über das Azure-Portal eine Azure Cosmos DB-Instanz für die Verwendung mit der Gremlin-API und dann mithilfe von **[Spring Initializr]** eine benutzerdefinierte Java-Anwendung erstellt wird. Anschließend wird veranschaulicht, wie Spring Data Gremlin Starter-Funktionen zu Ihrer benutzerdefinierten Anwendung hinzugefügt werden, um Daten mithilfe von Gremlin in Ihrer Azure Cosmos DB-Instanz zu speichern und daraus abzurufen.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -62,7 +60,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Überprüfen Sie die Angaben, und wählen Sie anschließend `Create` aus, um Ihre Datenbank zu erstellen.
 
-1. Wählen Sie nach der Erstellung der Datenbank die Option **Zu Ressource wechseln** aus. Sie ist auch in Ihrem Azure-**Dashboard** sowie auf den Seiten **Alle Ressourcen** und **Azure Cosmos DB** aufgeführt. Sie können Ihre Datenbank an all diesen Orten auswählen, um die Eigenschaftenseite für Ihren Cache zu öffnen.
+1. Wählen Sie nach der Erstellung der Datenbank die Option **Zu Ressource wechseln** aus. Sie ist auch in Ihrem Azure- **Dashboard** sowie auf den Seiten **Alle Ressourcen** und **Azure Cosmos DB** aufgeführt. Sie können Ihre Datenbank an all diesen Orten auswählen, um die Eigenschaftenseite für Ihren Cache zu öffnen.
 
 1. Gehen Sie wie folgt vor, wenn die Eigenschaftenseite für Ihre Datenbank angezeigt wird: Wählen Sie **Schlüssel** aus, und kopieren Sie Ihren URI sowie Ihre Zugriffsschlüssel für die Datenbank. Diese Werte benötigen Sie in Ihrer Spring Boot-Anwendung.
 
@@ -96,15 +94,14 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Navigieren Sie zu <https://start.spring.io/>.
 
-1. Geben Sie an, dass Sie ein **Maven**-Projekt mit **Java** generieren möchten, geben Sie die Namen für **Group** (Gruppe) und **Artifact** (Artefakt) für Ihre Anwendung ein, und geben Sie Version 2.3.1. als **Spring Boot**-Version an. Wählen Sie anschließend **GENERATE** (GENERIEREN) aus.
-
-> [!NOTE]
->
-> Spring Initializr verwendet zur Erstellung des Paketnamens die Namen für **Gruppe** und **Artefakt** (also beispielsweise `com.example.wintiptoysdata`).
-
+1. Geben Sie an, dass Sie ein **Maven** -Projekt mit **Java** generieren möchten, geben Sie die Namen für **Group** (Gruppe) und **Artifact** (Artefakt) für Ihre Anwendung ein, und geben Sie Version 2.3.4. als **Spring Boot** -Version an. Wählen Sie anschließend **GENERATE** (GENERIEREN) aus.
 
    >[!div class="mx-imgBorder"]
    >![Spring Initializr][spring-initializr-01]
+   
+   > [!NOTE]
+   > 1. Spring Initializr verwendet zur Erstellung des Paketnamens die Namen für **Gruppe** und **Artefakt** (also beispielsweise `com.example.wintiptoysdata`).
+   > 2. Spring Initializr nutzt als Standardversion Java 11. Um die in diesem Thema beschriebenen Spring Boot Starter verwenden zu können, müssen Sie stattdessen Java 8 auswählen.
 
 1. Laden Sie das Projekt nach entsprechender Aufforderung unter einem Pfad auf dem lokalen Computer herunter.
 
@@ -123,7 +120,7 @@ Wir replizieren die Konfigurationen des vorhandenen [Azure Spring Data-Gremlin-B
 
    */users/example/home/wingtiptoysdata/pom.xml*
 
-1. Öffnen Sie die Datei *pom.xml*, und fügen Sie Spring Data Gremlin Starter der Liste mit den Abhängigkeiten (`<dependencies>`) hinzu:
+1. Öffnen Sie die Datei *pom.xml* , und fügen Sie Spring Data Gremlin Starter der Liste mit den Abhängigkeiten (`<dependencies>`) hinzu:
 
    ```xml
    <dependency>
@@ -137,18 +134,18 @@ Wir replizieren die Konfigurationen des vorhandenen [Azure Spring Data-Gremlin-B
 
 1. Navigieren Sie zum Ordner *src/test/* , und löschen Sie seinen gesamten Inhalt.
 
-1. Navigieren Sie in der Beispiel-App zum Ordner *src/main/java*, und kopieren und überschreiben Sie dieses Verzeichnis in Ihrer lokalen Spring Boot-App.
+1. Navigieren Sie in der Beispiel-App zum Ordner *src/main/java* , und kopieren und überschreiben Sie dieses Verzeichnis in Ihrer lokalen Spring Boot-App.
 
 1. Aktualisieren Sie die Konfigurationen in der Datei *src/main/resources/application.properties* so, dass sie Folgendes enthalten:
 
    | Feld              | BESCHREIBUNG                                                                                                                                                                                                             |
    |--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
    | `endpoint`         | Gibt den Gremlin-URI für Ihre Datenbank an. Dieser wird von der eindeutigen **ID** abgeleitet, die Sie zuvor in dieser Schnellstartanleitung beim Erstellen Ihrer Azure Cosmos DB-Instanz angegeben haben.                                                 |
-   | `port`             | Gibt den TCP/IP-Port an (**443** für HTTPS).                                                                                                                                                           |
+   | `port`             | Gibt den TCP/IP-Port an ( **443** für HTTPS).                                                                                                                                                           |
    | `username`         | Gibt die eindeutige **Datenbank-ID** und **Graph-ID** an, die Sie zuvor in dieser Schnellstartanleitung beim Hinzufügen Ihres Graphen verwendet haben (Syntax: /dbs/ **{Datenbank-ID}** /colls/ **{Graph-ID}** ). |
    | `password`         | Gibt den primären oder sekundären **Zugriffsschlüssel** an, den Sie zuvor in dieser Schnellstartanleitung kopiert haben.                                                                                                                      |
    | `sslEnabled`       | Gibt an, ob Secure Sockets Layer (SSL) aktiviert werden soll.                                                                                                                                                                                           |
-   | `telemetryAllowed` | Geben Sie **true** an, wenn Sie Telemetriedaten aktivieren möchten (oder **false**, falls nicht).
+   | `telemetryAllowed` | Geben Sie **true** an, wenn Sie Telemetriedaten aktivieren möchten (oder **false** , falls nicht).
    | `maxContentLength` | Gibt die maximale Inhaltslänge an.                                                                                                                                                                                           |
 
 ## <a name="build-and-run-the-project"></a>Erstellen und Ausführen des Projekts
@@ -165,6 +162,10 @@ Wir replizieren die Konfigurationen des vorhandenen [Azure Spring Data-Gremlin-B
    >[!div class="mx-imgBorder"]
    >![Ergebnis der Ausführung][execute-result-01]
 
+
+## <a name="clean-up-resources"></a>Bereinigen von Ressourcen
+
+Verwenden Sie das [Azure-Portal](https://portal.azure.com/), um die in diesem Artikel erstellten Ressourcen zu löschen, wenn Sie sie nicht mehr benötigen, um unerwartete Gebühren zu vermeiden.
 
 ## <a name="next-steps"></a>Nächste Schritte
 

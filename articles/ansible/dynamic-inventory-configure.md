@@ -3,14 +3,14 @@ title: 'Tutorial: Konfigurieren von dynamischen Beständen Ihrer Azure-Ressource
 description: Hier erfahren Sie, wie Sie Ihre dynamischen Azure-Bestände mithilfe von Ansible verwalten.
 keywords: Ansible, Azure, DevOps, Bash, CloudShell, dynamischer Bestand
 ms.topic: tutorial
-ms.date: 10/23/2019
+ms.date: 10/30/2020
 ms.custom: devx-track-ansible, devx-track-azurecli
-ms.openlocfilehash: 42ac7ef120a2bb364197509d8c36bb7e1a300242
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: dd9a6f2b76c6d653eba9542d3b5dfdda4cb75ba5
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688626"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192352"
 ---
 # <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>Tutorial: Konfigurieren von dynamischen Beständen Ihrer Azure-Ressourcen mit Ansible
 
@@ -42,7 +42,7 @@ Mit Ansible können Bestandsinformationen aus verschiedenen Quellen (einschließ
     > [!IMPORTANT]
     > Für die in diesem Schritt erstellte Azure-Ressourcengruppe muss ein Name angegeben werden, der ausschließlich aus Kleinbuchstaben besteht. Andernfalls tritt bei der Erstellung des dynamischen Bestands ein Fehler auf.
 
-    ```azurecli-interactive
+    ```azurecli
     az group create --resource-group ansible-inventory-test-rg --location eastus
     ```
 
@@ -52,13 +52,13 @@ Mit Ansible können Bestandsinformationen aus verschiedenen Quellen (einschließ
 
     - **Azure-Befehlszeilenschnittstelle:** Führen Sie die folgenden Befehle in Cloud Shell aus, um die beiden virtuellen Computer zu erstellen:
 
-        ```azurecli-interactive
+        ```azurecli
         az vm create --resource-group ansible-inventory-test-rg \
                      --name ansible-inventory-test-vm1 \
                      --image UbuntuLTS --generate-ssh-keys
         ```
 
-        ```azurecli-interactive
+        ```azurecli
         az vm create --resource-group ansible-inventory-test-rg \
                      --name ansible-inventory-test-vm2 \
                      --image UbuntuLTS --generate-ssh-keys
@@ -71,14 +71,14 @@ Sie können [Ihre Azure-Ressourcen mithilfe von Tags nach benutzerdefinierten Ka
 ### <a name="using-ansible-version--28"></a>Verwendung einer früheren Version als Ansible 2.8
 Geben Sie den folgenden Befehl vom Typ [az resource tag](/cli/azure/resource#az-resource-tag) ein, um den virtuellen Computer `ansible-inventory-test-vm1` mit dem Schlüssel `nginx` zu markieren:
 
-```azurecli-interactive
+```azurecli
 az resource tag --tags nginx --id /subscriptions/<YourAzureSubscriptionID>/resourceGroups/ansible-inventory-test-rg/providers/Microsoft.Compute/virtualMachines/ansible-inventory-test-vm1
 ```
 
 ### <a name="using-ansible-version--28"></a>Verwendung von Ansible 2.8 oder einer älteren Version
 Geben Sie den folgenden Befehl vom Typ [az resource tag](/cli/azure/resource#az-resource-tag) ein, um den virtuellen Computer `ansible-inventory-test-vm1` mit dem Schlüssel `Ansible=nginx` zu markieren:
 
-```azurecli-interactive
+```azurecli
 az resource tag --tags Ansible=nginx --id /subscriptions/<YourAzureSubscriptionID>/resourceGroups/ansible-inventory-test-rg/providers/Microsoft.Compute/virtualMachines/ansible-inventory-test-vm1
 ```
 
@@ -92,36 +92,23 @@ Unter Ansible wird ein Python-Skript mit dem Namen [azure_rm.py](https://github.
 
 1. Rufen Sie mithilfe des GNU-Befehls `wget` das Skript `azure_rm.py` ab:
 
-    ```python
-    wget https://raw.githubusercontent.com/ansible-collections/community.general/main/scripts/inventory/azure_rm.py
+    ```bash
+    wget https://raw.githubusercontent.com/ansible-collections/azure/dev/plugins/inventory/azure_rm.py
     ```
 
 1. Ändern Sie mithilfe des Befehls `chmod` die Zugriffsberechtigungen für das Skript `azure_rm.py`. Im folgenden Befehl wird der Parameter `+x` verwendet, um die Ausführung der angegebenen Datei (`azure_rm.py`) zuzulassen:
 
-    ```python
+    ```bash
     chmod +x azure_rm.py
     ```
 
-1. Verwenden Sie den [ansible-Befehl](https://docs.ansible.com/ansible/2.4/ansible.html), um eine Verbindung mit Ihrer Ressourcengruppe herzustellen: 
+1. Verwenden Sie den [ansible-Befehl](https://docs.ansible.com/ansible/2.4/ansible.html), um eine Verbindung mit Ihrer Ressourcengruppe herzustellen:
 
-    ```python
-    ansible -i azure_rm.py ansible-inventory-test-rg -m ping 
+    ```bash
+    ansible -i azure_rm.py ansible-inventory-test-rg -m ping
     ```
 
-1. Nach der Verbindungsherstellung werden Ergebnisse angezeigt. Diese sehen in etwa wie in der folgenden Ausgabe aus:
-
-    ```output
-    ansible-inventory-test-vm1 | SUCCESS => {
-        "changed": false,
-        "failed": false,
-        "ping": "pong"
-    }
-    ansible-inventory-test-vm2 | SUCCESS => {
-        "changed": false,
-        "failed": false,
-        "ping": "pong"
-    }
-    ```
+1. Nach der Verbindungsherstellung werden die Ergebnisse zur Erstellung der virtuellen Computer angezeigt.
 
 ### <a name="ansible-version--28"></a>Ansible-Version >= 2.8
 
@@ -146,7 +133,7 @@ Ab Ansible 2.8 wird ein [Azure-Plug-In für dynamische Bestände](https://githu
     ansible all -m ping -i ./myazure_rm.yml
     ```
 
-1. Bei Ausführung des obigen Befehls erhalten Sie ggf. den folgenden Fehler:
+1. Bei der Ausführung des obigen Befehls tritt ggf. ein Fehler auf. Die Ursache für den Fehler ist, dass die Verbindungsherstellung mit dem Host nicht erfolgreich war. 
 
     ```output
     Failed to connect to the host via ssh: Host key verification failed.
@@ -278,7 +265,7 @@ Dieser Abschnitt beschreibt ein Verfahren, mit dem Sie sich vergewissern können
 
 1. Rufen Sie mithilfe des Befehls [az vm list-ip-addresses](/cli/azure/vm#az-vm-list-ip-addresses) die IP-Adresse des virtuellen Computers `ansible-inventory-test-vm1` ab. Der zurückgegebene Wert (die IP-Adresse des virtuellen Computers) wird dann als Parameter für den SSH-Befehl verwendet, um die Verbindung mit dem virtuellen Computer herzustellen.
 
-    ```azurecli-interactive
+    ```azurecli
     ssh `az vm list-ip-addresses \
     -n ansible-inventory-test-vm1 \
     --query [0].virtualMachine.network.publicIpAddresses[0].ipAddress -o tsv`

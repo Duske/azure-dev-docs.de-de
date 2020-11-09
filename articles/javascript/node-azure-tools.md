@@ -2,16 +2,16 @@
 title: Tools für JavaScript-Entwickler in Azure
 description: Installieren der einzelnen Node.js- und JavaScript-Entwicklungstools in Azure
 ms.topic: reference
-ms.date: 11/07/2017
-ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, devx-track-azurecli
-ms.openlocfilehash: fbfc22eb0c9455900b6fe511b52f443289815931
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.date: 10/30/2020
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js
+ms.openlocfilehash: 80b42337f6acccda4a6d85b64908107cb4230195
+ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689167"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93066259"
 ---
-# <a name="azure-tools-for-javascript-developers"></a>Azure-Tools für JavaScript-Entwickler
+# <a name="tools-for-javascript-developers"></a>Tools für JavaScript-Entwickler
 Die folgenden Tools werden für die Entwicklung von JavaScript-Apps in Azure empfohlen:
 
 ## <a name="azure-cli"></a>Azure-Befehlszeilenschnittstelle
@@ -22,6 +22,19 @@ Die Azure CLI ist für die Verwaltung von Azure-Ressourcen über die Befehlszeil
 > [!div class="nextstepaction"]
 > [Installieren der Azure CLI 2.0](/cli/azure/install-az-cli2)
 
+> [!div class="nextstepaction"]
+> [Verwenden des Azure CLI 2.0-Containers](/cli/azure/run-azure-cli-docker)
+
+## <a name="typescript"></a>TypeScript
+
+Die Beziehung zwischen [TypeScript](https://www.typescriptlang.org/) und JavaScript ist ungewöhnlich. TypeScript verfügt über alle Features von JavaScript, aber zusätzlich noch über eine weitere Ebene: das Typsystem von TypeScript.
+
+Dies bedeutet, dass Ihr vorhandener funktionierender JavaScript-Code gleichzeitig TypeScript-Code ist. Der Hauptvorteil von TypeScript besteht darin, dass auf unerwartetes Verhalten in Ihrem Code hingewiesen werden kann, um die Fehlerwahrscheinlichkeit zu verringern.
+
+> [!div class="nextstepaction"]
+> [TypeScript-Installation](https://www.typescriptlang.org/download)
+
+
 ## <a name="visual-studio-code"></a>Visual Studio Code
 Bearbeiten und debuggen Sie JavaScript-Apps unter allen Betriebssystemen.
 
@@ -30,7 +43,7 @@ Bearbeiten und debuggen Sie JavaScript-Apps unter allen Betriebssystemen.
 > [!div class="nextstepaction"]
 > [Visual Studio Code herunterladen](https://code.visualstudio.com)
 
-### <a name="azure-extensions"></a>Azure-Erweiterungen
+## <a name="visual-studio-code-extensions"></a>Erweiterungen für Visual Studio Code
 Verwenden Sie die folgenden kostenlosen Erweiterungen für die direkte Kommunikation mit Azure in Visual Studio Code.
 
 | Tool | BESCHREIBUNG  |
