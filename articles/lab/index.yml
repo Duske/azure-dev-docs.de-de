@@ -1,0 +1,32 @@
+### YamlMime:Landing
+title: Labs für Entwickler
+summary: >
+  In den Schnellstartanleitungen, Schrittanleitungen, Codebeispielen und weiteren Ressourcen erfahren Sie mehr über den Funktionsumfang von Azure.
+metadata:
+  title: Labs für Entwickler
+  description: '...'
+  author: diberry
+  ms.author: diberry
+  ms.date: 09/21/2020
+  ms.topic: landing-page
+  ms.collection: collection
+  ms.technology: azure
+  ms.service: multiple
+  robots: noindex
+  ms.openlocfilehash: 30decb3bc113d9bd56ebdba4e91a262d43e13086
+  ms.sourcegitcommit: 5f64710b2b0822e789c7f15acba5a3a257c033f9
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 11/05/2020
+  ms.locfileid: "93405347"
+landingContent:
+- title: Labs für Tutorials
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: 'Python Flask: einzelne Seite'
+      url: quickstart-python-flask.md
+    - text: 'Python Flask: mehrere Seiten'
+      url: quickstart-python-flask-multipage.yml?preview=tutorialFeedback
+    - text: 'Python Flask: einzelne Seite minimiert'
+      url: quickstart-python-flask-minimized.md

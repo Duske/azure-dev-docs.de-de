@@ -1,0 +1,11 @@
+- name: Labs für Entwickler
+  href: index.yml
+  items:
+    - name: Labs für das Tutorialformat
+      items:
+        - name: 'Python Flask: einzelne Seite'
+          href: quickstart-python-flask.md
+        - name: 'Python Flask: mehrere Seiten'
+          href: quickstart-python-flask-multipage.yml?preview=tutorialFeedback
+        - name: 'Python Flask: einzelne Seite minimiert'
+          href: quickstart-python-flask-minimized.md
