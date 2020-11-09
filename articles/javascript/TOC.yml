@@ -17,18 +17,18 @@
           href: tutorial/browser-file-upload.yml?preview=tutorialFeedback
         - name: Express.js mit MongoDB
           href: tutorial/web-app-mongodb.yml?preview=tutorialFeedback
-        - name: Bereitstellen von Azure Functions mit VS Code
+        - name: Erstellen und Bereitstellen serverloser Funktionen
           items:
-            - name: Einführung und Voraussetzungen
-              href: tutorial-vscode-serverless-node-01.md
-            - name: Erstellen der Funktions-App
-              href: tutorial-vscode-serverless-node-02.md
-            - name: Lokales Testen der Funktion
-              href: tutorial-vscode-serverless-node-03.md
-            - name: Bereitstellen der Funktions-App
-              href: tutorial-vscode-serverless-node-04.md
-            - name: Bereinigen von Ressourcen
-              href: tutorial-vscode-serverless-node-05.md
+            - name: 1. Einführung und Voraussetzungen
+              href: tutorial/tutorial-vscode-serverless-node-install.md
+            - name: 2. Erstellen der Funktions-App
+              href: tutorial/tutorial-vscode-serverless-node-create-local.md
+            - name: 3. Lokales Testen der Funktion
+              href: tutorial/tutorial-vscode-serverless-node-test-local.md
+            - name: 4. Bereitstellen der Funktions-App
+              href: tutorial/tutorial-vscode-serverless-node-deploy-hosting.md
+            - name: 5. Bereinigen von Ressourcen
+              href: tutorial/tutorial-vscode-serverless-node-remove-resource.md
         - name: Bereitstellen von Node.js in App Service mit VS Code
           items:
             - name: Einführung und Voraussetzungen
