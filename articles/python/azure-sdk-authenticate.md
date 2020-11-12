@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie die Anmeldeinformationsobjekte abrufen, 
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 1fe206394d05e07b19254520131447770cbbd5b0
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 8122db43c979bcf55d5aa3d1f4f5fa9aa0c200dd
+ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764672"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93405900"
 ---
 # <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>Authentifizieren und Autorisieren von Python-Apps in Azure
 
@@ -391,7 +391,7 @@ Bei der Verwendung der CLI-basierten Authentifizierung ist die Anwendung für al
 
 #### <a name="cli-based-authentication-with-azurecore-libraries"></a>CLI-basierte Authentifizierung mit azure.core-Bibliotheken
 
-Bei Verwendung der [Azure-Bibliotheken, die für azure.core aktualisiert werden](/azure/developer/python/azure-sdk-library-package-index#libraries-using-azurecore), verwenden Sie das Objekt [`AzureCliCredential`](/python/api/azure-identity/azure.identity.azureclicredential) aus der Bibliothek „azure-identity“ (mindestens Version 1.4.0). Der folgende Code kann beispielsweise mit Version 15.0.0 und höheren Versionen von „azure-mgmt-resource“ verwendet werden:
+Bei Verwendung der [Azure-Bibliotheken, die für azure.core aktualisiert werden](./azure-sdk-library-package-index.md#libraries-using-azurecore), verwenden Sie das Objekt [`AzureCliCredential`](/python/api/azure-identity/azure.identity.azureclicredential) aus der Bibliothek „azure-identity“ (mindestens Version 1.4.0). Der folgende Code kann beispielsweise mit Version 15.0.0 und höheren Versionen von „azure-mgmt-resource“ verwendet werden:
 
 ```python
 from azure.identity import AzureCliCredential

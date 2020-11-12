@@ -4,12 +4,12 @@ description: In diesem Artikel wird erläutert, wie Azure zum Erstellen einer JA
 ms.topic: how-to
 ms.date: 08/20/2019
 ms.custom: seo-javascript-september2019, devx-track-js
-ms.openlocfilehash: b126cb60341733451be555fa7759773aac99f6ce
-ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
+ms.openlocfilehash: 421464b76a8276ef87b84596a6434e991a3c2b25
+ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92437209"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94333798"
 ---
 # <a name="build-jamstack-static-site-web-apps-on-azure-with-nodejs"></a>Erstellen von JAMstack-Web-Apps (statischen Websites) in Azure mit Node.js
 
@@ -34,7 +34,7 @@ Weitere Informationen finden Sie in den folgenden Artikeln:
   
 - **Serverlose APIs:**
 
-  - Beginnen Sie mit [Bereitstellen von Azure Functions in Visual Studio Code](../tutorial-vscode-serverless-node-01.md). Dort erhalten Sie eine Einführung in Azure Functions im Kontext von Visual Studio Code, die viele Details vereinfacht.
+  - Beginnen Sie mit [Bereitstellen von Azure Functions in Visual Studio Code](../tutorial/tutorial-vscode-serverless-node-install.md). Dort erhalten Sie eine Einführung in Azure Functions im Kontext von Visual Studio Code, die viele Details vereinfacht.
   - Danach verfügen Sie über ein Azure Functions-Projekt (ein Ordner), der einen Unterordner mit dem Namen für die Funktion enthält, der dem Namen des HTTP-Endpunkts entspricht. Dieser Funktionsordner enthält die Datei *index.js* , die den Code enthält.
   - Sie können die Funktion nach Bedarf anpassen und auch weitere Funktionen zum Projekt hinzufügen. Anschließend stellen Sie sie wieder in Azure bereit, um sie öffentlich zur Verfügung zu stellen.
   - Weitere Ressourcen zur serverlosen Entwicklung finden Sie unter [Schreiben von serverlosem Node.js.Code in Azure](develop-serverless-apps.md).

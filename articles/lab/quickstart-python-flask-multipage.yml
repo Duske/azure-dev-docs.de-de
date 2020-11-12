@@ -1,0 +1,58 @@
+### YamlMime:Tutorial
+title: 'Schnellstart: Erstellen einer Python-App in Azure App Service für Linux'
+metadata:
+  title: 'Schnellstart: Erstellen einer Python-App'
+  description: Führen Sie erste Schritte mit Azure App Service aus, indem Sie Ihre erste Python-App in einem Linux-Container in App Service bereitstellen.
+  audience: Developer
+  level: Beginner
+  displayType: one-column
+  ms.date: 09/22/2020
+  ms.topic: tutorial
+  robots: noindex
+  ms.openlocfilehash: bc789056970531a624009293f483d6c0f489434b
+  ms.sourcegitcommit: 5f64710b2b0822e789c7f15acba5a3a257c033f9
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 11/05/2020
+  ms.locfileid: "93405149"
+items:
+- durationInMinutes: 2
+  content: >
+    [!INCLUDE [Tutorial introduction](includes/python-tutorial-multipage/intro.md)]
+- title: 1. Einrichten der anfänglichen Umgebung
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Set up your initial environment](includes/python-tutorial-multipage/set-up-environment.md)]
+- title: 2. Klonen des Beispiels
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Clone the sample](includes/python-tutorial-multipage/clone-sample.md)]
+- title: 3. Ausführen des Beispiels
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Run the sample](includes/python-tutorial-multipage/run-sample.md)]
+- title: 4. Bereitstellen des Beispiels
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Deploy the sample](includes/python-tutorial-multipage/deploy-sample.md)]
+- title: 5. Navigieren zur App
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Browse to the app](includes/python-tutorial-multipage/browse-app.md)]
+- title: 6. Erneutes Bereitstellen von Updates
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [ Redeploy updates](includes/python-tutorial-multipage/redeploy-updates.md)]
+- title: 7. Streaming von Protokollen
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Stream logs](includes/python-tutorial-multipage/stream-logs.md)]
+- title: 8. Verwalten der Azure-App
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Manage the Azure app](includes/python-tutorial-multipage/manage-app.md)]
+- title: 9. Bereinigen von Ressourcen
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Clean up resources](includes/python-tutorial-multipage/clean-up-resources.md)]
+- content: '[!INCLUDE [Completed tutorial](includes/python-tutorial-multipage/next-steps.md)]'

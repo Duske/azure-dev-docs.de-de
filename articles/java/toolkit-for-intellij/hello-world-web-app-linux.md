@@ -9,12 +9,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 2b6e4e6e40d5fe7904e43b36edacd14494e92b0f
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.openlocfilehash: 080ea6565a05860d930d8dd22bca5328fd34a545
+ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010095"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93405839"
 ---
 # <a name="deploy-java-app-to-azure-web-apps-for-containers-using-azure-toolkit-for-intellij"></a>Bereitstellen einer Java-App in Azure-Web-Apps für Container mithilfe des Azure-Toolkits für IntelliJ
 
@@ -36,9 +36,9 @@ In diesem Artikel werden die Schritte zum Erstellen einer einfachen „Hello Wor
 
 Im Folgenden wird Schritt für Schritt beschrieben, wie Sie den Azure-Anmeldeprozess in Ihrer IntelliJ-Entwicklungsumgebung durchführen.
 
-1. Falls Sie das Plug-In nicht installiert haben, helfen Ihnen die Informationen unter [Installieren des Azure-Toolkits für IntelliJ](installation.md) weiter.
+1. Falls Sie das Plug-In nicht installiert haben, helfen Ihnen die Informationen unter [Installieren des Azure-Toolkits für IntelliJ](./index.yml) weiter.
 
-1. Navigieren Sie zum Anmelden bei Ihrem Azure-Konto zur linken Seitenleiste des **Azure-Explorers**, und klicken Sie anschließend auf das Symbol **Azure-Anmeldung**. Alternativ können Sie auch unter **Extras** die Option **Azure** erweitern und auf **Azure-Anmeldung** klicken.
+1. Navigieren Sie zum Anmelden bei Ihrem Azure-Konto zur linken Seitenleiste des **Azure-Explorers** , und klicken Sie anschließend auf das Symbol **Azure-Anmeldung**. Alternativ können Sie auch unter **Extras** die Option **Azure** erweitern und auf **Azure-Anmeldung** klicken.
 
    :::image type="content" source="media/sign-in-instructions/I01.png" alt-text="Anmelden bei Azure mit IntelliJ"::: 
 
@@ -54,21 +54,21 @@ Im Folgenden wird Schritt für Schritt beschrieben, wie Sie den Azure-Anmeldepro
 
 ## <a name="creating-a-new-web-app-project"></a>Erstellen eines neuen Web-App-Projekts
 
-1. Klicken Sie auf **Datei**, erweitern Sie die Option **Neu**, und klicken Sie anschließend auf **Projekt**.
+1. Klicken Sie auf **Datei** , erweitern Sie die Option **Neu** , und klicken Sie anschließend auf **Projekt**.
 
 1. Wählen Sie im Dialogfeld **Neues Projekt** die Option **Maven** aus, und vergewissern Sie sich, dass die Option **Aus Archetyp erstellen** aktiviert ist. Wählen Sie in der Liste den Eintrag **maven-archetype-webapp** aus, und klicken Sie anschließend auf **Weiter**.
 
-   :::image type="content" source="media/create-hello-world-web-app/maven-archetype-webapp.png" alt-text="Anmelden bei Azure mit IntelliJ"::: 
+   :::image type="content" source="media/create-hello-world-web-app/maven-archetype-webapp.png" alt-text="Auswählen der Option „maven-archetype-webapp“"::: 
 
-1. Erweitern Sie das Dropdownmenü **Artifact Coordinates** (Artefaktkoordinaten), um alle Eingabefelder anzuzeigen, und geben Sie die unten aufgeführten Informationen für Ihre neue Web-App an. Klicken Sie anschließend auf **Weiter**:
+1. Erweitern Sie das Dropdownmenü **Artifact Coordinates** (Artefaktkoordinaten), um alle Eingabefelder anzuzeigen, und geben Sie die unten aufgeführten Informationen für Ihre neue Web-App an. Klicken Sie anschließend auf **Weiter** :
 
-   * **Name**: Der Name Ihrer Web-App. Wird automatisch in das Feld **ArtifactId** der App eingefügt.
-   * **GroupId**: Der Name der Artefaktgruppe (normalerweise eine Unternehmensdomäne). (Beispiel: *com.microsoft.azure*.)
-   * **Version**: Wir behalten die Standardversion *1.0-SNAPSHOT* bei.
+   * **Name** : Der Name Ihrer Web-App. Wird automatisch in das Feld **ArtifactId** der App eingefügt.
+   * **GroupId** : Der Name der Artefaktgruppe (normalerweise eine Unternehmensdomäne). (Beispiel: *com.microsoft.azure*.)
+   * **Version** : Wir behalten die Standardversion *1.0-SNAPSHOT* bei.
 
 1. Passen Sie alle gewünschten Maven-Einstellungen an, oder übernehmen Sie die Standardeinstellungen, und klicken Sie dann auf **Fertig stellen**.
 
-1. Navigieren Sie links auf der Registerkarte **Projekt** zu Ihrem Projekt, und öffnen Sie die Datei **src/main/webapp/index.jsp**. Ersetzen Sie den Code durch Folgendes, und **speichern Sie die Änderungen**:
+1. Navigieren Sie links auf der Registerkarte **Projekt** zu Ihrem Projekt, und öffnen Sie die Datei **src/main/webapp/index.jsp**. Ersetzen Sie den Code durch Folgendes, und **speichern Sie die Änderungen** :
 
    ```html
    <html>
@@ -77,7 +77,7 @@ Im Folgenden wird Schritt für Schritt beschrieben, wie Sie den Azure-Anmeldepro
     </body>
    </html>
    ```
-   :::image type="content" source="media/create-hello-world-web-app/open-index-page.png" alt-text="Anmelden bei Azure mit IntelliJ":::
+   :::image type="content" source="media/create-hello-world-web-app/open-index-page.png" alt-text="Öffnen der Datei „index.jsp“":::
 
 ## <a name="create-an-azure-container-registry-to-use-as-a-private-docker-registry"></a>Erstellen einer Azure-Containerregistrierung, die als private Docker-Registrierung verwendet werden soll
 
@@ -92,51 +92,51 @@ Die folgende Anleitung führt Sie durch die Verwendung des Azure-Portals zur Ers
 
    Nachdem Sie sich im Azure-Portal bei Ihrem Konto angemeldet haben, können Sie die Schritte im Artikel [Erstellen einer privaten Docker-Containerregistrierung im Azure-Portal] ausführen, die im Folgenden aus Gründen der Zweckmäßigkeit umschrieben werden.
 
-1. Klicken Sie auf das Menüsymbol für **+ Ressource erstellen**, die Kategorie **Container** und dann auf **Containerregistrierung**.
+1. Klicken Sie auf das Menüsymbol für **+ Ressource erstellen** , die Kategorie **Container** und dann auf **Containerregistrierung**.
 
 1. Geben Sie die folgenden Informationen ein, wenn die Seite **Containerregistrierung erstellen** angezeigt wird:
 
-   * **Abonnement**: Das Azure-Abonnement, das Sie für die neue Containerregistrierung verwenden möchten.
+   * **Abonnement** : Das Azure-Abonnement, das Sie für die neue Containerregistrierung verwenden möchten.
 
-   * **Ressourcengruppe**: Die Ressourcengruppe für Ihre Containerregistrierung. Wählen Sie eine der folgenden Optionen aus:
-      * **Neue erstellen**: Gibt an, dass Sie eine neue Ressourcengruppe erstellen möchten.
-      * **Vorhandene verwenden**: Gibt an, dass Sie in einer Liste von Ressourcengruppen, die Ihrem Azure-Konto zugeordnet sind, eine Auswahl treffen möchten.
+   * **Ressourcengruppe** : Die Ressourcengruppe für Ihre Containerregistrierung. Wählen Sie eine der folgenden Optionen aus:
+      * **Neue erstellen** : Gibt an, dass Sie eine neue Ressourcengruppe erstellen möchten.
+      * **Vorhandene verwenden** : Gibt an, dass Sie in einer Liste von Ressourcengruppen, die Ihrem Azure-Konto zugeordnet sind, eine Auswahl treffen möchten.
 
-   * **Registrierungsname**: Der Name für die neue Containerregistrierung.
+   * **Registrierungsname** : Der Name für die neue Containerregistrierung.
 
-   * **Standort**: Gibt die Region an, in der Ihre Containerregistrierung erstellt wird (z. B. „USA, Westen“).
+   * **Standort** : Gibt die Region an, in der Ihre Containerregistrierung erstellt wird (z. B. „USA, Westen“).
 
-   * **SKU**: Die Dienstebene für Ihre Containerregistrierung. Wählen Sie für dieses Tutorial die Option *Basic* aus. Weitere Informationen finden Sie unter [Azure Container Registry-Tarife](/azure/container-registry/container-registry-skus).
+   * **SKU** : Die Dienstebene für Ihre Containerregistrierung. Wählen Sie für dieses Tutorial die Option *Basic* aus. Weitere Informationen finden Sie unter [Azure Container Registry-Tarife](/azure/container-registry/container-registry-skus).
 
-1. Klicken Sie auf **Bewerten + erstellen**, und überprüfen Sie, ob die Informationen korrekt sind. Klicken Sie abschließend auf **Erstellen**.
+1. Klicken Sie auf **Bewerten + erstellen** , und überprüfen Sie, ob die Informationen korrekt sind. Klicken Sie abschließend auf **Erstellen**.
 
 ## <a name="deploy-your-web-app-in-a-docker-container"></a>Bereitstellen Ihrer Web-App in einem Docker-Container
 
 Mit den folgenden Schritten wird die Konfiguration der Docker-Unterstützung für Ihre Web-App und die Bereitstellung der Web-App in einem Docker-Container beschrieben.
 
-1. Navigieren Sie auf der linken Registerkarte **Projekt** zu Ihrem Projekt, und klicken Sie mit der rechten Maustaste darauf. Erweitern Sie **Azure**, und klicken Sie auf **Add Docker Support** (Docker-Unterstützung hinzufügen).
+1. Navigieren Sie auf der linken Registerkarte **Projekt** zu Ihrem Projekt, und klicken Sie mit der rechten Maustaste darauf. Erweitern Sie **Azure** , und klicken Sie auf **Add Docker Support** (Docker-Unterstützung hinzufügen).
 
    Damit wird automatisch eine Docker-Datei mit einer Standardkonfiguration erstellt.
 
-   :::image type="content" source="media/hello-world-web-app-linux/docker-support-file.png" alt-text="Anmelden bei Azure mit IntelliJ":::
+   :::image type="content" source="media/hello-world-web-app-linux/docker-support-file.png" alt-text="Datei für Docker-Unterstützung":::
 
-1. Nachdem Sie die Docker-Unterstützung hinzugefügt haben, können Sie wie folgt vorgehen: Klicken Sie im Projekt-Explorer mit der rechten Maustaste auf Ihr Projekt, erweitern Sie die Option **Azure**, und klicken Sie dann auf **Run on Web App for Containers** (In Web-App für Container ausführen).
+1. Nachdem Sie die Docker-Unterstützung hinzugefügt haben, können Sie wie folgt vorgehen: Klicken Sie im Projekt-Explorer mit der rechten Maustaste auf Ihr Projekt, erweitern Sie die Option **Azure** , und klicken Sie dann auf **Run on Web App for Containers** (In Web-App für Container ausführen).
 
 1. Geben Sie im Dialogfeld **Run on Web App for Containers** (In Web-App für Container ausführen) die folgenden Informationen ein:
 
-   * **Name**: Gibt den Anzeigenamen an, der im Azure-Toolkit angezeigt wird. 
+   * **Name** : Gibt den Anzeigenamen an, der im Azure-Toolkit angezeigt wird. 
 
-   * **Containerregistrierung**: Wählen Sie im Dropdownmenü die Containerregistrierung aus, die Sie im vorherigen Abschnitt dieses Artikels erstellt haben. Die Felder für **Server-URL**, **Benutzername** und **Kennwort** werden automatisch ausgefüllt.
+   * **Containerregistrierung** : Wählen Sie im Dropdownmenü die Containerregistrierung aus, die Sie im vorherigen Abschnitt dieses Artikels erstellt haben. Die Felder für **Server-URL** , **Benutzername** und **Kennwort** werden automatisch ausgefüllt.
 
-   * **Image und Tag**: Gibt den Namen des Containerimages an, wobei in der Regel die folgende Syntax verwendet wird: „*Registrierung*.azurecr.io/*App-Name*:latest“. Hierbei gilt Folgendes: 
+   * **Image und Tag** : Gibt den Namen des Containerimages an, wobei in der Regel die folgende Syntax verwendet wird: „ *Registrierung*.azurecr.io/ *App-Name* :latest“. Hierbei gilt Folgendes: 
       * *Registrierung* ist Ihre Containerregistrierung aus dem vorherigen Abschnitt dieses Artikels. 
       * *App-Name* ist der Name Ihrer Web-App. 
 
    * **Use Existing Web App** (Vorhandene Web-App verwenden) oder **Create New Web App** (Neue Web-App erstellen): Gibt an, ob Sie Ihren Container in einer vorhandenen Web-App bereitstellen oder eine neue Web-App erstellen. Mit dem von Ihnen angegebenen **App-Namen** wird die URL für Ihre Web-App erstellt, z. B. *wingtiptoys.azurewebsites.net*.
 
-   * **Ressourcengruppe**: Gibt an, ob Sie eine vorhandene Ressourcengruppe verwenden oder eine neue erstellen möchten. 
+   * **Ressourcengruppe** : Gibt an, ob Sie eine vorhandene Ressourcengruppe verwenden oder eine neue erstellen möchten. 
 
-   * **App Service-Plan**: Gibt an, ob Sie einen vorhandenen App Service-Plan verwenden oder einen neuen erstellen möchten. 
+   * **App Service-Plan** : Gibt an, ob Sie einen vorhandenen App Service-Plan verwenden oder einen neuen erstellen möchten. 
 
 1. Wenn Sie mit dem Konfigurieren der oben aufgeführten Einstellungen fertig sind, klicken Sie auf **Ausführen**. Nachdem Ihre Web-App erfolgreich bereitgestellt wurde, wird der Status im Fenster **Ausführen** angezeigt.
 
@@ -148,7 +148,7 @@ Mit den folgenden Schritten wird die Konfiguration der Docker-Unterstützung fü
 
 1. Nachdem Sie Ihre Web-App veröffentlicht haben, werden die Einstellungen als Standard gespeichert. Sie können Ihre Anwendung in Azure ausführen, indem Sie auf der Symbolleiste auf den grünen Pfeil klicken. Sie können diese Einstellungen ändern, indem Sie auf das Dropdownmenü für Ihre Web-App und dann auf **Konfigurationen bearbeiten** klicken.
 
-    :::image type="content" source="media/create-hello-world-web-app/edit-configuration-menu.png" alt-text="Anmelden bei Azure mit IntelliJ":::
+    :::image type="content" source="media/create-hello-world-web-app/edit-configuration-menu.png" alt-text="Menü „Konfiguration bearbeiten“":::
 
 1. Wenn das Dialogfeld für die **Ausführungs-/Debugkonfigurationen** angezeigt wird, können Sie beliebige Standardeinstellungen ändern. Klicken Sie anschließend auf **OK**.
 

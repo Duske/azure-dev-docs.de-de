@@ -4,12 +4,12 @@ description: 'Teil 7 des Azure CLI-Tutorials: Bereinigen von Ressourcen'
 ms.topic: tutorial
 ms.date: 09/24/2019
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 037bc51c8f11faaf5b0c9bd0051a6c28197dd17b
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 0c3404067f6324a37d7863568e715b806511a226
+ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688618"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93405989"
 ---
 # <a name="part-7-clean-up-resources"></a>Teil 7: Bereinigen von Ressourcen
 
@@ -24,4 +24,4 @@ az group delete --name myResourceGroup
 Sie können auch das [Azure-Portal](https://portal.azure.com) aufrufen, **Ressourcengruppen** im Navigationsbereich auf der linken Seite auswählen, die im Rahmen dieses Tutorials erstellte Ressourcengruppe auswählen und dann den Befehl **Ressourcengruppe löschen** verwenden.
 
 > [!div class="nextstepaction"]
-> [Ich bin fertig.](node-howto-deploy-web-app.md) [Es ist ein Problem aufgetreten.](https://www.research.net/r/PWZWZ52?tutorial=node-deployment&step=clean-up-resources)
+> [Ich bin fertig.](./how-to/deploy-web-app.md) [Es ist ein Problem aufgetreten.](https://www.research.net/r/PWZWZ52?tutorial=node-deployment&step=clean-up-resources)
