@@ -10,12 +10,12 @@ metadata:
   ms.author: ushan
   ms.date: 05/05/2020
   ms.custom: github-actions-azure
-  ms.openlocfilehash: 2e25fcbe07742d0fbca64565dea8dadc50939949
-  ms.sourcegitcommit: 3d3ee59f73c966da7df65bada49e059d02e74b91
+  ms.openlocfilehash: f2dddbae2eac63fdab7e5956ebcda6003e3c2028
+  ms.sourcegitcommit: 2540e91f7b6aa077158e25a0b718737abff904d4
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 10/28/2020
-  ms.locfileid: "92898716"
+  ms.lasthandoff: 11/10/2020
+  ms.locfileid: "94432781"
 landingContent:
 - title: GitHub Actions für Azure
   linkLists:
@@ -47,3 +47,9 @@ landingContent:
     links:
     - text: Herstellen einer Verbindung mit GitHub aus Azure und anderen Diensten
       url: connect-from-azure.md
+- title: Verwalten von Azure-Richtlinien mit GitHub
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Verwalten von Azure-Richtlinien als Code mit GitHub
+      url: manage-azure-policy.md

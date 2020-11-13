@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
 ms.custom: seo-java-august2019, devx-track-java, devx-track-azurecli
-ms.openlocfilehash: a2dbb6a83837e716f48304a8013ba198280e9624
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: a6022875af3a15f7140e4db7fcc669d47f55b3d2
+ms.sourcegitcommit: dee8dc9ce6c255c53913e27813dc3659ff238a01
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689180"
+ms.lasthandoff: 11/09/2020
+ms.locfileid: "94379000"
 ---
 # <a name="get-started-with-cloud-development-using-java-on-azure"></a>Erste Schritte bei der Cloudentwicklung mit Java in Azure
 
@@ -25,22 +25,17 @@ In diesem Leitfaden werden die Schritte zum Einrichten einer Entwicklungsumgebun
 
 - Ein Azure-Konto. Falls Sie noch kein Konto haben, können Sie eine [kostenlose Testversion](https://azure.microsoft.com/free/) verwenden.
 - [Azure Cloud Shell](/azure/cloud-shell/quickstart) oder [Azure CLI 2.0](/cli/azure/install-az-cli2).
-- [Java 8](https://www.azul.com/downloads/zulu/) (enthalten in Azure Cloud Shell)
+- [Java 8](https://docs.microsoft.com/azure/developer/java/fundamentals/java-jdk-long-term-support) (enthalten in Azure Cloud Shell)
 - [Maven 3](https://maven.apache.org/download.cgi) (enthalten in Azure Cloud Shell)
 
 ## <a name="set-up-authentication"></a>Einrichten der Authentifizierung
 
 Die Java-Anwendung benötigt Lese- und Schreibberechtigungen in Ihrem Azure-Abonnement, um den Beispielcode in diesem Tutorial ausführen zu können. Erstellen Sie einen Dienstprinzipal, und konfigurieren Sie Ihre Anwendung so, dass sie mit dessen Anmeldeinformationen ausgeführt wird. Dienstprinzipale ermöglichen die Erstellung eines nicht interaktiven, Ihrer Identität zugeordneten Kontos, dem Sie nur die Berechtigungen erteilen, die zum Ausführen Ihrer App erforderlich sind.
 
-[Erstellen Sie einen Dienstprinzipal mithilfe der Azure CLI 2.0](/cli/azure/create-an-azure-service-principal-azure-cli), und erfassen Sie die Ausgabe. Geben Sie im Kennwortargument anstelle von `MY_SECURE_PASSWORD` ein [sicheres Kennwort](/azure/active-directory/active-directory-passwords-policy) an. Ihr Kennwort muss 8 bis 16 Zeichen lang sein und mindestens drei der folgenden Merkmale aufweisen:
-
-* Kleinbuchstaben
-* Großbuchstaben
-* Zahlen
-* Eins der folgenden Symbole: @ # $ % ^ & * - _ ! + = [ ] { } | \ : ' , . ? / ` ~ " ( ) ;
+[Erstellen Sie einen Dienstprinzipal mithilfe der Azure CLI 2.0](/cli/azure/create-an-azure-service-principal-azure-cli), und erfassen Sie die Ausgabe.
 
 ```azurecli-interactive
-az ad sp create-for-rbac --name AzureJavaTest --password "MY_SECURE_PASSWORD"
+az ad sp create-for-rbac --name AzureJavaTest
 ```
 
 Sie erhalten eine Antwort im folgenden Format:
@@ -50,7 +45,7 @@ Sie erhalten eine Antwort im folgenden Format:
   "appId": "a487e0c1-82af-47d9-9a0b-af184eb87646d",
   "displayName": "AzureJavaTest",
   "name": "http://AzureJavaTest",
-  "password": password,
+  "password": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
   "tenant": "tttttttt-tttt-tttt-tttt-tttttttttttt"
 }
 ```
@@ -61,7 +56,7 @@ Kopieren Sie als Nächstes Folgendes in eine Textdatei auf Ihrem System:
 # sample management library properties file
 subscription=ssssssss-ssss-ssss-ssss-ssssssssssss
 client=cccccccc-cccc-cccc-cccc-cccccccccccc
-key=kkkkkkkkkkkkkkkk
+key=aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa
 tenant=tttttttt-tttt-tttt-tttt-tttttttttttt
 managementURI=https\://management.core.windows.net/
 baseURL=https\://management.azure.com/
@@ -110,14 +105,9 @@ Dadurch wird ein einfaches Maven-Projekt unter dem Ordner `testAzureApp` erstell
 
 ```XML
 <dependency>
-    <groupId>com.microsoft.azure</groupId>
-    <artifactId>azure</artifactId>
-    <version>1.3.0</version>
-</dependency>
-<dependency>
-    <groupId>com.microsoft.azure</groupId>
-    <artifactId>azure-storage</artifactId>
-    <version>5.0.0</version>
+      <groupId>com.azure</groupId>
+      <artifactId>azure-storage-blob</artifactId>
+      <version>12.8.0</version>
 </dependency>
 <dependency>
     <groupId>com.microsoft.sqlserver</groupId>
@@ -144,11 +134,11 @@ Fügen Sie unter dem Element `project` der obersten Ebene einen Eintrag vom Typ 
 
 ### <a name="install-the-azure-toolkit-for-intellij"></a>Installieren des Azure-Toolkits für IntelliJ
 
-Das [Azure-Toolkit](../toolkit-for-intellij/installation.md) ist erforderlich, wenn Sie Web-Apps oder APIs programmgesteuert bereitstellen, wird derzeit jedoch nicht für andere Bereitstellungsarten verwendet. Es folgt eine Zusammenfassung des Installationsvorgangs. Eine Schnellstartanleitung finden Sie unter [Erstellen einer „Hello World“-Web-App für Azure mit IntelliJ](../toolkit-for-intellij/create-hello-world-web-app.md).
+Das [Azure-Toolkit](../toolkit-for-intellij/index.yml) ist erforderlich, wenn Sie Web-Apps oder APIs programmgesteuert bereitstellen, wird derzeit jedoch nicht für andere Bereitstellungsarten verwendet. Es folgt eine Zusammenfassung des Installationsvorgangs. Eine Schnellstartanleitung finden Sie unter [Erstellen einer „Hello World“-Web-App für Azure mit IntelliJ](../toolkit-for-intellij/create-hello-world-web-app.md).
 
 - Wählen Sie im Menü **Datei** die Option **Einstellungen...** aus.
 
-- Klicken Sie auf **Browse repositories...** (Repositorys durchsuchen), suchen Sie nach „Azure“, und installieren Sie dann das **Azure-Toolkit für IntelliJ** .
+- Klicken Sie auf **Browse repositories...** (Repositorys durchsuchen), suchen Sie nach „Azure“, und installieren Sie dann das **Azure-Toolkit für IntelliJ**.
 
 - Starten Sie IntelliJ neu.
 
@@ -162,9 +152,9 @@ Das [Azure-Toolkit](../toolkit-for-eclipse/index.yml) ist erforderlich, wenn Sie
 
 - Aktivieren Sie anschließend das Kontrollkästchen neben **Azure toolkit for Java** (Azure-Toolkit für Java), und deaktivieren Sie das Kontrollkästchen **Contact all update sites during install to find required software** (Während der Installation alle Updatesites kontaktieren, um erforderliche Software zu finden). Klicken Sie anschließend auf „Next“ (Weiter).
 
-## <a name="create-a-linux-virtual-machine"></a>Erstellen einer virtuellen Linux-Maschine
+## <a name="create-a-linux-virtual-machine"></a>Erstellen einer Linux-VM
 
-Erstellen Sie im Projektverzeichnis `src/main/java/com/fabirkam` eine neue Datei namens `AzureApp.java`, und fügen Sie den folgenden Codeblock ein. Aktualisieren Sie die Variablen `userName` und `sshKey` mit echten Werten für Ihren Computer. Der Code erstellt einen neuen virtuellen Linux-Computer namens `testLinuxVM` in der Ressourcengruppe `sampleResourceGroup` in der Azure-Region „USA, Osten“.
+Erstellen Sie im Projektverzeichnis `src/main/java/com/fabrikam` eine neue Datei namens `AzureApp.java`, und fügen Sie den folgenden Codeblock ein. Aktualisieren Sie die Variablen `userName` und `sshKey` mit echten Werten für Ihren Computer. Der Code erstellt einen neuen virtuellen Linux-Computer namens `testLinuxVM` in der Ressourcengruppe `sampleResourceGroup` in der Azure-Region „USA, Osten“.
 
 ```java
 package com.fabrikam;
@@ -184,14 +174,19 @@ import com.microsoft.azure.management.resources.fluentcore.utils.SdkContext;
 
 import com.microsoft.rest.LogLevel;
 
-import com.microsoft.azure.storage.*;
-import com.microsoft.azure.storage.blob.*;
+import com.azure.storage.blob.BlobClient;
+import com.azure.storage.blob.BlobContainerClient;
+import com.azure.storage.blob.BlobServiceClient;
+import com.azure.storage.blob.BlobServiceClientBuilder;
+import com.azure.storage.blob.models.PublicAccessType;
+import com.azure.storage.common.StorageSharedKeyCredential;
 
-import java.io.File;
+import java.io.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.List;
 
 public class AzureApp {
 
@@ -406,26 +401,32 @@ public static void main(String[] args) {
 
         // create a storage container to hold the file
         List<StorageAccountKey> keys = storage.getKeys();
-        final String storageConnection = "DefaultEndpointsProtocol=https;"
-                + "AccountName=" + storage.name()
-                + ";AccountKey=" + keys.get(0).value()
-                + ";EndpointSuffix=core.windows.net";
+        PublicEndpoints endpoints = storage.endPoints();
+        String accountName = storage.name();
+        String accountKey = keys.get(0).value();
+        String endpoint = endpoints.primary().blob();
 
-        CloudStorageAccount account = CloudStorageAccount.parse(storageConnection);
-        CloudBlobClient serviceClient = account.createCloudBlobClient();
+        StorageSharedKeyCredential credential = new StorageSharedKeyCredential(accountName, accountKey);
 
-        // Container name must be lower case.
-        CloudBlobContainer container = serviceClient.getContainerReference("helloazure");
-        container.createIfNotExists();
+        BlobServiceClient storageClient =new BlobServiceClientBuilder()
+                                    .endpoint(endpoint)
+                                    .credential(credential)
+                                    .buildClient();
+
+        // Container name must be lower case
+        BlobContainerClient blobContainerClient = storageClient.getBlobContainerClient("helloazure");
+        blobContainerClient.create();
 
         // Make the container public
-        BlobContainerPermissions containerPermissions = new BlobContainerPermissions();
-        containerPermissions.setPublicAccess(BlobContainerPublicAccessType.CONTAINER);
-        container.uploadPermissions(containerPermissions);
+        blobContainerClient.setAccessPolicy(PublicAccessType.CONTAINER, null);
 
         // write a blob to the container
-        CloudBlockBlob blob = container.getBlockBlobReference("helloazure.txt");
-        blob.uploadText("hello Azure");
+        String fileName = "helloazure.txt";
+        String textNew = "Hello Azure";
+
+        BlobClient blobClient = blobContainerClient.getBlobClient(fileName);
+        InputStream is = new ByteArrayInputStream(textNew.getBytes());
+        blobClient.upload(is, textNew.length());
 
     } catch (Exception e) {
         System.out.println(e.getMessage());
