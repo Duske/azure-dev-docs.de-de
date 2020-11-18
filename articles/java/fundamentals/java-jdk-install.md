@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie die Azul Zulu Java Development Kits (JDK
 ms.date: 04/19/2019
 ms.topic: conceptual
 ms.custom: devx-track-java
-ms.openlocfilehash: e5b9f0874202373400640687df2b1558f7f41526
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: bb6bc020f7165c81699a624b9fd7a55c4f289c24
+ms.sourcegitcommit: 12f80b1e0fe08db707c198271d0c399c3aba343a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473489"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94515161"
 ---
 # <a name="install-the-jdk-for-azure-and-azure-stack"></a>Installieren des JDK für Azure und Azure Stack
 
@@ -92,7 +92,7 @@ Sie können ein VM-Image für die folgenden Plattformen beziehen:
 
 Die Azul Zulu JDKs werden von Azul in einem [Yum-Repository](https://repos.azul.com/azure-only/zulu-azure.repo) bereitgestellt.
 
-**Führen Sie über Ihre Befehlszeilenschnittstelle die folgenden Befehle aus, um das Azul Zulu JDK für Java 8 zu installieren:**
+Führen Sie über Ihre Befehlszeilenschnittstelle die folgenden Befehle aus, um das Azul Zulu JDK für Java 8 zu installieren:
 
 ```cli
 sudo rpm --import http://repos.azul.com/azul-repo.key
@@ -110,13 +110,13 @@ sudo yum -q -y update
 sudo yum -q -y install zulu-11-azure-jdk
 ```
 
-Java 13 (Vorschauversion):
+Java 15:
 
 ```cli
 sudo rpm --import http://repos.azul.com/azul-repo.key
 sudo curl http://repos.azul.com/azure-only/zulu-azure.repo -o /etc/yum.repos.d/zulu-azure.repo
 sudo yum -q -y update
-sudo yum -q -y install zulu-13-azure-jdk
+sudo yum -q -y install zulu-15-azure-jdk
 ```
 
 **So aktualisieren Sie ein Zulu JDK 8-Paket aus einem Yum-Repository:**
@@ -139,7 +139,7 @@ sudo yum -y erase zulu-8-azure-jdk
 
 Die Azul Zulu JDKs werden von Azul auch in einem [apt-get-Repository](https://repos.azul.com/azure-only/zulu/apt) bereitgestellt.
 
-**Führen Sie über Ihre Befehlszeilenschnittstelle die folgenden Befehle aus, um das Azul Zulu JDK für Java 8 mit apt-get zu installieren:**
+Führen Sie über Ihre Befehlszeilenschnittstelle die folgenden Befehle aus, um das Azul Zulu JDK für Java 8 mit apt-get zu installieren:
 
 ```cli
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0xB1998361219BD9C9
@@ -157,7 +157,7 @@ sudo apt-get -q update
 sudo apt-get -y install zulu-11-azure-jdk
 ```
 
-Java 13 (Vorschauversion):
+Java 15:
 
 ```cli
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0xB1998361219BD9C9

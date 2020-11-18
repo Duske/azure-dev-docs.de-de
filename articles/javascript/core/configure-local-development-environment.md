@@ -1,15 +1,15 @@
 ---
 title: Konfigurieren Ihrer lokalen JavaScript-Umgebung für die Azure-Entwicklung
 description: Hier erfahren Sie, wie Sie eine lokale JavaScript-Entwicklungsumgebung für die Arbeit mit Azure einrichten – einschließlich einem Editor, den Azure SDK-Bibliotheken, optionalen Tools und den erforderlichen Anmeldeinformationen für die Bibliothekauthentifizierung.
-ms.date: 09/30/2020
+ms.date: 11/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-js, azure-sdk-javascript-ai-text-analytics-5.0.0
-ms.openlocfilehash: 2e61facd2065773dcbef7d0cdd20353671121422
-ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
+ms.openlocfilehash: 0da3357fc24f65a43303f6c23d5aa6b679f211d4
+ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92437220"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94333823"
 ---
 # <a name="configure-your-local-javascript-dev-environment-for-azure"></a>Konfigurieren Ihrer lokalen JavaScript-Entwicklungsumgebung für Azure
 
@@ -23,57 +23,42 @@ Azure-Ressourcen werden innerhalb eines Abonnements erstellt, bei dem es sich um
 
 |type|BESCHREIBUNG|
 |--|--|
-|[Abonnement für die Testversion](https://azure.microsoft.com/free/cognitive-services)|Erstellen Sie ein _kostenloses_ Testabonnement.|
-|[Bestehendes Abonnement](https://portal.azure.com)|Wenn Sie bereits über ein Abonnement verfügen, greifen Sie im Azure-Portal, über die Azure CLI oder über JavaScript auf das vorhandene Abonnement zu.|
-|[Mehrere Abonnements](/azure/governance/management-groups/create-management-group-javascript)|Wenn Sie mehrere Abonnements verwalten müssen, lesen Sie, wie Sie eine Verwaltungsgruppe mit JavaScript erstellen.|
+|Abonnement für die Testversion|Erstellen Sie ein _kostenloses_ [Testabonnement](https://azure.microsoft.com/free/).|
+|Bestehendes Abonnement|Wenn Sie bereits über ein Abonnement verfügen, greifen Sie im [Azure-Portal](https://portal.azure.com), über die [Azure CLI]() oder über JavaScript auf das vorhandene Abonnement zu.|
+|Mehrere Abonnements|Wenn Sie mehrere Abonnements verwalten müssen, lesen Sie [hier](/azure/governance/management-groups/create-management-group-javascript), wie Sie eine Verwaltungsgruppe mit JavaScript erstellen.|
 
-## <a name="one-time-installation"></a>Einmalige Installation
+## <a name="one-time-software-installation"></a>Einmalige Softwareinstallation
 
 Um mit einer Azure-Ressource und JavaScript auf Ihrer lokalen Arbeitsstation entwickeln zu können, müssen Sie Folgendes einmalig installieren:
 
 |Name/Installationsprogramm|BESCHREIBUNG|
 |--|--|
-|[Node.js](https://www.npmjs.com/)|Installieren Sie die aktuelle Laufzeitumgebung mit langfristigem Support (Long-Term Support, LTS) für die Entwicklung auf lokalen Arbeitsstationen. |
-| npm (mit modernen Versionen von Node.js installiert) oder [Yarn](https://yarnpkg.com/)|Paket-Manager zum Installieren von Azure SDK-Bibliotheken.|
+[!INCLUDE [Node.js](../includes/environment-nodejs-table-row-2-columns.md)]
 |[Visual Studio Code](https://code.visualstudio.com/)| Visual Studio Code bietet eine großartige JavaScript-Integrationsumgebung und -Codierungsumgebung, ist aber nicht erforderlich. Sie können einen beliebigen Code-Editor verwenden. Wenn Sie einen anderen Editor verwenden, beachten Sie die Informationen in diesem Dokument zur Integration in Azure, oder verwenden Sie die Azure CLI.|
-|[Azure-Befehlszeilenschnittstelle](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest)|Sie können die Azure CLI verwenden, um Azure-Ressourcen über eine Befehlszeile, ein Terminal oder eine Bash-Shell zu erstellen und zu verwalten.|
 
 > [!CAUTION]
 > Wenn Sie eine Azure-Ressource als Laufzeitumgebung für Ihren Code verwenden möchten, z. B. eine Azure-Web-App oder eine Azure-Containerinstanz, sollten Sie überprüfen, ob Ihre lokale Node.js-Entwicklungsumgebung der Azure-Ressourcenlaufzeit entspricht, die Sie verwenden möchten.
 
-### <a name="optional-local-installations"></a>Optionale lokale Installationen
+### <a name="recommended-local-installations"></a>Empfohlene lokale Installationen
 
-Die folgenden allgemeinen Installationen lokaler Arbeitsstationen sind optional, um Sie bei den lokalen Entwicklungsaufgaben zu unterstützen.
+Die folgenden allgemeinen Installationen lokaler Arbeitsstationen werden empfohlen, um Sie bei den lokalen Entwicklungsaufgaben zu unterstützen.
 
 |Name/Installationsprogramm|BESCHREIBUNG|
 |--|--|
+|[Azure CLI](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest) oder [Visual Studio Code-Erweiterungen für Azure](https://marketplace.visualstudio.com/search?term=azure&target=VSCode&category=All%20categories&sortBy=Relevance) |Für das Arbeiten mit Azure werden in der Regel das [Azure-Portal](https://ms.portal.azure.com/), die Azure CLI und spezielle Visual Studio Code-Erweiterungen verwendet. Die Azure CLI ist zwar nur erforderlich, wenn dies in einer Schnellstartanleitung oder in einem Tutorial angegeben ist. Im Gegensatz zu Visual Studio Code, das den gleichen Funktionsumfang auf der Grundlage dienstspezifischer Erweiterungen bietet, handelt es sich bei der CLI jedoch um ein einzelnes Tool für die Arbeit mit Azure.|
 | [git](https://git-scm.com/downloads) | Befehlszeilentools für die Quellcodeverwaltung. Wenn Sie es vorziehen, können Sie ein anderes Quellcodeverwaltungstool verwenden. |
+
 
 ## <a name="one-time-configuration-of-service-principal"></a>Einmalkonfiguration des Dienstprinzipals
 
 Jeder Azure-Dienst verfügt über einen Authentifizierungsmechanismus. Dazu können Schlüssel und Endpunkte, Verbindungszeichenfolgen oder andere Mechanismen zählen. Gemäß den bewährten Methoden erstellen Sie Ressourcen und authentifizieren sich bei Ressourcen mithilfe eines [Dienstprinzipals](node-sdk-azure-authenticate-principal.md). Mit einem Dienstprinzipal können Sie den Zugriffsbereich für den unmittelbaren Entwicklungsbedarf konkret definieren.
 
-Schritte zum **Erstellen des Dienstprinzipals** : 
-
-1. Melden Sie sich mit Ihrem Benutzerkonto bei Azure an.
-1. Erstellen Sie einen _benannten_ Dienstprinzipal mit einem bestimmten Bereich. Da Sie in den meisten Schnellstarts aufgefordert werden, eine Azure-Ressource zu erstellen, muss der Dienstprinzipal Ressourcen erstellen können.
-1. Melden Sie sich mit Ihrem Benutzerkonto bei Azure ab.
-
-Schritte zum **Verwenden eines Dienstprinzipals** :
-
-1. Authentifizieren Sie sich mit dem Dienstprinzipal und mit einem Zertifikat, mit Umgebungsvariablen oder mit einer Datei vom Typ `.json` programmgesteuert bei Azure. 
-1. Erstellen Sie mit dem Dienstprinzipal Azure-Ressourcen, und verwenden Sie den Dienst.
-
-Informieren Sie sich, wie Sie [einen Dienstprinzipal erstellen](node-sdk-azure-authenticate-principal.md). Speichern Sie unbedingt die Antwort aus dem Erstellungsschritt. Sie benötigen die Werte für `appId`, `tenant` und `password` der Antwort, damit der Dienstprinzipal verwendet werden kann.
-
-[Erstellen Sie Azure-Ressourcen mit Ihrem Dienstprinzipal.](/cli/azure/create-an-azure-service-principal-azure-cli#create-a-resource-using-service-principal)
-
-## <a name="steps-for-each-new-development-project-setup"></a>Schritte für die Einrichtung aller neuen Entwicklungsprojekte
+## <a name="working-with-azure-and-the-azure-sdk-client-libraries"></a>Arbeiten mit Azure und den Azure SDK-Clientbibliotheken
 
 Die [Azure SDK-Bibliotheken](../azure-sdk-library-package-index.md) werden für jeden Dienst einzeln bereitgestellt. Sie installieren jede Bibliothek basierend auf dem Azure-Dienst, den Sie verwenden müssen.
 
 Für jedes neue Projekt mit Azure müssen folgende Aktionen ausgeführt werden:
-- Erstellen Sie Azure-Ressourcen, und speichern Sie zugehörige Schlüssel oder die Konfiguration an einem [sicheren Speicherort]().
+- Erstellen Sie Azure-Ressourcen, und speichern Sie zugehörige Schlüssel oder die Konfiguration an einem [sicheren Speicherort](#securing-configuration-information).
 - Installieren von Azure SDK-Bibliotheken aus npm oder Yarn. 
 - Verwenden Sie den Dienstprinzipal für die Authentifizierung bei Azure SDKs, und verwenden Sie anschließend Konfigurationsinformationen für den Zugriff auf bestimmte Dienste.
 
@@ -81,7 +66,7 @@ Für jedes neue Projekt mit Azure müssen folgende Aktionen ausgeführt werden:
 
 Sie haben mehrere Optionen zum Speichern von Konfigurationsinformationen:
 - [Dotenv](https://www.npmjs.com/package/dotenv) ist ein beliebtes npm-Paket zum Lesen von Umgebungsvariablen aus einer Datei vom Typ `.env`. Hinzufügen der `.env`-Datei zur `.gitignore`-Datei, damit die `.env`-Datei nicht in die Quellcodeverwaltung eingecheckt wird.
-- [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/) zum Erstellen und Verwalten von Schlüsseln für den Zugriff auf und die Verschlüsselung von Cloudressourcen, Apps und Lösungen
+- [Azure Key Vault](/azure/key-vault/) zum Erstellen und Verwalten von Schlüsseln für den Zugriff auf und die Verschlüsselung von Cloudressourcen, Apps und Lösungen
 
 ### <a name="create-environment-variables-for-the-azure-libraries"></a>Erstellen von Umgebungsvariablen für die Azure-Bibliotheken
 

@@ -4,12 +4,12 @@ description: 'Teil 1 des Azure CLI-Tutorials: Einführung und Voraussetzungen'
 ms.topic: tutorial
 ms.date: 09/24/2019
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: a23a09cfdd36cd67b8fc09a1cb3bac266c2db813
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 2ff59026c3f250f3ef83982f799633094a5cd9f7
+ms.sourcegitcommit: 12f80b1e0fe08db707c198271d0c399c3aba343a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688678"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94515181"
 ---
 # <a name="deploy-to-azure-app-service-using-the-azure-cli"></a>Bereitstellen in Azure App Service mit der Azure-Befehlszeilenschnittstelle
 
@@ -20,25 +20,15 @@ In diesem Tutorial stellen Sie eine Node.js-Anwendung mithilfe der von allen Bet
 - Ein [Azure-Abonnement](#azure-subscription).
 - [Node.js und npm 6.x oder höher](https://nodejs.org/en/download), Node.js-Paket-Manager
 - [Git](https://git-scm.com/downloads) (danach sollte der Befehl `git --version` eine Versionsnummer anzeigen)
-- Die [Azure CLI](/cli/azure/install-azure-cli)
-
-Alternativ können Sie die [Azure CLI-Erweiterung für Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli) verwenden, die beim Schreiben von Azure CLI-Skripts Syntax farbig hervorhebt und IntelliSense (Vervollständigungen) sowie Codeausschnitte bietet.
-
-Eine zweite Alternative ist [Azure Cloud Shell](/azure/cloud-shell/overview), ein Dienst, den Sie in Visual Studio Code mithilfe der [Azure-Kontoerweiterung](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account) verwenden können.
+[!INCLUDE [Azure CLI](~/../azure-docs/includes/azure-cli-prepare-your-environment-no-header.md)]
 
 ### <a name="azure-subscription"></a>Azure-Abonnement
 
 Wenn Sie kein Azure-Abonnement haben, [registrieren Sie sich jetzt](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-node-git&mktingSource=vscode-tutorial-node-git) für ein kostenloses Konto mit 200 USD in Form einer Azure-Gutschrift, um eine beliebige Kombination von Diensten auszuprobieren.
 
-### <a name="sign-in-to-the-azure-cli"></a>Melden Sie sich bei der Azure-Befehlszeilenschnittstelle an.
+### <a name="sign-in-to-azure-with-azure-cli"></a>Anmelden bei Azure mit der Azure CLI
 
-Führen Sie nach der Installation der Azure CLI den folgenden Befehl an einem Terminal oder einer Eingabeaufforderung aus:
-
-```azurecli
-az login
-```
-
-Der Befehl öffnet ein Browserfenster, in dem Sie zur Anmeldung bei Azure aufgefordert werden. Nachdem Sie sich angemeldet haben, wird im Terminalfenster eine JSON-Ausgabe mit Details zu Ihrem Abonnement angezeigt.
+[!INCLUDE [Sign in ](../azure-cli/includes/interactive-login.md)]
 
 ## <a name="check-npm-version"></a>Überprüfen der npm-Version
 

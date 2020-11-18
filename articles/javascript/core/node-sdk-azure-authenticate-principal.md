@@ -2,14 +2,14 @@
 title: Erstellen eines Azure-Dienstprinzipals mit Node.js
 description: Hier erfahren Sie, wie Sie die Dienstprinzipalauthentifizierung mit Node.js und JavaScript verwenden.
 ms.topic: how-to
-ms.date: 09/30/2020
+ms.date: 11/05/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 88724ca9ecdb24088e437a5b9b407fbdde69650a
-ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
+ms.openlocfilehash: e7f885b0af5e7a25d0e706c235a1521bb44c4b36
+ms.sourcegitcommit: 12f80b1e0fe08db707c198271d0c399c3aba343a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92437204"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94515171"
 ---
 # <a name="create-an-azure-service-principal-for-nodejs"></a>Erstellen eines Azure-Dienstprinzipals für Node.js
 
@@ -26,21 +26,11 @@ In diesem Thema werden drei Methoden zum Erstellen eines Dienstprinzipals erläu
 
 [!INCLUDE [chrome-note](../includes/chrome-note.md)]
 
-## <a name="create-a-service-principal-using-the-azure-portal"></a>Erstellen eines Dienstprinzipals mit dem Azure-Portal
-
-Führen Sie die im Thema [Erstellen einer Azure Active Directory-Anwendung und eines Dienstprinzipals mit Ressourcenzugriff mithilfe des Portals](/azure/active-directory/develop/howto-create-service-principal-portal) beschriebenen Schritte aus, um den Dienstprinzipal zu erstellen.
-
 ## <a name="create-a-service-principal-using-the-azure-cli-20"></a>Erstellen eines Dienstprinzipals mit der Azure CLI 2.0
 
-Bei der Erstellung eines Dienstprinzipals mithilfe der [Azure CLI 2.0](/cli/azure/install-az-cli2) werden die folgenden Schritte ausgeführt:
+Um die folgenden Schritte ausführen zu können, [installieren Sie die Azure CLI](/cli/azure/install-azure-cli), und [melden Sie sich bei Azure an](/cli/azure/authenticate-azure-cli). 
 
-1. Laden Sie die [Azure CLI 2.0](/cli/azure/install-az-cli2) herunter.
-
-2. Öffnen Sie ein Terminalfenster, und geben Sie den Befehl `az login` ein, um den Anmeldeprozess zu starten.
-
-3. Durch den Aufruf von `az login` werden eine URL und ein Code zurückgegeben. Navigieren Sie zur angegebenen URL, geben Sie den Code ein, und melden Sie sich mit Ihrer Azure-Identität an. (Dies geschieht unter Umständen automatisch, wenn Sie bereits angemeldet sind.) Sie können dann über die CLI auf Ihr Konto zugreifen.
-
-4. Rufen Sie mithilfe des Befehls `az account list` Ihre Abonnement- und Ihre Mandanten-ID ab. Diese Werte werden bei der Arbeit mit den Azure-Paketen benötigt. Im Anschluss finden Sie eine Beispielausgabe dieses Befehls:
+1. Rufen Sie mithilfe des Befehls `az account list` Ihre Abonnement- und Ihre Mandanten-ID ab. Diese Werte werden bei der Arbeit mit den Azure-Paketen benötigt. Im Anschluss finden Sie eine Beispielausgabe dieses Befehls:
 
     ```shell
     {
@@ -58,9 +48,13 @@ Bei der Erstellung eines Dienstprinzipals mithilfe der [Azure CLI 2.0](/cli/azur
     }
     ```
 
-5. Führen Sie die im Thema [Erstellen eines Azure-Dienstprinzipals mit der Azure-Befehlszeilenschnittstelle](/cli/azure/create-an-azure-service-principal-azure-cli) beschriebenen Schritte aus, um den Dienstprinzipal zu generieren. Das JSON-Objekt in der Ausgabe enthält die Informationen, die für die Authentifizierung mit Azure erforderlich sind.
-
+1. Führen Sie die im Thema [Erstellen eines Azure-Dienstprinzipals mit der Azure-Befehlszeilenschnittstelle](/cli/azure/create-an-azure-service-principal-azure-cli) beschriebenen Schritte aus, um den Dienstprinzipal zu generieren. Das JSON-Objekt in der Ausgabe enthält die Informationen, die für die Authentifizierung mit Azure erforderlich sind.
 
 ## <a name="using-the-service-principal"></a>Verwenden des Dienstprinzipals
 
-Wenn Sie über einen Dienstprinzipal verfügen, können Sie mithilfe der Schritte des Themas [Authentifizieren mit den Azure-Verwaltungsmodulen für JavaScript](./node-sdk-azure-authenticate.md) ein Anmeldeinformationsobjekt erstellen, das für die Authentifizierung Ihres Clients mit Azure Active Directory verwendet werden kann.
+Wenn Sie über einen Dienstprinzipal verfügen, können Sie folgende Schritte ausführen:
+
+1. Authentifizieren Sie sich mit dem Dienstprinzipal und mit einem Zertifikat, mit Umgebungsvariablen oder mit einer Datei vom Typ `.json` programmgesteuert bei Azure. 
+1. Erstellen Sie mit dem Dienstprinzipal Azure-Ressourcen, und verwenden Sie den Dienst.
+
+Führen Sie die Schritte des Themas [Authentifizieren mit den Azure-Verwaltungsmodulen für JavaScript](./node-sdk-azure-authenticate.md) aus, um ein Anmeldeinformationsobjekt zu erstellen, das für die Authentifizierung Ihres Clients mit Azure Active Directory verwendet werden kann.

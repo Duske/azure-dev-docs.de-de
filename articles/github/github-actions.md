@@ -1,138 +1,93 @@
 ---
-title: Bereitstellen in Azure mithilfe von GitHub Actions
+title: Worum handelt es sich bei GitHub Actions für Azure?
 description: Hier erfahren Sie, wie Sie in Ihrem Repository Workflows zum Erstellen, Testen, Verpacken und Veröffentlichen sowie zum Bereitstellen in Azure erstellen.
 author: N-Usha
 ms.author: ushan
 ms.topic: conceptual
 ms.service: azure
-ms.date: 05/05/2020
+ms.date: 10/30/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: dd0e13f5756a337e1b1f820b9d810924af966fe8
-ms.sourcegitcommit: 3d3ee59f73c966da7df65bada49e059d02e74b91
+ms.openlocfilehash: bbb87890f4db4b744ae4b2794c86e86a18c0e352
+ms.sourcegitcommit: 12f80b1e0fe08db707c198271d0c399c3aba343a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92898746"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94515121"
 ---
-# <a name="deploy-to-azure-using-github-actions"></a>Bereitstellen in Azure mithilfe von GitHub Actions
+# <a name="what-is-github-actions-for-azure"></a>Worum handelt es sich bei GitHub Actions für Azure?
 
-[GitHub Actions](https://help.github.com/articles/about-github-actions) ermöglicht Entwicklern, das Erstellen automatisierter Workflows für den Softwareentwicklungslebenszyklus.  
+[GitHub Actions](https://help.github.com/articles/about-github-actions) unterstützt Sie beim Automatisieren Ihrer Softwareentwicklungsworkflows innerhalb von GitHub. Sie können Workflows an demselben Ort bereitstellen, an dem Sie Code speichern und an Pull Requests und Problemen zusammenarbeiten.
 
-Mit GitHub Actions für Azure können Sie Workflows erstellen, die Sie in Ihrem Repository zum Erstellen, Testen, Verpacken, Veröffentlichen und **Bereitstellen** in Azure einrichten können. [Weitere Informationen zu allen anderen Integrationen mit Azure](https://aka.ms/GitHubonAzure).
+In GitHub Actions ist ein [Workflow](https://help.github.com/articles/about-github-actions#workflow) ein automatisierter Prozess, den Sie in Ihrem GitHub-Repository einrichten. Sie können jedes Projekt auf GitHub mit einem Workflow erstellen, testen, verpacken, freigeben oder bereitstellen.
 
-Noch heute mit einem [kostenlosen Azure-Konto](https://azure.com/free/open-source) beginnen!
+Jeder Workflow besteht aus einzelnen [Aktionen](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions), die nach einem bestimmten Ereignis (etwa einem Pull Request) ausgeführt werden.  Die einzelnen Aktionen sind verpackte Skripts, mit denen Softwareentwicklungsaufgaben automatisiert werden.
 
-> [!NOTE]   
-> Über die Links in diesem Artikel gelangen Sie jeweils zu einem GitHub-Artikel oder -Repository. 
+Mit GitHub Actions für Azure können Sie Workflows erstellen, die Sie in Ihrem Repository zum Erstellen, Testen, Verpacken, Veröffentlichen und Bereitstellen in Azure einrichten können. GitHub Actions für Azure unterstützt Azure-Dienste, u. a. Azure App Service, Azure Functions und Azure Key Vault.
 
-## <a name="key-concepts"></a>Wichtige Begriffe
+GitHub Actions beinhaltet darüber hinaus Unterstützung für Hilfsprogramme wie Azure Resource Manager-Vorlagen, die Azure CLI und Azure Policy.
 
-Mit GitHub Actions können Sie direkt in Ihrem GitHub-Repository benutzerdefinierte SDLC-Workflows (Software Development Life Cycle, Softwareentwicklungs-Lebenszyklus) erstellen. Eine Übersicht über GitHub Actions und wichtige Konzepte finden Sie in den folgenden Artikeln: 
+## <a name="why-should-i-use-github-actions-for-azure"></a>Gründe für die Verwendung von GitHub Actions für Azure
 
-- [Informationen zu GitHub Actions](https://help.github.com/actions/getting-started-with-github-actions/about-github-actions)
-- [Wichtige Konzepte](https://help.github.com/actions/getting-started-with-github-actions/core-concepts-for-github-actions)
-- [Informationen zum Verpacken mit GitHub Actions](https://help.github.com/en/actions/publishing-packages-with-github-actions/about-packaging-with-github-actions)
+GitHub Actions für Azure wird von Microsoft für die Verwendung mit Azure entwickelt. Sie finden alle Aktionen von GitHub Actions für Azure im [GitHub-Marketplace](https://github.com/marketplace?query=Azure&type=actions). Weitere Informationen zum Integrieren von Aktionen in Ihre Workflows finden Sie unter [Suchen und Anpassen von Aktionen](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/finding-and-customizing-actions).
 
-## <a name="get-started"></a>Erste Schritte 
+## <a name="what-is-the-difference-between-github-actions-and-azure-pipelines"></a>Worin besteht der Unterschied zwischen GitHub Actions und Azure Pipelines?
 
-GitHub Actions enthält vorkonfigurierte Vorlagen und Marketplace-Aktionen. 
+Sowohl Azure Pipelines als auch GitHub Actions unterstützt Sie bei der Automatisierung von Softwareentwicklungsworkflows. [Hier](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/migrating-from-azure-pipelines-to-github-actions) finden Sie weitere Informationen zu den Unterschieden zwischen den Diensten sowie zur Migration von Azure Pipelines zu GitHub Actions.
 
-- [Verwenden vorkonfigurierter Vorlagen](https://help.github.com/actions/getting-started-with-github-actions/starting-with-preconfigured-workflow-templates)  
-- [Verwenden von Aktionen aus dem GitHub-Marketplace](https://help.github.com/en/actions/getting-started-with-github-actions/using-actions-from-github-marketplace)  
-- [GitHub-Marketplace-Aktionen: Bereitstellen in Azure](https://github.com/marketplace?type=actions&query=Azure)  
-  
-GitHub Actions für Azure finden Sie auf den folgenden Seiten: 
-   
-- [Azure-Aktionen](https://github.com/marketplace?query=Azure&type=actions)  
-- [Einsteiger-Aktionsworkflows für die Bereitstellung in Azure](https://github.com/Azure/actions-workflow-samples)
+## <a name="what-do-i-need-to-use-github-actions-for-azure"></a>Was wird für die Verwendung von GitHub Actions für Azure benötigt?
 
+Sie benötigen Azure- und GitHub-Konten:
 
-## <a name="connect-to-azure"></a>Herstellen einer Verbindung mit Azure
+* Ein Azure-Konto mit einem aktiven Abonnement. Sie können [kostenlos ein Konto erstellen](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* Ein GitHub-Konto. Falls Sie noch nicht über ein Konto verfügen, können Sie sich [kostenlos](https://github.com/join) registrieren.  
 
-Verwenden Sie die folgenden GitHub-Aktionen, damit Beispielworkflows eine Verbindung mit Azure herstellen und Skripts basierend auf der Azure CLI oder Azure PowerShell ausgeführt werden:  
+## <a name="how-do-i-connect-github-actions-and-azure"></a>Wie stelle ich eine Verbindung zwischen GitHub Actions und Azure her?
 
-- [Azure-Anmeldung](https://github.com/Azure/login)  
-- [Azure-Befehlszeilenschnittstelle](https://github.com/Azure/CLI)
-- [Azure PowerShell](https://github.com/Azure/powershell)
+Abhängig von der Aktion verwenden Sie einen Dienstprinzipal oder ein Veröffentlichungsprofil, um über GitHub eine Verbindung mit Azure herzustellen. Sie nutzen bei jeder Verwendung der Aktion [Azure-Anmeldung](https://github.com/marketplace/actions/azure-login) einen Dienstprinzipal. Die [Azure App Service-Aktion](https://github.com/marketplace/actions/azure-webapp) unterstützt die Verwendung eines Veröffentlichungsprofils oder Dienstprinzipals. Weitere Informationen zu Dienstprinzipalen finden Sie unter [Anwendungs- und Dienstprinzipalobjekte in Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object).  
 
+Sie können die Aktion „Azure-Anmeldung“ in Kombination mit den [Azure CLI](https://github.com/marketplace/actions/azure-cli-action)- und [Azure PowerShell](https://github.com/marketplace/actions/azure-powershell-action)-Aktionen verwenden. Die Aktion „Azure-Anmeldung“ funktioniert auch mit den meisten anderen GitHub-Aktionen für Azure, u. a. mit der Aktion für die [Bereitstellung in Web-Apps](https://github.com/marketplace/actions/azure-webapp) und der Aktion für den [Zugriff auf Key Vault-Geheimnisse](https://github.com/marketplace/actions/azure-key-vault-get-secrets).
 
-## <a name="sample-apps-with-cicd-workflow-samples"></a>Beispiel-Apps mit CI/CD-Workflowbeispielen 
+## <a name="what-is-included-in-a-github-actions-workflow"></a>Was ist in einem GitHub Actions-Workflow enthalten?
 
-Die folgenden Beispiele bieten End-to-End-Workflows für die Erstellung und Bereitstellung von Web-Apps in einer beliebigen Sprache und in einem beliebigen Ökosystem in Azure. 
+Workflows bestehen aus mindestens einem Auftrag. Ein Auftrag enthält Schritte, die aus einzelnen Aktionen bestehen. Weitere Informationen zu GitHub Actions-Konzepten finden Sie unter [Einführung in GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions).  
 
-- [Bereitstellen einer Web-App mit ASP.NET-Unterstützung](https://github.com/Azure-Samples/dotnet-sample)  
-- [Bereitstellen einer ASP.NET Core-App](https://github.com/Azure-Samples/dotnet_core_sample)  
-- [Bereitstellen einer Node.js-Web-App](https://github.com/Azure-Samples/node_express_app)  
-- [Bereitstellen einer Java-Web-App](https://github.com/Azure-Samples/java-spring-petclinic)  
-- [Bereitstellen einer Java Spring-App](https://github.com/Azure-Samples/Java-application-petstore-ee7)  
-- [Bereitstellen einer Python-Web-App](https://github.com/Azure-Samples/pythonSample_thecatsaidno)  
-- [Bereitstellen einer containerbasierten Web-App mithilfe von Docker](https://github.com/Azure-Samples/Node_express_container)
+## <a name="where-can-i-see-complete-workflow-examples"></a>Wo finde ich umfassende Workflowbeispiele?
 
+Das [Azure-Repository mit Einsteiger-Aktionsworkflows](https://github.com/Azure/actions-workflow-samples) enthält End-to-End-Workflows für die Erstellung und Bereitstellung von Web-Apps in einer beliebigen Sprache und in einem beliebigen Ökosystem in Azure.
 
-## <a name="deploy-a-web-app"></a>Bereitstellen einer Web-App
+## <a name="where-can-i-see-all-the-available-actions"></a>Wo kann ich alle verfügbaren Aktionen anzeigen?
 
-Bereitstellen in Azure-Web-Apps und Azure-Web-App für Container:
+Sie können alle verfügbaren Aktionen von GitHub Actions für Azure im [Marketplace für GitHub Actions für Azure](https://github.com/marketplace?query=Azure&type=actions) anzeigen.
 
-- [Aktion: Azure/webapps-deploy](https://github.com/Azure/webapps-deploy)
+* [Bereitstellen in einer statischen Web-App](/azure/static-web-apps/getting-started?tabs=angular)
+* [Azure App Service-Einstellungen](https://github.com/Azure/appservice-settings)  
+* [Bereitstellen in Azure Functions](https://github.com/Azure/functions-action)  
+* [Bereitstellen in Azure Functions für Container](https://github.com/Azure/webapps-container-deploy)  
+* [Docker-Anmeldung](https://github.com/Azure/docker-login)  
+* [Bereitstellen in Azure Container Instances](https://github.com/Azure/aci-deploy)
+* [Containerscanaktion](https://github.com/Azure/container-scan)
+* [Installer für Kubectl-Tool](https://github.com/Azure/setup-kubectl)  
+* [Kubernetes: Festlegen des Kontexts](https://github.com/Azure/k8s-set-context)  
+* [AKS: Festlegen des Kontexts](https://github.com/Azure/aks-set-context)  
+* [Kubernetes: Erstellen eines Geheimnisses](https://github.com/Azure/k8s-create-secret)  
+* [Kubernetes: Bereitstellen](https://github.com/Azure/k8s-deploy)  
+* [Einrichten von Helm](https://github.com/Azure/setup-helm)  
+* [Kubernetes: Baking](https://github.com/Azure/k8s-bake)  
+* [Erstellen von Images virtueller Azure-Computer](https://github.com/Azure/build-vm-image)
+* [Machine Learning-Anmeldung](https://github.com/Azure/aml-workspace)
+* [Machine Learning-Training](https://github.com/Azure/aml-run)
+* [Machine Learning: Bereitstellen von Modellen](https://github.com/Azure/aml-deploy)
+* [Bereitstellen in Azure SQL-Datenbank](https://github.com/Azure/sql-action)  
+* [Aktion zum Bereitstellen in Azure MySQL](https://github.com/Azure/mysql-action)  
+* [Azure Policy-Konformitätsprüfung](https://github.com/Azure/policy-compliance-scan)
+* [Verwalten von Azure Policy](https://github.com/Azure/manage-azure-policy)
+* [Auslösen einer Azure Pipelines-Ausführung](https://github.com/Azure/pipelines)  
+* [Variablenersetzung](https://github.com/Microsoft/variable-substitution)
 
-Bereitstellen einer statischen Web-App:
-- [Azure/static-web-apps-deploy](/azure/static-web-apps/getting-started?tabs=angular)
+## <a name="next-steps"></a>Nächste Schritte
 
+> [!div class="nextstepaction"]
+> [Lernpfad: Automatisieren des Workflows mit GitHub Actions](https://docs.microsoft.com/learn/modules/github-actions-automate-tasks/)
 
-Konfigurieren Sie App-Einstellungen und Verbindungszeichenfolgen mithilfe der Aktionen:
-
-- [Azure/appservice-settings](https://github.com/Azure/appservice-settings) 
-- [Azure App Service-Einstellungen](https://github.com/Azure/appservice-settings)  
-
-## <a name="deploy-a-serverless-app"></a>Bereitstellen einer serverlosen App
-
-- [Azure-Funktionen](https://github.com/Azure/functions-action)  
-- [Azure Functions für Container](https://github.com/Azure/webapps-container-deploy)  
- 
-## <a name="build-and-deploy-containerized-apps"></a>Erstellen und Bereitstellen von Container-Apps
-
-- [Docker-Anmeldung](https://github.com/Azure/docker-login)  
-- [Bereitstellen in Azure Container Instances](https://github.com/Azure/aci-deploy)
-- [Containerscanaktion](https://github.com/Azure/container-scan)
-
-## <a name="deploy-to-kubernetes"></a>Bereitstellen in Kubernetes
-
-- [Installer für Kubectl-Tool](https://github.com/Azure/setup-kubectl)  
-- [Kubernetes: Festlegen des Kontexts](https://github.com/Azure/k8s-set-context)  
-- [AKS: Festlegen des Kontexts](https://github.com/Azure/aks-set-context)  
-- [Kubernetes: Erstellen eines Geheimnisses](https://github.com/Azure/k8s-create-secret)  
-- [Kubernetes: Bereitstellen](https://github.com/Azure/k8s-deploy)  
-- [Einrichten von Helm](https://github.com/Azure/setup-helm)  
-- [Kubernetes: Baking](https://github.com/Azure/k8s-bake)  
-
-## <a name="train-and-deploy-a-machine-learning-model"></a>Trainieren und Bereitstellen eines Machine Learning-Modells 
-
-- [Anmeldung](https://github.com/Azure/aml-workspace) 
-- [Trainieren](https://github.com/Azure/aml-run)
-- [Bereitstellen des Modells](https://github.com/Azure/aml-deploy)
-
-## <a name="deploy-to-databases"></a>Bereitstellen in Datenbanken
-
-- [Azure SQL-Datenbank](https://github.com/Azure/sql-action)  
-- [Azure MySQL-Aktion](https://github.com/Azure/mysql-action)  
-
-## <a name="azure-policy-integrations"></a>Azure Policy-Integrationen
-
-- [Azure Policy-Konformitätsprüfung](https://github.com/Azure/policy-compliance-scan) 
-
-## <a name="trigger-a-run-in-azure-pipelines"></a>Auslösen einer Ausführung in Azure Pipelines
-
-- [Azure Pipelines](https://github.com/Azure/pipelines)  
- 
-## <a name="utility-actions"></a>Hilfsprogrammaktionen
-
-- [Variablenersetzung](https://github.com/Microsoft/variable-substitution) 
-
-
-## <a name="additional-resources"></a>Zusätzliche Ressourcen
-
-Die folgenden GitHub-Ressourcen unterstützen Sie dabei, Ihre Apps unter Verwendung von GitHub in Azure bereitzustellen.  
-
-- [Marketplace für GitHub Actions für Azure](https://github.com/marketplace?query=Azure&type=actions)
-- [Learning-Lab: Continuous Delivery mit Azure](https://lab.github.com/githubtraining/github-actions:-continuous-delivery-with-azure)
-- [Einsteiger-Aktionsworkflows für die Bereitstellung in Azure](https://github.com/Azure/actions-workflow-samples)
+> [!div class="nextstepaction"]
+> [Learning-Lab: Continuous Delivery mit Azure](https://lab.github.com/githubtraining/github-actions:-continuous-delivery-with-azure)

@@ -7,22 +7,20 @@ ms.topic: reference
 ms.service: azure
 ms.date: 08/31/2020
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: 926bd35fe7c0fb7d7a043955e0fd340950a658db
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: d03f8631d985b97a46a711620c847475171f9438
+ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689212"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93405749"
 ---
 # <a name="use-github-actions-to-connect-to-azure"></a>Verwenden von GitHub Actions zum Herstellen einer Verbindung mit Azure
 
 Informieren Sie sich über die Verwendung der [Azure-Anmeldung](https://github.com/Azure/login) mit [Azure PowerShell](https://github.com/Azure/PowerShell) oder [Azure CLI](https://github.com/Azure/CLI), um die Interaktion mit Ihren Azure-Ressourcen zu ermöglichen.
 
-Für die Verwendung von Azure PowerShell oder der Azure CLI müssen Sie sich zuerst mit der [Azure-Anmeldung](https://github.com/marketplace/actions/azure-login) anmelden. Bei der Aktion „Azure-Anmeldung“ wird für Ihr Azure-Abonnement über einen Dienstprinzipal eine Verbindung mit GitHub hergestellt.
+Für die Verwendung von Azure PowerShell oder der Azure CLI in einem GitHub Actions-Workflow müssen Sie sich zuerst mit der Aktion [Azure-Anmeldung](https://github.com/marketplace/actions/azure-login) anmelden. Mit der Aktion „Azure-Anmeldung“ können Sie Befehle in einem Workflow im Kontext eines [Azure AD-Dienstprinzipals](/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object) ausführen.
 
-Nachdem Sie die Anmeldeaktion eingerichtet haben, können Sie die Azure CLI oder Azure PowerShell verwenden.  
-Mit der Azure CLI wird die Ausführungsumgebung für GitHub-Aktionen für die Azure CLI eingerichtet. Bei Azure PowerShell wird die Ausführungsumgebung für GitHub-Aktionen mit dem Azure PowerShell-Modul eingerichtet.
-
+Nachdem Sie die Anmeldeaktion eingerichtet haben, können Sie die Azure CLI oder Azure PowerShell verwenden. Standardmäßig meldet sich die Aktion bei der Azure CLI an und richtet die Ausführungsumgebung für GitHub-Aktionen für die Azure CLI ein. Mithilfe der Eigenschaft „enable-AzPSSession“ der Aktion „Azure-Anmeldung“ können Sie Azure PowerShell nutzen.  Dadurch wird die Ausführungsumgebung für GitHub-Aktionen mit dem Azure PowerShell-Modul eingerichtet.
 
 ## <a name="create-a-service-principal-and-add-it-to-github-secret"></a>Erstellen eines Dienstprinzipals und Hinzufügen zum GitHub-Geheimnis
 
@@ -61,27 +59,27 @@ In diesem Beispiel erstellen Sie ein Geheimnis mit dem Namen `AZURE_CREDENTIALS`
     }
     ```
 
-1. Öffnen Sie Ihr GitHub-Repository, und navigieren Sie zu **Einstellungen** .
+1. Öffnen Sie Ihr GitHub-Repository, und navigieren Sie zu **Einstellungen**.
 
     :::image type="content" source="media/github-repo-settings.png" alt-text="Auswählen von „Einstellungen“ im Navigationsbereich":::
 
 1. Wählen Sie **Geheimnisse** und dann **Neues Geheimnis** aus.
 
-    :::image type="content" source="media/select-secrets.png" alt-text="Auswählen von „Einstellungen“ im Navigationsbereich":::
+    :::image type="content" source="media/select-secrets.png" alt-text="Auswählen eines Geheimnisses zum Hinzufügen":::
 
 1. Fügen Sie Ihr JSON-Objekt für Ihren Dienstprinzipal mit dem Namen `AZURE_CREDENTIALS` ein. 
 
-    :::image type="content" source="media/azure-secret-add.png" alt-text="Auswählen von „Einstellungen“ im Navigationsbereich":::
+    :::image type="content" source="media/azure-secret-add.png" alt-text="Hinzufügen eines Geheimnisses in GitHub":::
 
 1. Speichern Sie die Änderungen, indem Sie die Option **Add secret** (Geheimnis hinzufügen) auswählen.
 
 ## <a name="use-the-azure-login-action"></a>Verwenden der Aktion „Azure-Anmeldung“
 
-Verwenden Sie das Dienstprinzipalgeheimnis mit der [Aktion „Azure-Anmeldung“](https://github.com/Azure/login), um die Authentifizierung für Azure durchzuführen.
+Verwenden Sie das Dienstprinzipalgeheimnis mit der [Aktion „Azure-Anmeldung“](https://github.com/Azure/login), um die Authentifizierung bei Azure durchzuführen.
 
-In diesem Workflow authentifizieren Sie sich mit `secrets.AZURE_CREDENTIALS` und führen dann eine Azure CLI-Aktion aus.
+In diesem Workflow authentifizieren Sie sich mit der Aktion „Azure-Anmeldung“ und den Dienstprinzipaldetails, die in `secrets.AZURE_CREDENTIALS` gespeichert sind. Anschließend führen Sie eine Azure CLI-Aktion aus. Weitere Informationen zum Verweisen auf GitHub-Geheimnisse in einer Workflowdatei finden Sie in den GitHub-Dokumentationen unter [Verwenden verschlüsselter Geheimnisse in einem Workflow](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets#using-encrypted-secrets-in-a-workflow).
 
-Wenn Sie über eine funktionierende Azure-Anmeldung verfügen, können Sie die Azure PowerShell- oder Azure CLI-Aktionen verwenden. Sie können auch andere Azure-Aktionen wie die [Azure-Web-App-Bereitstellung](https://github.com/Azure/webapps-deploy) und [Azure-Funktionen](https://github.com/Azure/functions-action) verwenden.
+Wenn Sie über einen funktionierenden Schritt zur Azure-Anmeldung verfügen, können Sie die [Azure PowerShell](https://github.com/Azure/PowerShell)- oder [Azure CLI](https://github.com/Azure/CLI)-Aktionen verwenden. Sie können auch andere Azure-Aktionen wie die [Azure-Web-App-Bereitstellung](https://github.com/Azure/webapps-deploy) und [Azure-Funktionen](https://github.com/Azure/functions-action) verwenden.
 
 ```yaml
 on: [push]
@@ -100,7 +98,7 @@ jobs:
 
 ## <a name="use-the-azure-powershell-action"></a>Verwenden der Azure PowerShell-Aktion
 
-In diesem Beispiel melden Sie sich mit der [Aktion „Azure-Anmeldung“](https://github.com/Azure/login) an und rufen dann mit der [Azure CLI-Aktion](https://github.com/azure/powershell) eine Ressourcengruppe ab.
+In diesem Beispiel melden Sie sich mit der [Aktion „Azure-Anmeldung“](https://github.com/Azure/login) an und rufen dann mit der [Azure PowerShell-Aktion](https://github.com/azure/powershell) eine Ressourcengruppe ab.
 
 ```yaml
 on: [push]
