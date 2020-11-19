@@ -4,12 +4,12 @@ description: include file azure-sign-in.md
 ms.date: 10/13/2020
 ms.topic: include
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 9dd9e0d37a9e961584285133bf0b61b8ffbf0db2
-ms.sourcegitcommit: 5f64710b2b0822e789c7f15acba5a3a257c033f9
+ms.openlocfilehash: 16cc5ec9273d4de45af49a1bce1b7bbb36f013b7
+ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93405157"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94885397"
 ---
 Klonen Sie das Beispielrepository mit dem folgenden Befehl, und navigieren Sie zum Beispielordner. ([Installieren Sie Git](https://git-scm.com/downloads), sofern noch nicht vorhanden.)
 
@@ -23,4 +23,4 @@ Navigieren Sie anschließend in diesen Ordner:
 cd python-docs-hello-world
 ```
 
-Das Beispiel enthält frameworkspezifischen Code, der von Azure App Service beim Starten der App erkannt wird. Weitere Informationen finden Sie unter [Startprozess des Containers](/app-service/configure-language-python#container-startup-process).
+Das Beispiel enthält frameworkspezifischen Code, der von Azure App Service beim Starten der App erkannt wird. Weitere Informationen finden Sie unter [Startprozess des Containers](/azure/app-service/configure-language-python#container-startup-process).

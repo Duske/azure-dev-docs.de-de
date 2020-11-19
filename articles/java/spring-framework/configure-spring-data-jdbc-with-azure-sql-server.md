@@ -2,18 +2,18 @@
 title: Verwenden von Spring Data-JDBC mit Azure SQL-Datenbank
 description: Erfahren Sie, wie Sie Spring Data-JDBC (Java Database Connectivity) mit einer Azure SQL-Datenbank verwenden.
 documentationcenter: java
-ms.date: 05/18/2020
+ms.date: 10/13/2020
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: abf197e0626925dd836243a207ddf0c49ee32470
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 2bfa70765c8c98b4a590b86cacb979a2ca0d95ce
+ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831246"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94560243"
 ---
 # <a name="use-spring-data-jdbc-with-azure-sql-database"></a>Verwenden von Spring Data-JDBC mit Azure SQL-Datenbank
 
@@ -36,6 +36,9 @@ Generieren Sie die Anwendung durch Ausführen des folgenden Befehls in der Befeh
 ```bash
 curl https://start.spring.io/starter.tgz -d dependencies=web,data-jdbc,sqlserver -d baseDir=azure-database-workshop -d bootVersion=2.3.1.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
+
+> [!NOTE]
+> Spring Initializr nutzt als Standardversion Java 11. Um die in diesem Thema beschriebenen Spring Boot Starter verwenden zu können, müssen Sie stattdessen Java 8 auswählen.
 
 ### <a name="configure-spring-boot-to-use-azure-sql-database"></a>Konfigurieren von Spring Boot für die Verwendung von Azure SQL-Datenbank
 
@@ -100,3 +103,7 @@ Glückwunsch! Sie haben eine Spring Boot-Anwendung erstellt, die JDBC zum Speic
 Weitere Informationen zu Spring Data-JDBC finden Sie in der [Referenzdokumentation](https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/#reference) zu Spring.
 
 Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure für Java-Entwickler](../index.yml) und [Working with Azure DevOps and Java](/azure/devops/) (Arbeiten mit Azure DevOps und Java).
+
+### <a name="clean-up-resources"></a>Bereinigen von Ressourcen
+
+Verwenden Sie das [Azure-Portal](https://portal.azure.com/), um die in diesem Artikel erstellten Ressourcen zu löschen, wenn Sie sie nicht mehr benötigen, um unerwartete Gebühren zu vermeiden.

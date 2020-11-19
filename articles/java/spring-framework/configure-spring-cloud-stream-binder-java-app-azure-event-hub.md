@@ -8,12 +8,12 @@ ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 2cee5871b49574fd4e4643b206c1454404219b9b
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 0cc3289243c1a146cf59ecb15c5150327f49c236
+ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688691"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94560303"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>Erstellen einer Spring Cloud Stream Binder-Anwendung mit Azure Event Hubs
 
@@ -36,9 +36,9 @@ Gehen Sie wie folgt vor, um einen Azure Event Hub zu erstellen:
 
 1. Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>, und melden Sie sich an.
 
-1. Wählen Sie **+ Ressource erstellen** aus, und suchen Sie dann nach *Event Hubs* .
+1. Wählen Sie **+ Ressource erstellen** aus, und suchen Sie dann nach *Event Hubs*.
 
-1. Klicken Sie auf **Erstellen** .
+1. Klicken Sie auf **Erstellen**.
 
    >[!div class="mx-imgBorder"]
    >![Erstellen eines Azure Event Hub-Namespaces][IMG01]
@@ -67,7 +67,7 @@ Wählen Sie nach der Bereitstellung des Namespace **Zu Ressource wechseln** aus,
 
 1. Benennen Sie den Event Hub.
 
-1. Klicken Sie auf **Erstellen** .
+1. Klicken Sie auf **Erstellen**.
 
    >[!div class="mx-imgBorder"]
    >![Erstellen des Event Hubs][IMG05]
@@ -102,17 +102,17 @@ Gehen Sie zum Erstellen einer Spring Boot-Anwendung wie folgt vor:
 
 1. Verwenden Sie die folgenden Optionen:
 
-   * Generieren Sie ein **Maven** -Projekt mit **Java** .
-   * Geben Sie eine **Spring Boot** -Version ab 2.2 an.
+   * Generieren Sie ein **Maven**-Projekt mit **Java**.
+   * Geben Sie eine **Spring Boot**-Version ab 2.2 an.
    * Geben Sie Namen für die **Gruppe** und das **Artefakt** für Ihre Anwendung an.
    * Wählen Sie **8** als Java-Version aus.
-   * Fügen Sie die *Web* -Abhängigkeit hinzu.
+   * Fügen Sie die *Web*-Abhängigkeit hinzu.
 
    >[!div class="mx-imgBorder"]
    >![Grundlegende Spring Initializr-Optionen][SI01]
 
    > [!NOTE]
-   > Spring Initializr verwendet zur Erstellung des Paketnamens die Namen für die **Gruppe** und das **Artefakt** , beispielsweise *com.contoso.eventhubs.sample* .
+   > Spring Initializr verwendet zur Erstellung des Paketnamens die Namen für die **Gruppe** und das **Artefakt**, beispielsweise *com.contoso.eventhubs.sample*.
 
 1. Wählen Sie nach Angabe der obigen Optionen **GENERIEREN**  aus.
 
@@ -122,7 +122,7 @@ Gehen Sie zum Erstellen einer Spring Boot-Anwendung wie folgt vor:
 
 ## <a name="configure-your-spring-boot-app-to-use-the-azure-event-hub-starter"></a>Konfigurieren der Spring Boot-App zur Verwendung von Azure Event Hub Starter
 
-1. Suchen Sie im Stammverzeichnis Ihrer App nach der Datei *pom.xml* . Beispiel:
+1. Suchen Sie im Stammverzeichnis Ihrer App nach der Datei *pom.xml*. Beispiel:
 
    *C:\SpringBoot\eventhubs-sample\pom.xml*
 
@@ -156,7 +156,7 @@ Gehen Sie zum Erstellen einer Spring Boot-Anwendung wie folgt vor:
    </dependency>
    ```
 
-1. Speichern und schließen Sie die Datei *pom.xml* .
+1. Speichern und schließen Sie die Datei *pom.xml*.
 
 ## <a name="create-an-azure-credential-file"></a>Erstellen einer Azure-Anmeldeinformationsdatei
 
@@ -164,7 +164,7 @@ Gehen Sie zum Erstellen einer Spring Boot-Anwendung wie folgt vor:
 
 1. Navigieren Sie zum Verzeichnis *resources* Ihrer Spring Boot-App. Beispiel:
 
-   ```bash
+   ```cmd
    cd C:\SpringBoot\eventhubs-sample\src\main\resources
    ```
 
@@ -216,7 +216,7 @@ Gehen Sie zum Erstellen einer Spring Boot-Anwendung wie folgt vor:
    az ad sp create-for-rbac --sdk-auth > my.azureauth
    ```
 
-   Dieser Befehl erstellt im Verzeichnis *resources* eine Datei *my.azureauth* , deren Inhalt in etwa wie folgt aussieht:
+   Dieser Befehl erstellt im Verzeichnis *resources* eine Datei *my.azureauth*, deren Inhalt in etwa wie folgt aussieht:
 
    ```json
    {
@@ -235,7 +235,7 @@ Gehen Sie zum Erstellen einer Spring Boot-Anwendung wie folgt vor:
 
 ## <a name="configure-your-spring-boot-app-to-use-your-azure-event-hub"></a>Konfigurieren der Spring Boot-App zur Verwendung Ihres Azure Event Hubs
 
-1. Suchen Sie im Verzeichnis *resources* Ihrer App nach der Datei *application.properties* . Beispiel:
+1. Suchen Sie im Verzeichnis *resources* Ihrer App nach der Datei *application.properties*. Beispiel:
 
    *C:\SpringBoot\eventhubs-sample\src\main\resources\application.properties*
 
@@ -269,7 +269,7 @@ Gehen Sie zum Erstellen einer Spring Boot-Anwendung wie folgt vor:
    |       `spring.cloud.stream.bindings.input.group `        | Gibt eine Consumergruppe von Azure Event Hub an, die auf „$Default“ festgelegt werden kann, um die grundlegende Consumergruppe zu verwenden, die bei der Erstellung Ihres Azure Event Hubs erstellt wurde. |
    |    `spring.cloud.stream.bindings.output.destination`     |                               Gibt den Azure Event Hub an, der das Ausgabeziel ist (in diesem Tutorial ist das Ausgabeziel mit dem Eingabeziel identisch).                               |
 
-3. Speichern und schließen Sie die Datei *application.properties* .
+3. Speichern und schließen Sie die Datei *application.properties*.
 
 ## <a name="add-sample-code-to-implement-basic-event-hub-functionality"></a>Hinzufügen von Beispielcode zum Implementieren grundlegender Event Hub-Funktionen
 
@@ -334,7 +334,7 @@ In diesem Abschnitt erstellen Sie die Java-Klassen, die erforderlich sind, um Er
         }
     }
     ```
-1. Speichern und schließen Sie die Datei *EventhubSource.java* .
+1. Speichern und schließen Sie die Datei *EventhubSource.java*.
 
 ### <a name="create-a-new-class-for-the-sink-connector"></a>Erstellen einer neuen Klasse für den Senkenconnector
 
@@ -370,7 +370,7 @@ In diesem Abschnitt erstellen Sie die Java-Klassen, die erforderlich sind, um Er
    }
    ```
 
-1. Speichern und schließen Sie die Datei *EventhubSink.java* .
+1. Speichern und schließen Sie die Datei *EventhubSink.java*.
 
 ## <a name="build-and-test-your-application"></a>Erstellen und Testen der Anwendung
 
@@ -378,7 +378,7 @@ Führen Sie die folgenden Schritte aus, um Ihre Anwendung zu erstellen und zu te
 
 1. Öffnen Sie eine Eingabeaufforderung, und wechseln Sie zum Ordnerverzeichnis, in dem sich die Datei *pom.xml* befindet. Beispiel:
 
-   ```bash
+   ```cmd
     cd C:\SpringBoot\eventhubs-sample
    ```
    Oder
@@ -401,7 +401,7 @@ Führen Sie die folgenden Schritte aus, um Ihre Anwendung zu erstellen und zu te
    ```
    In den Protokollen Ihrer Anwendung sollte „hello“ angezeigt werden. Beispiel:
 
-   ```text
+   ```output
    2020-09-11 15:11:12.138  INFO 7616 --- [      elastic-4] c.contoso.eventhubs.sample.EventhubSink  : New message received: 'hello'
    2020-09-11 15:11:12.406  INFO 7616 --- [ctor-http-nio-1] c.contoso.eventhubs.sample.EventhubSink  : Message 'hello' successfully checkpointed
    ```

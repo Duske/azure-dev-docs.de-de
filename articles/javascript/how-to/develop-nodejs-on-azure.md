@@ -3,13 +3,13 @@ title: Bereitstellen einer Node.js-Container-App mit VS Code und Azure
 description: Enthält ein umfassendes End-to-End-Tutorial zur Vorgehensweise beim Erstellen, Containerisieren und Bereitstellen einer Node.js-App in Azure.
 ms.topic: how-to
 ms.date: 06/25/2017
-ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js
-ms.openlocfilehash: 658d25726b8cdedb8925ebaac5bdc4da66eafd0f
-ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, devx-track-azurecli
+ms.openlocfilehash: 7ecaa972bb00fa7c07461e3679996332e7f33451
+ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92437216"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94872891"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>Entwickeln und Bereitstellen einer Node.js-Container-App mit Visual Studio Code und Azure
 
@@ -36,13 +36,13 @@ Laden Sie als Erstes das Beispielprojekt herunter, indem Sie die folgenden Schri
 
 1. Öffnen Sie Visual Studio Code.
 
-1. Drücken Sie **F1** , um die Befehlspalette anzuzeigen.
+1. Drücken Sie **F1**, um die Befehlspalette anzuzeigen.
 
-1. Geben Sie an der Eingabeaufforderung der Befehlspalette `gitcl` ein, wählen Sie den Befehl **Git: Clone** aus, und drücken Sie die **EINGABETASTE** .
+1. Geben Sie an der Eingabeaufforderung der Befehlspalette `gitcl` ein, wählen Sie den Befehl **Git: Clone** aus, und drücken Sie die **EINGABETASTE**.
 
     ![Befehl „gitcl“ in der Eingabeaufforderung der Befehlspalette von Visual Studio Code](../media/node-howto-e2e/visual-studio-code-git-clone.png)
 
-1. Geben Sie `https://github.com/scotch-io/node-todo` ein, wenn Sie zum Eingeben der **Repository-URL** aufgefordert werden, und drücken Sie anschließend die **EINGABETASTE** .
+1. Geben Sie `https://github.com/scotch-io/node-todo` ein, wenn Sie zum Eingeben der **Repository-URL** aufgefordert werden, und drücken Sie anschließend die **EINGABETASTE**.
 
 1. Wählen bzw. erstellen Sie das lokale Verzeichnis, in dem das Projekt geklont werden soll.
 
@@ -54,7 +54,7 @@ Bei diesem Node.js-Projekt müssen Sie zunächst sicherstellen, dass alle Abhän
 
 1. Drücken Sie **STRG**+ **`** (bzw. die entsprechende Tastenkombination für das deutsche Tastaturlayout), um das integrierte Terminal von Visual Studio Code anzuzeigen. 
 
-1. Geben Sie `yarn` ein, und drücken Sie die **EINGABETASTE** .  
+1. Geben Sie `yarn` ein, und drücken Sie die **EINGABETASTE**.  
 
      ![Ausführen des Befehls „yarn“ in Visual Studio Code](../media/node-howto-e2e/visual-studio-code-install-yarn.png)
 
@@ -66,7 +66,7 @@ In den folgenden Schritten wird veranschaulicht, wie Sie die Datei *yarn.lock* i
 
 1. Wechseln Sie in Visual Studio Code zur integrierten Git-Registerkarte (die Registerkarte mit dem Git-Logo).
 
-1. Geben Sie im Feld **Nachricht** eine Commit-Nachricht ein, und drücken Sie **STRG**+**EINGABE** .
+1. Geben Sie im Feld **Nachricht** eine Commit-Nachricht ein, und drücken Sie **STRG**+**EINGABE**.
 
     ![Hinzufügen der Datei „yarn.lock“ zu Git](../media/node-howto-e2e/visual-studio-code-add-yarn-lock.png)
 
@@ -74,7 +74,7 @@ In den folgenden Schritten wird veranschaulicht, wie Sie die Datei *yarn.lock* i
 
 Zur besseren Orientierung in der Codebase probieren wir nun einige Beispiele für die Navigationsfunktionen von Visual Studio Code aus.
 
-1. Drücken Sie **STRG**+**P** .
+1. Drücken Sie **STRG**+**P**.
 
 1. Geben Sie `.js` ein, um alle JavaScript/JSON-Dateien des Projekts mit dem jeweiligen übergeordneten Verzeichnis anzuzeigen. 
 
@@ -86,7 +86,7 @@ Zur besseren Orientierung in der Codebase probieren wir nun einige Beispiele fü
 
     ![Ermitteln des Typs in Visual Studio Code mit QuickInfo](../media/node-howto-e2e/visual-studio-code-hover-help.png)
 
-1. Wenn Sie mit der Maus in den Bereich einer Variablen – z.B. **database** – klicken, können Sie alle Verweise auf diese Variable anzeigen, die in der Datei enthalten sind. Um alle Verweise auf eine Variable für das gesamte Projekt anzuzeigen, klicken Sie mit der rechten Maustaste auf die Variable und wählen im Kontextmenü die Option **Alle Verweise suchen** .
+1. Wenn Sie mit der Maus in den Bereich einer Variablen – z.B. **database** – klicken, können Sie alle Verweise auf diese Variable anzeigen, die in der Datei enthalten sind. Um alle Verweise auf eine Variable für das gesamte Projekt anzuzeigen, klicken Sie mit der rechten Maustaste auf die Variable und wählen im Kontextmenü die Option **Alle Verweise suchen**.
 
     ![Ermitteln aller Verweise mit Visual Studio Code](../media/node-howto-e2e/visual-studio-code-find-all-references.png)
 
@@ -98,7 +98,7 @@ Zur besseren Orientierung in der Codebase probieren wir nun einige Beispiele fü
 
 Die MongoDB-Verbindungszeichenfolge ist in der Deklaration der Eigenschaft `database.localUrl` hartcodiert. In diesem Abschnitt ändern Sie den Code, um die Verbindungszeichenfolge aus einer Umgebungsvariablen abzurufen, und machen sich mit dem AutoVervollständigen-Feature von Visual Studio Code vertraut.  
 
-1. Öffnen Sie die Datei *server.js* .
+1. Öffnen Sie die Datei *server.js*.
 
 1. Ersetzen Sie den folgenden Code:
 
@@ -132,7 +132,7 @@ Sie können anzeigen, welche Module die automatische Vervollständigung unterst�
 
 ## <a name="running-the-app"></a>Ausführen der App
 
-Nachdem Sie den Code untersucht haben, können Sie die App ausführen. Drücken Sie **F5** , um die App über Visual Studio Code auszuführen. Beim Ausführen des Codes mit **F5** (Debugmodus) startet Visual Studio Code die App und öffnet das Fenster **Debugging-Konsole** , in dem die StdOut-Daten für die App angezeigt werden.
+Nachdem Sie den Code untersucht haben, können Sie die App ausführen. Drücken Sie **F5**, um die App über Visual Studio Code auszuführen. Beim Ausführen des Codes mit **F5** (Debugmodus) startet Visual Studio Code die App und öffnet das Fenster **Debugging-Konsole**, in dem die StdOut-Daten für die App angezeigt werden.
 
 ![Überwachen der StdOut-Daten einer App über die Debugging-Konsole](../media/node-howto-e2e/visual-studio-code-debug-console.png)
 
@@ -140,7 +140,7 @@ Die **Debugging-Konsole** wird auch an die neu ausgeführte App angefügt, sodas
 
 ![Eingeben von Code in der Debugging-Konsole](../media/node-howto-e2e/visual-studio-code-debug-console-autocomplete.png)
 
-Das Drücken von **F5** zum Ausführen der App war möglich, da die derzeit geöffnete Datei eine JavaScript-Datei ist ( *server.js* ). Visual Studio Code nimmt daher an, dass es sich bei dem Projekt um eine Node.js-App handelt. Wenn Sie alle JavaScript-Dateien in Visual Studio Code schließen und dann **F5** drücken, fragt Visual Studio Code die Umgebung ab:
+Das Drücken von **F5** zum Ausführen der App war möglich, da die derzeit geöffnete Datei eine JavaScript-Datei ist (*server.js*). Visual Studio Code nimmt daher an, dass es sich bei dem Projekt um eine Node.js-App handelt. Wenn Sie alle JavaScript-Dateien in Visual Studio Code schließen und dann **F5** drücken, fragt Visual Studio Code die Umgebung ab:
 
 ![Angeben der Laufzeitumgebung](../media/node-howto-e2e/visual-studio-code-select-environment.png)
 
@@ -150,7 +150,7 @@ Das Drücken von **F5** zum Ausführen der App war möglich, da die derzeit geö
 
 ## <a name="debugging"></a>Debuggen
 
-In Visual Studio Code können Sie nicht nur die App ausführen und über die integrierte Konsole damit interagieren, sondern auch direkt im Code Breakpoints festlegen. Drücken Sie beispielsweise **STRG**+**P** , um die Dateiauswahl anzuzeigen. Geben Sie in der Dateiauswahl `route` ein, und wählen Sie die Datei *route.js* aus.
+In Visual Studio Code können Sie nicht nur die App ausführen und über die integrierte Konsole damit interagieren, sondern auch direkt im Code Breakpoints festlegen. Drücken Sie beispielsweise **STRG**+**P**, um die Dateiauswahl anzuzeigen. Geben Sie in der Dateiauswahl `route` ein, und wählen Sie die Datei *route.js* aus.
 
 Legen Sie in Zeile 28 einen Breakpoint fest. Dieser Breakpoint steht für die Express-Route, die aufgerufen wird, wenn die App versucht, einen To-Do-Eintrag hinzuzufügen. Klicken Sie zum Festlegen eines Breakpoints im Editor einfach auf den Bereich links von der Zeilennummer. Dies ist in der folgenden Abbildung dargestellt.
 
@@ -163,23 +163,23 @@ Wechseln Sie nach dem Festlegen des Breakpoints zurück zur ausgeführten App, u
 
 ![Unterbrechung der Visual Studio Code-Ausführung an einem Breakpoint](../media/node-howto-e2e/visual-studio-code-pause-breakpoint-execution.png)
 
-Nachdem die Anwendung angehalten wurde, können Sie den Mauszeiger auf die Ausdrücke des Codes bewegen, um ihren aktuellen Wert anzuzeigen, die lokalen Elemente bzw. Überwachungselemente und die Aufrufliste untersuchen und die Debug-Symbolleiste für den Schritt-für-Schritt-Durchlauf durch die Codeausführung verwenden. Drücken Sie **F5** , um die Ausführung der App fortzusetzen.
+Nachdem die Anwendung angehalten wurde, können Sie den Mauszeiger auf die Ausdrücke des Codes bewegen, um ihren aktuellen Wert anzuzeigen, die lokalen Elemente bzw. Überwachungselemente und die Aufrufliste untersuchen und die Debug-Symbolleiste für den Schritt-für-Schritt-Durchlauf durch die Codeausführung verwenden. Drücken Sie **F5**, um die Ausführung der App fortzusetzen.
 
 ## <a name="full-stack-debugging"></a>Full-Stack-Debuggen
 
 Wie in diesem Thema bereits erwähnt wurde, ist die To-Do-App eine MEAN-App. Dies bedeutet, dass sowohl ihr Front-End als auch ihr Back-End mit JavaScript geschrieben wurden. Derzeit debuggen Sie den Back-End-Code (Node/Express), aber es kann sein, dass Sie später auch den Front-End-Code (Angular) debuggen müssen. Hierfür verfügt Visual Studio Code über ein umfangreiches Ökosystem mit Erweiterungen, z.B. integriertes Chrome-Debugging.
 
-Wechseln Sie zur Registerkarte **Erweiterungen** , und geben Sie im Suchfeld `chrome` ein:
+Wechseln Sie zur Registerkarte **Erweiterungen**, und geben Sie im Suchfeld `chrome` ein:
 
 ![Erweiterung zum Debuggen von Chrome in Visual Studio Code](../media/node-howto-e2e/visual-studio-code-chrome-extension.png)
 
-Wählen Sie die Erweiterung mit dem Namen **Debugger for Chrome** aus, und wählen Sie anschließend die Option **Installieren** . Wählen Sie nach der Installation der Erweiterung für das Chrome-Debugging die Option **Erneut laden** , um Visual Studio Code zu schließen und wieder zu öffnen und die Erweiterung so zu aktivieren.
+Wählen Sie die Erweiterung mit dem Namen **Debugger for Chrome** aus, und wählen Sie anschließend die Option **Installieren**. Wählen Sie nach der Installation der Erweiterung für das Chrome-Debugging die Option **Erneut laden**, um Visual Studio Code zu schließen und wieder zu öffnen und die Erweiterung so zu aktivieren.
 
 ![Erneutes Laden von Visual Studio Code nach der Erweiterung für das Chrome-Debugging](../media/node-howto-e2e/visual-studio-code-reload-extension.png)
 
 Sie konnten den Node.js-Code ohne jegliche Visual Studio Code-spezifische Konfiguration ausführen und debuggen. Zum Debuggen einer Front-End-Web-App müssen Sie die Datei *launch.json* generieren, in der Visual Studio Code angewiesen wird, wie die App ausgeführt werden soll.
 
-Wechseln Sie zum Generieren der Datei *launch.json* zur Registerkarte **Debuggen** , klicken Sie auf das Zahnradsymbol (das mit einem kleinen roten Punkt versehen sein sollte), und wählen Sie die Umgebung **node.js** aus.
+Wechseln Sie zum Generieren der Datei *launch.json* zur Registerkarte **Debuggen**, klicken Sie auf das Zahnradsymbol (das mit einem kleinen roten Punkt versehen sein sollte), und wählen Sie die Umgebung **node.js** aus.
 
 ![Visual Studio Code-Option zum Konfigurieren der Datei „launch.json“](../media/node-howto-e2e/visual-studio-code-debug-gear.png)
 
@@ -214,7 +214,7 @@ Wählen Sie bei geöffneter Datei *launch.json* die Option **Konfiguration hinzu
 
 Wenn Sie eine neue Laufzeitkonfiguration für Chrome hinzufügen, können Sie den JavaScript-Code des Front-Ends debuggen. 
 
-Sie können den Mauszeiger auf alle angegebenen Einstellungen bewegen, um Dokumentation zum Zweck der Einstellung anzuzeigen. Beachten Sie auch, dass Visual Studio Code die URL der App automatisch erkennt. Aktualisieren Sie die **webRoot** -Eigenschaft in `${workspaceRoot}/public`, damit der Chrome-Debugger weiß, wo sich die Front-End-Objekte der App befinden:
+Sie können den Mauszeiger auf alle angegebenen Einstellungen bewegen, um Dokumentation zum Zweck der Einstellung anzuzeigen. Beachten Sie auch, dass Visual Studio Code die URL der App automatisch erkennt. Aktualisieren Sie die **webRoot**-Eigenschaft in `${workspaceRoot}/public`, damit der Chrome-Debugger weiß, wo sich die Front-End-Objekte der App befinden:
 
 ```json
 {
@@ -227,9 +227,9 @@ Sie können den Mauszeiger auf alle angegebenen Einstellungen bewegen, um Dokume
 }
 ```
 
-Um das Front-End und Back-End gleichzeitig zu starten oder zu debuggen, müssen Sie eine zusammengesetzte Laufzeitkonfiguration ( *compound* ) erstellen, damit Visual Studio Code weiß, welche Konfigurationssätze parallel ausgeführt werden sollen.
+Um das Front-End und Back-End gleichzeitig zu starten oder zu debuggen, müssen Sie eine zusammengesetzte Laufzeitkonfiguration (*compound*) erstellen, damit Visual Studio Code weiß, welche Konfigurationssätze parallel ausgeführt werden sollen.
 
-Fügen Sie den folgenden Codeausschnitt als Eigenschaft der obersten Ebene in der Datei *launch.json* hinzu (als gleichgeordnetes Element der vorhandenen **configurations** -Eigenschaft).
+Fügen Sie den folgenden Codeausschnitt als Eigenschaft der obersten Ebene in der Datei *launch.json* hinzu (als gleichgeordnetes Element der vorhandenen **configurations**-Eigenschaft).
 
 ```json
 "compounds": [
@@ -240,13 +240,13 @@ Fügen Sie den folgenden Codeausschnitt als Eigenschaft der obersten Ebene in de
 ]
 ```
 
-Die Zeichenfolgenwerte, die im Array **compounds.configurations** angegeben sind, verweisen auf den Namen ( **name** ) der einzelnen Einträge in der Liste mit den Konfigurationen ( **configurations** ). Wenn Sie diese Namen geändert haben, müssen Sie die entsprechenden Änderungen im Array vornehmen. Wechseln Sie hierfür zur Registerkarte „Debuggen“, und ändern Sie die ausgewählte Konfiguration in **Full-Stack** (Name der zusammengesetzten Konfiguration). Drücken Sie anschließend **F5** , um sie auszuführen.
+Die Zeichenfolgenwerte, die im Array **compounds.configurations** angegeben sind, verweisen auf den Namen (**name**) der einzelnen Einträge in der Liste mit den Konfigurationen (**configurations**). Wenn Sie diese Namen geändert haben, müssen Sie die entsprechenden Änderungen im Array vornehmen. Wechseln Sie hierfür zur Registerkarte „Debuggen“, und ändern Sie die ausgewählte Konfiguration in **Full-Stack** (Name der zusammengesetzten Konfiguration). Drücken Sie anschließend **F5**, um sie auszuführen.
 
 ![Ausführen einer Konfiguration in Visual Studio Code](../media/node-howto-e2e/visual-studio-code-full-stack-configuration.png)
 
 Durch die Ausführung der Konfiguration werden die Node.js-App (in der Ausgabe der Debugging-Konsole zu sehen) und Chrome (für die Navigation zur Node.js-App unter `http://localhost:8080`) gestartet.
 
-Drücken Sie **STRG**+**P** , und geben Sie *todos.js* ein (bzw. wählen Sie die Datei aus). Dies ist der Angular-Hauptcontroller für das Front-End der App.
+Drücken Sie **STRG**+**P**, und geben Sie *todos.js* ein (bzw. wählen Sie die Datei aus). Dies ist der Angular-Hauptcontroller für das Front-End der App.
 
 Legen Sie in Zeile 11 einen Breakpoint fest, der als Einstiegspunkt für einen neuen zu erstellenden To-Do-Eintrag dient.
 
@@ -258,9 +258,9 @@ Wie beim Debuggen von Node.js auch, können Sie den Mauszeiger auf Ausdrücke be
 
 Beachten Sie zwei interessante Punkte:
 
-1. Im Bereich **Aufrufliste** werden zwei unterschiedliche Stapel angezeigt: **Node** und **Chrome** , und es wird angezeigt, welcher aktuell angehalten ist.
+1. Im Bereich **Aufrufliste** werden zwei unterschiedliche Stapel angezeigt: **Node** und **Chrome**, und es wird angezeigt, welcher aktuell angehalten ist.
 
-1. Sie können zwischen dem Front-End- und Back-End-Code wechseln: Drücken Sie **F5** , um die Ausführung zu starten und den Breakpoint zu erreichen, den Sie zuvor in der Express-Route festgelegt haben.
+1. Sie können zwischen dem Front-End- und Back-End-Code wechseln: Drücken Sie **F5**, um die Ausführung zu starten und den Breakpoint zu erreichen, den Sie zuvor in der Express-Route festgelegt haben.
 
 Mit diesem Setup können Sie JavaScript-Code vom Typ Front, Back oder Full-Stack direkt in Visual Studio Code debuggen.
 
@@ -270,7 +270,7 @@ Darüber hinaus ist das Konzept des zusammengesetzten Debuggers nicht auf zwei Z
 
 In diesem Abschnitt geht es um die Benutzeroberfläche, die von Visual Studio Code für die Entwicklung mit [Docker](https://www.docker.com/) bereitgestellt wird. Node.js-Entwickler nutzen Docker, um portable App-Bereitstellungen für Entwicklungs-, Continuous Integration- und Produktionsumgebungen zu ermöglichen. Da die Nutzung von Docker nicht immer einfach ist, wird in Visual Studio Code durch die Bereitstellung einer Erweiterung versucht, den Einsatz von Docker in Ihren Apps zu erleichtern.
 
-Wechseln Sie zurück zur Registerkarte **Erweiterungen** , suchen Sie nach `docker`, und wählen Sie die Erweiterung **Docker** aus.
+Wechseln Sie zurück zur Registerkarte **Erweiterungen**, suchen Sie nach `docker`, und wählen Sie die Erweiterung **Docker** aus.
 
 Installieren Sie die Docker-Erweiterung, und laden Sie Visual Studio Code dann erneut.
 
@@ -278,7 +278,7 @@ Installieren Sie die Docker-Erweiterung, und laden Sie Visual Studio Code dann e
 
 Die Docker-Erweiterung für Visual Studio Code enthält einen Befehl zum Generieren eines *Dockerfile* und die Datei *docker-compose.yml* für ein vorhandenes Projekt.
 
-Zeigen Sie zum Auflisten der verfügbaren Docker-Befehle die Befehlspalette ( **F1** ) an, und geben Sie `docker` ein.
+Zeigen Sie zum Auflisten der verfügbaren Docker-Befehle die Befehlspalette (**F1**) an, und geben Sie `docker` ein.
 
 ![Von der Docker-Erweiterung für Visual Studio Code unterstützte Befehle ](../media/node-howto-e2e/visual-studio-code-available-docker-codes.png)
 
@@ -288,7 +288,7 @@ Mit dem Docker-Befehl werden ein vollständiges *Dockerfile* und Docker-Compose-
 
 ![Erstelltes Dockerfile in Visual Studio Code](../media/node-howto-e2e/visual-studio-code-complete-dockerfile.png)
 
-Die Docker-Erweiterung ermöglicht darüber hinaus AutoVervollständigen für Ihr *Dockerfile* und die Dateien vom Typ *docker-compose.yml* . Öffnen Sie beispielsweise das *Dockerfile* , und ändern Sie Zeile 2 von:
+Die Docker-Erweiterung ermöglicht darüber hinaus AutoVervollständigen für Ihr *Dockerfile* und die Dateien vom Typ *docker-compose.yml*. Öffnen Sie beispielsweise das *Dockerfile*, und ändern Sie Zeile 2 von:
 
 ```docker
 FROM node:latest
@@ -300,7 +300,7 @@ in:
 FROM mhart
 ```
 
-Positionieren Sie den Cursor nach dem `t` in `mhart`, und drücken Sie **STRG**+**LEER** , um alle Image-Repositorys anzuzeigen, die von `mhart` im DockerHub veröffentlicht wurden.
+Positionieren Sie den Cursor nach dem `t` in `mhart`, und drücken Sie **STRG**+**LEER**, um alle Image-Repositorys anzuzeigen, die von `mhart` im DockerHub veröffentlicht wurden.
 
 ![Anzeigen von Imagerepositorys in DockerHub](../media/node-howto-e2e/visual-studio-code-dockerhub-image-repositories.png)
 
@@ -308,13 +308,13 @@ Wählen Sie `mhart/alpine-node`, um alle Objekte bereitzustellen, die für diese
 
 Kleinere Images sind normalerweise besser geeignet, da Ihre App-Builds und -Bereitstellungen so schnell wie möglich ablaufen sollen, um die Verteilung und Skalierung zu beschleunigen.
 
-Nachdem Sie das *Dockerfile* generiert haben, müssen Sie das eigentliche Docker-Image erstellen. Hierfür können Sie wieder einen Befehl verwenden, der von der Docker-Erweiterung in Visual Studio Code installiert wurde. Drücken Sie **F1** , geben Sie in der Befehlspalette `dockerb` ein, und wählen Sie den Befehl **Docker: Build Image** (Docker: Image erstellen). Wählen Sie das *Dockerfile* aus, das Sie gerade generiert und geändert haben. Geben Sie ein Tag an, das Ihren DockerHub-Benutzernamen enthält (z. B. `lostintangent/node`). Drücken Sie die **EINGABETASTE** , um das integrierte Terminalfenster zu starten, in dem die Ausgabe Ihres zu erstellenden Docker-Image angezeigt wird.
+Nachdem Sie das *Dockerfile* generiert haben, müssen Sie das eigentliche Docker-Image erstellen. Hierfür können Sie wieder einen Befehl verwenden, der von der Docker-Erweiterung in Visual Studio Code installiert wurde. Drücken Sie **F1**, geben Sie in der Befehlspalette `dockerb` ein, und wählen Sie den Befehl **Docker: Build Image** (Docker: Image erstellen). Wählen Sie das *Dockerfile* aus, das Sie gerade generiert und geändert haben. Geben Sie ein Tag an, das Ihren DockerHub-Benutzernamen enthält (z. B. `lostintangent/node`). Drücken Sie die **EINGABETASTE**, um das integrierte Terminalfenster zu starten, in dem die Ausgabe Ihres zu erstellenden Docker-Image angezeigt wird.
 
 ![Buildausgabe des Docker-Image](../media/node-howto-e2e/docker-build-image-output.png)
 
 Beachten Sie, dass mit dem Befehl der Prozess zur Ausführung von `docker build` für Sie automatisiert wurde. Dies ist ein weiteres Beispiel für ein Mittel zur Verbesserung der Produktivität, das Sie wählen können, oder Sie können direkt die Docker CLI nutzen.
 
-An diesem Punkt müssen Sie das Image nur noch per Pushvorgang an DockerHub übermitteln, damit von Bereitstellungen leicht darauf zugegriffen werden kann. Stellen Sie beim Übertragen des Images per Push sicher, dass Sie die Authentifizierung mit DockerHub bereits durchgeführt haben, indem Sie `docker login` über die CLI ausführen und Ihre Anmeldeinformationen für Ihr Konto eingeben. In Visual Studio Code könne Sie dann die Befehlspalette aufrufen, `dockerpush` eingeben und den Befehl `Docker: Push` wählen. Wählen Sie das Image-Tag aus, das Sie gerade erstellt haben (z. B. `lostintangent/node`), und drücken Sie die **EINGABETASTE** . Mit dem Befehl wird der Aufruf von `docker push` automatisiert und die Ausgabe im integrierten Terminal angezeigt.
+An diesem Punkt müssen Sie das Image nur noch per Pushvorgang an DockerHub übermitteln, damit von Bereitstellungen leicht darauf zugegriffen werden kann. Stellen Sie beim Übertragen des Images per Push sicher, dass Sie die Authentifizierung mit DockerHub bereits durchgeführt haben, indem Sie `docker login` über die CLI ausführen und Ihre Anmeldeinformationen für Ihr Konto eingeben. In Visual Studio Code könne Sie dann die Befehlspalette aufrufen, `dockerpush` eingeben und den Befehl `Docker: Push` wählen. Wählen Sie das Image-Tag aus, das Sie gerade erstellt haben (z. B. `lostintangent/node`), und drücken Sie die **EINGABETASTE**. Mit dem Befehl wird der Aufruf von `docker push` automatisiert und die Ausgabe im integrierten Terminal angezeigt.
 
 ## <a name="deploying-the-app"></a>Bereitstellen der App
 
@@ -339,7 +339,7 @@ Nachdem Sie die App für Docker erstellt und per Push an DockerHub übermittelt 
    az configure -d group=nina-demo
    ```
 
-1. Erstellen Sie den App Service- *Plan* , über den die Erstellung und Skalierung der zugrunde liegenden virtuellen Computer verwaltet wird, auf denen Ihre App bereitgestellt wird. Geben Sie für die Option `n` wieder einen beliebigen Wert an.
+1. Erstellen Sie den App Service-*Plan*, über den die Erstellung und Skalierung der zugrunde liegenden virtuellen Computer verwaltet wird, auf denen Ihre App bereitgestellt wird. Geben Sie für die Option `n` wieder einen beliebigen Wert an.
 
     ```shell
     az appservice plan create -n nina-demo-plan --is-linux
@@ -480,7 +480,7 @@ az webapp config hostname add --hostname <DOMAIN>
 
 ## <a name="scaling-up-and-out"></a>Zentrales Hochskalieren und horizontales Hochskalieren
 
-Unter Umständen erreicht Ihre Web-App nach einiger Zeit eine so große Beliebtheit, dass ihre zugeordneten Ressourcen (CPU und RAM) nicht mehr ausreichen, um den vermehrten Datenverkehr und die Betriebsanforderungen zu bewältigen. Der App Service-Plan, den Sie weiter oben erstellt haben ( **B1** ), verfügt über einen CPU-Kern und 1,75 GB RAM. Dadurch kann er einfach überladen werden. Der Plan **B2** verfügt über doppelt so hohe RAM- und CPU-Werte. Wenn Sie merken, dass einer der Werte für Ihre App nicht mehr ausreicht, können Sie den zugrunde liegenden virtuellen Computer also hochskalieren, indem Sie den folgenden Befehl ausführen:
+Unter Umständen erreicht Ihre Web-App nach einiger Zeit eine so große Beliebtheit, dass ihre zugeordneten Ressourcen (CPU und RAM) nicht mehr ausreichen, um den vermehrten Datenverkehr und die Betriebsanforderungen zu bewältigen. Der App Service-Plan, den Sie weiter oben erstellt haben (**B1**), verfügt über einen CPU-Kern und 1,75 GB RAM. Dadurch kann er einfach überladen werden. Der Plan **B2** verfügt über doppelt so hohe RAM- und CPU-Werte. Wenn Sie merken, dass einer der Werte für Ihre App nicht mehr ausreicht, können Sie den zugrunde liegenden virtuellen Computer also hochskalieren, indem Sie den folgenden Befehl ausführen:
 
 ```shell
 az appservice plan update -n nina-demo-plan --sku B2
@@ -491,7 +491,7 @@ az appservice plan update -n nina-demo-plan --sku B2
 
 Nach kurzer Zeit wird Ihre Web-App zu der angeforderten Hardware migriert, und die zugeordneten Ressourcen können genutzt werden. Sie können nicht nur zentral hochskalieren, sondern auch zentral herunterskalieren, indem Sie den gleichen Befehl wie oben ausführen. Geben Sie hierbei aber die Option `--sku` an, damit weniger Ressourcen zu einem geringeren Preis bereitgestellt werden.
 
-Zusätzlich zum Hochskalieren der Spezifikationen für den virtuellen Computer können Sie Ihre Web-App auch *aufskalieren* (sofern die Web-App zustandslos ist), indem Sie weitere zugrunde liegende VM-Instanzen hinzufügen. Der weiter oben erstellte App Service-Plan enthält nur einen virtuellen Computer (einen *Worker* ). Daher wird der gesamte eingehende Datenverkehr letztendlich durch die Grenzwerte der verfügbaren Ressourcen dieser einen Instanz begrenzt. Wenn Sie eine zweite VM-Instanz hinzufügen möchten, können Sie den gleichen Befehl wie oben ausführen und nun die Anzahl von virtuellen Workercomputern aufskalieren, statt die SKU hochzuskalieren.
+Zusätzlich zum Hochskalieren der Spezifikationen für den virtuellen Computer können Sie Ihre Web-App auch *aufskalieren* (sofern die Web-App zustandslos ist), indem Sie weitere zugrunde liegende VM-Instanzen hinzufügen. Der weiter oben erstellte App Service-Plan enthält nur einen virtuellen Computer (einen *Worker*). Daher wird der gesamte eingehende Datenverkehr letztendlich durch die Grenzwerte der verfügbaren Ressourcen dieser einen Instanz begrenzt. Wenn Sie eine zweite VM-Instanz hinzufügen möchten, können Sie den gleichen Befehl wie oben ausführen und nun die Anzahl von virtuellen Workercomputern aufskalieren, statt die SKU hochzuskalieren.
 
 ```shell
 az appservice plan update -n nina-demo-plan --number-of-workers 2

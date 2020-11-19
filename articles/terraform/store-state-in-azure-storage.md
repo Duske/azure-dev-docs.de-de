@@ -3,13 +3,13 @@ title: 'Tutorial: Speichern des Terraform-Zustands in Azure Storage'
 description: Es wird beschrieben, wie Sie den Terraform-Zustand in Azure Storage speichern.
 ms.topic: tutorial
 ms.date: 11/07/2019
-ms.custom: devx-track-terraform
-ms.openlocfilehash: 33a49a9c6b8f62dd5f9a47f7171ba1cd3c55195b
-ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
+ms.custom: devx-track-terraform, devx-track-azurecli
+ms.openlocfilehash: 7f1c200a96efa16d65a8f94bc3bc70a236f969a7
+ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94333788"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94872881"
 ---
 # <a name="tutorial-store-terraform-state-in-azure-storage"></a>Tutorial: Speichern des Terraform-Status in Azure Storage
 
@@ -59,10 +59,10 @@ Notieren Sie sich den Speicherkontonamen, den Containernamen und den Speicherzug
 
 Das Terraform-Zustands-Back-End wird konfiguriert, wenn Sie den Befehl `terraform init` ausführen. Zum Konfigurieren des Zustands-Back-Ends benötigen Sie folgende Daten:
 
-- **storage_account_name** : Der Name des Azure Storage-Kontos.
-- **container_name** : Der Name des Blobcontainers.
-- **key** : Der Name der Zustandsspeicherdatei, die erstellt werden soll.
-- **access_key** : Der Speicherzugriffsschlüssel.
+- **storage_account_name**: Der Name des Azure Storage-Kontos.
+- **container_name**: Der Name des Blobcontainers.
+- **key**: Der Name der Zustandsspeicherdatei, die erstellt werden soll.
+- **access_key**: Der Speicherzugriffsschlüssel.
 
 Jeder dieser Werte kann in der Terraform-Konfigurationsdatei oder über die Befehlszeile angegeben werden. Wir empfehlen, für den Wert `access_key` eine Umgebungsvariable zu verwenden. Durch die Verwendung einer Umgebungsvariablen wird verhindert, dass der Schlüssel auf den Datenträger geschrieben wird.
 
