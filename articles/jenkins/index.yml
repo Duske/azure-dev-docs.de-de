@@ -11,12 +11,12 @@ metadata:
   ms.author: tarcher
   ms.date: 02/24/2020
   ms.custom: devx-track-jenkins
-  ms.openlocfilehash: 3b46fe61590cc4a3410275a37fde3c6ce2ad98eb
-  ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+  ms.openlocfilehash: b00d65638bdc9d695a064183f3de058728164b13
+  ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 08/14/2020
-  ms.locfileid: "88240812"
+  ms.lasthandoff: 11/20/2020
+  ms.locfileid: "94983549"
 landingContent:
 - title: Informationen zu Jenkins in Azure
   linkLists:
@@ -64,20 +64,12 @@ landingContent:
       url: deploy-from-github-to-aks.md
     - text: Bereitstellen in AKS mit Blau/Grün-Muster
       url: deploy-to-aks-using-blue-green-deployment-pattern.md
-    - text: Bereitstellen mithilfe des Azure Dev Spaces-Plug-Ins
-      url: azure-dev-spaces-and-aks.md
 - title: CI/CD in App Service
   linkLists:
   - linkListType: tutorial
     links:
     - text: Erstellen von Azure-Ressourcen in einem Pipelineauftrag
       url: deploy-to-azure-app-service-using-azure-cli.md
-    - text: Bereitstellen aus GitHub in App Service
-      url: deploy-from-github-to-azure-app-service.md
-  - linkListType: how-to-guide
-    links:
-    - text: Bereitstellen mithilfe des App Service-Plug-Ins
-      url: deploy-to-azure-app-service-using-plugin.md
 - title: CI/CD in Azure DevOps
   linkLists:
   - linkListType: tutorial
