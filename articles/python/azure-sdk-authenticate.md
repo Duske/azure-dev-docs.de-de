@@ -1,15 +1,15 @@
 ---
 title: Authentifizieren von Python-Anwendungen mit Azure-Diensten
 description: Hier erfahren Sie, wie Sie die Anmeldeinformationsobjekte abrufen, die erforderlich sind, um eine Python-App mit Azure-Diensten unter Verwendung der Azure-Bibliotheken zu authentifizieren.
-ms.date: 10/05/2020
+ms.date: 11/12/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 8122db43c979bcf55d5aa3d1f4f5fa9aa0c200dd
-ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
+ms.openlocfilehash: 7c609c7e218be1fd5e7c259a5aa7c5bec3e507d2
+ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93405900"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94601362"
 ---
 # <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>Authentifizieren und Autorisieren von Python-Apps in Azure
 
@@ -146,7 +146,7 @@ In beiden Fällen müssen der verwendeten Identität Berechtigungen für die jew
 
 ### <a name="using-defaultazurecredential-with-sdk-management-libraries"></a>Verwenden von DefaultAzureCredential mit SDK-Verwaltungsbibliotheken
 
-`DefaultAzureCredential` kann mit Versionen der Azure SDK-Verwaltungsbibliotheken (Bibliotheken mit „mgmt“ im Namen) verwendet werden, die in der Liste [Bibliotheken mit azure.core](azure-sdk-library-package-index.md#libraries-using-azurecore) enthalten sind. (Außerdem enthalten die pypi-Seiten für aktualisierte Bibliotheken die Zeile „Credential system has been completely revamped“ (Das System für Anmeldeinformationen wurde vollständig überarbeitet.), um auf die Änderung hinzuweisen.)
+`DefaultAzureCredential` kann mit neueren Versionen der Azure SDK-Verwaltungsbibliotheken (Ressourcenverwaltungsbibliotheken mit „mgmt“ im Namen) verwendet werden, die auch in der Liste [Bibliotheken mit azure.core](azure-sdk-library-package-index.md#libraries-using-azurecore) enthalten sind. (Außerdem enthält die pypi-Seite für eine aktualisierte Bibliothek üblicherweise die Zeile „Credential system has been completely revamped“ (Das System für Anmeldeinformationen wurde vollständig überarbeitet.), um auf die Änderung hinzuweisen.)
 
 Beispielsweise können Sie `DefaultAzureCredential` mit Version 15.0.0 oder höher von „azure-mgmt-resource“ verwenden:
 
@@ -160,6 +160,8 @@ subscription_client = SubscriptionClient(credential)
 sub_list = subscription_client.subscriptions.list()
 print(list(sub_list))
 ```
+
+Wenn die Bibliothek nicht aktualisiert wurde, wird für Code mit `DefaultAzureCredential` ein Fehler mit dem Hinweis zurückgegeben, dass das Objekt über kein Attribut vom Typ „signed-session“ verfügt, wie im nächsten Abschnitt beschrieben.
 
 ### <a name="defaultazurecredential-object-has-no-attribute-signed-session"></a>„Das DefaultAzureCredential-Objekt hat kein Attribut 'signed-session'.“
 
@@ -303,6 +305,37 @@ Sie können Werte auch in Azure Key Vault speichern und zur Laufzeit abrufen, an
 
 ### <a name="authenticate-with-token-credentials"></a>Authentifizieren mit Zugriffstoken-Anmeldeinformationen
 
+Sie können sich bei den Azure-Bibliotheken authentifizieren und dabei explizite Abonnement-, Mandanten- und Clientbezeichner sowie einen geheimen Clientschlüssel verwenden.
+
+Bei Verwendung neuerer SDK-Bibliotheken, die auf „azure.core“ basieren, muss das [Objekt `ClientSecretCredential` aus der Bibliothek „azure.identity“](#using-clientsecretcredential-azureidentity) verwendet werden. Bei Verwendung älterer SDK-Bibliotheken muss [`ServicePrincipalCredentials` aus der Bibliothek „azure.common“](#using-serviceprincipalcredentials-azurecommon) verwendet werden.
+
+Wenn Sie vorhandenen Code, in dem `ServicePrincipalCredentials` verwendet wird, zu einer neueren Bibliotheksversion migrieren möchten, ersetzen Sie Vorkommen der Verwendung dieser Klasse durch `ClientSecretCredential`, wie in den folgenden Abschnitten gezeigt. Beachten Sie die geringfügigen Änderungen bei den Parameternamen zwischen den beiden Konstruktoren: `tenant` wird zu `tenant_id`, und `secret` wird zu `client_secret`.
+
+#### <a name="using-clientsecretcredential-azureidentity"></a>Verwenden von „ClientSecretCredential“ (azure.identity)
+
+```python
+import os
+from azure.mgmt.resource import SubscriptionClient
+from azure.identity import ClientSecretCredential
+
+# Retrieve the IDs and secret to use with ClientSecretCredential
+subscription_id = os.environ["AZURE_SUBSCRIPTION_ID"]
+tenant_id = os.environ["AZURE_TENANT_ID"]
+client_id = os.environ["AZURE_CLIENT_ID"]
+client_secret = os.environ["AZURE_CLIENT_SECRET"]
+
+credential = ClientSecretCredential(tenant_id=tenant_id, client_id=client_id, client_secret=client_secret)
+
+subscription_client = SubscriptionClient(credential)
+
+subscription = next(subscription_client.subscriptions.list())
+print(subscription.subscription_id)
+```
+
+Bei dieser Methode, die mit neueren, auf „azure.core“ basierenden Bibliotheken verwendet wird, erstellen Sie ein Objekt vom Typ [`ClientSecretCredential`](/python/api/azure-identity/azure.identity.clientsecretcredential) unter Verwendung von Anmeldeinformationen, die aus sicherem Speicher wie Azure Key Vault oder Umgebungsvariablen abgerufen werden. Im vorherigen Code wird davon ausgegangen, dass Sie die Umgebungsvariablen erstellt haben, die unter [Konfigurieren der lokalen Entwicklungsumgebung](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development) beschrieben werden.
+
+#### <a name="using-serviceprincipalcredentials-azurecommon"></a>Verwenden von „ServicePrincipalCredentials“ (azure.common)
+
 ```python
 import os
 from azure.mgmt.resource import SubscriptionClient
@@ -322,9 +355,11 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-Bei dieser Methode erstellen Sie ein [`ServicePrincipalCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.serviceprincipalcredentials)-Objekt mithilfe von Anmeldeinformationen, die aus sicherem Speicher wie Azure Key Vault oder Umgebungsvariablen abgerufen werden. Im vorherigen Code wird davon ausgegangen, dass Sie die Umgebungsvariablen erstellt haben, die unter [Konfigurieren der lokalen Entwicklungsumgebung](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development) beschrieben werden.
+Bei dieser Methode, die mit älteren, nicht auf „azure.core“ basierenden Bibliotheken verwendet wird, erstellen Sie ein Objekt vom Typ [`ServicePrincipalCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.serviceprincipalcredentials) unter Verwendung von Anmeldeinformationen, die aus sicherem Speicher wie Azure Key Vault oder Umgebungsvariablen abgerufen werden. Im vorherigen Code wird davon ausgegangen, dass Sie die Umgebungsvariablen erstellt haben, die unter [Konfigurieren der lokalen Entwicklungsumgebung](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development) beschrieben werden.
 
-Mit dieser Methode können Sie eine [Azure-unabhängige oder nationale Cloud](/azure/active-directory/develop/authentication-national-cloud) anstelle der öffentlichen Azure-Cloud verwenden, indem Sie ein `base_url`-Argument für das Clientobjekt angeben:
+#### <a name="use-an-azure-sovereign-national-cloud"></a>Verwenden einer Sovereign Cloud oder nationalen Cloud von Azure
+
+Mit diesen Methoden für Tokenanmeldeinformationen können Sie anstelle der öffentlichen Azure-Cloud eine [Sovereign Cloud oder nationale Cloud von Azure](/azure/active-directory/develop/authentication-national-cloud) verwenden, indem Sie für das Clientobjekt ein Argument vom Typ `base_url` angeben:
 
 ```python
 from msrestazure.azure_cloud import AZURE_CHINA_CLOUD

@@ -3,17 +3,17 @@ title: Verwenden der Spring Data-Apache Cassandra-API mit Azure Cosmos DB
 description: Erfahren Sie, wie Sie die Spring Data-Apache Cassandra-API mit Azure Cosmos DB verwenden.
 services: cosmos-db
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 10/13/2020
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 52fbaa611f0c9367eede649dac644fd478f8855e
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 7879a47bdcbc9b1a4cf41210fc9fb49ad28d8dd8
+ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831256"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94560322"
 ---
 # <a name="how-to-use-spring-data-apache-cassandra-api-with-azure-cosmos-db"></a>Verwenden der Spring Data-Apache Cassandra-API mit Azure Cosmos DB
 
@@ -41,25 +41,28 @@ Mit dem folgenden Verfahren wird ein Cosmos-Konto im Azure-Portal erstellt und k
 
 1. Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>, und melden Sie sich an.
 
-1. Klicken Sie auf **+ Ressource erstellen**, auf **Datenbanken** und dann auf **Azure Cosmos DB**.
-
-   ![Erstellen eines Azure Cosmos DB-Kontos][COSMOSDB01]
+1. Wählen Sie **Ressource erstellen** > **Erste Schritte** > **Azure Cosmos DB** aus.
+    
+   >[!div class="mx-imgBorder"]
+   >![Erstellen eines Azure Cosmos DB-Kontos][COSMOSDB01]
 
 1. Geben Sie die folgenden Informationen an:
 
    - **Abonnement**: Geben Sie das Azure-Abonnement an, das Sie verwenden möchten.
    - **Ressourcengruppe**: Erstellen Sie eine neue Ressourcengruppe, oder wählen Sie eine vorhandene Ressourcengruppe aus.
    - **Kontoname**: Wählen Sie einen eindeutigen Namen für Ihr Cosmos DB-Konto aus. Dieser Name wird zum Erstellen eines vollqualifizierten Domänennamens (z. B. *wingtiptoyscassandra.documents.azure.com*) verwendet.
-   - **API**: Geben Sie für dieses Tutorial `Cassandra` an.
+   - **API**: Geben Sie für dieses Tutorial *Cassandra* an.
    - **Standort**: Geben Sie die nächstgelegene geografische Region für Ihre Datenbank an.
-
-   ![Festlegen der Cosmos DB-Kontoeinstellungen][COSMOSDB02]
+   
+   >[!div class="mx-imgBorder"]
+   >![Festlegen der Cosmos DB-Kontoeinstellungen][COSMOSDB02]
    
 1. Nachdem Sie alle oben genannten Informationen eingegeben haben, klicken Sie auf **Bewerten + erstellen**.
 
 1. Wenn die Angaben auf der Seite „Überprüfen“ korrekt sind, klicken Sie auf **Erstellen**.
-
-   ![Überprüfen der Cosmos DB-Kontoeinstellungen][COSMOSDB03]
+   
+   >[!div class="mx-imgBorder"]
+   >![Überprüfen der Cosmos DB-Kontoeinstellungen][COSMOSDB03]
 
 Die Bereitstellung der Datenbank dauert einige Minuten.
 
@@ -67,21 +70,26 @@ Die Bereitstellung der Datenbank dauert einige Minuten.
 
 1. Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>, und melden Sie sich an.
 
-1. Klicken Sie auf **Alle Ressourcen** und anschließend auf das Azure Cosmos DB-Konto, das Sie gerade erstellt haben.
+1. Wählen Sie **Alle Ressourcen** und anschließend das Azure Cosmos DB-Konto aus, das Sie gerade erstellt haben.
 
-1. Klicken Sie auf **Daten-Explorer** und anschließend auf **New Keyspace** (Neuer Keyspace). Geben Sie einen eindeutigen Bezeichner für Ihre **Keyspace id** (Keyspace-ID) ein, und klicken Sie dann auf **OK**.
-
-   ![Erstellen eines Cosmos DB-Keyspace][COSMOSDB05]
+1. Wählen Sie **Daten-Explorer**, den Abwärtspfeil und anschließend **New Keyspace** (Neuer Keyspace) aus. Geben Sie einen eindeutigen Bezeichner für **Keyspace id** (Keyspace-ID) ein, und wählen Sie dann **OK** aus.
+    
+   >[!div class="mx-imgBorder"]
+   >![Auswählen von „New Keyspace“ (Neuer Keyspace)][COSMOSDB05]
+   
+   >[!div class="mx-imgBorder"]
+   >![Erstellen eines Cosmos DB-Keyspace][COSMOSDB05-1]
 
 ### <a name="retrieve-the-connection-settings-for-your-azure-cosmos-db-account"></a>Abrufen der Verbindungseinstellungen für das Azure Cosmos DB-Konto
 
 1. Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>, und melden Sie sich an.
 
-1. Klicken Sie auf **Alle Ressourcen** und anschließend auf das Azure Cosmos DB-Konto, das Sie gerade erstellt haben.
+1. Wählen Sie **Alle Ressourcen** und anschließend das Azure Cosmos DB-Konto aus, das Sie gerade erstellt haben.
 
-1. Klicken Sie auf **Verbindungszeichenfolgen**, und kopieren Sie die Werte für **Kontaktpunkt**, **Port**, **Benutzername** und **Primäres Kennwort**. Sie verwenden diese Werte später zum Konfigurieren Ihrer Anwendung.
-
-   ![Abrufen der Cosmos DB-Verbindungseinstellungen][COSMOSDB06]
+1. Wählen Sie **Verbindungszeichenfolgen** aus, und kopieren Sie die Werte für **Kontaktpunkt**, **Port**, **Benutzername** und **Primäres Kennwort**. Sie werden später zum Konfigurieren Ihrer Anwendung benötigt.
+   
+   >[!div class="mx-imgBorder"]
+   >![Abrufen der Cosmos DB-Verbindungseinstellungen][COSMOSDB06]
 
 ## <a name="configure-the-sample-application"></a>Konfigurieren der Beispielanwendung
 
@@ -98,7 +106,7 @@ Mit dem folgenden Verfahren wird die Testanwendung konfiguriert:
 1. Öffnen Sie die Datei *application.properties* in einem Text-Editor, und fügen Sie die folgenden Zeilen in der Datei hinzu, bzw. konfigurieren Sie diese Zeilen. Ersetzen Sie dabei die Beispielwerte durch die entsprechenden Werte, die Sie zuvor festgelegt haben:
 
    ```yaml
-   spring.data.cassandra.contact-points=wingtiptoyscassandra.cassandra.cosmosdb.azure.com
+   spring.data.cassandra.contact-points=wingtiptoyscassandra.cassandra.cosmos.azure.com
    spring.data.cassandra.port=10350
    spring.data.cassandra.username=wingtiptoyscassandra
    spring.data.cassandra.password=********
@@ -162,6 +170,10 @@ Navigieren Sie zum Verzeichnis mit der POM-Datei, um die Anwendung zu erstellen 
 
 In diesem Tutorial haben Sie eine Java-Beispielanwendung erstellt, die Spring Data verwendet, um Informationen mithilfe der Cassandra-API für Azure Cosmos DB zu speichern und abzurufen.
 
+## <a name="clean-up-resources"></a>Bereinigen von Ressourcen
+
+Verwenden Sie das [Azure-Portal](https://portal.azure.com/), um die in diesem Artikel erstellten Ressourcen zu löschen, wenn Sie sie nicht mehr benötigen, um unerwartete Gebühren zu vermeiden.
+
 ## <a name="next-steps"></a>Nächste Schritte
 
 Weitere Informationen zu Spring und Azure finden Sie im Dokumentationscenter zu Spring in Azure.
@@ -189,6 +201,6 @@ Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter [Azure 
 [COSMOSDB01]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-01.png
 [COSMOSDB02]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-02.png
 [COSMOSDB03]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-03.png
-[COSMOSDB04]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-04.png
 [COSMOSDB05]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-05.png
+[COSMOSDB05-1]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-05-1.png
 [COSMOSDB06]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-06.png

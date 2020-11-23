@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: identity
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 9636ae27950f0ffabf6c9a433c802b3101447dab
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: 10efa527f60d2dae15f84ca2c34862e5c899fa65
+ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192402"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94560273"
 ---
 # <a name="tutorial-reading-a-secret-from-azure-key-vault-in-a-spring-boot-application"></a>Tutorial: Einlesen eines Geheimnisses aus Azure Key Vault in eine Spring Boot-Anwendung
 
@@ -238,11 +238,11 @@ In diesem Abschnitt wird veranschaulicht, wie Sie Spring Initializr und `RestCon
 1. Wählen Sie die Optionen so aus, wie dies in der Abbildung unterhalb dieser Liste dargestellt ist.
    1. **Project** (Projekt): `Maven Project`
    1. **Language** (Sprache): `Java`
-   1. **Spring Boot** : `2.3.3`
-   1. **Gruppe** : `com.contoso` (Sie können hier einen beliebigen gültigen Java-Paketnamen eingeben.)
+   1. **Spring Boot**: `2.3.3`
+   1. **Gruppe**: `com.contoso` (Sie können hier einen beliebigen gültigen Java-Paketnamen eingeben.)
    1. **Artifact** (Artefakt): *keyvault* (Sie können hier einen beliebigen gültigen Java-Klassennamen eingeben.)
    1. **Packaging** (Verpackung): `Jar`
-   1. **Java** : `11` (Sie können auch „8“ auswählen, aber für dieses Tutorial wurde „11“ verwendet.)
+   1. **Java**: `11` (Sie können auch „8“ auswählen, aber für dieses Tutorial wurde „11“ verwendet.)
 1. Wählen Sie **Add Dependencies...** (Abhängigkeiten hinzufügen...) aus.
 1. Geben Sie im Textfeld `Spring Web` ein, und drücken Sie STRG+EINGABE.
 1. Geben Sie im Textfeld `Azure Key Vault` ein, und drücken Sie die EINGABETASTE.  Auf Ihrem Bildschirm sollte nun Folgendes angezeigt werden.
@@ -646,7 +646,7 @@ Verwenden Sie das [Azure-Portal](https://portal.azure.com/), um die in diesem Ar
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Weitere Informationen zu Spring und Azure finden Sie im Dokumentationscenter zu Spring in Azure.
+Weitere Informationen zu Spring und Azure finden Sie im nächsten Thema im Dokumentationscenter zu Spring in Azure.
 
 > [!div class="nextstepaction"]
-> [Konfigurieren einer Spring Boot Initializer-App für die Verwendung von Application Insights](configure-spring-boot-java-applicationinsights.md)
+> [Verwenden von Spring Boot-Starters für Azure Service Bus JMS](configure-spring-boot-starter-java-app-with-azure-service-bus.md)

@@ -2,17 +2,28 @@
 title: 'Neuerungen in der JavaScript-Dokumentation: '
 description: Neuerungen in der JavaScript-Dokumentation für Oktober 2020
 ms.topic: conceptual
-ms.date: 10/28/2020
-ms.openlocfilehash: 1b95a18d3ea8cb5947dfd5525326d69460c3a00b
-ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
+ms.date: 11/13/2020
+ms.openlocfilehash: dba173f640205bbd43ce0f9e11387eba02c7a20e
+ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93405949"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94601272"
 ---
 # <a name="javascript-docs-whats-new-for-october-2020"></a>JavaScript-Dokumentation: Neuerungen im Oktober 2020
 
 Hier finden Sie neue und aktualisierte Inhalte für JavaScript- und TypeScript-Entwickler.
+
+
+## <a name="2020-november"></a>November 2020
+
+Willkommen bei den Neuerungen für die JavaScript-Dokumentation ab November 2020. Nachfolgend sind alle größeren Änderungen aufgelistet, die in diesem Zeitraum an der Dokumentation vorgenommen wurden.
+
+### <a name="whats-new"></a>Neues
+
+|Name|Notizen|
+|---------------------------------------|--|
+|[Tutorial: Bereitstellen einer App auf virtuellen Linux-Computern](./tutorial/nodejs-virtual-machine-vm/introduction.md)|In diesem Tutorial wird ein virtueller Linux-Computer (virtual machine, VM) für eine Express.js-App erstellt. Der virtuelle Computer wird mit einer cloud-init-Konfigurationsdatei konfiguriert und enthält NGINX sowie ein GitHub-Repository für eine Express.js-App. Wenn der virtuelle Computer ausgeführt wird, können Sie eine SSH-Verbindung mit dem virtuellen Computer herstellen, die Web-App ändern, um sie mit Ablaufverfolgungsprotokollierung zu versehen, und die öffentliche Express.js-Server-App in einem Webbrowser anzeigen.|
 
 ## <a name="2020-october"></a>Oktober 2020
 

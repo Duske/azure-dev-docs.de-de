@@ -3,16 +3,16 @@ title: Verwenden von Spring Boot Starter für Apache Kafka mit Azure Event Hubs
 description: Erfahren Sie, wie Sie eine mit Spring Boot Initializer erstellte Anwendung zur Verwendung von Apache Kafka mit Azure Event Hubs konfigurieren.
 services: event-hubs
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 10/13/2018
 ms.service: event-hubs
 ms.topic: article
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 452119b467d3b92e7b8deec3b0e22d2d1d18ee9e
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 53a50a7a32ff9e555f821d69688cc566fb7a3c62
+ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689208"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94560398"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-apache-kafka-with-azure-event-hubs"></a>Verwenden von Spring Boot Starter für Apache Kafka mit Azure Event Hubs
 
@@ -26,10 +26,9 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 * Ein unterstütztes Java Development Kit (JDK). Weitere Informationen zu den für die Entwicklung in Azure verfügbaren JDKs finden Sie unter <https://aka.ms/azure-jdks>.
 * [Apache Maven](http://maven.apache.org/), Version 3.0 oder höher
 
-> [!IMPORTANT]
->
-> Für die Schritte in diesem Artikel wird mindestens die Spring Boot-Version 2.0 benötigt.
->
+> [!NOTE]
+> * Für die Schritte in diesem Artikel wird mindestens die Spring Boot-Version 2.0 benötigt.
+> * Spring Initializr nutzt als Standardversion Java 11. Um die in diesem Thema beschriebenen Spring Boot Starter verwenden zu können, müssen Sie stattdessen Java 8 auswählen.
 
 ## <a name="create-an-azure-event-hub-using-the-azure-portal"></a>Erstellen eines Azure Event Hubs über das Azure-Portal
 
@@ -37,25 +36,26 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Navigieren Sie zum Azure-Portal unter <https://portal.azure.com/>, und melden Sie sich an.
 
-1. Klicken Sie auf **+ Ressource erstellen**  > **Internet der Dinge** , und suchen Sie nach **Event Hubs**.
+1. Wählen Sie **Ressource erstellen** > **Marketplace durchsuchen** aus, und suchen Sie nach *Event Hubs*.
 
-1. Klicken Sie auf **Erstellen** .
+1. Klicken Sie auf **Erstellen**.
 
    ![Erstellen eines Azure Event Hub-Namespaces][IMG01]
 
 1. Geben Sie auf der Seite **Namespace erstellen** die folgenden Informationen ein:
 
-   * Geben Sie einen eindeutigen **Namen** ein, der als Teil des URI für Ihren Event Hub-Namespace verwendet wird. Beispiel: Wenn Sie **wingtiptoys** für **Name** eingegeben haben, lautet der URI *wingtiptoys.servicebus.windows.net* .
-   * Tarif:
-   * Geben Sie **Kafka aktivieren** für Ihren Namespace an.
    * Wählen Sie das **Abonnement** aus, das Sie für Ihren Namespace verwenden möchten.
    * Legen Sie fest, ob eine neue **Ressourcengruppe** für Ihren Namespace erstellt werden soll, oder wählen Sie eine vorhandene Ressourcengruppe aus.
+   * Geben Sie einen eindeutigen **Namespacenamen** ein, der als Teil des URI für Ihren Event Hub-Namespace verwendet wird. Wenn Sie unter **Name** also beispielsweise *wingtiptoys-space* eingegeben haben, lautet der URI `wingtiptoys-space.servicebus.windows.net`.
    * Geben Sie den **Speicherort** für Ihren Event Hub-Namespace an.
+   * Geben Sie den **Tarif** an. Dadurch werden Ihre Verwendungsszenarien eingeschränkt.
    * Sie können auch die **Durchsatzeinheiten** für den Namespace angeben.
 
    ![Angeben der Optionen für den Azure Event Hub-Namespace][IMG02]
 
-1. Nachdem Sie die oben genannten Optionen angegeben haben, klicken Sie auf **Erstellen** , um den Namespace zu erstellen.
+1. Wählen Sie nach Angabe der obigen Optionen die Option **Überprüfen + erstellen** aus.
+
+1. Überprüfen Sie die Angaben, und wählen Sie anschließend **Erstellen** aus, um Ihren Namespace zu erstellen.
 
 ### <a name="create-an-azure-event-hub-in-your-namespace"></a>Erstellen eines Azure Event Hubs in Ihrem Namespace
 
@@ -63,11 +63,11 @@ Nachdem Sie Ihren Namespace bereitgestellt haben, können Sie darin einen Event 
 
 1. Navigieren Sie zum im vorherigen Schritt erstellten Namespace.
 
-1. Klicken Sie auf der oberen Menüleiste auf **+ Event Hub** .
+1. Wählen Sie auf der oberen Menüleiste **Event Hub** aus.
 
 1. Benennen Sie den Event Hub.
 
-1. Klicken Sie auf **Erstellen** .
+1. Klicken Sie auf **Erstellen**.
 
    ![Erstellen des Event Hubs][IMG05]
 
@@ -77,17 +77,16 @@ Nachdem Sie Ihren Namespace bereitgestellt haben, können Sie darin einen Event 
 
 1. Verwenden Sie die folgenden Optionen:
 
-   * Generieren Sie ein **Maven** -Projekt mit **Java** .
-   * Geben Sie eine **Spring Boot** -Version ab 2.0 an.
+   * Generieren Sie ein **Maven**-Projekt mit **Java**.
+   * Geben Sie eine **Spring Boot**-Version ab 2.0 an.
    * Geben Sie Namen für die **Gruppe** und das **Artefakt** für Ihre Anwendung an.
-   * Fügen Sie die **Web** -Abhängigkeit hinzu.
+   * Fügen Sie die **Web**-Abhängigkeit hinzu.
 
       ![Grundlegende Spring Initializr-Optionen][SI01]
 
    > [!NOTE]
-   >
-   > Spring Initializr verwendet zur Erstellung des Paketnamens die Namen für die **Gruppe** und das **Artefakt** , beispielsweise *com.wingtiptoys.kafka* .
-   >
+   > 1. Spring Initializr verwendet zur Erstellung des Paketnamens die Namen für die **Gruppe** und das **Artefakt**, beispielsweise *com.wingtiptoys.kafka*.
+   > 2. Spring Initializr nutzt als Standardversion Java 11. Um die in diesem Thema beschriebenen Spring Boot Starter verwenden zu können, müssen Sie stattdessen Java 8 auswählen.
 
 1. Nachdem Sie die oben genannten Optionen angegeben haben, klicken Sie auf **Generate Project** (Projekt generieren).
 
@@ -97,32 +96,25 @@ Nachdem Sie Ihren Namespace bereitgestellt haben, können Sie darin einen Event 
 
 ## <a name="configure-your-spring-boot-app-to-use-the-spring-cloud-kafka-stream-and-azure-event-hub-starters"></a>Konfigurieren der Spring Boot-App zur Verwendung von Spring Cloud Kafka Stream und Azure Event Hub Starter
 
-1. Suchen Sie im Stammverzeichnis Ihrer App nach der Datei *pom.xml* . Beispiel:
+1. Suchen Sie im Stammverzeichnis Ihrer App nach der Datei *pom.xml*. Beispiel:
 
-   `C:\SpringBoot\kafka\pom.xml`
+   *C:\SpringBoot\kafka\pom.xml*
 
-   Oder
+   - oder -
 
-   `/users/example/home/kafka/pom.xml`
+   */users/example/home/kafka/pom.xml*
 
-1. Öffnen Sie die Datei *pom.xml* in einem Text-Editor, und fügen Sie Spring Cloud Kafka Stream und Azure Event Hub Starter der Liste von `<dependencies>` hinzu:
+1. Öffnen Sie die Datei *pom.xml* in einem Text-Editor, und fügen Sie der Abhängigkeitenliste (`<dependencies>`) die Event Hubs-Kafka-Starter hinzu:
 
    ```xml
    <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-stream-kafka</artifactId>
-      <version>2.0.1.RELEASE</version>
-   </dependency>
-   <dependency>
-      <groupId>com.microsoft.azure</groupId>
-      <artifactId>spring-cloud-azure-starter-eventhub</artifactId>
-      <version>1.0.0.M2</version>
+     <groupId>com.microsoft.azure</groupId>
+     <artifactId>spring-cloud-starter-azure-eventhubs-kafka</artifactId>
+     <version>1.2.8</version>
    </dependency>
    ```
 
-   ![Bearbeiten der Datei „pom.xml“][SI03]
-
-1. Speichern und schließen Sie die Datei *pom.xml* .
+1. Speichern und schließen Sie die Datei *pom.xml*.
 
 ## <a name="create-an-azure-credential-file"></a>Erstellen einer Azure-Anmeldeinformationsdatei
 
@@ -130,14 +122,14 @@ Nachdem Sie Ihren Namespace bereitgestellt haben, können Sie darin einen Event 
 
 1. Navigieren Sie zum Verzeichnis *resources* Ihrer Spring Boot-App. Beispiel:
 
-   ```shell
-   cd C:\SpringBoot\eventhub\src\main\resources
+   ```cmd
+   cd C:\SpringBoot\kafka\src\main\resources
    ```
 
    Oder
 
-   ```shell
-   cd /users/example/home/eventhub/src/main/resources
+   ```bash
+   cd /users/example/home/kafka/src/main/resources
    ```
 
 1. Melden Sie sich bei Ihrem Azure-Konto an:
@@ -182,7 +174,7 @@ Nachdem Sie Ihren Namespace bereitgestellt haben, können Sie darin einen Event 
    az ad sp create-for-rbac --sdk-auth > my.azureauth
    ```
 
-   Dieser Befehl erstellt im Verzeichnis *resources* eine Datei *my.azureauth* , deren Inhalt in etwa wie folgt aussieht:
+   Dieser Befehl erstellt im Verzeichnis *resources* eine Datei *my.azureauth*, deren Inhalt in etwa wie folgt aussieht:
 
    ```json
    {
@@ -201,13 +193,13 @@ Nachdem Sie Ihren Namespace bereitgestellt haben, können Sie darin einen Event 
 
 ## <a name="configure-your-spring-boot-app-to-use-your-azure-event-hub"></a>Konfigurieren der Spring Boot-App zur Verwendung Ihres Azure Event Hubs
 
-1. Suchen Sie im Verzeichnis *resources* Ihrer App nach der Datei *application.properties* . Beispiel:
+1. Suchen Sie im Verzeichnis *resources* Ihrer App nach der Datei *application.properties*. Beispiel:
 
-   `C:\SpringBoot\eventhub\src\main\resources\application.properties`
+   *C:\SpringBoot\kafka\src\main\resources\application.properties*
 
-   Oder
+   - oder -
 
-   `/users/example/home/eventhub/src/main/resources/application.properties`
+   */users/example/home/kafka/src/main/resources/application.properties*
 
 2. Öffnen Sie die Datei *application.properties* in einem Text-Editor, fügen Sie die folgenden Zeilen hinzu, und ersetzen Sie dann die Beispielwerte durch die entsprechenden Eigenschaften für Ihren Event Hub:
 
@@ -234,7 +226,7 @@ Nachdem Sie Ihren Namespace bereitgestellt haben, können Sie darin einen Event 
    | `spring.cloud.stream.bindings.output.destination` |                               Gibt den Azure Event Hub an, der das Ausgabeziel ist (in diesem Tutorial ist das Ausgabeziel mit dem Eingabeziel identisch).                               |
 
 
-3. Speichern und schließen Sie die Datei *application.properties* .
+3. Speichern und schließen Sie die Datei *application.properties*.
 
 ## <a name="add-sample-code-to-implement-basic-event-hub-functionality"></a>Hinzufügen von Beispielcode zum Implementieren grundlegender Event Hub-Funktionen
 
@@ -244,11 +236,11 @@ In diesem Abschnitt erstellen Sie die Java-Klassen, die erforderlich sind, um Er
 
 1. Suchen Sie die Java-Hauptanwendungsdatei im Paketverzeichnis Ihrer App. Beispiel:
 
-   `C:\SpringBoot\kafka\src\main\java\com\wingtiptoys\kafka\KafkaApplication.java`
+   *C:\SpringBoot\kafka\src\main\java\com\wingtiptoys\kafka\EventhubApplication.java*
+   
+   - oder -
 
-   Oder
-
-   `/users/example/home/kafka/src/main/java/com/wingtiptoys/kafka/KafkaApplication.java`
+   */users/example/home/kafka/src/main/java/com/wingtiptoys/kafka/EventhubApplication.java*
 
 1. Öffnen Sie die Java-Hauptanwendungsdatei in einem Text-Editor, und fügen Sie die folgenden Zeilen zur Datei hinzu:
 
@@ -259,9 +251,9 @@ In diesem Abschnitt erstellen Sie die Java-Klassen, die erforderlich sind, um Er
    import org.springframework.boot.autoconfigure.SpringBootApplication;
 
    @SpringBootApplication
-   public class KafkaApplication {
+   public class EventhubApplication {
       public static void main(String[] args) {
-         SpringApplication.run(KafkaApplication.class, args);
+         SpringApplication.run(EventhubApplication.class, args);
       }
    }
    ```
@@ -299,7 +291,7 @@ In diesem Abschnitt erstellen Sie die Java-Klassen, die erforderlich sind, um Er
    }
    ```
 
-1. Speichern und schließen Sie die Datei *KafkaSource.java* .
+1. Speichern und schließen Sie die Datei *KafkaSource.java*.
 
 ### <a name="create-a-new-class-for-the-sink-connector"></a>Erstellen einer neuen Klasse für den Senkenconnector
 
@@ -325,22 +317,26 @@ In diesem Abschnitt erstellen Sie die Java-Klassen, die erforderlich sind, um Er
    }
    ```
 
-1. Speichern und schließen Sie die Datei *KafkaSink.java* .
+1. Speichern und schließen Sie die Datei *KafkaSink.java*.
 
 ## <a name="build-and-test-your-application"></a>Erstellen und Testen der Anwendung
 
 1. Öffnen Sie eine Eingabeaufforderung, und wechseln Sie zum Ordnerverzeichnis, in dem sich die Datei *pom.xml* befindet. Beispiel:
 
-   `cd C:\SpringBoot\kafka`
-
+   ```cmd
+   cd C:\SpringBoot\kafka
+   ```
+   
    Oder
 
-   `cd /users/example/home/kafka`
-
+   ```bash
+   cd /users/example/home/kafka
+   ```
+   
 1. Erstellen Sie mit Maven die Spring Boot-Anwendung, und führen Sie sie aus. Beispiel:
 
    ```shell
-   mvn clean package
+   mvn clean package -Dmaven.test.skip=true
    mvn spring-boot:run
    ```
 
@@ -351,10 +347,11 @@ In diesem Abschnitt erstellen Sie die Java-Klassen, die erforderlich sind, um Er
    ```
    In den Protokollen Ihrer Anwendung sollte „hello“ angezeigt werden. Beispiel:
 
-   ```shell
-   [http-nio-8080-exec-2] INFO org.apache.kafka.common.utils.AppInfoParser - Kafka version : 1.0.2
-   [http-nio-8080-exec-2] INFO org.apache.kafka.common.utils.AppInfoParser - Kafka commitId : 2a121f7b1d402825
-   [wingtiptoyshub.container-0-C-1] INFO com.wingtiptoys.kafka.KafkaSink - New message received: hello
+   ```output
+   2020-10-12 16:56:19.827  INFO 13272 --- [nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.5.1
+   2020-10-12 16:56:19.828  INFO 13272 --- [nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 0efa8fb0f4c73d92
+   2020-10-12 16:56:19.830  INFO 13272 --- [nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1602492979827
+   2020-10-12 16:56:22.277  INFO 13272 --- [container-0-C-1] com.wingtiptoys.kafka.KafkaSink          : New message received: hello
    ```
 
 
@@ -407,6 +404,10 @@ In diesem Abschnitt erstellen Sie die Java-Klassen, die erforderlich sind, um Er
 > ![Antwort der Anwendung in einem Webbrowser][TB02]
 > 
 
+## <a name="clean-up-resources"></a>Bereinigen von Ressourcen
+
+Verwenden Sie das [Azure-Portal](https://portal.azure.com/), um die in diesem Artikel erstellten Ressourcen zu löschen, wenn Sie sie nicht mehr benötigen, um unerwartete Gebühren zu vermeiden.
+
 ## <a name="next-steps"></a>Nächste Schritte
 
 Weitere Informationen zu Spring und Azure finden Sie im Dokumentationscenter zu Spring in Azure.
@@ -444,16 +445,9 @@ Weitere Informationen zur Verwendung von Azure mit Java finden Sie unter „Azur
 
 [IMG01]: media/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub/create-kafka-event-hub-01.png
 [IMG02]: media/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub/create-kafka-event-hub-02.png
-[IMG03]: media/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub/create-kafka-event-hub-03.png
-[IMG04]: media/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub/create-kafka-event-hub-04.png
 [IMG05]: media/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub/create-kafka-event-hub-05.png
-[IMG06]: media/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub/create-kafka-event-hub-06.png
-[IMG07]: media/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub/create-kafka-event-hub-07.png
-[IMG08]: media/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub/create-kafka-event-hub-08.png
 
 [SI01]: media/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub/create-project-01.png
-[SI02]: media/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub/create-project-02.png
-[SI03]: media/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub/create-project-03.png
 
 [TB01]: media/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub/test-browser-01.png
 [TB02]: media/configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub/test-browser-02.png

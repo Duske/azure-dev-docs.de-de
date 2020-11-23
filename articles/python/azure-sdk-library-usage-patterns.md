@@ -1,15 +1,15 @@
 ---
 title: Verwendungsmuster mit den Azure-Bibliotheken für Python
 description: Hier finden Sie eine Übersicht über gängige Verwendungsmuster mit den Azure SDK-Bibliotheken für Python.
-ms.date: 09/21/2020
+ms.date: 11/12/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: ae51bee0aea2717c09242f8928a617bf8211f372
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 6f1a2c07bbda4ebe409722d2381e046ee45f7902
+ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764776"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94601392"
 ---
 # <a name="azure-libraries-for-python-usage-patterns"></a>Azure-Bibliotheken für Python: Verwendungsmuster
 
@@ -37,9 +37,11 @@ Von `pip install` wird die neueste Version einer Bibliothek in Ihrer aktuellen P
 
 ## <a name="asynchronous-operations"></a>Asynchrone Vorgänge
 
-Viele Vorgänge, die Sie über Client- und Verwaltungsclientobjekte aufrufen (z. B. [`WebSiteManagementClient.web_apps.create_or_update`](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.operations.webappsoperations#create-or-update-resource-group-name--name--site-envelope--custom-headers-none--raw-false--polling-true----operation-config-)), geben ein Objekt vom Typ `AzureOperationPoller[<type>]` zurück, wobei `<type>` für den betreffenden Vorgang spezifisch ist.
+Bei vielen Vorgängen, die Sie über Client- und Verwaltungsclientobjekte aufrufen (z. B. [`ComputeManagementClient.virtual_machines.begin_create_or_update`](/python/api/azure-mgmt-compute/azure.mgmt.compute.v2020_06_01.operations.virtualmachinesoperations#begin-create-or-update-resource-group-name--vm-name--parameters----kwargs-) und [`WebSiteManagementClient.web_apps.create_or_update`](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.operations.webappsoperations#create-or-update-resource-group-name--name--site-envelope--custom-headers-none--raw-false--polling-true----operation-config-)), wird ein Objekt vom Typ `AzureOperationPoller[<type>]` zurückgegeben, wobei `<type>` für den betreffenden Vorgang spezifisch ist.
 
-Ein [`AzureOperationPoller`](/python/api/msrestazure/msrestazure.azure_operation.azureoperationpoller)-Rückgabetyp bedeutet, dass der Vorgang asynchron ist. Dementsprechend müssen Sie die `result`-Methode dieses Pollers so aufrufen, dass sie wartet, bis das tatsächliche Ergebnis des Vorgangs verfügbar wird.
+Beide Methoden sind asynchron. Der Unterschied bei den Methodennamen ist auf Versionsunterschiede zurückzuführen. Von älteren Bibliotheken, die nicht auf „azure.core“ basieren, werden in der Regel Namen wie `create_or_update` verwendet. Bei Bibliotheken, die auf „azure.core“ basieren, werden Methodennamen mit dem Präfix `begin_` versehen, um deutlicher zu machen, dass sie asynchron sind. Wenn Sie alten Code zu einer neueren, auf „azure.core“ basierenden Bibliothek migrieren möchten, müssen Sie in der Regel den Methodennamen das Präfix `begin_` hinzufügen.
+
+In beiden Fällen bedeutet der Rückgabetyp [`AzureOperationPoller`](/python/api/msrestazure/msrestazure.azure_operation.azureoperationpoller) definitiv, dass der Vorgang asynchron ist. Dementsprechend muss die Methode `result` dieses Pollers so aufgerufen werden, dass auf den Abschluss des Vorgangs gewartet und dann das entsprechende Ergebnis abgerufen wird.
 
 Der folgende Code stammt aus [Beispiel: Bereitstellen und Implementieren einer Web-App](azure-sdk-example-web-app.md) und zeigt ein Beispiel für die Verwendung des Pollers, damit auf ein Ergebnis gewartet wird:
 
