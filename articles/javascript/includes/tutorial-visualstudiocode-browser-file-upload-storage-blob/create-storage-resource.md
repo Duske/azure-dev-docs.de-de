@@ -1,15 +1,15 @@
 ---
 title: include file create-storage-resource.md
 description: include file create-storage-resource.md
-ms.date: 10/13/2020
+ms.date: 11/13/2020
 ms.topic: include
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 6862d9cf56ee86f7137495b021144b518459d979
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.custom: devx-track-javascript, devx-track-azurecli
+ms.openlocfilehash: 19a21dbf557c31f7eeae6afdb4722bfed35c86fe
+ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92755543"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94885357"
 ---
 In diesem Abschnitt des Tutorials erstellen Sie die Azure Storage-Ressource mit einer Visual Studio-Erweiterung und konfigurieren die Ressource dann im Azure-Portal. 
 
@@ -33,7 +33,7 @@ Verwenden Sie die Visual Studio Code-Erweiterung zum Erstellen einer Storage-Res
 
 1. Nachdem der App-Erstellungsprozess beendet wurde, wird eine Benachrichtigung mit Informationen zur neuen Ressource angezeigt. 
 
-    :::image type="content" source="../../media/tutorial-browser-file-upload/visualstudiocode-storage-extension-create-resource-complete.png" alt-text="Navigieren Sie zur Azure Storage-Erweiterung. Klicken Sie mit der rechten Maustaste auf das Abonnement, und wählen Sie dann „Speicherkonto erstellen“ aus.":::
+    :::image type="content" source="../../media/tutorial-browser-file-upload/visualstudiocode-storage-extension-create-resource-complete.png" alt-text="Nachdem der App-Erstellungsprozess abgeschlossen ist, wird eine Benachrichtigung mit Informationen zur neuen Ressource angezeigt.":::
 
 ## <a name="set-storage-account-name-in-code-file"></a>Festlegen des Speicherkontonamens in der Codedatei
 
@@ -62,7 +62,7 @@ Generieren Sie das SAS-Token, bevor Sie CORS konfigurieren.
     |Bevorzugte Routingebene|Basic|
     |Signaturschlüssel|key1 ausgewählt|
 
-    :::image type="content" source="../../media/tutorial-browser-file-upload/azure-portal-storage-blob-generate-sas-token.png" alt-text="Navigieren Sie zur Azure Storage-Erweiterung. Klicken Sie mit der rechten Maustaste auf das Abonnement, und wählen Sie dann „Speicherkonto erstellen“ aus.":::
+    :::image type="content" source="../../media/tutorial-browser-file-upload/azure-portal-storage-blob-generate-sas-token.png" alt-text="Konfigurieren Sie das SAS-Token wie in der Abbildung gezeigt. Die Einstellungen werden unter der Abbildung erläutert.":::
 
 1.  Wählen Sie **SAS und Verbindungszeichenfolge generieren** aus. Kopieren Sie das SAS-Token sofort. Sie können dieses Token nicht auflisten. Wenn Sie es nicht kopiert haben, müssen Sie ein neues SAS-Token generieren. 
 
@@ -71,8 +71,8 @@ Generieren Sie das SAS-Token, bevor Sie CORS konfigurieren.
 Der SAS-Tokenwert ist eine partielle Abfragezeichenfolge, die in der URL verwendet wird, wenn Abfragen der cloudbasierten Ressource vorgenommen werden.
 
 Das Tokenformat hängt davon ab, welches Tool Sie verwendet haben, um das Token zu erstellen: 
-* **Azure-Portal** : Wenn Sie das SAS-Token im Portal erstellen, enthält das Token `?` als erstes Zeichen der Zeichenfolge.
-* **Azure CLI** : Wenn Sie das SAS-Token mit dem Azure CLI erstellen, enthält der zurückgegebene Wert nicht `?` als erstes Zeichen der Zeichenfolge. 
+* **Azure-Portal**: Wenn Sie das SAS-Token im Portal erstellen, enthält das Token `?` als erstes Zeichen der Zeichenfolge.
+* **Azure CLI**: Wenn Sie das SAS-Token mit dem Azure CLI erstellen, enthält der zurückgegebene Wert nicht `?` als erstes Zeichen der Zeichenfolge. 
 
 1. Entfernen Sie `?`, wenn dies das erste Zeichen des Tokens ist. Die Codedatei stellt `?` für Sie bereit, sodass Sie das Fragezeichen nicht im Token benötigen.
 
@@ -87,7 +87,7 @@ const sasToken = process.env.storagesastoken || "";
 
 Konfigurieren Sie CORS für Ihre Ressource, damit der clientseitige React-Code auf Ihr Speicherkonto zugreifen kann. 
 
-1. Wählen Sie im Azure-Portal im Abschnitt **Einstellungen** die Option **CORS** aus. 
+1. Wählen Sie im Azure-Portal im Abschnitt „Einstellungen“ die Option **CORS** aus. 
 1. Konfigurieren Sie CORS wie in der Abbildung gezeigt. Die Einstellungen werden unter der Abbildung erläutert. 
 
     | Eigenschaft|Wert|
@@ -98,7 +98,7 @@ Konfigurieren Sie CORS für Ihre Ressource, damit der clientseitige React-Code a
     |Verfügbar gemachte Header|`*`|
     |Maximales Alter|86.400|
 
-    :::image type="content" source="../../media/tutorial-browser-file-upload/azure-portal-storage-blob-cors.png" alt-text="Navigieren Sie zur Azure Storage-Erweiterung. Klicken Sie mit der rechten Maustaste auf das Abonnement, und wählen Sie dann „Speicherkonto erstellen“ aus.":::
+    :::image type="content" source="../../media/tutorial-browser-file-upload/azure-portal-storage-blob-cors.png" alt-text="Konfigurieren Sie CORS wie in der Abbildung gezeigt. Die Einstellungen werden unter der Abbildung erläutert.":::
 
 1. Wählen Sie **Speichern** über den Einstellungen aus, um die Einstellung in der Ressource zu speichern. Für den Code sind keine Änderungen erforderlich, um mit diesen CORS-Einstellungen arbeiten zu können. 
 
@@ -114,11 +114,19 @@ Ihr SAS-Token und der Name des Speicherkontos werden in der Datei `src/uploadToB
 
 1. Wenn das Terminal die URL anzeigt (z. B. `http://localhost:3000`) ist Ihre App bereit. Öffnen Sie einen Browser, und geben Sie diese URL ein. Die mit Azure Storage-Blobs verbundene Website sollte mit einer Schaltfläche für die Dateiauswahl und einer Schaltfläche für den Dateiupload angezeigt werden. 
 
-    :::image type="content" source="../../media/tutorial-browser-file-upload/browser-react-app-azure-storage-resource-configured-upload-button-displayed.png" alt-text="Navigieren Sie zur Azure Storage-Erweiterung. Klicken Sie mit der rechten Maustaste auf das Abonnement, und wählen Sie dann „Speicherkonto erstellen“ aus.":::
+    :::image type="content" source="../../media/tutorial-browser-file-upload/browser-react-app-azure-storage-resource-configured-upload-button-displayed.png" alt-text="Die mit Azure Storage-Blobs verbundene React-Website sollte mit einer Schaltfläche für die Dateiauswahl und einer Schaltfläche für den Dateiupload angezeigt werden.":::
 
 1. Wählen Sie ein Bild aus dem Ordner `images` zum Hochladen aus. `spring-flowers.jpg` sind ein gutes visuelles Element für diesen Test. Wählen Sie dann die Schaltfläche **Hochladen** aus. Schaltfläche. 
 
-    Der React-Clientcode des Front-Ends ruft `src/uploadToBlob.ts` zur Authentifizierung bei Azure auf und erstellt dann einen Speichercontainer (falls noch nicht vorhanden) und lädt das Blob in diesen Container hoch. 
+    Der React-Clientcode des Front-Ends ruft `src/uploadToBlob.ts` zur Authentifizierung bei Azure auf, erstellt dann einen Speichercontainer (falls noch nicht vorhanden) und lädt die Datei in diesen Container hoch. 
+
+## <a name="troubleshooting"></a>Problembehandlung
+
+Wenn Sie einen Fehler erhalten haben oder die Datei nicht in den Container hochgeladen wird, überprüfen Sie Folgendes:
+
+* Erstellen Sie Ihr SAS-Token neu. Stellen Sie dabei sicher, dass das Token auf der Speicherressourcenebene und nicht auf der Containerebene erstellt wird. Kopieren Sie das neue Token an der richtigen Stelle in den Code.
+* Stellen Sie sicher, das die in den Code kopierte Tokenzeichenfolge nicht mit einem Fragezeichen (`?`) beginnt.
+* Überprüfen Sie die CORS-Einstellung für Ihre Speicherressource.
 
 ## <a name="want-to-know-more"></a>Möchten Sie mehr erfahren? 
 
