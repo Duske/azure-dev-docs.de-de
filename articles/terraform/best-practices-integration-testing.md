@@ -4,12 +4,12 @@ description: Hier erhalten Sie Informationen zu Integrationstests und erfahren, 
 ms.topic: tutorial
 ms.date: 10/08/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: bd05bfa2a07ee6cfa2f4a5dc4f4771559af9a2e7
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: b9a533475bd291cc0d1fd9fffa418b0ce4498fb0
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192562"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983989"
 ---
 # <a name="tutorial-configure-integration-tests-for-terraform-projects-in-azure"></a>Tutorial: Konfigurieren von Integrationstests für Terraform-Projekte in Azure
 
@@ -28,11 +28,11 @@ In diesem Artikel lernen Sie Folgendes:
 ## <a name="prerequisites"></a>Voraussetzungen
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-- **Azure DevOps-Organisation und -Projekt** : [Erstellen Sie eine Azure DevOps-Organisation](/azure/devops/organizations/projects/create-project), falls Sie noch keine haben.
-- **Terraform Build & Release Tasks-Erweiterung** : [Installieren Sie die Terraform Build & Release Tasks-Erweiterung](https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform) in Ihrer Azure DevOps-Organisation.
-- **Gewähren des Zugriffs auf Ihr Azure-Abonnement für Azure DevOps** : Erstellen Sie eine [Azure-Dienstverbindung](/azure/devops/pipelines/library/connect-to-azure) mit dem Namen `terraform-basic-testing-azure-connection`, damit Azure-Pipelines eine Verbindung mit Ihren Azure-Abonnements herstellen können.
-- **Installieren von Terraform** : Führen Sie [den Download und die Installation von Terraform](https://www.terraform.io/downloads.html) entsprechend den Anforderungen Ihrer Umgebung durch.
-- **Forken Sie die Testbeispiele** : Forken Sie das [Terraform-Beispielprojekt auf GitHub](https://github.com/Azure/terraform), und klonen Sie es auf Ihrem Dev/Test-Computer.
+- **Azure DevOps-Organisation und -Projekt**: [Erstellen Sie eine Azure DevOps-Organisation](/azure/devops/organizations/projects/create-project), falls Sie noch keine haben.
+- **Terraform Build & Release Tasks-Erweiterung**: [Installieren Sie die Terraform Build & Release Tasks-Erweiterung](https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform) in Ihrer Azure DevOps-Organisation.
+- **Gewähren des Zugriffs auf Ihr Azure-Abonnement für Azure DevOps**: Erstellen Sie eine [Azure-Dienstverbindung](/azure/devops/pipelines/library/connect-to-azure) mit dem Namen `terraform-basic-testing-azure-connection`, damit Azure-Pipelines eine Verbindung mit Ihren Azure-Abonnements herstellen können.
+- **Installieren von Terraform**: Führen Sie [den Download und die Installation von Terraform](https://www.terraform.io/downloads.html) entsprechend den Anforderungen Ihrer Umgebung durch.
+- **Forken Sie die Testbeispiele**: Forken Sie das [Terraform-Beispielprojekt auf GitHub](https://github.com/Azure/terraform), und klonen Sie es auf Ihrem Dev/Test-Computer.
 
 ## <a name="validate-a-local-terraform-configuration"></a>Überprüfen einer lokalen Terraform-Konfiguration
 
@@ -99,8 +99,8 @@ Sie können die statische Codeanalyse direkt im Terraform-Konfigurationscode dur
 Die folgenden Tools stellen eine statische Analyse für Terraform-Dateien bereit:
 
 - [Checkov](https://github.com/bridgecrewio/checkov/)
-- [Terrascan](https://github.com/cesar-rodriguez/terrascan)
-- [tfsec](https://github.com/liamg/tfsec) 
+- [Terrascan](https://github.com/accurics/terrascan)
+- [tfsec](https://github.com/tfsec/tfsec)
 - [Deepsource](https://deepsource.io/blog/release-terraform-static-analysis/) 
 
 Die statische Analyse wird häufig im Rahmen einer Continuous Integration-Pipeline ausgeführt. Diese Tests erfordern weder die Erstellung eines Ausführungsplans noch eine Bereitstellung. Sie sind daher schneller als andere Tests und werden in der Regel als Erstes im Continuous Integration-Prozess ausgeführt.

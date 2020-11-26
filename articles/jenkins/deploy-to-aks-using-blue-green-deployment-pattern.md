@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, Kubernetes, K8s, AKS, Blau/Grün-Bereitstellun
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 1ddf85a5ad1a9415d4143873f674b7104a4bd4d8
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: b4284fdfa82ada4098df4a37983e364bdcd70d90
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688662"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94984009"
 ---
 # <a name="tutorial-deploy-to-azure-kubernetes-service-aks-using-the-bluegreen-deployment-pattern"></a>Tutorial: Durchführen der Bereitstellung in Azure Kubernetes Service (AKS) mit dem Blau/Grün-Bereitstellungsmuster
 
@@ -29,7 +29,7 @@ Dieses Tutorial umfasst die folgenden Aspekte:
 
 ## <a name="prerequisites"></a>Voraussetzungen
 - [GitHub-Konto](https://github.com): Sie benötigen ein GitHub-Konto, um das Beispielrepository zu klonen.
-- [Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest): Sie erstellen mit der Azure CLI 2.0 den Kubernetes-Cluster.
+- [Azure CLI 2.0](/cli/azure/install-azure-cli): Sie erstellen mit der Azure CLI 2.0 den Kubernetes-Cluster.
 - [Chocolatey](https://chocolatey.org): Mit diesem Paket-Manager installieren Sie kubectl.
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/): Mit dieser Befehlszeilenschnittstelle führen Sie Befehle für Kubernetes-Cluster aus.
 - [jq](https://stedolan.github.io/jq/download/): Dies ist ein schlanker befehlszeilenbasierter JSON-Prozessor.
@@ -81,7 +81,7 @@ In diesem Abschnitt führen Sie die folgenden Schritte aus:
 - Sie erstellen eine Instanz des Azure Container Registry-Diensts.
 
 ### <a name="use-the-azure-cli-20-to-create-a-managed-kubernetes-cluster"></a>Verwenden der Azure CLI 2.0, um einen verwalteten Kubernetes-Cluster zu erstellen
-Um einen verwalteten Kubernetes-Cluster mit der [Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest) zu erstellen, müssen Sie die Azure CLI-Version 2.0.25 oder höher verwenden.
+Um einen verwalteten Kubernetes-Cluster mit der [Azure CLI 2.0](/cli/azure/install-azure-cli) zu erstellen, müssen Sie die Azure CLI-Version 2.0.25 oder höher verwenden.
 
 1. Melden Sie sich bei Ihrem Azure-Konto an. Nachdem Sie den folgenden Befehl eingegeben haben, erhalten Sie Anweisungen zum Abschließen der Anmeldung. 
     
@@ -112,7 +112,7 @@ Um einen verwalteten Kubernetes-Cluster mit der [Azure CLI 2.0](/cli/azure/insta
 Sie können eine Blau/Grün-Bereitstellung manuell oder mit einem Setupskript (im zuvor geklonten Beispiel enthalten) ausführen. In diesem Abschnitt werden beide Möglichkeiten erläutert.
 
 #### <a name="set-up-the-kubernetes-cluster-via-the-sample-setup-script"></a>Einrichten des Kubernetes-Clusters über das Beispielsetupskript
-1. Bearbeiten Sie die Datei **deploy/aks/setup/setup.sh** , und ersetzen Sie die folgenden Platzhalter durch die entsprechenden Werte für Ihre Umgebung: 
+1. Bearbeiten Sie die Datei **deploy/aks/setup/setup.sh**, und ersetzen Sie die folgenden Platzhalter durch die entsprechenden Werte für Ihre Umgebung: 
 
    - **&lt;Name-Ihrer-Ressourcengruppe**
    - **&lt;Name-Ihres-Kubernetes-Clusters>**
@@ -134,9 +134,9 @@ Sie können eine Blau/Grün-Bereitstellung manuell oder mit einem Setupskript (i
     az aks get-credentials -g <your-resource-group-name> -n <your-kubernetes-cluster-name> --admin
     ```
 
-1. Ändern Sie in das Verzeichnis in das Verzeichnis **deploy/aks/setup** . 
+1. Ändern Sie in das Verzeichnis in das Verzeichnis **deploy/aks/setup**. 
 
-1. Führen Sie die folgenden **kubectl** -Befehle aus, um die Dienste für den öffentlichen Endpunkt und die beiden Testendpunkte einzurichten.
+1. Führen Sie die folgenden **kubectl**-Befehle aus, um die Dienste für den öffentlichen Endpunkt und die beiden Testendpunkte einzurichten.
 
     ```bash
     kubectl apply -f  service-green.yml
@@ -215,7 +215,7 @@ In diesem Abschnitt erfahren Sie, wie Sie den Jenkins-Server für die Ausführun
     1. Wählen Sie **Manage Jenkins > Manage Plugins > Available** (Jenkins verwalten > Plug-Ins verwalten >Verfügbar) aus.
     1. Suchen Sie das Azure Container Service-Plug-In, und installieren Sie es.
 
-1. Fügen Sie Anmeldeinformationen hinzu, um Ressourcen in Azure zu verwalten. Installieren Sie das **Azure-Anmeldeinformationen** -Plug-In (falls noch nicht vorhanden).
+1. Fügen Sie Anmeldeinformationen hinzu, um Ressourcen in Azure zu verwalten. Installieren Sie das **Azure-Anmeldeinformationen**-Plug-In (falls noch nicht vorhanden).
 
 1. Fügen Sie die Anmeldeinformationen für Ihren Azure-Dienstprinzipal als Typ **Microsoft Azure Service Principal** hinzu.
 

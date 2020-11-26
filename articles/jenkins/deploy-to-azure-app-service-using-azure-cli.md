@@ -3,14 +3,14 @@ title: 'Tutorial: Durchführen der Bereitstellung für Azure App Service mit Jen
 description: Erfahren Sie, wie Sie mit der Azure CLI eine Java-Web-App an Azure in der Jenkins-Pipeline bereitstellen.
 keywords: Jenkins, Azure, DevOps, App Service, CLI
 ms.topic: tutorial
-ms.date: 08/08/2020
+ms.date: 11/10/2020
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 4a6fde1eb8830c897c438fa89e7da6fe93b5a3a8
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 88db3702221b8e18acff71514fcddc9ff7e875b0
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831336"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983639"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-with-jenkins-and-the-azure-cli"></a>Tutorial: Bereitstellen an Azure App Service mit Jenkins und der Azure CLI
 
@@ -82,7 +82,7 @@ Wenn der Plan fertig ist, zeigt die Azure CLI eine ähnliche Ausgabe wie im folg
 
 ### <a name="create-an-azure-web-app"></a>Erstellen einer Azure-Web-App
 
- Erstellen Sie mit dem CLI-Befehl [az webapp create](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create) eine Web-App-Definition im App Service-Plan `myAppServicePlan`. Die Web-App-Definition enthält eine URL für den Zugriff auf Ihre Anwendung und konfiguriert verschiedene Optionen zum Bereitstellen Ihres Codes in Azure. 
+ Erstellen Sie mit dem CLI-Befehl [az webapp create](/cli/azure/webapp#az-webapp-create) eine Web-App-Definition im App Service-Plan `myAppServicePlan`. Die Web-App-Definition enthält eine URL für den Zugriff auf Ihre Anwendung und konfiguriert verschiedene Optionen zum Bereitstellen Ihres Codes in Azure. 
 
 ```azurecli-interactive
 az webapp create \

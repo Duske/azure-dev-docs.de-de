@@ -2,14 +2,14 @@
 title: 'Schritt 7: Bereinigen von Ressourcen nach der Bereitstellung in Azure App Service für Linux aus Visual Studio Code'
 description: 'Tutorialschritt 7: Bereinigen von Azure-Ressourcen'
 ms.topic: conceptual
-ms.date: 09/12/2019
+ms.date: 11/20/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: cbecb9771a1b4dcc8460b7c7296ae06928930a34
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: e9fe39d97487cb58523e2fd33a8acb74c51aa00b
+ms.sourcegitcommit: 29930f1593563c5e968b86117945c3452bdefac1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764755"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "96035486"
 ---
 # <a name="7-clean-up-resources-after-deploying-to-azure-app-service-on-linux-from-visual-studio-code"></a>7: Bereinigen von Ressourcen nach der Bereitstellung in Azure App Service für Linux aus Visual Studio Code
 

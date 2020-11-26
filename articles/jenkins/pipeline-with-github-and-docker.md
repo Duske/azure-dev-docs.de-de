@@ -5,14 +5,16 @@ keywords: Jenkins, Azure, DevOps, Pipeline, CI/CD, Docker
 ms.topic: tutorial
 ms.date: 03/27/2017
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: eb4c12fe249b485941221d382ab0090f7aa88227
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: debcd94b885813a8f1a1640d4eb46e75b36c4d6c
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689056"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "96035458"
 ---
 # <a name="tutorial-create-a-jenkins-pipeline-using-github-and-docker"></a>Tutorial: Erstellen einer Jenkins-Pipeline mit GitHub und Docker
+
+[!INCLUDE [jenkins-integration-with-azure.md](includes/jenkins-integration-with-azure.md)]
 
 Sie können zum Automatisieren der Erstellungs- und Testphase der Anwendungsentwicklung eine Pipeline für Continuous Integration und Deployment (CI/CD) verwenden. In diesem Tutorial erstellen Sie eine CI/CD-Pipeline auf einer Azure-VM und erfahren, wie Sie:
 
@@ -31,7 +33,7 @@ Wenn Sie die CLI lokal installieren und verwenden möchten, müssen Sie für die
 ## <a name="create-jenkins-instance"></a>Erstellen einer Jenkins-Instanz
 In einem vorherigen Tutorial zum [Anpassen eines virtuellen Linux-Computers beim ersten Start](/azure/virtual-machines/linux/tutorial-automate-vm-deployment) haben Sie erfahren, wie die Anpassung für virtuelle Computer mit cloud-init automatisiert wird. In diesem Tutorial wird eine cloud-init-Datei verwendet, um Jenkins und Docker auf einer VM zu installieren. Jenkins ist ein beliebter Open-Source-Automatisierungsserver, der sich problemlos in Azure integrieren lässt, um Continuous Integration (CI) und Continuous Delivery (CD) zu ermöglichen. Weitere Tutorials zur Verwendung von Jenkins finden Sie unter der [Jenkins in Azure-Hubs](/azure/jenkins/).
 
-Erstellen Sie in der aktuellen Shell eine Datei namens *cloud-init-jenkins.txt* , und fügen Sie die folgende Konfiguration ein. Erstellen Sie die Datei beispielsweise in Cloud Shell, nicht auf dem lokalen Computer. Geben Sie `sensible-editor cloud-init-jenkins.txt` ein, um die Datei zu erstellen und eine Liste der verfügbaren Editoren anzuzeigen. Stellen Sie sicher, dass die gesamte Datei „cloud-init“ ordnungsgemäß kopiert wird, insbesondere die erste Zeile:
+Erstellen Sie in der aktuellen Shell eine Datei namens *cloud-init-jenkins.txt*, und fügen Sie die folgende Konfiguration ein. Erstellen Sie die Datei beispielsweise in Cloud Shell, nicht auf dem lokalen Computer. Geben Sie `sensible-editor cloud-init-jenkins.txt` ein, um die Datei zu erstellen und eine Liste der verfügbaren Editoren anzuzeigen. Stellen Sie sicher, dass die gesamte Datei „cloud-init“ ordnungsgemäß kopiert wird, insbesondere die erste Zeile:
 
 ```yaml
 #cloud-config
@@ -124,9 +126,9 @@ Sollte die Datei noch nicht verfügbar sein, warten Sie noch einige Minuten, bis
 Öffnen Sie anschließend einen Webbrowser, und gehen Sie zu `http://<publicIps>:8080`. Schließen Sie das anfängliche Jenkins-Setup wie folgt ab:
 
 - Wählen Sie **Select plugins to install** (Zu installierende Plug-Ins auswählen).
-- Suchen Sie im Textfeld im oberen Bereich nach *GitHub* . Aktivieren Sie das Kontrollkästchen für *GitHub* , und klicken Sie anschließend auf **Installieren** .
-- Erstellen Sie den ersten Administratorbenutzer. Geben Sie einen Benutzernamen (beispielsweise **admin** ) und anschließend ein sicheres Kennwort ein. Geben Sie abschließend einen vollständigen Namen und eine E-Mail-Adresse an.
-- Klicken Sie auf **Speichern und Beenden** .
+- Suchen Sie im Textfeld im oberen Bereich nach *GitHub*. Aktivieren Sie das Kontrollkästchen für *GitHub*, und klicken Sie anschließend auf **Installieren**.
+- Erstellen Sie den ersten Administratorbenutzer. Geben Sie einen Benutzernamen (beispielsweise **admin**) und anschließend ein sicheres Kennwort ein. Geben Sie abschließend einen vollständigen Namen und eine E-Mail-Adresse an.
+- Klicken Sie auf **Speichern und Beenden**.
 - Klicken Sie auf **Start using Jenkins** (Jenkins verwenden), sobald Jenkins bereit ist.
   - Sollte in Ihrem Browser beim Start von Jenkins eine leere Seite angezeigt werden, starten Sie den Jenkins-Dienst neu. Geben Sie in Ihrer SSH-Sitzung `sudo service jenkins restart` ein, und aktualisieren Sie anschließend Ihren Webbrowser.
 - Melden Sie sich bei Bedarf mit dem erstellten Benutzernamen und Kennwort bei Jenkins an.
@@ -178,7 +180,7 @@ In Jenkins können Sie mit einem neuen Build im Bereich **Build history** (Build
 ## <a name="define-docker-build-image"></a>Definieren eines Docker-Buildimages
 Erstellen Sie ein Docker-Image zum Ausführen der Anwendung, um das auf Ihren GitHub-Commits basierte Ausführen der node.js-App zu sehen. Das Image wird aus einer Dockerfile-Datei erstellt, die die Konfiguration des Containers definiert, der die App ausführt. 
 
-Wechseln Sie von der SSH-Verbindung mit Ihrer VM zum Jenkins-Arbeitsbereichsverzeichnis, das nach dem von Ihnen in einem vorherigen Schritt erstellten Auftrag benannt ist. In diesem Beispiel hieß es *HelloWorld* .
+Wechseln Sie von der SSH-Verbindung mit Ihrer VM zum Jenkins-Arbeitsbereichsverzeichnis, das nach dem von Ihnen in einem vorherigen Schritt erstellten Auftrag benannt ist. In diesem Beispiel hieß es *HelloWorld*.
 
 ```bash
 cd /var/lib/jenkins/workspace/HelloWorld
@@ -203,7 +205,7 @@ Diese Dockerfile-Datei verwendet das node.js-Basisimage mithilfe von Alpine Linu
 ## <a name="create-jenkins-build-rules"></a>Erstellen von Jenkins-Buildregeln
 Sie haben in einem vorherigen Schritt eine einfache Jenkins-Buildregel erstellt, die eine Meldung an die Konsole ausgegeben hat. Erstellen Sie die Buildschritte, mit denen Sie die Dockerfile-Datei verwenden und die Anwendung ausführen können.
 
-Kehren Sie zu Ihrer Jenkins-Instanz zurück, und wählen Sie den Auftrag aus, den Sie in einem vorherigen Schritt erstellt haben. Wählen Sie links **Configure** (Konfigurieren), und scrollen Sie nach unten zum Bereich **Build** :
+Kehren Sie zu Ihrer Jenkins-Instanz zurück, und wählen Sie den Auftrag aus, den Sie in einem vorherigen Schritt erstellt haben. Wählen Sie links **Configure** (Konfigurieren), und scrollen Sie nach unten zum Bereich **Build**:
 
 - Entfernen Sie den vorhandenen Buildschritt `echo "Test"`. Wählen Sie dazu das rote Kreuz in der oberen rechten Ecke des Felds des vorhandenen Buildschritts aus.
 - Wählen Sie **Add build step** (Buildschritt hinzufügen) und anschließend **Execute shell** (Shell ausführen) aus.

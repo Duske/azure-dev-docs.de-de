@@ -5,14 +5,16 @@ keywords: Jenkins, Azure, DevOps, Container Instances, Build-Agent
 ms.topic: article
 ms.date: 08/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 408ff0e5cc67e975c09fd108e9f5709c0a0cf510
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 20e8180ab0ac721366c2071fdfaa0882f913f945
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240902"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "96035438"
 ---
 # <a name="tutorial-use-azure-container-instances-as-a-jenkins-build-agent"></a>Tutorial: Verwenden von Azure Container Instances als Jenkins-Build-Agent
+
+[!INCLUDE [jenkins-integration-with-azure.md](includes/jenkins-integration-with-azure.md)]
 
 Mit Azure Container Instances (ACI) steht Ihnen eine bedarfsgesteuerte, burstfähige und isolierte Umgebung zum Ausführen von containerbasierten Workloads zur Verfügung. Aufgrund dieser Attribute ist ACI eine hervorragende Plattform für die Ausführung von Jenkins-Buildaufträgen in großem Umfang. In diesem Artikel werden ausführlich die Bereitstellung und Verwendung eines Jenkins-Servers erläutert, der mit ACI als Buildziel vorkonfiguriert wurde.
 

@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 5b342b722167aa901b76f8117f3fefc9412220ae
-ms.sourcegitcommit: 660b21aee3cf83ee561c447803b64335b2c95ccc
+ms.openlocfilehash: 3e73fda380f2743f6a3d4b2fb726ee62173b8563
+ms.sourcegitcommit: 418e446e6ada5d50df283401df4f6b6370a356b9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91882204"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96035368"
 ---
 # <a name="spring-boot-starters-for-azure"></a>Spring Boot Starter für Azure
 
@@ -116,7 +116,7 @@ Diese Spring Boot Starter-Option bietet Unterstützung für die automatische Kon
 
 Verwendungsbeispiele für die Azure Active Directory-Features, die von dieser Starter-Option bereitgestellt werden, finden Sie hier:
 
-* <https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-active-directory>
+* <https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/>
 
 Wenn Sie diese Starter-Option einem Spring Boot-Projekt hinzufügen, werden an der Datei *pom.xml* folgende Änderungen vorgenommen:
 
@@ -237,7 +237,7 @@ Diese Spring Boot Starter-Option bietet Spring Boot-Integrationsunterstützung f
 Verwendungsbeispiele für die Azure Storage-Features, die von dieser Starter-Option bereitgestellt werden, finden Sie hier:
 
 * [Verwenden von Spring Boot Starter für Azure Storage](configure-spring-boot-starter-java-app-with-azure-storage.md)
-* <https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-cloud-sample-storage-resource>
+* <https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-cloud-sample-storage-queue-operation>
 
 Wenn Sie diese Starter-Option einem Spring Boot-Projekt hinzufügen, werden an der Datei *pom.xml* folgende Änderungen vorgenommen:
 
