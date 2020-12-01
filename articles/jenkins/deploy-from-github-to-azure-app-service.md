@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, App Service
 ms.topic: tutorial
 ms.date: 08/10/2020
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 30b916cadc2c15f1226ab06f6925a87f6be4b3a7
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 560697c580d942395aea077dd8a2133dc51d5b7e
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688683"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983789"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-app-service-using-jenkins"></a>Tutorial: Bereitstellen über GitHub in Azure App Service mit Jenkins
 
@@ -125,7 +125,7 @@ Führen Sie zum Erstellen dieses Dienstprinzipals den Azure CLI-Befehl [az ad sp
 az ad sp create-for-rbac
 ```
 
-**Hinweise** :
+**Hinweise**:
 
 - Nach dem erfolgreichen Abschluss werden von `az ad sp create-for-rbac` verschiedene Werte angezeigt. Die Werte `name`, `password` und `tenant` werden im nächsten Schritt verwendet.
 - Ein Dienstprinzipal wird standardmäßig mit der Rolle **Mitwirkender** erstellt, die über vollständige Berechtigungen zum Lesen und Schreiben in einem Azure-Konto verfügt. Weitere Informationen zur rollenbasierten Zugriffssteuerung (Role-Based Access Control, RBAC) finden Sie unter [Integrierte Integrierte Rollen](/azure/active-directory/role-based-access-built-in-roles).
@@ -154,7 +154,7 @@ az ad sp create-for-rbac
    | **Tenant ID** | <*yourAzureActiveDirectoryTenant-ID*> | Der `tenant`-GUID-Wert für Ihren Azure Active Directory-Mandanten. | 
    | **ID** | <*yourAzureServicePrincipalName*> | Der `displayName`-Wert für Ihren Azure-Dienstprinzipal. | 
 
-1. Wählen Sie **Verify Service Principal** (Dienstprinzipal überprüfen) aus, um zu überprüfen, ob Ihr Dienstprinzipal funktioniert. Wenn Sie fertig sind, wählen Sie **OK** .
+1. Wählen Sie **Verify Service Principal** (Dienstprinzipal überprüfen) aus, um zu überprüfen, ob Ihr Dienstprinzipal funktioniert. Wenn Sie fertig sind, wählen Sie **OK**.
 
 Erstellen Sie als Nächstes die Jenkins-Pipeline, die Ihre App erstellt und bereitstellt.
 
@@ -184,7 +184,7 @@ Erstellen Sie in Jenkins den Pipelineauftrag für die Erstellung und Bereitstell
 
       ![Auswählen einer Umgebung für die Ausführung und Festlegen der Umgebungsvariablen](media/deploy-from-github-to-azure-app-service/prepare-environment-for-jenkins-run.png)
 
-1. Klicken Sie auf **Speichern** , wenn Sie fertig sind.
+1. Klicken Sie auf **Speichern**, wenn Sie fertig sind.
 
 Erstellen Sie als Nächstes Build- und Bereitstellungsskripts für Jenkins.
 
@@ -257,7 +257,7 @@ Geben Sie nun das Build- und Bereitstellungsskript an, das von Jenkins verwendet
 
    ![Verweisen der Jenkins-Pipeline auf das Skript](media/deploy-from-github-to-azure-app-service/set-up-jenkins-github.png)
 
-1. Klicken Sie auf **Speichern** , wenn Sie fertig sind.
+1. Klicken Sie auf **Speichern**, wenn Sie fertig sind.
 
 Erstellen Sie als Nächstes Ihre App, und stellen Sie sie in Azure App Service bereit. 
 
@@ -273,11 +273,11 @@ Erstellen Sie als Nächstes Ihre App, und stellen Sie sie in Azure App Service b
 
    Weitere Informationen zu diesen Azure CLI-Befehlen finden Sie auf den folgenden Seiten:
 
-   * [**`az group create`**](/cli/azure/group?view=azure-cli-latest#az-group-create)
+   * [**`az group create`**](/cli/azure/group#az-group-create)
 
-   * [**`az appservice plan create`**](/cli/azure/appservice/plan?view=azure-cli-latest#az-appservice-plan-create)
+   * [**`az appservice plan create`**](/cli/azure/appservice/plan#az-appservice-plan-create)
 
-   * [**`az webapp create`**](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create)
+   * [**`az webapp create`**](/cli/azure/webapp#az-webapp-create)
 
 1. Wählen Sie in Jenkins Ihren Pipelineauftrag und anschließend **Build Now** (Jetzt erstellen) aus.
 
@@ -303,7 +303,7 @@ Erstellen Sie als Nächstes Ihre App, und stellen Sie sie in Azure App Service b
 
 1. Aktualisieren Sie Ihre App nach Abschluss des Buildvorgangs und der erneuten Jenkins-Bereitstellung in Azure. Sie verfügt nun über das Update.
 
-   ![Anzeigen Ihrer bereitgestellten App in Azure](media/deploy-from-github-to-azure-app-service/greetings-edited.png)
+   ![Anzeigen Ihrer aktualisierten App in Azure](media/deploy-from-github-to-azure-app-service/greetings-edited.png)
 
 ## <a name="troubleshooting-the-jenkins-plug-in"></a>Behandeln von Problemen mit dem Jenkins-Plug-In
 

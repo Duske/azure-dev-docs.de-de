@@ -1,16 +1,16 @@
 ---
 title: Bereitstellen eines virtuellen Linux-Computers mit Jenkins und Azure DevOps Services
-description: Es wird beschrieben, wie Sie Continuous Integration/Deployment (CI/CD) für die Bereitstellung von Apps auf virtuellen Linux-Computern mit Jenkins und Azure DevOps Services nutzen.
+description: Hier erfahren Sie, wie Sie Continuous Integration/Continuous Deployment (CI/CD) für die Bereitstellung von Apps auf virtuellen Linux-Computern mit Jenkins und Azure DevOps Services nutzen.
 keywords: Jenkins, Azure, DevOps, virtueller Computer, CI/CD, Azure DevOps Services
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 3eedcc72a7c272f1cacf97b9071e750aab5a446e
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: e1c5c9b06cff7419ac98b08553d143c7449746b8
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831326"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983649"
 ---
 # <a name="tutorial-deploy-to-linux-virtual-machine-using-jenkins-and-azure-devops-services"></a>Tutorial: Bereitstellen eines virtuellen Linux-Computers mit Jenkins und Azure DevOps Services
 
@@ -18,7 +18,7 @@ Continuous Integration (CI) und Continuous Deployment (CD) bilden eine Pipeline,
 
 In diesem Tutorial erstellen Sie mithilfe von Jenkins eine Node.js-Web-App. Anschließend stellen Sie diese mit Azure DevOps
 
-für eine [Bereitstellungsgruppe](/azure/devops/pipelines/release/deployment-groups/index?view=vsts) bereit, die virtuelle Linux-Computer (VMs) enthält. Folgendes wird vermittelt:
+für eine [Bereitstellungsgruppe](/azure/devops/pipelines/release/deployment-groups/index) bereit, die virtuelle Linux-Computer (VMs) enthält. Folgendes wird vermittelt:
 
 > [!div class="checklist"]
 > * Abrufen der Beispiel-App
@@ -38,7 +38,7 @@ für eine [Bereitstellungsgruppe](/azure/devops/pipelines/release/deployment-gro
   Sie können eine [kostenlose Azure DevOps-Organisation](https://go.microsoft.com/fwlink/?LinkId=307137&clcid=0x409&wt.mc_id=o~msft~vscom~home-vsts-hero~27308&campaign=o~msft~vscom~home-vsts-hero~27308) erhalten.
 
   > [!NOTE]
-  > Weitere Informationen finden Sie unter [Herstellen einer Verbindung mit Azure DevOps Services](/azure/devops/organizations/projects/connect-to-projects?view=vsts).
+  > Weitere Informationen finden Sie unter [Herstellen einer Verbindung mit Azure DevOps Services](/azure/devops/organizations/projects/connect-to-projects).
 
 *  Sie benötigen einen virtuellen Linux-Computer für ein Bereitstellungsziel.  Weitere Informationen finden Sie unter [Erstellen und Verwalten virtueller Linux-Computer mit der Azure-Befehlszeilenschnittstelle](/azure/virtual-machines/linux/tutorial-manage-vm).
 
@@ -90,7 +90,7 @@ Als Erstes müssen zwei Jenkins-Plug-Ins konfiguriert werden: **NodeJS** und **V
  
 1.  Erstellen Sie ein persönliches Zugriffstoken in Ihrer Azure DevOps Services-Organisation, wenn Sie noch keines besitzen. In Jenkins sind diese Informationen für den Zugriff auf Ihre Azure DevOps Services-Organisation erforderlich. Speichern Sie die Tokeninformationen für die folgenden Schritte in diesem Abschnitt.
   
-    Informationen zum Generieren eines Tokens finden Sie unter [Authentifizieren Zugriffs mit persönlichen Zugriffstoken für Azure DevOps Services](/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=vsts).
+    Informationen zum Generieren eines Tokens finden Sie unter [Authentifizieren Zugriffs mit persönlichen Zugriffstoken für Azure DevOps Services](/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate).
 2. Klicken Sie auf der Registerkarte **Post-build Actions** (Postbuildaktionen) auf **Add post-build action** (Postbuildaktion hinzufügen). Klicken Sie auf **Archive the artifacts** (Artefakte archivieren).
 3. Geben Sie für **Files to archive** (Dateien zur Archivierung) den Wert `**/*` ein, um alle Dateien einzuschließen.
 4. Klicken Sie zum Erstellen einer weiteren Aktion auf **Add post-build action** (Postbuildaktion hinzufügen).

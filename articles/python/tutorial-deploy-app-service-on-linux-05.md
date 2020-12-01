@@ -2,14 +2,14 @@
 title: 'Schritt 5: Bereitstellen einer Python-Web-App in Azure App Service für Linux mit VS Code'
 description: 'Tutorialschritt 5: Bereitstellen des Web-App-Codes'
 ms.topic: conceptual
-ms.date: 09/12/2019
+ms.date: 11/20/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: e7c600314f1535589ca15daaa3bbbd9ffdc69b9d
-ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
+ms.openlocfilehash: 7b3743d417ed3455c59f5b9887ee54728fb7318a
+ms.sourcegitcommit: 29930f1593563c5e968b86117945c3452bdefac1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88501455"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95485704"
 ---
 # <a name="5-deploy-your-python-web-app-to-azure-app-service-on-linux"></a>5: Bereitstellen Ihrer Python-Web-App in Azure App Service für Linux
 
@@ -27,6 +27,9 @@ Verwenden Sie dieses Verfahren, um Ihre Python-App in einer Azure App Service-In
 
     - Wählen Sie für „Select the folder to deploy“ (Ordner für Bereitstellung auswählen) den aktuellen App-Ordner aus.
     - Wählen Sie unter „Web-App auswählen“ die App Service-Instanz aus, die Sie im vorherigen Schritt erstellt haben.
+    - Wenn Sie aufgefordert werden, Ihre Buildkonfiguration zu aktualisieren, um Buildbefehle auszuführen, antworten Sie mit **Ja**.
+    - Wenn Sie gefragt werden, ob die vorhandene Bereitstellung überschrieben werden soll, antworten Sie mit **Bereitstellen**.
+    - Wenn Sie gefragt werden, ob der Arbeitsbereich immer bereitgestellt werden soll, antworten Sie mit **Ja**.
 
 1. Während die Bereitstellung läuft, können Sie den Fortschritt im **Ausgabefenster** von VS Code anzeigen.
 
@@ -38,11 +41,13 @@ Verwenden Sie dieses Verfahren, um Ihre Python-App in einer Azure App Service-In
 
     ![Erfolgreiche Ausführung der App in App Service](media/deploy-azure/web-app-running-successfully-on-app-service.png)
 
+1. Sollte weiterhin die Standard-App angezeigt werden, warten Sie ein bis zwei Minuten, bis der Container nach der Bereitstellung neu gestartet wurde, und versuchen Sie es dann noch mal. Falls Sie einen benutzerdefinierten Startbefehl verwenden und sich vergewissert haben, dass er korrekt ist, können Sie mit der Protokollüberprüfung in Schritt 6 fortfahren.
+
 1. Um zu überprüfen, ob die Dateien bereitgestellt werden, erweitern Sie die App Service-Instanz im **Azure App Service**-Explorer und dann **Dateien**:
 
     ![Überprüfen der Bereitstellung von Dateien im App Service-Explorer](media/deploy-azure/expand-files-node-to-check-deployment-of-web-app-files.png)
 
-    App Service erstellt im Ordner *antenv* eine virtuelle Umgebung mit Ihren Abhängigkeiten. Wenn Sie diesen Knoten erweitern, können Sie überprüfen, ob die Pakete, die Sie in der Datei *requirements.txt* angegeben haben, auch in *antenv/lib/python3.7/site-packages* installiert wurden.
+    Hinweis: Die Dateien *.deployment*, *antenv.tar.gz* und *oryx-manifest.toml* werden vom App Service-Buildsystem verwendet. *hostingstart.html* ist die Standard-App-Seite.
 
 > [!div class="nextstepaction"]
 > [Ich habe meine App bereitgestellt: Fahren Sie mit Schritt 6 fort. >>>](tutorial-deploy-app-service-on-linux-06.md)

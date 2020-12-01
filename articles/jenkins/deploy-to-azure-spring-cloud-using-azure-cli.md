@@ -3,14 +3,14 @@ title: Bereitstellen von Apps in Azure Spring Cloud mithilfe von Jenkins und der
 description: Hier erfahren Sie, wie Sie die Azure-Befehlszeilenschnittstelle in einer Continuous Integration- und Deployment-Pipeline verwenden, um Microservice für den Azure Spring Cloud-Dienst bereitzustellen.
 keywords: Jenkins, Azure, DevOps, Azure Spring Cloud, Azure CLI
 ms.topic: tutorial
-ms.date: 09/01/2020
+ms.date: 11/10/2020
 ms.custom: devx-track-jenkins,devx-track-azurecli
-ms.openlocfilehash: 7b8eaf783e909e9291dc7b0e6781bf4e8cb0d4c3
-ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
+ms.openlocfilehash: e0b98f31ac7f7b079f655c4cb795fe7b38af4508
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91586135"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983969"
 ---
 # <a name="tutorial-deploy-apps-to-azure-spring-cloud-using-jenkins-and-the-azure-cli"></a>Tutorial: Bereitstellen von Apps in Azure Spring Cloud mithilfe von Jenkins und der Azure-Befehlszeilenschnittstelle
 
@@ -26,9 +26,7 @@ Dieses Tutorial umfasst folgende Aufgaben:
 ## <a name="prerequisites"></a>Voraussetzungen
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-
 - **Jenkins**: [Installieren von Jenkins auf einer Linux-VM](configure-on-linux-vm.md)
-
 - **GitHub-Konto:** Sollten Sie über kein GitHub-Konto verfügen, erstellen Sie zunächst ein [kostenloses Konto](https://github.com/).
 
 ## <a name="provision-a-service-instance-and-launch-a-java-spring-application"></a>Bereitstellen einer Dienstinstanz und Starten einer Java Spring-Anwendung
@@ -36,10 +34,11 @@ Dieses Tutorial umfasst folgende Aufgaben:
 Wir verwenden [Piggy Metrics](https://github.com/Azure-Samples/piggymetrics) als exemplarische Microsoft-Dienstanwendung und gehen wie unter [Schnellstart: Starten einer Java Spring-Anwendung mit der Azure CLI](/azure/spring-cloud/spring-cloud-quickstart-launch-app-cli) beschrieben vor, um die Dienstinstanz bereitzustellen und die Anwendungen einzurichten. Falls Sie diesen Prozess bereits durchlaufen haben, können Sie direkt mit dem nächsten Abschnitt fortfahren. Andernfalls finden Sie im Anschluss die Azure CLI-Befehle. Weitere Hintergrundinformationen finden Sie unter [Schnellstart: Starten einer Java Spring-Anwendung mit der Azure CLI](/azure/spring-cloud/spring-cloud-quickstart-launch-app-cli).
 
 Ihr lokaler Computer muss die gleichen Voraussetzungen erfüllen wie der Jenkins-Buildserver. Zum Erstellen und Bereitstellen der Microserviceanwendungen muss Folgendes installiert sein:
-    * [Git-Client](https://git-scm.com/)
-    * [JDK 8](/java/azure/jdk/?view=azure-java-stable)
-    * [Maven 3.0 oder höher](https://maven.apache.org/download.cgi)
-    * [Installation der Azure-Befehlszeilenschnittstelle](/cli/azure/install-azure-cli?view=azure-cli-latest) (Version 2.0.67 oder höher)
+
+* [Git-Client](https://git-scm.com/)
+* [JDK 8](/java/azure/jdk)
+* [Maven 3.0 oder höher](https://maven.apache.org/download.cgi)
+* [Installation der Azure-Befehlszeilenschnittstelle](/cli/azure/install-azure-cli) (Version 2.0.67 oder höher)
 
 1. Installieren Sie die Azure Spring Cloud-Erweiterung:
 
@@ -130,7 +129,7 @@ In diesem Abschnitt wird der Jenkins-Server für die Ausführung eines Builds vo
 
 ### <a name="add-your-azure-service-principal-credential-in-jenkins-credential-store"></a>Hinzufügen Ihrer Anmeldeinformationen für den Azure-Dienstprinzipal im Jenkins-Anmeldeinformationsspeicher
 
-1. Für Bereitstellungen in Azure ist ein Azure-Dienstprinzipal erforderlich. Weitere Informationen finden Sie im Abschnitt [Erstellen eines Dienstprinzipals](deploy-from-github-to-azure-app-service.md#create-service-principal) des Bereitstellungstutorials für Azure App Service. Die Ausgabe von `az ad sp create-for-rbac` sieht in etwa wie folgt aus:
+1. Für Bereitstellungen in Azure ist ein Azure-Dienstprinzipal erforderlich. Weitere Informationen finden Sie im Abschnitt [Erstellen eines Dienstprinzipals](deploy-from-github-to-azure-app-service.md#create-service-principal) des Bereitstellungstutorials für Azure App Service. Die Ausgabe von `az ad sp create-for-rbac` sieht in etwa wie folgt aus:
 
     ```
     {
@@ -234,7 +233,7 @@ Die Beispielpipeline verwendet Maven zum Erstellen und die Azure-Befehlszeilensc
 
 1. Geben Sie die GitHub-URL für Ihr geforktes Repository ein: **https://github.com/&lt ;Ihre GitHub-ID&gt; /piggymetrics.git**
 
-1. Vergewissern Sie sich, dass **Branch Specifier (black for 'any')** (Branchspezifizierer (schwarz für „beliebig“)) auf * **/Azure** festgelegt ist.
+1. Vergewissern Sie sich, dass **Branch Specifier (black for 'any')** (Branchspezifizierer (schwarz für „beliebig“)) auf **_/Azure_* festgelegt ist.
 
 1. Behalten Sie für **Script Path** (Skriptpfad) die Einstellung **Jenkinsfile** bei.
 

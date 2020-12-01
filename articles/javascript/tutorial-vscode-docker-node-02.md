@@ -4,12 +4,12 @@ description: 'Teil 2 des Docker-Tutorials: Verwenden einer Containerregistrieru
 ms.topic: tutorial
 ms.date: 09/20/2019
 ms.custom: devx-track-js
-ms.openlocfilehash: eb029d8e4dc2e6eddc68e0ee9112324b38e84ffe
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.openlocfilehash: 975ea12307a6b6488ba331e1075cea2ea4850dbb
+ms.sourcegitcommit: 6c112c184273d9df7b59de3caadc83c471532696
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91365133"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95783000"
 ---
 # <a name="use-a-container-registry"></a>Verwenden einer Containerregistrierung
 
@@ -21,7 +21,7 @@ In diesem Tutorial wird [Azure Container Registry](https://azure.microsoft.com/s
 
 ## <a name="create-an-azure-container-registry"></a>Erstellen einer Azure-Containerregistrierung
 
-1. Drücken Sie in Visual Studio Code **F1**, um die Befehlspalette zu öffnen.
+1. Drücken Sie in Visual Studio Code **F1** oder **STRG+UMSCHALT+P**, um die Befehlspalette zu öffnen.
 
 1. Geben Sie im Suchfeld **Registrierung** ein. Wählen Sie in den Ergebnissen **Azure Container Registry: Registrierung erstellen** aus.
 

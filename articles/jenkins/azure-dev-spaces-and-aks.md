@@ -5,18 +5,18 @@ keywords: Jenkins, Azure, DevOps, Azure Dev Spaces, AKS, Azure Kubernetes Servic
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: b5de1c470b5b47184b1c8fe33c31e6958e0a45e9
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 3652d0bc1dc418c4037296fdacc3a56384b592c3
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689105"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983709"
 ---
 # <a name="tutorial-use-azure-dev-spaces-with-azure-kubernetes-service"></a>Tutorial: Verwenden von Azure Dev Spaces mit Azure Kubernetes Service
 
 Mit Azure Dev Spaces können Sie Ihre in Azure Kubernetes Service (AKS) ausgeführte Microserviceanwendung testen und iterativ entwickeln, ohne Abhängigkeiten replizieren oder simulieren zu müssen. Das Azure Dev Spaces-Plug-In für Jenkins unterstützt Sie bei der Verwendung von Dev Spaces in Ihrer CI/CD-Pipeline (Continuous Integration/Continuous Delivery).
 
-In diesem Tutorial wird auch Azure Container Registry (ACR) verwendet. ACR dient zum Speichern von Images, und mit ACR Tasks werden Docker- und Helm-Artefakte erstellt. Wenn Sie Artefakte mithilfe von ACR und ACR Tasks generieren, müssen Sie auf Ihrem Jenkins-Server keine zusätzliche Software (wie etwa Docker) installieren. 
+In diesem Tutorial wird auch Azure Container Registry (ACR) verwendet. ACR dient zum Speichern von Images, und mit ACR Tasks werden Docker- und Helm-Artefakte erstellt. Wenn Sie Artefakte mithilfe von ACR und ACR Tasks generieren, müssen Sie auf Ihrem Jenkins-Server keine zusätzliche Software (wie etwa Docker) installieren.
 
 Dieses Tutorial umfasst folgende Aufgaben:
 
@@ -36,9 +36,9 @@ In diesem Tutorial werden gewisse Kenntnisse im Zusammenhang mit gängigen Azure
 
 * [Visual Studio Code](https://code.visualstudio.com/download) mit installierter Erweiterung für [Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds)
 
-* [Installation der Azure-Befehlszeilenschnittstelle](/cli/azure/install-azure-cli?view=azure-cli-latest) (Version 2.0.43 oder höher)
+* [Installation der Azure-Befehlszeilenschnittstelle](/cli/azure/install-azure-cli) (Version 2.0.43 oder höher)
 
-* Ein Jenkins-Masterserver. Sollten Sie noch nicht über einen Jenkins-Masterserver verfügen, stellen Sie [Jenkins](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins) mithilfe der in [dieser Schnellstartanleitung](/azure/jenkins/install-jenkins-solution-template) beschriebenen Schritte in Azure bereit. 
+* Ein Jenkins-Server. Sollten Sie noch nicht über einen Jenkins-Server verfügen, stellen Sie [Jenkins](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins) mithilfe der in [dieser Schnellstartanleitung](/azure/jenkins/install-jenkins-solution-template) beschriebenen Schritte in Azure bereit. 
 
 * Der Jenkins-Server muss sowohl über Helm als auch über kubectl verfügen und für das Jenkins-Konto verfügbar sein, wie weiter unten in diesem Tutorial erläutert.
 
@@ -118,7 +118,7 @@ Weitere Informationen zur Verwendung von Azure Dev Spaces sowie zur Entwicklung 
     }
     ```
 
-4. Klicken Sie auf **Ansicht**  > **Terminal** , um das in VS Code integrierte Terminal zu öffnen.
+4. Klicken Sie auf **Ansicht** > **Terminal**, um das in VS Code integrierte Terminal zu öffnen.
 
 5. Führen Sie den Befehl `azds prep` aus, um Ihre Anwendung für die Ausführung in einem Entwicklungsbereich vorzubereiten. Dieser Befehl muss unter `dev-spaces/samples/java/getting-started/webfrontend` ausgeführt werden, damit die Anwendung ordnungsgemäß vorbereitet wird:
 
@@ -267,7 +267,7 @@ Die Phasen in der CI-Pipeline werden durch die Jenkins-Pipelinekonfiguration und
 
 ![Jenkins-Pipelinefluss](media/azure-dev-spaces-and-aks/jenkins-pipeline-flow.png)
 
-1. Laden Sie unter [https://github.com/azure-devops/mywebapi](https://github.com/azure-devops/mywebapi) eine geänderte Version des Projekts *mywebapi* herunter. Dieses Projekt enthält mehrere Dateien, die zum Erstellen einer Pipeline benötigt werden – einschließlich *Jenkinsfile* , *Dockerfiles* und Helm-Diagramm.
+1. Laden Sie unter [https://github.com/azure-devops/mywebapi](https://github.com/azure-devops/mywebapi) eine geänderte Version des Projekts *mywebapi* herunter. Dieses Projekt enthält mehrere Dateien, die zum Erstellen einer Pipeline benötigt werden – einschließlich *Jenkinsfile*, *Dockerfiles* und Helm-Diagramm.
 
 2. Melden Sie sich bei Jenkins an. Wählen Sie im Menü auf der linken Seite die Option **Add Item** (Element hinzufügen) aus.
 

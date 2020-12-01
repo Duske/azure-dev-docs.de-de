@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, CI/CD, Linux, Service Fabric, Cluster
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: cc42d33b68b0c8e8417d5eb0245b33d12bb53b52
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 012a827870d648b7a50e1685b5fab8b2730eb548
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831546"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983979"
 ---
 # <a name="tutorial-deploy-to-a-service-fabric-cluster"></a>Tutorial: Durchführen der Bereitstellung in einem Service Fabric-Cluster
 
@@ -23,7 +23,7 @@ In diesem Tutorial werden verschiedene Vorgehensweisen erläutert, um Ihre Jenki
    * [Installieren des Service Fabric-Plug-Ins in einer vorhandenen Jenkins-Umgebung](#install-service-fabric-plugin-in-an-existing-jenkins-environment)
 1. Führen Sie nach der Einrichtung von Jenkins die Schritte unter [Erstellen und Konfigurieren eines Jenkins-Auftrags](#create-and-configure-a-jenkins-job) durch, um die Auslösung von Jenkins in GitHub einzurichten, wenn Änderungen an Ihrer Anwendung vorgenommen werden. Konfigurieren Sie mit diesen Schritten außerdem Ihre Jenkins-Auftragspipeline über den Buildschritt, um die Änderungen von GitHub abzurufen und Ihre Anwendung zu erstellen. 
 1. Konfigurieren Sie abschließend für den Jenkins-Auftrag den Schritt für die Aktionen nach dem Erstellen, um die Anwendung für Ihren Service Fabric-Cluster bereitzustellen. Es gibt zwei Möglichkeiten, um Jenkins für die Bereitstellung Ihrer Anwendung für einen Cluster zu konfigurieren:    
-   * Befolgen Sie für Entwicklungs- und Testumgebungen die Anweisungen unter [Konfigurieren der Bereitstellung mithilfe eines Clusterverwaltungsendpunkts](#configure-deployment-using-cluster-management-endpoint). Dies ist die Bereitstellungsmethode, die sich am einfachsten einrichten lässt.
+   * Befolgen Sie für Entwicklungs- und Testumgebungen die Anweisungen unter [Konfigurieren der Bereitstellung mithilfe eines Clusterverwaltungsendpunkts](#configure-deployment-using-cluster-management-endpoint). Diese Bereitstellungsmethode lässt sich am einfachsten einrichten.
    * Verwenden Sie für Produktionsumgebungen die Anweisungen unter [Konfigurieren einer Bereitstellung mithilfe von Azure-Anmeldeinformationen](#configure-deployment-using-azure-credentials). Microsoft empfiehlt die Verwendung dieser Methode für Produktionsumgebungen, da Sie mit Azure-Anmeldeinformationen den Zugriff, über den ein Jenkins-Auftrags bezüglich Ihrer Azure-Ressourcen verfügt, beschränken können. 
 
 ## <a name="prerequisites"></a>Voraussetzungen
@@ -224,7 +224,7 @@ In den Schritten in diesem Abschnitt wird gezeigt, wie ein Jenkins-Auftrag konfi
 
      Der folgende Screenshot enthält ein Beispiel für die Befehle, mit denen das Beispiel für den [Zählerdienst](https://github.com/Azure-Samples/service-fabric-dotnet-core-getting-started/tree/master/Services/CounterService) (Counter Service) mit dem Jenkins-Auftragsnamen `CounterServiceApplication` erstellt wird.
 
-      ![Service Fabric-Jenkins-Buildvorgang](./media/deploy-to-service-fabric-cluster/build-step-dotnet.png)
+      ![Beispiel für Befehle zum Erstellen des Diensts](./media/deploy-to-service-fabric-cluster/build-step-dotnet.png)
 
 1. Um Jenkins für die Bereitstellung Ihrer App in einem Service Fabric-Cluster in den Aktionen nach dem Erstellen zu konfigurieren, benötigen Sie den Speicherort des Clusterzertifikats im Jenkins-Container. Führen Sie einen der folgenden Schritte durch, je nachdem, ob Ihr Jenkins-Container innerhalb oder außerhalb des Clusters ausgeführt wird, und notieren Sie sich den Speicherort des Clusterzertifikats:
 

@@ -5,14 +5,16 @@ keywords: Jenkins, Azure, DevOps, Java, Azure Functions
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: fa63ebf5a41a3c515f92b0c551ee63d683b665c7
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 7258e3d20262e214bbe9461564210c0d84fe2e89
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240931"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "96035382"
 ---
 # <a name="tutorial-deploy-to-azure-functions-using-jenkins"></a>Tutorial: Durchführen einer Bereitstellung in Azure Functions mit Jenkins
+
+[!INCLUDE [jenkins-integration-with-azure.md](includes/jenkins-integration-with-azure.md)]
 
 [Azure Functions](/azure/azure-functions/) ist ein serverloser Computedienst. Mit Azure Functions können Sie Code bedarfsgesteuert ausführen, ohne dass eine Infrastruktur für die Bereitstellung oder Verwaltung verwendet werden muss. In diesem Tutorial wird beschrieben, wie Sie mit dem Azure Functions-Plug-In eine Java-Funktion in Azure Functions bereitstellen.
 
@@ -21,12 +23,13 @@ ms.locfileid: "88240931"
 - **Azure-Abonnement**: Wenn Sie kein Azure-Abonnement besitzen, können Sie ein [kostenloses Konto](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) erstellen, bevor Sie beginnen.
 - **Jenkins-Server**: Wenn Sie keinen Jenkins-Server installiert haben, hilft Ihnen der Artikel [Erstellen eines Jenkins-Servers in Azure](./configure-on-linux-vm.md) weiter.
 
-  > [!TIP]
-  > Den Quellcode für dieses Tutorial finden Sie im [Visual Studio China-GitHub-Repository](https://github.com/VSChina/odd-or-even-function/blob/master/src/main/java/com/microsoft/azure/Function.java).
+## <a name="view-the-source-code"></a>Anzeigen des Quellcodes
+
+Den Quellcode für dieses Tutorial finden Sie im [Visual Studio China-GitHub-Repository](https://github.com/VSChina/odd-or-even-function/blob/master/src/main/java/com/microsoft/azure/Function.java).
 
 ## <a name="create-a-java-function"></a>Erstellen einer Java-Funktion
 
-Verwenden Sie zum Erstellen einer Java-Funktion mit dem Java-Runtimestapel entweder das [Azure-Portal](https://portal.azure.com) oder die [Azure CLI](/cli/azure/?view=azure-cli-latest).
+Verwenden Sie zum Erstellen einer Java-Funktion mit dem Java-Runtimestapel entweder das [Azure-Portal](https://portal.azure.com) oder die [Azure CLI](/cli/azure/).
 
 Die folgenden Schritte veranschaulichen, wie Sie mit der Azure CLI eine Java-Funktion erstellen:
 

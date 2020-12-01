@@ -5,22 +5,25 @@ author: N-Usha
 ms.author: ushan
 ms.topic: reference
 ms.service: azure
-ms.date: 08/31/2020
+ms.date: 11/17/2020
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: d03f8631d985b97a46a711620c847475171f9438
-ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
+ms.openlocfilehash: 5462d7ca3618869232296a9a6739ebe5adcefdb1
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93405749"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983629"
 ---
 # <a name="use-github-actions-to-connect-to-azure"></a>Verwenden von GitHub Actions zum Herstellen einer Verbindung mit Azure
 
 Informieren Sie sich über die Verwendung der [Azure-Anmeldung](https://github.com/Azure/login) mit [Azure PowerShell](https://github.com/Azure/PowerShell) oder [Azure CLI](https://github.com/Azure/CLI), um die Interaktion mit Ihren Azure-Ressourcen zu ermöglichen.
 
-Für die Verwendung von Azure PowerShell oder der Azure CLI in einem GitHub Actions-Workflow müssen Sie sich zuerst mit der Aktion [Azure-Anmeldung](https://github.com/marketplace/actions/azure-login) anmelden. Mit der Aktion „Azure-Anmeldung“ können Sie Befehle in einem Workflow im Kontext eines [Azure AD-Dienstprinzipals](/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object) ausführen.
+Für die Verwendung von Azure PowerShell oder der Azure CLI in einem GitHub Actions-Workflow müssen Sie sich zuerst mit der Aktion [Azure-Anmeldung](https://github.com/marketplace/actions/azure-login) anmelden.
+Mit der Aktion „Azure-Anmeldung“ können Sie Befehle in einem Workflow im Kontext eines [Azure AD-Dienstprinzipals](/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object) ausführen.
 
-Nachdem Sie die Anmeldeaktion eingerichtet haben, können Sie die Azure CLI oder Azure PowerShell verwenden. Standardmäßig meldet sich die Aktion bei der Azure CLI an und richtet die Ausführungsumgebung für GitHub-Aktionen für die Azure CLI ein. Mithilfe der Eigenschaft „enable-AzPSSession“ der Aktion „Azure-Anmeldung“ können Sie Azure PowerShell nutzen.  Dadurch wird die Ausführungsumgebung für GitHub-Aktionen mit dem Azure PowerShell-Modul eingerichtet.
+Nachdem Sie die Anmeldeaktion eingerichtet haben, können Sie die Azure CLI oder Azure PowerShell verwenden.
+
+Standardmäßig meldet sich die Aktion bei der Azure CLI an und richtet die Ausführungsumgebung für GitHub-Aktionen für die Azure CLI ein. Azure PowerShell kann mithilfe der Eigenschaft `enable-AzPSSession` der Azure-Anmeldeaktion genutzt werden. Dadurch wird die Ausführungsumgebung für GitHub-Aktionen mit dem Azure PowerShell-Modul eingerichtet.
 
 ## <a name="create-a-service-principal-and-add-it-to-github-secret"></a>Erstellen eines Dienstprinzipals und Hinzufügen zum GitHub-Geheimnis
 
@@ -39,7 +42,7 @@ In diesem Beispiel erstellen Sie ein Geheimnis mit dem Namen `AZURE_CREDENTIALS`
         --identifier-uris http://localhost/$appName
     ```
 
-1. [Erstellen Sie im Azure-Portal für Ihre App einen neuen Dienstprinzipal](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest). 
+1. [Erstellen Sie im Azure-Portal für Ihre App einen neuen Dienstprinzipal](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest&preserve-view=true). 
 
     ```azurecli-interactive
         az ad sp create-for-rbac --name "myApp" --role contributor \
