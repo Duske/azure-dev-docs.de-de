@@ -8,12 +8,12 @@ ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 1099b9568a66c2915b000c31c8e84e8e02b1d3d6
-ms.sourcegitcommit: 76f1a47c58810486856e0d128bd154cf7d355e65
+ms.openlocfilehash: 6df436c1c20ce183df08a30f041f315d211f254f
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92200588"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442310"
 ---
 # <a name="use-spring-data-jpa-with-azure-database-for-postgresql"></a>Verwenden von Spring Data-JPA mit Azure Database for PostgreSQL
 
@@ -36,8 +36,6 @@ Generieren der Anwendung an der Befehlszeile durch Eingeben von:
 ```bash
 curl https://start.spring.io/starter.tgz -d dependencies=web,data-jpa,postgresql -d baseDir=azure-database-workshop -d bootVersion=2.3.4.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
-> [!NOTE]
-> Spring Initializr nutzt als Standardversion Java 11. Um die in diesem Thema beschriebenen Spring Boot Starter verwenden zu können, müssen Sie stattdessen Java 8 auswählen.
 
 ### <a name="configure-spring-boot-to-use-azure-database-for-postgresql"></a>Konfigurieren von Spring Boot für die Verwendung von Azure Database for PostgreSQL
 

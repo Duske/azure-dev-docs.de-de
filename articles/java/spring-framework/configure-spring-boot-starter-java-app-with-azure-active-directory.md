@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: e21e1ada221473c3b645da24736d179b92cff07f
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: 25164bb67f717acfc7aa8f12e77c1b158528c2e8
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192526"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442341"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>Tutorial: Schützen einer Java-Web-App mithilfe von Spring Boot Starter für Azure Active Directory
 
@@ -40,15 +40,13 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Navigieren Sie zu <https://start.spring.io/>.
 
-1. Geben Sie an, dass Sie ein **Maven** -Projekt mit **Java** generieren möchten, und geben Sie die Namen für **Gruppe** und **Artefakt** für Ihre Anwendung ein.
-1. Fügen Sie **Abhängigkeiten** für **Spring Web** , **Azure Active Directory** und **Spring Security** hinzu.
+1. Geben Sie an, dass Sie ein **Maven**-Projekt mit **Java** generieren möchten, und geben Sie die Namen für **Gruppe** und **Artefakt** für Ihre Anwendung ein.
+1. Fügen Sie **Abhängigkeiten** für **Spring Web**, **Azure Active Directory** und **Spring Security** hinzu.
 1. Wählen Sie unten auf der Seite die Schaltfläche **GENERIEREN** aus.
    
    >[!div class="mx-imgBorder"]
    >![Angeben von Gruppen- und Artefaktnamen, Auswählen von Abhängigkeiten][create-spring-app-01]
 
-   > [!NOTE]
-   > Spring Initializr nutzt als Standardversion Java 11. Um die in diesem Thema beschriebenen Spring Boot Starter verwenden zu können, müssen Sie stattdessen Java 8 auswählen.
 
 1. Laden Sie das Projekt nach entsprechender Aufforderung unter einem Pfad auf dem lokalen Computer herunter.
 
@@ -58,7 +56,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Melden Sie sich bei <https://portal.azure.com> an.
 
-1. Wählen Sie **Ressource erstellen** , **Identität** und dann **Azure Active Directory** aus.
+1. Wählen Sie **Ressource erstellen**, **Identität** und dann **Azure Active Directory** aus.
    
    >[!div class="mx-imgBorder"]
    >![Erstellen einer neuen Azure Active Directory-Instanz][create-directory-01]
@@ -117,7 +115,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Klicken Sie im linken Navigationsbereich auf **API-Berechtigungen**. 
 
-1. Klicken Sie auf **Microsoft Graph** , und aktivieren Sie die Optionen **Als angemeldeter Benutzer auf das Verzeichnis zugreifen** und **Anmelden und Benutzerprofil lesen**. Klicken Sie auf **Berechtigungen erteilen...** und **Ja** , wenn Sie dazu aufgefordert werden.
+1. Klicken Sie auf **Microsoft Graph**, und aktivieren Sie die Optionen **Als angemeldeter Benutzer auf das Verzeichnis zugreifen** und **Anmelden und Benutzerprofil lesen**. Klicken Sie auf **Berechtigungen erteilen...** und **Ja**, wenn Sie dazu aufgefordert werden.
    
    >[!div class="mx-imgBorder"]
    >![Hinzufügen von Zugriffsberechtigungen][create-app-registration-08]
@@ -169,7 +167,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    >[!div class="mx-imgBorder"]
    >![Auswählen des Benutzers für die Gruppe][create-user-03]
 
-1. Navigieren Sie zurück zum Bereich **Benutzer** , wählen Sie Ihren Testbenutzer und die Option **Kennwort zurücksetzen** aus, und kopieren Sie das Kennwort. Sie benötigen es später in diesem Tutorial, wenn Sie sich an Ihrer Anwendung anmelden.
+1. Navigieren Sie zurück zum Bereich **Benutzer**, wählen Sie Ihren Testbenutzer und die Option **Kennwort zurücksetzen** aus, und kopieren Sie das Kennwort. Sie benötigen es später in diesem Tutorial, wenn Sie sich an Ihrer Anwendung anmelden.
 
    >[!div class="mx-imgBorder"]
    >![Anzeigen des Kennworts][create-user-04]
@@ -195,7 +193,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Speichern und schließen Sie die Datei *pom.xml*.
 
-1. Navigieren Sie in Ihrem Projekt zum Ordner *src/main/resources* , und öffnen Sie die Datei *application.properties* in einem Text-Editor.
+1. Navigieren Sie in Ihrem Projekt zum Ordner *src/main/resources*, und öffnen Sie die Datei *application.properties* in einem Text-Editor.
 
 1. Geben Sie die Einstellungen für Ihre App-Registrierung mithilfe der zuvor erstellten Werte an. Beispiel:
 
@@ -229,7 +227,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Erstellen Sie im Java-Quellordner für Ihre Anwendung einen Ordner namens *controller*. Beispiel: *src/main/java/com/wingtiptoys/security/controller*.
 
-1. Erstellen Sie im Ordner *controller* eine neue Java-Datei namens *HelloController.java* , und öffnen Sie sie in einem Text-Editor.
+1. Erstellen Sie im Ordner *controller* eine neue Java-Datei namens *HelloController.java*, und öffnen Sie sie in einem Text-Editor.
 
 1. Geben Sie den folgenden Code ein, speichern Sie die Datei, und schließen Sie sie:
 
@@ -283,7 +281,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
 
 1. Erstellen Sie im Java-Quellordner für Ihre Anwendung einen Ordner namens *security*. Beispiel: *src/main/java/com/wingtiptoys/security/security*.
 
-1. Erstellen Sie im Ordner *security* eine neue Java-Datei namens *WebSecurityConfig.java* , und öffnen Sie sie in einem Text-Editor.
+1. Erstellen Sie im Ordner *security* eine neue Java-Datei namens *WebSecurityConfig.java*, und öffnen Sie sie in einem Text-Editor.
 
 1. Geben Sie den folgenden Code ein, speichern Sie die Datei, und schließen Sie sie:
 

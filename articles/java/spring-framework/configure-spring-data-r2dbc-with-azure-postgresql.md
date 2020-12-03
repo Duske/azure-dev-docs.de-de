@@ -8,12 +8,12 @@ ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: b22b008c54536a2cf708b3574d77d95dba995027
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.openlocfilehash: acaf50a160c1f5e5dc24d3e81f0669cfe5bddf84
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010074"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442285"
 ---
 # <a name="use-spring-data-r2dbc-with-azure-database-for-postgresql"></a>Verwenden von Spring Data R2DBC mit Azure Database for PostgreSQL
 
@@ -39,8 +39,6 @@ Generieren Sie die Anwendung mithilfe des folgenden Befehls in der Befehlszeile:
 curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.4.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
 
-> [!NOTE]
-> Spring Initializr nutzt als Standardversion Java 11. Um die in diesem Thema beschriebenen Spring Boot Starter verwenden zu können, müssen Sie stattdessen Java 8 auswählen.
 
 ### <a name="add-the-reactive-postgresql-driver-implementation"></a>Hinzufügen der reaktiven PostgreSQL-Treiberimplementierung
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: a7d0c007b2f4c21dc6387e28d5753e67d504cd3a
-ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
+ms.openlocfilehash: a27b8122b3758e997cf5d7595cfd246084acf071
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93066189"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96441929"
 ---
 # <a name="use-spring-data-jdbc-with-azure-database-for-postgresql"></a>Verwenden von Spring Data-JDBC mit Azure Database for PostgreSQL
 
@@ -35,13 +35,11 @@ Generieren Sie die Anwendung mithilfe des folgenden Befehls in der Befehlszeile:
 
 ```bash
 curl https://start.spring.io/starter.tgz -d dependencies=web,data-jdbc,postgresql -d baseDir=azure-database-workshop -d bootVersion=2.3.4.RELEASE -d javaVersion=8 | tar -xzvf -
-```
- > [!NOTE]
- > Spring Initializr nutzt als Standardversion Java 11. Um die in diesem Thema beschriebenen Spring Boot Starter verwenden zu können, müssen Sie stattdessen Java 8 auswählen.
+``` 
  
 ### <a name="configure-spring-boot-to-use-azure-database-for-postgresql"></a>Konfigurieren von Spring Boot für die Verwendung von Azure Database for PostgreSQL
 
-Öffnen Sie die Datei *src/main/resources/application.properties* , und fügen Sie den folgenden Text hinzu:
+Öffnen Sie die Datei *src/main/resources/application.properties*, und fügen Sie den folgenden Text hinzu:
 
 ```properties
 logging.level.org.springframework.jdbc.core=DEBUG
@@ -56,7 +54,7 @@ spring.datasource.initialization-mode=always
 Ersetzen Sie die beiden `$AZ_DATABASE_NAME`-Variablen und die `$AZ_POSTGRESQL_PASSWORD`-Variable durch die Werte, die Sie zu Beginn dieses Artikels konfiguriert haben.
 
 > [!WARNING]
-> Die Konfigurationseigenschaft `spring.datasource.initialization-mode=always` bedeutet, dass Spring Boot mithilfe der Datei *schema.sql* , die Sie später erstellen, bei jedem Start des Servers automatisch ein Datenbankschema generiert. Dieses Vorgehen eignet sich hervorragend für Tests. Denken Sie jedoch daran, dass Ihre Daten bei jedem Neustart gelöscht werden, daher sollte diese Eigenschaft nicht in der Produktion verwendet werden.
+> Die Konfigurationseigenschaft `spring.datasource.initialization-mode=always` bedeutet, dass Spring Boot mithilfe der Datei *schema.sql*, die Sie später erstellen, bei jedem Start des Servers automatisch ein Datenbankschema generiert. Dieses Vorgehen eignet sich hervorragend für Tests. Denken Sie jedoch daran, dass Ihre Daten bei jedem Neustart gelöscht werden, daher sollte diese Eigenschaft nicht in der Produktion verwendet werden.
 
 Sie sollten Ihre Anwendung nun mithilfe des angegebenen Maven-Wrappers wie folgt starten können:
 

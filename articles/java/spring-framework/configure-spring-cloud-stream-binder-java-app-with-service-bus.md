@@ -7,12 +7,12 @@ ms.author: seal
 ms.date: 10/10/2020
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: e4958d65e06a77181a00a7dc4d221e02f4f6b188
-ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
+ms.openlocfilehash: 170d3727b661f18252edb39396739e2791101534
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94601252"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96441806"
 ---
 # <a name="how-to-use-spring-cloud-azure-stream-binder-for-azure-service-bus"></a>Verwenden von Spring Cloud Azure Stream Binder für Azure Service Bus
 
@@ -42,8 +42,6 @@ Die folgenden Voraussetzungen müssen für diesen Artikel erfüllt sein:
 
 1. Wenn Sie über keine Spring Boot-Anwendung verfügen, erstellen Sie mit [Spring Initializr](https://start.spring.io/) ein **Maven**-Projekt. Denken Sie daran, dass Sie **Maven-Projekt** auswählen und unter **Abhängigkeiten** die Abhängigkeit **Web** hinzuzufügen müssen. Wählen Sie Java-Version **8** aus.
 
-    > [!NOTE]
-    > Spring Initializr nutzt als Standardversion Java 11. Um die in diesem Thema beschriebenen Spring Boot Starter verwenden zu können, müssen Sie stattdessen Java 8 auswählen.
 
 ## <a name="use-the-spring-cloud-stream-binder-starter"></a>Verwenden des Spring Cloud Stream Binder-Starters
 
@@ -51,7 +49,7 @@ Die folgenden Voraussetzungen müssen für diesen Artikel erfüllt sein:
 
     `C:\SpringBoot\servicebus\pom.xml`
 
-    - oder -
+    Oder
 
     `/users/example/home/servicebus/pom.xml`
 
