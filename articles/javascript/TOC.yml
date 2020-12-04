@@ -29,6 +29,8 @@
               href: tutorial/static-web-app/clean-up-resources.md
         - name: Hochladen eines Images in Speicherblobs
           href: tutorial/browser-file-upload.yml?preview=tutorialFeedback
+        - name: Schaltfläche „Anmelden“ hinzufügen
+          href: tutorial/single-page-application-azure-login-button-sdk-msal.md
         - name: Express.js mit MongoDB
           href: tutorial/web-app-mongodb.yml?preview=tutorialFeedback
         - name: Bereitstellen einer App auf virtuellen Linux-Computern
