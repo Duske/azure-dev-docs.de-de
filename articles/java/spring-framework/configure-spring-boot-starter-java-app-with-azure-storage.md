@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: article
 ms.workload: storage
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: a459f9eba2661cefddf5c90ae4764fade415ac4d
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: 7e6437859b7b5e67edd9386d0391535dd6537ff7
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192430"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442118"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>Verwenden von Spring Boot Starter für Azure Storage
 
@@ -104,7 +104,7 @@ Gehen Sie zum Erstellen der Spring Boot-Anwendung wie folgt vor:
 1. Verwenden Sie die folgenden Optionen:
 
    * Generieren Sie ein Projekt vom Typ **Maven**.
-   * Geben Sie **Java 8** an.
+   * Geben Sie **Java 11** an.
    * Geben Sie für **Spring Boot** mindestens Version 2.3 an.
    * Geben Sie Namen für die **Gruppe** und das **Artefakt** für Ihre Anwendung an.
    * Fügen Sie die Abhängigkeit **Spring Web** hinzu.
@@ -112,8 +112,7 @@ Gehen Sie zum Erstellen der Spring Boot-Anwendung wie folgt vor:
       ![Grundlegende Spring Initializr-Optionen][SI01]
 
    > [!NOTE]
-   > 1. Spring Initializr verwendet zur Erstellung des Paketnamens die Namen für die **Gruppe** und das **Artefakt** , beispielsweise *com.wingtiptoys.storage*.
-   > 2. Spring Initializr nutzt als Standardversion Java 11. Um die in diesem Thema beschriebenen Spring Boot Starter verwenden zu können, müssen Sie stattdessen Java 8 auswählen.
+   > Spring Initializr verwendet zur Erstellung des Paketnamens die Namen für die **Gruppe** und das **Artefakt**, beispielsweise *com.wingtiptoys.storage*.
 
 1. Wählen Sie nach Angabe der obigen Optionen **GENERIEREN**  aus.
 
@@ -221,7 +220,7 @@ Gehen Sie zum Erstellen der Azure-Anmeldeinformationsdatei wie folgt vor:
    az ad sp create-for-rbac --sdk-auth > my.azureauth
    ```
 
-   Dieser Befehl erstellt im Verzeichnis *resources* eine Datei *my.azureauth* , deren Inhalt in etwa wie folgt aussieht:
+   Dieser Befehl erstellt im Verzeichnis *resources* eine Datei *my.azureauth*, deren Inhalt in etwa wie folgt aussieht:
 
    ```json
    {

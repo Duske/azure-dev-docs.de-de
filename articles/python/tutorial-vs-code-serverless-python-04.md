@@ -1,23 +1,21 @@
 ---
-title: 'Schritt 4: Lokales Debuggen des Azure Functions-Python-Codes mit VS Code'
-description: 'Tutorialschritt 4: lokales Ausführen des VS Code-Debuggers, um Ihren Python-Code zu überprüfen'
+title: 'Schritt 4: Lokales Debuggen des serverlosen Azure Functions-Python-Codes mit VS Code'
+description: 'Tutorialschritt 4: lokales Ausführen des VS Code-Debuggers, um Ihren serverlosen Python-Code zu überprüfen'
 ms.topic: conceptual
-ms.date: 09/17/2020
+ms.date: 11/30/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 622453ab5de1eeeee547cf95687e2585813b7b31
-ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
+ms.openlocfilehash: ecd93f7b551525576123e57ed9efe55b335d4dd4
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92137079"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96441736"
 ---
 # <a name="4-debug-the-azure-functions-python-code-locally"></a>4: Lokales Debuggen des Azure Functions-Python-Codes
 
 [Vorheriger Schritt: Untersuchen der Codedateien](tutorial-vs-code-serverless-python-03.md)
 
-Sie können Ihren Azure Functions-Python-Code lokal in Visual Studio Code debuggen.
-
-1. Wenn Sie das Functions-Projekt erstellen, erstellt die Visual Studio Code-Erweiterung außerdem eine Startkonfiguration in `.vscode/launch.json`, die eine einzelne Konfiguration mit dem Namen **Attach to Python Functions** (Anfügen an Python-Functions) enthält. Diese Konfiguration bedeutet, dass Sie einfach F5 drücken oder den Debug-Explorer verwenden können, um das Projekt zu starten:
+1. Wenn Sie das Functions-Projekt erstellen, erstellt die Azure Functions-Erweiterung außerdem eine Startkonfiguration in `.vscode/launch.json`, die eine einzelne Konfiguration mit dem Namen **Attach to Python Functions** (Anfügen an Python-Functions) enthält. Diese Konfiguration bedeutet, dass Sie einfach F5 drücken oder den Debug-Explorer verwenden können, um das Projekt zu starten:
 
     ![Konfiguration für den Debug-Explorer zum Starten eines Python-Projekts](media/tutorial-vs-code-serverless-python/configuration-to-start-a-python-project-for-debugging.png)
 
@@ -36,7 +34,7 @@ Sie können Ihren Azure Functions-Python-Code lokal in Visual Studio Code debugg
     > [!TIP]
     > Wenn Sie nicht auf die URL zugreifen können und die Ausführung hinter einem Unternehmensproxy erfolgt (und daher wahrscheinlich die Umgebungsvariablen `HTTP_PROXY` und `HTTPS_PROXY` festgelegt sind), legen Sie die Umgebungsvariable `NO_PROXY` auf `localhost,127.0.0.1` fest, und wiederholen Sie den Vorgang.
 
-1. Versuchen Sie nun, zur Verwendung einen Namensparameter hinzuzufügen, z.B. `http://localhost:7071/api/HttpExample?name=Visual%20Studio%20Code`, und im Browserfenster sollte die Meldung „Hello Visual Studio Code!“ angezeigt werden, um zu zeigen, dass Sie diesen Codepfad ausgeführt haben.
+1. Versuchen Sie nun, zur Verwendung einen Namensparameter hinzuzufügen, z. B. `http://localhost:7071/api/HttpExample?name=Visual%20Studio%20Code`, und im Browserfenster sollte die Meldung „Hello Visual Studio Code. Diese über HTTP ausgelöste Funktion wurde erfolgreich ausgeführt.“ angezeigt werden, die zeigt, dass Sie diesen Codepfad ausgeführt haben.
 
 1. Wenn Sie den Namenswert einem JSON-Anforderungstext übergeben möchten, können Sie ein Tool wie curl mit dem JSON-Code inline verwenden:
 
@@ -69,7 +67,7 @@ Sie können Ihren Azure Functions-Python-Code lokal in Visual Studio Code debugg
 
     (Eine kurze exemplarische Vorgehensweise zum grundlegenden Debuggen finden Sie unter [Visual Studio Code Tutorial – Configure and run the debugger](https://code.visualstudio.com/docs/python/python-tutorial#configure-and-run-the-debugger) (Visual Studio Code-Tutorial: Konfigurieren und Ausführen des Debuggers).)
 
-1. Wenn Sie die Funktion gründlich lokal getestet haben, stoppen Sie den Debugger (mit dem Menübefehl **Debuggen** > **Debuggen stoppen** oder dem Befehl **Trennen** in der Debugsymbolleiste).
+1. Wenn Sie die Funktion gründlich lokal getestet haben, stoppen Sie den Debugger (mit dem Menübefehl **Ausführen** > **Debuggen stoppen** oder dem Befehl **Trennen** in der Debugsymbolleiste).
 
 > [!NOTE]
 > Wenn der Fehler „Die in ‚local.settings.json‘ angegebene ‚AzureWebJobsStorage‘-Verbindung konnte nicht überprüft werden.“ auftritt, enthält die Datei *local.settings.json* in Ihrem Projekt die Zeile `"AzureWebJobsStorage": "UseDevelopmentStorage=true"`. Diese Zeile zeigt an, dass der Debugger erwartet, den Azure Storage-Emulator lokal zu verwenden, dieser ist aber nicht installiert. In diesem Fall können Sie [den Azure Storage-Emulator installieren](/azure/storage/common/storage-use-emulator#get-the-storage-emulator), [den Emulator starten und initialisieren](/azure/storage/common/storage-use-emulator#start-and-initialize-the-storage-emulator) und den Debugger neu starten.

@@ -1,39 +1,43 @@
 ---
 title: 'Tutorial: Erstellen und Bereitstellen einer serverlosen Azure Functions-Instanz in Python mit Visual Studio Code'
-description: Schritt 1 im Tutorial, Konfigurieren Ihrer lokalen Umgebung für Azure Functions
+description: Schritt 1 im Tutorial, Konfigurieren Ihrer lokalen Umgebung für serverlos Azure Functions-Instanzen
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 11/30/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 69f66c51a6e55eff91a7de780ebd0bd6f5500f68
-ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
+ms.openlocfilehash: a7eea7fd73f13f9ca2f93cf3184c5ab7a1889614
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92137219"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442246"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>Tutorial: Erstellen und Bereitstellen von Azure Functions serverlos in Python mit Visual Studio Code
 
-In diesem Artikel verwenden Sie Visual Studio Code und die Azure Functions-Erweiterung, um einen serverlosen HTTP-Endpunkt mit Python zu erstellen und auch eine Verbindung (oder „Bindung“) mit dem (bzw. an den) Speicher hinzuzufügen.
+In diesem Artikel verwenden Sie Visual Studio Code und die Azure Functions-Erweiterung, um einen „serverlosen“ HTTP-Endpunkt mit Python zu erstellen und auch eine Verbindung (oder „Bindung“) mit dem (bzw. an den) Speicher hinzuzufügen. Die Azure Functions-Erweiterung für Visual Studio Code vereinfacht den Prozess der Verwendung von Funktionen erheblich, indem sie automatisch viele Konfigurationsprobleme löst.
 
-Azure Functions führt Ihren Code in einer serverlosen Umgebung aus, ohne dass ein virtueller Computer bereitgestellt oder eine Web-App veröffentlicht werden muss. Die Azure Functions-Erweiterung für Visual Studio Code vereinfacht den Prozess der Verwendung von Funktionen erheblich, indem sie automatisch viele Konfigurationsprobleme löst.
+Die serverlose Umgebung von Azure Functions bedeutet, dass Azure die Endpunkte und öffentlichen URLs Ihrer App anzeigt, ohne dass Sie einen virtuellen Computer bereitstellen, eine Web-App veröffentlichen oder anderweitig Server und Ressourcen verwalten müssen. Azure verwaltet alle Ressourcen effizient für Sie, wodurch der Aufwand und die Kosten für das Hosting Ihrer Anwendung erheblich reduziert werden. (Weitere Informationen hierzu finden Sie in der [Übersicht zu Azure Functions](/azure/azure-functions/functions-overview).)
 
 Wenn Sie Probleme mit einem der Schritte in diesem Tutorial haben, würden wir uns über nähere Informationen freuen. Verwenden Sie die Feedbackschaltfläche **Diese Seite** am Ende jedes Artikels.
 
-Ein Demonstrationsvideo von der virtuellen PyCon 2020 finden Sie unter <a href="https://www.youtube.com/watch?v=9bMsdBYy-D0&feature=youtu.be&ocid=AID3006292" target="_blank">Erstellen von Azure Functions mit VS Code</a> (youtube.com). Möglicherweise interessieren Sie sich auch für die längere Sitzung mit dem Titel <a href="https://www.youtube.com/watch?v=PV7iy6FPjAY&feature=youtu.be&t=13&ocid=AID3006292" target="_blank">Einfache Datenverarbeitung mit Azure Functions</a> (youtube.com). 
+Ein Demonstrationsvideo von der virtuellen PyCon 2020 finden Sie unter <a href="https://www.youtube.com/watch?v=9bMsdBYy-D0&feature=youtu.be&ocid=AID3006292" target="_blank">Erstellen von Azure Functions mit VS Code</a> (youtube.com). Möglicherweise interessieren Sie sich auch für die längere Sitzung mit dem Titel <a href="https://www.youtube.com/watch?v=PV7iy6FPjAY&feature=youtu.be&t=13&ocid=AID3006292" target="_blank">Einfache Datenverarbeitung mit Azure Functions</a> (youtube.com).
 
 ## <a name="configure-your-environment"></a>Konfigurieren Ihrer Umgebung
 
-- Ein [Azure-Abonnement](#azure-subscription).
-- Die [Azure Functions Core Tools](#azure-functions-core-tools).
-- [Visual Studio Code mit der Azure Functions-Erweiterung](#visual-studio-code-python-and-the-azure-functions-extension)
+- Falls Sie über kein Azure-Konto mit einem aktiven Abonnement verfügen, können Sie ein [kostenloses Konto erstellen](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-functions-extension&mktingSource=vscode-tutorial-functions-extension).
 
-### <a name="azure-subscription"></a>Azure-Abonnement
+- Folgen Sie den Anweisungen in den folgenden Abschnitten:
 
-Wenn Sie kein Azure-Abonnement haben, [registrieren Sie sich jetzt](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-functions-extension&mktingSource=vscode-tutorial-functions-extension) für ein kostenloses 30-tägiges Konto mit 200 US-Dollar in Form einer Azure-Gutschrift, um eine beliebige Kombination von Diensten auszuprobieren.
+  - [Installieren Sie Azure Functions Core Tools](#azure-functions-core-tools).
 
+  - [Installieren Sie Python und Visual Studio Code mit der Azure Functions-Erweiterung](#visual-studio-code-python-and-the-azure-functions-extension).
+
+  - [Anmelden bei Azure](#sign-in-to-azure)
+
+  - [Überprüfen der Umgebung](#verify-your-environment)
+ 
 ### <a name="azure-functions-core-tools"></a>Azure Functions Core Tools
 
-Befolgen Sie zum Installieren von Azure Functions Core Tools die Anweisungen für Ihr Betriebssystem unter [Arbeiten mit Azure Functions Core Tools](/azure/azure-functions/functions-run-local#v2). Ignorieren Sie die Kommentare im Artikel zum Chocolatey-Paket-Manager, die für dieses Tutorial nicht erforderlich sind.
+Befolgen Sie die Anweisungen für Ihr Betriebssystem unter [Arbeiten mit Azure Functions Core Tools](/azure/azure-functions/functions-run-local#v2). Ignorieren Sie die Kommentare im Artikel zum Chocolatey-Paket-Manager, die für dieses Tutorial nicht erforderlich sind.
 
 Verwenden Sie bei der Installation von Node.js die Standardoptionen, und wählen Sie *nicht* die Option zur automatischen Installation der erforderlichen Tools aus.  Verwenden Sie darüber hinaus unbedingt die Option `-g` mit den `npm install`-Befehlen, damit die Core Tools für nachfolgende Befehle verfügbar sind.
 

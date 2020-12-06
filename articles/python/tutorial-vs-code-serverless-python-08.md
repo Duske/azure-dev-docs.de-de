@@ -1,21 +1,21 @@
 ---
-title: 'Schritt 8: Bereinigen der mit dem Python-Code verwendeten Ressourcen in Azure Functions'
+title: 'Schritt 8: Bereinigen der mit dem serverlosen Python-Code verwendeten Ressourcen in Azure Functions'
 description: 'Tutorialschritt 8: Bereinigen von Azure-Ressourcen, um laufende Gebühren zu vermeiden'
 ms.topic: conceptual
-ms.date: 09/17/2020
+ms.date: 11/30/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: ec97faa440dcfb79240b0805e44de7d3d3447bad
-ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
+ms.openlocfilehash: af1ce614671d3da67725ca358a018026c76ccb5c
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92137209"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96441735"
 ---
 # <a name="8-clean-up-azure-resources-for-azure-functions"></a>8: Bereinigen von Azure-Ressourcen für Azure Functions
 
 [Vorheriger Schritt: Hinzufügen einer Speicherbindung](tutorial-vs-code-serverless-python-07.md)
 
-In diesem Artikel erfahren Sie, wie Sie die in diesem Tutorial erstellten Azure-Ressourcen entfernen. Die mit Visual Studio Code erstellte Azure-Funktions-App enthält Ressourcen, die minimale Kosten verursachen können. (Weitere Informationen finden Sie unter [Azure Functions – Preise](https://azure.microsoft.com/pricing/details/functions/).)
+Die in diesem Tutorial mit Visual Studio Code erstellte Azure-Funktions-App enthält Ressourcen, die minimale Kosten verursachen können. (Weitere Informationen finden Sie unter [Azure Functions – Preise](https://azure.microsoft.com/pricing/details/functions/).)
 
 Die beste Möglichkeit zur Bereinigung von Ressourcen ist das Löschen der Ressourcengruppe, die alle einzelnen Ressourcen dieses Tutorials enthält. Zu den Ressourcen gehören die Funktions-App, das Speicherkonto und der zugrunde liegende App Service-Plan.
 

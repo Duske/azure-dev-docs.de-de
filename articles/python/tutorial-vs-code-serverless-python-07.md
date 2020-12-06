@@ -1,31 +1,31 @@
 ---
-title: 'Schritt 7: Hinzufügen einer Speicherbindung für Azure Functions in Python mit VS Code'
-description: 'Tutorialschritt 7: Hinzufügen einer Bindung in Python zum Schreiben von Meldungen in Azure Storage'
+title: 'Schritt 7: Hinzufügen einer Speicherbindung für Azure Functions (serverlos) in Python mit VS Code'
+description: 'Tutorialschritt 7: Hinzufügen einer Bindung in serverlosem Python-Code zum Schreiben von Meldungen in Azure Storage'
 ms.topic: conceptual
-ms.date: 09/17/2020
+ms.date: 11/30/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: c260d2b8708d770b62c9f94d651a1ba630660cab
-ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
+ms.openlocfilehash: aa0913f35915a4d4a97b1d0183976614509b704d
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92137189"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442172"
 ---
 # <a name="7-add-a-storage-binding-for-azure-functions-in-python"></a>7: Hinzufügen einer Speicherbindung für Azure Functions in Python
 
 [Vorheriger Schritt: Bereitstellen einer zweiten Funktion](tutorial-vs-code-serverless-python-06.md)
 
-Sie können eine Speicherbindung für Azure Functions hinzufügen. Mit einer _Bindung_ können Sie eine Verbindung Ihres Funktionscodes mit Ressourcen wie z. B. Azure-Speicher herstellen, ohne Datenzugriffscode schreiben zu müssen.
+Mit einer _Bindung_ können Sie eine Verbindung Ihres Funktionscodes mit Ressourcen wie z. B. Azure-Speicher herstellen, ohne Datenzugriffscode schreiben zu müssen.
 
 Eine Bindung wird in der Datei *function.json* definiert und kann sowohl die Eingabe als auch die Ausgabe darstellen. Eine Funktion kann mehrere Ein- und Ausgabebindungen, aber nur einen Trigger haben. Weitere Informationen finden Sie unter [Konzepte der Trigger und Bindungen in Azure Functions](/azure/azure-functions/functions-triggers-bindings).
 
-In diesem Abschnitt fügen Sie der HttpExample-Funktion, die Sie zuvor in diesem Tutorial erstellt haben, eine Speicherbindung hinzu. Die Funktion verwendet diese Bindung, um mit jeder Anforderung Meldungen in den Speicher zu schreiben. Der fragliche Speicher verwendet das gleiche Standardspeicherkonto, das von der Funktions-App verwendet wird. Wenn Sie jedoch den Speicher stark nutzen möchten, sollten Sie das Erstellen eines separaten Kontos in Erwägung ziehen.
+In diesem Abschnitt fügen Sie der HttpExample-Funktion, die Sie zuvor in diesem Tutorial erstellt haben, eine Speicherbindung hinzu. Die Funktion verwendet diese Bindung, um mit jeder Anforderung Meldungen in den Speicher zu schreiben. (Der fragliche Speicher verwendet das gleiche Standardspeicherkonto, das von der Funktions-App verwendet wird. Wenn Sie jedoch den Speicher stark nutzen möchten, sollten Sie das Erstellen eines separaten Kontos in Erwägung ziehen.)
 
 1. Synchronisieren Sie die Remoteeinstellungen für das Azure Functions-Projekt in Ihrer *local.settings.json*-Datei, indem Sie die Befehlspalette öffnen und **Azure Functions: Remoteeinstellungen herunterladen** auswählen.
- 
+
     Öffnen Sie *local.settings.json*, und überprüfen Sie, ob sie einen Wert für `AzureWebJobsStorage` enthält. Der Wert ist die Verbindungszeichenfolge für das Speicherkonto.
 
-1. Klicken Sie im Ordner `HttpExample` mit der rechten Maustaste auf *function.json*, und wählen Sie **Bindung hinzufügen** aus:
+1. Klicken Sie im Azure Functions-Explorer unter **Lokales Projekt** mit der rechten Maustaste auf die `HttpExample`-Funktion, und wählen Sie **Bindung hinzufügen** aus:
 
     ![Befehl „Bindung hinzufügen“ im Visual Studio Code-Explorer](media/tutorial-vs-code-serverless-python/add-binding-command-to-azure-functions-in-visual-studio-code.png)
 
@@ -33,7 +33,7 @@ In diesem Abschnitt fügen Sie der HttpExample-Funktion, die Sie zuvor in diesem
 
     | Prompt | Bereitzustellender Wert |
     | --- | --- |
-    | Bindungsrichtung festlegen | out |
+    | Select binding direction (Wählen Sie die Bindungsrichtung aus) | out |
     | Bindung mit ausgehender Richtung auswählen | Azure Queue Storage |
     | Der Name, der zum Identifizieren dieser Bindung in Ihrem Code verwendet wird | msg |
     | Die Warteschlange, an die die Nachricht gesendet wird | outqueue |
@@ -78,7 +78,7 @@ In diesem Abschnitt fügen Sie der HttpExample-Funktion, die Sie zuvor in diesem
             # MODIFICATION: write the a message to the message queue, using msg.set
             msg.set(f"Request made for {name} at {datetime.datetime.now()}")
 
-            return func.HttpResponse(f"Hello {name}!")
+            return func.HttpResponse(f"Hello, {name}. This HTTP triggered function executed successfully.")
         else:
             return func.HttpResponse(
                  "Please pass a name on the query string or in the request body",
@@ -86,7 +86,7 @@ In diesem Abschnitt fügen Sie der HttpExample-Funktion, die Sie zuvor in diesem
             )
     ```
 
-1. Um diese Änderungen lokal zu testen, starten Sie den Debugger erneut in Visual Studio Code, indem Sie F5 drücken oder den Menübefehl **Debuggen** > **Debuggen starten** auswählen.
+1. Um diese Änderungen lokal zu testen, starten Sie den Debugger erneut in Visual Studio Code, indem Sie F5 drücken oder den Menübefehl **Ausführen** > **Debuggen starten** auswählen.
 
     Im **Ausgabe**-Fenster sollten nun wie zuvor die Endpunkte im Projekt angezeigt werden.
 

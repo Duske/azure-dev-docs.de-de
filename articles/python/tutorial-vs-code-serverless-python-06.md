@@ -1,21 +1,21 @@
 ---
-title: 'Schritt 6: Hinzufügen einer zweiten Python-Funktion zu Azure Functions mit VS Code'
-description: 'Tutorialschritt 6: Erweitern eines Azure Functions-Projekts durch Hinzufügen einer zweiten Funktion'
+title: 'Schritt 6: Hinzufügen einer zweiten serverlosen Python-Funktion zu Azure Functions mit VS Code'
+description: 'Tutorialschritt 6: Erweitern eines Azure Functions-Projekts durch Hinzufügen einer zweiten serverlosen Funktion'
 ms.topic: conceptual
-ms.date: 09/17/2020
+ms.date: 11/30/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: bbf89352bbbb93a90ac6f41bea97ba0def9bf815
-ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
+ms.openlocfilehash: 18cc5b138a46e4194c82bd0339c1566e20107347
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92137099"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96441714"
 ---
 # <a name="6-add-a-second-python-function-to-azure-functions"></a>6: Hinzufügen einer zweiten Python-Funktion zu Azure Functions
 
 [Vorheriger Schritt: Bereitstellen in Azure](tutorial-vs-code-serverless-python-05.md)
 
-Nach der ersten Bereitstellung können Sie Änderungen am Code vornehmen, z. B. zusätzliche Python-Funktionen hinzufügen und ihn erneut für die gleiche Azure Functions-App bereitstellen.
+Nach der ersten Bereitstellung können Sie Änderungen am Code vornehmen, z. B. zusätzliche Python-Funktionen hinzufügen und ihn dann erneut für die gleiche Azure Functions-App bereitstellen.
 
 1. Wählen Sie im Bereich **Azure: Functions**-Explorer den Befehl **Funktion erstellen** aus, oder verwenden Sie **Azure Functions: Funktion erstellen** aus der Befehlspalette. Geben Sie die folgenden Details für die Funktion an:
 
@@ -23,9 +23,9 @@ Nach der ersten Bereitstellung können Sie Änderungen am Code vornehmen, z. B.
     - Name: „DigitsOfPi“
     - Autorisierungsstufe: Anonym
 
-1. Im Visual Studio Code-Datei-Explorer befindet sich ein Unterordner mit Ihrem Funktionsnamen, der wiederum Dateien mit dem Namen *\_\_init\_\_.py*, *function.json* und *sample.dat* enthält.
+    Der Abschnitt **Lokales Projekt** im Azure Functions-Explorer zeigt nun die Funktion „*DigitsOfPi*“ an. Im Editor können Sie zwischen den Dateien *\_\_init\_\_.py*, *function.json* und *sample.dat* der Funktion wechseln.
 
-1. Ersetzen Sie den Inhalt von *\_\_init\_\_.py*, sodass er dem folgenden Code entspricht, der eine Zeichenfolge mit dem Wert von PI für eine Anzahl von Ziffern generiert, die in der URL angegeben sind (dieser Code verwendet nur einen URL-Parameter.)
+1. Ersetzen Sie den Inhalt von *\_\_init\_\_.py*, sodass er dem folgenden Code entspricht, der eine Zeichenfolge mit dem Wert von PI für eine Anzahl von Ziffern generiert, die in der URL angegeben sind (dieser Code verwendet nur einen URL-Parameter):
 
     ```python
     import logging
@@ -102,7 +102,7 @@ Nach der ersten Bereitstellung können Sie Änderungen am Code vornehmen, z. B.
     }
     ```
 
-1. Starten Sie den Debugger, indem Sie F5 drücken oder den Menübefehl **Debuggen** > **Debuggen starten** auswählen. Im **Ausgabe**-Fenster sollten nun beide Endpunkte im Projekt angezeigt werden:
+1. Starten Sie den lokalen Debugger, indem Sie F5 drücken oder den Menübefehl **Ausführen** > **Debuggen starten** auswählen. Im **Ausgabe**-Fenster sollten nun beide Endpunkte im Projekt angezeigt werden:
 
     <pre>
     Http Functions:
@@ -114,7 +114,7 @@ Nach der ersten Bereitstellung können Sie Änderungen am Code vornehmen, z. B.
 
 1. Stellen Sie den Code mithilfe des Befehls **Für Funktions-App bereitstellen** erneut im **Azure: Functions**-Explorer bereit. Wenn Sie dazu aufgefordert werden, wählen Sie die zuvor erstellte Funktions-App aus.
 
-1. Nachdem die Bereitstellung abgeschlossen ist (es dauert einige Minuten!), werden im **Ausgabe**-Fenster die öffentlichen Endpunkte angezeigt, mit denen Sie die Tests wiederholen können.
+1. Die Bereitstellung ist nach einigen Minuten abgeschlossen, und anschließend werden im **Ausgabefenster** die öffentlichen Endpunkte angezeigt, mit denen Sie die Tests wiederholen können.
 
 > [!div class="nextstepaction"]
 > [Ich habe eine zweite Funktion hinzugefügt: Fahren Sie mit Schritt 7 fort. >>>](tutorial-vs-code-serverless-python-07.md)
