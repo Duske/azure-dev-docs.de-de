@@ -3,13 +3,13 @@ title: 'Schritt 3: Untersuchen der Python-Codedateien für serverlose Azure Func
 description: 'Tutorialschritt 3: Grundlegendes zum serverlosen Python-Vorlagencode, der von Azure Functions bereitgestellt wird'
 ms.topic: conceptual
 ms.date: 11/30/2020
-ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: a57d7bee924082a187b08c4326ae4de1d7cca998
-ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
+ms.custom: devx-track-python, seo-python-october2019, contperfq2
+ms.openlocfilehash: 2b6eb9d541f21ed569c19cf5696e2ee8385e2b3c
+ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96442186"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96759277"
 ---
 # <a name="3-examine-the-python-code-files-in-visual-studio-code"></a>3: Untersuchen der Python-Codedateien in Visual Studio Code
 

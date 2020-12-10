@@ -3,13 +3,13 @@ title: 'Tutorial: Erstellen und Bereitstellen einer serverlosen Azure Functions-
 description: Schritt 1 im Tutorial, Konfigurieren Ihrer lokalen Umgebung für serverlos Azure Functions-Instanzen
 ms.topic: conceptual
 ms.date: 11/30/2020
-ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: a7eea7fd73f13f9ca2f93cf3184c5ab7a1889614
-ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
+ms.custom: devx-track-python, seo-python-october2019, contperfq2
+ms.openlocfilehash: a4fbf9d46a4158fe67660db9f9b7eae8ff83e810
+ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96442246"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96759437"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>Tutorial: Erstellen und Bereitstellen von Azure Functions serverlos in Python mit Visual Studio Code
 

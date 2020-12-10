@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 3e73fda380f2743f6a3d4b2fb726ee62173b8563
-ms.sourcegitcommit: 418e446e6ada5d50df283401df4f6b6370a356b9
+ms.openlocfilehash: 89df7fe719cd8c8301c729bb33cb1d3632a80b0d
+ms.sourcegitcommit: 09b4a2dbe13601fdf16fcc4082a5075b46ad3459
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96035368"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96559268"
 ---
 # <a name="spring-boot-starters-for-azure"></a>Spring Boot Starter für Azure
 
@@ -21,10 +21,6 @@ In diesem Artikel werden die verschiedenen Spring Boot Starter-Optionen für [Sp
 >[!div class="mx-imgBorder"]
 ![Konfigurieren von Azure Spring Boot Starter-Instanzen mit Initializr][configure-azure-spring-boot-starters-with-initializr]
 
-> [!NOTE]
->
-> Spring Initializr nutzt als Standardversion Java 11. Um die in diesem Thema beschriebenen Spring Boot Starter verwenden zu können, müssen Sie stattdessen Java 8 auswählen.
-> 
 
 Für Azure stehen aktuell folgende Spring Boot Starter-Optionen zur Verfügung:
 
@@ -36,7 +32,7 @@ Für Azure stehen aktuell folgende Spring Boot Starter-Optionen zur Verfügung:
 
    Bietet Integrationsunterstützung für Spring Security mit Azure Active Directory-Authentifizierung.
 
-* **[Azure-Schlüsseltresor](#azure-key-vault)**
+* **[Azure Key Vault](#azure-key-vault)**
 
    Bietet Spring-Wertanmerkungsunterstützung für die Integration von Azure Key Vault-Geheimnissen.
 

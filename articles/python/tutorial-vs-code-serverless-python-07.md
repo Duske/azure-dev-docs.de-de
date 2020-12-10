@@ -3,13 +3,13 @@ title: 'Schritt 7: Hinzufügen einer Speicherbindung für Azure Functions (serve
 description: 'Tutorialschritt 7: Hinzufügen einer Bindung in serverlosem Python-Code zum Schreiben von Meldungen in Azure Storage'
 ms.topic: conceptual
 ms.date: 11/30/2020
-ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: aa0913f35915a4d4a97b1d0183976614509b704d
-ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
+ms.custom: devx-track-python, seo-python-october2019, contperfq2
+ms.openlocfilehash: 2c7bcc2ea5fde76961a84c5a2193d46b694720e1
+ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96442172"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96759267"
 ---
 # <a name="7-add-a-storage-binding-for-azure-functions-in-python"></a>7: Hinzufügen einer Speicherbindung für Azure Functions in Python
 

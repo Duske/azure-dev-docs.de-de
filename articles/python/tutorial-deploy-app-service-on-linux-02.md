@@ -4,12 +4,12 @@ description: 'Tutorialschritt 2: Einrichten der Anwendung'
 ms.topic: conceptual
 ms.date: 11/20/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 252bfc02e3c70cc207b29ee0b8f8c58d9802f090
-ms.sourcegitcommit: 29930f1593563c5e968b86117945c3452bdefac1
+ms.openlocfilehash: 7197f8afc28bd62e7247c3955c888199ee69c509
+ms.sourcegitcommit: 09b4a2dbe13601fdf16fcc4082a5075b46ad3459
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95485659"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96559194"
 ---
 # <a name="2-prepare-your-app-for-deployment-to-azure-app-service"></a>2: Vorbereiten Ihrer App für die Bereitstellung in Azure App Service
 
@@ -40,7 +40,7 @@ Laden Sie [https://github.com/Microsoft/python-sample-vscode-django-tutorial](ht
 
 Im Idealfall wird von in der Cloud bereitgestellten Django-Apps auch eine cloudbasierte Datenbank wie etwa PostgreSQL für Azure verwendet. Weitere Informationen finden Sie im [Tutorial: Bereitstellen einer Django-Web-App mit PostgreSQL mithilfe des Azure-Portals](tutorial-python-postgresql-app-portal.md).
 
-Wenn von Ihrer Django-App wie in diesem Beispiel eine lokale SQLite-Datenbank verwendet wird, ist es für dieses Tutorial am einfachsten, wenn Sie eine vorab initialisierte und aufgefüllte Kopie der Datei *db.sqlite3* in Ihr Repository einschließen. Andernfalls müssen Sie einen Postbuildbefehl konfigurieren, um den Django-Befehl `migrate` in dem Container auszuführen, in dem die App bereitgestellt wird. Weitere Informationen finden Sie unter [App Service-Konfiguration: Anpassen der Buildautomatisierung](/app-service/configure-language-python#customize-build-automation).
+Wenn von Ihrer Django-App wie in diesem Beispiel eine lokale SQLite-Datenbank verwendet wird, ist es für dieses Tutorial am einfachsten, wenn Sie eine vorab initialisierte und aufgefüllte Kopie der Datei *db.sqlite3* in Ihr Repository einschließen. Andernfalls müssen Sie einen Postbuildbefehl konfigurieren, um den Django-Befehl `migrate` in dem Container auszuführen, in dem die App bereitgestellt wird. Weitere Informationen finden Sie unter [App Service-Konfiguration: Anpassen der Buildautomatisierung](/azure/app-service/configure-language-python#customize-build-automation).
 
 ### <a name="option-3-create-a-minimal-flask-app"></a>Option 3: Erstellen einer minimalen Flask-App
 

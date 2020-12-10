@@ -3,13 +3,13 @@ title: 'Schritt 8: Bereinigen der mit dem serverlosen Python-Code verwendeten Re
 description: 'Tutorialschritt 8: Bereinigen von Azure-Ressourcen, um laufende Gebühren zu vermeiden'
 ms.topic: conceptual
 ms.date: 11/30/2020
-ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: af1ce614671d3da67725ca358a018026c76ccb5c
-ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
+ms.custom: devx-track-python, seo-python-october2019, contperfq2
+ms.openlocfilehash: aed7b2857d75f6016434550cc2a58d8230d80615
+ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96441735"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96759397"
 ---
 # <a name="8-clean-up-azure-resources-for-azure-functions"></a>8: Bereinigen von Azure-Ressourcen für Azure Functions
 
