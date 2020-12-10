@@ -5,6 +5,8 @@
       href: whats-new-docs.md
     - name: Erste Schritte in Azure mit JavaScript
       items:
+        - name: Azure-Tools für JavaScript-Entwickler
+          href: node-azure-tools.md
         - name: Einrichten Ihrer Entwicklungsumgebung
           href: core/configure-local-development-environment.md
         - name: Einrichten des Dienstprinzipals
@@ -13,120 +15,120 @@
           href: core/node-sdk-azure-authenticate.md
     - name: Tutorials
       items:
-        - name: Erstellen einer statischen Web-App
+        - name: Bereitstellen und Hosten
           items:
-            - name: 1. Einführung und Voraussetzungen
-              href: tutorial/static-web-app/introduction.md
-            - name: 2. Herunterladen und lokales Ausführen der App
-              href: tutorial/static-web-app/run-the-react-cognitive-services-image-analyzer-app-locally.md
-            - name: 3. Erstellen einer Ressource für maschinelles Sehen
-              href: tutorial/static-web-app/create-computer-vision-resource-use-in-code.md
-            - name: 4. Erstellen und Bereitstellen einer statischen Web-App
-              href: tutorial/static-web-app/create-static-web-app-visual-studio-code-extension.md
-            - name: 5. Überprüfen des React-Codes für maschinelles Sehen
-              href: tutorial/static-web-app/add-computer-vision-react-app.md
-            - name: 6. Bereinigen von Ressourcen
-              href: tutorial/static-web-app/clean-up-resources.md
-        - name: Hochladen eines Images in Speicherblobs
-          href: tutorial/browser-file-upload-azure-storage-blob.md
-        - name: Schaltfläche „Anmelden“ hinzufügen
-          href: tutorial/single-page-application-azure-login-button-sdk-msal.md
-        - name: Express.js mit MongoDB
-          href: tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md
-        - name: Bereitstellen einer App auf virtuellen Linux-Computern
-          items:
-            - name: 1. Einführung und Voraussetzungen
-              href: tutorial/nodejs-virtual-machine-vm/introduction.md
-            - name: 2. Erstellen einer Application Insights-Ressource
-              href: tutorial/nodejs-virtual-machine-vm/create-azure-monitoring-application-insights-web-resource.md
-            - name: 3. Erstellen eines virtuellen Computers
-              href: tutorial/nodejs-virtual-machine-vm/create-linux-virtual-machine-azure-cli.md
-            - name: 4. Herstellen einer Verbindung mit einem virtuellen Linux-Computer
-              href: tutorial/nodejs-virtual-machine-vm/connect-linux-virtual-machine-ssh.md
-            - name: 5. Hinzufügen von Cloudprotokollierung zur App
-              href: tutorial/nodejs-virtual-machine-vm/azure-monitor-application-insights-nodejs-expressjs-code.md
-            - name: 6. Anzeigen von Protokollen
-              href: tutorial/nodejs-virtual-machine-vm/azure-monitor-application-insights-logs.md
-            - name: 7. Bereinigen von Ressourcen
-              href: tutorial/nodejs-virtual-machine-vm/clean-up-resources.md
-        - name: Erstellen und Bereitstellen serverloser Funktionen
-          items:
-            - name: 1. Einführung und Voraussetzungen
-              href: tutorial/tutorial-vscode-serverless-node-install.md
-            - name: 2. Erstellen der Funktions-App
-              href: tutorial/tutorial-vscode-serverless-node-create-local.md
-            - name: 3. Lokales Testen der Funktion
-              href: tutorial/tutorial-vscode-serverless-node-test-local.md
-            - name: 4. Bereitstellen der Funktions-App
-              href: tutorial/tutorial-vscode-serverless-node-deploy-hosting.md
-            - name: 5. Bereinigen von Ressourcen
-              href: tutorial/tutorial-vscode-serverless-node-remove-resource.md
-        - name: Bereitstellen von Node.js in App Service mit VS Code
-          items:
-            - name: Einführung und Voraussetzungen
-              href: tutorial-vscode-azure-app-service-node-01.md
-            - name: Erstellen der App
-              href: tutorial-vscode-azure-app-service-node-02.md
-            - name: Bereitstellen der Website
-              href: tutorial-vscode-azure-app-service-node-03.md
-            - name: Streaming von Protokollen
-              href: tutorial-vscode-azure-app-service-node-04.md
-            - name: Bereinigen von Ressourcen
-              href: tutorial-vscode-azure-app-service-node-05.md
-        - name: Bereitstellen von Deno in App Service
-          href: tutorial/deploy-deno-app-azure-app-service-azure-cli.md
-        - name: Bereitstellen von Containern mit VS Code
-          items:
-            - name: Einführung und Voraussetzungen
-              href: tutorial-vscode-docker-node-01.md
-            - name: Verwenden einer Containerregistrierung
-              href: tutorial-vscode-docker-node-02.md
-            - name: Erstellen einer lokalen Node.js-App
-              href: tutorial-vscode-docker-node-03.md
-            - name: Erstellen des App-Images
-              href: tutorial-vscode-docker-node-04.md
-            - name: Bereitstellen des App-Images
-              href: tutorial-vscode-docker-node-05.md
-            - name: Vornehmen von Änderungen und erneutes Bereitstellen
-              href: tutorial-vscode-docker-node-06.md
-            - name: Streaming von Protokollen
-              href: tutorial-vscode-docker-node-07.md
-            - name: Bereinigen von Ressourcen
-              href: tutorial-vscode-docker-node-08.md
-        - name: Bereitstellen von App Service mit der Azure CLI
-          items:
-            - name: Einführung und Voraussetzungen
-              href: tutorial-vscode-azure-cli-node-01.md
-            - name: Erstellen der App
-              href: tutorial-vscode-azure-cli-node-02.md
-            - name: Erstellen der App Service-Instanz
-              href: tutorial-vscode-azure-cli-node-03.md
-            - name: Bereitstellen der App
-              href: tutorial-vscode-azure-cli-node-04.md
-            - name: Streaming von Protokollen
-              href: tutorial-vscode-azure-cli-node-05.md
-            - name: Vornehmen von Änderungen und erneutes Bereitstellen
-              href: tutorial-vscode-azure-cli-node-06.md
-            - name: Bereinigen von Ressourcen
-              href: tutorial-vscode-azure-cli-node-07.md
-        - name: Erstellen einer statischen Website über Azure Storage
-          items:
-            - name: Einführung und Voraussetzungen
-              href: tutorial-vscode-static-website-node-01.md
-            - name: Erstellen des App-Codes
-              href: tutorial-vscode-static-website-node-02.md
-            - name: Erstellen eines Speicherkontos
-              href: tutorial-vscode-static-website-node-03.md
-            - name: Bereitstellen in Azure Storage
-              href: tutorial-vscode-static-website-node-04.md
-            - name: Vornehmen von Änderungen und erneutes Bereitstellen
-              href: tutorial-vscode-static-website-node-05.md
-            - name: Bereinigen von Ressourcen
-              href: tutorial-vscode-static-website-node-06.md
+            - name: 'Client-App: Cognitive Services'
+              items:
+                - name: 1. Einführung und Voraussetzungen
+                  href: tutorial/static-web-app/introduction.md
+                - name: 2. Herunterladen und lokales Ausführen der App
+                  href: tutorial/static-web-app/run-the-react-cognitive-services-image-analyzer-app-locally.md
+                - name: 3. Erstellen einer Ressource für maschinelles Sehen
+                  href: tutorial/static-web-app/create-computer-vision-resource-use-in-code.md
+                - name: 4. Erstellen und Bereitstellen einer statischen Web-App
+                  href: tutorial/static-web-app/create-static-web-app-visual-studio-code-extension.md
+                - name: 5. Überprüfen des React-Codes für maschinelles Sehen
+                  href: tutorial/static-web-app/add-computer-vision-react-app.md
+                - name: 6. Bereinigen von Ressourcen
+                  href: tutorial/static-web-app/clean-up-resources.md
+            - name: 'Client-App: Hochladen in den Speicher'
+              href: tutorial/browser-file-upload-azure-storage-blob.md
+            - name: 'Client-App: Schaltfläche „Anmelden“ hinzufügen'
+              href: tutorial/single-page-application-azure-login-button-sdk-msal.md
+            - name: 'Client-App: Hosten über Azure Storage'
+              items:
+                - name: Einführung und Voraussetzungen
+                  href: tutorial-vscode-static-website-node-01.md
+                - name: Erstellen des App-Codes
+                  href: tutorial-vscode-static-website-node-02.md
+                - name: Erstellen eines Speicherkontos
+                  href: tutorial-vscode-static-website-node-03.md
+                - name: Bereitstellen in Azure Storage
+                  href: tutorial-vscode-static-website-node-04.md
+                - name: Vornehmen von Änderungen und erneutes Bereitstellen
+                  href: tutorial-vscode-static-website-node-05.md
+                - name: Bereinigen von Ressourcen
+                  href: tutorial-vscode-static-website-node-06.md
+            - name: 'Serverlos: Erstellen und Bereitstellen'
+              items:
+                - name: 1. Einführung und Voraussetzungen
+                  href: tutorial/tutorial-vscode-serverless-node-install.md
+                - name: 2. Erstellen der Funktions-App
+                  href: tutorial/tutorial-vscode-serverless-node-create-local.md
+                - name: 3. Lokales Testen der Funktion
+                  href: tutorial/tutorial-vscode-serverless-node-test-local.md
+                - name: 4. Bereitstellen der Funktions-App
+                  href: tutorial/tutorial-vscode-serverless-node-deploy-hosting.md
+                - name: 5. Bereinigen von Ressourcen
+                  href: tutorial/tutorial-vscode-serverless-node-remove-resource.md
+            - name: 'Server:  Express.js/MongoDB'
+              href: tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md
+            - name: 'Server:  Bereitstellen von Express.js mit VS Code'
+              items:
+                - name: Einführung und Voraussetzungen
+                  href: tutorial-vscode-azure-app-service-node-01.md
+                - name: Erstellen der App
+                  href: tutorial-vscode-azure-app-service-node-02.md
+                - name: Bereitstellen der Website
+                  href: tutorial-vscode-azure-app-service-node-03.md
+                - name: Streaming von Protokollen
+                  href: tutorial-vscode-azure-app-service-node-04.md
+                - name: Bereinigen von Ressourcen
+                  href: tutorial-vscode-azure-app-service-node-05.md
+            - name: 'Server:  Bereitstellen mit der Azure-Befehlszeilenschnittstelle (Azure CLI)'
+              items:
+                - name: Einführung und Voraussetzungen
+                  href: tutorial-vscode-azure-cli-node-01.md
+                - name: Erstellen der App
+                  href: tutorial-vscode-azure-cli-node-02.md
+                - name: Erstellen der App Service-Instanz
+                  href: tutorial-vscode-azure-cli-node-03.md
+                - name: Bereitstellen der App
+                  href: tutorial-vscode-azure-cli-node-04.md
+                - name: Streaming von Protokollen
+                  href: tutorial-vscode-azure-cli-node-05.md
+                - name: Vornehmen von Änderungen und erneutes Bereitstellen
+                  href: tutorial-vscode-azure-cli-node-06.md
+                - name: Bereinigen von Ressourcen
+                  href: tutorial-vscode-azure-cli-node-07.md
+            - name: "Server:  Bereitstellen von Deno über die Azure\_CLI"
+              href: tutorial/deploy-deno-app-azure-app-service-azure-cli.md
+            - name: 'Container: Bereitstellen von Express.js mit VS Code'
+              items:
+                - name: Einführung und Voraussetzungen
+                  href: tutorial-vscode-docker-node-01.md
+                - name: Verwenden einer Containerregistrierung
+                  href: tutorial-vscode-docker-node-02.md
+                - name: Erstellen einer lokalen Node.js-App
+                  href: tutorial-vscode-docker-node-03.md
+                - name: Erstellen des App-Images
+                  href: tutorial-vscode-docker-node-04.md
+                - name: Bereitstellen des App-Images
+                  href: tutorial-vscode-docker-node-05.md
+                - name: Vornehmen von Änderungen und erneutes Bereitstellen
+                  href: tutorial-vscode-docker-node-06.md
+                - name: Streaming von Protokollen
+                  href: tutorial-vscode-docker-node-07.md
+                - name: Bereinigen von Ressourcen
+                  href: tutorial-vscode-docker-node-08.md
+            - name: 'VM: Bereitstellen des Containers mit Protokollierung'
+              items:
+                - name: 1. Einführung und Voraussetzungen
+                  href: tutorial/nodejs-virtual-machine-vm/introduction.md
+                - name: 2. Erstellen einer Application Insights-Ressource
+                  href: tutorial/nodejs-virtual-machine-vm/create-azure-monitoring-application-insights-web-resource.md
+                - name: 3. Erstellen eines virtuellen Computers
+                  href: tutorial/nodejs-virtual-machine-vm/create-linux-virtual-machine-azure-cli.md
+                - name: 4. Herstellen einer Verbindung mit einem virtuellen Linux-Computer
+                  href: tutorial/nodejs-virtual-machine-vm/connect-linux-virtual-machine-ssh.md
+                - name: 5. Hinzufügen von Cloudprotokollierung zur App
+                  href: tutorial/nodejs-virtual-machine-vm/azure-monitor-application-insights-nodejs-expressjs-code.md
+                - name: 6. Anzeigen von Protokollen
+                  href: tutorial/nodejs-virtual-machine-vm/azure-monitor-application-insights-logs.md
+                - name: 7. Bereinigen von Ressourcen
+                  href: tutorial/nodejs-virtual-machine-vm/clean-up-resources.md
     - name: Learn
       href: learn-azure-javascript.md
-    - name: Azure-Tools
-      href: node-azure-tools.md
     - name: Anleitungen
       items:
         - name: End-to-End-Verwendung von Node.js mit VS Code
