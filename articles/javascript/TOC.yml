@@ -131,6 +131,8 @@
       href: learn-azure-javascript.md
     - name: Anleitungen
       items:
+        - name: Konfigurieren Ihrer App
+          href: how-to/configure-web-app-settings.md
         - name: End-to-End-Verwendung von Node.js mit VS Code
           href: how-to/develop-nodejs-on-azure.md
         - name: Bereitstellen einer Web-App
