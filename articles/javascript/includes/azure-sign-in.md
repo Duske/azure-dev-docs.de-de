@@ -1,13 +1,13 @@
 ---
 ms.custom: devx-track-js
 ms.topic: include
-ms.date: 010/16/2020
-ms.openlocfilehash: fb1c04fe82b67076ca38ef353daf7260544a5881
-ms.sourcegitcommit: 8a2a7df568c69fff2080ffab248409040efda1ac
+ms.date: 10/16/2020
+ms.openlocfilehash: 624ba9739549b260018e05450598d17460f2e5d8
+ms.sourcegitcommit: c1ef7aa8ed2e88e98b190e42cffde52cf301958d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92179315"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97096418"
 ---
 Wenn Sie die Azure-Diensterweiterungen bereits verwenden, sollten Sie bereits angemeldet sein, und Sie können diesen Schritt überspringen. Wenn Sie die Azure-Diensterweiterungen nicht verwenden, fahren Sie mit diesem Abschnitt fort, um sich bei Azure anzumelden.
 
