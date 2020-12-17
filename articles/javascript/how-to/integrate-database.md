@@ -1,33 +1,78 @@
 ---
-title: Verwenden von Azure-Datenbanken mit Node.js-Apps
+title: Datenbanken mit Node.js-Apps in Azure
 description: Azure bietet eine Vielzahl verschiedener Datenbanken für die Verwendung mit Web- und anderen Node.js-Apps an.
 ms.topic: how-to
-ms.date: 08/20/2019
+ms.date: 12/08/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: cc104e09cfcdebc221220769d1b1c33fa9ce173e
-ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
+ms.openlocfilehash: 2aae93a85ca505967f0c999be4addc78ac31ad02
+ms.sourcegitcommit: 1901759f41adfac3c3f2ff135bcf72206543b639
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92437180"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96933283"
 ---
-# <a name="how-to-integrate-azure-databases-in-nodejs-apps"></a>Integrieren von Azure-Datenbanken in Node.js-Apps
+# <a name="integrate-databases-in-nodejs-apps"></a>Integrieren von Datenbanken in Node.js-Apps
+
+Azure-Datenbanken stellen eine hervorragende verwaltete Clouddatenlösung zusammen mit einer nativen API oder einem Azure SDK bereit, um eine Verbindung mit der Datenbank herzustellen. 
+
+## <a name="database-and-data-storage-solutions-on-azure"></a>Datenbank- und Datenspeicherlösungen in Azure
 
 Die folgende Tabelle enthält Links zu verschiedenen Artikeln zum Herstellen einer Verbindung mit und zur Verwendung von Azure-Datenbanken mit Node.js. Eine Liste zur Gegenüberstellung der verschiedenen Datenbankoptionen finden Sie unter [Datenbanken: Vollständig verwaltete intelligente Datenbankdienste](https://azure.microsoft.com/product-categories/databases/).
 
-| Dienst | Schnellstart | Beispiele |
+| Dienst | Schnellstart | npm-Paket |
 | --- | --- | --- |
-| **Cosmos DB** | [Erstellen einer Azure Cosmos DB-Web-App für Node.js](/azure/cosmos-db/create-sql-api-nodejs) | [Beispiele](/samples/browse/?languages=javascript%252cnodejs&products=azure-cosmos-db) |
-| **MongoDB** | [Erstellen einer Node.js- und MongoDB-Web-App](/azure/app-service-web/app-service-web-tutorial-nodejs-mongodb-app) | [Beispiele](/samples/browse/?languages=javascript%252cnodejs&term=Mongo%2bDB) |
-| **Redis Cache** | [Erstellen und Nutzen eines Redis-Cache](/azure/redis-cache/cache-nodejs-get-started) | |
-| **Azure SQL-Datenbank** | [Abfragen einer Azure SQL-Datenbank mithilfe von Node.js](/azure/sql-database/sql-database-connect-query-nodejs) | [Beispiele](/samples/browse/?languages=javascript%252cnodejs&products=azure-sql-database) | |
-| **MySQL** | [Verwenden von Node.js zum Herstellen einer Verbindung und Abfragen von Daten](/azure/mysql/connect-nodejs) | |
-| **PostgreSQL** | [Verwenden von Node.js zum Herstellen einer Verbindung und Abfragen von Daten](/azure/postgresql/connect-nodejs) | |
+| **SQL Server** in Cosmos DB| [Erstellen einer Azure Cosmos DB-Web-App für Node.js mit SQL Server](/azure/cosmos-db/create-sql-api-nodejs) | [@azure/cosmos](https://www.npmjs.com/package/@azure/cosmos) |
+| **MongoDB** in Cosmos DB| [Erstellen einer Node.js- und MongoDB-Web-App](/azure/app-service-web/app-service-web-tutorial-nodejs-mongodb-app) | beliebiger MongoDB-Client |
+| **Cassandra** in Cosmos DB|[Erstellen einer Cassandra-App mit dem Node.js-SDK und Azure Cosmos DB](/azure/cosmos-db/create-cassandra-nodejs)|[npm cassandra-driver](https://www.npmjs.com/package/cassandra-driver)|
+| **Gremlin** in Cosmos DB|[Erstellen einer Node.js-Anwendung mithilfe eines Gremlin-API-Kontos für Azure Cosmos DB](/azure/cosmos-db/create-graph-nodejs)|[npm gremlin](https://www.npmjs.com/package/gremlin)|
+| **Redis Cache** in Cosmos DB| [Erstellen und Nutzen eines Redis-Cache](/azure/redis-cache/cache-nodejs-get-started) | [npm redis](https://www.npmjs.com/package/redis)|
+| **Azure SQL-Datenbank** | [Abfragen einer Azure SQL-Datenbank mithilfe von Node.js](/azure/sql-database/sql-database-connect-query-nodejs) |[npm tedious](https://www.npmjs.com/package/tedious) |
+| **MySQL** | [Verwenden von Node.js zum Herstellen einer Verbindung und Abfragen von Daten](/azure/mysql/connect-nodejs) | [npm mysql](https://www.npmjs.com/package/mysql)|
+| **PostgreSQL** | [Verwenden von Node.js zum Herstellen einer Verbindung und Abfragen von Daten](/azure/postgresql/connect-nodejs) |[npm pg](https://www.npmjs.com/package/pg) |
+
+## <a name="cosmos-db-connection-strings-with-azure-cli"></a>Cosmos DB-Verbindungszeichenfolgen mit der Azure CLI
+
+Verwenden Sie den folgenden Befehl [az cosmosdb keys list](/cli/azure/cosmosdb?view=azure-cli-latest#az-cosmosdb-list-connection-strings):
+
+```azurecli-interactive
+az cosmosdb keys list \
+    -n $accountName \
+    -g $resourceGroupName \
+    --type connection-strings
+```
+
+## <a name="sql-connection-strings-with-azure-cli"></a>SQL-Verbindungszeichenfolgen mit der Azure CLI
+
+Verwenden Sie den folgenden Befehl [az sql db show-connection-string](/cli/azure/sql/db?view=azure-cli-latest#az_sql_db_show_connection_string):
+
+```azurecli-interactive
+az sql db show-connection-string \
+    --client {ado.net, jdbc, odbc, php, php_pdo, sqlcmd} \
+     [--auth-type {ADIntegrated, ADPassword, SqlPassword}] \
+     [--ids] \
+     [--name] \
+     [--server] \
+     [--subscription]
+```
+
+## <a name="mysql-username-and-password-with-azure-cli"></a>MySQL-Benutzername und -Kennwort mit der Azure CLI
+
+Diese werden zum [Zeitpunkt der Ressourcenerstellung](/cli/azure/mysql/server?view=azure-cli-latest#az_mysql_server_create) festgelegt. 
+
+## <a name="postgresql-username-and-password-with-azure-cli"></a>PostgreSQL-Benutzername und -Kennwort mit der Azure CLI
+
+Diese werden zum [Zeitpunkt der Ressourcenerstellung](/cli/azure/postgres/server?view=azure-cli-latest#az_postgres_server_create) festgelegt. 
+
+## <a name="azure-storage-solutions-for-files-and-data"></a>Azure Storage-Lösungen für Dateien und Daten
 
 Sie können auch Azure Storage zum Speichern von Dateien (Blobs), Tabellen und Warteschlangen (Nachrichten) verwenden:
 
-| Dienst | Schnellstart |
-| --- | --- |
-| **Blobs** | [Hochladen, Herunterladen, Auflisten und Löschen von Blobs mit Azure Storage v10 SDK für JavaScript](/azure/storage/blobs/storage-quickstart-blobs-nodejs-v10) |
-| **Warteschlangen** | [How to use Queue storage from Node.js (Verwenden von Queue Storage mit Node.js)](/azure/storage/queues/storage-nodejs-how-to-use-queues) |
-| **Tabellen** | [Gewusst wie: Verwenden von Table Storage mit Node.js](/azure/cosmos-db/table-storage-how-to-use-nodejs) |
+| Dienst | Schnellstart |Empfohlenes SDK |
+| --- | --- |--- |
+| **Blobs** | [Hochladen, Herunterladen, Auflisten und Löschen von Blobs mit Azure Storage v10 SDK für JavaScript](/azure/storage/blobs/storage-quickstart-blobs-nodejs-v10) |[@azure/storage-blob](https://www.npmjs.com/package/@azure/storage-blob)|
+| **Warteschlangen** | [How to use Queue storage from Node.js (Verwenden von Queue Storage mit Node.js)](/azure/storage/queues/storage-nodejs-how-to-use-queues) |[npm @azure/storage-queue](https://www.npmjs.com/package/@azure/storage-queue)|
+| **Tabellen** | [Gewusst wie: Verwenden von Table Storage mit Node.js](/azure/cosmos-db/table-storage-how-to-use-nodejs) |[npm azure-storage](https://www.npmjs.com/package/azure-storage)|
+
+## <a name="next-steps"></a>Nächste Schritte
+
+* [Schreiben von serverlosem Code](develop-serverless-apps.md) mit Azure Functions

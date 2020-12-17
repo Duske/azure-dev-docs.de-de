@@ -1,47 +1,62 @@
 ---
-title: Tools für JavaScript-Entwickler in Azure
+title: Toolauswahl – JavaScript – Azure
 description: Installieren der einzelnen Node.js- und JavaScript-Entwicklungstools in Azure
 ms.topic: reference
-ms.date: 10/30/2020
+ms.date: 12/07/2020
 ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js
-ms.openlocfilehash: 80b42337f6acccda4a6d85b64908107cb4230195
-ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
+ms.openlocfilehash: 714d096e4afde345bffa2582026f28fa2126a38c
+ms.sourcegitcommit: ae2fa266a36958c04625bb0ab212e6f2db98e026
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93066259"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96857792"
 ---
-# <a name="tools-for-javascript-developers"></a>Tools für JavaScript-Entwickler
-Die folgenden Tools werden für die Entwicklung von JavaScript-Apps in Azure empfohlen:
+# <a name="tools-for-javascript-developers-on-azure"></a>Tools für JavaScript-Entwickler in Azure 
+
+JavaScript ist ein Ökosystem mit zahlreichen Tools. In diesem Artikel wird eine Auswahl von Tools vorgestellt, die von Microsoft für JavaScript-Entwickler erstellt und verwaltet werden. Tools wurden für neue Azure-Dienste und Bereitstellungs-/Hostingszenarien verbessert. 
+
+Sie benötigen diese Tools nicht für die Verwendung von Azure. Sie ermöglichen lediglich eine bessere Nutzung in Bezug auf Funktionen und Unterstützung. 
+
+## <a name="azure-portal"></a>Azure-Portal
+
+Über das [Azure-Portal](https://portal.azure.com/) haben Sie Zugriff auf alle Abonnements und Ressourcen für Ihr Konto. 
 
 ## <a name="azure-cli"></a>Azure-Befehlszeilenschnittstelle
-Die Azure CLI ist für die Verwaltung von Azure-Ressourcen über die Befehlszeile optimiert.
+Die Azure CLI ist für die Verwaltung von Azure-Ressourcen über die Befehlszeile optimiert. 
 
-![Azure CLI für die Verwaltung von Azure-Ressourcen](media/node-azure-tools/azure-cli.png)
- 
-> [!div class="nextstepaction"]
-> [Installieren der Azure CLI 2.0](/cli/azure/install-az-cli2)
+Die Azure CLI ermöglicht die folgenden Verwendungsszenarien:
 
-> [!div class="nextstepaction"]
-> [Verwenden des Azure CLI 2.0-Containers](/cli/azure/run-azure-cli-docker)
+* [Lokale Installation](/cli/azure/install-az-cli2)
+* [Webshell](https://shell.azure.com/)
+* [Container](/cli/azure/run-azure-cli-docker)
+
+Bei Verwendung des Azure-Portals steht die Azure CLI im Portal über die obere Navigationsleiste zur Verfügung.
+
+:::image type="content" source="media/azure-tools/azure-portal-select-azure-cloud-shell.png" alt-text="Bei Verwendung des Azure-Portals steht die Azure CLI im Portal über die obere Navigationsleiste zur Verfügung.":::
 
 ## <a name="typescript"></a>TypeScript
 
-Die Beziehung zwischen [TypeScript](https://www.typescriptlang.org/) und JavaScript ist ungewöhnlich. TypeScript verfügt über alle Features von JavaScript, aber zusätzlich noch über eine weitere Ebene: das Typsystem von TypeScript.
+[TypeScript](https://www.typescriptlang.org/download) verfügt über alle Features von JavaScript, aber zusätzlich noch über eine weitere Ebene: das Typsystem von TypeScript. Ihr vorhandener funktionierender JavaScript-Code ist gleichzeitig TypeScript-Code. Der Hauptvorteil von TypeScript besteht darin, dass auf unerwartetes Verhalten in Ihrem Code hingewiesen werden kann, um die Fehlerwahrscheinlichkeit zu verringern.
 
-Dies bedeutet, dass Ihr vorhandener funktionierender JavaScript-Code gleichzeitig TypeScript-Code ist. Der Hauptvorteil von TypeScript besteht darin, dass auf unerwartetes Verhalten in Ihrem Code hingewiesen werden kann, um die Fehlerwahrscheinlichkeit zu verringern.
+## <a name="typescript-and-the-azure-sdk-client-libraries"></a>TypeScript und die Azure SDK-Clientbibliotheken
 
-> [!div class="nextstepaction"]
-> [TypeScript-Installation](https://www.typescriptlang.org/download)
+Die Referenzdokumentation zu den Azure SDK-Clientbibliothek wird für TypeScript geschrieben, da die Clientbibliotheken mit TypeScript geschrieben werden. Sie müssen nicht TypeScript verwenden, um die Azure SDK-Clientbibliotheken verwenden zu können. 
 
+Erfahren Sie mehr über die [TypeScript-Richtlinien für das Azure SDK](https://azure.github.io/azure-sdk/typescript_introduction.html).
 
 ## <a name="visual-studio-code"></a>Visual Studio Code
-Bearbeiten und debuggen Sie JavaScript-Apps unter allen Betriebssystemen.
 
-![Bearbeiten von JavaScript mithilfe von Visual Studio Code](media/node-azure-tools/visual-studio-code-debug-javascript.png)
+[Visual Studio Code](https://code.visualstudio.com) ist die bevorzugte IDE für die JavaScript-Entwicklung für Azure. Die Schnittstelle, Features und Erweiterungen wirken zusammen, um die Entwicklungszeit zu verkürzen und Frustration bei der Entwicklung zu verringern. 
 
-> [!div class="nextstepaction"]
-> [Visual Studio Code herunterladen](https://code.visualstudio.com)
+Erstellen Sie im Stammverzeichnis des lokalen Entwicklungsprojekts einen Projektarbeitsbereich, und fügen Sie dann alle relevanten Konfigurationen, Einstellungen und Erweiterungen hinzu. Checken Sie die Arbeitsbereichsdatei mit dem Projekt ein, damit jedes Teammitglied Zugriff auf die Einstellungen und Tools hat, die für das Projekt erforderlich sind.
+
+Mit Visual Studio Code haben Sie mehrere Vorteile:
+
+* In Visual Studio Code wird die Azure-Referenzdokumentation inline angezeigt.
+* Visual Studio Code bietet Anweisungsvervollständigung.
+* Wenige mehrdeutige Typen oder Objekte
+
+Visual Studio Code bietet umfassende Dokumentation für die [JavaScript-Projektnutzung](https://code.visualstudio.com/docs/nodejs/working-with-javascript). 
 
 ## <a name="visual-studio-code-extensions"></a>Erweiterungen für Visual Studio Code
 Verwenden Sie die folgenden kostenlosen Erweiterungen für die direkte Kommunikation mit Azure in Visual Studio Code.

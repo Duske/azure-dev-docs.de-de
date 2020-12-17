@@ -3,17 +3,24 @@ title: 'Neuerungen in der JavaScript-Dokumentation: '
 description: Neuerungen in der JavaScript-Dokumentation für Oktober 2020
 ms.topic: conceptual
 ms.date: 11/13/2020
-ms.openlocfilehash: db784cead94e66fd69232abd782039891ab7e63e
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: f54af7f5f89b38cc32191fc2acd4f32e386c29fb
+ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983669"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96759287"
 ---
 # <a name="javascript-docs-whats-new-for-october-2020"></a>JavaScript-Dokumentation: Neuerungen im Oktober 2020
 
 Hier finden Sie neue und aktualisierte Inhalte für JavaScript- und TypeScript-Entwickler.
 
+## <a name="2020-december"></a>Dezember 2020
+
+### <a name="whats-new"></a>Neues
+
+|Name|Notizen|
+|---------------------------------------|--|
+|[Tutorial: Hinzufügen einer Anmeldeschaltfläche zu einer statischen React-Web-App für die Microsoft-Authentifizierung](./tutorial/single-page-application-azure-login-button-sdk-msal.md)|Bei der in diesem Tutorial beschriebenen Azure-Authentifizierung geht es um eine Anmelde- und Abmeldeschaltfläche und um den Zugriff auf das Konto eines Benutzers. Entwickeln Sie die Anwendung mit einem clientseitigen Azure-SDK (`@azure/msal-browser`), um die Interaktion des Benutzers in der Single-Page-Webanwendung (SPA) zu verwalten.|
 
 ## <a name="2020-november"></a>November 2020
 
@@ -40,8 +47,8 @@ Willkommen bei den Neuerungen für die JavaScript-Dokumentation ab Oktober 2020
 
 |Name|Notizen|
 |---------------------------------------|--|
-|[Tutorial: Hochladen eines Bilds in Blob Storage](./tutorial/browser-file-upload.yml?preview=tutorialFeedback)|In diesem Tutorial wird eine **React-App** verwendet, um eine Datei in ein Blob vom Typ **Azure Storage** hochzuladen. Die Programmieraufgaben wurden für Sie erledigt. Dieses Tutorial konzentriert sich auf die erfolgreiche Verwendung der lokalen und der Azure-Remoteumgebungen in Visual Studio Code mit Azure-Erweiterungen.|
-|[Tutorial: Bereitstellen einer Node.js MongoDB-App in Azure App Service aus Visual Studio Code](./tutorial/web-app-mongodb.yml?preview=tutorialFeedback)|In diesem Tutorial wird eine **Node.js-Express-App** mit einer **MongoDB-Datenbank** und der nativen MongoDB-API verwendet. Stellen Sie die Node.js-Anwendung in Azure App Service (unter Linux) bereit, und überprüfen Sie dann, ob die cloudbasierte App funktioniert. Die Programmieraufgaben wurden für Sie erledigt. Dieses Tutorial konzentriert sich auf die erfolgreiche Verwendung der lokalen und der Azure-Remoteumgebungen in Visual Studio Code mit Azure-Erweiterungen.|
+|[Tutorial: Hochladen eines Bilds in Blob Storage](./tutorial/browser-file-upload-azure-storage-blob.md)|In diesem Tutorial wird eine **React-App** verwendet, um eine Datei in ein Blob vom Typ **Azure Storage** hochzuladen. Die Programmieraufgaben wurden für Sie erledigt. Dieses Tutorial konzentriert sich auf die erfolgreiche Verwendung der lokalen und der Azure-Remoteumgebungen in Visual Studio Code mit Azure-Erweiterungen.|
+|[Tutorial: Bereitstellen von Node.js mit einer Datenbank-App in App Service über Visual Studio Code](./tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md)|In diesem Tutorial wird eine **Express.js**-Node.js-App mit einer **MongoDB-Datenbank** und der nativen MongoDB-API verwendet. Stellen Sie die Node.js-Anwendung in Azure App Service (unter Linux) bereit, und überprüfen Sie dann, ob die cloudbasierte App funktioniert. Die Programmieraufgaben wurden für Sie erledigt. Dieses Tutorial konzentriert sich auf das Erstellen der Azure-Ressourcen und das Bereitstellen in Azure über Visual Studio Code mit Azure-Erweiterungen.|
 
 ### <a name="whats-updated"></a>Aktualisierungen
 
