@@ -42,17 +42,17 @@
             - name: 'Client-App: Hosten über Azure Storage'
               items:
                 - name: Einführung und Voraussetzungen
-                  href: tutorial-vscode-static-website-node-01.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-01.md
                 - name: Erstellen des App-Codes
-                  href: tutorial-vscode-static-website-node-02.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-02.md
                 - name: Erstellen eines Speicherkontos
-                  href: tutorial-vscode-static-website-node-03.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-03.md
                 - name: Bereitstellen in Azure Storage
-                  href: tutorial-vscode-static-website-node-04.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-04.md
                 - name: Vornehmen von Änderungen und erneutes Bereitstellen
-                  href: tutorial-vscode-static-website-node-05.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-05.md
                 - name: Bereinigen von Ressourcen
-                  href: tutorial-vscode-static-website-node-06.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-06.md
             - name: 'Serverlos: Erstellen und Bereitstellen'
               items:
                 - name: 1. Einführung und Voraussetzungen
@@ -90,21 +90,21 @@
             - name: 'Container: Bereitstellen von Express.js mit VS Code'
               items:
                 - name: Einführung und Voraussetzungen
-                  href: tutorial-vscode-docker-node-01.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-01.md
                 - name: Verwenden einer Containerregistrierung
-                  href: tutorial-vscode-docker-node-02.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-02.md
                 - name: Erstellen einer lokalen Node.js-App
-                  href: tutorial-vscode-docker-node-03.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-03.md
                 - name: Erstellen des App-Images
-                  href: tutorial-vscode-docker-node-04.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-04.md
                 - name: Bereitstellen des App-Images
-                  href: tutorial-vscode-docker-node-05.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-05.md
                 - name: Vornehmen von Änderungen und erneutes Bereitstellen
-                  href: tutorial-vscode-docker-node-06.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-06.md
                 - name: Streaming von Protokollen
-                  href: tutorial-vscode-docker-node-07.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-07.md
                 - name: Bereinigen von Ressourcen
-                  href: tutorial-vscode-docker-node-08.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-08.md
             - name: 'VM: Bereitstellen des Containers mit Protokollierung'
               items:
                 - name: 1. Einführung und Voraussetzungen

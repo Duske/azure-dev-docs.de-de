@@ -49,6 +49,10 @@
           href: create-vm-scaleset-network-disks-hcl.md
         - name: VM-Skalierungsgruppe über Packer-Image
           href: create-vm-scaleset-network-disks-using-packer-hcl.md
+    - name: Sicherheit
+      items:
+        - name: Azure Attestation
+          href: create-attestation-provider.md
 - name: Tutorials
   items:
     - name: Netzwerke
