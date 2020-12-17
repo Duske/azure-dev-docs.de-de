@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie die Dienstprinzipalauthentifizierung mit
 ms.topic: how-to
 ms.date: 11/05/2020
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: e837ca7f83f115a9d7c2bbe34e46d884a02dffe0
-ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
+ms.openlocfilehash: dc9b82ad8e664beeeedaa0002f76457bb01793e3
+ms.sourcegitcommit: c1ef7aa8ed2e88e98b190e42cffde52cf301958d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94872771"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97034501"
 ---
 # <a name="create-an-azure-service-principal-for-nodejs"></a>Erstellen eines Azure-Dienstprinzipals für Node.js
 
@@ -23,8 +23,6 @@ In diesem Thema werden drei Methoden zum Erstellen eines Dienstprinzipals erläu
 
 - Azure-Portal
 - Azure CLI 2.0
-
-[!INCLUDE [chrome-note](../includes/chrome-note.md)]
 
 ## <a name="create-a-service-principal-using-the-azure-cli-20"></a>Erstellen eines Dienstprinzipals mit der Azure CLI 2.0
 

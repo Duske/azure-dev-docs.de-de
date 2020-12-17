@@ -3,13 +3,13 @@ title: Lokale Ausführung der Azure Functions-Anwendung in Visual Studio Code
 description: Führen Sie das Azure Functions-Projekt lokal aus, um es vor der Bereitstellung in Azure zu testen. Legen Sie direkt vor der Antwortrückgabe durch die serverlose Funktion einen Haltepunkt fest.
 ms.topic: tutorial
 ms.date: 09/23/2019
-ms.custom: devx-track-js, contperfq2
-ms.openlocfilehash: 031c7a3d2d7ec6cf9c1afadf1d77d67d826853fd
-ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
+ms.custom: devx-track-js, contperf-fy21q2
+ms.openlocfilehash: f345e27074c2070c2f8d8939ed09f8b4301a1966
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94338546"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522338"
 ---
 # <a name="3-test-the-function-locally"></a>3. Lokales Testen der Funktion
 

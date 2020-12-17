@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie einen virtuellen Linux-Computer mit eine
 ms.topic: tutorial
 ms.date: 11/13/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 835a452e87fed88ac83085c882a5a40461bd2dd0
-ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
+ms.openlocfilehash: 674bf37acda9fcd9f6df7b84602600ad65ada3d9
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94623176"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522124"
 ---
 # <a name="1-create-linux-virtual-machine-with-expressjs-app-using-azure-cli"></a>1. Erstellen eines virtuellen Linux-Computers mit Express.js-App mithilfe der Azure CLI
 
@@ -37,8 +37,9 @@ Dieses Lernprogramm enthält die folgenden Aufgaben:
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-* Installierte [Azure CLI](/cli/azure/install-azure-cli) zum Ausführen von Azure CLI-Befehlen
-* SSH zum Herstellen einer Verbindung mit dem virtuellen Computer: Verwenden Sie ein modernes Terminal (beispielsweise Bash-Shell), das SSH beinhaltet.
+- SSH zum Herstellen einer Verbindung mit dem virtuellen Computer: Verwenden Sie ein modernes Terminal (beispielsweise Bash-Shell), das SSH beinhaltet.
+[!INCLUDE [Azure CLI](../../../includes/azure-cli-prepare-your-environment-no-header.md)]
+
 
 ## <a name="next-step"></a>Nächster Schritt
 

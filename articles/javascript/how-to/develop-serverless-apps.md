@@ -3,13 +3,13 @@ title: Serverloser Node.js-Code mit Azure Functions
 description: Azure Functions bietet eine serverlose Codeinfrastruktur für die Erstellung dynamischer bedarfsgesteuerter HTTP-Endpunkte.
 ms.topic: how-to
 ms.date: 10/27/2020
-ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, contperfq2
-ms.openlocfilehash: eb33717761d492051737b0c4ec86a93a6e2b6256
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, contperf-fy21q2
+ms.openlocfilehash: b90837cdb144e433a7d776e571291ff09610a845
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192542"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522306"
 ---
 # <a name="use-azure-functions-to-develop-nodejs-serverless-code"></a>Entwickeln von serverlosem Node.js-Code mithilfe von Azure Functions
 
