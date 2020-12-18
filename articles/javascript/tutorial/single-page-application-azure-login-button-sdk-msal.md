@@ -1,19 +1,19 @@
 ---
 title: 'Tutorial: Hinzufügen einer Microsoft-Anmeldeschaltfläche zur React-SPA'
-description: Bei der in diesem Tutorial beschriebenen Azure Active Directory-Authentifizierung geht es um eine Schaltfläche zum An- und Abmelden und um den Zugriff auf den Benutzernamen (E-Mail-Adresse) eines Benutzers. Entwickeln Sie die Anwendung mit einem clientseitigen Azure-SDK (`@azure/msal-browser`), um die Interaktion des Benutzers in der Single-Page-Webanwendung (SPA) zu verwalten.
+description: Bei der in diesem Tutorial beschriebenen Azure Active Directory-Authentifizierung geht es um eine Schaltfläche zum An- und Abmelden und um den Zugriff auf den Benutzernamen (E-Mail-Adresse) eines Benutzers. Entwickeln Sie die TypeScript-Anwendung mit einem clientseitigen Azure-SDK (`@azure/msal-browser`), um die Interaktion des Benutzers in der Single-Page-Webanwendung (SPA) zu verwalten.
 ms.topic: tutorial
 ms.date: 12/01/2020
 ms.custom: devx-track-js, "azure-sdk-javascript-@azure/msal-browser-2.7.0"
-ms.openlocfilehash: a5c07696c6c774408bf2772542234e59f5c0b58c
-ms.sourcegitcommit: 09b4a2dbe13601fdf16fcc4082a5075b46ad3459
+ms.openlocfilehash: e6d91f1654b14d7b83c7ae2fa2c0a313914314b2
+ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96563725"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97393889"
 ---
 # <a name="add-microsoft-login-button-to-a-single-page-application-for-authentication"></a>Hinzufügen einer Microsoft-Anmeldeschaltfläche zu einer Single-Page-Webanwendung für die Authentifizierung
 
-Bei der in diesem Tutorial beschriebenen Azure-Authentifizierung geht es um eine Anmelde- und Abmeldeschaltfläche und um den Zugriff auf das Konto eines Benutzers. Entwickeln Sie die Anwendung mit einem clientseitigen Azure-SDK (`@azure/msal-browser`), um die Interaktion des Benutzers in der Single-Page-Webanwendung (SPA) zu verwalten.
+Bei der in diesem TypeScript-Tutorial beschriebenen Azure-Authentifizierung geht es um eine Anmelde- und Abmeldeschaltfläche und um den Zugriff auf das Konto eines Benutzers. Entwickeln Sie die Anwendung mit einem clientseitigen Azure-SDK (`@azure/msal-browser`), um die Interaktion des Benutzers in der Single-Page-Webanwendung (SPA) zu verwalten.
 
 * [Quellcode](https://github.com/Azure-Samples/js-e2e-client-azure-login-button)
 
@@ -49,7 +49,7 @@ Legen Sie einen Speicherort fest, an den Sie den Wert der App-Client-ID kopieren
 
    | Feld                   | Wert                                                                                                                                                                      |BESCHREIBUNG|
    | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |--|
-   | Name                    | `Simple Auth Tutorial`|Dies ist der App-Name, der Benutzern beim Anmelden bei Ihrer App im Berechtigungsformular angezeigt wird.                                                 |
+   | name                    | `Simple Auth Tutorial`|Dies ist der App-Name, der Benutzern beim Anmelden bei Ihrer App im Berechtigungsformular angezeigt wird.                                                 |
    | Unterstützte Kontotypen | **Konten in einem beliebigen Organisationsverzeichnis (beliebiges Azure AD-Verzeichnis – mehrinstanzenfähig) und persönliche Microsoft-Konten**|Hierdurch sind die meisten Kontotypen abgedeckt. |
    | Typ des Umleitungs-URI           | **Single-Page-Anwendung (SPA)**                                                                                        | |
    | Wert des Umleitungs-URI           | `http://localhost:3000` | Die URL, zu der nach der erfolgreichen oder fehlgeschlagenen Authentifizierung zurückgekehrt werden soll.                                                                                        |

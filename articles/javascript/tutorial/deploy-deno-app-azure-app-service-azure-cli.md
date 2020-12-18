@@ -4,12 +4,12 @@ description: In diesem Tutorial stellen Sie eine Deno-Anwendung mithilfe der Azu
 ms.topic: tutorial
 ms.date: 10/13/2020
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript
-ms.openlocfilehash: ba2e0a42b6d2dedd2192629562a8415a0d6d7167
-ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
+ms.openlocfilehash: 16cb388a9a61b0141f04364dc1489607565156a3
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96772615"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522397"
 ---
 # <a name="deploy-deno-apps-to-azure-app-service-from-the-azure-cli"></a>Bereitstellen von Deno-Apps in Azure App Service über die Azure CLI
 
@@ -21,14 +21,9 @@ Stellen Sie mithilfe der Azure CLI eine Deno-Anwendung in Azure App Service (u
 
 - Ein Azure-Konto mit einem aktiven Abonnement. [Kostenloses Konto erstellen](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-appservice-deno&mktingSource=vscode-tutorial-appservice-deno)
 - Installieren Sie [Visual Studio Code](https://code.visualstudio.com/).
-- Installieren Sie [Deno](https://deno.land/#installation).
-- Verwenden Sie [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart) unter Nutzung der Bash-Umgebung.
+- Installieren Sie [Deno](https://deno.land/#installation)
+[!INCLUDE [Azure CLI](../../includes/azure-cli-prepare-your-environment-no-header.md)].
 
-   [![Start einbetten](https://shell.azure.com/images/launchcloudshell.png "Starten von Azure Cloud Shell")](https://shell.azure.com)   
-- Wenn Sie möchten, können Sie auch die Azure CLI [installieren](/cli/azure/install-azure-cli), um CLI-Verweisbefehle auszuführen.
-   - Wenn Sie eine lokale Installation verwenden, melden Sie sich mithilfe des Befehls [az login](/cli/azure/reference-index#az-login) bei der Azure CLI an.  Führen Sie die in Ihrem Terminal angezeigten Schritte aus, um den Authentifizierungsprozess abzuschließen.  Weitere Anmeldeoptionen finden Sie unter [Anmelden mit der Azure CLI](/cli/azure/authenticate-azure-cli).
-  - Installieren Sie die Azure CLI-Erweiterungen bei der ersten Verwendung, wenn Sie dazu aufgefordert werden.  Weitere Informationen zu Erweiterungen finden Sie unter [Verwenden von Erweiterungen mit der Azure CLI](/cli/azure/azure-cli-extensions-overview).
-  - Führen Sie [az version](/cli/azure/reference-index?#az_version) aus, um die installierte Version und die abhängigen Bibliotheken zu ermitteln. Führen Sie [az upgrade](/cli/azure/reference-index?#az_upgrade) aus, um das Upgrade auf die aktuelle Version durchzuführen.
 
 ## <a name="2-sign-in-to-azure-cli"></a>2. Anmelden bei der Azure-Befehlszeilenschnittstelle
 
@@ -162,6 +157,7 @@ az group delete deno-quickstart
 ## <a name="next-steps"></a>Nächste Schritte
 
 Weitere Informationen:
+* [Konfigurieren von App-Einstellungen](../how-to/configure-web-app-settings.md)
 * [Bereitstellen in App Service](../tutorial-vscode-azure-app-service-node-01.md) mit Visual Studio Code-Erweiterungen
 * [Bereitstellen auf einem virtuellen Computer](./nodejs-virtual-machine-vm/introduction.md)
 * [Bereitstellen einer Deno-Funktion](https://github.com/anthonychu/azure-functions-deno-worker) als [benutzerdefinierten Handler](/azure/azure-functions/functions-custom-handlers)

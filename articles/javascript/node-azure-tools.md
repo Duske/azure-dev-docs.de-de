@@ -4,12 +4,12 @@ description: Installieren der einzelnen Node.js- und JavaScript-Entwicklungstool
 ms.topic: reference
 ms.date: 12/07/2020
 ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js
-ms.openlocfilehash: 714d096e4afde345bffa2582026f28fa2126a38c
-ms.sourcegitcommit: ae2fa266a36958c04625bb0ab212e6f2db98e026
+ms.openlocfilehash: 20ec85ccd29c2993241d0ae6c4f004bd7ff251a3
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96857792"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522264"
 ---
 # <a name="tools-for-javascript-developers-on-azure"></a>Tools für JavaScript-Entwickler in Azure 
 
@@ -26,9 +26,9 @@ Die Azure CLI ist für die Verwaltung von Azure-Ressourcen über die Befehlszeil
 
 Die Azure CLI ermöglicht die folgenden Verwendungsszenarien:
 
-* [Lokale Installation](/cli/azure/install-az-cli2)
-* [Webshell](https://shell.azure.com/)
-* [Container](/cli/azure/run-azure-cli-docker)
+* [Lokale Installation der Azure CLI](/cli/azure/install-az-cli2)
+* [Azure Cloud Shell](https://shell.azure.com/)
+* [Docker-Container](/cli/azure/run-azure-cli-docker)
 
 Bei Verwendung des Azure-Portals steht die Azure CLI im Portal über die obere Navigationsleiste zur Verfügung.
 

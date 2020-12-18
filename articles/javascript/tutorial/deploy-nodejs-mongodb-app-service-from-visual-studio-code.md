@@ -4,12 +4,12 @@ description: Verwenden Sie in diesem Tutorial eine Node.js-App mit einer MongoDB
 ms.topic: tutorial
 ms.date: 12/03/2020
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript
-ms.openlocfilehash: 8c40801607e11a4b929f0bb76926122d26217805
-ms.sourcegitcommit: 550b165d0b910f4ea9652d8401dd4fc93f057f05
+ms.openlocfilehash: 1ddbe6a463f877e86a0c46da1ffb17c6a3094c0a
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96610968"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522403"
 ---
 # <a name="deploy-expressjs-mongodb-app-to-app-service-from-visual-studio-code"></a>Bereitstellen einer Express.js-MongoDB-App in App Service über Visual Studio Code
 
@@ -151,6 +151,7 @@ Nachdem Sie dieses Tutorial abgeschlossen haben, müssen Sie die beiden erstellt
 ## <a name="next-steps"></a>Nächste Schritte
 
 Informieren Sie sich ausführlicher über App Service und CosmosDB:
+* [Konfigurieren von App-Einstellungen](../how-to/configure-web-app-settings.md)
 * [Konfigurieren einer Node.js-App für Azure App Service](/azure/app-service/configure-language-nodejs?pivots=platform-linux)
 * [Verbinden mit SSH](/azure/app-service/configure-linux-open-ssh-session)
 * [Migrieren von Daten zu CosmosDB](/azure/dms/tutorial-mongodb-cosmos-db?toc=/azure/cosmos-db/toc.json?toc=/azure/cosmos-db/toc.json)

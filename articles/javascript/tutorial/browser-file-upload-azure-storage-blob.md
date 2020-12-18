@@ -1,21 +1,21 @@
 ---
 title: 'Hochladen eines Images in Blob Storage mit VSCode: App Service/CosmosDB'
-description: Verwenden Sie eine React-App, um eine Datei in Azure Storage-Blobs hochzuladen. Dieses Tutorial konzentriert sich auf die Verwendung von lokalen und Remoteumgebungen mit Visual Studio Code-Erweiterungen.
+description: Verwenden Sie eine React- oder TypeScript-App, um eine Datei in Azure Storage-Blobs hochzuladen. Dieses Tutorial konzentriert sich auf die Verwendung von lokalen und Remoteumgebungen mit Visual Studio Code-Erweiterungen.
 ms.topic: tutorial
 ms.date: 11/13/2020
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript, azure-sdk-storage-blob-typescript-version-12.2.1
-ms.openlocfilehash: 514c4cf3c5d54c30451759958b1cef5e465c5c8e
-ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
+ms.openlocfilehash: 2e38e7e293f87dc9fa8cafc69a0780a10d31d730
+ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96772607"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97393899"
 ---
 # <a name="upload-an-image-to-an-azure-storage-blob"></a>Hochladen eines Images in ein Azure Storage-Blob
 
 Verwenden Sie eine clientseitige React-App, um eine Imagedatei mithilfe eines Azure Storage-nmp-Pakets in ein Azure Storage-Blob hochzuladen. 
 
-Die Programmieraufgaben wurden für Sie erledigt. Dieses Tutorial konzentriert sich auf die erfolgreiche Verwendung der lokalen und der Azure-Remoteumgebungen in Visual Studio Code mit Azure-Erweiterungen.
+Die TypeScript-Programmieraufgaben wurden für Sie erledigt. Dieses Tutorial konzentriert sich auf die erfolgreiche Verwendung der lokalen Umgebung und der Azure-Remoteumgebungen in Visual Studio Code mit Azure-Erweiterungen.
 
 * [Quellcode](https://github.com/Azure-Samples/js-e2e-browser-file-upload-storage-blob)
 
@@ -23,7 +23,7 @@ Die Programmieraufgaben wurden für Sie erledigt. Dieses Tutorial konzentriert s
 
 Dieses Tutorial enthält mehrere **wichtige Azure-Aufgaben** für JavaScript-Entwickler:
 
-* Lokales Ausführen einer React-App mit Visual Studio Code
+* Lokales Ausführen einer React- oder TypeScript-App mit Visual Studio Code
 * Erstellen einer Storage-Ressource und Konfiguration für Dateiuploads
     * Konfigurieren von CORS
     * Erstellen eines SAS-Tokens (Shared Access Signatures)
@@ -188,7 +188,7 @@ Wenn Sie einen Fehler erhalten haben oder die Datei nicht in den Container hochg
 
 ## <a name="upload-button-functionality"></a>Funktionalität der Schaltfläche „Hochladen“
 
-Die Datei `src/app` wird als Teil der App-Erstellung mit create-reag-app bereitgestellt. Die Datei wurde geändert, um eine Schaltfläche für die Dateiauswahl und eine Schaltfläche für den Upload sowie den unterstützenden Code zur Bereitstellung dieser Funktionalität bereitzustellen. 
+Die TypeScript-Datei `src/App.tsx` wird als Teil der App-Erstellung mit create-reag-app bereitgestellt. Die Datei wurde geändert, um eine Schaltfläche für die Dateiauswahl und eine Schaltfläche für den Upload sowie den unterstützenden Code zur Bereitstellung dieser Funktionalität bereitzustellen. 
 
 Der Code, der eine Verbindung mit dem Azure Blob Storage-Code herstellt, ist hervorgehoben. Der Aufruf von `uploadFileToBlob` gibt alle Blobs (Dateien) im Container als unformatierte Liste zurück. Diese Liste wird mit der `DisplayImagesFromContainer`-Funktion angezeigt.
 
@@ -202,7 +202,7 @@ Das Beispiel erstellt und verwendet einen öffentlich zugänglichen Container un
 
 ### <a name="dependencies-and-variables"></a>Abhängigkeiten und Variablen
 
-Die Datei `uploadToBlob.ts` lädt die Abhängigkeiten und pullt die erforderlichen Variablen durch Umgebungsvariablen oder hartcodierte Zeichenfolgen.
+Die TypeScript-Datei `uploadToBlob.ts` lädt die Abhängigkeiten und pullt die erforderlichen Variablen durch Umgebungsvariablen oder hartcodierte Zeichenfolgen.
 
 | Variable | Beschreibung |
 |--|--|
