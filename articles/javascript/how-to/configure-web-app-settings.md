@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie allgemeine Konfigurationen für Ihre Web
 ms.topic: conceptual
 ms.date: 12/08/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 271c2b916062d9cbd2b905fb937c9fb216eb43e5
-ms.sourcegitcommit: 1901759f41adfac3c3f2ff135bcf72206543b639
+ms.openlocfilehash: 29c79317d5ccd2f65db6c23e28a852164c74b743
+ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96934294"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97394042"
 ---
 # <a name="hosting-web-apps-on-azure"></a>Hosten von Web-Apps in Azure
 
@@ -35,7 +35,7 @@ Die meisten Azure-Dienste bieten vier Möglichkeiten zum Konfigurieren von Einst
 
 * [Azure portal](https://portal.azure.com)
 * [Azure SDK](https://github.com/Azure/azure-sdk) für Wartungsaufgaben (in der Regel als Verwaltung gekennzeichnet)
-* [Azure-Befehlszeilenschnittstelle](/cli/azure/)
+* [Azure CLI](/cli/azure/)
 * [Azure PowerShell](/powershell/azure/)
 
 Viele Einstellungen können auch in Visual Studio Code mit [Erweiterungen](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) konfiguriert werden. 
@@ -80,7 +80,7 @@ Sollte Ihre App umgehend Zertifikate erfordern, haben Sie verschiedene Möglichk
 Geheimnisse werden in der Regel mit den folgenden Methoden bereitgestellt:
 
 * Azure Key Vault: Erstellen Sie eine Ressource für diesen Dienst, der [App-Geheimnisse](/azure/app-service/app-service-key-vault-references) bereitstellt. 
-* App-Einstellungen: Wenn Sie eine einfachere Lösung suchen, können Sie Geheimnisse als App-Einstellungen bereitstellen und darauf mithilfe der typischen Umgebungsvariablen `process.env.VARNAME` verweisen. 
+* App-Einstellungen: Wenn Sie eine einfachere Lösung suchen, können Sie Geheimnisse als App-Einstellungen bereitstellen und darauf mithilfe der typischen [Umgebungsvariablen](/azure/app-service/configure-language-nodejs?pivots=platform-windows) `process.env.VARNAME` verweisen. 
 
 ## <a name="configure-logging"></a>Konfigurieren der Protokollierung
 

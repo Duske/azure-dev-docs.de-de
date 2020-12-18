@@ -7,26 +7,28 @@ metadata:
   description: Unternehmen Sie mithilfe von Tutorials, Tools und der SDK-Referenz die ersten Schritte in der Entwicklung von Apps mit dem Azure SDK für JavaScript im Browser oder in Node.js.
   author: diberry
   ms.author: diberry
-  ms.date: 09/21/2020
+  ms.date: 012/16/2020
   ms.topic: landing-page
   ms.collection: collection
   ms.technology: azure
   ms.service: multiple
   ms.devlang: javascript
   ms.custom: 2020Aug21Redesign, devx-track-js
-  ms.openlocfilehash: c0e7382b6c04c20d65f41c1a5a41922a4b658de4
-  ms.sourcegitcommit: f723980ade4cbc13548a5d8ac3f3fa681b8a2dbd
+  ms.openlocfilehash: 55e5b258ccafc2fc9e93f8a27efbc5b543b6450d
+  ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 12/16/2020
-  ms.locfileid: "97601071"
+  ms.lasthandoff: 12/17/2020
+  ms.locfileid: "97636389"
 landingContent:
 - title: Neu bei Azure?
   linkLists:
   - linkListType: get-started
     links:
-    - text: Azure-Grundlagen
-      url: /learn/paths/azure-fundamentals/
+    - text: Was ist Azure?
+      url: core/what-is-azure-for-javascript-development.md
+    - text: Installieren von Node.js
+      url: core/install-nodejs-develop-azure-sdk-project.md
     - text: Einrichten der Entwicklungsumgebung
       url: core/configure-local-development-environment.md
     - text: Authentifizieren bei der Clientbibliothek
@@ -89,16 +91,16 @@ landingContent:
       url: /azure/cognitive-services/translator/quickstart-translator?pivots=programming-language-javascript
     - text: Erkennen von Objekten in einem Bild
       url: tutorial/static-web-app/introduction.md
-- title: Sicherheit, Messaging und Protokolle
+- title: Lernpfade und -module
   linkLists:
-  - linkListType: quickstart
+  - linkListType: learn
     links:
-    - text: Authentifizierung
-      url: /azure/active-directory/develop/quickstart-v2-javascript
-    - text: Nachrichtenwarteschlangen
-      url: /azure/service-bus-messaging/service-bus-nodejs-how-to-use-queues-new-package
-    - text: Protokollierung und Analyse
-      url: /azure/azure-monitor/learn/nodejs-quick-start
+    - text: Azure-Grundlagen
+      url: /learn/modules/intro-to-azure-fundamentals/
+    - text: Erstellen von JavaScript-Anwendungen mit Node.js
+      url: /learn/paths/build-javascript-applications-nodejs/
+    - text: Azure Static Web Apps
+      url: /learn/paths/azure-static-web-apps/
 - title: Verwenden von Azure-Clientbibliotheken (SDK)
   linkLists:
   - linkListType: get-started
