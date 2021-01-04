@@ -4,12 +4,12 @@ description: Die Hostingoptionen und Bereitstellungsszenarien umfassen mehrere D
 ms.topic: how-to
 ms.date: 12/09/2020
 ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, contperf-fy21q2
-ms.openlocfilehash: 9f9f28204abf8537aeda933083ca5802210b6c20
-ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
+ms.openlocfilehash: e2020d90260af4fbab8d6a37ef475eddb7754b90
+ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97522319"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97636525"
 ---
 # <a name="deploy-and-host-your-nodejs-apps-on-azure"></a>Bereitstellen und Hosten Ihrer Node.js-Apps in Azure
 
@@ -57,7 +57,7 @@ Gängige Methoden zum Verschieben von Dateien in die Azure-Cloud:
 |--|--|
 |[GitHub-Aktionen](/azure/app-service/deploy-github-actions?tabs=applevel)|Verwenden Sie diese Option für automatisierte oder ausgelöste Continuous Deployment-Vorgänge.|
 |[Visual Studio Code-Erweiterungen](https://marketplace.visualstudio.com/search?term=azure&target=VSCode&category=All%20categories&sortBy=Relevance)|Verwenden Sie diese Option für Bereitstellungen, die manuell, zu Testzwecken oder nur selten durchgeführt werden. Hierfür ist es erforderlich, dass Sie die Erweiterung für den Dienst lokal installiert haben.|
-|[Azure-Befehlszeilenschnittstelle](../tutorial-vscode-azure-cli-node-04.md)|Verwenden Sie diese Option für Bereitstellungen, die manuell oder nur selten durchgeführt werden. Hierfür ist es erforderlich, dass Sie die Erweiterung für den Dienst lokal installiert haben.|
+|[Azure-Befehlszeilenschnittstelle](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-04.md)|Verwenden Sie diese Option für Bereitstellungen, die manuell oder nur selten durchgeführt werden. Hierfür ist es erforderlich, dass Sie die Erweiterung für den Dienst lokal installiert haben.|
 
 Je nach Dienst können auch andere Bereitstellungsmethoden vorhanden sein. Für Azure App Service werden beispielsweise viele Bereitstellungsmethoden unterstützt:
 * [Per ZIP-Datei](/azure/app-service/deploy-zip)

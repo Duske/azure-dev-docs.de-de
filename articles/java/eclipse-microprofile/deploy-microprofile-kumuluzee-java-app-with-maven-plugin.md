@@ -7,16 +7,16 @@ ms.date: 06/10/2020
 ms.service: app-service
 ms.topic: article
 ms.custom: ''
-ms.openlocfilehash: bafc670e22838e7fe28965f993be9fa7aa343f12
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: fee8a9b121914e3360b19726b6069a6778cfea41
+ms.sourcegitcommit: 0d2ea78f18430c845a32e0d2311427ab81033465
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846631"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97754176"
 ---
 # <a name="deploy-a-kumuluzee-web-app-to-azure-app-service-with-maven"></a>Bereitstellen einer KumuluzEE-Web-App in Azure App Service mit Maven
 
-In dieser Schnellstartanleitung wird das [Maven-Plug-In für Azure App Service-Web-Apps](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme) verwendet, um eine KumuluzEE-Anwendung in [Azure App Service für Linux](/azure/app-service/containers/) bereitzustellen. Es empfiehlt sich, eine Java SE-Bereitstellung über [Tomcat- und WAR-Dateien](/azure/app-service/containers/quickstart-java) zu wählen, wenn Sie die Abhängigkeiten, Runtime und Konfiguration Ihrer App in einem einzigen bereitstellbaren Artefakt zusammenfassen möchten.
+In dieser Schnellstartanleitung wird das [Maven-Plug-In für Azure App Service-Web-Apps](https://github.com/microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md) verwendet, um eine KumuluzEE-Anwendung in [Azure App Service für Linux](/azure/app-service/containers/) bereitzustellen. Es empfiehlt sich, eine Java SE-Bereitstellung über [Tomcat- und WAR-Dateien](/azure/app-service/containers/quickstart-java) zu wählen, wenn Sie die Abhängigkeiten, Runtime und Konfiguration Ihrer App in einem einzigen bereitstellbaren Artefakt zusammenfassen möchten.
 
 Wenn Sie kein Azure-Abonnement besitzen, können Sie ein [kostenloses Konto](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) erstellen, bevor Sie beginnen.
 
@@ -306,7 +306,7 @@ Weitere Informationen zu den verschiedenen in diesem Artikel besprochenen Techno
 [Working with Azure DevOps and Java]: /azure/devops/
 [Maven]: http://maven.apache.org/
 [MSDN subscriber benefits]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
-[Maven Plugin for Azure Web Apps]: /java/api/overview/azure/maven/azure-webapp-maven-plugin/readme (Maven-Plug-In für Azure-Web-Apps)
+[Maven Plugin for Azure Web Apps]: https://github.com/microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md (Maven-Plug-In für Azure-Web-Apps)
 
 [Java Development Kit (JDK)]: ../fundamentals/java-jdk-long-term-support.md
 <!-- http://www.oracle.com/technetwork/java/javase/downloads/ -->
