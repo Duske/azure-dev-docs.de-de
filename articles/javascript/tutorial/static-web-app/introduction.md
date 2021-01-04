@@ -1,19 +1,19 @@
 ---
 title: Einführung und Voraussetzungen
-description: Hier erfahren Sie, wie Sie eine React-Clientanwendung lokal erstellen und mit einer GitHub-Aktion für eine statische Azure-Web-App bereitstellen.
+description: Hier erfahren Sie, wie Sie eine React-/TypeScript-Clientanwendung lokal erstellen und mit einer GitHub-Aktion für eine statische Azure-Web-App bereitstellen.
 ms.topic: tutorial
 ms.date: 11/13/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 1a034d2746fae453019325d01f20c7073a6ce9a3
-ms.sourcegitcommit: 09b4a2dbe13601fdf16fcc4082a5075b46ad3459
+ms.openlocfilehash: dd35ca0925b014d2fddeb064c8cbdbdea703697b
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96559255"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522348"
 ---
 # <a name="1-build-and-deploy-a-static-web-app-to-azure"></a>1. Erstellen und Bereitstellen einer statischen Web-App in Azure
 
-In diesem Tutorial erfahren Sie, wie Sie eine React-Clientanwendung lokal erstellen und mit einer GitHub-Aktion für eine statische Azure-Web-App bereitstellen. 
+In diesem Tutorial erfahren Sie, wie Sie eine React-/TypeScript-Clientanwendung lokal erstellen und mit einer GitHub-Aktion für eine statische Azure-Web-App bereitstellen. 
 
 Die React-App (create-react-app) umfasst folgende Funktionen: 
 * Anzeige einer Meldung, wenn Azure-Schlüssel und -Endpunkt für maschinelles Sehen von Cognitive Services nicht gefunden werden
@@ -36,12 +36,18 @@ Bei der Erstellung statischer Web-Apps stehen in Azure mehrere Optionen zur Verf
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
-- [Installieren Sie die Azure CLI](/cli/azure/install-azure-cli), oder verwenden Sie [Azure Cloud Shell](https://shell.azure.com).
 - [Node.js und npm](https://nodejs.org/en/download) (installiert auf Ihrem lokalen Computer)
 - [Visual Studio Code](https://code.visualstudio.com/) (installiert auf Ihrem lokalen Computer) 
     - [Azure Static Web Apps (Vorschauversion)](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps) zum Bereitstellen der React-App für die statische Azure-Web-App
 - [Git](https://git-scm.com/downloads) zum Pushen an GitHub, wodurch wiederum die GitHub-Aktion aktiviert wird
 - [GitHub-Konto](https://github.com/join) zum Forken und zum Pushen an ein Repository
+- Verwenden Sie [Azure Cloud Shell](/azure/cloud-shell/quickstart) unter Nutzung der Bash-Umgebung.
+
+   [![Start einbetten](https://shell.azure.com/images/launchcloudshell.png "Starten von Azure Cloud Shell")](https://shell.azure.com)   
+- Wenn Sie möchten, können Sie auch die Azure CLI [installieren](/cli/azure/install-azure-cli), um CLI-Verweisbefehle auszuführen.
+   - Wenn Sie eine lokale Installation verwenden, melden Sie sich mithilfe des Befehls [az login](/cli/azure/reference-index#az-login) bei der Azure CLI an.  Führen Sie die in Ihrem Terminal angezeigten Schritte aus, um den Authentifizierungsprozess abzuschließen.  Weitere Anmeldeoptionen finden Sie unter [Anmelden mit der Azure CLI](/cli/azure/authenticate-azure-cli).
+  - Installieren Sie die Azure CLI-Erweiterungen bei der ersten Verwendung, wenn Sie dazu aufgefordert werden.  Weitere Informationen zu Erweiterungen finden Sie unter [Verwenden von Erweiterungen mit der Azure CLI](/cli/azure/azure-cli-extensions-overview).
+  - Führen Sie [az version](/cli/azure/reference-index?#az_version) aus, um die installierte Version und die abhängigen Bibliotheken zu ermitteln. Führen Sie [az upgrade](/cli/azure/reference-index?#az_upgrade) aus, um das Upgrade auf die aktuelle Version durchzuführen.
 
 ## <a name="next-step"></a>Nächster Schritt
 

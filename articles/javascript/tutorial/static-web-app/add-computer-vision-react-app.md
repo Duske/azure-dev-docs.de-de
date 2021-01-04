@@ -4,16 +4,16 @@ description: Dieses Beispiel enthält den gesamten Code, der benötigt wird, um 
 ms.topic: tutorial
 ms.date: 11/13/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: a246e2e367aef4027516468ae691aa31117cd6c7
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: 44999c92ef2a938327a379d0d4993b000466fb3f
+ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94993468"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97394064"
 ---
 # <a name="5-review-how-to-add-computer-vision-to-the-react-app"></a>5. Vertrautmachen mit dem Hinzufügen von maschinellem Sehen zur React-App
 
-Dieses Beispiel enthält den gesamten Code, der benötigt wird, um der React-App maschinelles Sehen hinzufügen. In diesem Abschnitt des Tutorials werden die Schritte und der Code lediglich _erläutert_. Die hier beschriebenen Schritte müssen für das Tutorial nicht ausgeführt werden. 
+Dieses Beispiel enthält den gesamten TypeScript-Code, der zum Hinzufügen des maschinellen Sehens zur React-App erforderlich ist. In diesem Abschnitt des Tutorials werden die Schritte und der Code lediglich _erläutert_. Die hier beschriebenen Schritte müssen für das Tutorial nicht ausgeführt werden. 
 
 ## <a name="add-computer-vision-to-local-react-app"></a>Hinzufügen von maschinellem Sehen zur lokalen React-App
 

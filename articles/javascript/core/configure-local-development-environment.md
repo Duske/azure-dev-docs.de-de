@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie eine lokale JavaScript-Entwicklungsumgeb
 ms.date: 11/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-js, azure-sdk-javascript-ai-text-analytics-5.0.0
-ms.openlocfilehash: 0da3357fc24f65a43303f6c23d5aa6b679f211d4
-ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
+ms.openlocfilehash: 9d542d188205b305a0909e229ed2e71e003e95f7
+ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94333823"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97393869"
 ---
 # <a name="configure-your-local-javascript-dev-environment-for-azure"></a>Konfigurieren Ihrer lokalen JavaScript-Entwicklungsumgebung für Azure
 
@@ -33,7 +33,7 @@ Um mit einer Azure-Ressource und JavaScript auf Ihrer lokalen Arbeitsstation ent
 
 |Name/Installationsprogramm|BESCHREIBUNG|
 |--|--|
-[!INCLUDE [Node.js](../includes/environment-nodejs-table-row-2-columns.md)]
+|[Node.js 8 und höher](https://www.npmjs.com/)|Installieren Sie die aktuelle Laufzeitumgebung mit langfristigem Support (Long-Term Support, LTS) für die Entwicklung auf lokalen Arbeitsstationen. Ein Paket-Manager ist ebenfalls erforderlich. Node.js installiert NPM in der Version 8.x. Für das Azure SDK ist im Allgemeinen mindestens Version 8.x von Node.js erforderlich. Azure-Hostingdienste wie Azure App Service bieten Runtimes mit aktuelleren Versionen von Node.js. Wenn Sie für lokale Bereitstellungen und Remotebereitstellungen mindestens Version 8.x verwenden, sollte Ihr Code erfolgreich ausgeführt werden.|
 |[Visual Studio Code](https://code.visualstudio.com/)| Visual Studio Code bietet eine großartige JavaScript-Integrationsumgebung und -Codierungsumgebung, ist aber nicht erforderlich. Sie können einen beliebigen Code-Editor verwenden. Wenn Sie einen anderen Editor verwenden, beachten Sie die Informationen in diesem Dokument zur Integration in Azure, oder verwenden Sie die Azure CLI.|
 
 > [!CAUTION]
@@ -65,12 +65,12 @@ Für jedes neue Projekt mit Azure müssen folgende Aktionen ausgeführt werden:
 ## <a name="securing-configuration-information"></a>Schützen von Konfigurationsinformationen
 
 Sie haben mehrere Optionen zum Speichern von Konfigurationsinformationen:
-- [Dotenv](https://www.npmjs.com/package/dotenv) ist ein beliebtes npm-Paket zum Lesen von Umgebungsvariablen aus einer Datei vom Typ `.env`. Hinzufügen der `.env`-Datei zur `.gitignore`-Datei, damit die `.env`-Datei nicht in die Quellcodeverwaltung eingecheckt wird.
+- [Dotenv](https://www.npmjs.com/package/dotenv) ist ein beliebtes npm-Paket zum Lesen von Umgebungsvariablen aus einer Datei vom Typ `.env`. Hinzufügen der `.env`-Datei zur `.gitignore`-Datei, damit die `.env`-Datei nicht in die Quellcodeverwaltung eingecheckt wird. Hier erfahren Sie mehr über [Umgebungsvariablen](../how-to/configure-web-app-settings.md) in Web-Apps für Azure. 
 - [Azure Key Vault](/azure/key-vault/) zum Erstellen und Verwalten von Schlüsseln für den Zugriff auf und die Verschlüsselung von Cloudressourcen, Apps und Lösungen
 
 ### <a name="create-environment-variables-for-the-azure-libraries"></a>Erstellen von Umgebungsvariablen für die Azure-Bibliotheken
 
-Zum Verwenden der Azure-Einstellungen, die von den Azure SDK-Bibliotheken für den Zugriff auf die Azure-Cloud benötigt werden, legen Sie die gängigsten Werte auf Umgebungsvariablen fest. Mit den folgenden Befehlen werden die Umgebungsvariablen auf die lokale Arbeitsstation festgelegt. Ein weiterer gebräuchlicher Mechanismus ist die Verwendung des NPM-Pakets `DOTENV`, um eine `.env`-Datei für diese Einstellungen zu erstellen. Wenn Sie eine `.env`-Datei verwenden möchten, achten Sie darauf, die Datei nicht in die Quellcodeverwaltung einzuchecken. Das Hinzufügen der `.env`-Datei zur `.ignore`-Datei von Git ist die Standardmethode, um sicherzustellen, dass diese Einstellungen in die Quellcodeverwaltung eingecheckt werden.
+Zum Verwenden der Azure-Einstellungen, die von den Azure SDK-Bibliotheken für den Zugriff auf die Azure-Cloud benötigt werden, legen Sie die gängigsten Werte auf [Umgebungsvariablen](../how-to/configure-web-app-settings.md) fest. Mit den folgenden Befehlen werden die Umgebungsvariablen auf die lokale Arbeitsstation festgelegt. Ein weiterer gebräuchlicher Mechanismus ist die Verwendung des NPM-Pakets `DOTENV`, um eine `.env`-Datei für diese Einstellungen zu erstellen. Wenn Sie eine `.env`-Datei verwenden möchten, achten Sie darauf, die Datei nicht in die Quellcodeverwaltung einzuchecken. Das Hinzufügen der `.env`-Datei zur `.ignore`-Datei von Git ist die Standardmethode, um sicherzustellen, dass diese Einstellungen in die Quellcodeverwaltung eingecheckt werden.
 
 In den folgenden Beispielen ist die Client-ID die Dienstprinzipal-ID und das Dienstprinzipalgeheimnis.
 

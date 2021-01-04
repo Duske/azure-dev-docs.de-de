@@ -4,12 +4,12 @@ description: Übersicht über die Features und Funktionen der Azure-Bibliotheken
 ms.date: 09/19/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 276230cf5e5999f7d188d138e3b4e7361c3e4114
-ms.sourcegitcommit: b70a38d46616f5e519d5b9c1a1eaf3fe0ecb9605
+ms.openlocfilehash: d610099b3b877f0916079ca2000a5268f3f08c2a
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94932384"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522004"
 ---
 # <a name="use-the-azure-libraries-sdk-for-python"></a>Verwenden der Azure-Bibliotheken (SDK) für Python
 
@@ -75,6 +75,8 @@ In den folgenden Beispielen wird die Verwendung einiger der primären Verwaltung
 - [Bereitstellen von virtuellen Computern](azure-sdk-example-virtual-machines.md)
 
 Ausführliche Informationen zur Verwendung der Verwaltungsbibliotheken finden Sie im [SDK-GitHub-Repository](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk) in der Datei *README.md* oder *README.rst*, die sich im Projektordner der jeweiligen Bibliothek befindet. Weitere Codeausschnitte stehen in der [Referenzdokumentation](/python/api) sowie in den [Azure-Beispielen](/samples/browse/?languages=python&term=Getting%20started%20-%20Managing) zur Verfügung.
+
+### <a name="migrating-from-older-management-libraries"></a>Migrieren aus älteren Verwaltungsbibliotheken
 
 Wenn Sie Code von älteren Versionen der Verwaltungsbibliotheken migrieren möchten, lesen Sie die folgenden Informationen:
 
