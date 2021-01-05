@@ -27,15 +27,17 @@
               items:
                 - name: 1. Einführung und Voraussetzungen
                   href: tutorial/static-web-app/introduction.md
-                - name: 2. Herunterladen und lokales Ausführen der App
+                - name: 2. Anwendungsarchitektur
+                  href: tutorial/static-web-app/application-architecture.md
+                - name: 3. Herunterladen und lokales Ausführen der App
                   href: tutorial/static-web-app/run-the-react-cognitive-services-image-analyzer-app-locally.md
-                - name: 3. Erstellen einer Ressource für maschinelles Sehen
+                - name: 4. Erstellen einer Ressource für maschinelles Sehen
                   href: tutorial/static-web-app/create-computer-vision-resource-use-in-code.md
-                - name: 4. Erstellen und Bereitstellen einer statischen Web-App
+                - name: 5. Erstellen und Bereitstellen einer statischen Web-App
                   href: tutorial/static-web-app/create-static-web-app-visual-studio-code-extension.md
-                - name: 5. Überprüfen des React-Codes für maschinelles Sehen
+                - name: 6. Überprüfen des React-Codes für maschinelles Sehen
                   href: tutorial/static-web-app/add-computer-vision-react-app.md
-                - name: 6. Bereinigen von Ressourcen
+                - name: 7. Bereinigen von Ressourcen
                   href: tutorial/static-web-app/clean-up-resources.md
             - name: 'Client-App: Hochladen in den Speicher'
               href: tutorial/browser-file-upload-azure-storage-blob.md
@@ -131,6 +133,8 @@
       items:
         - name: Konfigurieren Ihrer App
           href: how-to/configure-web-app-settings.md
+        - name: Allgemeine JavaScript-Tasks
+          href: how-to/common-javascript-tasks.md
         - name: End-to-End-Verwendung von Node.js mit VS Code
           href: how-to/develop-nodejs-on-azure.md
         - name: Bereitstellen einer Web-App
