@@ -2,16 +2,16 @@
 title: Erstellen einer Ressource für maschinelles Sehen
 description: Hier erfahren Sie, wie Sie Ihre Cognitive Services-Ressource für maschinelles Sehen erstellen und auf Umgebungsvariablen festlegen.
 ms.topic: tutorial
-ms.date: 11/13/2020
+ms.date: 12/16/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 4ac324171f47ab8795169c5dd453d1e6451e8906
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: 338a3040381768e5987e84676339e8ee46c49fc7
+ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94993441"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97687478"
 ---
-# <a name="3-create-computer-vision-resource-and-use-in-code"></a>3. Erstellen einer Ressource für maschinelles Sehen und Verwenden der Ressource im Code
+# <a name="4-create-computer-vision-resource-and-use-in-code"></a>4. Erstellen einer Ressource für maschinelles Sehen und Verwenden der Ressource im Code
 
 In diesem Schritt wird Ihre Ressource für maschinelles Sehen erstellt und auf Umgebungsvariablen festgelegt. 
 
@@ -108,13 +108,15 @@ Bei Verwendung statischer Azure-Web-Apps müssen Umgebungsvariablen wie etwa Geh
 
 ## <a name="run-react-app-with-computervision-resource"></a>Ausführen der React-App mit der Ressource für maschinelles Sehen
 
-Diese React-App reagiert auf Änderungen mit einer Neuerstellung und erneuten Ausführung der App. Nehmen Sie eine Änderung vor, um eine Neuerstellung zu erzwingen.
+1. Starten Sie die App über die Befehlszeile erneut:
 
-1. Fügen Sie in `./src/VisualAi.js` direkt nach der ersten leeren Zeile (Zeile 4) **eine neue Zeile** ein. Diese Änderung führt dazu, dass die lokal ausgeführte Website neu erstellt wird.
+    ```bash
+    npm start
+    ```
 
     :::image type="content" source="../../media/static-web-app/browser-screenshot-react-computervision-app-start-up.png" alt-text="Screenshot: Browserausschnitt mit React-Beispiel für maschinelles Sehen von Cognitive Services: Möglichkeit zum Eingeben einer URL oder zum Drücken der EINGABETASTE":::
 
-1. Lassen Sie das Textfeld leer, und wählen Sie die Schaltfläche **Analyze** (Analysieren) aus. 
+1. Lassen Sie das Textfeld leer, um ein Bild aus dem Standardkatalog auszuwählen, und wählen Sie die Schaltfläche **Analysieren** aus. 
 
     :::image type="content" source="../../media/static-web-app/browser-screenshot-react-computervision-app-image-analysis-result.png" alt-text="Screenshot: Browserausschnitt mit den Ergebnissen des React-Beispiels für maschinelles Sehen von Cognitive Services":::
 

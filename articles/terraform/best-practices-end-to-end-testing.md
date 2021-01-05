@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie mit Terratest End-to-End-Tests für Terr
 ms.topic: tutorial
 ms.date: 07/31/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: b760908bf1950751b93ba1787f444ca37ee8bf83
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: a70352f5ff6826dc7d07537cf773e76b6d1a6f49
+ms.sourcegitcommit: 485a88d1671a66df34493545488ab34e434f40d8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401710"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97809758"
 ---
 # <a name="tutorial-setup-end-to-end-terratest-testing-on-terraform-projects"></a>Tutorial: Einrichten von End-to-End-Terratest-Tests für Terraform-Projekte
 
@@ -56,7 +56,7 @@ Mit unserem Test sollen die folgenden Szenarien überprüft werden:
 
 Wenn Sie das [Beispiel heruntergeladen](#prerequisites) haben, finden Sie die Terraform-Konfiguration für dieses Szenario in der Datei `src/main.tf`. Diese Datei enthält alles, was Sie zur Bereitstellung der oben dargestellten Azure-Infrastruktur benötigen.
 
-Falls Sie nicht mit dem Erstellen von VMs vertraut sind, lesen Sie [Erstellen einer Linux-VM mit Infrastruktur in Azure mit Terraform](create-linux-virtual-machine-with-infrastructure.md).
+Falls Sie nicht mit dem Erstellen von virtuellen Computern vertraut sind, lesen Sie [Erstellen einer Linux-VM mit Infrastruktur in Azure mit Terraform](create-linux-virtual-machine-with-infrastructure.md).
 
 > [!CAUTION]
 > Das in diesem Artikel verwendete Beispielszenario dient nur zur Veranschaulichung. Das Szenario wurde bewusst einfach gehalten, damit wir uns auf die Schritte eines End-to-End-Tests konzentrieren können. Wir raten davon ab, Produktions-VMs zu verwenden, die SSH-Ports über eine öffentliche IP-Adresse verfügbar machen.

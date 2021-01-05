@@ -2,37 +2,22 @@
 title: Einführung und Voraussetzungen
 description: Hier erfahren Sie, wie Sie eine React-/TypeScript-Clientanwendung lokal erstellen und mit einer GitHub-Aktion für eine statische Azure-Web-App bereitstellen.
 ms.topic: tutorial
-ms.date: 11/13/2020
+ms.date: 12/17/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: dd35ca0925b014d2fddeb064c8cbdbdea703697b
-ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
+ms.openlocfilehash: dfd5803fe79a0a000173d2d4e3fe52b3c4f029c5
+ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97522348"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97687450"
 ---
 # <a name="1-build-and-deploy-a-static-web-app-to-azure"></a>1. Erstellen und Bereitstellen einer statischen Web-App in Azure
 
-In diesem Tutorial erfahren Sie, wie Sie eine React-/TypeScript-Clientanwendung lokal erstellen und mit einer GitHub-Aktion für eine statische Azure-Web-App bereitstellen. 
+In diesem Tutorial erfahren Sie, wie Sie eine React-/TypeScript-Clientanwendung lokal erstellen und mit einer GitHub-Aktion für eine statische Azure-Web-App bereitstellen. Die React-App ermöglicht das Analysieren eines Bilds mit maschinellem Sehen von Cognitive Services.
 
-Die React-App (create-react-app) umfasst folgende Funktionen: 
-* Anzeige einer Meldung, wenn Azure-Schlüssel und -Endpunkt für maschinelles Sehen von Cognitive Services nicht gefunden werden
-* Möglichkeit zum Analysieren eines Bilds mit maschinellem Sehen von Cognitive Services
-    * Eingabe einer öffentlichen Bild-URL oder Analyse eines Bilds aus einer Sammlung
-    * Nach Abschluss der Analyse:
-        * Anzeigebild
-        * Anzeigen der JSON-Ergebnisse des maschinellen Sehens 
-
-Die GitHub-Aktion wird gestartet, wenn ein Pushvorgang an einen bestimmten Branch durchgeführt wird, und umfasst Folgendes:
-* Einfügen von GitHub-Geheimnissen für den Schlüssel und den Endpunkt für maschinelles Sehen in den Build
-* Erstellen des React-Clients (create-react-app)
-* Verschieben der resultierenden Dateien in Ihre statische Azure-Web-App-Ressource
+* [**Beispielcode**](https://github.com/Azure-Samples/js-e2e-client-cognitive-services)
 
 [!INCLUDE [Create or use existing Azure Subscription ](../../includes/environment-subscription-h2.md)]
-
-## <a name="what-is-an-azure-static-web-app"></a>Was ist eine statische Azure-Web-App?
-
-Bei der Erstellung statischer Web-Apps stehen in Azure mehrere Optionen zur Verfügung, um den gewünschten Grad an Funktionalität und Kontrolle zu erhalten. In diesem Tutorial wird der einfachste Dienst erstellt. Dabei werden Ihnen viele der Entscheidungen abgenommen, sodass Sie sich ganz auf Ihren Front-End-Code konzentrieren können und sich nicht mit der Hostingumgebung beschäftigen müssen.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
@@ -52,4 +37,4 @@ Bei der Erstellung statischer Web-Apps stehen in Azure mehrere Optionen zur Verf
 ## <a name="next-step"></a>Nächster Schritt
 
 > [!div class="nextstepaction"]
-> [Herunterladen und Ausführen der React-App für die Bildanalyse mit Cognitive Services](run-the-react-cognitive-services-image-analyzer-app-locally.md) 
+> [Grundlegendes zur Architektur und zur Bereitstellung von Client-Apps mit GitHub-Aktion](./application-architecture.md) 

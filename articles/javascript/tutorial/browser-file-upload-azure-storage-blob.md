@@ -2,14 +2,14 @@
 title: 'Hochladen eines Images in Blob Storage mit VSCode: App Service/CosmosDB'
 description: Verwenden Sie eine React- oder TypeScript-App, um eine Datei in Azure Storage-Blobs hochzuladen. Dieses Tutorial konzentriert sich auf die Verwendung von lokalen und Remoteumgebungen mit Visual Studio Code-Erweiterungen.
 ms.topic: tutorial
-ms.date: 11/13/2020
+ms.date: 12/17/2020
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript, azure-sdk-storage-blob-typescript-version-12.2.1
-ms.openlocfilehash: 2e38e7e293f87dc9fa8cafc69a0780a10d31d730
-ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
+ms.openlocfilehash: 1f66ba54aa6cfccdda96a51bb610350a10fb7eef
+ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97393899"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97689520"
 ---
 # <a name="upload-an-image-to-an-azure-storage-blob"></a>Hochladen eines Images in ein Azure Storage-Blob
 
@@ -17,14 +17,14 @@ Verwenden Sie eine clientseitige React-App, um eine Imagedatei mithilfe eines Az
 
 Die TypeScript-Programmieraufgaben wurden für Sie erledigt. Dieses Tutorial konzentriert sich auf die erfolgreiche Verwendung der lokalen Umgebung und der Azure-Remoteumgebungen in Visual Studio Code mit Azure-Erweiterungen.
 
-* [Quellcode](https://github.com/Azure-Samples/js-e2e-browser-file-upload-storage-blob)
+* [**Beispielcode**](https://github.com/Azure-Samples/js-e2e-browser-file-upload-storage-blob)
 
 ## <a name="application-architecture-and-functionality"></a>Anwendungsarchitektur und Funktionalität
 
-Dieses Tutorial enthält mehrere **wichtige Azure-Aufgaben** für JavaScript-Entwickler:
+Dieses Tutorial enthält mehrere wichtige Azure-Aufgaben für JavaScript-Entwickler:
 
 * Lokales Ausführen einer React- oder TypeScript-App mit Visual Studio Code
-* Erstellen einer Storage-Ressource und Konfiguration für Dateiuploads
+* Erstellen einer **Azure Storage Blob**-Ressource und Konfiguration für Dateiuploads
     * Konfigurieren von CORS
     * Erstellen eines SAS-Tokens (Shared Access Signatures)
 * Konfigurieren von Code für die Azure SDK-Clientbibliothek zur Verwendung von SAS-Token für die Authentifizierung beim Dienst
@@ -32,24 +32,26 @@ Dieses Tutorial enthält mehrere **wichtige Azure-Aufgaben** für JavaScript-Ent
 Die [React-Beispiel-App](https://github.com/Azure-Samples/js-e2e-browser-file-upload-storage-blob), die auf GitHub verfügbar ist, besteht aus den folgenden Elementen:
 
 * **React-App**, gehostet an Port 3000
-* Azure SDK-Clientbibliotheksskript zum Hochladen in Storage-Blobs
+* **Azure SDK-Clientbibliotheksskript** zum Hochladen in Storage-Blobs
 
 :::image type="content" source="../media/tutorial-browser-file-upload/browser-react-app-azure-storage-resource-image-uploaded-displayed.png" alt-text="Einfache React-App, die mit Azure Storage-Blobs verbunden ist.":::
 
 ## <a name="1-set-up-development-environment"></a>1. Einrichten der Entwicklungsumgebung
 
 - Ein Azure-Benutzerkonto mit einem aktiven Abonnement. [Erstellen Sie ein kostenloses Konto.](https://azure.microsoft.com/free/)
-- [Node.js und npm](https://nodejs.org/en/download): Der Node.js-Paket-Manager, der auf dem lokalen Computer installiert ist.
+- [Node.js 10 und npm:](https://nodejs.org/en/download) Der Node.js-Paket-Manager, der auf dem lokalen Computer installiert ist
 - [Visual Studio Code](https://code.visualstudio.com/) auf dem lokalen Computer installiert. 
 - Visual Studio Code-Erweiterungen:
     - [Azure Storage](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestorage): Zum Anzeigen der Storage-Ressource
 
 ## <a name="2-clone-and-run-the-initial-react-app"></a>2. Klonen und Ausführen der anfänglichen React-App
 
-Klonen Sie die App, installieren Sie die Abhängigkeiten, und führen Sie die App aus. Die anfängliche App versucht, eine Verbindung mit Azure Storage herzustellen, wenn sie im Code entsprechend konfiguriert ist, oder es wird eine Meldung `Storage is not configured` angezeigt, wenn sie nicht verfügbar ist. 
-
 1. Öffnen Sie Visual Studio Code.
-1. Klonen Sie das GitHub-Repository, indem Sie das Git-Symbol und dann **Klonen** auswählen. Für diesen Vorgang müssen Sie sich bei GitHub anmelden. Verwenden Sie die Repository-URL `https://github.com/Azure-Samples/js-e2e-browser-file-upload-storage-blob`, und wählen Sie dann einen Ordner auf dem lokalen Computer aus, in den das Beispiel geklont werden soll. Wenn Sie dazu aufgefordert werden, öffnen Sie das geklonte Repository. 
+1. Klonen Sie das GitHub-Repository, indem Sie das Git-Symbol und dann **Klonen** auswählen. Für diesen Vorgang müssen Sie sich bei GitHub anmelden. Verwenden Sie die Repository-URL: 
+
+    `https://github.com/Azure-Samples/js-e2e-browser-file-upload-storage-blob`
+
+1. Wählen Sie einen Ordner auf dem lokalen Computer aus, in den das Beispiel geklont werden soll. Wenn Sie dazu aufgefordert werden, öffnen Sie das geklonte Repository. 
 
     :::image type="content" source="../media/tutorial-browser-file-upload/vscode-git-clone-repository.png" alt-text="Klonen Sie das GitHub-Repository, indem Sie das Git-Symbol und dann „Repository klonen“ auswählen.":::
 
@@ -83,11 +85,11 @@ Klonen Sie die App, installieren Sie die Abhängigkeiten, und führen Sie die Ap
 
     :::image type="content" source="../media/tutorial-browser-file-upload/visualstudiocode-storage-extension-create-resource.png" alt-text="Navigieren Sie zur Azure Storage-Erweiterung. Klicken Sie mit der rechten Maustaste auf das Abonnement, und wählen Sie dann „Speicherkonto erstellen“ aus.":::
 
-1. Befolgen Sie die Anweisungen anhand der folgenden Tabelle, um zu verstehen, wie Ihre Werte verwendet werden.
+1. Befolgen Sie die Anweisungen anhand der folgenden Tabelle, um zu verstehen, wie die Storage-Ressource erstellt wird.
 
     |Eigenschaft|Wert|
     |--|--|
-    |Geben Sie einen global eindeutigen Namen für die neue Web-App ein.| Geben Sie einen Wert wie `fileuploadyourname` als Name der Storage-Ressource ein. Ersetzen Sie `yourname` durch Ihren Namen in Kleinbuchstaben oder Ihre eindeutige ID. Dieser eindeutige Name wird auch als Teil der URL verwendet, um in einem Browser auf die Ressource zuzugreifen. Verwenden Sie nur Zeichen und Zahlen (maximal 24 Zeichen). Dieser **Kontoname** ist in einem späteren Schritt erforderlich.|
+    |Geben Sie einen global eindeutigen Namen für die neue Web-App ein.| Geben Sie einen Wert wie `fileuploaddemo` als Name der Storage-Ressource ein.<br><br> Dieser eindeutige Name ist **Ihr Ressourcenname**, der im nächsten Abschnitt verwendet wird. Verwenden Sie nur Zeichen und Zahlen (maximal 24 Zeichen). Dieser **Kontoname** ist in einem späteren Schritt erforderlich.|
 
 1. Nachdem der App-Erstellungsprozess beendet wurde, wird eine Benachrichtigung mit Informationen zur neuen Ressource angezeigt. 
 
@@ -95,10 +97,10 @@ Klonen Sie die App, installieren Sie die Abhängigkeiten, und führen Sie die Ap
 
 ## <a name="4-set-storage-account-name-in-code-file"></a>4. Festlegen des Speicherkontonamens in der Codedatei
 
-Legen Sie den Ressourcennamen in `src/uploadToBlob.ts` für den `storageAccountName`-Wert fest, indem Sie den Namen des Speicherschlüssels der leeren Zeichenfolge hinzufügen. Lassen Sie den restlichen Code unverändert. 
+Legen Sie den Ressourcennamen aus dem vorherigen Schritt in `src/azure-storage-blob.ts` fest. 
 
 ```typescript
-const storageAccountName = process.env.storageresourcename || ""; 
+const storageAccountName = process.env.storageresourcename || "fileuploaddemo"; 
 ```
 
 ## <a name="5-generate-your-shared-access-signature-sas-token"></a>5. Generieren des SAS-Tokens (Shared Access Signature) 
@@ -115,7 +117,7 @@ Generieren Sie das SAS-Token, bevor Sie CORS konfigurieren.
     |Zulässige Ressourcentypen|Dienst, Container, Objekt|
     |Zulässige Berechtigungen|Lesen, Schreiben, Löschen, Auflisten, Hinzufügen, Erstellen|
     |Löschungen der Version aktivieren|Überprüft|
-    |Datum/Uhrzeit für Start und Ablauf|Akzeptieren Sie das Startdatum und die Uhrzeit, und legen Sie das Enddatum in 24 Stunden fest. Ihr SAS-Token ist nur 24 Stunden lang gültig.|
+    |Datum/Uhrzeit für Start und Ablauf|Akzeptieren Sie das Startdatum und die Uhrzeit, und **legen Sie das Enddatum in 24 Stunden fest**. Ihr SAS-Token ist nur 24 Stunden lang gültig.|
     |Nur HTTPS|Ausgewählt|
     |Bevorzugte Routingebene|Basic|
     |Signaturschlüssel|key1 ausgewählt|
@@ -126,15 +128,11 @@ Generieren Sie das SAS-Token, bevor Sie CORS konfigurieren.
 
 ## <a name="set-sas-token-in-code-file"></a>Festlegen des SAS-Tokens in der Codedatei
 
-Der SAS-Tokenwert ist eine partielle Abfragezeichenfolge, die in der URL verwendet wird, wenn Abfragen der cloudbasierten Ressource vorgenommen werden.
+Das SAS-Token wird verwendet, wenn Abfragen an die cloudbasierte Ressource gesendet werden.
 
-Das Tokenformat hängt davon ab, welches Tool Sie verwendet haben, um das Token zu erstellen: 
-* **Azure-Portal**: Wenn Sie das SAS-Token im Portal erstellen, enthält das Token `?` als erstes Zeichen der Zeichenfolge.
-* **Azure CLI**: Wenn Sie das SAS-Token mit dem Azure CLI erstellen, enthält der zurückgegebene Wert nicht `?` als erstes Zeichen der Zeichenfolge. 
+1. Wenn das Token mit einem Fragezeichen (`?`) beginnt, entfernen Sie es. Die Codedatei stellt `?` für Sie bereit, sodass Sie das Fragezeichen nicht im Token benötigen.
 
-1. Entfernen Sie `?`, wenn dies das erste Zeichen des Tokens ist. Die Codedatei stellt `?` für Sie bereit, sodass Sie das Fragezeichen nicht im Token benötigen.
-
-1. Legen Sie das SAS-Token in `src/uploadToBlob.ts` für den sasToken-Wert fest, indem Sie das SAS-Token der leeren Zeichenfolge hinzufügen. Lassen Sie den restlichen Code unverändert. 
+1. Legen Sie das SAS-Token in `src/azure-storage-blob.ts` für den sasToken-Wert fest, indem Sie das SAS-Token der leeren Zeichenfolge hinzufügen. Lassen Sie den restlichen Code unverändert. 
 
 ```typescript
 // remove `?` if it is first character of token
@@ -162,21 +160,25 @@ Konfigurieren Sie CORS für Ihre Ressource, damit der clientseitige React-Code a
 
 ## <a name="7-run-project-locally-to-verify-connection-to-storage-account"></a>7. Führen Sie das Projekt lokal aus, um die Verbindung mit dem Storage-Konto zu bestätigen.
 
-Ihr SAS-Token und der Name des Speicherkontos werden in der Datei `src/uploadToBlob.ts` festgelegt, sodass Sie bereit sind, die Anwendung auszuführen.
+Ihr SAS-Token und der Name des Speicherkontos werden in der Datei `src/azure-storage-blob.ts` festgelegt, sodass Sie bereit sind, die Anwendung auszuführen.
 
-1. Geben Sie im Visual Studio Code-Terminal den folgenden Befehl ein:
+1. Wird die App nicht ausgeführt, starten Sie sie erneut:
 
     ```javascript
     npm start
     ```
 
-1. Wenn das Terminal die URL anzeigt (z. B. `http://localhost:3000`) ist Ihre App bereit. Öffnen Sie einen Browser, und geben Sie diese URL ein. Die mit Azure Storage-Blobs verbundene Website sollte mit einer Schaltfläche für die Dateiauswahl und einer Schaltfläche für den Dateiupload angezeigt werden. 
+1. Öffnen Sie die folgende URL in einem Browser:
+
+    `http://localhost:3000` 
 
     :::image type="content" source="../media/tutorial-browser-file-upload/browser-react-app-azure-storage-resource-configured-upload-button-displayed.png" alt-text="Die mit Azure Storage-Blobs verbundene React-Website sollte mit einer Schaltfläche für die Dateiauswahl und einer Schaltfläche für den Dateiupload angezeigt werden.":::
 
-1. Wählen Sie ein Bild aus dem Ordner `images` zum Hochladen aus. `spring-flowers.jpg` sind ein gutes visuelles Element für diesen Test. Wählen Sie dann die Schaltfläche **Hochladen** aus. Schaltfläche. 
+1. Wählen Sie ein Bild aus dem Ordner `images` zum Hochladen und dann **Hochladen** aus. Schaltfläche. 
 
-    Der React-Clientcode des Front-Ends ruft `src/uploadToBlob.ts` zur Authentifizierung bei Azure auf, erstellt dann einen Speichercontainer (falls noch nicht vorhanden) und lädt die Datei in diesen Container hoch. 
+    Der React-Clientcode des Front-Ends ruft `src/azure-storage-blob.ts` zur Authentifizierung bei Azure auf, erstellt dann einen Speichercontainer (falls noch nicht vorhanden) und lädt die Datei in diesen Container hoch. 
+
+    Sie haben die Schritte des Tutorials abgeschlossen. Die restlichen Abschnitte enthalten eine Erläuterung zur App sowie Informationen zur Problembehandlung.
 
 ## <a name="troubleshoot-local-connection-to-storage-account"></a>Beheben von Problemen mit einer lokalen Verbindung mit einem Storage-Konto
 
@@ -202,7 +204,7 @@ Das Beispiel erstellt und verwendet einen öffentlich zugänglichen Container un
 
 ### <a name="dependencies-and-variables"></a>Abhängigkeiten und Variablen
 
-Die TypeScript-Datei `uploadToBlob.ts` lädt die Abhängigkeiten und pullt die erforderlichen Variablen durch Umgebungsvariablen oder hartcodierte Zeichenfolgen.
+Die TypeScript-Datei `azure-storage-blob.ts` lädt die Abhängigkeiten und pullt die erforderlichen Variablen durch Umgebungsvariablen oder hartcodierte Zeichenfolgen.
 
 | Variable | Beschreibung |
 |--|--|
@@ -210,7 +212,7 @@ Die TypeScript-Datei `uploadToBlob.ts` lädt die Abhängigkeiten und pullt die e
 |`container`|Der Name des Containers im Blobspeicher. Sie können sich diesen als äquivalent zu einem Ordner oder Verzeichnis für ein Dateisystem vorstellen.|
 |`storageAccountName`|Der Name Ihrer Ressource.|
 
-:::code language="typescript" source="~/../js-e2e-browser-file-upload-storage-blob/src/uploadToBlob.ts" highlight="2,5,16" id="snippet_package":::
+:::code language="typescript" source="~/../js-e2e-browser-file-upload-storage-blob/src/azure-storage-blob.ts" highlight="2,5,16" id="snippet_package":::
 
 ### <a name="security-for-azure-credentials"></a>Sicherheit für Azure-Anmeldeinformationen
 
@@ -220,19 +222,19 @@ Die TypeScript-Datei `uploadToBlob.ts` lädt die Abhängigkeiten und pullt die e
 
 Die `uploadFileToBlob`-Funktion ist die Hauptfunktion der Datei. Sie erstellt das Clientobjekt für den Storage-Dienst, erstellt dann den Client für das Containerobjekt, lädt die Datei hoch und ruft dann eine Liste aller Blobs im Container ab. 
 
-:::code language="typescript" source="~/../js-e2e-browser-file-upload-storage-blob/src/uploadToBlob.ts" highlight="5,6,7" id="snippet_uploadFileToBlob":::
+:::code language="typescript" source="~/../js-e2e-browser-file-upload-storage-blob/src/azure-storage-blob.ts" highlight="5,6,7" id="snippet_uploadFileToBlob":::
 
 ### <a name="upload-file-to-blob"></a>Hochladen der Datei in das Blob
 
 Die `createBlobInContainer`-Funktion lädt die Datei mit der `uploadBrowserData`-Clientbibliotheksmethode in den Container hoch. Der Inhaltstyp muss mit der Anforderung gesendet werden, wenn Sie beabsichtigen, Browserfunktionen zu verwenden, die vom Dateityp abhängen, z. B. das Anzeigen eines Bilds. 
 
-:::code language="typescript" source="~/../js-e2e-browser-file-upload-storage-blob/src/uploadToBlob.ts" highlight="10" id="snippet_createBlobInContainer":::
+:::code language="typescript" source="~/../js-e2e-browser-file-upload-storage-blob/src/azure-storage-blob.ts" highlight="10" id="snippet_createBlobInContainer":::
 
 ### <a name="get-list-of-blobs"></a>Abrufen einer Liste von Blobs
 
 Die `getBlobsInContainer`-Funktion ruft eine Liste von URLs für die Blobs im Container ab. Die URLs werden erstellt, um als `src` einer Bildanzeige in HTML verwendet zu werden: `<img src={item} alt={item} height="200" />`. 
 
-:::code language="typescript" source="~/../js-e2e-browser-file-upload-storage-blob/src/uploadToBlob.ts" highlight="10" id="snippet_getBlobsInContainer":::
+:::code language="typescript" source="~/../js-e2e-browser-file-upload-storage-blob/src/azure-storage-blob.ts" highlight="10" id="snippet_getBlobsInContainer":::
 
 ## <a name="clean-up-resources"></a>Bereinigen von Ressourcen
 

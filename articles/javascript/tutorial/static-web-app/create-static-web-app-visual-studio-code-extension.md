@@ -4,14 +4,14 @@ description: Hier erfahren Sie, wie Sie die statische Web-App-Ressource mit eine
 ms.date: 10/13/2020
 ms.topic: include
 ms.custom: devx-track-javascript
-ms.openlocfilehash: c6daa3f2a7ceb7f981cdaf57bdba61a722edbaa3
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: dac91157531b3d26dddebe411d2c79883f77d4b9
+ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94993490"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97687467"
 ---
-# <a name="4-create-azure-static-web-app-resource"></a>4. Erstellen der statischen Azure-Web-App-Ressource
+# <a name="5-create-azure-static-web-app-resource"></a>5. Erstellen der statischen Azure-Web-App-Ressource
 
 In diesem Abschnitt des Tutorials wird die statische Web-App-Ressource mit einer Visual Studio Code-Erweiterung für diesen Dienst erstellt und lokaler Code zur Erstellung an Ihr Remoterepository gepusht. Anschließend wird App in Azure bereitgestellt.
 

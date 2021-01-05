@@ -2,13 +2,13 @@
 title: 'Neuerungen in der JavaScript-Dokumentation: '
 description: Neuerungen in der JavaScript-Dokumentation für Oktober 2020
 ms.topic: conceptual
-ms.date: 11/13/2020
-ms.openlocfilehash: f54af7f5f89b38cc32191fc2acd4f32e386c29fb
-ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
+ms.date: 12/18/2020
+ms.openlocfilehash: ccc38a8dae86527650342e16e30da9fa7f28c0a7
+ms.sourcegitcommit: 28bed3dead87528796bdd76f3e94e66f4bd5e197
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96759287"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97710387"
 ---
 # <a name="javascript-docs-whats-new-for-october-2020"></a>JavaScript-Dokumentation: Neuerungen im Oktober 2020
 
@@ -21,6 +21,21 @@ Hier finden Sie neue und aktualisierte Inhalte für JavaScript- und TypeScript-E
 |Name|Notizen|
 |---------------------------------------|--|
 |[Tutorial: Hinzufügen einer Anmeldeschaltfläche zu einer statischen React-Web-App für die Microsoft-Authentifizierung](./tutorial/single-page-application-azure-login-button-sdk-msal.md)|Bei der in diesem Tutorial beschriebenen Azure-Authentifizierung geht es um eine Anmelde- und Abmeldeschaltfläche und um den Zugriff auf das Konto eines Benutzers. Entwickeln Sie die Anwendung mit einem clientseitigen Azure-SDK (`@azure/msal-browser`), um die Interaktion des Benutzers in der Single-Page-Webanwendung (SPA) zu verwalten.|
+|[Was ist Azure für JavaScript-Entwickler?](core/what-is-azure-for-javascript-development.md)|Azure-Konzepte, die JavaScript-Entwickler für die erfolgreiche Entwicklung kennen müssen|
+|[Installieren von Node.js](core/install-nodejs-develop-azure-sdk-project.md)|Installieren und Verwalten von Node.js für allgemeine Azure-Entwicklungsszenarios|
+|[Konfigurieren von Web-Apps in Azure](how-to/configure-web-app-settings.md)|Hier erfahren Sie, wie Sie allgemeine Konfigurationen für Ihre Web-App festlegen.|
+|[Identität, Authentifizierung und Benutzer](concepts/identity-authentication-users.md)|Dieser Artikel befasst sich mit den wichtigsten Konzepten, mit denen sich JavaScript-Entwickler häufig auseinandersetzen müssen.|
+|[Wichtigste allgemeine Aufgaben für JavaScript-Entwickler](how-to/common-javascript-tasks.md)|Hier finden Sie ein Beispiel für Ihre aktuellen Aufgaben.|
+|[Automatisieren von Aufgaben mit der Azure CLI](core/automate-tasks-with-azure-cli.md)|Die Automatisierung von Azure-Aufgaben ist eine gängige Anforderung für Continuous Deployment in Hostingumgebungen. Für JavaScript-Entwickler, die Aufgaben verwalten und die Bereitstellung an einem beliebigen Standort durchführen, wird die Azure CLI empfohlen.|
+
+### <a name="whats-new-in-learn"></a>Neuerungen in Learn
+
+
+|Name|
+|---------------------------------------|
+|Statische Web-App, JavaScript, CodeTour: Verwenden Sie Basketballstatistiken zur Optimierung des Spielverlaufs mit Visual Studio Code, inspiriert von SPACE JAM: A NEW LEGACY – [Learn](https://docs.microsoft.com/learn/paths/optimize-basketball-games-with-machine-learning/)|
+|Erstellen einer einfachen Website mit HTML, CSS und JavaScript – [Learn](https://docs.microsoft.com/learn/modules/build-simple-website/)|
+|Verwenden Sie Visual Studio Code zum Erstellen eines JavaScript- und Vue.js-Dashboards mit einer serverlosen API, die auf Azure Functions und Node.js basiert. - [Learn](https://docs.microsoft.com/learn/modules/build-api-azure-functions)|
 
 ## <a name="2020-november"></a>November 2020
 
