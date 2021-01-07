@@ -4,12 +4,12 @@ description: Eine Übersicht über die Implementierung der Haupt-App, einschlie�
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: e2a43f7e204ba3f077beea7cc878076111f71313
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 62514474e2eb4517669029058526a39d3a4f3442
+ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764743"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97952432"
 ---
 # <a name="part-4-example-main-application-implementation"></a>Teil 4: Beispiel für die Implementierung einer Hauptanwendung
 
@@ -17,9 +17,9 @@ ms.locfileid: "91764743"
 
 Die Haupt-App in unserem Szenario ist eine einfache Flask-App, die in Azure App Service bereitgestellt wird. Die App stellt einen öffentlichen API-Endpunkt mit dem Namen */api/v1/getcode* bereit, der einen Code für einen anderen Zweck in der App generiert (z. B. mit zweistufiger Authentifizierung für menschliche Benutzer).
 
-Um den Endpunkt in Aktion zu sehen, rufen Sie [https://msdocs-main-app-example.azurewebsites.net/api/v1/getcode](https://msdocs-main-app-example.azurewebsites.net/api/v1/getcode) in einem Browser auf, oder stellen Sie mithilfe von curl eine Anforderung.
+Um den Endpunkt in Aktion zu sehen, rufen Sie [https://msdocs-example-main-app.azurewebsites.net/api/v1/getcode](https://msdocs-example-main-app.azurewebsites.net/api/v1/getcode) in einem Browser auf, oder stellen Sie mithilfe von curl eine Anforderung.
 
-Die Haupt-App bietet auch eine einfache Startseite, auf der ein Link zum API-Endpunkt angezeigt wird. Dieser Teil der App kann auf [https://msdocs-main-app-example.azurewebsites.net](https://msdocs-main-app-example.azurewebsites.net) angezeigt werden.
+Die Haupt-App bietet auch eine einfache Startseite, auf der ein Link zum API-Endpunkt angezeigt wird. Dieser Teil der App kann auf [https://msdocs-example-main-app.azurewebsites.net](https://msdocs-example-main-app.azurewebsites.net) angezeigt werden.
 
 Das Bereitstellungskript des Beispiels führt folgende Schritte aus:
 

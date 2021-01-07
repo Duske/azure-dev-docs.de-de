@@ -3,13 +3,13 @@ title: 'Schritt 5: Bereitstellen einer serverlosen Azure Functions-Instanz in P
 description: 'Tutorialschritt 5: Bereitstellen von serverlosem Python-Funktionscode in Azure, Streamen von Protokollen und Synchronisieren von Einstellungen zwischen einem lokalen Projekt und Azure'
 ms.topic: conceptual
 ms.date: 11/30/2020
-ms.custom: devx-track-python, seo-python-october2019, contperfq2
-ms.openlocfilehash: bcbc7116c1c0bc0cf323d56e46471856ebc5e9ea
-ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
+ms.custom: devx-track-python, seo-python-october2019, contperf-fy21q2
+ms.openlocfilehash: 24c24aa7a52b756688449eafa0645d0ac971cea3
+ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96759297"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911380"
 ---
 # <a name="5-deploy-azure-functions-in-python"></a>5: Bereitstellen von Azure Functions in Python
 

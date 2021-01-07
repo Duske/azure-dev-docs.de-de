@@ -4,12 +4,12 @@ description: Eine Beschreibung der Implementierung von Drittanbieter-APIs mithil
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 7c0098988265fef5b6b0f5e4a654f54c9bed4594
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: ce6fbefc52c36bcd5e002cf1e6c8ca7ca4814062
+ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764499"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97952442"
 ---
 # <a name="part-3-example-third-party-api-implementation"></a>Teil 3: Beispiel für die Implementierung einer Drittanbieter-API
 
@@ -17,7 +17,7 @@ ms.locfileid: "91764499"
 
 In unserem Beispielszenario verwendet der öffentliche Endpunkt der Haupt-App eine Drittanbieter-API, die durch einen Zugriffsschlüssel geschützt ist. In diesem Abschnitt wird eine Implementierung der Drittanbieter-API unter Verwendung von Azure Functions gezeigt, aber die API kann auch auf andere Weise implementiert und auf einem anderen Cloudserver oder Webhost bereitgestellt werden. Der einzige wichtige Aspekt ist, dass der Endpunkt durch einen bestimmten Zugriffsschlüssel geschützt ist, der in Clientanforderungen enthalten sein muss. Jede App, die diese API aufruft, muss diesen Schlüssel sicher verwalten.
 
-Zu Demonstrationszwecken wird diese API für den Endpunkt bereitgestellt, `https://msdocs-api-example.azurewebsites.net/api/RandomNumber`. Zum Aufrufen der API müssen Sie jedoch den Zugriffsschlüssel `d0c5atM1cr0s0ft` entweder in einem `?code=`-URL-Parameter oder in einer `'x-functions-key'`-Eigenschaft des HTTP-Headers bereitstellen. Testen Sie z. B. diese URL in einem Browser oder curl: [https://msdocs-api-example.azurewebsites.net/api/RandomNumber?code=d0c5atM1cr0s0ft](https://msdocs-api-example.azurewebsites.net/api/RandomNumber?code=d0c5atM1cr0s0ft).
+Zu Demonstrationszwecken wird diese API für den Endpunkt bereitgestellt, `https://msdocs-example-api.azurewebsites.net/api/RandomNumber`. Zum Aufrufen der API müssen Sie jedoch den Zugriffsschlüssel `d0c5atM1cr0s0ft` entweder in einem `?code=`-URL-Parameter oder in einer `'x-functions-key'`-Eigenschaft des HTTP-Headers bereitstellen. Testen Sie z. B. diese URL in einem Browser oder curl: [https://msdocs-example-api.azurewebsites.net/api/RandomNumber?code=d0c5atM1cr0s0ft](https://msdocs-example-api.azurewebsites.net/api/RandomNumber?code=d0c5atM1cr0s0ft).
 
 Wenn der Zugriffsschlüssel gültig ist, gibt der Endpunkt eine JSON-Antwort zurück, die eine einzelne Eigenschaft – „value“ – enthält, deren Wert eine Zahl zwischen 1 und 999 ist, z. B. `{"value": 959}`.
 
