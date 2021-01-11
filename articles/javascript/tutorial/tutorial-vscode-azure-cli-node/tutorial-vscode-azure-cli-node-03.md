@@ -4,18 +4,20 @@ description: 'Teil 3 des Azure CLI-Tutorials: Erstellen der App Service-Insta
 ms.topic: tutorial
 ms.date: 12/18/2020
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: abd434d2222e5bdd758be42856a569e24def08f8
-ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
+ms.openlocfilehash: 24b64c5b618d06083ddf5eee3be7c6e53923a99d
+ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97687432"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911400"
 ---
 # <a name="create-the-app-service"></a>Erstellen der App Service-Instanz
 
 [Vorheriger Schritt: Erstellen der App](tutorial-vscode-azure-cli-node-02.md)
 
 In diesem Schritt erstellen Sie mithilfe der Azure-Befehlszeilenschnittstelle (Azure CLI) die Azure App Service-Instanz, die Ihren App-Code hostet.
+
+## <a name="create-resource-group"></a>Ressourcengruppe erstellen
 
 1. Geben Sie an einem Terminal oder einer Eingabeaufforderung den folgenden Befehl ein, um eine **Ressourcengruppe** für die App Service-Instanz zu erstellen. Bei einer Ressourcengruppe handelt es sich im Wesentlichen um eine benannte Sammlung der Ressourcen einer App in Azure, z. B. eine Website, eine Datenbank, Azure Functions usw.
 
@@ -33,20 +35,25 @@ In diesem Schritt erstellen Sie mithilfe der Azure-Befehlszeilenschnittstelle (A
     az configure --defaults group=myResourceGroup location=westus
     ```
 
-1. Führen Sie den folgenden Azure CLI-Befehl [`az appservice plan create`](/cli/azure/appservice/plan?view=azure-cli-latest#az_appservice_plan_create) aus, um einen **App Service-Plan** zu erstellen, der den zugrunde liegenden virtuellen Computer festlegt, der von der App Service-Instanz verwendet wird:
+## <a name="create-app-service-plan"></a>Erstellen des App Service-Plans
 
-    ```azurecli
-    az appservice plan create --name myPlan --sku F1
-    ```
+Führen Sie den folgenden Azure CLI-Befehl [`az appservice plan create`](/cli/azure/appservice/plan?view=azure-cli-latest#az_appservice_plan_create) aus, um einen **App Service-Plan** zu erstellen, der den zugrunde liegenden virtuellen Computer festlegt, der von der App Service-Instanz verwendet wird:
 
-    Der obige Befehl legt einen [kostenlosen Hostingplan](../../core/what-is-azure-for-javascript-development.md#free-tier-resources) (`--sku F1`) mit einer freigegebenen VM und dem Namen `myPlan` fest. 
+```azurecli
+az appservice plan create --name myPlan --sku F1
+```
 
-1. Führen Sie den folgenden Azure CLI-Befehl [`az webapp create`](/cli/azure/webapp?view=azure-cli-latest#az_webapp_create) aus, um die App Service-Instanz zu erstellen. Ersetzen Sie dabei `<your_app_name>` durch einen eindeutigen Namen, aus dem die URL `http://<your_app_name>.azurewebsites.net` mit der [neuesten Node.js-Runtime](/cli/azure/webapp?view=azure-cli-latest#az_webapp_list_runtimes&preserve-view=false) erstellt wird. 
+Der obige Befehl legt einen [kostenlosen Hostingplan](../../core/what-is-azure-for-javascript-development.md#free-tier-resources) (`--sku F1`) mit einer freigegebenen VM und dem Namen `myPlan` fest. 
 
-    ```azurecli
-    az webapp create --name <your_app_name> --plan myPlan -g --runtime "node|12-lts"
-    ```
+## <a name="create-web-app-service"></a>Erstellen des Web-App-Diensts
 
+Führen Sie den folgenden Azure CLI-Befehl [`az webapp create`](/cli/azure/webapp?view=azure-cli-latest#az_webapp_create) aus, um die App Service-Instanz zu erstellen. Ersetzen Sie dabei `<your_app_name>` durch einen eindeutigen Namen, aus dem die URL `http://<your_app_name>.azurewebsites.net` mit der [neuesten Node.js-Runtime](/cli/azure/webapp?view=azure-cli-latest#az_webapp_list_runtimes&preserve-view=false) erstellt wird. 
+
+```azurecli
+az webapp create --name <your_app_name> --plan myPlan -g --runtime "node|12-lts"
+```
+
+## <a name="browse-web-app"></a>Öffnen der Web-App im Browser
 
 1. Führen Sie den folgenden Azure CLI-Befehl [`az webapp browse`](/cli/azure/webapp?view=azure-cli-latest#az_webapp_browse) aus, um die neu erstellte App Service-Instanz in einem Browser zu öffnen. Ersetzen Sie `<your_app_name>` dabei wieder durch den Namen, den Sie verwendet haben:
 
@@ -60,7 +67,7 @@ In diesem Schritt erstellen Sie mithilfe der Azure-Befehlszeilenschnittstelle (A
 
 ## <a name="troubleshooting"></a>Problembehandlung
 
-* Wurde ein Fehler zu dem fehlenden, aber erforderlichen Parameter `--resource-group` angezeigt, kehren Sie zum Anfang des Artikels zurück, und legen Sie die Standardwerte fest. 
+* Sollte ein Fehler im Zusammenhang mit einem fehlenden, aber erforderlichen Parameter (`--resource-group`) auftreten, kehren Sie zum Anfang des Artikels zurück, und legen Sie die Standardwerte fest, oder geben Sie den Parameter und den Wert an. 
 
 > [!div class="nextstepaction"]
 > [Ich habe die App Service-Instanz erstellt.](tutorial-vscode-azure-cli-node-04.md) [Es ist ein Problem aufgetreten.](https://www.research.net/r/PWZWZ52?tutorial=node-deployment&step=create-website)

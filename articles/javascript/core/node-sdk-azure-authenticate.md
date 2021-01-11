@@ -2,18 +2,18 @@
 title: Authentifizieren mit den Azure-Verwaltungsmodulen für Node.js
 description: Authentifizieren mit einem Dienstprinzipal bei den Azure-Verwaltungsmodulen für Node.js
 ms.topic: how-to
-ms.date: 10/19/2020
+ms.date: 01/04/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 58acb71741f7e3b381e492b9ac3c06d6a94c331b
-ms.sourcegitcommit: c1ef7aa8ed2e88e98b190e42cffde52cf301958d
+ms.openlocfilehash: 413357533d5ddf8e41bc2e33d929074df4f2ac12
+ms.sourcegitcommit: 84f64dec74b4b041b8830a4e7489e22f0e943440
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97034531"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97864255"
 ---
 # <a name="authenticate-with-the-azure-management-modules-for-javascript"></a>Authentifizieren mit den Azure-Verwaltungsmodulen für JavaScript
 
-Für alle [SDK-Clientbibliotheken](../azure-sdk-library-package-index.md) ist bei der Instanziierung die Authentifizierung mit einem `credentials`-Objekt erforderlich. Es gibt mehrere Möglichkeiten, die erforderlichen Anmeldeinformationen zu authentifizieren und zu erstellen.
+Bei allen [SDK-Clientbibliotheken](../azure-sdk-library-package-index.md) ist eine Authentifizierung per Objekt vom Typ `credentials` erforderlich. Es gibt mehrere Möglichkeiten, die erforderlichen Anmeldeinformationen zu authentifizieren und zu erstellen.
 
 Wie andere Software und Dienste auch, wurde die Authentifizierung im Laufe der Jahre immer weiter verbessert. Es ist wichtig, dass Sie wissen, welche Authentifizierungsbibliothek von Ihren Diensten verwendet wird. 
 
@@ -49,19 +49,22 @@ const blobServiceClient = new BlobServiceClient(
 );
 ```
 
+Der obige JavaScript-Beispielcode zeigt, wie Sie unter Verwendung der Azure-Identitätsbibliothek Azure-Standardanmeldeinformationen erstellen und diese anschließend für den Zugriff auf eine Azure Storage-Ressource verwenden.
+
 ## <a name="azure-ms-rest--libraries"></a>ms-rest-*-Azure-Bibliotheken
-Bei den [Clientbibliotheken](../azure-sdk-library-package-index.md#modern-javascripttypescript-libraries) für den `@azure`-Bereich benötigen Sie ein Token, um einen Dienst verwenden zu können. Sie erhalten das Token, indem Sie eine Azure SDK-Clientauthentifizierungsmethode verwenden, bei der Anmeldeinformationen zurückgegeben werden. 
+Bei den modernen, auf `@azure` ausgerichteten [Clientbibliotheken](../azure-sdk-library-package-index.md#modern-javascripttypescript-libraries) benötigen Sie ein Token, um einen Dienst verwenden zu können. Sie erhalten das Token, indem Sie eine Azure SDK-Clientauthentifizierungsmethode verwenden, bei der Anmeldeinformationen zurückgegeben werden. 
 
 ```javascript
 const msRestNodeAuth = require("@azure/ms-rest-nodeauth");
 msRestNodeAuth.interactiveLogin().then((credential) => {
-}).catch((err) => {
     // service code goes here
+}).catch((err) => {
+    // error code goes here
     console.error(err);
 });
 ```
 
-Sie übergeben diese Anmeldeinformationen an eine bestimmte Clientbibliothek eines Azure-Diensts, z. B. den Storage-Dienst im nächsten Codebeispiel. Anhand der Anmeldeinformationen generiert die Clientbibliothek ein Token für Sie. Vom Dienst wird das Token verwendet, um Ihre Anforderungen zu überprüfen. 
+Der obige JavaScript-Beispielcode zeigt, wie Sie die moderne Azure-Authentifizierungsbibliothek mit einer interaktiven Anmeldung verwenden, um Anmeldeinformationen zu erhalten.
 
 ```javascript
 // service code - this is an example only and not best practices for code flow
@@ -73,6 +76,8 @@ billingManagementClient.enrollmentAccounts.list().then((enrollmentList) => {
 })
 ```
 
+Der obige JavaScript-Beispielcode zeigt, wie Sie diese Anmeldeinformationen an eine bestimmte Clientbibliothek eines Azure-Diensts übergeben (beispielsweise an den Storage-Dienst aus dem nächsten Codebeispiel). Anhand der Anmeldeinformationen generiert die Clientbibliothek ein Token für Sie. Das Token wird vom Dienst verwendet, um die Authentifizierung auf Dienstebene für Ihre Anforderungen zu validieren. 
+
 Die Clientbibliothek verwaltet das Token und führt die Aktualisierung dafür durch, wenn dies erforderlich ist. Sie als Entwickler mit Ihrer Codebasis müssen dies nicht verwalten.
 
 ## <a name="older-azure-sdk-client-authentication"></a>Authentifizierung für ältere Azure SDK-Clients 
@@ -80,8 +85,10 @@ Die Clientbibliothek verwaltet das Token und führt die Aktualisierung dafür du
 Ältere Azure SDK-Clients werden nach und nach auf die oben beschriebene moderne Authentifizierung umgestellt. Bis zu dieser Umstellung werden für die älteren Clientbibliotheken verschiedene Authentifizierungsclients eingesetzt, oder es wird ein völlig anderer Authentifizierungsmechanismus verwendet (z. B. Ressourcenschlüssel). 
 
 Optimale Ergebnisse mit älteren Clientbibliotheken erzielen Sie wie folgt: 
-* Bei jedem npm-Paket ist die Clientbibliothek für die Authentifizierung genau angegeben. 
-* In Ihrem aktuellen Code wird @azure/ms verwendet.
+* Bei jedem npm-Paket ist die Clientbibliothek für die Authentifizierung genau angegeben.  
+* Falls Ihr aktueller Code die modernen Bibliotheken vom Typ `@azure/ms-*` sowie die älteren Authentifizierungsbibliotheken in der gleichen Codebasis enthält, gilt Folgendes:
+    * Stellen Sie sicher, dass es sich bei der älteren, nicht auf Azure ausgerichteten Bibliothek um die neueste Bibliothek für Ihren Dienst handelt. Dies ist in der Dokumentation des Diensts angegeben. 
+    * Wenn Sie weiterhin eine Mischung aus modernen und älteren Authentifizierungsbibliotheken verwenden möchten, müssen für die ältere Bibliothek ggf. Ablauf- und Aktualisierungsfunktionen für Anmeldeinformationen bereitgestellt werden, um sie auf die Anwendungslogik in Ihrer Codebasis abzustimmen. 
 
 ## <a name="authentication-with-azure-services-while-developing"></a>Authentifizierung für Azure-Dienste bei der Entwicklung
 

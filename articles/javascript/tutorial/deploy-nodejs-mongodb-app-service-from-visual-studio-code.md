@@ -4,18 +4,20 @@ description: Verwenden Sie in diesem Tutorial eine Node.js-App mit einer MongoDB
 ms.topic: tutorial
 ms.date: 12/03/2020
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript
-ms.openlocfilehash: 1ddbe6a463f877e86a0c46da1ffb17c6a3094c0a
-ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
+ms.openlocfilehash: 6c295c305f2882c4a97a34ffa288738112ee9600
+ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97522403"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911500"
 ---
 # <a name="deploy-expressjs-mongodb-app-to-app-service-from-visual-studio-code"></a>Bereitstellen einer Express.js-MongoDB-App in App Service über Visual Studio Code
 
 Stellen Sie die Express.js-Anwendung bereit. Diese stellt eine Verbindung mit MongoDB und Azure App Service (unter Linux) und einer CosmosDB-Instanz her. 
 
 Die Programmieraufgaben wurden für Sie erledigt. Dieses Tutorial konzentriert sich auf die erfolgreiche Verwendung der lokalen und der Azure-Remoteumgebungen in Visual Studio Code mit Azure-Erweiterungen.
+
+* **[Beispielcode](https://github.com/Azure-Samples/js-e2e-express-mongo)**
 
 ## <a name="top-tasks"></a>Hauptaufgaben
 
@@ -27,7 +29,7 @@ Dieses Tutorial enthält mehrere **wichtige Azure-Aufgaben** für JavaScript-Ent
 
 ## <a name="sample-application"></a>Beispielanwendung
 
-Die [Express.js-Beispiel-App](https://github.com/Azure-Samples/js-e2e-express-mongo) besteht aus den folgenden Elementen:
+Die [Express.js-Beispiel-App](https://github.com/Azure-Samples/js-e2e-express-mongo) besteht aus folgenden Elementen:
 
 * **Express.js-Server** gehostet an Port 8080
 * Einfache Engine für die **serverseitige React.js-Ansicht**

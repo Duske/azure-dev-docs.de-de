@@ -4,18 +4,18 @@ description: Bei der in diesem Tutorial beschriebenen Azure Active Directory-Aut
 ms.topic: tutorial
 ms.date: 12/01/2020
 ms.custom: devx-track-js, "azure-sdk-javascript-@azure/msal-browser-2.7.0"
-ms.openlocfilehash: e6d91f1654b14d7b83c7ae2fa2c0a313914314b2
-ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
+ms.openlocfilehash: 0128d773a2bbc79b22b3ce3424e7133942053597
+ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97393889"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911490"
 ---
 # <a name="add-microsoft-login-button-to-a-single-page-application-for-authentication"></a>Hinzufügen einer Microsoft-Anmeldeschaltfläche zu einer Single-Page-Webanwendung für die Authentifizierung
 
 Bei der in diesem TypeScript-Tutorial beschriebenen Azure-Authentifizierung geht es um eine Anmelde- und Abmeldeschaltfläche und um den Zugriff auf das Konto eines Benutzers. Entwickeln Sie die Anwendung mit einem clientseitigen Azure-SDK (`@azure/msal-browser`), um die Interaktion des Benutzers in der Single-Page-Webanwendung (SPA) zu verwalten.
 
-* [Quellcode](https://github.com/Azure-Samples/js-e2e-client-azure-login-button)
+* [Beispielcode](https://github.com/Azure-Samples/js-e2e-client-azure-login-button)
 
 ## <a name="application-architecture-and-functionality"></a>Anwendungsarchitektur und Funktionalität
 
@@ -39,7 +39,7 @@ Vergewissern Sie sich, dass auf dem lokalen Computer Folgendes installiert ist:
 
 ## <a name="2-keep-value-for-environment-variable"></a>2. Beibehalten des Werts für die Umgebungsvariable
 
-Legen Sie einen Speicherort fest, an den Sie den Wert der App-Client-ID kopieren können. 
+Bereiten Sie einen Ort vor, an den Sie den Client-ID-Wert Ihrer App-Registrierung kopieren können (beispielsweise eine Textdatei). Diese Client-ID erhalten Sie in Schritt 5 des nächsten Abschnitts. Der Wert wird als Umgebungsvariable für die Web-App verwendet.  
 
 ## <a name="3-create-app-registration-for-authentication"></a>3. Erstellen der App-Registrierung für die Authentifizierung
 
@@ -47,9 +47,9 @@ Legen Sie einen Speicherort fest, an den Sie den Wert der App-Client-ID kopieren
 1. Wählen Sie **+ Neue Registrierung** aus.
 1. **Geben Sie Ihre App-Registrierungsdaten ein**, indem Sie die folgende Tabelle verwenden:
 
-   | Feld                   | Wert                                                                                                                                                                      |BESCHREIBUNG|
+   | Feld                   | Wert                                                                                                                                                                      |Beschreibung|
    | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |--|
-   | name                    | `Simple Auth Tutorial`|Dies ist der App-Name, der Benutzern beim Anmelden bei Ihrer App im Berechtigungsformular angezeigt wird.                                                 |
+   | Name                    | `Simple Auth Tutorial`|Dies ist der App-Name, der Benutzern beim Anmelden bei Ihrer App im Berechtigungsformular angezeigt wird.                                                 |
    | Unterstützte Kontotypen | **Konten in einem beliebigen Organisationsverzeichnis (beliebiges Azure AD-Verzeichnis – mehrinstanzenfähig) und persönliche Microsoft-Konten**|Hierdurch sind die meisten Kontotypen abgedeckt. |
    | Typ des Umleitungs-URI           | **Single-Page-Anwendung (SPA)**                                                                                        | |
    | Wert des Umleitungs-URI           | `http://localhost:3000` | Die URL, zu der nach der erfolgreichen oder fehlgeschlagenen Authentifizierung zurückgekehrt werden soll.                                                                                        |
@@ -67,17 +67,17 @@ Legen Sie einen Speicherort fest, an den Sie den Wert der App-Client-ID kopieren
    npx create-react-app tutorial-demo-login-button --template typescript
    ```
 
-1. Wechseln Sie in das neue Verzeichnis, und installieren Sie das Paket `@azure/msal-browser`:
+1. Wechseln Sie in das neue Verzeichnis, und installieren Sie das Authentifizierungspaket `@azure/msal-browser`:
 
    ```bash
    cd tutorial-demo-login-button && npm install @azure/msal-browser
    ```
 
-1. Erstellen Sie auf Stammebene eine `.env`-Datei, und fügen Sie ihr die folgenden Zeilen hinzu:
+1. Erstellen Sie auf Stammebene eine Datei vom Typ `.env`, und fügen Sie ihr die folgende Zeile hinzu:
 
     :::code language="env" source="~/../js-e2e-client-azure-login-button/.env"  :::
 
-    Die `.env`-Datei wird vom „create-react-app“-Framework gelesen.
+    Die `.env`-Datei wird vom „create-react-app“-Framework gelesen. In dieser Datei können Sie die Client-ID für die lokale Entwicklung speichern. 
 
 1. Kopieren Sie Ihre Anwendungs-ID (Client) in den zweiten Wert.
 

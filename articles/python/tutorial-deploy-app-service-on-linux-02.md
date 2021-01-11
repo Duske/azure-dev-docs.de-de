@@ -4,12 +4,12 @@ description: 'Tutorialschritt 2: Einrichten der Anwendung'
 ms.topic: conceptual
 ms.date: 11/20/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 7197f8afc28bd62e7247c3955c888199ee69c509
-ms.sourcegitcommit: 09b4a2dbe13601fdf16fcc4082a5075b46ad3459
+ms.openlocfilehash: 78efb3fdfa7d7d4ac8699726c2be6b17d27ea875
+ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96559194"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911390"
 ---
 # <a name="2-prepare-your-app-for-deployment-to-azure-app-service"></a>2: Vorbereiten Ihrer App für die Bereitstellung in Azure App Service
 
@@ -57,7 +57,7 @@ In diesem Abschnitt wird die in dieser exemplarischen Vorgehensweise verwendete 
         return "Hello Flask, on Azure App Service for Linux"
     ```
 
-1. Erstellen Sie eine Datei namens *requirements.txt* mit folgendem Inhalt:
+1. Erstellen Sie im gleichen Ordner eine Datei namens *requirements.txt* mit folgendem Inhalt:
 
     ```text
     Flask
@@ -65,21 +65,33 @@ In diesem Abschnitt wird die in dieser exemplarischen Vorgehensweise verwendete 
 
 1. Öffnen Sie ein Terminal mithilfe des Menübefehls **Terminal** > **Neues Terminal**.
 
-1. Erstellen Sie im Terminal eine virtuelle Umgebung mit dem Namen `.venv`, und aktivieren Sie sie. 
+1. Navigieren Sie im Terminal zum Ordner mit der Datei *hello.py*. Alle weiteren Terminalbefehle werden in diesem Ordner ausgeführt.
 
-    # <a name="macoslinux"></a>[macOS/Linux](#tab/linux)
+1. Erstellen Sie eine virtuelle Umgebung namens `.venv`, und aktivieren Sie sie:
+
+    # <a name="cmd"></a>[cmd](#tab/cmd)
+
+    ```cmd
+    :: Assumes Windows
+    py -3 -m venv .venv
+    .venv\scripts\activate
+    ```
+
+    # <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+    ```ps
+    # Assumes Windows
+    py -3 -m venv .venv
+    .venv\scripts\activate
+    ```
+
+    # <a name="bash"></a>[Bash](#tab/bash)
 
     ```bash
+    # Assumes macOS/Linux
     sudo apt-get install python3-venv    # If needed
     python3 -m venv .venv
     source .venv/bin/activate
-    ```
-
-    # <a name="windows"></a>[Windows](#tab/windows)
-
-    ```cmd
-    py -3 -m venv .venv
-    .venv\scripts\activate
     ```
 
     ---

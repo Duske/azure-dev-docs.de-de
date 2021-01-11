@@ -1,15 +1,15 @@
 ---
 title: Konfigurieren Ihrer lokalen Python-Umgebung für die Azure-Entwicklung
 description: Hier erfahren Sie, wie Sie eine lokale Python-Entwicklungsumgebung für die Arbeit mit Azure einrichten – einschließlich Visual Studio Code, den Azure SDK-Bibliotheken und den erforderlichen Anmeldeinformationen für die Bibliothekauthentifizierung.
-ms.date: 05/29/2020
+ms.date: 01/04/2021
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: b9e3c36199cfe9fa94fa518587b6065f4d9ef9b0
-ms.sourcegitcommit: 12f80b1e0fe08db707c198271d0c399c3aba343a
+ms.openlocfilehash: fcad7c614ae27c8b1b3ccf081d85292549cfcee3
+ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94515151"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911470"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>Konfigurieren Ihrer lokalen Python-Entwicklungsumgebung für Azure
 
@@ -136,13 +136,13 @@ Jeder Entwickler in Ihrer Organisation sollte diese Schritte einzeln ausführen.
 
 #### <a name="what-the-create-for-rbac-command-does"></a>Aktionen des Befehls „create-for-rbac“
 
-Durch den Befehl `az ad create-for-rbac` wird ein Dienstprinzipal für die rollenbasierte Authentifizierung (RBAC) erstellt.
+Durch den Befehl `az ad create-for-rbac` wird ein Dienstprinzipal für die rollenbasierte Authentifizierung (RBAC) erstellt. (Weitere Informationen zu Dienstprinzipalen finden Sie unter [Authentifizieren und Autorisieren von Python-Apps in Azure](azure-sdk-authenticate.md).)
 
 - `ad` bedeutet Azure Active Directory, `sp` bedeutet „Dienstprinzipal“, und `create-for-rbac` bedeutet „Für rollenbasierte Zugriffssteuerung erstellen“, die primäre Form der Autorisierung in Azure. Informationen finden Sie in der Referenz zum Befehl [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac).
 
 - Das Argument `--name` sollte innerhalb Ihrer Organisation eindeutig sein und in der Regel den Namen des Entwicklers verwenden, der den Dienstprinzipal verwendet. Wenn Sie dieses Argument weglassen, verwendet die Azure CLI einen generischen Namen der Form `azure-cli-<timestamp>`. Sie können den Dienstprinzipal auch über das Azure-Portal umbenennen, wenn Sie möchten.
 
-- Das Argument `--skip-assignment` erstellt einen Dienstprinzipal ohne Standardberechtigungen. Anschließend müssen Sie dann dem Dienstprinzipal bestimmte Berechtigungen zuweisen, um lokal ausgeführtem Code den Zugriff auf Ressourcen zu gewähren. Verschiedene Schnellstarts und Tutorials enthalten Details zum Autorisieren eines Dienstprinzipals für die beteiligten Ressourcen.
+- Das Argument `--skip-assignment` erstellt einen Dienstprinzipal ohne Standardberechtigungen. Anschließend müssen Sie dann dem Dienstprinzipal bestimmte Berechtigungen zuweisen, um lokal ausgeführtem Code den Zugriff auf Ressourcen zu gewähren. Weitere Informationen finden Sie unter [Was ist die rollenbasierte Zugriffssteuerung in Azure (Azure Role-Based Access Control, Azure RBAC)?](/azure/role-based-access-control/overview) sowie unter [Schritte zum Hinzufügen einer Rollenzuweisung](/azure/role-based-access-control/role-assignments-steps). Diverse Schnellstartanleitungen und Tutorials enthalten ebenfalls Details zur Autorisierung eines Dienstprinzipals für die spezifischen beteiligten Ressourcen.
 
 - Durch den Befehl wird eine JSON-Ausgabe bereitgestellt, die in diesem Beispiel in einer Datei namens *local-sp.json* gespeichert wird.
 
@@ -176,6 +176,11 @@ Durch den Befehl `az ad create-for-rbac` wird ein Dienstprinzipal für die rolle
     </pre>
 
     In diesem Fall ist `tenant` die Mandanten-ID, `appId` ist die Client-ID, und `password` ist der geheime Clientschlüssel.
+
+    > [!WARNING]
+    >  Wenn Sie mithilfe von `az ad sp create-for-rbac` einen Dienstprinzipal erstellen, enthält die Ausgabe Anmeldeinformationen, die geschützt werden müssen (beispielsweise ein Kennwort, einen geheimen Clientschlüssel oder ein Zertifikat). Speichern Sie diese Anmeldeinformationen nicht im Code oder in einer Datei, die in die Quellcodeverwaltung committet wird.
+    > Durch `az ad sp create-for-rbac` wird dem Dienstprinzipal standardmäßig die Rolle [Mitwirkender](/azure/role-based-access-control/built-in-roles#contributor) auf Abonnementebene zugewiesen. Sie können eine spezifischere Rolle zuweisen und den Bereich auf eine Ressource oder Ressourcengruppe beschränken, um das Risiko im Falle einer Kompromittierung des Dienstprinzipals zu senken.
+    > Verwenden Sie für Produktionscode (im Gegensatz zur lokalen Entwicklung) nach Möglichkeit [verwaltete Identitäten](/azure/active-directory/managed-identities-azure-resources/overview) anstelle eines bestimmten Dienstprinzipals.
 
     > [!IMPORTANT]
     > Die Ausgabe dieses Befehls ist die einzige Stelle, an der Sie den geheimen Clientschlüssel/das Kennwort sehen können. Sie können das Geheimnis/Kennwort später nicht mehr abrufen. Sie können aber bei Bedarf ein neues Geheimnis hinzufügen, ohne den Dienstprinzipal oder vorhandene Geheimnisse ungültig zu machen.

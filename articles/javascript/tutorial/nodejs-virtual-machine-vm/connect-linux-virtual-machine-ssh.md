@@ -2,14 +2,14 @@
 title: SSH-Verbindung mit virtuellem Computer
 description: Hier erfahren Sie, wie Sie eine SSH-Verbindung mit Ihrem virtuellen Linux-Computer herstellen.  Wenn Sie ein modernes Mac-, Windows- oder Linux-Betriebssystem verwenden, sollte terminalbasiertes Client-SSH bereits installiert sein.
 ms.topic: tutorial
-ms.date: 11/13/2020
+ms.date: 01/05/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 7c496a907b6cbac894e92d0ecccdf32411a370ab
-ms.sourcegitcommit: ed749b136f0d6b876fd5866ba4a151c73af5b71f
+ms.openlocfilehash: c4b9577c93e37c28145abe8e976a93cd6ff39197
+ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94674720"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97952492"
 ---
 # <a name="4-connect-to-linux-virtual-machine-using-ssh"></a>4. Herstellen einer SSH-Verbindung mit einem virtuellen Linux-Computer
 
@@ -51,11 +51,15 @@ Verwenden Sie das gleiche Terminal oder Shellfenster wie in den vorherigen Schri
     -rw-r--r--   1 root root   697 Nov 11 20:23 readme.md
     ```
 
-1. Installieren Sie die [Azure SDK-Clientbibliothek für Application Insights](https://www.npmjs.com/package/applicationinsights).
+## <a name="install-monitoring-sdk"></a>Installieren eines SDK für die Überwachung
 
-    ```bash
-    sudo npm install --save applicationinsights
-    ```
+Installieren Sie die [Azure SDK-Clientbibliothek für Application Insights](https://www.npmjs.com/package/applicationinsights).
+
+```bash
+sudo npm install --save applicationinsights
+```
+
+## <a name="add-monitoring-instrumentation-key"></a>Hinzufügen des Instrumentierungsschlüssels für die Überwachung
 
 1. Verwenden Sie den Editor [Nano](https://www.nano-editor.org/dist/latest/nano.html#Editor-Basics), um die Datei `package.json` zu ändern.
 

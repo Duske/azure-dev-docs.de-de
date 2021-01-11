@@ -3,14 +3,14 @@ title: 'Tutorial: Bereitstellen einer Django-App mit PostgreSQL mithilfe des Azu
 description: Stellen Sie eine Web-App und eine PostgreSQL-Datenbank in Azure sowie App-Code über GitHub bereit.
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 11/02/2020
+ms.date: 01/04/2021
 ms.custom: devx-track-python
-ms.openlocfilehash: 503a899150edc3f8dc22d7e0361a4888590ab61c
-ms.sourcegitcommit: 10d4133c8abb3e7473dcdf6418ebadd3e08275f7
+ms.openlocfilehash: 65f8558aa81e839b3701669a0274419cd2143e49
+ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93284525"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911460"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>Tutorial: Bereitstellen einer Django-Web-App mit PostgreSQL mithilfe des Azure-Portals
 
@@ -48,7 +48,7 @@ Sie erstellen einen Fork dieses Repositorys, damit Sie Änderungen vornehmen und
 
 1. Wählen Sie **Ressource erstellen** aus. Daraufhin wird die Seite **Neu** geöffnet.
 
-1. Suchen Sie nach **Web-App** , und wählen Sie die Option aus.
+1. Suchen Sie nach **Web-App**, und wählen Sie diese Option und dann **Erstellen** aus.
 
 1. Geben Sie auf der Seite **Web-App erstellen** die folgenden Informationen ein:
 
@@ -75,7 +75,7 @@ Sie erstellen einen Fork dieses Repositorys, damit Sie Änderungen vornehmen und
 
 1. Wählen Sie **Ressource erstellen** aus. Daraufhin wird die Seite **Neu** geöffnet.
 
-1. Suchen Sie nach **Azure Database for PostgreSQL** , und wählen Sie die Option aus.
+1. Suchen Sie nach **Azure Database for PostgreSQL**, und wählen Sie diese Option und anschließend **Erstellen** aus.
 
 1. Wählen Sie auf der nächsten Seite unter **Einzelserver** die Option **Erstellen** aus.
 
@@ -102,7 +102,7 @@ Sie erstellen einen Fork dieses Repositorys, damit Sie Änderungen vornehmen und
 
 In diesem Abschnitt stellen Sie eine Verbindung mit dem Datenbankserver in Azure Cloud Shell her und verwenden einen PostgreSQL-Befehl, um die Datenbank „pollsdb“ auf dem Server zu erstellen. Diese Datenbank wird vom Code der Beispiel-App erwartet.
 
-1. Wählen Sie auf der Übersichtsseite des PostgreSQL-Servers **Verbindungssicherheit** aus (auf der linken Seite unter **Einstellungen** ).
+1. Wählen Sie auf der Übersichtsseite des PostgreSQL-Servers **Verbindungssicherheit** aus (auf der linken Seite unter **Einstellungen**).
 
     ![Portalseite „Verbindungssicherheit“ für Firewallregeln](media/tutorial-python-postgresql-app-portal/server-firewall-rules.png)
 
@@ -140,11 +140,11 @@ In diesem Abschnitt erstellen Sie Einstellungen für die Web-App, die für das H
 
 1. Wechseln Sie zurück zur Browserregisterkarte oder zum Browserfenster für die Web-App, die Sie in einem vorherigen Abschnitt erstellt haben.
 
-1. Wählen Sie **Konfiguration** (auf der linken Seite unter **Einstellungen** ) und dann oben auf der Seite **Anwendungseinstellungen** aus.
+1. Wählen Sie **Konfiguration** (auf der linken Seite unter **Einstellungen**) und dann oben auf der Seite **Anwendungseinstellungen** aus.
 
     ![Konfiguration der Portaleinstellungen für Web-Apps](media/tutorial-python-postgresql-app-portal/web-app-settings.png)
 
-1. Verwenden Sie die Schaltfläche **Neue Anwendungseinstellung** , um Einstellungen für die folgenden Werte zu erstellen (diese werden vom Beispiel „djangoapp“ erwartet):
+1. Verwenden Sie die Schaltfläche **Neue Anwendungseinstellung**, um Einstellungen für die folgenden Werte zu erstellen (diese werden vom Beispiel „djangoapp“ erwartet):
 
     | Einstellungsname | Wert |
     | --- | --- |
@@ -166,9 +166,11 @@ In diesem Abschnitt erstellen Sie Einstellungen für die Web-App, die für das H
 
 Nach dem Einrichten der Datenbank und der Verbindungseinstellungen können Sie nun die Web-App so konfigurieren, dass sie Code direkt über ein GitHub-Repository bereitstellt.
 
-1. Wählen Sie im Browserfenster oder auf der Browserregisterkarte der Web-App **Bereitstellungscenter** aus (auf der linken Seite unter **Bereitstellung** ).
+1. Wählen Sie im Browserfenster oder auf der Browserregisterkarte der Web-App **Bereitstellungscenter** aus (auf der linken Seite unter **Bereitstellung**).
 
 1. Wählen Sie im Schritt **Quellcodeverwaltung** die Option **GitHub** und dann **Autorisieren** aus (falls erforderlich). Befolgen Sie dann die Anmeldeaufforderungen, oder wählen Sie **Weiter** aus, um Ihre aktuelle GitHub-Anmeldung zu verwenden.
+
+    Wenn ein Popupfenster mit dem Hinweis angezeigt wird, dass die Authentifizierung erfolgreich war, im Portal aber weiterhin die Autorisierungsschaltfläche angezeigt wird, aktualisieren Sie die Seite. Daraufhin sollte im GitHub-Feld Ihre GitHub-Anmeldung erscheinen. Wählen Sie erneut das GitHub-Feld und anschließend **Weiter** aus.
 
 1. Wählen Sie im Schritt **Buildanbieter** die Option **App Service-Builddienst** und anschließend **Weiter** aus.
 
@@ -190,24 +192,18 @@ Nach dem Einrichten der Datenbank und der Verbindungseinstellungen können Sie n
 
 Wurden Code und Datenbank bereitgestellt, ist die App fast bereit für die Verwendung. Nun muss nur noch das erforderliche Schema in der Datenbank selbst eingerichtet werden. Hierzu können Sie die Datenmodelle in der Django-App zur Datenbank migrieren.
 
-1. Wählen Sie im Browserfenster oder auf der Registerkarte für die Web-App die Option **SSH** (links unter **Entwicklungstools** ) und dann **Starten** aus, um auf dem Web-App-Server eine SSH-Konsole zu öffnen. Es kann eine Minute dauern, bis die Verbindung zum ersten Mal hergestellt wird, da der Web-App-Container gestartet werden muss.
+1. Wählen Sie im Browserfenster oder auf der Registerkarte für die Web-App die Option **SSH** (links unter **Entwicklungstools**) und dann **Starten** aus, um auf dem Web-App-Server eine SSH-Konsole zu öffnen. Es kann eine Minute dauern, bis die Verbindung zum ersten Mal hergestellt wird, da der Web-App-Container gestartet werden muss.
 
 1. Navigieren Sie in der Konsole zum Ordner der Web-App:
 
     ```bash
-    cd site/wwwroot
+    cd $APP_PATH
     ```
 
-1. Aktivieren Sie die virtuelle Umgebung des Containers:
+1. Aktivieren der virtuellen Umgebung
 
     ```bash
     source /antenv/bin/activate
-    ```
-
-1. Installieren von Python-Paketen:
-
-    ```bash
-    pip install -r requirements.txt
     ```
 
 1. Führen Sie eine Datenbankmigration aus:
@@ -216,13 +212,15 @@ Wurden Code und Datenbank bereitgestellt, ist die App fast bereit für die Verwe
     python manage.py migrate
     ```
 
+    Sollten Fehler auftreten, die mit der Herstellung der Datenbankverbindung zusammenhängen, überprüfen Sie die Werte der unter [Herstellen einer Verbindung mit der Datenbank](#connect-the-database) erstellten Anwendungseinstellungen.
+
 1. Erstellen Sie eine Administratoranmeldung für die App:
 
     ```bash
     python manage.py createsuperuser
    ```
 
-    Mit dem Befehl `createsuperuser` werden Sie zur Eingabe von Django-Superuser-Anmeldeinformationen (oder Administratoranmeldeinformationen) aufgefordert, die in der Web-App verwendet werden. Verwenden Sie für dieses Tutorial den Standardbenutzernamen `root`, drücken Sie für die E-Mail-Adresse die **EINGABETASTE** , um sie leer zu lassen, und geben Sie `Pollsdb1` als Kennwort ein.
+    Mit dem Befehl `createsuperuser` werden Sie zur Eingabe von Django-Superuser-Anmeldeinformationen (oder Administratoranmeldeinformationen) aufgefordert, die in der Web-App verwendet werden. Verwenden Sie für dieses Tutorial den Standardbenutzernamen `root`, drücken Sie für die E-Mail-Adresse die **EINGABETASTE**, um sie leer zu lassen, und geben Sie `Pollsdb1` als Kennwort ein.
 
 [Treten Probleme auf? Informieren Sie uns darüber.](https://aka.ms/DjangoPortalTutorialHelp)
 
@@ -232,9 +230,9 @@ Sie können nun einen schnellen Test für die App ausführen, um zu überprüfen
 
 1. Kehren Sie im Browserfenster oder auf der Browserregisterkarte der Web-App zur Seite **Übersicht** zurück,und wählen Sie die **URL** für die Web-App (im Format `http://<app-name>.azurewebsites.net`) aus.
 
-1. In der App sollte „No polls are available“ (Keine Umfragen verfügbar) angezeigt werden, da die Datenbank noch keine spezifischen Umfragen enthält.
+1. In der App sollten „Polls app“ (Umfrage-App) und „No polls are available“ (Keine Umfragen verfügbar) angezeigt werden, da die Datenbank noch keine spezifischen Umfragen enthält.
 
-1. Navigieren Sie zu `http://<app-name>.azurewebsites.net/admin` (Seite für die Django-Verwaltung), und melden sie sich mit den Superuser-Anmeldeinformationen aus dem vorherigen Abschnitt an (`root` und `Pollsdb1`).
+1. Navigieren Sie zu `http://<app-name>.azurewebsites.net/admin` (Seite für die Django-Verwaltung), und melden sie sich mit den Superuser-Anmeldeinformationen für Django aus dem vorherigen Abschnitt an (`root` und `Pollsdb1`).
 
 1. Wählen Sie unter **Polls** (Umfragen) neben **Questions** (Fragen) die Option **Add** (Hinzufügen) aus, und erstellen Sie eine Frage für eine Umfrage mit mehreren Auswahlmöglichkeiten.
 
@@ -252,7 +250,7 @@ Wenn Sie jedoch die Datenmodelle der Django-App ändern, müssen Sie diese Ände
 
 1. Stellen Sie über SSH erneut eine Verbindung mit der Web-App her, wie unter [Ausführen einer Django-Datenbankmigration](#run-django-database-migrations) beschrieben.
 
-1. Navigieren Sie mit `cd site/wwwroot` zum App-Ordner.
+1. Navigieren Sie mit `cd $APP_PATH` zum App-Ordner.
 
 1. Aktivieren Sie die virtuelle Umgebung mit `source /antenv/bin/activate`.
 
@@ -264,7 +262,7 @@ Wenn Sie jedoch die Datenmodelle der Django-App ändern, müssen Sie diese Ände
 
 Auf die generierten Konsolenprotokolle kann innerhalb des Containers zugegriffen werden, in dem die App in Azure gehostet wird.
 
-Wählen Sie im Azure-Portal auf der Seite der Web-App die Option **Protokollstream** aus (auf der linken Seite unter **Überwachung** ). Die Protokolle werden als Konsolenausgabe angezeigt.
+Wählen Sie im Azure-Portal auf der Seite der Web-App die Option **Protokollstream** aus (auf der linken Seite unter **Überwachung**). Die Protokolle werden als Konsolenausgabe angezeigt.
 
 Sie können die Protokolldateien auch im Browser unter `https://<app-name>.scm.azurewebsites.net/api/logs/docker` untersuchen.
 

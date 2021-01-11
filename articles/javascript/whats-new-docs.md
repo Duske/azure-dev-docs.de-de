@@ -1,18 +1,27 @@
 ---
-title: 'Neuerungen in der JavaScript-Dokumentation: '
-description: Neuerungen in der JavaScript-Dokumentation für Oktober 2020
+title: Neuerungen in der JavaScript-Dokumentation
+description: Neuerungen in der JavaScript-Dokumentation im Developer Center
 ms.topic: conceptual
-ms.date: 12/18/2020
-ms.openlocfilehash: ccc38a8dae86527650342e16e30da9fa7f28c0a7
-ms.sourcegitcommit: 28bed3dead87528796bdd76f3e94e66f4bd5e197
+ms.date: 01/05/2021
+ms.openlocfilehash: 507c52491784a508535ae07f4a9b2755fa68cc1b
+ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97710387"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97952452"
 ---
-# <a name="javascript-docs-whats-new-for-october-2020"></a>JavaScript-Dokumentation: Neuerungen im Oktober 2020
+# <a name="javascript-docs-whats-new"></a>JavaScript-Dokumentation: Neues
 
 Hier finden Sie neue und aktualisierte Inhalte für JavaScript- und TypeScript-Entwickler.
+
+## <a name="2021-january"></a>Januar 2021
+
+### <a name="whats-updated"></a>Aktualisierungen
+
+|Name|Notizen|
+|---------------------------------------|--|
+|[**Für Einsteiger**](learn-azure-javascript.md#getting-started)|Verschiedene Sammlungen mit Onlinematerial für die ersten Schritte mit JavaScript, Node.js und Webentwicklung sowie für andere Bereiche, die für JavaScript-Entwickler von Interesse sind.|
+|[Wichtigste allgemeine Aufgaben für JavaScript-Entwickler](how-to/common-javascript-tasks.md)|Hier finden Sie ein Beispiel für Ihre aktuellen Aufgaben.|
 
 ## <a name="2020-december"></a>Dezember 2020
 
