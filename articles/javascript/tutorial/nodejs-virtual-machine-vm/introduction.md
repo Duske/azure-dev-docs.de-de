@@ -4,16 +4,18 @@ description: Hier erfahren Sie, wie Sie einen virtuellen Linux-Computer mit eine
 ms.topic: tutorial
 ms.date: 11/13/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 674bf37acda9fcd9f6df7b84602600ad65ada3d9
-ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
+ms.openlocfilehash: c68a8442862eb03291f80609bb9767fb1c9b1b6b
+ms.sourcegitcommit: ed31f841fa9680335658df6708f107e170d47ff0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97522124"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97974547"
 ---
 # <a name="1-create-linux-virtual-machine-with-expressjs-app-using-azure-cli"></a>1. Erstellen eines virtuellen Linux-Computers mit Express.js-App mithilfe der Azure CLI
 
 In diesem Tutorial wird ein virtueller Linux-Computer (virtual machine, VM) für eine Express.js-App erstellt. Der virtuelle Computer wird mit einer cloud-init-Konfigurationsdatei konfiguriert und enthält NGINX sowie ein GitHub-Repository für eine Express.js-App. Wenn der virtuelle Computer ausgeführt wird, können Sie eine SSH-Verbindung mit dem virtuellen Computer herstellen, die Web-App ändern, um sie mit Ablaufverfolgungsprotokollierung zu versehen, und die öffentliche Express.js-Server-App in einem Webbrowser anzeigen.
+
+* [**Beispielcode**](https://github.com/Azure-Samples/js-e2e-vm)
 
 Dieses Lernprogramm enthält die folgenden Aufgaben:
 
