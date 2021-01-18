@@ -4,12 +4,12 @@ description: 'Teil 6 des Azure CLI-Tutorials: Vornehmen von Änderungen und er
 ms.topic: tutorial
 ms.date: 09/24/2019
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: ddd03bb06d1b6b91626e4db979f0a0ca8ea7f124
-ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
+ms.openlocfilehash: 1c80c76759d22195fc7268d4b072a7a25c3a1745
+ms.sourcegitcommit: 75a1f26aaff48a89631805df4b4a0c006de6a271
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97658408"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98128171"
 ---
 # <a name="part-6-make-changes-and-redeploy"></a>Teil 6: Vornehmen von Änderungen und erneutes Bereitstellen
 
@@ -17,9 +17,9 @@ ms.locfileid: "97658408"
 
 In diesem Schritt nehmen Sie Änderungen an Ihrem App-Code vor, committen die Änderungen in das lokale Git-Repository, und anschließend stellen Sie Ihre Website erneut bereit, indem Sie sie in Azure pushen.
 
-1. Öffnen Sie im Ordner `myExpressApp` die Datei *views/index.pug*, und ändern Sie die Meldung in Zeile 5 in `p Welcome to Azure!`.
+1. Öffnen Sie im Ordner `myExpressApp` die Datei *src/server.js*, und ändern Sie die Meldung `Welcome to Azure!`.
 
-    ![Bearbeiten der Datei „index.pug“](../../media/azure-cli/editpugfile.png)
+    ![Bearbeiten der Datei „src/server.js“](../../media/azure-cli/edit-server-file.png)
 
 1. Speichern Sie die Datei .
 
@@ -52,7 +52,7 @@ In diesem Schritt nehmen Sie Änderungen an Ihrem App-Code vor, committen die Ä
     remote: Handling node.js deployment.
     remote: Creating app_offline.htm
     remote: KuduSync.NET from: 'D:\home\site\repository' to: 'D:\home\site\wwwroot'
-    remote: Copying file: 'views\index.pug'
+    remote: Copying file: 'src\server.js'
     remote: Deleting app_offline.htm
     remote: Using start-up script bin/www from package.json.
     remote: Generated web.config.

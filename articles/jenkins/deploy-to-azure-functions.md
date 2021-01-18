@@ -3,14 +3,14 @@ title: 'Tutorial: Durchführen einer Bereitstellung in Azure Functions mit Jenki
 description: Hier wird beschrieben, wie Sie mit dem Jenkins-Azure Functions-Plug-In Bereitstellungen in Azure Functions durchführen.
 keywords: Jenkins, Azure, DevOps, Java, Azure Functions
 ms.topic: tutorial
-ms.date: 10/23/2019
-ms.custom: devx-track-jenkins
-ms.openlocfilehash: 7258e3d20262e214bbe9461564210c0d84fe2e89
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.date: 01/11/2021
+ms.custom: devx-track-jenkins,devx-track-cli
+ms.openlocfilehash: 51807b1a3038d17278a6015d387b84e68aac71f5
+ms.sourcegitcommit: 347bfa3b6c34579c567d1324efc63c1d6672a75b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "96035382"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98109028"
 ---
 # <a name="tutorial-deploy-to-azure-functions-using-jenkins"></a>Tutorial: Durchführen einer Bereitstellung in Azure Functions mit Jenkins
 
@@ -48,7 +48,7 @@ Die folgenden Schritte veranschaulichen, wie Sie mit der Azure CLI eine Java-Fun
 1. Erstellen Sie die Test-Funktions-App, und ersetzen Sie die Platzhalter durch die entsprechenden Werte.
 
     ```azurecli
-    az functionapp create --resource-group <resource_group> --consumption-plan-location eastus --name <function_app> --storage-account <storage_account>
+    az functionapp create --resource-group <resource_group> --runtime java --consumption-plan-location eastus --name <function_app> --storage-account <storage_account> --functions-version 2
     ```
 
 ## <a name="prepare-jenkins-server"></a>Vorbereiten des Jenkins-Servers
@@ -59,29 +59,57 @@ In den folgenden Schritten wird beschrieben, wie Sie den Jenkins-Server vorberei
 
 1. Melden Sie sich per SSH an der Jenkins-Instanz an.
 
-1. Installieren Sie auf der Jenkins-Instanz Maven, indem Sie den folgenden Befehl verwenden:
+1. Installieren Sie in der Jenkins-Instanz die Azure CLI (Version 2.0.67 oder höher).
 
-    ```terminal
+1. Installieren Sie Maven mithilfe des folgenden Befehls:
+
+    ```bash
     sudo apt install -y maven
     ```
 
 1. Installieren Sie auf der Jenkins-Instanz die [Azure Functions Core Tools](/azure/azure-functions/functions-run-local), indem Sie an einer Eingabeaufforderung des Terminals die folgenden Befehle ausführen:
 
-    ```terminal
-    wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
-    sudo dpkg -i packages-microsoft-prod.deb
+    ```bash
+    curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+    sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+    sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-$(lsb_release -cs)-prod $(lsb_release -cs) main" > /etc/apt/sources.list.d/dotnetdev.list'
+    cat /etc/apt/sources.list.d/dotnetdev.list
     sudo apt-get update
-    sudo apt-get install azure-functions-core-tools
+    sudo apt-get install azure-functions-core-tools-3
     ```
-
-1. Installieren Sie im Jenkins-Dashboard die folgenden Plug-Ins:
-
-    - Azure Functions-Plug-In
-    - EnvInject-Plug-In
 
 1. Jenkins benötigt einen Azure-Dienstprinzipal zum Authentifizieren und Zugreifen auf Azure-Ressourcen. Eine Schritt-für-Schritt-Anleitung finden Sie unter [Tutorial: Bereitstellen über GitHub in Azure App Service mit Continuous Integration und Continuous Deployment von Jenkins](./deploy-from-github-to-azure-app-service.md).
 
-1. Fügen Sie mit dem Azure-Dienstprinzipal in Jenkins den Typ „Microsoft Azure-Dienstprinzipal“ für Anmeldeinformationen hinzu. Informationen hierzu finden Sie im oben angegebenen Tutorial unter [Hinzufügen des Dienstprinzipals zu Jenkins](./deploy-from-github-to-azure-app-service.md#add-service-principal-to-jenkins).
+1. Vergewissern Sie sich, dass das [Plug-In für Anmeldeinformationen](https://plugins.jenkins.io/credentials/) installiert ist.
+
+    1. Wählen Sie im Menü die Option **Manage Jenkins** (Jenkins verwalten) aus.
+
+    1. Wählen Sie unter **System Configuration** (Systemkonfiguration) die Option **Manage Plugins** (Plug-Ins verwalten) aus.
+
+    1. Wählen Sie die Registerkarte **Installiert** aus.
+
+    1. Geben Sie im Feld **Filter** den Text `credentials` ein.
+    
+    1. Vergewissern Sie sich, dass das **Plug-In für Anmeldeinformationen** installiert ist. Falls nicht, installieren Sie es über die Registerkarte **Available** (Verfügbar).
+
+    ![Das Plug-In für Anmeldeinformationen muss installiert sein.](./media/deploy-to-azure-functions/credentials-plugin.png)
+
+1. Wählen Sie im Menü die Option **Manage Jenkins** (Jenkins verwalten) aus.
+
+1. Wählen Sie unter **Security** (Sicherheit) die Option **Manage Credentials** (Anmeldeinformationen verwalten) aus.
+
+1. Wählen Sie unter **Credentials** (Anmeldeinformationen) die Option **(global)** aus.
+
+1. Wählen Sie im Menü die Option **Add Credentials** (Anmeldeinformationen hinzufügen) aus.
+
+1. Geben Sie die folgenden Werte für Ihren [Microsoft Azure-Dienstprinzipal](/cli/azure/create-an-azure-service-principal-azure-cli?toc=%252fazure%252fazure-resource-manager%252ftoc.json) ein:
+
+    - **Variante**: Vergewissern Sie sich, dass die Variante auf **_Username with password_** (Benutzername mit Kennwort) festgelegt ist.
+    - _*Username*_ (Benutzername): App-ID (_ *_appId_*_) des erstellten Dienstprinzipals.
+    - _*Password*_ (Kennwort): Kennwort (_ *_password_*_) des erstellten Dienstprinzipals.
+    - _*ID*_: Bezeichner für die Anmeldeinformationen (beispielsweise `as azuresp`).
+
+1. Klicken Sie auf **OK**.
 
 ## <a name="fork-the-sample-github-repo"></a>Forken des GitHub-Beispielrepositorys
 
@@ -99,34 +127,37 @@ In diesem Abschnitt erstellen Sie die [Jenkins-Pipeline](https://jenkins.io/doc/
 
 1. Aktivieren Sie **Prepare an environment for the run** (Umgebung für die Ausführung vorbereiten).
 
-1. Fügen Sie unter **Properties Content** (Eigenschafteninhalt) die folgenden Umgebungsvariablen hinzu, und ersetzen Sie die Platzhalter durch die entsprechenden Werte für Ihre Umgebung:
-
-    ```
-    AZURE_CRED_ID=<service_principal_credential_id>
-    RES_GROUP=<resource_group>
-    FUNCTION_NAME=<function_name>
-    ```
-    
 1. Wählen Sie im Abschnitt **Pipeline > Definition** die Option **Pipeline script from SCM** (Pipeline-Skript von SCM).
 
 1. Geben Sie die URL Ihres GitHub-Forks und den Skriptpfad („doc/resources/jenkins/JenkinsFile“) für die Verwendung im [JenkinsFile-Beispiel](https://github.com/VSChina/odd-or-even-function/blob/master/doc/resources/jenkins/JenkinsFile) ein.
 
-   ```
-   node {
-    stage('Init') {
-        checkout scm
+   ```nodejs
+    node {
+    withEnv(['AZURE_SUBSCRIPTION_ID=99999999-9999-9999-9999-999999999999',
+            'AZURE_TENANT_ID=99999999-9999-9999-9999-999999999999']) {
+        stage('Init') {
+            cleanWs()
+            checkout scm
         }
 
-    stage('Build') {
-        sh 'mvn clean package'
+        stage('Build') {
+            sh 'mvn clean package'
         }
 
-    stage('Publish') {
-        azureFunctionAppPublish appName: env.FUNCTION_NAME, 
-                                azureCredentialsId: env.AZURE_CRED_ID, 
-                                filePath: '**/*.json,**/*.jar,bin/*,HttpTrigger-Java/*', 
-                                resourceGroup: env.RES_GROUP, 
-                                sourceDirectory: 'target/azure-functions/odd-or-even-function-sample'
+        stage('Publish') {
+            def RESOURCE_GROUP = '<resource_group>' 
+            def FUNC_NAME = '<function_app>'
+            // login Azure
+            withCredentials([usernamePassword(credentialsId: 'azuresp', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
+            sh '''
+                az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
+                az account set -s $AZURE_SUBSCRIPTION_ID
+            '''
+            }
+            sh 'cd $PWD/target/azure-functions/odd-or-even-function-sample && zip -r ../../../archive.zip ./* && cd -'
+            sh "az functionapp deployment source config-zip -g $RESOURCE_GROUP -n $FUNC_NAME --src archive.zip"
+            sh 'az logout'
+            }
         }
     }
     ```

@@ -3,16 +3,18 @@ title: 'Tutorial: Durchführen der Bereitstellung für Azure App Service mit Jen
 description: Erfahren Sie, wie Sie mit der Azure CLI eine Java-Web-App an Azure in der Jenkins-Pipeline bereitstellen.
 keywords: Jenkins, Azure, DevOps, App Service, CLI
 ms.topic: tutorial
-ms.date: 11/10/2020
+ms.date: 01/06/2021
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 88db3702221b8e18acff71514fcddc9ff7e875b0
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: cac490a111120e7b390e26d020c5a6ad00fdd667
+ms.sourcegitcommit: 347bfa3b6c34579c567d1324efc63c1d6672a75b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983639"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98109063"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-with-jenkins-and-the-azure-cli"></a>Tutorial: Bereitstellen an Azure App Service mit Jenkins und der Azure CLI
+
+[!INCLUDE [jenkins-integration-with-azure.md](includes/jenkins-integration-with-azure.md)]
 
 Für die Bereitstellung einer Java-Web-App in Azure können Sie die Azure CLI in einer [Jenkins-Pipeline](https://jenkins.io/doc/book/pipeline/) nutzen. In diesem Tutorial führen Sie die folgenden Aufgaben aus:
 
@@ -24,102 +26,94 @@ Für die Bereitstellung einer Java-Web-App in Azure können Sie die Azure CLI in
 > * Erstellen einer Jenkins-Pipeline
 > * die Pipeline ausführen und die Web-App überprüfen
 
-## <a name="create-and-configure-jenkins-instance"></a>Erstellen und Konfigurieren einer Jenkins-Instanz
+## <a name="prerequisites"></a>Voraussetzungen
 
-Wenn Sie noch nicht über einen Jenkins-Master verfügen, [installieren Sie Jenkins auf einer Linux-VM](configure-on-linux-vm.md).
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-Das Azure-Anmeldeinformationen-Plug-In ermöglicht Ihnen das Speichern von Anmeldeinformationen des Microsoft Azure-Dienstprinzipals in Jenkins. In Version 1.2 haben wir Support hinzugefügt, durch den die Jenkins-Pipeline die Azure-Anmeldeinformationen abrufen kann. 
+- **Jenkins** - [Installieren von Jenkins auf einer Linux-VM](configure-on-linux-vm.md)
+- **Azure CLI**: Installieren Sie die Azure CLI (Version 2.0.67 oder höher) auf dem Jenkins-Server.
 
-Stellen Sie sicher, dass Sie über Version 1.2 oder höher verfügen:
+## <a name="configure-jenkins"></a>Konfigurieren von Jenkins
 
-* Klicken Sie im Jenkins-Dashboard auf **Manage Jenkins -> Plugin Manager ->** (Jenkins verwalten -> Plug-In-Manager ->), und suchen Sie nach **Azure-Anmeldeinformationen**. 
-* Aktualisieren Sie das Plug-In, wenn die Version älter als 1.2 ist.
+In den folgenden Schritten wird gezeigt, wie Sie das erforderliche Java JDK und Maven auf dem Jenkins-Master installieren:
 
-Java JDK und Maven werden auch im Jenkins-Master benötigt. Melden Sie sich zum Installieren mithilfe von SSH beim Jenkins-Master an, und führen Sie die folgenden Befehle aus:
+1. Melden Sie sich per SSH beim Jenkins-Master an.
 
-```bash
-sudo apt-get install -y openjdk-7-jdk
-sudo apt-get install -y maven
-```
+1. [Laden Sie die Azul Zulu JDKs aus einem apt-get-Repository herunter, und installieren Sie sie:](/azure/developer/java/fundamentals/java-jdk-install#download-and-install-the-azul-zulu-jdks-from-an-apt-get-repository)
 
+    ```bash
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0xB1998361219BD9C9
+    sudo apt-add-repository "deb http://repos.azul.com/azure-only/zulu/apt stable main"
+    sudo apt-get -q update
+    sudo apt-get -y install zulu-8-azure-jdk
+    ```
+    
+1. Führen Sie den folgenden Befehl aus, um Maven zu installieren:
+
+    ```bash
+    sudo apt-get install -y maven
+    ```
+    
 ## <a name="add-azure-service-principal-to-a-jenkins-credential"></a>Hinzufügen des Azure-Dienstprinzipals zu Jenkins-Anmeldeinformationen
 
-Eine Azure-Anmeldeinformation ist erforderlich, um die Azure CLI auszuführen.
+In den folgenden Schritten wird gezeigt, wie Sie Ihre Azure-Anmeldeinformationen angeben:
 
-* Klicken Sie im Jenkins-Dashboard auf **Credentials -> System ->** (Anmeldeinformationen -> System ->). Klicken Sie auf **Global credentials (unrestricted)** (Globale Anmeldeinformationen (uneingeschränkt)).
-* Klicken Sie auf **Add Credentials** (Anmeldeinformationen hinzufügen), um einen [Microsoft Azure-Dienstprinzipal](/cli/azure/create-an-azure-service-principal-azure-cli?toc=%252fazure%252fazure-resource-manager%252ftoc.json) hinzuzufügen, indem Sie die Abonnement-ID, die Client-ID, den geheimen Clientschlüssel und den OAuth 2.0-Token-Endpunkt hinzufügen. Stellen Sie eine ID zur Verwendung im nächsten Schritt bereit.
+1. Vergewissern Sie sich, dass das [Plug-In für Anmeldeinformationen](https://plugins.jenkins.io/credentials/) installiert ist.
 
-![Hinzufügen von Anmeldeinformationen](./media/deploy-to-azure-app-service-using-azure-cli/add-credentials.png)
+1. Navigieren Sie auf dem Jenkins-Dashboard zu **Credentials > System** (Anmeldeinformationen > System). 
+
+1. Wählen Sie **Global credentials (unrestricted)** (Globale Anmeldeinformationen (uneingeschränkt)) aus.
+
+1. Wählen Sie zum [Hinzufügen eines Microsoft Azure-Dienstprinzipals](/cli/azure/create-an-azure-service-principal-azure-cli?toc=%252fazure%252fazure-resource-manager%252ftoc.json) die Option **Add Credentials** (Anmeldeinformationen hinzufügen) aus. Achten Sie darauf, dass als Typ für die Anmeldeinformationen **_Username with password_** (Benutzername mit Kennwort) ausgewählt ist, und geben Sie Folgendes ein:
+
+    **Username** (Benutzername): Dienstprinzipal `appId`
+    * **Kennwort**: Dienstprinzipal `password`
+    * **ID:** Bezeichner für die Anmeldeinformationen (beispielsweise `AzureServicePrincipal`)
 
 ## <a name="create-an-azure-app-service-for-deploying-the-java-web-app"></a>Erstellen eines Azure App Service für die Bereitstellung der Java-Web-App
 
-Erstellen Sie mit dem CLI-Befehl [az appservice plan create](/cli/azure/appservice/plan#az-appservice-plan-create) einen Azure App Service-Plan mit dem Tarif **FREE**. Der App Service-Plan definiert die physischen Ressourcen, die zum Hosten Ihrer Apps verwendet werden. Alle einem App Service-Plan zugewiesenen Anwendungen teilen sich diese Ressourcen. Das spart Kosten, wenn Sie mehrere Apps hosten. 
+Verwenden Sie [az appservice plan create](/cli/azure/appservice/plan#az-appservice-plan-create), um einen Azure App Service-Plan mit dem Tarif **FREE** zu erstellen:
 
-```azurecli-interactive
+```azurecli
 az appservice plan create \
-    --name myAppServicePlan \ 
-    --resource-group myResourceGroup \
+    --name <app_service_plan> \ 
+    --resource-group <resource_group> \
     --sku FREE
 ```
 
-Wenn der Plan fertig ist, zeigt die Azure CLI eine ähnliche Ausgabe wie im folgenden Beispiel:
+**Hinweise**:
 
-```json
-{ 
-  "adminSiteName": null,
-  "appServicePlanName": "myAppServicePlan",
-  "geoRegion": "North Europe",
-  "hostingEnvironmentProfile": null,
-  "id": "/subscriptions/0000-0000/resourceGroups/myResourceGroup/providers/Microsoft.Web/serverfarms/myAppServicePlan",
-  "kind": "app",
-  "location": "North Europe",
-  "maximumNumberOfWorkers": 1,
-  "name": "myAppServicePlan",
-  ...
-  < Output has been truncated for readability >
-} 
-``` 
+- Der App Service-Plan definiert die physischen Ressourcen, die zum Hosten Ihrer Apps verwendet werden.
+- Alle einem App Service-Plan zugewiesenen Anwendungen teilen sich diese Ressourcen.
+- App Service-Pläne ermöglichen Kosteneinsparungen beim Hosten mehrerer Apps.
 
-### <a name="create-an-azure-web-app"></a>Erstellen einer Azure-Web-App
+## <a name="create-an-azure-web-app"></a>Erstellen einer Azure-Web-App
 
- Erstellen Sie mit dem CLI-Befehl [az webapp create](/cli/azure/webapp#az-webapp-create) eine Web-App-Definition im App Service-Plan `myAppServicePlan`. Die Web-App-Definition enthält eine URL für den Zugriff auf Ihre Anwendung und konfiguriert verschiedene Optionen zum Bereitstellen Ihres Codes in Azure. 
+Verwenden Sie [az webapp create](/cli/azure/webapp#az-webapp-create), um eine Web-App-Definition im App Service-Plan `myAppServicePlan` zu erstellen.
 
-```azurecli-interactive
+```azurecli
 az webapp create \
     --name <app_name> \ 
-    --resource-group myResourceGroup \
-    --plan myAppServicePlan
+    --resource-group <resource_group> \
+    --plan <app_service_plan>
 ```
 
-Ersetzen Sie den Platzhalter `<app_name>` durch Ihren eigenen eindeutigen App-Namen. Dieser eindeutige Name ist Teil des Standarddomänennamens für die Web-App. Daher muss er für alle Apps in Azure eindeutig sein. Sie können der Web-App einen benutzerdefinierten Domänennameneintrag zuordnen, bevor Sie sie für Ihre Benutzer verfügbar machen.
+**Hinweise**:
 
-Wenn die Web-App-Definition fertig ist, zeigt die Azure CLI Informationen wie im folgenden Beispiel an: 
+- Die Web-App-Definition enthält eine URL für den Zugriff auf Ihre Anwendung und konfiguriert verschiedene Optionen zum Bereitstellen Ihres Codes in Azure.
+- Ersetzen Sie den Platzhalter `<app_name>` durch einen eindeutigen App-Namen.
+- Der App-Name ist Teil des Standarddomänennamens für die Web-App. Daher muss er in Azure für alle Apps eindeutig sein.
+- Sie können der Web-App einen benutzerdefinierten Domänennameneintrag zuordnen, bevor Sie sie für Ihre Benutzer verfügbar machen.
 
-```json 
-{
-  "availabilityState": "Normal",
-  "clientAffinityEnabled": true,
-  "clientCertEnabled": false,
-  "cloningInfo": null,
-  "containerSize": 0,
-  "dailyMemoryTimeQuota": 0,
-  "defaultHostName": "<app_name>.azurewebsites.net",
-  "enabled": true,
-   ...
-  < Output has been truncated for readability >
-}
-```
 
-### <a name="configure-java"></a>Konfigurieren von Java
+## <a name="configure-java"></a>Konfigurieren von Java
 
-Richten Sie mit dem Befehl [az appservice web config update](/cli/azure/webapp/config) die für Ihre App erforderliche Java-Laufzeitkonfiguration ein.
-
-Der folgende Befehl konfiguriert die Web-App für die Ausführung mit einer aktuellen Java 8 JDK-Version und [Apache Tomcat](https://tomcat.apache.org/) 8.0.
+Verwenden Sie [az appservice web config update](/cli/azure/webapp/config), um die Java-Laufzeitkonfiguration für die App einzurichten:
 
 ```azurecli
 az webapp config set \ 
     --name <app_name> \
-    --resource-group myResourceGroup \ 
+    --resource-group <resource_group> \ 
     --java-version 1.8 \ 
     --java-container Tomcat \
     --java-container-version 8.0
@@ -127,47 +121,71 @@ az webapp config set \
 
 ## <a name="prepare-a-github-repository"></a>ein GitHub-Repository erstellen
 
-1. Öffnen Sie das Repository [Simple Java Web App for Azure](https://github.com/azure-devops/javawebappsample) (Einfache Java-Web-App für Azure). Klicken Sie auf die Schaltfläche **Fork** (Verzweigen) in der rechten oberen Ecke, um das Repository in Ihr GitHub-Konto zu verzweigen.
+1. Öffnen Sie das Repository [Simple Java Web App for Azure](https://github.com/azure-devops/javawebappsample) (Einfache Java-Web-App für Azure).
 
-1. Öffnen Sie in der GitHub-Webbenutzeroberfläche die **Jenkinsfile**-Datei. Klicken Sie auf das Stiftsymbol, um diese Datei zu bearbeiten und die Ressourcengruppe und den Namen Ihrer Web-App in Zeile 20 bzw. 21 zu aktualisieren.
+1. Wählen Sie die Schaltfläche **Fork** (Forken) um das Repository in Ihr eigenes GitHub-Konto zu forken.
 
-    ```java
-    def resourceGroup = '<myResourceGroup>'
-    def webAppName = '<app_name>'
+1. Öffnen Sie die Datei **Jenkinsfile**, indem Sie auf den Dateinamen klicken.
+
+1. Wählen Sie das Stiftsymbol aus, um die Datei zu bearbeiten.
+
+1. Aktualisieren Sie die Abonnement- und die Mandanten-ID.
+    
+    ```groovy
+      withEnv(['AZURE_SUBSCRIPTION_ID=<subscription_id>',
+            'AZURE_TENANT_ID=<tenant_id>']) 
     ```
     
-1. Ändern Sie Zeile 23, um die Anmeldeinformationen-ID in Ihrer Jenkins-Instanz zu aktualisieren.
+1. Aktualisieren Sie in den Zeilen 22 und 23 die Ressourcengruppe und den Namen Ihrer Web-App.
 
-    ```java
-    withCredentials([azureServicePrincipal('<mySrvPrincipal>')]) {
+    ```groovy
+    def resourceGroup = '<resource_group>'
+    def webAppName = '<app_name>'
+    ```
+
+1. Aktualisieren Sie die Anmeldeinformationen-ID in Ihrer Jenkins-Instanz.
+
+    ```groovy
+    withCredentials([usernamePassword(credentialsId: '<service_princial>', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
     ```
     
 ## <a name="create-jenkins-pipeline"></a>Erstellen einer Jenkins-Pipeline
 
-Öffnen Sie Jenkins in einem Webbrowser, und klicken Sie auf **New Item** (Neues Element).
+Gehen Sie zum Erstellen einer Jenkins-Pipeline wie folgt vor:
+
+1. Öffnen Sie Jenkins in einem Webbrowser.
+
+1. Wählen Sie **Neues Element** aus.
 
 1. Geben Sie einen Namen für den Auftrag ein.
-1. Wählen Sie **Pipeline** aus. 
-1. Klicken Sie auf **OK**.
+
 1. Wählen Sie **Pipeline** aus.
+
+1. Klicken Sie auf **OK**.
+
+1. Wählen Sie **Pipeline** aus.
+
 1. Wählen Sie als **Definition** die Option **Pipeline script from SCM** (Pipeline-Skript von SCM) aus.
+
 1. Wählen Sie als **SCM** die Option **Git** aus.
-1. Geben Sie die GitHub-URL für Ihr verzweigtes Repository ein: `https:\<your forked repo\>.git`.
+
+1. Geben Sie die GitHub-URL für Ihr verzweigtes Repository ein: `https:\<forked_repo\>.git`.
+
 1. Wählen Sie **Speichern** aus.
 
 ## <a name="test-your-pipeline"></a>Testen Ihrer Pipeline
 
 1. Navigieren Sie zur erstellten Pipeline.
-1. Klicken Sie auf **Build now** (Jetzt erstellen).
+
+1. Wählen Sie **Build Now** (Jetzt erstellen) aus.
+
 1. Wählen Sie nach Abschluss des Buildvorgangs die Option **Console Output** (Konsolenausgabe) aus, um die Builddetails anzuzeigen.
 
 ## <a name="verify-your-web-app"></a>Überprüfen Ihrer Web-App
 
-Gehen Sie wie unten angegeben vor, um zu überprüfen, ob die Bereitstellung der WAR-Datei für Ihre Web-App erfolgreich war. 
+Vergewissern Sie sich, dass die WAR-Datei erfolgreich für Ihre Web-App bereitgestellt wurde:
 
-1. öffnen Sie einen Webbrowser:
-
-1. Navigieren Sie zu `http://&lt;app_name>.azurewebsites.net/api/calculator/ping`.
+1. Navigieren Sie zur folgenden URL: `http://&lt;app_name>.azurewebsites.net/api/calculator/ping`
 
 1. Der Text sollte in etwa wie folgt aussehen:
 
@@ -176,34 +194,50 @@ Gehen Sie wie unten angegeben vor, um zu überprüfen, ob die Bereitstellung der
     Today's date
     ```
 
-1. Gehen Sie zu http://&lt;App_Name>.azurewebsites.net/api/calculator/add?x=&lt;x>&y=&lt;y> (ersetzen Sie &lt;x> und &lt;y> durch beliebige Zahlen), um die Summe aus x und y zu erhalten.
+1. Navigieren Sie zur folgenden URL (ersetzen Sie &lt;x> und &lt;y> durch zwei zu summierende Werte): http://&lt;App-Name>.azurewebsites.net/api/calculator/add?x=&lt;x>&y=&lt;y>.
 
-    ![Rechner: Addieren](./media/deploy-to-azure-app-service-using-azure-cli/calculator-add.png)
+    ![Beispiel für die Ausführung der Demo-Addierung](./media/deploy-to-azure-app-service-using-azure-cli/calculator-add.png)
 
-## <a name="deploy-to-azure-web-app-on-linux"></a>Bereitstellen an Azure-Web-App unter Linux
+## <a name="deploy-to-azure-app-service-on-linux"></a>Bereitstellen in Azure App Service für Linux
 
-Wenn Sie die Nutzung der Azure CLI in Ihrer Jenkins-Pipeline eingerichtet haben, können Sie das Skript zur Bereitstellung für eine Azure-Web-App unter Linux ändern. Für Web-Apps unter Linux wird Docker unterstützt. Daher stellen Sie eine Dockerfile-Datei bereit, die Ihre Web-App mit Dienstlaufzeit in ein Docker-Image verpackt. Das Plug-In erstellt das Image, übermittelt es per Push an eine Docker-Registrierung und stellt das Image für Ihre Web-App bereit.
+Von App Service können Web-Apps für unterstützte Anwendungsstapel auch nativ unter Linux gehostet werden. Darüber hinaus können benutzerdefinierte Linux-Container ausgeführt werden. (Diese werden auch als Web-App für Container bezeichnet.)
 
-1. [Erstellen Sie eine Azure-Web-App, die unter Linux ausgeführt wird](/azure/app-service/containers/quickstart-nodejs).
+Sie können das Skript ändern, um als Bereitstellungsziel eine Instanz von Azure App Service für Linux zu verwenden. Von App Service für Linux wird Docker unterstützt. Daher stellen Sie eine Dockerfile-Datei bereit, die Ihre Web-App mit Dienstlaufzeit in ein Docker-Image verpackt. Das Plug-In erstellt das Image, übermittelt es per Push an eine Docker-Registrierung und stellt das Image für Ihre Web-App bereit.
+
+1. Informationen zum Erstellen einer Instanz von Azure App Service für Linux und einer Azure Container Registry-Instanz finden Sie unter [Migrieren benutzerdefinierter Software zu Azure App Service mithilfe eines benutzerdefinierten Containers](/azure/app-service/tutorial-custom-container?pivots=container-linux#configure-app-service-to-deploy-the-image-from-the-registry).
+
+    ```azurecli
+        az group create --name myResourceGroup2 --location westus2
+        az acr create --name myACRName --resource-group myResourceGroup2 --sku Basic --admin-enabled true
+        az appservice plan create --name myAppServicePlan --resource-group  myResourceGroup2 --is-linux
+        az webapp create --resource-group myResourceGroup2 --plan myAppServicePlan --name myApp --deployment-container-image-name myACRName.azurecr.io/calculator:latest
+    ```
 
 1. [Installieren Sie Docker auf Ihrer Jenkins-Instanz](https://docs.docker.com/engine/installation/linux/ubuntu/).
 
-1. [Erstellen Sie eine Containerregistrierung im Azure-Portal](/azure/container-registry/container-registry-get-started-azure-cli).
+1. Vergewissern Sie sich, dass das [Docker-Pipeline-Plug-In](https://plugins.jenkins.io/docker-workflow/) installiert ist.
 
 1. Bearbeiten Sie im Repository [Simple Java Web App for Azure](https://github.com/azure-devops/javawebappsample), das Sie verzweigt haben, die **Jenkinsfile2**-Datei wie folgt:
+
+    1. Aktualisieren Sie die Abonnement- und die Mandanten-ID.
+
+        ```groovy
+         withEnv(['AZURE_SUBSCRIPTION_ID=<mySubscriptionId>',
+                'AZURE_TENANT_ID=<myTenantId>']) {
+        ```
 
     1. Aktualisieren Sie die Namen Ihrer Ressourcengruppe, Web-App und ACR-Instanz (ersetzen Sie die Platzhalter durch Ihre Werte).
 
         ```bash
-        def webAppResourceGroup = '<myResourceGroup>'
+        def webAppResourceGroup = '<resource_group>'
         def webAppName = '<app_name>'
-        def acrName = '<myRegistry>'
+        def acrName = '<registry>'
         ```
 
     1. Aktualisieren Sie `<azsrvprincipal\>` auf Ihre Anmeldeinformations-ID.
 
         ```bash
-        withCredentials([azureServicePrincipal('<mySrvPrincipal>')]) {
+        withCredentials([usernamePassword(credentialsId: '<service_principal>', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
         ```
 
 1. Erstellen Sie eine neue Jenkins-Pipeline wie bei der Bereitstellung für die Azure-Web-App unter Windows mit `Jenkinsfile2`.

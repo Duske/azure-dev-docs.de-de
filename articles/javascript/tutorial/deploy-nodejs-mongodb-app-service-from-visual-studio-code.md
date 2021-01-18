@@ -2,14 +2,14 @@
 title: 'Bereitstellen einer Express.js/MongoDB-App mit VSCode: App Service/CosmosDB'
 description: Verwenden Sie in diesem Tutorial eine Node.js-App mit einer MongoDB-Datenbank, indem Sie die native MongoDB-API verwenden. Stellen Sie die Node.js-Anwendung in Azure App Service (unter Linux) bereit, und überprüfen Sie dann, ob die gehostete App funktioniert.
 ms.topic: tutorial
-ms.date: 12/03/2020
+ms.date: 01/12/2020
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript
-ms.openlocfilehash: 6c295c305f2882c4a97a34ffa288738112ee9600
-ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
+ms.openlocfilehash: e9c9b6cf624f646b3b41f9af95fcef95fa5841e6
+ms.sourcegitcommit: 657f43a5048cd17b080b40b5090d575c8d7f5eaf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97911500"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98173200"
 ---
 # <a name="deploy-expressjs-mongodb-app-to-app-service-from-visual-studio-code"></a>Bereitstellen einer Express.js-MongoDB-App in App Service über Visual Studio Code
 
@@ -142,6 +142,10 @@ Verwenden Sie die Visual Studio Code-Erweiterung für App Service, um eine App-D
 
 1. Öffnen Sie die Website in einem Browser, und ersetzen Sie den Text `YOUR-RESOURCE_NAME` durch ihren eigenen Ressourcennamen: `https://YOUR-RESOURCE_NAME.azurewebsites.net`.
 1. Verwenden Sie die Web-App, und fügen Sie ihr Elemente hinzu, oder entfernen Sie Elemente. 
+
+## <a name="make-changes-and-redeploy"></a>Vornehmen von Änderungen und erneutes Bereitstellen
+
+Nehmen Sie ein paar Änderungen vor, und stellen Sie die App mithilfe der App Service-Erweiterung [erneut bereit](../how-to/deploy-web-app.md#deploy-or-redeploy-to-app-service-with-visual-studio-code). 
 
 ## <a name="clean-up-resources"></a>Bereinigen von Ressourcen 
 

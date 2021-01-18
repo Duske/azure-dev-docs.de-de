@@ -2,14 +2,14 @@
 title: 'Hosten von Web-Apps: Konfigurationseinstellungen'
 description: Hier erfahren Sie, wie Sie allgemeine Konfigurationen für Ihre Web-App festlegen.
 ms.topic: conceptual
-ms.date: 12/08/2020
+ms.date: 01/11/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 29c79317d5ccd2f65db6c23e28a852164c74b743
-ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
+ms.openlocfilehash: c31d77f6b4dd61bd45bd84b6cfe1e5d14cadb586
+ms.sourcegitcommit: a7b77d07ec6e181c2d40c00ff6e5ef3866980172
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97394042"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98069076"
 ---
 # <a name="hosting-web-apps-on-azure"></a>Hosten von Web-Apps in Azure
 
@@ -65,6 +65,61 @@ Jeder Dienst verfügt über einen eigenen Mechanismus zum Hinzufügen einer benu
 ## <a name="configure-port-forwarding"></a>Konfigurieren der Portweiterleitung
 
 Sie müssen [die Portnummer der App zuordnen](/azure/app-service/configure-language-nodejs?pivots=platform-windows#get-port-number), wenn es sich dabei nicht um den Standardport `8080` handelt. Dadurch kann der App-Dienst Anforderungen an den richtigen Port weiterleiten. 
+
+## <a name="configure-browser-for-cors-to-connect-with-server"></a>Konfigurieren des Browsers für CORS zum Herstellen einer Serververbindung
+
+Wenn Sie eine Verbindung mit Ihrem eigenen Server herstellen und die CORS-Sicherheit beim lokalen Ausführen und Debuggen mit dem Client ignorieren müssen, empfiehlt es sich, diese Einstellung in der Visual Studio Code-Debugdatei `launch.json` zu konfigurieren, um Einstellungen an den Browser zu übergeben und die Sicherheit zu deaktivieren. 
+
+Da diese Datei ausschließlich zum Starten einer Debugsitzung verwendet wird, kann sie gefahrlos in Ihre Quellcodeverwaltung eingecheckt werden. 
+
+### <a name="configure-edge-browser-to-disable-cors-for-debugging"></a>Konfigurieren des Edge-Browsers zum Deaktivieren von CORS für das Debuggen
+
+Mit der folgenden Datei vom Typ `launch.json` wird die Einstellung für den **Edge-Browser** konfiguriert, um die CORS-Sicherheit für die Debugsitzung zu deaktivieren: `--disable-web-security`. 
+
+```json
+{
+    // Debug client, with requests to server, w/o 
+    // changes to client or server
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Edge against localhost",
+            "request": "launch",
+            "type": "pwa-msedge",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}",
+            "runtimeArgs": [
+                "--disable-web-security"
+            ],
+        },
+    ]
+}
+```
+
+### <a name="configure-chrome-browser-to-disable-cors-for-debugging"></a>Konfigurieren des Chrome-Browsers zum Deaktivieren von CORS für das Debuggen
+
+Mit der folgenden Datei vom Typ `launch.json` wird die Einstellung für den **Chrome-Browser** konfiguriert, um die CORS-Sicherheit für die Debugsitzung zu deaktivieren: `--disable-web-security`. 
+
+```json
+{
+    // Debug client, with requests to server, w/o 
+    // changes to client or server
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "pwa-chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}",
+            "runtimeArgs": [
+                "--disable-web-security"
+            ],
+        }
+    ]
+}
+```
+
 
 ## <a name="configure-certificates"></a>Konfigurieren von Zertifikaten
 

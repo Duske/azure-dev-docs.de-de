@@ -3,14 +3,14 @@ title: 'Tutorial: Verwenden von Azure Storage für Buildartefakte'
 description: Es wird beschrieben, wie Sie den Azure-Blobdienst als Repository für Buildartefakte verwenden, die mit einer Continuous Integration-Lösung von Jenkins erstellt wurden.
 keywords: Jenkins, Azure, DevOps, Storage, CI/CD, Buildartefakte
 ms.topic: article
-ms.date: 11/19/2020
-ms.custom: devx-track-jenkins
-ms.openlocfilehash: 22ce5c0ee00af64bd5bf8dc43f0df1ad1b5e2400
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.date: 01/12/2021
+ms.custom: devx-track-jenkins, devx-track-azurecli
+ms.openlocfilehash: 31c86da8f861e4295967007cb1b885325feb93dc
+ms.sourcegitcommit: 75a1f26aaff48a89631805df4b4a0c006de6a271
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "96035398"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98128157"
 ---
 # <a name="tutorial-use-azure-storage-for-build-artifacts"></a>Tutorial: Verwenden von Azure Storage für Buildartefakte
 
@@ -18,144 +18,149 @@ ms.locfileid: "96035398"
 
 Dieser Artikel zeigt die Verwendung von Blob-Speicher als Repository von Buildartefakten, die durch eine Jenkins Continuous Integration-Lösung (CI) erstellt wurden, oder als eine Quelle von herunterladbaren Dateien, die in einem Buildvorgang verwendet werden. Diese Lösung ist zum Beispiel dann hilfreich, wenn Sie in einer agilen Entwicklungsumgebung (in Java oder anderen Sprachen) programmieren, Builds auf Basis von Continuous Integration ausgeführt werden, und Sie ein Repository für Ihre Buildartefakte benötigen, sodass Sie sie beispielsweise mit anderen Mitgliedern der Organisation oder Ihren Kunden gemeinsam nutzen oder ein Archiv pflegen können. Ein anderes Szenario liegt vor, wenn für Ihren Buildauftrag an sich andere Dateien erforderlich sind, beispielsweise als Teil der Buildeingabe herunterzuladende Abhängigkeiten.
 
-In diesem Tutorial wird das von Microsoft zur Verfügung gestellte Azure Storage-Plug-In für Jenkins CI verwendet.
-
-## <a name="jenkins-overview"></a>Jenkins-Übersicht
-
-Jenkins ermöglicht die fortlaufende Integration (Continuous Integration, CI) eines Softwareprojekts, wodurch Entwickler ihre Codeänderungen integrieren und Builds automatisch erstellen lassen können. Dieses Muster trägt zu reibungsloseren Abläufen sowie zur Steigerung der Teamproduktivität bei. Builds werden mit Versionsangaben versehen, und Buildartefakte können in individuelle Repositorys hochgeladen werden. In diesem Artikel wird gezeigt, wie Sie Azure Blob Storage als Repository für die Buildartefakte verwenden. Außerdem erfahren Sie, wie Sie Abhängigkeiten aus Azure Blob Storage herunterladen.
-
-Weitere Informationen zu Jenkins finden Sie unter [Meet Jenkins](https://wiki.jenkins-ci.org/display/JENKINS/Meet+Jenkins).
-
-## <a name="benefits-of-using-the-blob-service"></a>Vorteile der Verwendung des Blob-Diensts
-
-Die Verwendung des Blob-Dienstes zum Hosten Ihrer Buildartefakte aus der agilen Entwicklung hat folgende Vorteile:
-
-* Hochverfügbarkeit Ihrer Buildartefakte oder herunterladbaren Abhängigkeiten
-* Schnelles Hochladen Ihrer Buildartefakte durch Jenkins CI
-* Schnelles Herunterladen Ihrer Buildartefakte durch Kunden und Partner
-* Kontrolle über Benutzerzugriffsrichtlinien mit Optionen wie anonymem Zugriff, Zugriff per Shared Access Signature mit Ablaufdatum oder privatem Zugriff
-
 ## <a name="prerequisites"></a>Voraussetzungen
 
 - **Azure-Abonnement**: Falls Sie über kein Azure-Abonnement verfügen, können Sie ein [kostenloses Azure-Konto erstellen](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), bevor Sie beginnen.
 - **Jenkins-Server**: Falls Sie keinen Jenkins-Server installiert haben, [erstellen Sie einen Jenkins-Servers in Azure](./configure-on-linux-vm.md).
+- **Azure CLI**: Installieren Sie die Azure CLI (Version 2.0.67 oder höher) auf dem Jenkins-Server.
 - **Azure-Speicherkonto**: Falls Sie noch nicht über ein Speicherkonto verfügen, [erstellen Sie ein Speicherkonto](/azure/storage/common/storage-account-create).
 
-## <a name="configure-your-environment"></a>Konfigurieren Ihrer Umgebung
+## <a name="add-azure-credential-needed-to-execute-azure-cli"></a>Hinzufügen erforderlicher Azure-Anmeldeinformationen zum Ausführen der Azure CLI
 
-1. Wenn Sie noch keine Jenkins CI-Lösung im Einsatz haben, können Sie eine Jenkins CI-Lösung mithilfe folgender Methode ausführen:
-  
-  1. Laden Sie für einen Java-fähigen Computer „jenkins.war“ von <https://jenkins-ci.org> herunter.
-  2. Führen Sie in einer Eingabeaufforderung, die für den Ordner, der "jenkins.war" enthält, geöffnet wird, folgenden Befehl aus:
-     
-      `java -jar jenkins.war`
+1. Navigieren Sie zum Jenkins-Portal.
 
-  3. Navigieren Sie zu `http://localhost:8080/`, um das Jenkins-Dashboard zu öffnen. Über das Jenkins-Dashboard wird das Azure Storage-Plug-In installiert und konfiguriert.
-     
-## <a name="how-to-use-the-blob-service-with-jenkins-ci"></a>Verwenden des Blob-Diensts mit Jenkins CI
+1. Wählen Sie im Menü die Option **Manage Jenkins** (Jenkins verwalten) aus.
 
-Um den Blob-Dienst mit Jenkins verwenden zu können, müssen Sie das Azure-Speicher-Plug-In installieren, das Plug-In für die Verwendung Ihres Speicherkontos konfigurieren und dann eine Postbuildaktion erstellen, die Ihre Buildartefakte in Ihr Speicherkonto hochlädt. Diese Schritte sind in den folgenden Abschnitten beschrieben.
+1. Wählen Sie **Manage Credentials** (Anmeldeinformationen verwalten) aus.
 
-## <a name="how-to-install-the-azure-storage-plugin"></a>Installieren des Azure-Speicher-Plug-Ins
+1. Wählen Sie die **globale** Domäne aus.
 
-1. Wählen Sie im Jenkins-Dashboard **Manage Jenkins** (Jenkins verwalten) aus.
-2. Wählen Sie auf der Seite **Manage Jenkins** (Jenkins verwalten) die Option **Manage Plugins** (Plug-Ins verwalten).
-3. Wählen Sie die Registerkarte **Available** aus.
-4. Aktivieren Sie im Abschnitt **Artifact Uploaders** das Kontrollkästchen **Microsoft Azure Storage plugin**.
-5. Wählen Sie entweder **Install without restart** (Ohne Neustart installieren) oder **Download now and install after restart** (Jetzt herunterladen und nach Neustart installieren) aus.
-6. Starten Sie Jenkins neu.
+1. Wählen Sie **Add Credentials** (Anmeldeinformationen hinzufügen) aus.
 
-## <a name="how-to-configure-the-azure-storage-plugin-to-use-your-storage-account"></a>Konfigurieren des Azure-Speicher-Plug-Ins für die Verwendung Ihres Speicherkontos
+1. Füllen Sie die erforderlichen Felder wie folgt aus:
 
-1. Wählen Sie im Jenkins-Dashboard **Manage Jenkins** (Jenkins verwalten) aus.
-2. Klicken Sie auf der Seite **Manage Jenkins** (Jenkins verwalten) auf **Configure System** (System konfigurieren).
-3. Führen Sie im Bereich **Microsoft Azure Storage Account Configuration** folgende Schritte aus:
-   1. Geben Sie Ihren Speicherkontonamen ein, den Sie aus dem [Azure-Portal](https://portal.azure.com) abrufen können.
-   2. Geben Sie Ihren Speicherkontoschlüssel ein, der ebenfalls über das [Azure-Portal](https://portal.azure.com) abrufbar ist.
-   3. Verwenden Sie den Standardwert für **Blob Service Endpoint URL**, wenn Sie die globale Azure-Cloud verwenden. Wenn Sie mit einer anderen Azure-Cloud arbeiten, verwenden Sie den Endpunkt, der im [Azure-Portal](https://portal.azure.com) für Ihr Speicherkonto angegeben ist. 
-   4. Klicken Sie auf **Validate storage credentials** (Speicheranmeldeinformationen überprüfen), um Ihr Speicherkonto zu validieren. 
-   5. [Optional] Wenn Sie über weitere Speicherkonten verfügen, die Sie für Jenkins CI verfügbar machen möchten, wählen Sie **Add more Storage Accounts** (Weitere Speicherkonten hinzufügen) aus.
-   6. Klicken Sie auf **Save** (Speichern), um Ihre Einstellungen zu speichern.
+    - **Variante**: Wählen Sie **Username with password** (Benutzername mit Kennwort) aus.
+    - **Benutzername**: Geben Sie die App-ID (`appId`) des Dienstprinzipals an.
+    - **Kennwort**: Geben Sie das Kennwort (`password`) des Dienstprinzipals an.
+    - **ID:** Geben Sie einen Bezeichner für die Anmeldeinformationen an (beispielsweise `azuresp`).
+    - **Description** (Beschreibung): Fügen Sie optional eine aussagekräftige Beschreibung für Ihre Umgebung hinzu.
 
-## <a name="how-to-create-a-post-build-action-that-uploads-your-build-artifacts-to-your-storage-account"></a>Erstellen einer Postbuildaktion, die Ihre Buildartefakte in Ihr Speicherkonto hochlädt
+1. Wählen Sie **OK** aus, um die Anmeldeinformationen zu erstellen.
 
-Für das Lernprogramm müssen Sie zunächst einen Auftrag erstellen, der mehrere Dateien erstellen wird, und ihn dann zur Postbuildaktion hinzufügen, um die Dateien in Ihr Speicherkonto hochzuladen.
+## <a name="create-a-pipeline-job-to-upload-build-artifacts"></a>Erstellen eines Pipelineauftrags zum Hochladen von Buildartefakten
 
-1. Wählen Sie im Jenkins-Dashboard **New Item** (Neues Element) aus.
-2. Nennen Sie den Auftrag **MyJob**, klicken Sie auf **Build a free-style software project** (Freestyle-Softwareprojekt erstellen), und klicken Sie dann auf **OK**.
-3. Wählen Sie in der Auftragskonfiguration im Bereich **Build** (Erstellen) die Option **Add build step** (Buildschritt hinzufügen), und wählen Sie dann **Execute Windows batch command** (Windows-Batchbefehl ausführen).
-4. Verwenden Sie in **Command** folgende Befehle:
+In den folgenden Schritten wird gezeigt, wie Sie einen Pipelineauftrag erstellen. Durch den Pipelineauftrag werden mehrere Dateien erstellt und unter Verwendung der Azure CLI in Ihr Speicherkonto hochgeladen.
 
-    ```   
-    md text
-    cd text
-    echo Hello Azure Storage from Jenkins > hello.txt
-    date /t > date.txt
-    time /t >> date.txt
-    ```
+1. Wählen Sie auf dem Jenkins-Dashboard die Option **New Item** (Neues Element) aus.
 
-5. Wählen Sie in der Auftragskonfiguration im Bereich **Postbuildaktionen** die Option **Postbuildaktion hinzufügen** aus, und wählen Sie **Artefakte in Azure Blob Storage hochladen**.
-6. Wählen Sie unter **Storage account name** das zu verwendende Speicherkonto aus.
-7. Geben Sie unter **Container name** den Containernamen ein. (Der Container wird erstellt, falls er beim Hochladen der Buildartefakte noch nicht vorhanden ist.) Sie können Umgebungsvariablen verwenden. Geben Sie also für dieses Beispiel `${JOB_NAME}` als Containernamen ein.
-   
-    > [!TIP]
-    > Unter dem Bereich **Command**, in dem Sie ein Skript für **Execute Windows batch command** eingegeben haben, befindet sich ein Link zu den von Jenkins erkannten Umgebungsvariablen. Wählen Sie diesen Link aus, um die Namen und Beschreibungen der Umgebungsvariablen anzuzeigen. Umgebungsvariablen, die Sonderzeichen enthalten, z.B. die Umgebungsvariable **BUILD_URL**, sind nicht als Containername oder gemeinsamer virtueller Pfad zulässig sind.
+1. Nennen Sie den Auftrag **myjob**, wählen Sie **Pipeline** aus, und wählen Sie anschließend **OK** aus.
+
+1. Wählen Sie im Abschnitt **Pipeline** der Auftragskonfiguration die Option **Pipeline script** (Pipelineskript) aus, und fügen Sie unter **Script** (Skript) Folgendes ein. Legen Sie die Platzhalter auf die entsprechenden Werte für Ihre Umgebung fest.
+
+    ```groovy
+    pipeline {
+      agent any
+      environment {
+        AZURE_SUBSCRIPTION_ID='99999999-9999-9999-9999-999999999999'
+        AZURE_TENANT_ID='99999999-9999-9999-9999-999999999999'
+        AZURE_STORAGE_ACCOUNT='myStorageAccount'
+      }
+      stages {
+        stage('Build') {
+          steps {
+            sh 'rm -rf *'
+            sh 'mkdir text'
+            sh 'echo Hello Azure Storage from Jenkins > ./text/hello.txt'
+            sh 'date > ./text/date.txt'
+          }
     
-8. Wählen Sie für dieses Beispiel **Make new container public by default** (Neuen Container standardmäßig öffentlich machen) aus. (Wenn Sie einen privaten Container verwenden möchten, müssen Sie eine Shared Access Signature erstellen, um den Zugriff zu ermöglichen. Dies geht jedoch über den Rahmen dieses Artikels hinaus. Sie finden weitere Informationen zu Shared Access Signatures unter [Verwenden von Shared Access Signatures (SAS)](/azure/storage/common/storage-sas-overview).
-9. [Optional] Wählen Sie **Clean container before uploading** (Container vor dem Hochladen leeren) aus, wenn der Containerinhalt vor dem Hochladen von Buildartefakten gelöscht werden soll. (Lassen Sie die Option deaktiviert, wenn die Inhalte nicht aus dem Container gelöscht werden sollen.)
-10. Geben Sie unter **List of Artifacts to upload** (Liste der hochzuladenden Artefakte) die Zeichenfolge `text/*.txt` ein.
-11. Geben Sie `${BUILD\_ID}/${BUILD\_NUMBER}` für die Zwecke dieses Tutorials unter **Common virtual path for uploaded artifacts** ein.
-12. Klicken Sie auf **Save** (Speichern), um Ihre Einstellungen zu speichern.
-13. Wählen Sie im Jenkins-Dashboard **Build Now** (Jetzt erstellen), um **MyJob** auszuführen. Prüfen Sie den Status in der Ausgabe der Konsole. Statusmeldungen für Azure-Speicher werden in die Ausgabe der Konsole aufgenommen, wenn die Postbuildaktion mit dem Hochladen von Buildartefakten beginnt.
-14. Nach erfolgreichem Abschluss des Auftrags können Sie die Buildartefakte überprüfen, indem Sie den öffentlichen Blob öffnen.
+          post {
+            success {
+              withCredentials([usernamePassword(credentialsId: 'azuresp', 
+                              passwordVariable: 'AZURE_CLIENT_SECRET', 
+                              usernameVariable: 'AZURE_CLIENT_ID')]) {
+                sh '''
+                  echo $container_name
+                  # Login to Azure with ServicePrincipal
+                  az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
+                  # Set default subscription
+                  az account set --subscription $AZURE_SUBSCRIPTION_ID
+                  # Execute upload to Azure
+                  az storage container create --account-name $AZURE_STORAGE_ACCOUNT --name $JOB_NAME --auth-mode login
+                  az storage blob upload-batch --destination ${JOB_NAME} --source ./text --auth-mode login
+                  # Logout from Azure
+                  az logout
+                '''
+              }
+            }
+          }
+        }
+      }
+    }
+    ```
+    
+1. Wählen Sie **Build Now** (Jetzt erstellen) aus, um **myjob** auszuführen.
+
+1. Prüfen Sie den Status in der Ausgabe der Konsole. Wenn im Rahmen der Postbuildaktion die Buildartefakte hochgeladen werden, werden Statusmeldungen für Azure Storage in die Konsole geschrieben.
+
+1. Sollte ein Fehler wie der folgende auftreten, muss Zugriff auf Containerebene gewährt werden: `ValidationError: You do not have the required permissions needed to perform this operation.` Informationen zur Behandlung dieser Fehlermeldung finden Sie bei Bedarf in den folgenden Artikeln:
+
+    - [Auswählen der Autorisierung des Zugriffs auf Blobdaten mit der Azure CLI](/azure/storage/blobs/authorize-data-operations-cli) (Azure Storage)
+    - [Zuweisen einer Azure-Rolle für den Zugriff auf Blob- und Warteschlangendaten über das Azure-Portal](/azure/storage/common/storage-auth-aad-rbac-portal) (Azure Storage)
+
+1. Untersuchen Sie nach erfolgreichem Abschluss des Auftrags die Buildartefakte, indem Sie das öffentliche Blob öffnen:
+
     1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
-    2. Wählen Sie **Speicher**.
-    3. Wählen Sie den Speicherkontonamen aus, den Sie für Jenkins verwendet haben.
-    4. Wählen Sie **Container** aus.
-    5. Wählen Sie den Container **myjob** aus. Dies ist die Version des Auftragsnamens, den Sie beim Erstellen des Jenkins-Auftrags zugewiesen haben, in Kleinbuchstaben. Containernamen und Blob-Namen bestehen im Azure-Speicher aus Kleinbuchstaben (es wird zwischen Groß- und Kleinschreibung unterschieden). In der Liste der Blobs für den Container **myjob** sollte **hello.txt** und **date.txt** angezeigt werden. Kopieren Sie die URL für beide Elemente, und öffnen Sie sie in Ihrem Browser. Sie sehen die Textdatei, die als Buildartefakt hochgeladen wurde.
+    1. Wählen Sie **Speicher**.
+    1. Wählen Sie den Speicherkontonamen aus, den Sie für Jenkins verwendet haben.
+    1. Wählen Sie **Container** aus.
+    1. Wählen Sie in der Liste mit den Blobs den Container **myjob** aus.
+    1. Daraufhin sollten die beiden folgenden Dateien angezeigt werden: **hello.txt** und **date.txt**.
+    1. Kopieren Sie die URL für eines dieser Elemente, und fügen Sie sie in Ihrem Browser ein. 
+    1. Sie sehen die Textdatei, die als Buildartefakt hochgeladen wurde.
+    
+    **Hinweise**:
 
-Es kann nur eine Postbuildaktion pro Auftrag erstellt werden, die Artefakte in Azure Blob Storage hochlädt. Die einzelne „post-build“-Aktion zum Hochladen von Artefakten in Azure Blob Storage kann mithilfe eines Semikolons als Trennzeichen verschiedene Dateien (einschließlich Platzhalter) und Pfade zu Dateien in **List of Artifacts to upload** angeben. Wenn Ihr Jenkins-Build beispielsweise JAR- und TXT-Dateien im Ordner **build** Ihres Arbeitsbereichs erstellt und Sie beide in Azure Blob Storage hochladen möchten, verwenden Sie den folgenden Wert für die Option **Liste der hochzuladenden Artefakte**: `build/\*.jar;build/\*.txt`. Sie können auch eine Doppel-Doppelpunktsyntax verwenden, um einen im Blobnamen zu verwendenden Pfad anzugeben. Wenn beispielsweise die JAR-Dateien mithilfe von **binaries** im Blobpfad und die TXT-Dateien mithilfe von **notices** im Blobpfad hochgeladen werden sollen, verwenden Sie den folgenden Wert für die Option **List of Artifacts to upload** (Liste der hochzuladenden Artefakte): `build/\*.jar::binaries;build/\*.txt::notices`.
+    - Containernamen und Blob-Namen bestehen im Azure-Speicher aus Kleinbuchstaben (es wird zwischen Groß- und Kleinschreibung unterschieden).
 
-## <a name="how-to-create-a-build-step-that-downloads-from-azure-blob-storage"></a>Erstellen eines Buildschritts für das Herunterladen aus Azure Blob Storage
+## <a name="create-a-pipeline-job-to-download-from-azure-blob-storage"></a>Erstellen eines Pipelineauftrags zum Herunterladen aus Azure Blob Storage
 
-Die folgenden Schritte veranschaulichen das Konfigurieren eines Buildschritts zum Herunterladen von Elementen aus dem Azure-Blobspeicher. Dies ist nützlich, wenn Sie Elemente in Ihren Build einbeziehen möchten. Ein Beispiel für die Verwendung dieses Musters sind die JAR-Dateien, die im Azure-Blobspeicher beibehalten werden sollten.
+In den folgenden Schritten wird gezeigt, wie Sie einen Pipelineauftrag zum Herunterladen von Elementen aus Azure Blob Storage konfigurieren.
 
-1. Wählen Sie in der Auftragskonfiguration im Abschnitt **Build** die Option **Add build step** (Buildschritt hinzufügen) aus, und wählen Sie dann **Download from Azure Blob storage** (Aus Azure-Blobspeicher herunterladen).
-2. Wählen Sie unter **Storage account name** das zu verwendende Speicherkonto aus.
-3. Geben Sie für **Container name** den Namen des Containers an, der die herunterzuladenden Blobs enthält. Sie können Umgebungsvariablen verwenden.
-4. Geben Sie unter **Blob name** (Blobname) den Blobnamen ein. Sie können Umgebungsvariablen verwenden. Sie können auch ein Sternchen als einen Platzhalter verwenden, nachdem Sie den bzw. die Anfangsbuchstaben des Blobnamens angeben. So gibt beispielsweise **project\\** _ alle Blobs an, deren Name mit _*project** beginnt.
-5. [Optional] Geben Sie für **Downloadpfad** den Pfad auf dem Jenkins-Computer an, in den die Dateien aus Azure Blob Storage heruntergeladen werden sollen. Es können auch Umgebungsvariablen verwendet werden. (Ohne Angabe eines Werts für **Downloadpfad** werden die Dateien aus Azure Blob Storage in den Arbeitsbereich des Auftrags heruntergeladen.)
+1. Wählen Sie im Abschnitt **Pipeline** der Auftragskonfiguration die Option **Pipeline script** (Pipelineskript) aus, und fügen Sie unter **Script** (Skript) Folgendes ein. Legen Sie die Platzhalter auf die entsprechenden Werte für Ihre Umgebung fest.
 
-Wenn Sie zusätzliche Elemente aus Azure Blob Storage herunterladen möchten, können Sie zusätzliche Buildschritte erstellen.
-
-Nach der Ausführung eines Builds können Sie die Build-Verlaufskonsolenausgabe prüfen oder den Downloadspeicherort aufrufen, um zu prüfen, ob die von Ihnen erwarteten Blobs erfolgreich heruntergeladen wurden.  
-
-## <a name="components-used-by-the-blob-service"></a>Vom Blob-Dienst verwendete Komponenten
-
-In diesem Abschnitt erhalten Sie einen Überblick über die Komponenten des Blob-Dienstes.
-
-* **Storage Account** (Speicherkonto): Alle Zugriffe auf den Azure-Speicher erfolgen über ein Speicherkonto. Ein Speicherkonto ist die höchste Ebene des Namespaces für den Zugriff auf Blobs. Ein Konto kann eine beliebige Anzahl von Containern enthalten, solange deren Gesamtgröße 100 TB nicht überschreitet.
-* **Container**: Ein Container stellt eine Gruppierung eines Blob-Satzes bereit. Alle BLOBs müssen sich in einem Container befinden. Ein Konto kann eine unbegrenzte Anzahl von Containern enthalten. In einem Container kann eine unbegrenzte Anzahl von BLOBs gespeichert werden.
-* **Blob**: Eine Datei eines beliebigen Typs und beliebiger Größe. Es gibt zwei Arten von BLOBs, die im Azure-Speicher gespeichert werden können: Blockblobs und Seitenblobs. Die meisten Dateien sind Block-BLOBs. Ein einzelner Block-Blob kann bis zu 200 GB groß sein. In diesem Tutorial werden Block-BLOBs verwendet. Der andere Blob-Typ, Seiten-Blobs, kann bis zu 1 TB groß sein und ist effizienter, wenn Byte-Bereiche in einer Datei häufig geändert werden. Weitere Informationen zu Blobs finden Sie unter [Understanding Block Blobs, Append Blobs, and Page Blobs](/rest/api/storageservices/Understanding-Block-Blobs--Append-Blobs--and-Page-Blobs) (Grundlegendes zu Block-, Anfüge- und Seitenblobs).
-* **URL-Format:** Blobs können über das folgende URL-Format aufgerufen werden:
-  
-    `http://storageaccount.blob.core.windows.net/container_name/blob_name`
-  
-**Hinweise**:
-
-- Das oben angegebene Format gilt für die globale Azure-Cloud. Falls Sie mit einer anderen Azure-Cloud arbeiten, verwenden Sie den Endpunkt im [Azure-Portal](https://portal.azure.com), um Ihren URL-Endpunkt zu bestimmen.
-- Der Platzhalter `storageaccount` stellt den Namen Ihres Speicherkontos dar.
-- Der Platzhalter `container_name` stellt den Namen Ihres Containers dar.
-- Der Platzhalter `blob_name` stellt den Namen Ihres Blobs dar.
-- Der Containername kann mehrere Pfade enthalten. Diese Pfade werden durch einen Schrägstrich getrennt. 
-- In diesem Tutorial wird **MyJob** als Beispielcontainername verwendet.
-- Der gemeinsame virtuelle Pfad wird als **${BUILD\_ID}/${BUILD\_NUMBER}** definiert. Durch diesen Wert ergibt sich für das Blob eine URL im folgenden Format:
-  
-    `http://example.blob.core.windows.net/myjob/2014-04-14_23-57-00/1/hello.txt`
-
-## <a name="troubleshooting-the-jenkins-plugin"></a>Problembehandlung beim Jenkins-Plug-In
-
-Wenn bei den Jenkins-Plug-Ins Fehler auftreten, melden Sie das Problem auf der [Jenkins-JIRA-Seite](https://issues.jenkins-ci.org/) für die jeweilige Komponente.
+    ```groovy
+    pipeline {
+      agent any
+      environment {
+        AZURE_SUBSCRIPTION_ID='99999999-9999-9999-9999-999999999999'
+        AZURE_TENANT_ID='99999999-9999-9999-9999-999999999999'
+        AZURE_STORAGE_ACCOUNT='myStorageAccount'
+      }
+      stages {
+        stage('Build') {
+          steps {
+            withCredentials([usernamePassword(credentialsId: 'azuresp', 
+                            passwordVariable: 'AZURE_CLIENT_SECRET', 
+                            usernameVariable: 'AZURE_CLIENT_ID')]) {
+              sh '''
+                # Login to Azure with ServicePrincipal
+                az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
+                # Set default subscription
+                az account set --subscription $AZURE_SUBSCRIPTION_ID
+                # Execute upload to Azure
+                az storage blob download --account-name $AZURE_STORAGE_ACCOUNT --container-name myjob --name hello.txt --file ${WORKSPACE}/hello.txt --auth-mode login
+                # Logout from Azure
+                az logout
+              '''   
+            }
+          }
+        }
+      }
+    }
+    ```
+    
+1. Überprüfen Sie nach dem Ausführen eines Buildvorgangs die Konsolenausgabe zum Buildverlauf. Alternativ können Sie sich auch Ihren Downloadspeicherort ansehen, um zu ermitteln, ob die erwarteten Blobs erfolgreich heruntergeladen wurden.  
 
 ## <a name="next-steps"></a>Nächste Schritte
 

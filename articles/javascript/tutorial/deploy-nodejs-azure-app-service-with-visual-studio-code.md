@@ -2,14 +2,14 @@
 title: Bereitstellen von Node.js-Apps in Azure App Service in Visual Studio Code
 description: Stellen Sie mithilfe der App Service-Erweiterung für Visual Studio Code eine Express.js-/Node.js-Anwendung in Azure App Service bereit.
 ms.topic: tutorial
-ms.date: 12/09/2020
+ms.date: 01/11/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 9b6b91cffa50c3c1a2beb3dc2c800db20877b9af
-ms.sourcegitcommit: f723980ade4cbc13548a5d8ac3f3fa681b8a2dbd
+ms.openlocfilehash: 2c019cc9ae13b81ecde934faee6d7d7a9fadf07a
+ms.sourcegitcommit: 657f43a5048cd17b080b40b5090d575c8d7f5eaf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97601031"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98173250"
 ---
 # <a name="deploy-nodejs-to-azure-app-service-using-visual-studio-code"></a>Bereitstellen von Node.js in Azure App Service mithilfe von Visual Studio Code
 
@@ -42,41 +42,11 @@ Dieses Video enthält eine umfassende exemplarische Vorgehensweise für den Inha
 
 ## <a name="3-create-a-local-expressjs-app"></a>3. Erstellen einer lokalen Express.js-App
 
-Erstellen Sie eine Node.js-App mithilfe des Express.js-Anwendungsgenerators. 
-
-1. Navigieren Sie in einem Terminal oder an einer Eingabeaufforderung zu einem Speicherort, an dem Sie den App-Ordner erstellen möchten.
-
-1. Führen Sie den folgenden Befehl aus, um mit dem Express-Generator eine neue Express-App mit dem Namen *expressApp1* zu erstellen. (Die `--view pug --git`-Parameter weisen den Generator an, die Vorlagenengine [pug](https://pugjs.org/api/getting-started.html) (früher als Jade bezeichnet) zu verwenden und eine *.gitignore*-Datei zu erstellen.)
-
-    ```bash
-    npx express-generator expressApp1 -–git --view pug 
-    ```
-
-1. Navigieren Sie zum App-Ordner:
-
-    ```bash
-    cd expressApp1
-    ```
-
-1. Installieren Sie die Abhängigkeiten der Anwendung:
-
-    ```bash
-    npm install
-    ```
+[!INCLUDE [Create a local Express.js app](../includes/create-node-app.md)]
 
 ## <a name="4-run-your-local-expressjs-app"></a>4. Ausführen Ihrer lokalen Express.js-App
 
-1. Starten Sie den Server:
-
-    ```bash
-    npm start
-    ```
-
-1. Testen Sie die App, indem Sie `http://localhost:3000` in einem Browser öffnen. Die Website sollte wie folgt angezeigt werden:
-
-    ![Ausführen der Express-Anwendung](../media/deploy-azure/express.png)
-
-1. Drücken Sie im Terminal **STRG**+**C**, um den Server zu beenden.
+[!INCLUDE [Run your local Express.js app](../includes/run-node-app.md)]
 
 ## <a name="5-initialize-git-in-visual-studio-code-for-current-app"></a>5. Initialisieren von Git in Visual Studio Code für die aktuelle App
 
@@ -169,7 +139,11 @@ Zeigen Sie mithilfe von Aufrufen von `console.log` eine beliebige Ausgabe an, di
 
 1. Aktualisieren Sie die Webseite im Browser einige Male, um die zusätzliche Protokollausgabe anzuzeigen.
 
-## <a name="8-clean-up-resources"></a>8. Bereinigen von Ressourcen
+## <a name="8-make-changes-and-redeploy"></a>8. Vornehmen von Änderungen und erneutes Bereitstellen
+
+Nehmen Sie ein paar Änderungen vor, und stellen Sie die App mithilfe der App Service-Erweiterung [erneut bereit](../how-to/deploy-web-app.md#deploy-or-redeploy-to-app-service-with-visual-studio-code). 
+
+## <a name="9-clean-up-resources"></a>9. Bereinigen von Ressourcen
 
 Wenn Sie die Ressourcen bereinigen möchten, klicken Sie mit der rechten Maustaste auf den App-Dienst in der App Service-Erweiterung für Visual Studio Code, und klicken Sie dann auf **Löschen**.
 

@@ -2,14 +2,14 @@
 title: Bereitstellen von JavaScript-Apps in Azure
 description: Die Hostingoptionen und Bereitstellungsszenarien umfassen mehrere Dienste und Tools für Azure. Veröffentlichen Sie Ihre App, und stellen Sie sie in Azure bereit.
 ms.topic: how-to
-ms.date: 12/09/2020
+ms.date: 01/12/2021
 ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, contperf-fy21q2
-ms.openlocfilehash: e2020d90260af4fbab8d6a37ef475eddb7754b90
-ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
+ms.openlocfilehash: c1ca1f3dcf99ce96c52eec7ebccee9860608b273
+ms.sourcegitcommit: 657f43a5048cd17b080b40b5090d575c8d7f5eaf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97636525"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98173210"
 ---
 # <a name="deploy-and-host-your-nodejs-apps-on-azure"></a>Bereitstellen und Hosten Ihrer Node.js-Apps in Azure
 
@@ -67,6 +67,14 @@ Je nach Dienst können auch andere Bereitstellungsmethoden vorhanden sein. Für 
 * [cURL](/azure/app-service/deploy-zip#with-curl)
 * [SSH](/azure/app-service/configure-linux-open-ssh-session)
 
+Sie können eine erneute Bereitstellung für Ihre App Service-Instanz mit einer beliebigen der [verfügbaren Methoden](#deploy-your-web-app-to-azure) durchführen, auch wenn Sie diese nicht bei der ursprünglichen Bereitstellung verwendet haben. Bei Verwendung einer anderen Methode müssen vor der erneuten Bereitstellung ggf. ein paar Konfigurationsschritte ausgeführt werden. 
+
+### <a name="deploy-or-redeploy-to-app-service-with-visual-studio-code"></a>Bereitstellen oder erneutes Bereitstellen in App Service mit Visual Studio Code
+
+Wenn Sie Ihre App Service-App mit Visual Studio Code bereitstellen oder erneut bereitstellen möchten, klicken Sie in der App Service-Erweiterung in der Liste der Dienste mit der rechten Maustaste auf Ihre App Service-Instanz, und wählen Sie **In Web-App bereitstellen...** aus. 
+
+:::image type="content" source="../media/azure-app-service-vscode-extensions/deploy-or-redeploy-app-service.png" alt-text="Bereitstellen oder erneutes Bereitstellen in App Service mit Visual Studio Code":::
+
 ## <a name="verify-your-deployment-with-your-http-endpoint"></a>Überprüfen Ihrer Bereitstellung mit Ihrem HTTP-Endpunkt
 
 Greifen Sie zum Überprüfen Ihrer Bereitstellung auf Ihren HTTP-Endpunkt zu. Der HTTP-Endpunkt wird für alle Dienste auf der Seite **Übersicht** angezeigt. 
@@ -80,3 +88,4 @@ Zeigen Sie Ihren HTTP-Endpunkt auf der Übersichtsseite des Diensts im Azure-Por
 ## <a name="next-steps"></a>Nächste Schritte
 
 * [Bereitstellen mit Containern](deploy-containers.md)
+* [Weitere Bereitstellungstutorials mit Visual Studio Code](https://code.visualstudio.com/docs/azure/deployment)
