@@ -4,12 +4,12 @@ description: In diesem Tutorial stellen Sie eine Deno-Anwendung mithilfe der Azu
 ms.topic: tutorial
 ms.date: 10/13/2020
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript
-ms.openlocfilehash: 16cb388a9a61b0141f04364dc1489607565156a3
-ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
+ms.openlocfilehash: f1f8c93954d2e4cbb8f5bd525a518aae03ec9667
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97522397"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561072"
 ---
 # <a name="deploy-deno-apps-to-azure-app-service-from-the-azure-cli"></a>Bereitstellen von Deno-Apps in Azure App Service über die Azure CLI
 
@@ -95,7 +95,7 @@ Stellen Sie Ihre Deno-App mithilfe der Azure CLI in Azure bereit.
 
     Dieser AppService führt das Docker-Image `anthonychu/azure-webapps-deno:1.0.2` aus, das die Basisfunktionen für die Ausführung von Deno-Code bereitstellt. Dieser Vorgang kann einige Sekunden dauern.
 
-## <a name="5-configure-the-azure-app-service-webapp"></a>5. Konfigurieren der Azure App Service-Web-App
+## <a name="5-configure-app-service-deno-container"></a>5. Konfigurieren des App Service-Deno-Containers
 
 1. Weisen Sie die Web-App an, wo das Docker-Containerimage für den Namen des experimentellen Deno-Images abgerufen werden soll:
 
@@ -158,6 +158,6 @@ az group delete deno-quickstart
 
 Weitere Informationen:
 * [Konfigurieren von App-Einstellungen](../how-to/configure-web-app-settings.md)
-* [Bereitstellen in App Service](../tutorial-vscode-azure-app-service-node-01.md) mit Visual Studio Code-Erweiterungen
+* [Bereitstellen in App Service](./deploy-nodejs-azure-app-service-with-visual-studio-code.md) mit Visual Studio Code-Erweiterungen
 * [Bereitstellen auf einem virtuellen Computer](./nodejs-virtual-machine-vm/introduction.md)
 * [Bereitstellen einer Deno-Funktion](https://github.com/anthonychu/azure-functions-deno-worker) als [benutzerdefinierten Handler](/azure/azure-functions/functions-custom-handlers)

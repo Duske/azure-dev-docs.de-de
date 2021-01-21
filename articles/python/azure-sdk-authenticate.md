@@ -1,15 +1,15 @@
 ---
 title: Authentifizieren von Python-Anwendungen mit Azure-Diensten
 description: Hier erfahren Sie, wie Sie die Anmeldeinformationsobjekte abrufen, die erforderlich sind, um eine Python-App mit Azure-Diensten unter Verwendung der Azure-Bibliotheken zu authentifizieren.
-ms.date: 11/12/2020
+ms.date: 01/19/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 7c609c7e218be1fd5e7c259a5aa7c5bec3e507d2
-ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
+ms.openlocfilehash: 51b7a074bef81999f17f3a5fa51d243e64a33f3c
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94601362"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625966"
 ---
 # <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>Authentifizieren und Autorisieren von Python-Apps in Azure
 
@@ -34,7 +34,7 @@ Welcher Dienstprinzipal genutzt wird, hängt davon ab, wo die App ausgeführt wi
 
 ### <a name="identity-when-running-the-app-on-azure"></a>Identität beim Ausführen der App in Azure
 
-Bei der Ausführung in der Cloud (z. B. in der Produktion) wird für eine App meist eine **systemseitig zugewiesene verwaltete Identität** genutzt. Bei einer [verwalteten Identität](/azure/active-directory/managed-identities-azure-resources/overview) verwenden Sie den Namen der App, wenn Sie Rollen und Berechtigungen für Ressourcen zuweisen. Von Azure wird der zugrunde liegende Dienstprinzipal automatisch verwaltet und für die App automatisch die Authentifizierung gegenüber den anderen Azure-Ressourcen durchgeführt. Daher müssen Sie den Dienstprinzipal nicht direkt verarbeiten. Darüber hinaus müssen in Ihrem App-Code auch keine Zugriffstoken, Geheimnisse oder Verbindungszeichenfolgen für Azure-Ressourcen verarbeitet werden. Dies mindert das Risiko, dass Informationen dieser Art unter Umständen in falsche Hände geraten oder anderweitig kompromittiert werden.
+Bei der Ausführung in der Cloud (z. B. in der Produktion) wird für eine App meist eine **systemseitig zugewiesene verwaltete Identität** (zuvor als „MSI“ bezeichnet) genutzt. Bei einer [verwalteten Identität](/azure/active-directory/managed-identities-azure-resources/overview) verwenden Sie den Namen der App, wenn Sie Rollen und Berechtigungen für Ressourcen zuweisen. Von Azure wird der zugrunde liegende Dienstprinzipal automatisch verwaltet und für die App automatisch die Authentifizierung gegenüber den anderen Azure-Ressourcen durchgeführt. Daher müssen Sie den Dienstprinzipal nicht direkt verarbeiten. Darüber hinaus müssen in Ihrem App-Code auch keine Zugriffstoken, Geheimnisse oder Verbindungszeichenfolgen für Azure-Ressourcen verarbeitet werden. Dies mindert das Risiko, dass Informationen dieser Art unter Umständen in falsche Hände geraten oder anderweitig kompromittiert werden.
 
 Die Konfiguration der verwalteten Identität richtet sich nach dem Dienst, den Sie zum Hosten Ihrer App verwenden. Der Artikel [Dienste, die verwaltete Identitäten unterstützen](/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities) enthält Links zu den Anleitungen für die verschiedenen Dienste. Beispielsweise aktivieren Sie für Web-Apps, die für Azure App Service bereitgestellt werden, die verwaltete Identität im Azure-Portal über die Option **Identität** > **Vom System zugewiesen** oder in der Azure CLI mit dem Befehl `az webapp identity assign`.
 
@@ -79,7 +79,7 @@ vault_url = os.environ["KEY_VAULT_URL"]
 
 
 # Acquire a credential object for the app identity. When running in the cloud,
-# DefaultAzureCredential uses the app's managed identity or user-assigned service principal.
+# DefaultAzureCredential uses the app's managed identity (MSI) or user-assigned service principal.
 # When run locally, DefaultAzureCredential relies on environment variables named
 # AZURE_CLIENT_ID, AZURE_CLIENT_SECRET, and AZURE_TENANT_ID.
 
@@ -116,7 +116,9 @@ Erst wenn im Code die [`get_secret`](/python/api/azure-keyvault-secrets/azure.ke
 
 ## <a name="authenticate-with-defaultazurecredential"></a>Authentifizieren mit DefaultAzureCredential
 
-Für die meisten Anwendungen ist die [`DefaultAzureCredential`](/python/api/azure-identity/azure.identity.defaultazurecredential)-Klasse aus der [`azure-identity`](/python/api/azure-identity/azure.identity)-Bibliothek die einfachste und empfohlene Authentifizierungsmethode. Von `DefaultAzureCredential` wird automatisch die verwaltete Identität der App in der Cloud genutzt, und bei der lokalen Ausführung wird automatisch ein lokaler Dienstprinzipal aus Umgebungsvariablen geladen.
+Für die meisten Anwendungen ist die [`DefaultAzureCredential`](/python/api/azure-identity/azure.identity.defaultazurecredential)-Klasse aus der [`azure-identity`](/python/api/azure-identity/azure.identity)-Bibliothek die einfachste und empfohlene Authentifizierungsmethode.
+
+`DefaultAzureCredential` verwendet automatisch die verwaltete Identität der App (MSI) in der Cloud und lädt bei der lokalen Ausführung automatisch einen lokalen Dienstprinzipal aus Umgebungsvariablen (wie unter [Konfigurieren Ihrer lokalen Python-Entwicklungsumgebung für Azure](configure-local-development-environment.md#configure-authentication) beschrieben).
 
 ```python
 import os
@@ -138,7 +140,7 @@ retrieved_secret = secret_client.get_secret("secret-name-01")
 
 Im obigen Code wird das Objekt `DefaultAzureCredential` beim Zugreifen auf Azure Key Vault verwendet. Hierbei ist die URL des Schlüsseltresors in einer Umgebungsvariablen mit dem Namen `KEY_VAULT_URL` verfügbar. Vom Code wird das typische Nutzungsmuster für Bibliotheken implementiert: Objekt mit Anmeldeinformationen beschaffen, passendes Clientobjekt für die Azure-Ressource erstellen und dann versuchen, mit diesem Clientobjekt einen Vorgang auf dieser Ressource durchzuführen. Erneut erfolgt die Authentifizierung und Autorisierung erst in diesem letzten Schritt.
 
-Wenn Code in Azure bereitgestellt und ausgeführt wird, verwendet `DefaultAzureCredential` automatisch die systemseitig zugewiesene verwaltete Identität, die Sie für die App im jeweils als Host fungierenden Dienst aktivieren können. Berechtigungen für bestimmte Ressourcen, z. B. Azure Storage oder Azure Key Vault, werden dieser Identität mit dem Azure-Portal oder der Azure CLI zugewiesen. In diesen Fällen maximiert diese von Azure verwaltete Identität die Sicherheit, da Sie in Ihrem Code niemals explizit mit Dienstprinzipalen interagieren.
+Wenn Code in Azure bereitgestellt und ausgeführt wird, verwendet `DefaultAzureCredential` automatisch die systemseitig zugewiesene verwaltete Identität (MSI), die Sie für die App im jeweils als Host fungierenden Dienst aktivieren können. Berechtigungen für bestimmte Ressourcen, z. B. Azure Storage oder Azure Key Vault, werden dieser Identität mit dem Azure-Portal oder der Azure CLI zugewiesen. In diesen Fällen maximiert diese von Azure verwaltete Identität die Sicherheit, da Sie in Ihrem Code niemals explizit mit Dienstprinzipalen interagieren.
 
 Wenn Sie den Code lokal ausführen, verwendet `DefaultAzureCredential` automatisch den Dienstprinzipal, der von den Umgebungsvariablen `AZURE_TENANT_ID`, `AZURE_CLIENT_ID` und `AZURE_CLIENT_SECRET` beschrieben wird. Das Clientobjekt schließt diese Werte dann (sicher) in den HTTP-Anforderungsheader ein, wenn der API-Endpunkt aufgerufen wird. Bei Ausführung in der lokalen Umgebung oder in der Cloud sind keine Codeänderungen erforderlich. Ausführliche Informationen zum Erstellen des Dienstprinzipals und zum Einrichten der Umgebungsvariablen finden Sie unter [Konfigurieren Ihrer lokalen Python-Entwicklungsumgebung für Azure: Konfigurieren der Authentifizierung](configure-local-development-environment.md#configure-authentication).
 

@@ -3,12 +3,12 @@ title: Neuerungen in der JavaScript-Dokumentation
 description: Neuerungen in der JavaScript-Dokumentation im Developer Center
 ms.topic: conceptual
 ms.date: 01/05/2021
-ms.openlocfilehash: 507c52491784a508535ae07f4a9b2755fa68cc1b
-ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
+ms.openlocfilehash: 71f4db11833d0c5346ee6204c94ecd943bb4f126
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97952452"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625902"
 ---
 # <a name="javascript-docs-whats-new"></a>JavaScript-Dokumentation: Neues
 
@@ -21,7 +21,7 @@ Hier finden Sie neue und aktualisierte Inhalte für JavaScript- und TypeScript-E
 |Name|Notizen|
 |---------------------------------------|--|
 |[**Für Einsteiger**](learn-azure-javascript.md#getting-started)|Verschiedene Sammlungen mit Onlinematerial für die ersten Schritte mit JavaScript, Node.js und Webentwicklung sowie für andere Bereiche, die für JavaScript-Entwickler von Interesse sind.|
-|[Wichtigste allgemeine Aufgaben für JavaScript-Entwickler](how-to/common-javascript-tasks.md)|Hier finden Sie ein Beispiel für Ihre aktuellen Aufgaben.|
+|[Wichtigste Aufgaben für JavaScript-Entwickler](how-to/common-javascript-tasks.md)|Hier finden Sie ein Beispiel für Ihre aktuellen Aufgaben.|
 
 ## <a name="2020-december"></a>Dezember 2020
 
@@ -42,9 +42,9 @@ Hier finden Sie neue und aktualisierte Inhalte für JavaScript- und TypeScript-E
 
 |Name|
 |---------------------------------------|
-|Statische Web-App, JavaScript, CodeTour: Verwenden Sie Basketballstatistiken zur Optimierung des Spielverlaufs mit Visual Studio Code, inspiriert von SPACE JAM: A NEW LEGACY – [Learn](https://docs.microsoft.com/learn/paths/optimize-basketball-games-with-machine-learning/)|
-|Erstellen einer einfachen Website mit HTML, CSS und JavaScript – [Learn](https://docs.microsoft.com/learn/modules/build-simple-website/)|
-|Verwenden Sie Visual Studio Code zum Erstellen eines JavaScript- und Vue.js-Dashboards mit einer serverlosen API, die auf Azure Functions und Node.js basiert. - [Learn](https://docs.microsoft.com/learn/modules/build-api-azure-functions)|
+|Statische Web-App, JavaScript, CodeTour: Verwenden Sie Basketballstatistiken zur Optimierung des Spielverlaufs mit Visual Studio Code, inspiriert von SPACE JAM: A NEW LEGACY – [Learn](/learn/paths/optimize-basketball-games-with-machine-learning/)|
+|Erstellen einer einfachen Website mit HTML, CSS und JavaScript – [Learn](/learn/modules/build-simple-website/)|
+|Verwenden Sie Visual Studio Code zum Erstellen eines JavaScript- und Vue.js-Dashboards mit einer serverlosen API, die auf Azure Functions und Node.js basiert. - [Learn](/learn/modules/build-api-azure-functions)|
 
 ## <a name="2020-november"></a>November 2020
 

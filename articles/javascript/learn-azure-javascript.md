@@ -2,14 +2,14 @@
 title: Erlernen der Entwicklung mit Azure und JavaScript
 description: Verwenden Sie die Microsoft Learn-Plattform, um Ihr Verständnis von Azure mit JavaScript zu erweitern.
 ms.topic: reference
-ms.date: 01/05/2021
+ms.date: 01/14/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 3b37f31d9df4c152874f4c913fbc59a369636640
-ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
+ms.openlocfilehash: 7fd0fd26b1b0133faf8cf21bd7b29afdbd37f5aa
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97952472"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561676"
 ---
 # <a name="learn-to-develop-with-azure-and-javascript"></a>Erlernen der Entwicklung mit Azure und JavaScript 
 
@@ -24,10 +24,15 @@ Verwenden Sie die Microsoft Learn-Plattform oder einen Microsoft Learning-Partne
 * [Verwenden von Dateien und Verzeichnissen in einer Node.js-App](/learn/modules/nodejs-files/)
 * [Interaktives Debuggen von Node.js-Apps mit dem integrierten Debugger und dem Visual Studio Code-Debugger](/learn/modules/debug-nodejs/)
 
+## <a name="typescript"></a>TypeScript
+
+* [Playground](https://www.typescriptlang.org/play)
+
 ## <a name="getting-started"></a>Erste Schritte
 
 * [JavaScript für Einsteiger](https://techcommunity.microsoft.com/t5/apps-on-azure/learn-javascript-with-this-series-of-videos-for-beginners/ba-p/1764635)
 * [Webentwicklung für Einsteiger](https://github.com/microsoft/Web-Dev-For-Beginners)
+* [React: Vorschau](https://github.com/geektrainer/learn-react)
 * [3D-Apps mit Babylon.js](https://techcommunity.microsoft.com/t5/apps-on-azure/a-first-introduction-to-building-3d-applications-with-javascript/ba-p/1877650)
 * [Node.js für Einsteiger](https://techcommunity.microsoft.com/t5/apps-on-azure/learn-node-js-with-this-series-of-short-videos-for-beginners/ba-p/1771830)
 
@@ -37,16 +42,16 @@ Die folgenden Microsoft Learn-Module vermitteln Ihnen die Verwendung von Azure m
 
 ### <a name="static-web-apps"></a>Statische Web-Apps
 
-* [Statische Web-App, JavaScript, CodeTour: Verwenden Sie Basketballstatistiken zur Optimierung des Spielverlaufs mit Visual Studio Code, inspiriert von SPACE JAM: A NEW LEGACY](https://docs.microsoft.com/learn/paths/optimize-basketball-games-with-machine-learning/)
+* [Statische Web-App, JavaScript, CodeTour: Verwenden Sie Basketballstatistiken zur Optimierung des Spielverlaufs mit Visual Studio Code, inspiriert von SPACE JAM: A NEW LEGACY](/learn/paths/optimize-basketball-games-with-machine-learning/)
 * [Veröffentlichen einer Angular-, React-, Svelte- oder Vue-JavaScript-App mit Azure Static Web Apps](/learn/modules/publish-app-service-static-web-app-api/)
 * [Erstellen und Veröffentlichen einer statischen Web-App mit Gatsby und Azure Static Web Apps](/learn/modules/create-deploy-static-webapp-gatsby-app-service/)
-* [Erstellen einer einfachen Website mit HTML, CSS und JavaScript](https://docs.microsoft.com/learn/modules/build-simple-website/)
+* [Erstellen einer einfachen Website mit HTML, CSS und JavaScript](/learn/modules/build-simple-website/)
 
 ### <a name="serverless-apis"></a>Serverlose APIs
 
 * [Erstellen serverloser APIs mit Azure Functions](/learn/modules/build-api-azure-functions/)
 * [Umgestalten von Node.js- und Express-APIs in serverlose APIs mit Azure Functions](/learn/modules/shift-nodejs-express-apis-serverless/)
-* [Verwenden Sie Visual Studio Code zum Erstellen eines JavaScript- und Vue.js-Dashboards mit einer serverlosen API, die auf Azure Functions und Node.js basiert.](https://docs.microsoft.com/learn/modules/build-api-azure-functions)
+* [Verwenden Sie Visual Studio Code zum Erstellen eines JavaScript- und Vue.js-Dashboards mit einer serverlosen API, die auf Azure Functions und Node.js basiert.](/learn/modules/build-api-azure-functions)
 
 ### <a name="devops-cicd"></a>DevOps (CI/CD)
 

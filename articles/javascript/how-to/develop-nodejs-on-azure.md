@@ -4,12 +4,12 @@ description: Enthält ein umfassendes End-to-End-Tutorial zur Vorgehensweise bei
 ms.topic: how-to
 ms.date: 06/25/2017
 ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, devx-track-azurecli
-ms.openlocfilehash: de07137ca6fd21aaf3d5dfe33bf6d599a745555d
-ms.sourcegitcommit: ae2fa266a36958c04625bb0ab212e6f2db98e026
+ms.openlocfilehash: e549ef0cf5baaf003788a55bf2549e9c3f2fbe5c
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96857818"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98626054"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>Entwickeln und Bereitstellen einer Node.js-Container-App mit Visual Studio Code und Azure
 
@@ -325,21 +325,21 @@ Nachdem Sie die App für Docker erstellt und per Push an DockerHub übermittelt 
 
 1. Erstellen Sie eine Ressourcengruppe. Diese können Sie sich als *Namespace* oder *Verzeichnis* zur Unterstützung der Organisation von Azure-Ressourcen vorstellen. Die Option `-n` wird verwendet, um den Namen der Gruppe anzugeben. Dies kann ein beliebiger Name sein.
 
-    ```shell
+    ```azurecli
     az group create -n nina-demo -l westus
     ```
 
     Mit der Option `-l` wird der Standort der Ressourcengruppe angegeben. Während der Vorschauphase ist die Unterstützung von App Service unter Linux nur in ausgewählten Regionen verfügbar. Wenn Sie nicht im Westen der USA ansässig sind und prüfen möchten, welche anderen Regionen verfügbar sind, können Sie in der CLI daher `az appservice list-locations --linux-workers-enabled` ausführen, um Ihre Optionen für Rechenzentren anzuzeigen.
 
-1. Legen Sie die neu erstellte Ressourcengruppe als Standardressourcengruppe fest, damit Sie die CLI weiter nutzen können, ohne die Ressourcengruppe für jeden CLI-Aufruf explizit angeben zu müssen:
+1. Legen Sie die neu erstellte Ressourcengruppe als Standardressourcengruppe fest, damit Sie die CLI weiter nutzen können, ohne die Ressourcengruppe für jeden Azure CLI-Aufruf explizit angeben zu müssen:
 
-   ```shell
+   ```azurecli
    az configure -d group=nina-demo
    ```
 
 1. Erstellen Sie den App Service-*Plan*, über den die Erstellung und Skalierung der zugrunde liegenden virtuellen Computer verwaltet wird, auf denen Ihre App bereitgestellt wird. Geben Sie für die Option `n` wieder einen beliebigen Wert an.
 
-    ```shell
+    ```azurecli
     az appservice plan create -n nina-demo-plan --is-linux
     ```
 
@@ -347,7 +347,7 @@ Nachdem Sie die App für Docker erstellt und per Push an DockerHub übermittelt 
 
 1. Erstellen Sie die App Service-Web-App, bei der es sich um die eigentliche To-Do-App handelt, die für den eben erstellten Plan und die Ressourcengruppe ausgeführt wird. Eine Web-App ist praktisch synonym mit einem Prozess oder Container, und der Plan dient als Host für die Ausführung des virtuellen Computers bzw. Containers. Außerdem müssen Sie im Rahmen der Web-App-Erstellung die Konfiguration so durchführen, dass das von Ihnen auf DockerHub veröffentlichte Docker-Image verwendet wird:
 
-    ```shell
+    ```azurecli
     az webapp create -n nina-demo-app -p nina-demo-plan -i lostintangent/node
     ```
 
@@ -356,13 +356,13 @@ Nachdem Sie die App für Docker erstellt und per Push an DockerHub übermittelt 
 
 1. Legen Sie die Web-App als Standard-Webinstanz fest:
 
-    ```shell
+    ```azurecli
     az configure -d web=nina-demo-app
     ```
 
 1. Starten Sie die App, um den bereitgestellten Container anzuzeigen, der unter der URL vom Typ `*.azurewebsites.net` verfügbar ist:
 
-    ```shell
+    ```azurecli
     az webapp browse
     ```
 
@@ -378,20 +378,20 @@ Sie können zwar einen MongoDB-Server oder eine Replikatgruppe konfigurieren und
 
 1. Führen Sie im Visual Studio Code-Terminal den folgenden Befehl aus, um eine MongoDB-kompatible Instanz des Cosmos DB-Diensts zu erstellen. Ersetzen Sie den Platzhalter **<NAME** durch einen global eindeutigen Wert (Cosmos DB nutzt diesen Namen zum Generieren der Server-URL einer Datenbank):
 
-   ```shell
+   ```azurecli
    COSMOSDB_NAME=<NAME>
    az cosmosdb create -n $COSMOSDB_NAME --kind MongoDB
    ```
 
 1. Rufen Sie die MongoDB-Verbindungszeichenfolge für diese Instanz ab:
 
-   ```shell
+   ```bash
    MONGODB_URL=$(az cosmosdb list-connection-strings -n $COSMOSDB_NAME -otsv --query "connectionStrings[0].connectionString")
    ```
 
 1. Aktualisieren Sie die Umgebungsvariable **MONGODB_URL** Ihrer Web-App so, dass eine Verbindung mit der neu bereitgestellten Cosmos DB-Instanz hergestellt und nicht versucht wird, eine Verbindung mit einem lokal ausgeführten MongoDB-Server (der nicht existiert!) herzustellen:
 
-    ```shell
+    ```azurecli
     az webapp config appsettings set --settings MONGODB_URL=$MONGODB_URL
     ```
 
@@ -409,7 +409,7 @@ DockerHub stellt eine hervorragende Benutzeroberfläche für die Verteilung Ihre
 
 Sie können eine benutzerdefinierte Registrierung bereitstellen, indem Sie den folgenden Befehl ausführen. (Ersetzen Sie den Platzhalter **<NAME** durch einen global eindeutigen Wert, da ACR einen angegebenen Wert verwendet, um die Anmeldeserver-URL der Registrierung zu generieren.)
 
-```shell
+```azurecli
 ACR_NAME=<NAME>
 az acr create -n $ACR_NAME -l westus --admin-enabled
 ```
@@ -419,31 +419,31 @@ az acr create -n $ACR_NAME -l westus --admin-enabled
 
 Mit dem Befehl `az acr create` wird die Anmeldeserver-URL angezeigt (Spalte `LOGIN SERVER`), die Sie für die Anmeldung mit der Docker-Befehlszeilenschnittstelle nutzen (z. B. `ninademo.azurecr.io`). Außerdem werden mit dem Befehl Administratoranmeldeinformationen generiert, die Sie für die Authentifizierung verwenden können. Führen Sie zum Abrufen dieser Anmeldeinformationen den folgenden Befehl aus, und notieren Sie sich den angezeigten Benutzernamen und das Kennwort:
 
-```shell
+```azurecli
 az acr credential show -n $ACR_NAME
 ```
 
 Mit den Anmeldeinformationen aus dem vorherigen Schritt und Ihrem individuellen Anmeldeserver können Sie sich an der Registrierung anmelden, indem Sie den Docker CLI-Standardworkflow verwenden.
 
-```shell
+```console
 docker login <LOGIN_SERVER> -u <USERNAME> -p <PASSWORD>
 ```
 
 Sie können Ihren Docker-Container jetzt mit einem Tag versehen, um anzugeben, dass er Ihrer privaten Registrierung zugeordnet ist. Verwenden Sie hierfür den folgenden Befehl, und ersetzen Sie `lostintangent/node` durch den Namen, den Sie dem Containerimage gegeben haben.
 
-```shell
+```console
 docker tag lostintangent/node <LOGIN_SERVER>/lostintangent/node
 ```
 
 Übertragen Sie das getaggte Image schließlich per Pushvorgang in Ihre private Docker-Registrierung.
 
-```shell
+```console
 docker push <LOGIN_SERVER>/lostintangent/node
 ```
 
 Ihr Container ist jetzt in Ihrer eigenen privaten Registrierung gespeichert, und die Docker CLI lässt zu, dass Sie genauso wie bei der Verwendung von DockerHub weiterarbeiten. Sie müssen nur den folgenden Befehl ausführen, um die App Service-Web-App anzuweisen, den Pullvorgang aus Ihrer privaten Registrierung durchzuführen:
 
-```shell
+```azurecli
 az appservice web config container set \
     -r <LOGIN_SERVER> \
     -c <LOGIN_SERVER>/lostintangent/node \
@@ -459,7 +459,7 @@ Wenn Sie die App im Browser aktualisieren, sollte alles gleich aussehen und funk
 
 Die URL `*.azurewebsites.net` ist zwar gut für Tests geeignet, aber später kann es dann ratsam sein, Ihrer Web-App einen benutzerdefinierten Domänennamen hinzuzufügen. Nachdem Sie von einer Registrierungsstelle einen Domänennamen erhalten haben, müssen Sie ihm nur einen `A`-Eintrag hinzufügen, mit dem auf die externe IP (eigentlich ein Lastenausgleich) Ihrer Web-App verwiesen wird. Sie können diese IP abrufen, indem Sie den folgenden Befehl ausführen:
 
-```shell
+```azurecli
 az webapp config hostname get-external-ip
 ```
 
@@ -467,7 +467,7 @@ Zusätzlich zu einem `A`-Eintrag müssen Sie Ihrer Domäne auch einen `TXT`-Eint
 
 Nachdem diese Einträge erstellt und die DNS-Änderungen weitergegeben wurden, können Sie die benutzerdefinierte Domäne bei Azure registrieren, damit alles richtig für den eingehenden Datenverkehr vorbereitet ist.
 
-```shell
+```azurecli
 az webapp config hostname add --hostname <DOMAIN>
 ```
 
@@ -480,7 +480,7 @@ az webapp config hostname add --hostname <DOMAIN>
 
 Unter Umständen erreicht Ihre Web-App nach einiger Zeit eine so große Beliebtheit, dass ihre zugeordneten Ressourcen (CPU und RAM) nicht mehr ausreichen, um den vermehrten Datenverkehr und die Betriebsanforderungen zu bewältigen. Der App Service-Plan, den Sie weiter oben erstellt haben (**B1**), verfügt über einen CPU-Kern und 1,75 GB RAM. Dadurch kann er einfach überladen werden. Der Plan **B2** verfügt über doppelt so hohe RAM- und CPU-Werte. Wenn Sie merken, dass einer der Werte für Ihre App nicht mehr ausreicht, können Sie den zugrunde liegenden virtuellen Computer also hochskalieren, indem Sie den folgenden Befehl ausführen:
 
-```shell
+```azurecli
 az appservice plan update -n nina-demo-plan --sku B2
 ```
 
@@ -491,7 +491,7 @@ Nach kurzer Zeit wird Ihre Web-App zu der angeforderten Hardware migriert, und d
 
 Zusätzlich zum Hochskalieren der Spezifikationen für den virtuellen Computer können Sie Ihre Web-App auch *aufskalieren* (sofern die Web-App zustandslos ist), indem Sie weitere zugrunde liegende VM-Instanzen hinzufügen. Der weiter oben erstellte App Service-Plan enthält nur einen virtuellen Computer (einen *Worker*). Daher wird der gesamte eingehende Datenverkehr letztendlich durch die Grenzwerte der verfügbaren Ressourcen dieser einen Instanz begrenzt. Wenn Sie eine zweite VM-Instanz hinzufügen möchten, können Sie den gleichen Befehl wie oben ausführen und nun die Anzahl von virtuellen Workercomputern aufskalieren, statt die SKU hochzuskalieren.
 
-```shell
+```azurecli
 az appservice plan update -n nina-demo-plan --number-of-workers 2
 ```
 
@@ -506,7 +506,7 @@ Die Verwendung von zustandslosen Web-Apps wird als bewährte Methode angesehen. 
 
 Um sicherzustellen, dass Ihnen für nicht genutzte Azure-Ressourcen keine Kosten berechnet werden, können Sie im Visual Studio Code-Terminal den folgenden Befehl ausführen. Mit dem Befehl werden alle Ressourcen gelöscht, die während dieses Tutorials bereitgestellt wurden.
 
-```shell
+```azurecli
 az group delete
 ```
 

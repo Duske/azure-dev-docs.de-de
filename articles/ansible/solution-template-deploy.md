@@ -5,19 +5,19 @@ keywords: Ansible, Azure, DevOps, Lösungsvorlage, virtueller Computer, verwalte
 ms.topic: quickstart
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: cae15f8a69151b7692edde3c8fb36a9818a0e305
-ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
+ms.openlocfilehash: 1cad21fb3cebe9675032fa399aefb7ca329d9733
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88725184"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561756"
 ---
 # <a name="quickstart-deploy-the-ansible-solution-template-for-azure-to-centos"></a>Schnellstart: Bereitstellen der Ansible-Lösungsvorlage für Azure in CentOS
 
 Die Ansible-Lösungsvorlage für Azure dient dazu, eine Ansible-Instanz auf einem virtuellen CentOS-Computer zu konfigurieren – zusammen mit Ansible und einer Reihe von Tools, die für die Arbeit mit Azure konfiguriert sind. Zu diesen Tools zählen:
 
 - **Ansible-Module für Azure:** Bei den [Ansible-Modulen für Azure](./module-version-matrix.md) handelt es sich um eine Sammlung von Modulen, mit denen Sie Ihre Infrastruktur in Azure erstellen und verwalten können. Standardmäßig wird die neueste Version dieser Module bereitgestellt. Im Rahmen des Bereitstellungsprozesses für die Lösungsvorlage kann jedoch auch eine für Ihre Umgebung geeignete Versionsnummer angegeben werden.
-- **Azure-Befehlszeilenschnittstelle (Command-Line Interface, CLI) 2.0:** Die [Azure CLI 2.0](/cli/azure/?view=azure-cli-latest) ist eine plattformübergreifende Befehlszeilenumgebung von Microsoft für die Verwaltung von Azure-Ressourcen. 
+- **Azure-Befehlszeilenschnittstelle (Command-Line Interface, CLI) 2.0:** Die [Azure CLI 2.0](/cli/azure/) ist eine plattformübergreifende Befehlszeilenumgebung von Microsoft für die Verwaltung von Azure-Ressourcen. 
 - **Verwaltete Identitäten für Azure-Ressourcen:** Die [verwalteten Identitäten für Azure-Ressourcen](/azure/active-directory/managed-identities-azure-resources/overview) dienen zum Schutz der Anmeldeinformationen für Cloudanwendungen.
 
 ## <a name="prerequisites"></a>Voraussetzungen
@@ -63,13 +63,13 @@ Die Ansible-Lösungsvorlage für Azure dient dazu, eine Ansible-Instanz auf eine
 
 1. Klicken Sie auf **OK**.
 
-1. Geben Sie auf der Registerkarte mit den **Integrationseinstellungen für Ansible**den Authentifizierungstyp an. Weitere Informationen zum Schutz von Azure-Ressourcen finden Sie unter [Was sind verwaltete Identitäten für Azure-Ressourcen?](/azure/active-directory/managed-identities-azure-resources/overview).
+1. Geben Sie auf der Registerkarte mit den **Integrationseinstellungen für Ansible** den Authentifizierungstyp an. Weitere Informationen zum Schutz von Azure-Ressourcen finden Sie unter [Was sind verwaltete Identitäten für Azure-Ressourcen?](/azure/active-directory/managed-identities-azure-resources/overview).
 
     ![Registerkarte mit Ansible-Integrationseinstellungen im Azure-Portal](./media/solution-template-deploy/portal-ansible-setup-tab-3.png)
 
 1. Klicken Sie auf **OK**.
 
-1. Daraufhin wird die Seite **Zusammenfassung** angezeigt. Diese enthält den Überprüfungsprozess und eine Liste mit den angegebenen Kriterien für die Ansible-Bereitstellung. Über den Link am unteren Rand der Registerkarte können Sie**die Vorlage und die Parameter für die Verwendung** mit unterstützten Azure-Sprachen und -Plattformen herunterladen. 
+1. Daraufhin wird die Seite **Zusammenfassung** angezeigt. Diese enthält den Überprüfungsprozess und eine Liste mit den angegebenen Kriterien für die Ansible-Bereitstellung. Über den Link am unteren Rand der Registerkarte können Sie **die Vorlage und die Parameter für die Verwendung** mit unterstützten Azure-Sprachen und -Plattformen herunterladen. 
 
      ![Registerkarte mit der Ansible-Zusammenfassung im Azure-Portal](./media/solution-template-deploy/portal-ansible-setup-tab-4.png)
 
@@ -77,9 +77,9 @@ Die Ansible-Lösungsvorlage für Azure dient dazu, eine Ansible-Instanz auf eine
 
 1. Wenn die Registerkarte **Erstellen** angezeigt wird, wählen Sie **OK** aus, um Ansible bereitzustellen.
 
-1. Wählen Sie am oberen Rand der Portalseite das **Benachrichtigungssymbol**aus, um die Ansible-Bereitstellung nachzuverfolgen. Wählen Sie nach Abschluss der Bereitstellung **Zu Ressourcengruppe wechseln** aus. 
+1. Wählen Sie am oberen Rand der Portalseite das **Benachrichtigungssymbol** aus, um die Ansible-Bereitstellung nachzuverfolgen. Wählen Sie nach Abschluss der Bereitstellung **Zu Ressourcengruppe wechseln** aus. 
 
-     ![Registerkarte mit der Ansible-Zusammenfassung im Azure-Portal](./media/solution-template-deploy/portal-ansible-setup-complete.png)
+     ![Benachrichtigung des Azure-Portals für die Ansible-Bereitstellung](./media/solution-template-deploy/portal-ansible-setup-complete.png)
 
 1. Verwenden Sie die auf der Ressourcengruppenseite angegebene IP-Adresse Ihres Ansible-Hosts, um sich anzumelden und Ihre Azure-Ressourcen mit Ansible zu verwalten.
 

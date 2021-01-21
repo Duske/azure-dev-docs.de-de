@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, Azure Spring Cloud, Azure CLI
 ms.topic: tutorial
 ms.date: 11/10/2020
 ms.custom: devx-track-jenkins,devx-track-azurecli
-ms.openlocfilehash: e0b98f31ac7f7b079f655c4cb795fe7b38af4508
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: ef078589506af95fc05bfd7a85f48757f3cb0242
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983969"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625990"
 ---
 # <a name="tutorial-deploy-apps-to-azure-spring-cloud-using-jenkins-and-the-azure-cli"></a>Tutorial: Bereitstellen von Apps in Azure Spring Cloud mithilfe von Jenkins und der Azure-Befehlszeilenschnittstelle
 
@@ -129,7 +129,7 @@ In diesem Abschnitt wird der Jenkins-Server für die Ausführung eines Builds vo
 
 ### <a name="add-your-azure-service-principal-credential-in-jenkins-credential-store"></a>Hinzufügen Ihrer Anmeldeinformationen für den Azure-Dienstprinzipal im Jenkins-Anmeldeinformationsspeicher
 
-1. Für Bereitstellungen in Azure ist ein Azure-Dienstprinzipal erforderlich. Weitere Informationen finden Sie im Abschnitt [Erstellen eines Dienstprinzipals](deploy-from-github-to-azure-app-service.md#create-service-principal) des Bereitstellungstutorials für Azure App Service. Die Ausgabe von `az ad sp create-for-rbac` sieht in etwa wie folgt aus:
+1. Für Bereitstellungen in Azure ist ein Azure-Dienstprinzipal erforderlich. Weitere Informationen finden Sie im Abschnitt [Erstellen eines Dienstprinzipals](./deploy-to-azure-app-service-using-azure-cli.md#add-azure-service-principal-to-a-jenkins-credential) des Bereitstellungstutorials für Azure App Service. Die Ausgabe von `az ad sp create-for-rbac` sieht in etwa wie folgt aus:
 
     ```
     {
@@ -161,7 +161,7 @@ In diesem Abschnitt wird der Jenkins-Server für die Ausführung eines Builds vo
 
 Die Beispielpipeline verwendet Maven zum Erstellen und die Azure-Befehlszeilenschnittstelle zum Bereitstellen der Dienstinstanz. Bei der Installation von Jenkins wird ein Administratorkonto namens *jenkins* erstellt. Stellen Sie sicher, dass der Benutzer *jenkins* zum Ausführen der Spring Cloud-Erweiterung berechtigt ist.
 
-1. Stellen Sie eine SSH-Verbindung mit dem Jenkins-Master her.
+1. Stellen Sie eine SSH-Verbindung mit dem Jenkins-Controller her.
 
 1. Installieren Sie Maven.
 

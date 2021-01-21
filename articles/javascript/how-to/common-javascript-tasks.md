@@ -4,14 +4,14 @@ description: Hier finden Sie ein Beispiel für Ihre aktuellen Aufgaben.
 ms.topic: reference
 ms.date: 01/06/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 4c17b95cb5acc9f04227c8ccc9ea91d6d8aa1829
-ms.sourcegitcommit: ed31f841fa9680335658df6708f107e170d47ff0
+ms.openlocfilehash: 3a4c319d5258fccd1c1153591ccefddf87098343
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97974567"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625974"
 ---
-# <a name="common-top-tasks-for-javascript-developers"></a>Wichtigste allgemeine Aufgaben für JavaScript-Entwickler
+# <a name="top-tasks-for-javascript-developers"></a>Wichtigste Aufgaben für JavaScript-Entwickler
 
 Hier finden Sie ein Beispiel für Ihre aktuelle Aufgabe. Sollten Sie eine Aufgabe nicht finden, hinterlassen Sie Feedback, um Ihre Aufgabe anzufordern. 
 
@@ -87,11 +87,8 @@ Hier finden Sie ein Beispiel für Ihre aktuelle Aufgabe. Sollten Sie eine Aufgab
 |Erstellen einer lokalen Express.js-App|[Bash](../tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md?tabs=bash#3-create-a-local-expressjs-app)|
 |Erstellen einer App-Ressource (Bereitstellen einer Express.js-App und Streamen von Protokollen)|[Visual Studio Code-Erweiterung](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md#create-web-app-resource-and-deploy-expressjs-app)|
 |Erstellen einer App-Ressource (Bereitstellen einer Express.js-App, Konfigurieren von App-Einstellungen, Ausführen von „npm install“ und Besuchen der bereitgestellten Website)|[Visual Studio Code-Erweiterung](../tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md?tabs=bash#6-create-app-service-resource-in-visual-studio-code)|
-|Erstellen eines App-Ressourcenplans|[Azure-Befehlszeilenschnittstelle](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md#create-app-service-plan)|
 |Erstellen einer App-Ressource|[Azure-Befehlszeilenschnittstelle](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md)|
-|Bereitstellung konfigurieren|[Azure-Befehlszeilenschnittstelle](../tutorial/deploy-deno-app-azure-app-service-azure-cli.md#5-configure-the-azure-app-service-webapp)
-|Bereitstellen einer App|[Azure-Befehlszeilenschnittstelle](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-04.md)|
-|Anzeigen einer App im Browser|[Azure-Befehlszeilenschnittstelle](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md#browse-web-app)|
+|Erstellen einer App, Bereitstellen, Browser-App, Anzeigen von Protokollen|[Azure-Befehlszeilenschnittstelle](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md)|
 |Löschen einer App-Ressource|[Visual Studio Code-Erweiterung](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md#clean-up-resources)<br>[Azure-Befehlszeilenschnittstelle](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-07.md)|
 |Streamen von Remoteprotokollen|[Visual Studio Code-Erweiterung](../tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md?tabs=bash#7-stream-remote-service-logs-in-visual-studio-code)<br>[Azure-Befehlszeilenschnittstelle](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-05.md)|
 
@@ -203,7 +200,7 @@ Sollten Sie das Gewünschte nicht finden, versuchen Sie es unter [Container](#co
 |Express.js-App mit MongoDB-Datenbank|In diesem Tutorial erfahren Sie, wie Sie das Projekt lokal mit VSCode unter Verwendung von Erweiterungen laden und ausführen und wie Sie den Code remote in einem App-Dienst ausführen. Das Tutorial umfasst das Erstellen einer CosmosDB-Ressource für die Mongo-API, das Abrufen der Verbindungsinformationen und das Festlegen dieser Informationen in der Konfiguration des App-Diensts, um eine Verbindung mit einer Clouddatenbank herzustellen.<br>[Tutorial](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md) - [Beispielcode](https://github.com/Azure-Samples/js-e2e-express-mongo)|
 |Mit Datei „cloud-init“ auf virtuellem Computer bereitgestellte Express.js-App|Erstellen Sie einen virtuellen Linux-Computer (virtual machine, VM) für eine Express.js-App. Der virtuelle Computer wird mit einer cloud-init-Konfigurationsdatei konfiguriert und enthält NGINX sowie ein GitHub-Repository für eine Express.js-App. Wenn der virtuelle Computer ausgeführt wird, können Sie eine SSH-Verbindung mit dem virtuellen Computer herstellen, die Web-App ändern, um sie mit Ablaufverfolgungsprotokollierung zu versehen, und die öffentliche Express.js-Server-App in einem Webbrowser anzeigen.<br>[Tutorial](../tutorial/nodejs-virtual-machine-vm/introduction.md) - [Beispielcode](https://github.com/Azure-Samples/js-e2e-express-mongo)|
 
-Über den [Browser für Azure-Beispiele](https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs%2Ctypescript) können Sie nach weiteren Beispielen für Ihren jeweiligen Anwendungsfall suchen. 
+Über den [Browser für Azure-Beispiele](/samples/browse/?languages=javascript%2cnodejs%2ctypescript) können Sie nach weiteren Beispielen für Ihren jeweiligen Anwendungsfall suchen. 
 
 ## <a name="next-steps"></a>Nächste Schritte
 
