@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, CI/CD, Linux, Service Fabric, Cluster
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 012a827870d648b7a50e1685b5fab8b2730eb548
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: a995ba92202955628f39b2c26fe7a158c470d971
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983979"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98626006"
 ---
 # <a name="tutorial-deploy-to-a-service-fabric-cluster"></a>Tutorial: Durchführen der Bereitstellung in einem Service Fabric-Cluster
 
@@ -303,7 +303,7 @@ Für Entwicklungs- und Testumgebungen können Sie Azure-Anmeldeinformationen kon
 1. Stellen Sie unter **Service Fabric Cluster Configuration** (Service Fabric-Clusterkonfiguration) sicher, dass Ihre neuen Anmeldeinformationen für **Azure Credentials** (Azure-Anmeldeinformationen) ausgewählt sind. 
 1. Wählen Sie aus der Dropdownliste **Resource Group** (Ressourcengruppe) die Ressourcengruppe des Clusters aus, der für die Anwendung bereitgestellt werden soll.
 1. Wählen Sie aus der Dropdownliste **Service Fabric** den Cluster aus, der für die Anwendung bereitgestellt werden soll.
-1. Geben Sie für **Client Key** (Clientschlüssel) und **Client Cert** (Clientzertifikat) den Speicherort der PEM-Datei in Ihrem Jenkins-Container ein. Beispiel: `/var/jenkins_home/clustercert.pem`. 
+1. Geben Sie für **Client Key** (Clientschlüssel) und **Client Cert** (Clientzertifikat) den Speicherort der PEM-Datei in Ihrem Jenkins-Container ein. Beispiel: `/var/jenkins_home/clustercert.pem`.
 1. Konfigurieren Sie unter **Application Configuration** (Anwendungskonfiguration) die Felder **Application Name** (Anwendungsname), **Application Type** (Anwendungstyp) und den (relativen) **Path to Application Manifest** (Pfad zum Anwendungsmanifest).
     ![Service Fabric-Jenkins-Aktion nach der Erstellung – Konfigurieren von Azure-Anmeldeinformationen](./media/deploy-to-service-fabric-cluster/post-build-credentials.png)
 1. Klicken Sie auf **Verify Configuration**. Klicken Sie nach erfolgreicher Überprüfung auf **Save** (Speichern). Ihre Jenkins-Auftragspipeline ist nun vollständig konfiguriert. Fahren Sie mit dem Abschnitt [Nächste Schritte](#next-steps) fort, um Ihre Bereitstellung zu testen.

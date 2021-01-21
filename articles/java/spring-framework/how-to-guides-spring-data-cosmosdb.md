@@ -6,18 +6,18 @@ ms.author: anfeldma
 ms.topic: conceptual
 ms.date: 11/23/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 725754dc55198c38e6a9148ed0e37b83bf8a294e
-ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
+ms.openlocfilehash: ebec3cdc6a1f16534132a333b4c6119c5e6208bd
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97394007"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561816"
 ---
 # <a name="spring-data-azure-cosmos-db-developers-guide"></a>Entwicklerhandbuch zu Spring Data Azure Cosmos DB
 
 In diesem Artikel werden die Features von [Spring Data Azure Cosmos DB](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cosmos/azure-spring-data-cosmos) bei Verwendung der SQL-API beschrieben. Darüber hinaus enthält dieser Artikel Anleitungen bei allgemeinen Problemen sowie Problemumgehungen und Diagnoseschritte.
 
-[Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/introduction) ist ein global verteilter Datenbankdienst, der Entwicklern durch eine Vielzahl von Standard-APIs die Arbeit mit Daten ermöglicht. Das Spring Data Azure Cosmos DB SDK basiert auf dem [Spring Data](https://spring.io/projects/spring-data)-Framework und ermöglicht dank der SQL-API die Integration mit Azure Cosmos DB. Informationen zur Unterstützung anderer APIs finden Sie unter:
+[Azure Cosmos DB](/azure/cosmos-db/introduction) ist ein global verteilter Datenbankdienst, der Entwicklern durch eine Vielzahl von Standard-APIs die Arbeit mit Daten ermöglicht. Das Spring Data Azure Cosmos DB SDK basiert auf dem [Spring Data](https://spring.io/projects/spring-data)-Framework und ermöglicht dank der SQL-API die Integration mit Azure Cosmos DB. Informationen zur Unterstützung anderer APIs finden Sie unter:
 
 - [Verwenden der Spring Data-MongoDB-API mit Azure Cosmos DB](./configure-spring-data-mongodb-with-cosmos-db.md)
 - [Verwenden der Spring Data-Apache Cassandra-API mit Azure Cosmos DB](./configure-spring-data-apache-cassandra-with-cosmos-db.md)
@@ -97,7 +97,7 @@ String[] includePaths; // The included paths for indexing.
 String[] excludePaths; // The excluded paths for indexing.
 ```
 
-Das SDK unterstützt die Partitionierung. Weitere Informationen finden Sie unter [Partitionieren und horizontales Skalieren in Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/partitioning-overview). Wenn Sie ein Feld einer Domänenklasse als Partitionsschlüsselfeld angeben möchten, versehen Sie es mit der Anmerkung `@PartitionKey`. Geben Sie dann beim Ausführen von CRUD-Vorgängen Ihren Partitionswert an.
+Das SDK unterstützt die Partitionierung. Weitere Informationen finden Sie unter [Partitionieren und horizontales Skalieren in Azure Cosmos DB](/azure/cosmos-db/partitioning-overview). Wenn Sie ein Feld einer Domänenklasse als Partitionsschlüsselfeld angeben möchten, versehen Sie es mit der Anmerkung `@PartitionKey`. Geben Sie dann beim Ausführen von CRUD-Vorgängen Ihren Partitionswert an.
 
 Im folgenden Beispiel wird gezeigt, wie die Anmerkung `@PartitionKey` beim Ausführen von CRUD-Vorgängen verwendet wird.
 

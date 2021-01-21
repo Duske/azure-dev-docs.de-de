@@ -5,12 +5,12 @@ keywords: Azure DevOps Terraform Application Gateway eingehend AKS Kubernetes
 ms.topic: how-to
 ms.date: 10/30/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: fe4f7b06388a7a26f61067e4a67e6b310e2a1958
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: 1613145e4b72cf2e30ab95e8e85b72ed19c38c80
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192552"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98626022"
 ---
 # <a name="create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>Erstellen eines Application Gateway-Eingangscontrollers in Azure Kubernetes Service
 
@@ -33,11 +33,11 @@ In diesem Artikel lernen Sie Folgendes:
 
 - **Konfigurieren von Terraform:** Befolgen Sie die Anweisungen im Artikel [Installieren und Konfigurieren von Terraform zum Bereitstellen von VMs und sonstiger Infrastruktur in Azure](get-started-cloud-shell.md).
 
-- **Azure-Ressourcengruppe** : Sollten Sie über keine Azure-Ressourcengruppe für die Demo verfügen, [erstellen Sie eine Azure-Ressourcengruppe](/azure/azure-resource-manager/manage-resource-groups-portal#create-resource-groups). Notieren Sie sich Name und Standort der Ressourcengruppe, da diese Werte in der Demo verwendet werden.
+- **Azure-Ressourcengruppe**: Sollten Sie über keine Azure-Ressourcengruppe für die Demo verfügen, [erstellen Sie eine Azure-Ressourcengruppe](/azure/azure-resource-manager/manage-resource-groups-portal#create-resource-groups). Notieren Sie sich Name und Standort der Ressourcengruppe, da diese Werte in der Demo verwendet werden.
 
 - **Azure-Dienstprinzipal:** Befolgen Sie die Anweisungen im Abschnitt **Erstellen des Dienstprinzipals** des Artikels [Erstellen eines Azure-Dienstprinzipals mit der Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli). Notieren Sie sich die Werte für `appId`, `displayName` und `password`.
 
-- **Abrufen der Dienstprinzipalobjekt-ID** : Führen Sie den folgenden Befehl in Cloud Shell aus: `az ad sp list --display-name <displayName>`.
+- **Abrufen der Dienstprinzipalobjekt-ID**: Führen Sie den folgenden Befehl in Cloud Shell aus: `az ad sp list --display-name <displayName>`.
 
 ## <a name="create-the-directory-structure"></a>Erstellen der Verzeichnisstruktur
 
@@ -90,7 +90,7 @@ Erstellen Sie die Terraform-Konfigurationsdatei, die den Azure-Anbieter deklarie
     }
     ```
 
-1. Speichern Sie die Datei ( **&lt;STRG+S** ), und beenden Sie den Editor ( **&lt;STRG+Q** ).
+1. Speichern Sie die Datei ( **&lt;STRG+S**), und beenden Sie den Editor ( **&lt;STRG+Q**).
 
 ## <a name="define-input-variables"></a>Definieren von Eingabevariablen
 
@@ -233,7 +233,7 @@ Erstellen Sie die Terraform-Konfigurationsdatei, in der alle für diese Bereitst
     }
     ```
 
-1. Speichern Sie die Datei ( **&lt;STRG+S** ), und beenden Sie den Editor ( **&lt;STRG+Q** ).
+1. Speichern Sie die Datei ( **&lt;STRG+S**), und beenden Sie den Editor ( **&lt;STRG+Q**).
 
 ## <a name="define-the-resources"></a>Definieren der Ressourcen
 
@@ -468,13 +468,17 @@ Erstellen Sie die Terraform-Konfigurationsdatei für die Erstellung der Ressourc
         service_cidr       = var.aks_service_cidr
       }
 
+      role_based_access_control {
+        enabled = var.aks_enable_rbac
+      }
+
       depends_on = [azurerm_virtual_network.test, azurerm_application_gateway.network]
       tags       = var.tags
     }
 
     ```
 
-1. Speichern Sie die Datei ( **&lt;STRG+S** ), und beenden Sie den Editor ( **&lt;STRG+Q** ).
+1. Speichern Sie die Datei ( **&lt;STRG+S**), und beenden Sie den Editor ( **&lt;STRG+Q**).
 
 Der in diesem Abschnitt aufgeführte Code legt den Namen des Clusters, den Speicherort und „resource_group_name“ fest. Der Wert `dns_prefix` wird festgelegt, der Teil des vollqualifizierten Domänennamens (FQDN) ist, der für den Zugriff auf den Cluster verwendet wird.
 
@@ -532,7 +536,7 @@ Mit [Terraform-Ausgaben](https://www.terraform.io/docs/configuration/outputs.htm
     }
     ```
 
-1. Speichern Sie die Datei ( **&lt;STRG+S** ), und beenden Sie den Editor ( **&lt;STRG+Q** ).
+1. Speichern Sie die Datei ( **&lt;STRG+S**), und beenden Sie den Editor ( **&lt;STRG+Q**).
 
 ## <a name="configure-azure-storage-to-store-terraform-state"></a>Konfigurieren von Azure-Speicher zum Speichern des Terraform-Status
 
@@ -592,7 +596,7 @@ In diesem Abschnitt erfahren Sie, wie der Befehl `terraform init` verwendet wird
         
     ```
 
-1. Speichern Sie die Datei ( **&lt;STRG+S** ), und beenden Sie den Editor ( **&lt;STRG+Q** ).
+1. Speichern Sie die Datei ( **&lt;STRG+S**), und beenden Sie den Editor ( **&lt;STRG+Q**).
 
 1. Führen Sie den Befehl `terraform plan` aus, um den Terraform-Plan zu erstellen, der die Infrastrukturelemente definiert. 
 

@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, virtueller Computer, CI/CD, Azure DevOps Servi
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: e1c5c9b06cff7419ac98b08553d143c7449746b8
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: 66890b5284179f3417295f477b8dc576258c2367
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983649"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98626014"
 ---
 # <a name="tutorial-deploy-to-linux-virtual-machine-using-jenkins-and-azure-devops-services"></a>Tutorial: Bereitstellen eines virtuellen Linux-Computers mit Jenkins und Azure DevOps Services
 
@@ -30,12 +30,10 @@ für eine [Bereitstellungsgruppe](/azure/devops/pipelines/release/deployment-gro
 > * Erstellen einer Azure Pipelines-Releasepipeline.
 > * Ausführen manueller und durch CI ausgelöster Bereitstellungen
 
-## <a name="before-you-begin"></a>Voraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
-* Sie benötigen Zugriff auf einen Jenkins-Server. Falls Sie noch keinen Jenkins-Server erstellt haben, lesen Sie unter [Erstellen eines Jenkins-Masters auf einem virtuellen Azure-Computer](/azure/jenkins/install-jenkins-solution-template) weiter. 
-
-* Melden Sie sich bei Ihrer Azure DevOps Services-Organisation an (**https://{yourorganization}.visualstudio.com**). 
-  Sie können eine [kostenlose Azure DevOps-Organisation](https://go.microsoft.com/fwlink/?LinkId=307137&clcid=0x409&wt.mc_id=o~msft~vscom~home-vsts-hero~27308&campaign=o~msft~vscom~home-vsts-hero~27308) erhalten.
+- **Azure-Abonnement**: Falls Sie über kein Azure-Abonnement verfügen, können Sie ein [kostenloses Azure-Konto erstellen](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), bevor Sie beginnen.
+- **Jenkins-Server**: Falls Sie keinen Jenkins-Server installiert haben, [erstellen Sie einen Jenkins-Servers in Azure](./configure-on-linux-vm.md).
 
   > [!NOTE]
   > Weitere Informationen finden Sie unter [Herstellen einer Verbindung mit Azure DevOps Services](/azure/devops/organizations/projects/connect-to-projects).

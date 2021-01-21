@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie eine lokale JavaScript-Entwicklungsumgeb
 ms.date: 11/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-js, azure-sdk-javascript-ai-text-analytics-5.0.0
-ms.openlocfilehash: 9d542d188205b305a0909e229ed2e71e003e95f7
-ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
+ms.openlocfilehash: 9cc5cde0d16c4d5ec51395656ada591dd02345f1
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97393869"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561706"
 ---
 # <a name="configure-your-local-javascript-dev-environment-for-azure"></a>Konfigurieren Ihrer lokalen JavaScript-Entwicklungsumgebung für Azure
 
@@ -45,7 +45,7 @@ Die folgenden allgemeinen Installationen lokaler Arbeitsstationen werden empfohl
 
 |Name/Installationsprogramm|BESCHREIBUNG|
 |--|--|
-|[Azure CLI](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest) oder [Visual Studio Code-Erweiterungen für Azure](https://marketplace.visualstudio.com/search?term=azure&target=VSCode&category=All%20categories&sortBy=Relevance) |Für das Arbeiten mit Azure werden in der Regel das [Azure-Portal](https://ms.portal.azure.com/), die Azure CLI und spezielle Visual Studio Code-Erweiterungen verwendet. Die Azure CLI ist zwar nur erforderlich, wenn dies in einer Schnellstartanleitung oder in einem Tutorial angegeben ist. Im Gegensatz zu Visual Studio Code, das den gleichen Funktionsumfang auf der Grundlage dienstspezifischer Erweiterungen bietet, handelt es sich bei der CLI jedoch um ein einzelnes Tool für die Arbeit mit Azure.|
+|[Azure CLI](/cli/azure/get-started-with-azure-cli) oder [Visual Studio Code-Erweiterungen für Azure](https://marketplace.visualstudio.com/search?term=azure&target=VSCode&category=All%20categories&sortBy=Relevance) |Für das Arbeiten mit Azure werden in der Regel das [Azure-Portal](https://ms.portal.azure.com/), die Azure CLI und spezielle Visual Studio Code-Erweiterungen verwendet. Die Azure CLI ist zwar nur erforderlich, wenn dies in einer Schnellstartanleitung oder in einem Tutorial angegeben ist. Im Gegensatz zu Visual Studio Code, das den gleichen Funktionsumfang auf der Grundlage dienstspezifischer Erweiterungen bietet, handelt es sich bei der CLI jedoch um ein einzelnes Tool für die Arbeit mit Azure.|
 | [git](https://git-scm.com/downloads) | Befehlszeilentools für die Quellcodeverwaltung. Wenn Sie es vorziehen, können Sie ein anderes Quellcodeverwaltungstool verwenden. |
 
 
@@ -130,7 +130,7 @@ git init
 
 Von dort aus können Sie Befehle wie `git add` und `git commit` ausführen, um Änderungen zu committen. Durch regelmäßige Commits von Änderungen erstellen Sie einen Commitverlauf, über den Sie jeden vorherigen Zustand wiederherstellen können.
 
-Um eine Onlinesicherung Ihres Projekts zu erstellen, empfehlen wir außerdem, dass Sie Ihr Repository auf [GitHub](https://github.com) oder [Azure DevOps](/azure/devops/user-guide/code-with-git?view=azure-devops) hochladen. Wenn Sie zuerst ein lokales Repository initialisiert haben, verwenden Sie `git remote add`, um das lokale Repository an GitHub oder Azure DevOps anzufügen.
+Um eine Onlinesicherung Ihres Projekts zu erstellen, empfehlen wir außerdem, dass Sie Ihr Repository auf [GitHub](https://github.com) oder [Azure DevOps](/azure/devops/user-guide/code-with-git) hochladen. Wenn Sie zuerst ein lokales Repository initialisiert haben, verwenden Sie `git remote add`, um das lokale Repository an GitHub oder Azure DevOps anzufügen.
 
 Dokumentation zu git finden Sie auf [git-scm.com/docs](https://git-scm.com/docs) und im Internet.
 
@@ -142,4 +142,4 @@ Sie können auch jedes andere Quellcodeverwaltungs-Tool Ihrer Wahl verwenden. Gi
 
 * [Erstellen und Verwenden eines Dienstprinzipals](node-sdk-azure-authenticate-principal.md)
 * [Authentifizieren mit den Azure-Modulen für Node.js](node-sdk-azure-authenticate.md)
-* [Bereitstellen einer statischen Website in Azure in Visual Studio Code](../tutorial-vscode-static-website-node-01.md)
+* [Bereitstellen einer statischen Website in Azure in Visual Studio Code](../tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-01.md)

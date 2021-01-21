@@ -4,12 +4,12 @@ description: 'Teil 4 des Azure CLI-Tutorials: Bereitstellen der Website'
 ms.topic: tutorial
 ms.date: 12/14/2020
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 7dc0369615f58e8677b479b28c2223d3fa865b19
-ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
+ms.openlocfilehash: 368597fb10397f7e7ba8feb82b29d031c292dab0
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97658409"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561006"
 ---
 # <a name="deploy-the-app-to-app-service"></a>Bereitstellen der App in App Service
 
@@ -31,7 +31,7 @@ In diesem Schritt stellen Sie den Code Ihrer Node.js-App in Azure App Service 
     az webapp deployment user set --user-name <username> --password <password>
     ```
 
-1. Führen Sie den folgenden Befehl aus, um [den Git-Endpunkt mithilfe der Azure CLI abzurufen](/cli/azure/webapp/deployment/source?view=azure-cli-latest&preserve-view=false), der an den App-Code gepusht werden soll. Ersetzen Sie `<your_app_name>` dabei durch den Namen, den Sie beim Erstellen der App Service-Instanz im vorherigen Schritt verwendet haben:
+1. Führen Sie den folgenden Befehl aus, um [den Git-Endpunkt mithilfe der Azure CLI abzurufen](/cli/azure/webapp/deployment/source), der an den App-Code gepusht werden soll. Ersetzen Sie `<your_app_name>` dabei durch den Namen, den Sie beim Erstellen der App Service-Instanz im vorherigen Schritt verwendet haben:
 
     ```azurecli
     az webapp deployment source config-local-git --name <your_app_name>

@@ -4,12 +4,12 @@ description: Azure bietet eine Vielzahl verschiedener Datenbanken für die Verwe
 ms.topic: how-to
 ms.date: 12/08/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 2aae93a85ca505967f0c999be4addc78ac31ad02
-ms.sourcegitcommit: 1901759f41adfac3c3f2ff135bcf72206543b639
+ms.openlocfilehash: b39a7d3e39600081148893a68d3dbc064c1db380
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96933283"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561686"
 ---
 # <a name="integrate-databases-in-nodejs-apps"></a>Integrieren von Datenbanken in Node.js-Apps
 
@@ -32,7 +32,7 @@ Die folgende Tabelle enthält Links zu verschiedenen Artikeln zum Herstellen ein
 
 ## <a name="cosmos-db-connection-strings-with-azure-cli"></a>Cosmos DB-Verbindungszeichenfolgen mit der Azure CLI
 
-Verwenden Sie den folgenden Befehl [az cosmosdb keys list](/cli/azure/cosmosdb?view=azure-cli-latest#az-cosmosdb-list-connection-strings):
+Verwenden Sie den folgenden Befehl [az cosmosdb keys list](/cli/azure/cosmosdb#az-cosmosdb-list-connection-strings):
 
 ```azurecli-interactive
 az cosmosdb keys list \
@@ -43,7 +43,7 @@ az cosmosdb keys list \
 
 ## <a name="sql-connection-strings-with-azure-cli"></a>SQL-Verbindungszeichenfolgen mit der Azure CLI
 
-Verwenden Sie den folgenden Befehl [az sql db show-connection-string](/cli/azure/sql/db?view=azure-cli-latest#az_sql_db_show_connection_string):
+Verwenden Sie den folgenden Befehl [az sql db show-connection-string](/cli/azure/sql/db#az_sql_db_show_connection_string):
 
 ```azurecli-interactive
 az sql db show-connection-string \
@@ -57,11 +57,11 @@ az sql db show-connection-string \
 
 ## <a name="mysql-username-and-password-with-azure-cli"></a>MySQL-Benutzername und -Kennwort mit der Azure CLI
 
-Diese werden zum [Zeitpunkt der Ressourcenerstellung](/cli/azure/mysql/server?view=azure-cli-latest#az_mysql_server_create) festgelegt. 
+Diese werden zum [Zeitpunkt der Ressourcenerstellung](/cli/azure/mysql/server#az_mysql_server_create) festgelegt. 
 
 ## <a name="postgresql-username-and-password-with-azure-cli"></a>PostgreSQL-Benutzername und -Kennwort mit der Azure CLI
 
-Diese werden zum [Zeitpunkt der Ressourcenerstellung](/cli/azure/postgres/server?view=azure-cli-latest#az_postgres_server_create) festgelegt. 
+Diese werden zum [Zeitpunkt der Ressourcenerstellung](/cli/azure/postgres/server#az_postgres_server_create) festgelegt. 
 
 ## <a name="azure-storage-solutions-for-files-and-data"></a>Azure Storage-Lösungen für Dateien und Daten
 

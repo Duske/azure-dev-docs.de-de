@@ -4,12 +4,12 @@ description: Bereinigen Sie Azure-Ressourcen, indem Sie die Ressourcengruppe mit
 ms.topic: tutorial
 ms.date: 11/13/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 5c8c0bb8a1413da72cb2c32d9ce541bee1c36cac
-ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
+ms.openlocfilehash: ac61f1b73e873ee1c1c6cd343792a79a88e76123
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94872821"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98560986"
 ---
 # <a name="7-clean-up-resources"></a>7. Bereinigen von Ressourcen
 
@@ -17,7 +17,7 @@ Nach dem Abschließen dieses Tutorials müssen Sie die Ressourcengruppe entferne
 
 ## <a name="remove-all-the-resources-by-removing-resource-group"></a>Entfernen aller Ressourcen durch Entfernen der Ressourcengruppe
 
-Verwenden Sie im gleichen Terminal den [Azure CLI-Befehl](/cli/azure/group?view=azure-cli-latest#az_group_delete), um die Ressourcengruppe zu löschen:
+Verwenden Sie im gleichen Terminal den [Azure CLI-Befehl](/cli/azure/group#az_group_delete), um die Ressourcengruppe zu löschen:
 
 ```azurecli
 az group delete --name rg-demo-vm-eastus -y

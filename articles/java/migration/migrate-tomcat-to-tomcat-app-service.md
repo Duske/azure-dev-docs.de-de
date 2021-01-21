@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 7a8de3191551be1557b68cab55b6d91afcf41feb
-ms.sourcegitcommit: 4036ac08edd7fc6edf8d11527444061b0e4531ef
+ms.openlocfilehash: e109d8f32e6ffbf42f155f0292a292bff237d6bf
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89061999"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561766"
 ---
 # <a name="migrate-tomcat-applications-to-tomcat-on-azure-app-service"></a>Migrieren von Tomcat-Anwendungen zu Tomcat unter Azure App Service
 
@@ -162,7 +162,7 @@ Wenn Ihre Anwendung über eine Maven-POM-Datei erstellt wurde, sollten Sie [das 
 Falls Sie das Maven-Plug-In nicht verwenden können, müssen Sie die Web-App über andere Mechanismen bereitstellen, z. B.:
 
 * [Azure portal](https://portal.azure.com/#create/Microsoft.WebSite)
-* [Azure-Befehlszeilenschnittstelle](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create)
+* [Azure-Befehlszeilenschnittstelle](/cli/azure/webapp#az-webapp-create)
 * [Azure PowerShell](/powershell/module/az.websites/new-azwebapp)
 
 Verwenden Sie nach der Erstellung der Web-App einen der [verfügbaren Bereitstellungsmechanismen](/azure/app-service/deploy-zip), um Ihre Anwendung bereitzustellen.
@@ -216,6 +216,6 @@ Nachdem Sie Ihre Anwendung nun zu Azure App Service migriert haben, sollten Sie 
 
 * Erwägen Sie die [Verwendung von Bereitstellungsslots](/azure/app-service/deploy-staging-slots), um zuverlässige Bereitstellungen ohne jegliche Ausfallzeiten zu erzielen.
 
-* Entwerfen und implementieren Sie eine DevOps-Strategie. Sie können [Bereitstellungen automatisieren und mit Azure Pipelines testen](/azure/devops/pipelines/ecosystems/java-webapp), um die Zuverlässigkeit sicherzustellen, während gleichzeitig die Entwicklungsgeschwindigkeit erhöht wird. Bei Verwendung von Bereitstellungsslots können Sie nicht nur die [Bereitstellung für einen Slot automatisieren](/azure/devops/pipelines/targets/webapp?view=azure-devops&tabs=yaml#deploy-to-a-slot), sondern auch den anschließenden Slotaustausch.
+* Entwerfen und implementieren Sie eine DevOps-Strategie. Sie können [Bereitstellungen automatisieren und mit Azure Pipelines testen](/azure/devops/pipelines/ecosystems/java-webapp), um die Zuverlässigkeit sicherzustellen, während gleichzeitig die Entwicklungsgeschwindigkeit erhöht wird. Bei Verwendung von Bereitstellungsslots können Sie nicht nur die [Bereitstellung für einen Slot automatisieren](/azure/devops/pipelines/targets/webapp?tabs=yaml#deploy-to-a-slot), sondern auch den anschließenden Slotaustausch.
 
 * Entwerfen und implementieren Sie eine Strategie für Geschäftskontinuität und Notfallwiederherstellung. Bei unternehmenskritischen Anwendungen sollten Sie erwägen, eine [Bereitstellungsarchitektur mit mehreren Regionen](/azure/architecture/reference-architectures/app-service-web-app/multi-region) zu verwenden.

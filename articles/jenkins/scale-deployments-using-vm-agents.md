@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, virtueller Computer, Agents
 ms.topic: tutorial
 ms.date: 01/08/2021
 ms.custom: devx-track-jenkins,devx-track-jenkins
-ms.openlocfilehash: c498a43d5a8d57a75a5592de279b79a75b8e6360
-ms.sourcegitcommit: 347bfa3b6c34579c567d1324efc63c1d6672a75b
+ms.openlocfilehash: 599fe9875d1f9ffd107cca80f9445bba18100f42
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98109092"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561036"
 ---
 # <a name="tutorial-scale-jenkins-deployments-with-vm-running-in-azure"></a>Tutorial: Skalieren von Jenkins-Bereitstellungen mit in Azure ausgeführtem virtuellem Computer
 
@@ -169,4 +169,4 @@ Nach Abschluss der Konfiguration wird der virtuelle Computer von Jenkins als neu
 ## <a name="next-steps"></a>Nächste Schritte
 
 > [!div class="nextstepaction"]
-> [Continuous Integration und Continuous Deployment in Azure App Service](deploy-from-github-to-azure-app-service.md)
+> [Continuous Integration und Continuous Deployment in Azure App Service](./deploy-to-azure-app-service-using-azure-cli.md)

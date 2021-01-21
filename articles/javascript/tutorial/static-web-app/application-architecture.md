@@ -4,12 +4,12 @@ description: In diesem Abschnitt des Tutorials werden die Client-App und der Ber
 ms.topic: tutorial
 ms.date: 12/17/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 12d156591393607f4cb40094fa00dda1a0f947fd
-ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
+ms.openlocfilehash: b8949b355ec30775dfacf5ea77db53edb595578c
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97690792"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561646"
 ---
 # <a name="2-application-architecture-for-static-web-app-with-computer-vision"></a>2. Anwendungsarchitektur für eine statische Web-App mit maschinellem Sehen
 
@@ -22,7 +22,7 @@ Bei der Erstellung statischer Web-Apps stehen in Azure mehrere Optionen zur Verf
 ## <a name="client-application-architecture"></a>Architektur der Clientanwendung
 
 Die React-App (create-react-app) umfasst folgende Funktionen: 
-* Anzeige einer Meldung, wenn Azure-Schlüssel und -Endpunkt für [**maschinelles Sehen**](https://docs.microsoft.com/azure/cognitive-services/computer-vision/) von Cognitive Services nicht gefunden werden
+* Anzeige einer Meldung, wenn Azure-Schlüssel und -Endpunkt für [**maschinelles Sehen**](/azure/cognitive-services/computer-vision/) von Cognitive Services nicht gefunden werden
 * Möglichkeit zum Analysieren eines Bilds mit maschinellem Sehen von Cognitive Services
     * Eingabe einer öffentlichen Bild-URL oder Analyse eines Bilds aus einer Sammlung
     * Nach Abschluss der Analyse:
@@ -36,7 +36,7 @@ Die React-App (create-react-app) umfasst folgende Funktionen:
 Die GitHub-Aktion wird gestartet, wenn ein Pushvorgang an einen bestimmten Branch durchgeführt wird, und umfasst Folgendes:
 * Einfügen von GitHub-Geheimnissen für den Schlüssel und den Endpunkt für maschinelles Sehen in den Build
 * Erstellen des React-Clients (create-react-app)
-* Verschieben der resultierenden Dateien in Ihre [**statische Azure-Web-App-Ressource**](https://docs.microsoft.com/azure/static-web-apps)
+* Verschieben der resultierenden Dateien in Ihre [**statische Azure-Web-App-Ressource**](/azure/static-web-apps)
 
 > [!div class="nextstepaction"]
-> [Herunterladen und Ausführen der React-App für die Bildanalyse mit Cognitive Services](run-the-react-cognitive-services-image-analyzer-app-locally.md) 
+> [Herunterladen und Ausführen der React-App für die Bildanalyse mit Cognitive Services](run-the-react-cognitive-services-image-analyzer-app-locally.md)

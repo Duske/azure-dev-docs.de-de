@@ -4,16 +4,16 @@ description: In diesem Artikel wird erläutert, wie Azure zum Erstellen einer JA
 ms.topic: how-to
 ms.date: 08/20/2019
 ms.custom: seo-javascript-september2019, devx-track-js
-ms.openlocfilehash: 421464b76a8276ef87b84596a6434e991a3c2b25
-ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
+ms.openlocfilehash: 9b00c9b27767109a16526f70dfcb6bfb592fa4a4
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94333798"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561106"
 ---
 # <a name="build-jamstack-static-site-web-apps-on-azure-with-nodejs"></a>Erstellen von JAMstack-Web-Apps (statischen Websites) in Azure mit Node.js
 
-Mithilfe einer Kombination aus *JavaScript* (Front-End), *APIs* (von Drittanbietern oder benutzerdefinierte APIs, die als serverloser Code erstellt wurden) und *Markup* -Vorlagen (HTML und CSS) können hervorragende Web-Apps produktiv erstellt und verwaltet werden, die als statische Webseiten bereitgestellt werden. Mit dieser Kombination, die auch als JAMstack bekannt ist, vermeiden Sie es, komplizierten Back-End-Code für Webseiten schreiben zu müssen. Stattdessen stellt das System nur statische Webseiten (HTML, CSS und JavaScript) bereit, wenn diese Seiten Ihre APIs für serverseitige Arbeit aufrufen. Da Sie diese APIs mit serverlosen Technologien mit automatischer Skalierung schreiben können, vermeiden Sie Kosten- und Sicherheitsrisiken von herkömmlichen Always On-Servern oder -Webhosts. (Weitere Informationen finden Sie unter [jamstack.org](https://jamstack.org/).)
+Mithilfe einer Kombination aus *JavaScript* (Front-End), *APIs* (von Drittanbietern oder benutzerdefinierte APIs, die als serverloser Code erstellt wurden) und *Markup*-Vorlagen (HTML und CSS) können hervorragende Web-Apps produktiv erstellt und verwaltet werden, die als statische Webseiten bereitgestellt werden. Mit dieser Kombination, die auch als JAMstack bekannt ist, vermeiden Sie es, komplizierten Back-End-Code für Webseiten schreiben zu müssen. Stattdessen stellt das System nur statische Webseiten (HTML, CSS und JavaScript) bereit, wenn diese Seiten Ihre APIs für serverseitige Arbeit aufrufen. Da Sie diese APIs mit serverlosen Technologien mit automatischer Skalierung schreiben können, vermeiden Sie Kosten- und Sicherheitsrisiken von herkömmlichen Always On-Servern oder -Webhosts. (Weitere Informationen finden Sie unter [jamstack.org](https://jamstack.org/).)
 
 Zum Implementieren einer statischen/JAMstack-Website in Azure müssen Sie mehrere Tools und Dienste verwenden:
 
@@ -26,7 +26,7 @@ Sie können sich eine Demonstration des Prozesses einer Build 2019-Sitzung anse
 
 > [!VIDEO https://medius.studios.ms/Embed/Video-nc/B19-BRK3021?latestplayer=true]
 
-Ein ausführliches Tutorial finden Sie unter [Bereitstellen einer statischen Website in Azure](../tutorial-vscode-static-website-node-01.md).
+Ein ausführliches Tutorial finden Sie unter [Bereitstellen einer statischen Website in Azure](../tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-01.md).
 
 Weitere Informationen finden Sie in den folgenden Artikeln:
 
@@ -35,7 +35,7 @@ Weitere Informationen finden Sie in den folgenden Artikeln:
 - **Serverlose APIs:**
 
   - Beginnen Sie mit [Bereitstellen von Azure Functions in Visual Studio Code](../tutorial/tutorial-vscode-serverless-node-install.md). Dort erhalten Sie eine Einführung in Azure Functions im Kontext von Visual Studio Code, die viele Details vereinfacht.
-  - Danach verfügen Sie über ein Azure Functions-Projekt (ein Ordner), der einen Unterordner mit dem Namen für die Funktion enthält, der dem Namen des HTTP-Endpunkts entspricht. Dieser Funktionsordner enthält die Datei *index.js* , die den Code enthält.
+  - Danach verfügen Sie über ein Azure Functions-Projekt (ein Ordner), der einen Unterordner mit dem Namen für die Funktion enthält, der dem Namen des HTTP-Endpunkts entspricht. Dieser Funktionsordner enthält die Datei *index.js*, die den Code enthält.
   - Sie können die Funktion nach Bedarf anpassen und auch weitere Funktionen zum Projekt hinzufügen. Anschließend stellen Sie sie wieder in Azure bereit, um sie öffentlich zur Verfügung zu stellen.
   - Weitere Ressourcen zur serverlosen Entwicklung finden Sie unter [Schreiben von serverlosem Node.js.Code in Azure](develop-serverless-apps.md).
 

@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
 ms.custom: seo-java-august2019, devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 7c34254cbe45fdb6e60f9f1a30ab409f72c2aee4
-ms.sourcegitcommit: c1ef7aa8ed2e88e98b190e42cffde52cf301958d
+ms.openlocfilehash: f96b8f122967c1b742fb97a0ce5d096885904f59
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97034541"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561836"
 ---
 # <a name="get-started-with-cloud-development-using-java-on-azure"></a>Erste Schritte bei der Cloudentwicklung mit Java in Azure
 
@@ -24,7 +24,7 @@ In diesem Artikel werden die Schritte zum Einrichten einer Entwicklungsumgebung 
 
 - Ein Azure-Konto. Falls Sie noch kein Konto haben, können Sie eine [kostenlose Testversion](https://azure.microsoft.com/free/) verwenden.
 - [Azure Cloud Shell](/azure/cloud-shell/quickstart) oder [Azure CLI 2.0](/cli/azure/install-az-cli2).
-- [Java 8](https://docs.microsoft.com/azure/developer/java/fundamentals/java-jdk-long-term-support) (in Azure Cloud Shell enthalten)
+- [Java 8](../fundamentals/java-jdk-long-term-support.md) (in Azure Cloud Shell enthalten)
 - [Maven 3](https://maven.apache.org/download.cgi) (in Azure Cloud Shell enthalten)
 
 ## <a name="set-up-authentication"></a>Einrichten der Authentifizierung

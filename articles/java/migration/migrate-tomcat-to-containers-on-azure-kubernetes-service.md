@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 7311aba602ec2fd482d11e2a8a37751f0d742eae
-ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
+ms.openlocfilehash: 329f7f5413f813944b45658a4c5cc8da2936fc4a
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94872871"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98626046"
 ---
 # <a name="migrate-tomcat-applications-to-containers-on-azure-kubernetes-service"></a>Migrieren von Tomcat-Anwendungen zu Containern unter Azure Kubernetes Service
 
@@ -111,7 +111,7 @@ Wir empfehlen Ihnen, für jede zu migrierende Anwendung (WAR-Datei) die unten an
 
 Erstellen Sie eine Containerregistrierung und einen Azure Kubernetes-Cluster, für den der Dienstprinzipal in der Registrierung über die Rolle „Leser“ verfügt. Achten Sie darauf, dass Sie für die Netzwerkanforderungen Ihres Clusters [das richtige Netzwerkmodell auswählen](/azure/aks/operator-best-practices-network#choose-the-appropriate-network-model).
 
-```bash
+```azurecli
 az group create -g $resourceGroup -l eastus
 az acr create -g $resourceGroup -n $acrName --sku Standard
 az aks create -g $resourceGroup -n $aksName --attach-acr $acrName --network-plugin azure
@@ -169,7 +169,7 @@ Beispiel:
 
 Die einfachste Möglichkeit zum Erstellen und Hochladen des Images in Azure Container Registry (ACR) zur Verwendung durch AKS ist die Nutzung des Befehls `az acr build`. Für diesen Befehl ist es nicht erforderlich, dass Docker auf Ihrem Computer installiert ist. Wenn Sie im aktuellen Verzeichnis beispielsweise über die obige Dockerfile und das Anwendungspaket *petclinic.war* verfügen, können Sie das Containerimage in ACR in nur einem Schritt erstellen:
 
-```bash
+```azurecli
 az acr build -t "${acrName}.azurecr.io/petclinic:{{.Run.ID}}" -r $acrName --build-arg APP_FILE=petclinic.war --build-arg=prod.server.xml .
 ```
 

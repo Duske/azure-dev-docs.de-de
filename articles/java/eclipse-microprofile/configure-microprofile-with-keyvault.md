@@ -11,12 +11,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 82b37db48c1ae0013972ae2c1522eac7c149fd1e
-ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
+ms.openlocfilehash: a2f39a13012a2ec1422ddf1f620ddd3e8f6e482d
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94872811"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625942"
 ---
 # <a name="configure-microprofile-with-azure-key-vault"></a>Konfigurieren von MicroProfile mit Azure Key Vault
 
@@ -55,7 +55,7 @@ Wir verwenden die Azure-Befehlszeilenschnittstelle, um die Azure Key Vault-Resso
 
 1. Als Erstes erstellen wir einen Azure-Dienstprinzipal. Dadurch erhalten wir die Client-ID und den Schlüssel für den Zugriff auf Key Vault:
 
-```bash
+```azurecli
 az login
 az account set --subscription <subscription_id>
 
@@ -78,7 +78,7 @@ Von besonderem Interesse sind hier die Werte `appID` und `password`: Diese werde
 
 Nach der Erstellung des Dienstprinzipals können wir optional eine Ressourcengruppe erstellen. (Falls Sie bereits über eine Ressourcengruppe verfügen, die Sie verwenden möchten, können Sie diesen Schritt überspringen.) Sie können eine Liste mit Ressourcengruppenstandorten abrufen. Rufen Sie hierzu `az account list-locations` auf, und verwenden Sie den Wert `name` aus dieser Liste, um anzugeben, wo die Ressourcengruppe erstellt werden soll.
 
-```bash
+```azurecli
 # For this tutorial, the author chose to use `westus`
 # and `jg-test` for the resource group name.
 az group create -l <resource_group_location> -n <resource_group_name>
@@ -86,7 +86,7 @@ az group create -l <resource_group_location> -n <resource_group_name>
 
 Als Nächstes erstellen wir eine Azure Key Vault-Ressource. Der Key Vault-Name sollte gut zu merken sein, da Sie später anhand dieses Namens auf den Schlüsseltresor verweisen.
 
-```bash
+```azurecli
 az keyvault create --name <your_keyvault_name>            \
                    --resource-group <your_resource_group> \
                    --location <location>                  \
@@ -98,7 +98,7 @@ az keyvault create --name <your_keyvault_name>            \
 
 Darüber hinaus müssen wir dem zuvor erstellten Dienstprinzipal die erforderlichen Berechtigungen für den Zugriff auf die Key Vault-Geheimnisse gewähren. Hinweis: Der appID-Wert ist der Wert `appId` aus der Dienstprinzipalerstellung von weiter oben (also `5292398e-XXXX-40ce-XXXX-d49fXXXX9e79`; verwenden Sie aber den Wert aus Ihrer Terminalausgabe).
 
-```bash
+```azurecli
 az keyvault set-policy --name <your_keyvault_name>   \
                        --secret-permission get list  \
                        --spn <your_sp_appId_created_in_step1>
@@ -106,7 +106,7 @@ az keyvault set-policy --name <your_keyvault_name>   \
 
 Als Nächstes können wir ein Geheimnis an Key Vault pushen. In diesem Beispiel verwenden wir den Schlüsselnamen `demo-key` und legen den Wert des Schlüssels auf `demo-value` fest:
 
-```bash
+```azurecli
 az keyvault secret set --name demo-key      \
                        --value demo-value   \
                        --vault-name <your_keyvault_name>  

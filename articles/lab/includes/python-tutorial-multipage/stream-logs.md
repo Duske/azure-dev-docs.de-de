@@ -4,16 +4,16 @@ description: include file azure-sign-in.md
 ms.date: 10/13/2020
 ms.topic: include
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 5868697895ad067065627cca99f604d531dcb173
-ms.sourcegitcommit: 5f64710b2b0822e789c7f15acba5a3a257c033f9
+ms.openlocfilehash: b0da4ffd08f324bec7a404c21fb0e01d80228560
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93405311"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98566272"
 ---
 Sie können auf die Konsolenprotokolle zugreifen, die innerhalb der App und des Containers, in dem sie ausgeführt wird, generiert wurden. Protokolle enthalten alle Ausgaben, die mit `print`-Anweisungen generiert werden.
 
-Führen Sie zum Streamen von Protokollen den Befehl [az webapp log tail](/cli/azure/webapp/log?view=azure-cli-latest&preserve-view=true#az_webapp_log_tail) aus:
+Führen Sie zum Streamen von Protokollen den Befehl [az webapp log tail](/cli/azure/webapp/log#az_webapp_log_tail) aus:
 
 ```azurecli
 az webapp log tail

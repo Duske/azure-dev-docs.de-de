@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie allgemeine Konfigurationen für Ihre Web
 ms.topic: conceptual
 ms.date: 01/11/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: c31d77f6b4dd61bd45bd84b6cfe1e5d14cadb586
-ms.sourcegitcommit: a7b77d07ec6e181c2d40c00ff6e5ef3866980172
+ms.openlocfilehash: ec183d08460b932cec1dea8d301f2877d7bc9ece
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98069076"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561696"
 ---
 # <a name="hosting-web-apps-on-azure"></a>Hosten von Web-Apps in Azure
 
@@ -165,4 +165,4 @@ Wenn in dieser Liste etwas fehlt, füllen Sie das Feedback aus, um uns darüber 
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-* Viele dieser Schritte können Sie sich in einem [End-to-End-Entwicklungsablauf für Node. js-Apps](/azure/developer/javascript/how-to/develop-nodejs-on-azure) ansehen. 
+* Viele dieser Schritte können Sie sich in einem [End-to-End-Entwicklungsablauf für Node. js-Apps](./develop-nodejs-on-azure.md) ansehen.

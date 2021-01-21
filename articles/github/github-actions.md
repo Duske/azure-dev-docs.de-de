@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.service: azure
 ms.date: 10/30/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: c952410231ae57b0d127e1b6fb05e03f88403640
-ms.sourcegitcommit: 0d2ea78f18430c845a32e0d2311427ab81033465
+ms.openlocfilehash: b5b3192d1d65515dc3741be80bbab018f9cf5f09
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97754066"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561736"
 ---
 # <a name="what-is-github-actions-for-azure"></a>Worum handelt es sich bei GitHub Actions für Azure?
 
@@ -47,7 +47,7 @@ Sie benötigen Azure- und GitHub-Konten:
 
 ## <a name="how-do-i-connect-github-actions-and-azure"></a>Wie stelle ich eine Verbindung zwischen GitHub Actions und Azure her?
 
-Abhängig von der Aktion verwenden Sie einen Dienstprinzipal oder ein Veröffentlichungsprofil, um über GitHub eine Verbindung mit Azure herzustellen. Sie nutzen bei jeder Verwendung der Aktion [Azure-Anmeldung](https://github.com/marketplace/actions/azure-login) einen Dienstprinzipal. Die [Azure App Service-Aktion](https://github.com/marketplace/actions/azure-webapp) unterstützt die Verwendung eines Veröffentlichungsprofils oder Dienstprinzipals. Weitere Informationen zu Dienstprinzipalen finden Sie unter [Anwendungs- und Dienstprinzipalobjekte in Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object).  
+Abhängig von der Aktion verwenden Sie einen Dienstprinzipal oder ein Veröffentlichungsprofil, um über GitHub eine Verbindung mit Azure herzustellen. Sie nutzen bei jeder Verwendung der Aktion [Azure-Anmeldung](https://github.com/marketplace/actions/azure-login) einen Dienstprinzipal. Die [Azure App Service-Aktion](https://github.com/marketplace/actions/azure-webapp) unterstützt die Verwendung eines Veröffentlichungsprofils oder Dienstprinzipals. Weitere Informationen zu Dienstprinzipalen finden Sie unter [Anwendungs- und Dienstprinzipalobjekte in Azure Active Directory](/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object).  
 
 Sie können die Aktion „Azure-Anmeldung“ in Kombination mit den [Azure CLI](https://github.com/marketplace/actions/azure-cli-action)- und [Azure PowerShell](https://github.com/marketplace/actions/azure-powershell-action)-Aktionen verwenden. Die Aktion „Azure-Anmeldung“ funktioniert auch mit den meisten anderen GitHub-Aktionen für Azure, u. a. mit der Aktion für die [Bereitstellung in Web-Apps](https://github.com/marketplace/actions/azure-webapp) und der Aktion für den [Zugriff auf Key Vault-Geheimnisse](https://github.com/marketplace/actions/azure-key-vault-get-secrets).
 
@@ -91,7 +91,7 @@ Sie können alle verfügbaren Aktionen von GitHub Actions für Azure im [Marketp
 ## <a name="next-steps"></a>Nächste Schritte
 
 > [!div class="nextstepaction"]
-> [Lernpfad: Automatisieren des Workflows mit GitHub Actions](https://docs.microsoft.com/learn/modules/github-actions-automate-tasks/)
+> [Lernpfad: Automatisieren des Workflows mit GitHub Actions](/learn/modules/github-actions-automate-tasks/)
 
 > [!div class="nextstepaction"]
 > [Learning-Lab: Continuous Delivery mit Azure](https://lab.github.com/githubtraining/github-actions:-continuous-delivery-with-azure)

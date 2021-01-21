@@ -8,18 +8,18 @@ ms.date: 03/25/2020
 ms.topic: article
 ms.service: multiple
 ms.custom: devx-track-java
-ms.openlocfilehash: 927f20601ded9a0ea6b2793ef1b0c8e1b5e6ac19
-ms.sourcegitcommit: ae2fa266a36958c04625bb0ab212e6f2db98e026
+ms.openlocfilehash: b1128860ea5a159a62b42dc176e5a572c524c2e4
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96857768"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561256"
 ---
 # <a name="configure-logging-with-the-azure-sdk-for-java"></a>Konfigurieren der Protokollierung mit dem Azure SDK für Java
 
 Dieser Artikel enthält Beispiele für Protokollierungskonfigurationen für das [Azure SDK](https://azure.microsoft.com/downloads/) für Java. Ausführlichere Informationen zu Konfigurationsoptionen, etwa zum Festlegen von Protokollebenen oder zur benutzerdefinierten Protokollierung nach Klasse, finden Sie in der Dokumentation für Ihr ausgewähltes Protokollierungsframework.
 
-Das Azure SDK für Java-Clientbibliotheken verwendet [Simple Logging Facade for Java](https://www.slf4j.org/) (SLF4J). SLF4J ermöglicht Ihnen die Verwendung Ihres bevorzugten Protokollierungsframeworks, das zum Zeitpunkt der Anwendungsbereitstellung aufgerufen wird. Wenn ein Clientgenerator die Möglichkeit zum Festlegen von [HttpLogOptions](/java/api/com.azure.core.http.policy.httplogoptions?view=azure-java-stable) bietet, müssen auch ein [HttpLogDetailLevel](/java/api/com.azure.core.http.policy.httplogdetaillevel?view=azure-java-stable)-Element sowie alle zulässigen Header und Abfrageparameter angegeben werden, damit Protokolle ausgegeben werden.
+Das Azure SDK für Java-Clientbibliotheken verwendet [Simple Logging Facade for Java](https://www.slf4j.org/) (SLF4J). SLF4J ermöglicht Ihnen die Verwendung Ihres bevorzugten Protokollierungsframeworks, das zum Zeitpunkt der Anwendungsbereitstellung aufgerufen wird. Wenn ein Clientgenerator die Möglichkeit zum Festlegen von [HttpLogOptions](/java/api/com.azure.core.http.policy.httplogoptions) bietet, müssen auch ein [HttpLogDetailLevel](/java/api/com.azure.core.http.policy.httplogdetaillevel)-Element sowie alle zulässigen Header und Abfrageparameter angegeben werden, damit Protokolle ausgegeben werden.
 
 > [!NOTE]
 > Dieser Artikel gilt für die aktuellen Versionen der Azure SDK-Clientbibliotheken. Informationen dazu, ob eine Bibliothek unterstützt wird, finden Sie in der Liste mit den [neuesten Azure SDK-Releases](https://azure.github.io/azure-sdk/releases/latest/java.html). Wenn Ihre Anwendung eine ältere Version der Azure SDK-Clientbibliotheken verwendet, finden Sie entsprechende Anweisungen in der jeweiligen Dienstdokumentation.
@@ -251,7 +251,7 @@ Die folgende Tabelle enthält die zulässigen Werte für diese Umgebungsvariable
 |ERROR    |"err", "error"  |
 
 ## <a name="setting-an-httplogdetaillevel"></a>Festlegen von HttpLogDetailLevel
-Wenn ein Clientgenerator die Möglichkeit zum Festlegen von [HttpLogOptions](/java/api/com.azure.core.http.policy.httplogoptions?view=azure-java-stable) bietet, müssen diese Optionen unabhängig von dem verwendeten Protokollierungsmechanismus zusätzlich konfiguriert werden, damit Protokolle ausgegeben werden. [HttpLogDetailLevel](/java/api/com.azure.core.http.policy.httplogdetaillevel?view=azure-java-stable) muss festgelegt werden, um anzugeben, welche Informationen protokolliert werden sollen.  Für diesen Wert wird standardmäßig `NONE` verwendet. Wird er nicht angegeben, werden auch dann keine Protokolle ausgegeben, wenn das Protokollierungsframework oder die Fallbackprotokollierung ordnungsgemäß konfiguriert ist. Aus Sicherheitsgründen werden Header und Abfrageparameter standardmäßig unkenntlich gemacht. Daher müssen die Protokolloptionen auch mit einem `Set<String>`-Element bereitgestellt werden, das angibt, welche Header und Abfrageparameter sicher ausgegeben werden können. Dieser Wert kann wie unten dargestellt konfiguriert werden. Die Protokollierung ist so festgelegt, dass sowohl Textinhalte als auch Headerwerte ausgegeben werden. Alle Headerwerte mit Ausnahme des Werts für die vom Benutzer angegebenen Metadaten, die dem Schlüssel `"foo"` entsprechen, werden unkenntlich gemacht. Außerdem werden alle Abfrageparameter mit Ausnahme des SAS-Tokenabfrageparameters `"sv"` unkenntlich gemacht, der die signierte Version aller ggf. vorhandenen SAS angibt. 
+Wenn ein Clientgenerator die Möglichkeit zum Festlegen von [HttpLogOptions](/java/api/com.azure.core.http.policy.httplogoptions) bietet, müssen diese Optionen unabhängig von dem verwendeten Protokollierungsmechanismus zusätzlich konfiguriert werden, damit Protokolle ausgegeben werden. [HttpLogDetailLevel](/java/api/com.azure.core.http.policy.httplogdetaillevel) muss festgelegt werden, um anzugeben, welche Informationen protokolliert werden sollen.  Für diesen Wert wird standardmäßig `NONE` verwendet. Wird er nicht angegeben, werden auch dann keine Protokolle ausgegeben, wenn das Protokollierungsframework oder die Fallbackprotokollierung ordnungsgemäß konfiguriert ist. Aus Sicherheitsgründen werden Header und Abfrageparameter standardmäßig unkenntlich gemacht. Daher müssen die Protokolloptionen auch mit einem `Set<String>`-Element bereitgestellt werden, das angibt, welche Header und Abfrageparameter sicher ausgegeben werden können. Dieser Wert kann wie unten dargestellt konfiguriert werden. Die Protokollierung ist so festgelegt, dass sowohl Textinhalte als auch Headerwerte ausgegeben werden. Alle Headerwerte mit Ausnahme des Werts für die vom Benutzer angegebenen Metadaten, die dem Schlüssel `"foo"` entsprechen, werden unkenntlich gemacht. Außerdem werden alle Abfrageparameter mit Ausnahme des SAS-Tokenabfrageparameters `"sv"` unkenntlich gemacht, der die signierte Version aller ggf. vorhandenen SAS angibt. 
 
 ```
 new BlobClientBuilder().endpoint(<endpoint>)

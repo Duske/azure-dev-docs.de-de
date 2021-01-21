@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie eine Azure-Ressourcengruppe für alle Ih
 ms.topic: tutorial
 ms.date: 11/13/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: b401953c0e1c972efa0f5d90817f461b858cf04b
-ms.sourcegitcommit: a2a51e0c6530eb5794a2fe667cf4c9a60b2a7470
+ms.openlocfilehash: 0b1b634756a5188cbd9233274205005f62b25026
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94625039"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561046"
 ---
 # <a name="2-create-application-insights-resource-for-web-pages"></a>2. Erstellen einer Application Insights-Ressource für Webseiten
 
@@ -19,7 +19,7 @@ In diesem Schritt des Tutorials werden eine Azure-Ressourcengruppe für alle Ihr
 
 Dieses Tutorial umfasst mehrere Azure-Ressourcen. Durch die Erstellung einer Ressourcengruppe können Sie Ressourcen ganz einfach finden und wieder löschen, wenn Sie sie nicht mehr benötigen.
 
-1. Geben Sie an einem Terminal oder an einer Bash-Shell den [Azure CLI-Befehl zum Erstellen einer Azure-Ressourcengruppe](/cli/azure/group?view=azure-cli-latest#az_group_create) mit dem Namen `rg-demo-vm-eastus` ein:
+1. Geben Sie an einem Terminal oder an einer Bash-Shell den [Azure CLI-Befehl zum Erstellen einer Azure-Ressourcengruppe](/cli/azure/group#az_group_create) mit dem Namen `rg-demo-vm-eastus` ein:
 
     ```azurecli
     az group create \
@@ -35,7 +35,7 @@ Dieses Tutorial umfasst mehrere Azure-Ressourcen. Durch die Erstellung einer Res
     az extension add -n application-insights
     ```
 
-1. Verwenden Sie den folgenden Befehl, um eine [Überwachungsressource zu erstellen](/cli/azure/ext/application-insights/monitor/app-insights/component?view=azure-cli-latest#ext_application_insights_az_monitor_app_insights_component_create):
+1. Verwenden Sie den folgenden Befehl, um eine [Überwachungsressource zu erstellen](/cli/azure/ext/application-insights/monitor/app-insights/component#ext_application_insights_az_monitor_app_insights_component_create):
 
 
     ```azurecli

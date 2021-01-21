@@ -4,12 +4,12 @@ description: Die Automatisierung von Azure-Aufgaben ist eine gängige Anforderun
 ms.topic: conceptual
 ms.date: 12/16/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 7cfce90d8d0daf861dab9ba02e46ce489ae10742
-ms.sourcegitcommit: 0d2ea78f18430c845a32e0d2311427ab81033465
+ms.openlocfilehash: c2df54b23baab71cbdedb03fe5990f53dd0c807a
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97754056"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561136"
 ---
 # <a name="automate-tasks-with-azure-cli"></a>Automatisieren von Aufgaben mit der Azure CLI
 
@@ -33,7 +33,7 @@ Zum Automatisieren der Azure CLI muss die CLI in der Umgebung installiert sein. 
 
 Nach der Installation der Azure CLI müssen Sie sich anmelden, um die Azure CLI-Befehle weiterhin auszuführen. Für die Automatisierung können Sie sich bei der Azure CLI authentifizieren.
 
-**Referenzdokumentation:** [az login](/cli/azure/reference-index?view=azure-cli-latest#az-login)
+**Referenzdokumentation:** [az login](/cli/azure/reference-index#az-login)
 
 Für die Authentifizierung wird die Option [Verwaltete Identität](/cli/azure/authenticate-azure-cli#sign-in-with-a-managed-identity) empfohlen.
 
@@ -62,7 +62,7 @@ az login -u <MY_AZURE_USERNAME> -p <MY_AZURE_PASSWORD>
 
 Eine Ressourcengruppe ist eine logische Sammlung Ihrer Azure-Ressourcen. Die logische Gruppierung basiert auf Diensten, die Sie in einer bestimmten Region für ein Projekt benötigen. Erfahren Sie mehr über [Namenskonventionen](/azure/cloud-adoption-framework/ready/azure-best-practices/resource-naming).
 
-**Referenzdokumentation:** [az group create](/cli/azure/group?view=azure-cli-latest#az_group_create)
+**Referenzdokumentation:** [az group create](/cli/azure/group#az_group_create)
 
 ```azurecli
 az group create \
@@ -79,11 +79,11 @@ Eine statische Web-App enthält Code für Folgendes:
 
 Die App kann Azure-Funktionen für serverlose APIs verwenden, dies ist jedoch keine Voraussetzung für statische Web-Apps. 
 
-**Referenzdokumentation:** [az staticwebapp](/cli/azure/staticwebapp?view=azure-cli-latest)
+**Referenzdokumentation:** [az staticwebapp](/cli/azure/staticwebapp)
 
 ### <a name="create-azure-static-web-app"></a>Erstellen der statischen Azure-Web-App 
 
-**Referenzdokumentation:** [az staticwebapp create](/cli/azure/staticwebapp?view=azure-cli-latest#az_staticwebapp_create)
+**Referenzdokumentation:** [az staticwebapp create](/cli/azure/staticwebapp#az_staticwebapp_create)
 
 ```azurecli
 az staticwebapp create \
@@ -112,7 +112,7 @@ git push origin main
 
 ### <a name="delete-static-web-app"></a>Löschen einer statischen Web-App 
 
-**Referenzdokumentation:** [az staticwebapp delete](/cli/azure/staticwebapp?view=azure-cli-latest#az_staticwebapp_delete)
+**Referenzdokumentation:** [az staticwebapp delete](/cli/azure/staticwebapp#az_staticwebapp_delete)
 
 ```azurecli
 az staticwebapp delete && \

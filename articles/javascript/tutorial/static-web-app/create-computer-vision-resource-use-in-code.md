@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie Ihre Cognitive Services-Ressource für 
 ms.topic: tutorial
 ms.date: 12/16/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 338a3040381768e5987e84676339e8ee46c49fc7
-ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
+ms.openlocfilehash: 12d55ab384fc7a6a387d832a78883f62de9f38ea
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97687478"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561026"
 ---
 # <a name="4-create-computer-vision-resource-and-use-in-code"></a>4. Erstellen einer Ressource für maschinelles Sehen und Verwenden der Ressource im Code
 
@@ -21,14 +21,14 @@ Durch die Erstellung einer Ressourcengruppe können Sie Ressourcen ganz einfach 
 
 Am Ende dieser Schritte benötigen Sie den **Schlüssel und Endpunkt** für Ihre Ressource.
 
-1. Geben Sie an einem Terminal oder an einer Bash-Shell den [Azure CLI-Befehl zum Erstellen einer Azure-Ressourcengruppe](/cli/azure/group?view=azure-cli-latest#az_group_create) mit dem Namen `rg-demo` ein:
+1. Geben Sie an einem Terminal oder an einer Bash-Shell den [Azure CLI-Befehl zum Erstellen einer Azure-Ressourcengruppe](/cli/azure/group#az_group_create) mit dem Namen `rg-demo` ein:
 
     ```azurecli
     az group create \
         --location eastus \
         --name rg-demo 
     ```
-1. Führen Sie den folgenden Befehl aus, um [eine Ressource für maschinelles Sehen zu erstellen](/cli/azure/cognitiveservices/account?view=azure-cli-latest#az-cognitiveservices-account-create):
+1. Führen Sie den folgenden Befehl aus, um [eine Ressource für maschinelles Sehen zu erstellen](/cli/azure/cognitiveservices/account#az-cognitiveservices-account-create):
 
 
     ```azurecli
@@ -53,7 +53,7 @@ Am Ende dieser Schritte benötigen Sie den **Schlüssel und Endpunkt** für Ihre
     ...
     ```
 
-1. Führen Sie den folgenden [Befehl](/cli/azure/cognitiveservices/account/keys?view=azure-cli-latest#az-cognitiveservices-account-keys-list) aus, um Ihre Schlüssel abzurufen: 
+1. Führen Sie den folgenden [Befehl](/cli/azure/cognitiveservices/account/keys#az-cognitiveservices-account-keys-list) aus, um Ihre Schlüssel abzurufen: 
 
     ```azurecli
     az cognitiveservices account keys list \

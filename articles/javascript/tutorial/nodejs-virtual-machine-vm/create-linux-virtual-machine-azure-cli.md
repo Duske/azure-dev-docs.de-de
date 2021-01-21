@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie die Azure CLI verwenden, um Ihren virtu
 ms.topic: tutorial
 ms.date: 01/05/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: a618c9584775a7c384f05ef01a563943c48f2b3a
-ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
+ms.openlocfilehash: baed6874a89a8291e3a1b03c45db43565428ff20
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97952502"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561666"
 ---
 # <a name="3-create-linux-virtual-machine-using-azure-cli"></a>3. Erstellen eines virtuellen Linux-Computers mithilfe der Azure CLI
 
@@ -33,7 +33,7 @@ In diesem Tutorial wird eine cloud-init-Konfigurationsdatei verwendet, um sowohl
 
 ## <a name="create-a-virtual-machine-resource"></a>Erstellen einer VM-Ressource 
 
-Geben Sie den [Azure CLI-Befehl](/cli/azure/vm?view=azure-cli-latest#az_vm_create) an einem Terminal ein, um eine Azure-Ressource eines virtuellen Linux-Computers zu erstellen. Der Befehl erstellt den virtuellen Computer auf der Grundlage der cloud-init-Datei und generiert die SSH-Schlüssel für Sie. Der Speicherort der Schlüssel wird bei der Befehlsausführung angezeigt. 
+Geben Sie den [Azure CLI-Befehl](/cli/azure/vm#az_vm_create) an einem Terminal ein, um eine Azure-Ressource eines virtuellen Linux-Computers zu erstellen. Der Befehl erstellt den virtuellen Computer auf der Grundlage der cloud-init-Datei und generiert die SSH-Schlüssel für Sie. Der Speicherort der Schlüssel wird bei der Befehlsausführung angezeigt. 
 
 ```azurecli
 az vm create \
@@ -51,7 +51,7 @@ Der Prozess kann einige Minuten dauern. Nach Abschluss des Prozesses werden von 
 
 ## <a name="open-port-for-virtual-machine"></a>Öffnen eines Ports für den virtuellen Computer
 
-Nach der Erstellung verfügt der virtuelle Computer zunächst über _keine_ geöffneten Ports. Öffnen Sie den Port 80 mithilfe des folgenden [Azure CLI-Befehls](/cli/azure/vm?view=azure-cli-latest#az_vm_open_port), um die Web-App öffentlich verfügbar zu machen:
+Nach der Erstellung verfügt der virtuelle Computer zunächst über _keine_ geöffneten Ports. Öffnen Sie den Port 80 mithilfe des folgenden [Azure CLI-Befehls](/cli/azure/vm#az_vm_open_port), um die Web-App öffentlich verfügbar zu machen:
 
 ```azurecli
 az vm open-port \

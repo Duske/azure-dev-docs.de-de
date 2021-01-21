@@ -5,16 +5,16 @@ keywords: Azure DevOps Terraform-Nachweis
 ms.topic: how-to
 ms.date: 11/08/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: c42f2a00886bedf3e9f26566cb619c69bb5073b7
-ms.sourcegitcommit: f723980ade4cbc13548a5d8ac3f3fa681b8a2dbd
+ms.openlocfilehash: c79c472da4604458475bd230a844e2d308c2bda1
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97609397"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561546"
 ---
 # <a name="configure-an-azure-attestation-policy-using-terraform"></a>Konfigurieren einer Azure-Nachweisrichtlinie mit Terraform
 
-Dieser Artikel enthält Terraform-Beispielcode zum Erstellen eines [Nachweisanbieters](https://docs.microsoft.com/azure/attestation/overview) in Azure.
+Dieser Artikel enthält Terraform-Beispielcode zum Erstellen eines [Nachweisanbieters](/azure/attestation/overview) in Azure.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
