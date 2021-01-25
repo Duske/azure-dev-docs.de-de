@@ -21,6 +21,10 @@
       items:
         - name: Bereitstellungsslots für Terraform- und Azure-Anbieter
           href: provision-infrastructure-using-azure-deployment-slots.md
+    - name: Netzwerke
+      items:
+        - name: Konfigurieren von Azure Network Watcher
+          href: create-network-watcher-nsg-flow-logs.md
     - name: Container
       items:
         - name: Erstellen eines Kubernetes-Clusters mit AKS

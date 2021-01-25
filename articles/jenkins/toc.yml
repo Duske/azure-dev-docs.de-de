@@ -47,7 +47,7 @@
       href: 'https://github.com/azure/jenkins'
 - name: Ressourcen
   items:
-    - name: Jenkins-Plug-Ins für Azure
+    - name: Jenkins-Plug-In für Azure
       href: plug-ins-for-azure.md
     - name: Azure-Roadmap
       href: 'https://azure.microsoft.com/roadmap/'
