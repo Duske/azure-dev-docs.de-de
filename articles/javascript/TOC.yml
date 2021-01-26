@@ -73,6 +73,8 @@
           items:
             - name: Express.js mit VS Code
               href: tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md
+            - name: Konvertieren von Text in Sprache mit Cognitive Services
+              href: tutorial/convert-text-to-speech-cognitive-services.md
             - name: Express.js mit einer MongoDB-Datenbank (Cosmos)
               href: tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md
             - name: "Erstellen mit der Azure\_CLI, Bereitstellen mit Git"
