@@ -13,25 +13,9 @@
     - name: Erstellen einer Funktion
       items:
         - name: Verwendung von Visual Studio Code
-          items:
-            - name: 1. Konfigurieren Ihrer Umgebung
-              href: tutorial-vs-code-serverless-python-01.md
-            - name: 2. Erstellen der Python-Funktion
-              href: tutorial-vs-code-serverless-python-02.md
-            - name: 3. Untersuchen von Codedateien
-              href: tutorial-vs-code-serverless-python-03.md
-            - name: 4. Lokales Debuggen
-              href: tutorial-vs-code-serverless-python-04.md
-            - name: 5. Bereitstellen in Azure
-              href: tutorial-vs-code-serverless-python-05.md
-            - name: 6. Hinzufügen einer zweiten Funktion
-              href: tutorial-vs-code-serverless-python-06.md
-            - name: 7. Hinzufügen einer Speicherbindung
-              href: tutorial-vs-code-serverless-python-07.md
-            - name: 8. Bereinigen der Ressourcen
-              href: tutorial-vs-code-serverless-python-08.md
+          href: /azure/azure-functions/create-first-function-vs-code-python
         - name: Verwenden der Azure-Befehlszeilenschnittstelle
-          href: /azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-python
+          href: /azure/azure-functions/create-first-function-cli-python?tabs=azure-cli%2Cbash%2Cbrowser
     - name: Verbinden mit Azure Storage
       items:
         - name: Verwendung von Visual Studio Code
