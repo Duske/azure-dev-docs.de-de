@@ -7,12 +7,12 @@ ms.service: mobile-services
 ms.topic: article
 ms.date: 06/08/2020
 ms.author: masoucou
-ms.openlocfilehash: 0ab44652d4a635d5ff04928b76883a76fe3a62fa
-ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
+ms.openlocfilehash: 7a97aa687c80b4b49a566df2f5552bf919a0ec9e
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91493111"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699748"
 ---
 # <a name="cloud-hosted-source-code-management-services"></a>In der Cloud gehostete Quellcode-Verwaltungsdienste
 
@@ -63,7 +63,7 @@ Verwenden Sie die folgenden Dienste, um Ihre Anwendungsdaten in der Cloud zu hos
 
 ## <a name="azure-devops"></a>Azure DevOps
 
-[Azure DevOps](https://azure.microsoft.com/services/devops/) unterstützt [Azure Repos](https://azure.microsoft.com/services/devops/repos/) und [Team Foundation-Versionskontrolle (TFVC)](/azure/devops/repos/tfvc/index?view=azure-devops) als Quellcodeverwaltungsoptionen. Azure DevOps hat unbegrenzt viele kostenlose private Repositorys mit kollaborativen Codeüberprüfungen (Code Reviews), erweiterte Dateiverwaltung, Codesuche und Branchrichtlinien, um qualitativ hochwertigen Code sicherzustellen. Azure Repos eignet sich hervorragend für kleine Projekte sowie für große Organisationen, die native Azure Active Directory-Unterstützung und erweiterte Richtlinien benötigen.
+[Azure DevOps](https://azure.microsoft.com/services/devops/) unterstützt [Azure Repos](https://azure.microsoft.com/services/devops/repos/) und [Team Foundation-Versionskontrolle (TFVC)](/azure/devops/repos/tfvc/index) als Quellcodeverwaltungsoptionen. Azure DevOps hat unbegrenzt viele kostenlose private Repositorys mit kollaborativen Codeüberprüfungen (Code Reviews), erweiterte Dateiverwaltung, Codesuche und Branchrichtlinien, um qualitativ hochwertigen Code sicherzustellen. Azure Repos eignet sich hervorragend für kleine Projekte sowie für große Organisationen, die native Azure Active Directory-Unterstützung und erweiterte Richtlinien benötigen.
 
 ### <a name="azure-devops-features"></a>Features von Azure DevOps
 
@@ -84,4 +84,4 @@ Verwenden Sie die folgenden Dienste, um Ihre Anwendungsdaten in der Cloud zu hos
 ### <a name="azure-devops-references"></a>Azure DevOps-Referenzen
 
 - [Erste Schritte mit Azure Repos](https://azure.microsoft.com/services/devops/repos/) 
-- [Dokumentation zu Azure Repos](/azure/devops/repos/?view=azure-devops)
+- [Dokumentation zu Azure Repos](/azure/devops/repos)

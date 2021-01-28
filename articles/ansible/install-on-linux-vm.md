@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, Bash, Cloud Shell, Playbook, Azure CLI
 ms.topic: quickstart
 ms.date: 09/30/2020
 ms.custom: devx-track-ansible, devx-track-azurecli
-ms.openlocfilehash: b01cf6925f19ae6dc561358546f9ee3b945cad4f
-ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
+ms.openlocfilehash: a16e9affb6153d1defea2f5233a62f78d3b85ae8
+ms.sourcegitcommit: 8eb1c379b2bbc2acdd82fc9d24d8ed948e5a6847
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93066249"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811129"
 ---
 # <a name="quickstart-configure-ansible-using-azure-cli"></a>Schnellstart: Konfigurieren von Ansible über die Azure-Befehlszeilenschnittstelle
 
@@ -38,8 +38,8 @@ Bei der Verbindungsherstellung mit Linux-VMs können Sie die Kennwortauthentifiz
 
 Bei der schlüsselbasierten Authentifizierung gibt es zwei Schlüssel:
 
-- **Öffentlicher Schlüssel** : Der öffentliche Schlüssel wird auf dem Host gespeichert, z. B. auf Ihrer VM (wie in diesem Artikel).
-- **Privater Schlüssel** : Mit dem privaten Schlüssel können Sie eine sichere Verbindung mit Ihrem Host herstellen. Der private Schlüssel ist quasi Ihr Kennwort und sollte entsprechend geschützt werden.
+- **Öffentlicher Schlüssel**: Der öffentliche Schlüssel wird auf dem Host gespeichert, z. B. auf Ihrer VM (wie in diesem Artikel).
+- **Privater Schlüssel**: Mit dem privaten Schlüssel können Sie eine sichere Verbindung mit Ihrem Host herstellen. Der private Schlüssel ist quasi Ihr Kennwort und sollte entsprechend geschützt werden.
         
 Mit den folgenden Schritten wird die Erstellung eines SSH-Schlüsselpaars beschrieben.
 
@@ -53,7 +53,7 @@ Mit den folgenden Schritten wird die Erstellung eines SSH-Schlüsselpaars beschr
     ssh-keygen -m PEM -t rsa -b 2048 -C "azureuser@azure" -f ~/.ssh/ansible_rsa -N ""
     ```
 
-    **Hinweise** :
+    **Hinweise**:
 
     - Mit dem Befehl `ssh-keygen` wird der Speicherort der generierten Schlüsseldateien angezeigt. Sie benötigen diesen Verzeichnisnamen beim Erstellen des virtuellen Computers.
     - Der öffentliche Schlüssel wird in `ansible_rsa.pub` und der private Schlüssel in `ansible_rsa` gespeichert.
@@ -83,7 +83,7 @@ Mit den folgenden Schritten wird die Erstellung eines SSH-Schlüsselpaars beschr
     az vm list -d -o table --query "[?name=='QuickstartAnsible-vm']"
     ```
 
-    **Hinweise** :
+    **Hinweise**:
 
     - Die Ausgabe des Befehls `az vm list` enthält die öffentliche IP-Adresse, die zum Herstellen einer Verbindung mit dem virtuellen Computer per SSH genutzt wird.
 
@@ -132,7 +132,7 @@ Konfigurieren Sie die Ansible-Anmeldeinformationen mithilfe einer der folgenden 
 
 In diesem Abschnitt erstellen Sie eine lokale Datei mit Anmeldeinformationen, um Anmeldeinformationen für Ansible bereitzustellen.
 
-Weitere Informationen zum Definieren von Ansible-Anmeldeinformationen finden Sie unter [Bereitstellen von Anmeldeinformationen für Azure-Module](https://docs.ansible.com/ansible/guide_azure.html#providing-credentials-to-azure-modules).
+Weitere Informationen zum Definieren von Ansible-Anmeldeinformationen finden Sie unter [Bereitstellen von Anmeldeinformationen für Azure-Module](https://docs.ansible.com/ansible/latest/scenario_guides/guide_azure.html).
 
 1. Nachdem Sie erfolgreich eine Verbindung mit dem virtuellen Hostcomputer hergestellt haben, erstellen und öffnen Sie eine Datei mit dem Namen `credentials`:
 

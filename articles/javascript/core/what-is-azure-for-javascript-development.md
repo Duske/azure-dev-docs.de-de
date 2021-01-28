@@ -4,12 +4,12 @@ description: In diesem Artikel werden Azure-Konzepte für JavaScript-, TypeScrip
 ms.topic: conceptual
 ms.date: 12/15/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 155add5f2c1119f028cfae966438bda4ead3e758
-ms.sourcegitcommit: f723980ade4cbc13548a5d8ac3f3fa681b8a2dbd
+ms.openlocfilehash: b6d0e54bdaf1b0ea9adba9800de58fe664df8324
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97601001"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699798"
 ---
 # <a name="what-is-azure-for-javascript-developers"></a>Was ist Azure für JavaScript-Entwickler?
 
@@ -111,7 +111,7 @@ Die [**Azure SDKs**](../azure-sdk-library-package-index.md) stellen die empfohle
 
 Azure-Ressourcen sind auch über folgende Schnittstellen verfügbar:
 * [Azure CLI](/cli/azure/install-azure-cli) oder [Azure Cloud Shell](https://shell.azure.com/)
-* [Azure PowerShell](/powershell/azure/?view=azps-5.2.0&preserve-view=true)
+* [Azure PowerShell](/powershell/azure/)
 * [REST-APIs](/rest/api/azure/)
 
 ## <a name="deploy-web-apps-to-hosting-options"></a>Bereitstellen von Web-Apps in Hostingoptionen

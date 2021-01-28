@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: 3f4070fa18c9d5d5db7df5d877b490ff0103b0b2
-ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.openlocfilehash: 3d4262d7009004d177b38bf9f4cb3fb8c9b02259
+ms.sourcegitcommit: 8eb1c379b2bbc2acdd82fc9d24d8ed948e5a6847
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98561457"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811143"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>Tutorial: Schützen einer Java-Web-App mithilfe von Spring Boot Starter für Azure Active Directory
 
@@ -295,7 +295,7 @@ Für die Durchführung der Schritte in diesem Artikel müssen folgende Vorausset
    >[!div class="mx-imgBorder"]
    >![Erstellen Ihrer Anwendung][build-application]
 
-1. Nachdem Ihre Anwendung durch Maven erstellt und gestartet wurde, öffnen Sie <http://localhost:8080/group1> in einem Webbrowser. Daraufhin sollten Sie zur Eingabe eines Benutzernamens und eines Kennworts aufgefordert werden.
+1. Nachdem Ihre Anwendung durch Maven erstellt und gestartet wurde, öffnen Sie `http://localhost:8080/group1` in einem Webbrowser. Daraufhin sollten Sie zur Eingabe eines Benutzernamens und eines Kennworts aufgefordert werden.
    
    >[!div class="mx-imgBorder"]
    ![Anmelden bei Ihrer Anwendung][application-login]

@@ -6,12 +6,12 @@ ms.author: edburns
 ms.topic: conceptual
 ms.date: 1/27/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 3b6d9847cc72f246587a36b74173521736a6cc9a
-ms.sourcegitcommit: b923aee828cd4b309ef92fe1f8d8b3092b2ffc5a
+ms.openlocfilehash: 58ed07c18fdb8492cf7f2c19883f3cf0288d9cc1
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88052257"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699978"
 ---
 # <a name="migrate-weblogic-server-applications-to-azure-virtual-machines"></a>Migrieren von WebLogic Server-Anwendungen zu virtuellen Azure-Computern
 
@@ -159,7 +159,7 @@ Nachdem Sie die Migrationsziele erreicht haben, die Sie unter [Vor der Migration
 
 * Verwenden Sie Azure Storage zum Bereitstellen von statischem Inhalt auf den virtuellen Computern. Weitere Informationen finden Sie unter [Anfügen oder Trennen eines Datenträgers an einen oder von einem virtuellen Computer in Azure DevTest Labs](/azure/lab-services/devtest-lab-attach-detach-data-disk).
 
-* Stellen Sie Ihre Anwendungen mit Azure DevOps in Ihrem migrierten WebLogic-Cluster bereit. Weitere Informationen finden Sie in der [Azure DevOps-Dokumentation zu den ersten Schritten](/azure/devops/get-started/?view=azure-devops).
+* Stellen Sie Ihre Anwendungen mit Azure DevOps in Ihrem migrierten WebLogic-Cluster bereit. Weitere Informationen finden Sie in der [Azure DevOps-Dokumentation zu den ersten Schritten](/azure/devops/get-started).
 
 * Wenn Sie WebLogic Server mit Azure Application Gateway bereitgestellt haben, indem Sie die Schritte in [Tutorial: Migrieren eines WebLogic Server-Clusters zu Azure mit Azure-Anwendung Gateway als Lastenausgleich](migrate-weblogic-with-app-gateway.md) ausgeführt haben, sollten Sie eine zusätzliche Konfiguration für die Application Gateway-Instanz durchführen.  Weitere Informationen finden Sie unter [Application Gateway-Konfiguration: Übersicht](/azure/application-gateway/configuration-overview).
 

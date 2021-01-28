@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, Übersicht, Cloudbereitstellung, Konfiguration
 ms.topic: overview
 ms.date: 08/13/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 9eb90921a0d44e138c331eb716700feb85e8aa9d
-ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
+ms.openlocfilehash: 9943dd0dbdd1b352d245bc471538e1a05d464c99
+ms.sourcegitcommit: 8eb1c379b2bbc2acdd82fc9d24d8ed948e5a6847
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91586101"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811103"
 ---
 # <a name="using-ansible-with-azure"></a>Verwenden von Ansible mit Azure
 
@@ -38,7 +38,7 @@ Mit Ansible können Sie native Cloudanwendungen in Azure automatisieren, indem S
 
 ## <a name="manage-deployments-with-dynamic-inventory"></a>Verwalten von Bereitstellungen mit dynamischem Bestand
 
-Mithilfe des Features [Dynamic Inventory](https://docs.ansible.com/ansible/intro_dynamic_inventory.html) (Dynamischer Bestand) können mit Ansible Bestandsdaten per Pullvorgang von Azure-Ressourcen abgerufen werden. Sie können Ihre vorhandenen Azure-Bereitstellungen dann mit Tags versehen und diese gekennzeichneten Bereitstellungen mit Ansible verwalten.
+Mithilfe des Features [Dynamic Inventory](https://docs.ansible.com/ansible/latest/user_guide/intro_dynamic_inventory.html) (Dynamischer Bestand) können mit Ansible Bestandsdaten per Pullvorgang von Azure-Ressourcen abgerufen werden. Sie können Ihre vorhandenen Azure-Bereitstellungen dann mit Tags versehen und diese gekennzeichneten Bereitstellungen mit Ansible verwalten.
 
 ## <a name="additional-azure-marketplace-options"></a>Zusätzliche Azure Marketplace-Optionen
 

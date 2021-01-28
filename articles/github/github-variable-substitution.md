@@ -5,22 +5,22 @@ author: juliakm
 ms.author: jukullam
 ms.topic: conceptual
 ms.service: azure
-ms.date: 11/18/2020
+ms.date: 01/25/2021
 ms.custom: github-actions-azure
-ms.openlocfilehash: 0e3f3b11980c987ef4f7a288380b9517ad88d777
-ms.sourcegitcommit: 418e446e6ada5d50df283401df4f6b6370a356b9
+ms.openlocfilehash: e2a82fbcbe48269339dc672d46aca4cc3601ae12
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96120546"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759500"
 ---
 # <a name="use-variable-substitution-with-github-actions"></a>Verwenden der Variablenersetzung mit GitHub-Aktionen
 
 Hier erfahren Sie, wie Sie die [Variablenersetzungsaktion](https://github.com/marketplace/actions/variable-substitution) verwenden, um Werte in XML-, JSON- und YAML-basierten Konfigurations- und Parameterdateien zu ersetzen.
 
-Mithilfe der Variablenersetzung können während der Workflowausführung Werte wie etwa [GitHub-Geheimnisse](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets) in Dateien in Ihrem Repository eingefügt werden. So können Sie beispielsweise während der Workflowausführung eine API-Anmeldung und ein Kennwort in eine JSON-Datei einfügen.
+Mithilfe der Variablenersetzung können während der Workflowausführung Werte wie etwa [GitHub-Geheimnisse](https://docs.github.com/en/actions/reference/encrypted-secrets) in Dateien in Ihrem Repository eingefügt werden. So können Sie beispielsweise während der Workflowausführung eine API-Anmeldung und ein Kennwort in eine JSON-Datei einfügen.
 
-Die Variablenersetzung funktioniert nur bei Schlüsseln, die in der Objekthierarchie vordefiniert wurden. Mit der Variablenersetzung können keine neuen Schlüssel erstellt werden. Darüber hinaus können nur Variablen, die im Workflow als [Umgebungsvariablen](https://docs.github.com/en/free-pro-team@latest/actions/reference/environment-variables) definiert sind, oder bereits verfügbare Systemvariablen für die Ersetzung verwendet werden.
+Die Variablenersetzung funktioniert nur bei Schlüsseln, die in der Objekthierarchie vordefiniert wurden. Mit der Variablenersetzung können keine neuen Schlüssel erstellt werden. Darüber hinaus können nur Variablen, die im Workflow als [Umgebungsvariablen](https://docs.github.com/en/actions/reference/environment-variables) definiert sind, oder bereits verfügbare Systemvariablen für die Ersetzung verwendet werden.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 

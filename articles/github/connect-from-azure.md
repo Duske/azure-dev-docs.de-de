@@ -7,12 +7,12 @@ ms.topic: reference
 ms.service: azure
 ms.date: 11/17/2020
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: d835fb755a2acecba3e7ad173ef9d6c036d59546
-ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.openlocfilehash: 6310254e450c7e0fc648459ddad2c08b1bba555b
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98561746"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759520"
 ---
 # <a name="use-github-actions-to-connect-to-azure"></a>Verwenden von GitHub Actions zum Herstellen einer Verbindung mit Azure
 
@@ -80,7 +80,7 @@ In diesem Beispiel erstellen Sie ein Geheimnis mit dem Namen `AZURE_CREDENTIALS`
 
 Verwenden Sie das Dienstprinzipalgeheimnis mit der [Aktion „Azure-Anmeldung“](https://github.com/Azure/login), um die Authentifizierung bei Azure durchzuführen.
 
-In diesem Workflow authentifizieren Sie sich mit der Aktion „Azure-Anmeldung“ und den Dienstprinzipaldetails, die in `secrets.AZURE_CREDENTIALS` gespeichert sind. Anschließend führen Sie eine Azure CLI-Aktion aus. Weitere Informationen zum Verweisen auf GitHub-Geheimnisse in einer Workflowdatei finden Sie in den GitHub-Dokumentationen unter [Verwenden verschlüsselter Geheimnisse in einem Workflow](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets#using-encrypted-secrets-in-a-workflow).
+In diesem Workflow authentifizieren Sie sich mit der Aktion „Azure-Anmeldung“ und den Dienstprinzipaldetails, die in `secrets.AZURE_CREDENTIALS` gespeichert sind. Anschließend führen Sie eine Azure CLI-Aktion aus. Weitere Informationen zum Verweisen auf GitHub-Geheimnisse in einer Workflowdatei finden Sie in den GitHub-Dokumentationen unter [Verwenden verschlüsselter Geheimnisse in einem Workflow](https://docs.github.com/en/actions/reference/encrypted-secrets#using-encrypted-secrets-in-a-workflow).
 
 Wenn Sie über einen funktionierenden Schritt zur Azure-Anmeldung verfügen, können Sie die [Azure PowerShell](https://github.com/Azure/PowerShell)- oder [Azure CLI](https://github.com/Azure/CLI)-Aktionen verwenden. Sie können auch andere Azure-Aktionen wie die [Azure-Web-App-Bereitstellung](https://github.com/Azure/webapps-deploy) und [Azure-Funktionen](https://github.com/Azure/functions-action) verwenden.
 

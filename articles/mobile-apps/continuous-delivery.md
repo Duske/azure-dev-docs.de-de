@@ -7,12 +7,12 @@ ms.service: mobile-services
 ms.topic: article
 ms.date: 06/08/2020
 ms.author: masoucou
-ms.openlocfilehash: 96ca72ffb239b7baa48c06f09afe08a2653e3e0b
-ms.sourcegitcommit: f02ff55cef47581303a217cf1d310879cd722237
+ms.openlocfilehash: 6cb18fed3db2ad46c96b7ff20684727aa2e35064
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84632372"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699768"
 ---
 # <a name="automate-the-deployment-and-release-of-your-mobile-applications-with-continuous-delivery-services"></a>Automatisieren des Bereitstellens und Veröffentlichens Ihrer mobilen Anwendungen mit Continuous Delivery-Diensten
 
@@ -63,7 +63,7 @@ Mit den folgenden Diensten können Sie eine Continuous Delivery-Pipeline in Ihre
 
 #### <a name="azure-pipelines-references"></a>Azure Pipelines-Referenzen
 
-- [Erste Schritte mit Azure Pipelines](/azure/devops/pipelines/get-started/pipelines-get-started?view=azure-devops)
+- [Erste Schritte mit Azure Pipelines](/azure/devops/pipelines/get-started/pipelines-get-started)
 - [Erste Schritte mit Azure DevOps](https://app.vsaex.visualstudio.com/signup/)
   
 ## <a name="distribute-your-application-directly-to-app-stores"></a>Verteilen Ihrer Anwendung direkt an App Stores

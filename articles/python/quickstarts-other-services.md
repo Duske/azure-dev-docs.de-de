@@ -4,12 +4,12 @@ description: Hier finden Sie einen Index mit Azure-Dokumentationsmaterial für s
 ms.date: 05/28/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 1a58973b0e51f488c0b8afbbbe473cbbfc088c24
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 6ecbd510195fea9f4e4c4dfb09abdfb385bd55d2
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982872"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699628"
 ---
 # <a name="other-services-for-python-apps-on-azure"></a>Weitere Dienste für Python-Apps in Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "87982872"
 
 - **DevOps**:
   - [Erstellen einer CI/CD-Pipeline für Python mit Azure DevOps Starter](/azure/devops-project/azure-devops-project-python)
-  - [Erstellen von Python-Apps](/azure/devops/pipelines/ecosystems/python?view=azure-devops)
+  - [Erstellen von Python-Apps](/azure/devops/pipelines/ecosystems/python)
 
 - **Geografische Kartografie**:
   - [Tutorial: Routenplanung für Elektrofahrzeuge mit Azure Notebooks (Python)](/azure/azure-maps/tutorial-ev-routing)
