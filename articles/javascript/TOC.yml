@@ -143,6 +143,8 @@
           href: how-to/configure-web-app-settings.md
         - name: Aufgaben für JavaScript-Entwickler
           href: how-to/common-javascript-tasks.md
+        - name: Klonen eines GitHub-Repositorys für Änderungen
+          href: how-to/with-visual-studio-code/clone-github-repository.md
         - name: End-to-End-Verwendung von Node.js mit VS Code
           href: how-to/develop-nodejs-on-azure.md
         - name: Bereitstellen einer Web-App
