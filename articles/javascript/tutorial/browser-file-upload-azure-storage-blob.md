@@ -4,12 +4,12 @@ description: Verwenden Sie eine React- oder TypeScript-App, um eine Datei in Azu
 ms.topic: tutorial
 ms.date: 12/17/2020
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript, azure-sdk-storage-blob-typescript-version-12.2.1
-ms.openlocfilehash: 1f66ba54aa6cfccdda96a51bb610350a10fb7eef
-ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
+ms.openlocfilehash: 19fc63272ff579ca0bb04802b04a7d44e9114ba4
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97689520"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759568"
 ---
 # <a name="upload-an-image-to-an-azure-storage-blob"></a>Hochladen eines Images in ein Azure Storage-Blob
 
@@ -192,7 +192,7 @@ Wenn Sie einen Fehler erhalten haben oder die Datei nicht in den Container hochg
 
 Die TypeScript-Datei `src/App.tsx` wird als Teil der App-Erstellung mit create-reag-app bereitgestellt. Die Datei wurde geändert, um eine Schaltfläche für die Dateiauswahl und eine Schaltfläche für den Upload sowie den unterstützenden Code zur Bereitstellung dieser Funktionalität bereitzustellen. 
 
-Der Code, der eine Verbindung mit dem Azure Blob Storage-Code herstellt, ist hervorgehoben. Der Aufruf von `uploadFileToBlob` gibt alle Blobs (Dateien) im Container als unformatierte Liste zurück. Diese Liste wird mit der `DisplayImagesFromContainer`-Funktion angezeigt.
+Der Code, mit dem eine Verbindung mit dem Azure Blob Storage-Code hergestellt wird, ist hervorgehoben. Der Aufruf von `uploadFileToBlob` gibt alle Blobs (Dateien) im Container als unformatierte Liste zurück. Diese Liste wird mit der `DisplayImagesFromContainer`-Funktion angezeigt.
 
 :::code language="typescript" source="~/../js-e2e-browser-file-upload-storage-blob/src/App.tsx" highlight="3,28":::
 

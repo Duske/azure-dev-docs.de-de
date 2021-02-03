@@ -5,12 +5,12 @@ keywords: Jenkins, Plug-Ins, Azure, Devops
 ms.date: 04/25/2020
 ms.topic: article
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: d5f470c7355314b488d811f03f175379ad211c96
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: 3051492f4278c2b5702fdc20932fa47928dea7a5
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "96035448"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699848"
 ---
 # <a name="jenkins-plug-ins-for-azure"></a>Jenkins-Plug-Ins für Azure
 
@@ -20,16 +20,16 @@ Viele Azure-Dienste und -Features sind über Jenkins-Plug-Ins verfügbar. Diese 
 
 | Jenkins-Plug-In | BESCHREIBUNG                                   |
 |------------------------------------------------------------------------------|
-| [Azure App Service-Plug-In](https://plugins.jenkins.io/azure-app-service)     | Jenkins-Plug-In zum Bereitstellen eines Azure App Service (unterstützt derzeit nur Web-Apps). | 
-| [Azure AD-Plug-In](https://plugins.jenkins.io/azure-ad)                       | Jenkins-Plug-In, das die Authentifizierung und Autorisierung über Azure Active Directory unterstützt. | 
-| [Azure Artifact Manager-Plug-In](https://plugins.jenkins.io/azure-artifact-manager) | Azure Artifact Manager-Plug-In ist ein Artefakt-Manager, mit dem Sie Ihre Artefakte in Azure Blob Storage speichern können. Das Azure Artifact Manager-Plug-In arbeitet transparent für Jenkins und Ihre Aufträge. Es verhält sich wie der standardmäßige Artefakt-Manager. | 
-| [Plug-In für Azure-Container-Agents](https://plugins.jenkins.io/azure-container-agents) | Das Plug-In für Azure-Container-Agents ermöglicht die Ausführung eines Containers als Agent in Jenkins. | 
+| [Azure App Service-Plug-In](https://plugins.jenkins.io/azure-app-service)     | Jenkins-Plug-In zum Bereitstellen einer Azure App Service-Instanz (derzeit wird nur Web-App unterstützt). |
+| [Azure AD-Plug-In](https://plugins.jenkins.io/azure-ad)                       | Jenkins-Plug-In, das die Authentifizierung und Autorisierung über Azure Active Directory unterstützt. |
+| [Azure Artifact Manager-Plug-In](https://plugins.jenkins.io/azure-artifact-manager) | Azure Artifact Manager-Plug-In ist ein Artefakt-Manager, mit dem Sie Ihre Artefakte in Azure Blob Storage speichern können. Das Azure Artifact Manager-Plug-In arbeitet transparent für Jenkins und Ihre Aufträge. Es verhält sich wie der standardmäßige Artefakt-Manager. |
+| [Plug-In für Azure-Container-Agents](https://plugins.jenkins.io/azure-container-agents) | Das Plug-In für Azure-Container-Agents ermöglicht die Ausführung eines Containers als Agent in Jenkins. |
 | [Plug-In für Azure Container Registry-Aufgaben](https://plugins.jenkins.io/azure-container-registry-tasks)       | Jenkins-Plug-In zum Senden einer Docker-Buildanforderung an [Azure Container Registry](/azure/container-registry/container-registry-tasks-overview). |
-| [Azure Container Service-Plug-In](https://plugins.jenkins.io/azure-acs)       | Jenkins-Plug-In zum Bereitstellen von Konfigurationen für den Azure Container Service (AKS). | 
-| [Plug-In für Azure-Anmeldeinformationen](https://plugins.jenkins.io/azure-credentials)      | Ein Jenkins-Plug-In zum Verwalten von Azure-Anmeldeinformationen. | 
-| [Plug-In für Azure-Funktionen](https://plugins.jenkins.io/azure-function)           | Jenkins-Plug-In zum Bereitstellen einer Azure-Funktion. | 
-| [Azure IoT Edge-Plug-In](https://plugins.jenkins.io/azure-iot-edge)           | Azure IoT Edge-Plug-In vereinfacht das Einrichten einer CI/CD-Pipeline für die Entwicklung einer IoT Edge-Lösung für Jenkins. | 
-| [Azure Service Fabric-Plug-In](https://plugins.jenkins.io/service-fabric)     | Jenkins-Plug-In für Azure Service Fabric-Projekte für Linux. |
-| [Azure Storage-Plug-In](https://plugins.jenkins.io/windows-azure-storage)     | Plug-In zum Hochladen von Buildartefakten in oder Herunterladen von Buildabhängigkeiten aus Microsoft Azure Blob Storage. | 
-| [Azure-VM-Agents-Plug-In](https://plugins.jenkins.io/azure-vm-agents)         | Jenkins-Plug-In zum Erstellen von Jenkins-Agents auf virtuellen Azure-Computern (über die Azure Resource Manager-Vorlage). | 
-| [Plug-In für Azure-VM-Skalierungsgruppen](https://plugins.jenkins.io/azure-vmss)           | Jenkins-Plug-In zum Bereitstellen von VM-Images für Azure-VM-Skalierungsgruppen. | 
+| [Azure Container Service-Plug-In](https://plugins.jenkins.io/azure-acs)       | Jenkins-Plug-In zum Bereitstellen von Konfigurationen für Azure Container Service (AKS). |
+| [Plug-In für Azure-Anmeldeinformationen](https://plugins.jenkins.io/azure-credentials)      | Ein Jenkins-Plug-In zum Verwalten von Azure-Anmeldeinformationen. |
+| [Plug-In für Azure-Funktionen](https://plugins.jenkins.io/azure-function)           | Jenkins-Plug-In zum Bereitstellen einer Azure-Funktion. |
+| [Azure IoT Edge-Plug-In](https://plugins.jenkins.io/azure-iot-edge)           | Das Azure IoT Edge-Plug-In vereinfacht das Einrichten einer CI/CD-Pipeline für die Entwicklung einer IoT Edge-Lösung für Jenkins. |
+| [Azure Service Fabric-Plug-In](https://plugins.jenkins.io/service-fabric)     | Jenkins-Plug-In für Azure Service Fabric-Projekte unter Linux. |
+| [Azure Storage-Plug-In](https://plugins.jenkins.io/windows-azure-storage)     | Plug-In zum Hochladen von Buildartefakten oder Herunterladen von Buildabhängigkeiten für Microsoft Azure Blob Storage. |
+| [Azure-VM-Agents-Plug-In](https://plugins.jenkins.io/azure-vm-agents)         | Jenkins-Plug-In zum Erstellen von Jenkins-Agents auf virtuellen Azure-Computern (über die Azure Resource Manager-Vorlage). |
+| [Plug-In für Azure-VM-Skalierungsgruppen](https://plugins.jenkins.io/azure-vmss)           | Jenkins-Plug-In zum Bereitstellen von VM-Images für Azure-VM-Skalierungsgruppen. |

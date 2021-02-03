@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, Java, Azure Functions
 ms.topic: tutorial
 ms.date: 01/11/2021
 ms.custom: devx-track-jenkins,devx-track-cli
-ms.openlocfilehash: b2c616dd6d0a2a659a25527072358e8f1095e414
-ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.openlocfilehash: 5e246b21f44de9ccb9b876827b44d01f456e60fd
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98561056"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699948"
 ---
 # <a name="tutorial-deploy-to-azure-functions-using-jenkins"></a>Tutorial: Durchführen einer Bereitstellung in Azure Functions mit Jenkins
 
@@ -84,7 +84,7 @@ In den folgenden Schritten wird beschrieben, wie Sie den Jenkins-Server vorberei
 
     1. Wählen Sie im Menü die Option **Manage Jenkins** (Jenkins verwalten) aus.
 
-    1. Wählen Sie unter **System Configuration** (Systemkonfiguration) die Option **Manage Plugins** (Plug-Ins verwalten) aus.
+    1. Wählen Sie unter **System Configuration** (Systemkonfiguration) die Option **Manage plug-in** (Plug-In verwalten) aus.
 
     1. Wählen Sie die Registerkarte **Installiert** aus.
 

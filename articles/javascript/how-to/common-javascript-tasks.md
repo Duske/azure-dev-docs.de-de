@@ -2,14 +2,14 @@
 title: Wichtigste Aufgaben für JavaScript-Entwickler
 description: Hier finden Sie ein Beispiel für Ihre aktuellen Aufgaben.
 ms.topic: reference
-ms.date: 01/06/2021
+ms.date: 01/20/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 3a4c319d5258fccd1c1153591ccefddf87098343
-ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+ms.openlocfilehash: 2d7a3091529adb530af76069d9f70880a68e40d3
+ms.sourcegitcommit: 681ea211dc8e1809dd299b5cd64eebd974c073d7
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 01/21/2021
-ms.locfileid: "98625974"
+ms.locfileid: "98658768"
 ---
 # <a name="top-tasks-for-javascript-developers"></a>Wichtigste Aufgaben für JavaScript-Entwickler
 
@@ -90,6 +90,7 @@ Hier finden Sie ein Beispiel für Ihre aktuelle Aufgabe. Sollten Sie eine Aufgab
 |Erstellen einer App-Ressource|[Azure-Befehlszeilenschnittstelle](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md)|
 |Erstellen einer App, Bereitstellen, Browser-App, Anzeigen von Protokollen|[Azure-Befehlszeilenschnittstelle](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md)|
 |Löschen einer App-Ressource|[Visual Studio Code-Erweiterung](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md#clean-up-resources)<br>[Azure-Befehlszeilenschnittstelle](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-07.md)|
+|Bereitstellen oder erneutes Bereitstellen einer App|[Visual Studio Code-Erweiterung](deploy-web-app.md#deploy-or-redeploy-to-app-service-with-visual-studio-code)|
 |Streamen von Remoteprotokollen|[Visual Studio Code-Erweiterung](../tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md?tabs=bash#7-stream-remote-service-logs-in-visual-studio-code)<br>[Azure-Befehlszeilenschnittstelle](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-05.md)|
 
 ## <a name="cognitive-services"></a>Cognitive Services

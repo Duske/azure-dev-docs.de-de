@@ -2,14 +2,14 @@
 title: 'Hosten von Web-Apps: Konfigurationseinstellungen'
 description: Hier erfahren Sie, wie Sie allgemeine Konfigurationen für Ihre Web-App festlegen.
 ms.topic: conceptual
-ms.date: 01/11/2021
+ms.date: 01/21/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: ec183d08460b932cec1dea8d301f2877d7bc9ece
-ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.openlocfilehash: 7b72cb2a72e1bf27630ad06451d9a6ad90dcf1ad
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98561696"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699778"
 ---
 # <a name="hosting-web-apps-on-azure"></a>Hosten von Web-Apps in Azure
 
@@ -64,7 +64,12 @@ Jeder Dienst verfügt über einen eigenen Mechanismus zum Hinzufügen einer benu
 
 ## <a name="configure-port-forwarding"></a>Konfigurieren der Portweiterleitung
 
-Sie müssen [die Portnummer der App zuordnen](/azure/app-service/configure-language-nodejs?pivots=platform-windows#get-port-number), wenn es sich dabei nicht um den Standardport `8080` handelt. Dadurch kann der App-Dienst Anforderungen an den richtigen Port weiterleiten. 
+Sie müssen die [Portnummer der App zuordnen](/azure/app-service/configure-language-nodejs?pivots=platform-windows#get-port-number), falls es sich dabei nicht um den Standardport handelt. Dadurch kann der App-Dienst Anforderungen an den richtigen Port weiterleiten. 
+
+```javascript
+// 3000 is an example port
+const port = process.env.PORT || 3000
+```
 
 ## <a name="configure-browser-for-cors-to-connect-with-server"></a>Konfigurieren des Browsers für CORS zum Herstellen einer Serververbindung
 

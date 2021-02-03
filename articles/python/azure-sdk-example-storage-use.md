@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie die Bibliotheken des Azure SDK für Pyt
 ms.date: 08/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: f1ada9de2cdf52fac1b4219f1f9b8253d58ca881
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: ae021e47e803496d1e3a2395b923740339fe07c9
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689236"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759583"
 ---
 # <a name="example-access-azure-storage-using-the-azure-libraries-for-python"></a>Beispiel: Zugriff auf Azure Storage mit den Azure-Bibliotheken für Python
 
@@ -212,3 +212,5 @@ Führen Sie diesen Befehl aus, wenn Sie die in diesem Beispiel bereitgestellten 
 - [Beispiel: Verwenden der Azure-Bibliotheken mit Azure Storage](azure-sdk-example-storage.md)
 - [Beispiel: Bereitstellen und Abfragen einer Datenbank](azure-sdk-example-database.md)
 - [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen eines virtuellen Computers](azure-sdk-example-virtual-machines.md)
+- [Verwenden verwalteter Azure-Datenträger mit den Azure-Bibliotheken (SDK) für Python](azure-sdk-samples-managed-disks.md)
+- [Kurze Umfrage zum Azure SDK für Python](https://microsoft.qualtrics.com/jfe/form/SV_bNFX0HECjzPWMiG?Q_CHL=docs)

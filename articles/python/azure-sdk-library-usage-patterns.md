@@ -4,12 +4,12 @@ description: Hier finden Sie eine Übersicht über gängige Verwendungsmuster mi
 ms.date: 11/12/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 6f1a2c07bbda4ebe409722d2381e046ee45f7902
-ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
+ms.openlocfilehash: 28c2013245765d6829e46f564f7a7a3c74cb996d
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94601392"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759538"
 ---
 # <a name="azure-libraries-for-python-usage-patterns"></a>Azure-Bibliotheken für Python: Verwendungsmuster
 
@@ -197,12 +197,13 @@ Wenn Ihr JSON-Code nicht ordnungsgemäß formatiert ist, erhalten Sie in der Reg
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Nachdem Sie nun mit den allgemeinen Mustern für die Verwendung der Azure-Bibliotheken für Python vertraut sind, können Sie sich als Nächstes anhand der folgenden eigenständigen Beispiele mit spezifischen Verwaltungs- und Clientbibliothekszenarien beschäftigen:
+Nachdem Sie nun mit den allgemeinen Mustern für die Verwendung der Azure-Bibliotheken für Python vertraut sind, können Sie sich als Nächstes anhand der folgenden eigenständigen Beispiele mit spezifischen Szenarien für die Verwaltung und für Clientbibliotheken beschäftigen. Da diese Beispiele weder sequenziell noch voneinander abhängig sind, gibt es keine vorgegebene Reihenfolge.
 
 - [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Ressourcengruppe](azure-sdk-example-resource-group.md)
 - [Beispiel: Verwenden der Azure-Bibliotheken mit Azure Storage](azure-sdk-example-storage.md)
 - [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Web-App](azure-sdk-example-web-app.md)
 - [Beispiel: Bereitstellen und Abfragen einer Datenbank](azure-sdk-example-database.md)
 - [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen eines virtuellen Computers](azure-sdk-example-virtual-machines.md)
+- [Verwenden verwalteter Azure-Datenträger mit den Azure-Bibliotheken (SDK) für Python](azure-sdk-samples-managed-disks.md)
 
-Da diese Beispiele weder sequenziell noch voneinander abhängig sind, gibt es keine vorgegebene Reihenfolge.
+- [Kurze Umfrage zum Azure SDK für Python](https://microsoft.qualtrics.com/jfe/form/SV_bNFX0HECjzPWMiG?Q_CHL=docs)

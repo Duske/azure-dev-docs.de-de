@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, Portal, Linux, virtueller Computer
 ms.topic: quickstart
 ms.date: 08/21/2020
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 6fc5eafbec8917b517b38d7a02c3149512675ac9
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 3ec8c309bfb88d1735bc523dca54bf71195f5c26
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689136"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699898"
 ---
 # <a name="quickstart-configure-jenkins-using-azure-cli"></a>Schnellstart: Konfigurieren von Jenkins über die Azure-Befehlszeilenschnittstelle
 
@@ -39,7 +39,7 @@ Wenn beim Konfigurieren von Jenkins Probleme auftreten, finden Sie auf der [Clou
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 
-1. Öffnen Sie [Azure Cloud Shell](/azure/cloud-shell/overview), und wechseln Sie, falls noch nicht geschehen, zu **Bash** .
+1. Öffnen Sie [Azure Cloud Shell](/azure/cloud-shell/overview), und wechseln Sie, falls noch nicht geschehen, zu **Bash**.
 
 1. Erstellen Sie eine Datei mit dem Namen `cloud-init-jenkins.txt`.
 
@@ -60,7 +60,7 @@ Wenn beim Konfigurieren von Jenkins Probleme auftreten, finden Sie auf der [Clou
       - service jenkins restart
     ```
 
-1. Speichern Sie die Datei ( **&lt;STRG+S** ), und beenden Sie den Editor ( **&lt;STRG+Q** ).
+1. Speichern Sie die Datei ( **&lt;STRG+S**), und beenden Sie den Editor ( **&lt;STRG+Q**).
 
 1. Erstellen Sie mit [az group create](/cli/azure/group#az-group-create) eine Ressourcengruppe. Möglicherweise müssen Sie den Parameter `--location` durch den entsprechenden Wert für Ihre Umgebung ersetzen.
 
@@ -109,7 +109,7 @@ Wenn beim Konfigurieren von Jenkins Probleme auftreten, finden Sie auf der [Clou
     --output tsv
     ```
 
-    **Hinweise** :
+    **Hinweise**:
 
     - Der Parameter `--query` schränkt die Ausgabe auf die öffentlichen IP-Adressen für den virtuellen Computer ein.
 
@@ -119,7 +119,7 @@ Wenn beim Konfigurieren von Jenkins Probleme auftreten, finden Sie auf der [Clou
     ssh azureuser@<ip_address>
     ```
 
-    **Hinweise** :
+    **Hinweise**:
 
     - Nach erfolgreicher Verbindung enthält die Cloud Shell-Aufforderung den Benutzernamen und den Namen des virtuellen Computers: `azureuser@QuickstartJenkins-vm`.
 
@@ -141,11 +141,11 @@ Wenn beim Konfigurieren von Jenkins Probleme auftreten, finden Sie auf der [Clou
 
     ![Startseite zum Entsperren von Jenkins](./media/configure-on-linux-vm/unlock-jenkins.png)
 
-1. Wählen Sie **Zu installierende Plug-Ins auswählen** aus.
+1. Wählen Sie **Select plugins to install** (Zu installierende Plug-Ins auswählen) aus.
 
     ![Wählen Sie die Option zum Installieren der ausgewählten Plug-Ins aus.](./media/configure-on-linux-vm/select-plugins.png)
 
-1. Geben Sie im Filterfeld oben auf der Seite `github` ein. Wählen Sie das GitHub-Plug-In und dann **Installieren** aus.
+1. Geben Sie im Filterfeld oben auf der Seite `github` ein. Wählen Sie das GitHub-Plug-In und dann die Option **Installieren** aus.
 
     ![Installieren der GitHub-Plug-Ins](./media/configure-on-linux-vm/install-github-plugin.png)
 
@@ -171,7 +171,7 @@ Wenn beim Konfigurieren von Jenkins Probleme auftreten, finden Sie auf der [Clou
 
     ![Erstellung neuer Aufträge](./media/configure-on-linux-vm/new-job.png)
 
-1. Wählen Sie die Registerkarte **Quellcodeverwaltung** aus. Aktivieren Sie **Git** , und geben Sie die folgende URL als Wert für **Repository-URL** ein: `https://github.com/spring-guides/gs-spring-boot.git`
+1. Wählen Sie die Registerkarte **Quellcodeverwaltung** aus. Aktivieren Sie **Git**, und geben Sie die folgende URL als Wert für **Repository-URL** ein: `https://github.com/spring-guides/gs-spring-boot.git`
 
     ![Definieren des Git-Repositorys](./media/configure-on-linux-vm/source-code-management.png)
 

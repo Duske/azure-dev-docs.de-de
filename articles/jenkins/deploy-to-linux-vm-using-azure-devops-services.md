@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, virtueller Computer, CI/CD, Azure DevOps Servi
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 66890b5284179f3417295f477b8dc576258c2367
-ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+ms.openlocfilehash: 2261db025f48ef6df5e0ad3d8518ef3fc966f13d
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98626014"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699938"
 ---
 # <a name="tutorial-deploy-to-linux-virtual-machine-using-jenkins-and-azure-devops-services"></a>Tutorial: Bereitstellen eines virtuellen Linux-Computers mit Jenkins und Azure DevOps Services
 
@@ -63,7 +63,7 @@ Als Erstes müssen zwei Jenkins-Plug-Ins konfiguriert werden: **NodeJS** und **V
 1. Öffnen Sie Ihr Jenkins-Konto, und klicken Sie auf **Manage Jenkins** (Jenkins verwalten) aus.
 2. Klicken Sie auf der Seite **Manage Jenkins** (Jenkins verwalten) auf **Manage Plugins** (Plug-Ins verwalten).
 3. Filtern Sie die Liste, um das Plug-In **NodeJS** zu finden, und klicken Sie anschließend auf **Install without restart** (Ohne Neustart installieren).
-    ![Hinzufügen des NodeJS-Plug-Ins zu Jenkins](media/deploy-to-linux-vm-using-azure-devops-services/jenkins-nodejs-plugin.png)
+    ![Hinzufügen des Node.js-Plug-Ins zu Jenkins](media/deploy-to-linux-vm-using-azure-devops-services/jenkins-nodejs-plugin.png)
 4. Filtern Sie die Liste, um das Plug-In **VS Team Services Continuous Deployment** zu finden, und klicken Sie anschließend auf **Install without restart** (Ohne Neustart installieren).
 5. Navigieren Sie wieder zum Jenkins-Dashboard, und klicken Sie auf **Manage Jenkins** (Jenkins verwalten).
 6. Klicken Sie auf **Global Tool Configuration** (Globale Toolkonfiguration). Suchen Sie nach **NodeJS**, und klicken Sie auf **NodeJS installations** (NodeJS-Installationen).
@@ -161,9 +161,9 @@ So erstellen Sie die Releasepipeline in Azure Pipelines:
 7. Committen Sie die Änderung.
 8. Nach einigen Minuten wird auf der Seite **Releases** von Azure DevOps eine neu erstellte Freigabe angezeigt. Öffnen Sie die Freigabe, um anzuzeigen, wie die Bereitstellung durchgeführt wird. Glückwunsch!
 
-## <a name="troubleshooting-the-jenkins-plugin"></a>Problembehandlung beim Jenkins-Plug-In
+## <a name="troubleshooting-the-jenkins-plug-in"></a>Behandeln von Problemen mit dem Jenkins-Plug-In
 
-Wenn bei den Jenkins-Plug-Ins Fehler auftreten, melden Sie das Problem auf der [Jenkins-JIRA-Seite](https://issues.jenkins-ci.org/) für die jeweilige Komponente.
+Sollten Fehler für das Jenkins-Plug-In auftreten, können Sie diese auf der [Jenkins-JIRA-Seite](https://issues.jenkins-ci.org/) für die jeweilige Komponente melden.
 
 ## <a name="next-steps"></a>Nächste Schritte
 

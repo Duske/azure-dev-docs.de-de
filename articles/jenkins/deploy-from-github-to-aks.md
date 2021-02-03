@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, AKS, Azure Kubernetes Service, GitHub
 ms.topic: article
 ms.date: 10/29/2019
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 51b0531946d4fde0e9141744e62bab35a3e1a734
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: 137f7cf050c9d31adc9e56a70fbb98e29342e142
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192502"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699968"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-kubernetes-service-using-jenkins"></a>Tutorial: Bereitstellen über GitHub in Azure Kubernetes Service mit Jenkins
 
@@ -153,8 +153,8 @@ Enter the following to Unlock Jenkins:
 
 Öffnen Sie einen Webbrowser mit der angezeigten URL, und geben Sie den Entsperrschlüssel ein. Befolgen Sie die angezeigten Aufforderungen, um die Jenkins-Konfiguration abzuschließen:
 
-- Wählen Sie **Install suggested plugins** (Vorgeschlagene Plug-Ins installieren) aus.
-- Erstellen Sie den ersten Administratorbenutzer. Geben Sie einen Benutzernamen (z.B. *azureuser* ) und anschließend ein eigenes sicheres Kennwort ein. Geben Sie abschließend einen vollständigen Namen und eine E-Mail-Adresse an.
+- Wählen Sie **Install suggested plug-ins** (Vorgeschlagene Plug-Ins installieren) aus.
+- Erstellen Sie den ersten Administratorbenutzer. Geben Sie einen Benutzernamen (z.B. *azureuser*) und anschließend ein eigenes sicheres Kennwort ein. Geben Sie abschließend einen vollständigen Namen und eine E-Mail-Adresse an.
 - Klicken Sie auf **Speichern und Beenden**.
 - Klicken Sie auf **Start using Jenkins** (Jenkins verwenden), sobald Jenkins bereit ist.
     - Sollte in Ihrem Browser beim Start von Jenkins eine leere Seite angezeigt werden, starten Sie den Jenkins-Dienst neu. Um den Dienst neu zu starten, öffnen Sie mit SSH eine Verbindung mit der öffentlichen IP-Adresse Ihrer Jenkins-Instanz, und geben Sie `sudo service jenkins restart` ein. Aktualisieren Sie nach dem Neustart des Diensts Ihren Webbrowser.
@@ -221,7 +221,7 @@ Nach Abschluss des Vorgangs ähnelt das Formular für die Anmeldeinformationen e
 
 ![Erstellen eines Jenkins-Anmeldeinformationsobjekts mit den Dienstprinzipalinformationen](media/deploy-from-github-to-aks/acr-credentials.png)
 
-Klicken Sie auf **OK** , und kehren Sie zum Jenkins-Portal zurück.
+Klicken Sie auf **OK**, und kehren Sie zum Jenkins-Portal zurück.
 
 ## <a name="create-a-jenkins-project"></a>Erstellen eines Jenkins-Projekts
 
@@ -229,7 +229,7 @@ Wählen Sie auf der Startseite des im Jenkins-Portal links **New item** (Neues E
 
 1. Geben Sie als Auftragsnamen *azure-vote* ein. Wählen Sie **Freestyle Project** und anschließend **OK** aus.
 1. Wählen Sie im Abschnitt **Allgemein** die Option **GitHub-Projekt** aus, und geben Sie die URL Ihres geforkten Repositorys ein, z. B. *https:\//github.com/\<your-github-account\>/azure-voting-app-redis*.
-1. Wählen Sie im Abschnitt **Quellcodeverwaltung** die Option **Git** aus, und geben Sie die *.git* -URL Ihres geforkten Repositorys ein, z. B. *https:\//github.com/\<your-github-account\>/azure-voting-app-redis.git*.
+1. Wählen Sie im Abschnitt **Quellcodeverwaltung** die Option **Git** aus, und geben Sie die *.git*-URL Ihres geforkten Repositorys ein, z. B. *https:\//github.com/\<your-github-account\>/azure-voting-app-redis.git*.
 
 1. Wählen Sie im Bereich **Build Triggers** (Buildtrigger) die Option **GitHub hook trigger for GITscm polling** (GitHub-Hooktrigger für GITscm-Abruf) aus.
 1. Wählen Sie unter **Build Environment** (Buildumgebung) die Option **Use secret texts or files** (Geheime Texte oder Dateien verwenden) aus.
@@ -278,7 +278,7 @@ Nachdem die manuelle Erstellung abgeschlossen ist, integrieren Sie nun GitHub in
 
 1. Navigieren Sie in einem Webbrowser zu Ihrem geforkten GitHub-Repository.
 1. Wählen Sie **Einstellungen** und anschließend **Webhooks** auf der linken Seite aus.
-1. Wählen Sie **Webhook hinzufügen** aus. Geben Sie als *Payload URL* (Nutzlast-URL) `http://<publicIp:8080>/github-webhook/` ein, wobei `<publicIp>` die IP-Adresse des Jenkins-Servers ist. Stellen Sie sicher, dass Sie den nachgestellten Schrägstrich (/) hinzufügen. Übernehmen Sie die anderen Standardwerte für den Inhaltstyp, damit *push* -Ereignisse ausgelöst werden.
+1. Wählen Sie **Webhook hinzufügen** aus. Geben Sie als *Payload URL* (Nutzlast-URL) `http://<publicIp:8080>/github-webhook/` ein, wobei `<publicIp>` die IP-Adresse des Jenkins-Servers ist. Stellen Sie sicher, dass Sie den nachgestellten Schrägstrich (/) hinzufügen. Übernehmen Sie die anderen Standardwerte für den Inhaltstyp, damit *push*-Ereignisse ausgelöst werden.
 1. Wählen Sie **Webhook hinzufügen** aus.
 
     ![Erstellen eines GitHub-Webhooks für Jenkins](media/deploy-from-github-to-aks/webhook.png)

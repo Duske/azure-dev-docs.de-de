@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, CI/CD, Linux, Service Fabric, Cluster
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: a995ba92202955628f39b2c26fe7a158c470d971
-ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+ms.openlocfilehash: 91e4602184ab1351c935a083841e045f9b764308
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98626006"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699928"
 ---
 # <a name="tutorial-deploy-to-a-service-fabric-cluster"></a>Tutorial: Durchführen der Bereitstellung in einem Service Fabric-Cluster
 
@@ -20,7 +20,7 @@ In diesem Tutorial werden verschiedene Vorgehensweisen erläutert, um Ihre Jenki
 1. Befolgen Sie dann zum Einrichten von Jenkins die Schritte in einem dieser Abschnitte:
    * [Einrichten von Jenkins in einem Service Fabric-Cluster](#set-up-jenkins-inside-a-service-fabric-cluster) 
    * [Einrichten von Jenkins außerhalb eines Service Fabric-Clusters](#set-up-jenkins-outside-a-service-fabric-cluster)
-   * [Installieren des Service Fabric-Plug-Ins in einer vorhandenen Jenkins-Umgebung](#install-service-fabric-plugin-in-an-existing-jenkins-environment)
+   * [Installieren des Service Fabric-Plug-Ins in einer vorhandenen Jenkins-Umgebung](#install-service-fabric-plug-in-in-an-existing-jenkins-environment)
 1. Führen Sie nach der Einrichtung von Jenkins die Schritte unter [Erstellen und Konfigurieren eines Jenkins-Auftrags](#create-and-configure-a-jenkins-job) durch, um die Auslösung von Jenkins in GitHub einzurichten, wenn Änderungen an Ihrer Anwendung vorgenommen werden. Konfigurieren Sie mit diesen Schritten außerdem Ihre Jenkins-Auftragspipeline über den Buildschritt, um die Änderungen von GitHub abzurufen und Ihre Anwendung zu erstellen. 
 1. Konfigurieren Sie abschließend für den Jenkins-Auftrag den Schritt für die Aktionen nach dem Erstellen, um die Anwendung für Ihren Service Fabric-Cluster bereitzustellen. Es gibt zwei Möglichkeiten, um Jenkins für die Bereitstellung Ihrer Anwendung für einen Cluster zu konfigurieren:    
    * Befolgen Sie für Entwicklungs- und Testumgebungen die Anweisungen unter [Konfigurieren der Bereitstellung mithilfe eines Clusterverwaltungsendpunkts](#configure-deployment-using-cluster-management-endpoint). Diese Bereitstellungsmethode lässt sich am einfachsten einrichten.
@@ -32,9 +32,9 @@ In diesem Tutorial werden verschiedene Vorgehensweisen erläutert, um Ihre Jenki
 - In diesem Artikel wird das Beispiel unter *Getting started with Service Fabric with Java* (Erste Schritte mit Service Fabric mit Java) auf GitHub verwendet: [https://github.com/Azure-Samples/service-fabric-java-getting-started](https://github.com/Azure-Samples/service-fabric-java-getting-started) für die zu erstellende und bereitzustellende Anwendung. Sie können dieses Repository forken oder mit einigen Änderungen an den Anweisungen Ihr eigenes GitHub-Projekt verwenden.
 
 
-## <a name="install-service-fabric-plugin-in-an-existing-jenkins-environment"></a>Installieren des Service Fabric-Plug-Ins in einer vorhandenen Jenkins-Umgebung
+## <a name="install-service-fabric-plug-in-in-an-existing-jenkins-environment"></a>Installieren des Service Fabric-Plug-Ins in einer vorhandenen Jenkins-Umgebung
 
-Wenn Sie das Service Fabric-Plug-In zu einer vorhandenen Jenkins-Umgebung hinzufügen, müssen Sie die folgenden Schritte ausführen:
+Um das Service Fabric-Plug-In einer vorhandenen Jenkins-Umgebung hinzuzufügen, müssen Sie die folgenden Schritte ausführen:
 
 - [Service Fabric-CLI (sfctl)](/azure/service-fabric/service-fabric-cli) Installieren Sie die CLI auf Systemebene statt auf Benutzerebene, um Jenkins die Ausführung von CLI-Befehlen zu ermöglichen. 
 - Installieren Sie zum Bereitstellen von Java-Anwendungen sowohl [Gradle als auch Open JDK 8.0](/azure/service-fabric/service-fabric-get-started-linux#set-up-java-development). 
@@ -42,7 +42,7 @@ Wenn Sie das Service Fabric-Plug-In zu einer vorhandenen Jenkins-Umgebung hinzuf
 
 Nachdem Sie die für Ihre Umgebung erforderlichen Komponenten installiert haben, können Sie das Azure Service Fabric-Plug-In im Jenkins Marketplace suchen und installieren.
 
-Fahren Sie mit [Erstellen und Konfigurieren eines Jenkins-Auftrags](#create-and-configure-a-jenkins-job) fort, wenn Sie das Plug-In installiert haben.
+Fahren Sie mit [Erstellen und Konfigurieren eines Jenkins-Auftrags](#create-and-configure-a-jenkins-job) fort, nachdem Sie das Plug-In installiert haben.
 
 ## <a name="set-up-jenkins-inside-a-service-fabric-cluster"></a>Einrichten von Jenkins in einem Service Fabric-Cluster
 
@@ -139,7 +139,7 @@ Sie können Jenkins innerhalb oder außerhalb eines Service Fabric-Clusters einr
    ```sh
    cat PATH_TO_INITIAL_ADMIN_PASSWORD # This displays the password value
    ```
-1. Wählen Sie auf der Jenkins-Seite mit den ersten Schritten die Option „Select plugins to install“ (Zu installierende Plug-Ins auswählen), aktivieren Sie das Kontrollkästchen **None** (Keine), und klicken Sie auf „Install“ (Installieren).
+1. Wählen Sie auf der Jenkins-Seite mit den ersten Schritten die Option „Select plug-in to install“ (Zu installierendes Plug-In auswählen) aus, aktivieren Sie das Kontrollkästchen **None** (Keine), und klicken Sie auf „Install“ (Installieren).
 1. Erstellen Sie einen Benutzer, oder wählen Sie die entsprechende Option, um den Vorgang als Administrator fortzusetzen.
 
 Nachdem Sie Jenkins eingerichtet haben, fahren Sie mit [Erstellen und Konfigurieren eines Jenkins-Auftrags](#create-and-configure-a-jenkins-job) fort.  
@@ -157,7 +157,7 @@ Sie können Jenkins innerhalb oder außerhalb eines Service Fabric-Clusters einr
     wget -qO- https://get.docker.io/ | sh
     ```
 
-1. Rufen Sie das Service Fabric-Jenkins-Containerimage per Pullvorgang ab: `docker pull rapatchi/jenkins:latest`. Dieses Image ist beim Service Fabric-Jenkins-Plug-In vorinstalliert.
+1. Rufen Sie das Service Fabric-Jenkins-Containerimage per Pullvorgang ab: `docker pull rapatchi/jenkins:latest`. Für dieses Image ist das Service Fabric-Jenkins-Plug-In vorinstalliert.
 1. Führen Sie das Containerimage aus: `docker run -itd -p 8080:8080 rapatchi/jenkins:latest`
 1. Rufen Sie die ID der Containerimageinstanz ab. Mit dem Befehl `docker ps –a` können Sie eine Liste mit allen Docker-Containern anzeigen.
 1. Melden Sie sich mit den folgenden Schritten beim Jenkins-Portal an:
@@ -202,7 +202,7 @@ In den Schritten in diesem Abschnitt wird gezeigt, wie ein Jenkins-Auftrag konfi
 
    1. Navigieren Sie auf der Seite „GitHub repository“ (GitHub-Repository) zu **Settings** > **Integrations and Services** (Einstellungen > Integrationen und Dienste).
 
-   1. Wählen Sie **Add Service** (Dienst hinzufügen), geben Sie **Jenkins** ein, und wählen Sie das **Jenkins-GitHub-Plug-In** aus.
+   1. Wählen Sie **Add Service** (Dienst hinzufügen) aus, geben Sie **Jenkins** ein, und wählen Sie das **Jenkins-GitHub-Plug-In** aus.
 
    1. Geben Sie Ihre Jenkins-Webhook-URL ein. (Diese lautet standardmäßig `http://<PublicIPorFQDN>:8081/github-webhook/`.) Klicken Sie auf die Option zum **Hinzufügen/Aktualisieren des Diensts**.
 
@@ -308,9 +308,9 @@ Für Entwicklungs- und Testumgebungen können Sie Azure-Anmeldeinformationen kon
     ![Service Fabric-Jenkins-Aktion nach der Erstellung – Konfigurieren von Azure-Anmeldeinformationen](./media/deploy-to-service-fabric-cluster/post-build-credentials.png)
 1. Klicken Sie auf **Verify Configuration**. Klicken Sie nach erfolgreicher Überprüfung auf **Save** (Speichern). Ihre Jenkins-Auftragspipeline ist nun vollständig konfiguriert. Fahren Sie mit dem Abschnitt [Nächste Schritte](#next-steps) fort, um Ihre Bereitstellung zu testen.
 
-## <a name="troubleshooting-the-jenkins-plugin"></a>Problembehandlung beim Jenkins-Plug-In
+## <a name="troubleshooting-the-jenkins-plug-in"></a>Behandeln von Problemen mit dem Jenkins-Plug-In
 
-Wenn bei den Jenkins-Plug-Ins Fehler auftreten, melden Sie das Problem auf der [Jenkins-JIRA-Seite](https://issues.jenkins-ci.org/) für die jeweilige Komponente.
+Sollten Fehler für das Jenkins-Plug-In auftreten, können Sie diese auf der [Jenkins-JIRA-Seite](https://issues.jenkins-ci.org/) für die jeweilige Komponente melden.
 
 ## <a name="ideas-to-try"></a>Weitere Ideen
 

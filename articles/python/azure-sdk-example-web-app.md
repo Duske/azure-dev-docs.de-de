@@ -4,12 +4,12 @@ description: Verwenden Sie die Verwaltungsbibliotheken in den Azure SDK-Bibliot
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: ac678bef07fb660ca3ad094d56455e3b85db9f19
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: f2ef6a9cd7f424b0c3a84d45a2f3ae860aa9fc04
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688979"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759345"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-and-deploy-a-web-app"></a>Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Web-App
 
@@ -254,3 +254,5 @@ az webapp create -n PythonAzureExample-WebApp-12345 --plan PythonAzureExample-We
 - [Beispiel: Verwenden der Azure-Bibliotheken mit Azure Storage](azure-sdk-example-storage-use.md)
 - [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Datenbank](azure-sdk-example-database.md)
 - [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen eines virtuellen Computers](azure-sdk-example-virtual-machines.md)
+- [Verwenden verwalteter Azure-Datenträger mit den Azure-Bibliotheken (SDK) für Python](azure-sdk-samples-managed-disks.md)
+- [Kurze Umfrage zum Azure SDK für Python](https://microsoft.qualtrics.com/jfe/form/SV_bNFX0HECjzPWMiG?Q_CHL=docs)

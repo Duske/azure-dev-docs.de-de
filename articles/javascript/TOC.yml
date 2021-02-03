@@ -3,6 +3,8 @@
   items:
     - name: Neues in der Dokumentation
       href: whats-new-docs.md
+    - name: Neues in Developer Advocate
+      href: whats-new-developer-advocacy.md
     - name: Erste Schritte in Azure mit JavaScript
       items:
         - name: Was ist Azure für JavaScript-Entwickler?
@@ -143,10 +145,22 @@
           href: how-to/configure-web-app-settings.md
         - name: Aufgaben für JavaScript-Entwickler
           href: how-to/common-javascript-tasks.md
-        - name: Klonen eines GitHub-Repositorys für Änderungen
-          href: how-to/with-visual-studio-code/clone-github-repository.md
-        - name: End-to-End-Verwendung von Node.js mit VS Code
-          href: how-to/develop-nodejs-on-azure.md
+        - name: Mit Visual Studio Code
+          items:
+            - name: Installieren und Debuggen eines lokalen Projekts
+              href: how-to/with-visual-studio-code/install-run-debug-nodejs.md
+            - name: Klonen eines GitHub-Repositorys für Änderungen
+              href: how-to/with-visual-studio-code/clone-github-repository.md
+            - name: Erstellen eines Containers auf der Grundlage eines lokalen Projekts
+              href: how-to/with-visual-studio-code/containerize-local-project.md
+        - name: Mit der Azure-Befehlszeilenschnittstelle
+          items:
+            - name: Erstellen und Verwenden einer Containerregistrierung
+              href: how-to/with-azure-cli/create-container-registry-resource.md
+            - name: Konfigurieren des Web-App-Domainnamens
+              href: how-to/with-azure-cli/configure-app-service-custom-domain-name.md
+            - name: "Verwenden einer MongoDB-Cosmos\_DB-Ressource"
+              href: how-to/with-azure-cli/create-mongodb-cosmosdb.md
         - name: Bereitstellen einer Web-App
           href: how-to/deploy-web-app.md
         - name: Bereitstellen von Containern

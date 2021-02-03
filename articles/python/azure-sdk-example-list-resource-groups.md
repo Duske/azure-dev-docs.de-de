@@ -4,12 +4,12 @@ description: Verwenden Sie die Ressourcenverwaltungsbibliothek im Azure SDK für
 ms.date: 10/12/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 06395891ea1b8294f9eaafe7dad40bf7a335e965
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.openlocfilehash: 2867ea550ce233594d30b3de2be744d20a1e96de
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010668"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759596"
 ---
 # <a name="example-use-the-azure-libraries-to-list-resource-groups-and-resources"></a>Beispiel: Verwenden der Azure-Bibliotheken zum Auflisten von Ressourcengruppen und Ressourcen
 
@@ -160,3 +160,5 @@ az resource list --resource group myResourceGroup --location centralus
 - [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Web-App](azure-sdk-example-web-app.md)
 - [Beispiel: Bereitstellen und Abfragen einer Datenbank](azure-sdk-example-database.md)
 - [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen eines virtuellen Computers](azure-sdk-example-virtual-machines.md)
+- [Verwenden verwalteter Azure-Datenträger mit den Azure-Bibliotheken (SDK) für Python](azure-sdk-samples-managed-disks.md)
+- [Kurze Umfrage zum Azure SDK für Python](https://microsoft.qualtrics.com/jfe/form/SV_bNFX0HECjzPWMiG?Q_CHL=docs)

@@ -4,12 +4,12 @@ description: Eine Übersicht über die Entwicklung von Cloudanwendungen in Micro
 ms.date: 10/06/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: f2bf8c0c8b35881c31fcf88c0faf38669cb261b3
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: d4bac0b041e1f2fddfcca113d39fea04e6610195
+ms.sourcegitcommit: 8eb1c379b2bbc2acdd82fc9d24d8ed948e5a6847
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764532"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811117"
 ---
 # <a name="cloud-development-on-azure"></a>Cloudentwicklung in Azure
 
@@ -19,7 +19,9 @@ Sie sind Python-Entwickler und bereit für die Entwicklung von Cloudanwendungen 
 
 Der CEO von Microsoft, Satya Nadella, bezeichnet Azure häufig als „den Computer der Welt“. Ein Computer ist, wie Sie wissen, eine Sammlung von Hardware, die von einem Betriebssystem verwaltet wird und eine Plattform bietet, auf der Sie Software entwickeln können, mit der Sie die Rechenleistung des Systems für eine beliebige Anzahl von Aufgaben einsetzen können. (Aus diesem Grund verwenden wir das Wort „Anwendung“, um diese Software zu beschreiben.)
 
-Im Fall von Azure ist die Hardware des Computers nicht ein einzelner Rechner, sondern ein riesiger Pool von virtualisierten Servercomputern, die in [Dutzenden von riesigen Rechenzentren auf der ganzen Welt](https://azure.microsoft.com/global-infrastructure/regions/) untergebracht sind. Das „Betriebssystem“ von Azure besteht aus *Diensten*, die verschiedene Teile dieses Ressourcenpools dynamisch zuordnen und freigeben, wenn sie von Anwendungen benötigt werden. Jede Zuordnung &mdash; sei es Rechenleistung (CPU-Kerne und Arbeitsspeicher), Speicher, Datenbanken, Netzwerke usw. &mdash; wird als „*Ressource*“ bezeichnet. Und jeder diskreten Ressource wird dementsprechend ein eindeutiger *Objektbezeichner* (eine GUID) und eine eindeutige URL zugewiesen.
+Im Fall von Azure ist die Hardware des Computers nicht ein einzelner Rechner, sondern ein riesiger Pool von virtualisierten Servercomputern, die in [Dutzenden von riesigen Rechenzentren auf der ganzen Welt](https://azure.microsoft.com/global-infrastructure/regions/) untergebracht sind. Das „Betriebssystem“ von Azure besteht aus *Diensten*, die verschiedene Teile dieses Ressourcenpools dynamisch zuordnen und freigeben, wenn sie von Anwendungen benötigt werden. Mit diesen dynamischen Zuordnungen können Anwendungen schnell auf sich ändernde Bedingungen, z. B. die Kundennachfrage, reagieren.
+
+Jede Zuordnung &mdash; sei es Rechenleistung (CPU-Kerne und Arbeitsspeicher), Speicher, Datenbanken, Netzwerke usw. &mdash; wird als „*Ressource*“ bezeichnet. Und jeder diskreten Ressource wird dementsprechend ein eindeutiger *Objektbezeichner* (eine GUID) und eine eindeutige URL zugewiesen.
 
 ![Ebenen von Azure, vom Rechenzentrum bis zu Azure-Diensten zum Zuordnen von Ressourcen](media/cloud-development/azure-layers.png)
 
@@ -32,12 +34,19 @@ Ihnen stehen Hunderte verschiedener Arten von Ressourcen zur Verfügung, von gru
 Es kann schwierig sein, die richtigen Dienste für Ihre Anwendung zu finden und die relativen Kosten auszugleichen. Dies ist aber auch ein Teil des kreativen Aspekts bei der Cloudentwicklung. Informationen zu den zahlreichen Optionen finden Sie im [Azure-Entwicklerhandbuch](/azure/guides/developer/azure-developer-guide). Als Nächstes soll erläutert werden, wie Sie tatsächlich mit all diesen Diensten und Ressourcen arbeiten.
 
 > [!NOTE]
-> Wahrscheinlich haben Sie die Begriffe „IaaS“ (Infrastructure-as-a-Service), „PaaS“ (Platform-as-a-Service) usw. schon einmal gehört und sind ihrer bereits überdrüssig. Der „as-a-Service“-Teil dieser Begriffe spiegelt die Tatsache wider, dass Sie im Allgemeinen keinen physischen Zugriff auf die Rechenzentren selbst besitzen. Stattdessen verwenden Sie Tools wie das Azure-Portal, die Azure CLI oder die REST-API von Azure, um „Infrastrukturressourcen“, „Plattformressourcen“ usw. bereitzustellen. Als „Dienst“ steht Azure immer zur Verfügung und wartet darauf, Ihre Anforderungen zu empfangen.
+> Wahrscheinlich haben Sie die Begriffe *IaaS* (Infrastructure-as-a-Service), *PaaS* (Platform-as-a-Service) usw. schon einmal gehört und sind ihrer bereits überdrüssig. Der Teil *as-a-Service* dieser Begriffe spiegelt die Tatsache wider, dass Sie im Allgemeinen keinen physischen Zugriff auf die Rechenzentren selbst besitzen. Stattdessen verwenden Sie Tools wie das Azure-Portal, die Azure CLI oder die REST-API von Azure, um *Infrastrukturressourcen*, *Plattformressourcen* usw. bereitzustellen. Als *Service* (Dienst) steht Azure immer zur Verfügung und wartet darauf, Ihre Anforderungen zu empfangen.
 >
 > In diesem Developer Center ersparen wir Ihnen den IaaS-, PaaS- und anderen Jargon, weil „as-a-Service“ der Cloud inhärent ist!
 
 > [!NOTE]
-> Eine „Hybridcloud“ bezieht sich auf die Kombination von privaten Computern und Rechenzentren mit Cloudressourcen wie Azure und bedarf eigener Überlegungen, die über das hinausgehen, was in den vorherigen Abschnitten behandelt wurde. Darüber wird bei diesem Aspekt von der Entwicklung neuer Anwendungen ausgegangen. Szenarien, die eine Umgestaltung der Architektur und Migration vorhandener lokaler Anwendungen beinhalten, werden hier nicht behandelt.
+> Eine *Hybrid Cloud* bezieht sich auf die Kombination von privaten Computern und Rechenzentren mit Cloudressourcen wie Azure. Hierfür gelten eigene Aspekte, die über das hinausgehen, was in den vorherigen Abschnitten behandelt wurde. Darüber wird bei diesem Aspekt von der Entwicklung neuer Anwendungen ausgegangen. Szenarien, die eine Umgestaltung der Architektur und Migration vorhandener lokaler Anwendungen beinhalten, werden hier nicht behandelt.
+
+> [!NOTE]
+> Es kann sein, dass Ihnen die Ausdrücke *cloudnativ* und *cloudfähig* für die Bezeichnung von Anwendungen begegnen. Diese Ausdrücke werden häufig synonym verwendet. Es gibt aber Unterschiede. Für eine cloudfähige Anwendung gilt häufig, dass sie im Ganzen aus einem lokalen Rechenzentrum zu cloudbasierten Servern migriert wird. Anwendungen dieser Art behalten oft ihre Struktur bei und werden lediglich auf virtuellen Computern in der Cloud (und somit übergreifend in mehreren geografischen Regionen) bereitgestellt. Bei dieser Migration kann die Anwendung skaliert werden, um den globalen Bedarf zu decken, ohne dass Sie in Ihrem eigenen Rechenzentrum neue Hardware bereitstellen müssen. Die Skalierung muss aber auf der Ebene des virtuellen Computers (bzw. der Infrastruktur) durchgeführt werden. Dies gilt auch, wenn die Leistung nur für einen Teil der Anwendung erhöht werden muss.
+>
+> Eine *cloudnative* Anwendung wird dagegen von Grund auf für die Nutzung der vielen unterschiedlichen Dienste geschrieben, die in der Cloud verfügbar sind und unabhängig skaliert werden können (z. B. Azure). Cloudnative Anwendungen weisen eine weniger starre Struktur auf (z. B. bei Verwendung von Microservicearchitekturen). Dies ermöglicht es Ihnen, die Bereitstellung und Skalierung für die einzelnen Teile präziser zu konfigurieren. Mit einer Struktur dieser Art wird die Wartung vereinfacht und häufig eine erhebliche Reduzierung der Kosten erzielt, da Sie nur für Premium-Dienste zahlen müssen, wenn Sie diese benötigen.
+>
+> Weitere Informationen finden Sie unter [Erstellen cloudnativer Anwendungen in Azure](https://azure.microsoft.com/overview/cloudnative/) und [Entwickeln cloudnativer .NET-Anwendungen für Azure](/dotnet/architecture/cloud-native/). Die in diesen Artikeln beschriebenen grundlegenden Vorgehensweisen gelten für Anwendungen, die in unterschiedlichen Sprachen geschrieben wurden.
 
 ## <a name="next-step"></a>Nächster Schritt
 

@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, App Service, CLI
 ms.topic: tutorial
 ms.date: 01/06/2021
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 1f73da29b6b1bff2abf92383d672afd5af92abe4
-ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+ms.openlocfilehash: cc73127ad780b42a6dd82058052a9749f86f3f3c
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98625998"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699958"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-with-jenkins-and-the-azure-cli"></a>Tutorial: Bereitstellen an Azure App Service mit Jenkins und der Azure CLI
 
@@ -60,7 +60,7 @@ In den folgenden Schritten wird gezeigt, wie Sie Ihre Azure-Anmeldeinformationen
 
 1. Vergewissern Sie sich, dass das [Plug-In für Anmeldeinformationen](https://plugins.jenkins.io/credentials/) installiert ist.
 
-1. Navigieren Sie auf dem Jenkins-Dashboard zu **Credentials > System** (Anmeldeinformationen > System). 
+1. Navigieren Sie auf dem Jenkins-Dashboard zu **Credentials > System** (Anmeldeinformationen > System).
 
 1. Wählen Sie **Global credentials (unrestricted)** (Globale Anmeldeinformationen (uneingeschränkt)) aus.
 

@@ -5,16 +5,16 @@ keywords: Jenkins, Azure, DevOps, Übersicht
 ms.topic: overview
 ms.date: 11/10/2020
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: d7de868651c50b7c3e39f1a0286ddd3ebf740b21
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: 38703bbd857c1990571f6255ab3a4d9089ad7a46
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983559"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699828"
 ---
 # <a name="azure-and-jenkins"></a>Azure und Jenkins
 
-[Jenkins](https://jenkins.io/) ist ein beliebter Open-Source-Automatisierungsserver zum Einrichten von Continuous Integration und Continuous Deployment (CI/CD) für Ihre Softwareprojekte. Sie können Ihre Jenkins-Bereitstellung in Azure hosten oder Ihre bestehende Jenkins-Konfiguration mithilfe von Azure-Ressourcen erweitern. Außerdem sind Jenkins-Plug-Ins verfügbar, die die CI/CD Ihrer Anwendungen in Azure vereinfachen.
+[Jenkins](https://jenkins.io/) ist ein beliebter Open-Source-Automatisierungsserver zum Einrichten von Continuous Integration und Continuous Deployment (CI/CD) für Ihre Softwareprojekte. Sie können Ihre Jenkins-Bereitstellung in Azure hosten oder Ihre bestehende Jenkins-Konfiguration mithilfe von Azure-Ressourcen erweitern. Außerdem sind Jenkins-Plug-Ins verfügbar, mit denen die CI/CD-Vorgänge Ihrer Anwendungen für Azure vereinfacht werden.
 
 Dieser Artikel bietet eine Einführung in die Verwendung von Azure mit Jenkins. Sie erhalten darin Informationen zu den wichtigsten Features von Azure für Jenkins-Benutzer. Weitere Informationen zu den ersten Schritten mit Ihrem eigenen Jenkins-Server in Azure finden Sie unter [Erstellen eines Jenkins-Servers auf einem virtuellen Azure-Linux-Computer über das Azure-Portal](configure-on-linux-vm.md).
 

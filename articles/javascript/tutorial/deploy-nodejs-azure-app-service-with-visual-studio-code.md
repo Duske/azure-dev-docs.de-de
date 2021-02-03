@@ -2,14 +2,14 @@
 title: Bereitstellen von Node.js-Apps in Azure App Service in Visual Studio Code
 description: Stellen Sie mithilfe der App Service-Erweiterung für Visual Studio Code eine Express.js-/Node.js-Anwendung in Azure App Service bereit.
 ms.topic: tutorial
-ms.date: 01/11/2021
+ms.date: 01/20/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 2c019cc9ae13b81ecde934faee6d7d7a9fadf07a
-ms.sourcegitcommit: 657f43a5048cd17b080b40b5090d575c8d7f5eaf
+ms.openlocfilehash: 8f6ab806262bee9684cc2c37d05aa1f21695c806
+ms.sourcegitcommit: 681ea211dc8e1809dd299b5cd64eebd974c073d7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98173250"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98658776"
 ---
 # <a name="deploy-nodejs-to-azure-app-service-using-visual-studio-code"></a>Bereitstellen von Node.js in Azure App Service mithilfe von Visual Studio Code
 
@@ -141,7 +141,12 @@ Zeigen Sie mithilfe von Aufrufen von `console.log` eine beliebige Ausgabe an, di
 
 ## <a name="8-make-changes-and-redeploy"></a>8. Vornehmen von Änderungen und erneutes Bereitstellen
 
-Nehmen Sie ein paar Änderungen vor, und stellen Sie die App mithilfe der App Service-Erweiterung [erneut bereit](../how-to/deploy-web-app.md#deploy-or-redeploy-to-app-service-with-visual-studio-code). 
+1. Nehmen Sie eine geringfügige Änderung an der App vor. Ändern Sie `Welcome to Express` in `Welcome to Express with Visual Studio Code`. 
+
+1. Klicken Sie in der App Service-Erweiterung in der Liste mit den App-Diensten mit der rechten Maustaste auf Ihren App-Dienst, und wählen Sie die Option **In Web-App bereitstellen...** aus. 
+
+    :::image type="content" source="../media/deploy-azure/deploy-or-redeploy-app-service.png" alt-text="Bereitstellen oder erneutes Bereitstellen in App Service mit Visual Studio Code":::
+
 
 ## <a name="9-clean-up-resources"></a>9. Bereinigen von Ressourcen
 

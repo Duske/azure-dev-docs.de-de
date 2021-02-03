@@ -4,12 +4,12 @@ description: Verwenden Sie die Azure SDK für Python-Bibliotheken, um einen Blob
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: f3b27dd0a09bbf17c5797e3a5c0be9bc7d48b416
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 56d40c013456cb56e38970afb9d72933b5fa1f26
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689028"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759392"
 ---
 # <a name="example-provision-azure-storage-using-the-azure-libraries-for-python"></a>Beispiel: Bereitstellen von Azure Storage mit den Azure-Bibliotheken für Python
 
@@ -27,7 +27,7 @@ Stellen Sie sicher, dass Sie einen Dienstprinzipal für die lokale Entwicklung e
 
 ## <a name="2-install-the-needed-azure-library-packages"></a>2: Installieren der erforderlichen Azure-Bibliothekspakete
 
-1. Erstellen Sie eine Datei *requirements.txt* , in der die in diesem Beispiel verwendeten Verwaltungsbibliotheken aufgeführt sind:
+1. Erstellen Sie eine Datei *requirements.txt*, in der die in diesem Beispiel verwendeten Verwaltungsbibliotheken aufgeführt sind:
 
     ```txt
     azure-mgmt-resource
@@ -243,3 +243,5 @@ az group delete -n PythonAzureExample-Storage-rg  --no-wait
 - [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Web-App](azure-sdk-example-web-app.md)
 - [Beispiel: Bereitstellen und Abfragen einer Datenbank](azure-sdk-example-database.md)
 - [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen eines virtuellen Computers](azure-sdk-example-virtual-machines.md)
+- [Verwenden verwalteter Azure-Datenträger mit den Azure-Bibliotheken (SDK) für Python](azure-sdk-samples-managed-disks.md)
+- [Kurze Umfrage zum Azure SDK für Python](https://microsoft.qualtrics.com/jfe/form/SV_bNFX0HECjzPWMiG?Q_CHL=docs)

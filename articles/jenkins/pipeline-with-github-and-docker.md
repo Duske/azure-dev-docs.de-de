@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, Pipeline, CI/CD, Docker
 ms.topic: tutorial
 ms.date: 03/27/2017
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: debcd94b885813a8f1a1640d4eb46e75b36c4d6c
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: 10bc92098b565ce2e4c9395c661716279e397659
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "96035458"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699718"
 ---
 # <a name="tutorial-create-a-jenkins-pipeline-using-github-and-docker"></a>Tutorial: Erstellen einer Jenkins-Pipeline mit GitHub und Docker
 
@@ -125,7 +125,7 @@ Sollte die Datei noch nicht verfügbar sein, warten Sie noch einige Minuten, bis
 
 Öffnen Sie anschließend einen Webbrowser, und gehen Sie zu `http://<publicIps>:8080`. Schließen Sie das anfängliche Jenkins-Setup wie folgt ab:
 
-- Wählen Sie **Select plugins to install** (Zu installierende Plug-Ins auswählen).
+- Wählen Sie **Select plug-ins to install** (Zu installierende Plug-Ins auswählen) aus.
 - Suchen Sie im Textfeld im oberen Bereich nach *GitHub*. Aktivieren Sie das Kontrollkästchen für *GitHub*, und klicken Sie anschließend auf **Installieren**.
 - Erstellen Sie den ersten Administratorbenutzer. Geben Sie einen Benutzernamen (beispielsweise **admin**) und anschließend ein sicheres Kennwort ein. Geben Sie abschließend einen vollständigen Namen und eine E-Mail-Adresse an.
 - Klicken Sie auf **Speichern und Beenden**.

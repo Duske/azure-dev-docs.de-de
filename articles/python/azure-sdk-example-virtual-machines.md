@@ -4,12 +4,12 @@ description: So stellen Sie einen virtuellen Azure-Computer mittels Python und d
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: d22f403195fd3cba143d9539220ec3376a7f2509
-ms.sourcegitcommit: b70a38d46616f5e519d5b9c1a1eaf3fe0ecb9605
+ms.openlocfilehash: 276c345c6fe07a117adb6622ae8bb36bc5ce9a83
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94932434"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759578"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-virtual-machine"></a>Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen eines virtuellen Computers
 
@@ -316,7 +316,8 @@ Führen Sie diesen Befehl aus, wenn Sie die in diesem Beispiel erstellten Ressou
 - [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Web-App](azure-sdk-example-web-app.md)
 - [Beispiel: Bereitstellen und Abfragen einer Datenbank](azure-sdk-example-database.md)
 - [Verwenden verwalteter Azure-Datenträger mit den Azure-Bibliotheken (SDK) für Python](azure-sdk-samples-managed-disks.md)
-
+- [Kurze Umfrage zum Azure SDK für Python](https://microsoft.qualtrics.com/jfe/form/SV_bNFX0HECjzPWMiG?Q_CHL=docs)
+- 
 Die folgenden Ressourcen enthalten weitere umfassende Beispiele für die Verwendung von Python zum Erstellen eines virtuellen Computers:
 
 - [Erstellen und Verwalten von Windows-VMs in Azure mithilfe von Python](/azure/virtual-machines/windows/python). Sie können dieses Beispiel verwenden, um virtuelle Linux-Computer zu erstellen, indem Sie den `storage_profile`-Parameter ändern.

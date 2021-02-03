@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie das Azure SDK verwenden, um verwaltete 
 ms.topic: conceptual
 ms.date: 11/18/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: fe2378bcb836dbfc52ad1d5d3e88f048d6ef117e
-ms.sourcegitcommit: b70a38d46616f5e519d5b9c1a1eaf3fe0ecb9605
+ms.openlocfilehash: b8d45f3d4b5ccd2c8a1c2850d496b9f68625ef46
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94932414"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759325"
 ---
 # <a name="use-azure-managed-disks-with-the-azure-libraries-sdk-for-python"></a>Verwenden verwalteter Azure-Datenträger mit den Azure-Bibliotheken (SDK) für Python
 
@@ -309,3 +309,9 @@ snapshot = async_snapshot_creation.result()
 ## <a name="see-also"></a>Weitere Informationen
 
 - [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen eines virtuellen Computers](azure-sdk-example-virtual-machines.md)
+- [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Ressourcengruppe](azure-sdk-example-resource-group.md)
+- [Beispiel: Auflisten von Ressourcengruppen in einem Abonnement](azure-sdk-example-list-resource-groups.md)
+- [Beispiel: Verwenden der Azure-Bibliotheken mit Azure Storage](azure-sdk-example-storage.md)
+- [Beispiel: Verwenden der Azure-Bibliotheken mit Azure Storage](azure-sdk-example-storage-use.md)
+- [Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Datenbank](azure-sdk-example-database.md)
+- [Kurze Umfrage zum Azure SDK für Python](https://microsoft.qualtrics.com/jfe/form/SV_bNFX0HECjzPWMiG?Q_CHL=docs)
