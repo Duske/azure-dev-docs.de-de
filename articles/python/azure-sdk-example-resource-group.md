@@ -1,15 +1,15 @@
 ---
 title: Bereitstellen einer Ressourcengruppe unter Verwendung der Azure-Bibliotheken für Python
 description: Verwenden Sie die Ressourcenverwaltungsbibliothek im Azure SDK für Python, um eine Ressourcengruppe aus Python-Code zu erstellen.
-ms.date: 11/12/2020
+ms.date: 01/28/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 3bda14cd52f55d25e3669662765aa8f27c3dc939
-ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
+ms.openlocfilehash: 37e912e9fed6edabc966034a6411e7786875bf3f
+ms.sourcegitcommit: 3843092e47691fbd32452c93d51f894a0cab31db
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98759435"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99069087"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-resource-group"></a>Beispiel: Verwenden der Azure-Bibliotheken zum Bereitstellen einer Ressourcengruppe
 
@@ -28,8 +28,8 @@ Achten Sie darauf, eine virtuelle Umgebung für dieses Projekt zu erstellen und 
 Erstellen Sie eine Datei namens *requirements.txt* mit folgendem Inhalt:
 
 ```text
-azure-mgmt-resource
-azure-identity
+azure-mgmt-resource>=1.15.0
+azure-identity>=1.5.0
 ```
 
 Installieren Sie in einem Terminal oder einer Eingabeaufforderung bei aktivierter virtueller Umgebung die Voraussetzungen:

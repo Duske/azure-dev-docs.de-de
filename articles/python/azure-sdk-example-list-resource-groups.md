@@ -1,15 +1,15 @@
 ---
 title: Auflisten der Ressourcengruppe und Ressourcen unter Verwendung der Azure-Bibliotheken für Python
 description: Verwenden Sie die Ressourcenverwaltungsbibliothek im Azure SDK für Python, um Ressourcengruppen und Ressourcen in einer Gruppe aufzulisten.
-ms.date: 10/12/2020
+ms.date: 01/28/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 2867ea550ce233594d30b3de2be744d20a1e96de
-ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
+ms.openlocfilehash: c44698fb7fee0e7f736c51fbf11f664b8642e946
+ms.sourcegitcommit: 3843092e47691fbd32452c93d51f894a0cab31db
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98759596"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99069097"
 ---
 # <a name="example-use-the-azure-libraries-to-list-resource-groups-and-resources"></a>Beispiel: Verwenden der Azure-Bibliotheken zum Auflisten von Ressourcengruppen und Ressourcen
 
@@ -17,7 +17,7 @@ In diesem Beispiel wird veranschaulicht, wie die Azure SDK-Verwaltungsbibliothe
 
 - Auflisten aller Ressourcengruppen in einem Azure-Abonnement
 - Auflisten von Ressourcen in einer bestimmten Ressourcengruppe
- 
+
 Alle Befehle in diesem Artikel funktionieren in Linux-/macOS-Bash- und Windows-Befehlsshells identisch, sofern nicht anders angegeben.
 
 Den [äquivalenten Azure CLI-Befehl](#for-reference-equivalent-azure-cli-commands) finden Sie weiter unten in diesem Artikel.
@@ -33,8 +33,8 @@ Achten Sie darauf, eine virtuelle Umgebung für dieses Projekt zu erstellen und 
 Erstellen Sie eine Datei namens *requirements.txt* mit folgendem Inhalt:
 
 ```text
-azure-mgmt-resource
-azure-identity
+azure-mgmt-resource>=1.15.0
+azure-identity>=1.5.0
 ```
 
 Installieren Sie in einem Terminal oder einer Eingabeaufforderung bei aktivierter virtueller Umgebung die Voraussetzungen:

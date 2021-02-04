@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie eine lokale Python-Entwicklungsumgebung 
 ms.date: 01/04/2021
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: fcad7c614ae27c8b1b3ccf081d85292549cfcee3
-ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
+ms.openlocfilehash: 184996eca52c096602863beb1c73ae4337695829
+ms.sourcegitcommit: 3843092e47691fbd32452c93d51f894a0cab31db
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97911470"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99069077"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>Konfigurieren Ihrer lokalen Python-Entwicklungsumgebung für Azure
 
@@ -53,7 +53,7 @@ Hinweise:
 
 | Name/Installationsprogramm | Beschreibung |
 | --- | --- |
-| [Docker-Erweiterung für VS Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python) | Fügt VS Code Docker-Unterstützung hinzu, was hilfreich ist, wenn Sie regelmäßig mit Containern arbeiten. |
+| [Docker-Erweiterung für VS Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) | Fügt VS Code Docker-Unterstützung hinzu, was hilfreich ist, wenn Sie regelmäßig mit Containern arbeiten. |
 
 ### <a name="verify-components"></a>Überprüfen von Komponenten
 
@@ -136,7 +136,7 @@ Jeder Entwickler in Ihrer Organisation sollte diese Schritte einzeln ausführen.
 
 #### <a name="what-the-create-for-rbac-command-does"></a>Aktionen des Befehls „create-for-rbac“
 
-Durch den Befehl `az ad create-for-rbac` wird ein Dienstprinzipal für die rollenbasierte Authentifizierung (RBAC) erstellt. (Weitere Informationen zu Dienstprinzipalen finden Sie unter [Authentifizieren und Autorisieren von Python-Apps in Azure](azure-sdk-authenticate.md).)
+Durch den Befehl `az ad sp create-for-rbac` wird ein Dienstprinzipal für die rollenbasierte Authentifizierung (RBAC) erstellt. (Weitere Informationen zu Dienstprinzipalen finden Sie unter [Authentifizieren und Autorisieren von Python-Apps in Azure](azure-sdk-authenticate.md).)
 
 - `ad` bedeutet Azure Active Directory, `sp` bedeutet „Dienstprinzipal“, und `create-for-rbac` bedeutet „Für rollenbasierte Zugriffssteuerung erstellen“, die primäre Form der Autorisierung in Azure. Informationen finden Sie in der Referenz zum Befehl [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac).
 

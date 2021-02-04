@@ -1,11 +1,11 @@
 ---
 ms.custom: devx-track-js
-ms.openlocfilehash: 0ab980285fcecf03efac3e132566636923e14fec
-ms.sourcegitcommit: 4af22924a0eaf01e6902631c0714045c02557de4
+ms.openlocfilehash: 63c722779b2e130e786994b2e6b9c150b8f3236a
+ms.sourcegitcommit: b09d3aa79113af04a245b05cec2f810e43062152
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91208338"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99500032"
 ---
 Herzlichen Glückwunsch! Sie haben diese exemplarische Vorgehensweise erfolgreich abgeschlossen! Sehen Sie sich als Nächstes die anderen Azure-Erweiterungen an.
 
@@ -22,6 +22,6 @@ Weitere Informationen zur Verwendung von Azure mit Node.js finden Sie unter den 
 * [Azure für Node.js: Developer Center](../index.yml).
 * [Azure Cosmos DB-Bindungen für Azure Functions 2.x](/azure/azure-functions/functions-bindings-cosmosdb-v2?tabs=javascript)
 * [JavaScript-Entwicklerhandbuch für Azure Functions](/azure/azure-functions/functions-reference-node)
-* [Blogbeitrag: Erstellen einer CRUD-Anwendung mit Azure Functions und MongoDB: Dev.to](https://dev.to/azure/ezra-s-potluck-day-4-of-25daysofserverless-challenge-4pd6)
+* [Blogbeitrag: Erstellen einer CRUD-Anwendung mit Azure Functions und MongoDB: Dev.to](https://dev.to/vidamrr/cosmos-db-crud-operations-using-azure-functions-4d27)
 * [Video: Umstellen Ihrer API auf „Serverlos“ mit Azure Functions: YouTube](https://youtu.be/89WXgaY-NqY)
 * [Offizieller YouTube-Kanal: Azure Functions](https://www.youtube.com/channel/UCtUYj6As_XFkOooUFnsJbYg)

@@ -5,12 +5,12 @@ keywords: Azure DevOps Terraform Application Gateway eingehend AKS Kubernetes
 ms.topic: how-to
 ms.date: 10/30/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 1613145e4b72cf2e30ab95e8e85b72ed19c38c80
-ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+ms.openlocfilehash: 479933bffcf0bd6de363c7e6ee4a29dd0bf7553f
+ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98626022"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99224774"
 ---
 # <a name="create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>Erstellen eines Application Gateway-Eingangscontrollers in Azure Kubernetes Service
 
@@ -304,12 +304,14 @@ Erstellen Sie die Terraform-Konfigurationsdatei für die Erstellung der Ressourc
       name                 = var.aks_subnet_name
       virtual_network_name = azurerm_virtual_network.test.name
       resource_group_name  = data.azurerm_resource_group.rg.name
+      depends_on = [azurerm_virtual_network.test]
     }
 
     data "azurerm_subnet" "appgwsubnet" {
       name                 = "appgwsubnet"
       virtual_network_name = azurerm_virtual_network.test.name
       resource_group_name  = data.azurerm_resource_group.rg.name
+      depends_on = [azurerm_virtual_network.test]
     }
 
     # Public Ip 
