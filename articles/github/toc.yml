@@ -14,6 +14,8 @@
           href: database-actions-deploy.md
         - name: Verwenden der Variablenersetzung
           href: github-variable-substitution.md
+        - name: Verwenden von geheimen Schlüsseltresor-Schlüsseln
+          href: github-key-vault.md
         - name: Verwalten von Azure Policy
           href: manage-azure-policy.md
     - name: Azure DevOps und GitHub
