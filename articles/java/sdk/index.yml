@@ -4,34 +4,46 @@ summary: Cloudentwicklung mit Java in Azure
 metadata:
   title: Dokumentation zum Azure SDK für Java
   description: Cloudentwicklung mit Java in Azure
-  ms.date: 04/03/2020
+  ms.date: 02/02/2021
   ms.topic: landing-page
-  ms.openlocfilehash: 2380696b801927bc842278b1b8604825feda0984
-  ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+  ms.openlocfilehash: cde5054104f4331e48078b5854d61dca2c36f6cf
+  ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 05/05/2020
-  ms.locfileid: "81675146"
+  ms.lasthandoff: 02/03/2021
+  ms.locfileid: "99511071"
 landingContent:
-- title: Azure für Java-Cloudentwickler
+- title: Azure für Java-Entwickler
   linkLists:
   - linkListType: get-started
     links:
     - text: Azure-Entwicklung mithilfe von Java
-      url: java-sdk-azure-get-started.md
+      url: get-started.md
+    - text: Verwenden des Azure SDK für Java
+      url: overview.md
   - linkListType: reference
     links:
     - text: Java-API-Browser
-      url: /java/api/?view=azure-java
+      url: /java/api
   - linkListType: how-to-guide
     links:
-    - text: Hinzufügen des Stammzertifikats
-      url: java-sdk-add-certificate-ca-store.md
-    - text: Authenticate
-      url: java-sdk-azure-authenticate.md
+    - text: Identität und Authentifizierung
+      url: identity.md
     - text: Konfigurieren der Protokollierung
-      url: java-sdk-azure-log.md
+      url: logging-overview.md
+- title: Allgemeine Konzepte
+  linkLists:
   - linkListType: learn
     links:
-    - text: Muster und bewährte Methoden
-      url: java-sdk-azure-concepts.md
+    - text: HTTP-Clients und Pipeline
+      url: http-client-pipeline.md
+    - text: Asynchrone Programmierung
+      url: async-programming.md
+    - text: Paginierung und Iteration
+      url: pagination.md
+    - text: Zeitintensive Vorgänge
+      url: lro.md
+    - text: Weiterleitung (Proxy)
+      url: proxying.md
+    - text: Ablaufverfolgung
+      url: tracing.md
