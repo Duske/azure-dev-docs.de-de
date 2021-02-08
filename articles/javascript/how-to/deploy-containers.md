@@ -4,12 +4,12 @@ description: Verwenden von Docker-Containern zum Bereitstellen von Node.js-Apps 
 ms.topic: how-to
 ms.date: 12/07/2020
 ms.custom: seo-javascript-september2019, devx-track-js
-ms.openlocfilehash: 6bf8acb66a708433966bdfe90cc358a56d2d3b42
-ms.sourcegitcommit: ae2fa266a36958c04625bb0ab212e6f2db98e026
+ms.openlocfilehash: 50c26c26fffc0c9377b661d79858dd97318bd3c2
+ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96857808"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99224784"
 ---
 # <a name="deploy-nodejs-container-to-azure"></a>Bereitstellen eines Node.js-Containers in Azure 
 
@@ -29,18 +29,9 @@ Mit den folgenden Hostingoptionen können Sie Ihre Containeranwendungen bereitst
 
 ## <a name="build-containerize-and-deploy-app-to-azure"></a>Erstellen, Containerisieren und Bereitstellen von Apps in Azure
 
-Arbeiten Sie zum Einstieg [dieses Tutorial](develop-nodejs-on-azure.md) durch, um Folgendes zu lernen:
-
-* Beispielcode herunterladen
-* Ausführen der Node.js-App
-* Debuggen der App in Visual Studio Code
-* Containerisieren der Node.js-MEAN-App
-* Bereitstellen der App mithilfe von Azure CLI-Befehlen
-* Erstellen eines MongoDB-Servers für eine CosmosDB-Ressource
-* Hinzufügen des Containerimages zu Ihrer privaten Containerregistrierung
-* Hinzufügen eines benutzerdefinierten Domänennamens zu Ihrer Web-App
-* Aufskalieren Ihrer Web-App auf eine größere Größe
-* Erstellen und Löschen einer Ressourcengruppe für alle Ressourcen
+Wählen Sie zum Einstieg Folgendes in der Liste aus:
+* Tutorial: [Express.js](../tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-01.md)
+* Tutorial: [Deno](../tutorial/deploy-deno-app-azure-app-service-azure-cli.md)
 
 ## <a name="next-steps"></a>Nächste Schritte
 
