@@ -2,19 +2,36 @@
 title: Neuerungen in der JavaScript-Dokumentation
 description: Neuerungen in der JavaScript-Dokumentation im Developer Center
 ms.topic: conceptual
-ms.date: 01/05/2021
-ms.openlocfilehash: 71f4db11833d0c5346ee6204c94ecd943bb4f126
-ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+ms.date: 02/02/2021
+ms.openlocfilehash: 9bfb3b8b05861a50d82fc878b74e14ddd3402dae
+ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98625902"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99510961"
 ---
 # <a name="javascript-docs-whats-new"></a>JavaScript-Dokumentation: Neues
 
 Hier finden Sie neue und aktualisierte Inhalte für JavaScript- und TypeScript-Entwickler.
 
+## <a name="2021-february"></a>Februar 2021
+
+### <a name="whats-new"></a>Neues
+
+|Name|Notizen|
+|---------------------------------------|--|
+|[Verwenden von MongoDB in Azure Cosmos DB](./how-to/with-database/use-mongodb-as-cosmosdb.md)|Um eine mongoDB-Datenbank in Azure zu erstellen, zu verwenden oder dorthin zu verschieben, benötigen Sie eine Cosmos DB-Ressource. Hier erfahren Sie, wie Sie die Ressource erstellen und Ihre Datenbank verwenden. |
+
 ## <a name="2021-january"></a>Januar 2021
+
+### <a name="whats-new"></a>Neues
+
+|Name|Notizen|
+|---------------------------------------|--|
+|[Neues in Developer Advocate](whats-new-developer-advocacy.md)|Blogs, Videos, Lernmodule|
+|[Tutorial: Konvertieren von Text in Sprache](./tutorial/convert-text-to-speech-cognitive-services.md)|In diesem Tutorial fügen Sie Cognitive Services Speech einer vorhandenen Express.js-App hinzu, um die Text-zu-Sprache-Konvertierung mit dem Cognitive Services Speech-Dienst zu ermöglichen. Bei der Text-zu-Sprache-Konvertierung erhalten Sie Audiodaten, ohne dass Sie diese manuell generieren müssen.|
+|Schrittanleitung mit Azure CLI|* [Erstellen und Verwenden einer Containerregistrierung](./how-to/with-azure-cli/create-container-registry-resource.md)<br>* [Konfigurieren eines benutzerdefinierten Domänennamens](./how-to/with-azure-cli/configure-app-service-custom-domain-name.md)<br>* [Erstellen und Verwenden von MongoDB in Azure mit Cosmos DB](./how-to/with-azure-cli/create-mongodb-cosmosdb.md) |
+|Schrittanleitung mit Visual Studio Code|* [Entwickeln und Debuggen von Node.js](./how-to/with-visual-studio-code/install-run-debug-nodejs.md)<br>* [ Klonen und Erstellen eines GitHub-Repositorys](./how-to/with-visual-studio-code/clone-github-repository.md)<br>* [Erstellen eines Containerimages aus Ihrem lokalen JavaScript-Projekt](./how-to/with-visual-studio-code/containerize-local-project.md)|
 
 ### <a name="whats-updated"></a>Aktualisierungen
 
@@ -22,6 +39,7 @@ Hier finden Sie neue und aktualisierte Inhalte für JavaScript- und TypeScript-E
 |---------------------------------------|--|
 |[**Für Einsteiger**](learn-azure-javascript.md#getting-started)|Verschiedene Sammlungen mit Onlinematerial für die ersten Schritte mit JavaScript, Node.js und Webentwicklung sowie für andere Bereiche, die für JavaScript-Entwickler von Interesse sind.|
 |[Wichtigste Aufgaben für JavaScript-Entwickler](how-to/common-javascript-tasks.md)|Hier finden Sie ein Beispiel für Ihre aktuellen Aufgaben.|
+|[Konfigurieren der Startdatei von Visual Studio Code](./how-to/configure-web-app-settings.md#configure-browser-for-cors-to-connect-with-server)|Wenn Sie eine Verbindung mit Ihrem eigenen Server herstellen und die CORS-Sicherheit beim lokalen Ausführen und Debuggen mit dem Client ignorieren müssen, empfiehlt es sich, diese Einstellung in der Visual Studio Code-Debugdatei `launch.json` zu konfigurieren, um Einstellungen an den Browser zu übergeben und die Sicherheit zu deaktivieren.|
 
 ## <a name="2020-december"></a>Dezember 2020
 

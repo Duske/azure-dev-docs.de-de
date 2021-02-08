@@ -1,25 +1,27 @@
 ---
 title: Konfigurieren von Protokollierung in den Azure-Bibliotheken für Python
 description: In den Azure-Bibliotheken wird das Python-Standardprotokollierungsmodul verwendet, das pro Bibliothek oder pro Vorgang konfiguriert wird.
-ms.date: 06/04/2020
+ms.date: 02/01/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 0c08ba9c514bf9bca3c982ccf3ef3182f203e247
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: f42941ec54876fec5854a0a82cee1cbcf30506ce
+ms.sourcegitcommit: b09d3aa79113af04a245b05cec2f810e43062152
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983314"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99476446"
 ---
 # <a name="configure-logging-in-the-azure-libraries-for-python"></a>Konfigurieren von Protokollierung in den Azure-Bibliotheken für Python
 
 Azure-Bibliotheken für Python, die auf der Seite [azure.core](azure-sdk-library-package-index.md#libraries-using-azurecore) basieren, stellen die Protokollierungsausgabe mithilfe der standardmäßigen Python-[Protokollierungsbibliothek](https://docs.python.org/3/library/logging.html) bereit.
 
-Die Ausgabe der Protokollierung ist nicht standardmäßig aktiviert. So aktivieren Sie die Protokollierung:
+Der allgemeine Prozess zum Arbeiten mit der Protokollierung ist wie folgt:
 
 1. Rufen Sie das Protokollierungsobjekt für die gewünschte Bibliothek ab, und legen Sie den Protokolliergrad fest.
 1. Registrieren Sie einen Handler für den Protokollierungsdatenstrom.
-1. Aktivieren Sie die Protokollierung, indem Sie einen `logging_enable=True`-Parameter an einen Clientobjektkonstruktor oder an eine bestimmte Methode übergeben.
+1. Um HTTP-Informationen aufzunehmen, übergeben Sie einen `logging_enable=True`-Parameter an einen Clientobjektkonstruktor, einen Anmeldeinformations-Objektkonstruktor oder an eine bestimmte Methode übergeben.
+
+Detaillierte Informationen finden Sie in den restlichen Abschnitten dieses Artikels.
 
 Als allgemeine Regel gilt: Die beste Ressource zum Verständnis der Protokollierungsverwendung innerhalb der Bibliotheken ist das Durchsuchen des SDK-Quellcodes unter [github.com/Azure/azure-sdk-for-python](https://github.com/Azure/azure-sdk-for-python). Es wird empfohlen, dieses Repository lokal zu klonen, damit Sie bei Bedarf problemlos nach Details suchen können, wie in den folgenden Abschnitten vorgeschlagen.
 
@@ -73,7 +75,7 @@ Protokolliergrade sind identisch mit den [Standardprotokolliergraden der Bibliot
 | logging.ERROR             | Fehler, bei denen die Anwendung wahrscheinlich nicht wiederhergestellt werden kann (z. B. nicht genügend Arbeitsspeicher). |
 | logging.WARNING (Standard) | Eine Funktion kann die beabsichtigte Aufgabe nicht ausführen (wird jedoch nicht protokolliert, wenn die Funktion wiederhergestellt werden kann, z. B. durch Wiederholen eines REST-API-Aufrufs). Funktionen protokollieren in der Regel eine Warnung, wenn Ausnahmen ausgelöst werden. Die Warnstufe aktiviert automatisch die Fehlerstufe. |
 | logging.INFO              | Die Funktion funktioniert ordnungsgemäß, oder ein Dienstaufruf wird abgebrochen. Informationsereignisse enthalten in der Regel Anforderungen, Antworten und Header. Die Informationsstufe aktiviert automatisch die Fehler- und Warnstufen. |
-| logging.DEBUG             | Ausführliche Informationen, die häufig für die Problembehandlung verwendet werden. „Debug“ ist der einzige Protokolliergrad, der vertrauliche Informationen wie Kontoschlüssel in Headern umfasst. Die Debugausgabe umfasst in der Regel eine Stapelüberwachung für Ausnahmen. Die Debugstufe aktiviert automatisch die Informations-, Warnungs- und Fehlerstufen. |
+| logging.DEBUG             | Ausführliche Informationen, die häufig für die Problembehandlung verwendet werden und eine Stapelüberwachung für Ausnahmen enthalten. Die Debugstufe aktiviert automatisch die Informations-, Warnungs- und Fehlerstufen. VORSICHT: Wenn Sie außerdem `logging_enable=True` festlegen, umfasst die Debugebene vertrauliche Informationen wie Kontoschlüssel in Headern und andere Anmeldeinformationen. Stellen Sie sicher, dass diese Protokolle geschützt sind, um eine Beeinträchtigung der Sicherheit zu vermeiden. |
 | logging.NOTSET            | Deaktiviert die gesamte Protokollierung. |
 
 ### <a name="library-specific-logging-level-behavior"></a>Bibliotheksspezifisches Verhalten des Protokolliergrads
@@ -104,41 +106,58 @@ handler = logging.StreamHandler(stream=sys.stdout)
 logger.addHandler(handler)
 ```
 
-In diesem Beispiel wird ein Handler registriert, der die Protokollausgabe an stdout weiterleitet. Sie können andere Arten von Handlern verwenden, wie unter [logging.handlers](https://docs.python.org/3/library/logging.handlers.html) in der Python-Dokumentation beschrieben.
+In diesem Beispiel wird ein Handler registriert, der die Protokollausgabe an stdout weiterleitet. Sie können andere Arten von Handlern verwenden, wie unter [logging.handlers](https://docs.python.org/3/library/logging.handlers.html) in der Python-Dokumentation beschrieben, oder Sie verwenden die Standardmethode [logging.basicConfig](https://docs.python.org/3/library/logging.html#logging.basicConfig).
 
-## <a name="enable-logging-for-a-client-object-or-operation"></a>Aktivieren der Protokollierung für ein Clientobjekt oder einen Vorgang
+## <a name="enable-http-logging-for-a-client-object-or-operation"></a>Aktivieren der HTTP-Protokollierung für ein Clientobjekt oder einen Vorgang
 
-Auch nachdem Sie einen Protokolliergrad festgelegt und einen Handler registriert haben, müssen Sie die Azure-Bibliotheken noch anweisen, um Protokollierung für einen Clientobjektkonstruktor oder eine Vorgangsmethode zu aktivieren.
+Standardmäßig enthält die Protokollierung innerhalb der Azure-Bibliotheken keine HTTP-Informationen. Um HTTP-Informationen in die Protokollausgabe aufzunehmen (als DEBUG-Ebene), müssen Sie ganz spezifisch `logging_enable=True` an einen Client- oder Anmeldeinformations-Objektkonstruktor oder an eine bestimmte Methode übergeben.
 
-### <a name="enable-logging-for-a-client-object"></a>Aktivieren der Protokollierung für ein Clientobjekt
+**VORSICHT**: Die HTTP-Protokollierung kann vertrauliche Informationen wie Kontoschlüssel in Headern und andere Anmeldeinformationen enthalten und somit kompromittieren. Stellen Sie sicher, dass diese Protokolle geschützt sind, um eine Beeinträchtigung der Sicherheit zu vermeiden.
+
+### <a name="enable-http-logging-for-a-client-object-debug-level"></a>Aktivieren der HTTP-Protokollierung für ein Clientobjekt (DEBUG-Ebene)
 
 ```python
 from azure.storage.blob import BlobClient
 from azure.identity import DefaultAzureCredential
 
+# Enable HTTP logging on the client object when using DEBUG level
 # endpoint is the Blob storage URL.
 client = BlobClient(endpoint, DefaultAzureCredential(), logging_enable=True)
 ```
 
-Die Aktivierung der Protokollierung für ein Clientobjekt ermöglicht die Protokollierung aller Vorgänge, die über dieses Objekt aufgerufen werden.
+Durch die Aktivierung der HTTP-Protokollierung für ein Clientobjekt wird die Protokollierung aller Vorgänge, die über dieses Objekt aufgerufen werden, ermöglicht.
 
-### <a name="enable-logging-for-an-operation"></a>Aktivieren der Protokollierung für einen Vorgang
+### <a name="enable-http-logging-for-a-credential-object-debug-level"></a>Aktivieren der HTTP-Protokollierung für ein Anmeldeinformationsobjekt (DEBUG-Ebene)
 
 ```python
 from azure.storage.blob import BlobClient
 from azure.identity import DefaultAzureCredential
 
-# Logging is not enabled on this client.
+# Enable HTTP logging on the credential object when using DEBUG level
+credential = DefaultAzureCredential(logging_enable=True)
+
+# endpoint is the Blob storage URL.
+client = BlobClient(endpoint, credential)
+```
+
+Durch die Aktivierung der HTTP-Protokollierung für ein Anmeldeinformationsobjekt wird die Protokollierung spezifisch für alle Vorgänge ermöglicht, die über dieses Objekt aufgerufen werden, ermöglicht, aber nicht für Vorgänge in einem Clientobjekt, die keine Authentifizierung beinhalten.
+
+### <a name="enable-logging-for-an-individual-method-debug-level"></a>Aktivieren der Protokollierung für eine einzelne Methode (DEBUG-Ebene)
+
+```python
+from azure.storage.blob import BlobClient
+from azure.identity import DefaultAzureCredential
+
 # endpoint is the Blob storage URL.
 client = BlobClient(endpoint, DefaultAzureCredential())
 
-# Enable logging for only this operation
+# Enable HTTP logging for only this operation when using DEBUG level
 client.create_container("container01", logging_enable=True)
 ```
 
 ## <a name="example-logging-output"></a>Beispiel für eine Protokollierungsausgabe
 
-Der folgende Code stammt aus [Beispiel: Verwenden eines Speicherkontos](azure-sdk-example-storage-use.md). Zusätzlich wurde DEBUG-Protokollierung (Kommentare werden aus Platzgründen ausgelassen) aktiviert:
+Der folgende Code stammt aus [Beispiel: Verwenden eines Speicherkontos](azure-sdk-example-storage-use.md). Zusätzlich wurden DEBUG- und HTTP-Protokollierung (Kommentare werden aus Platzgründen ausgelassen) aktiviert:
 
 ```python
 import os, sys, logging

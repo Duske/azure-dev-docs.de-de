@@ -4,12 +4,12 @@ description: Authentifizieren mit einem Dienstprinzipal bei den Azure-Verwaltung
 ms.topic: how-to
 ms.date: 01/04/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: b0e39b14e8f96c58e1e5fb4f2bbf12f07180db8b
-ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
+ms.openlocfilehash: e5774f0453960b41679a01170882fad1d9f50bad
+ms.sourcegitcommit: b09d3aa79113af04a245b05cec2f810e43062152
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98699908"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99476436"
 ---
 # <a name="authenticate-with-the-azure-management-modules-for-javascript"></a>Authentifizieren mit den Azure-Verwaltungsmodulen für JavaScript
 
@@ -31,7 +31,7 @@ Bei jedem npm-Paket ist die Clientbibliothek für die Authentifizierung genau an
 
 ## <a name="azure-identity-library"></a>Azure Identity-Bibliothek
 
-Die Azure Identity-Bibliothek ist das neueste Authentifizierungspaket für Azure. Sehen Sie sich die [Liste mit den unterstützten Bibliotheken](https://www.npmjs.com/package/@azure/identity#client-libraries-supporting-authentication-with-azure-identity) für Azure Identity an.
+Die Azure Identity-Bibliothek ist das neueste Authentifizierungspaket für Azure. Lesen Sie in der Infodatei der Clientbibliothek, die Sie verwenden, nach, ob die Verwendung dieser neuen Bibliothek unterstützt wird.
 
 Mit der [@azure/identity](https://www.npmjs.com/package/@azure/identity)-Bibliothek wird die Authentifizierung bei Azure Active Directory für Azure SDK-Bibliotheken vereinfacht. Sie enthält TokenCredential-Implementierungen, die für die Authentifizierung von API-Anforderungen an SDK-Bibliotheken übergeben werden können. Die Bibliothek unterstützt die Tokenauthentifizierung über einen Azure Active Directory-Dienstprinzipal oder eine verwaltete Identität.
 

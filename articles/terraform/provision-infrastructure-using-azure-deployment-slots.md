@@ -5,12 +5,12 @@ keywords: Azure DevOps Terraform Bereitstellungsslots
 ms.topic: how-to
 ms.date: 01/07/2021
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 0a7bb2fa3e5a0251b6a441ef8312726d93d29e07
-ms.sourcegitcommit: 347bfa3b6c34579c567d1324efc63c1d6672a75b
+ms.openlocfilehash: 5464764dbfbe7ff52b7f0b47f8f15e2c7af629ae
+ms.sourcegitcommit: 3843092e47691fbd32452c93d51f894a0cab31db
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98109133"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99069107"
 ---
 # <a name="provision-infrastructure-with-azure-deployment-slots-using-terraform"></a>Bereitstellen der Infrastruktur mit Azure-Bereitstellungsslots per Terraform
 
@@ -195,7 +195,7 @@ Konfigurieren Sie nach dem Forken des Repositorys mit dem Testprojekt die Bereit
 
 1. Klicken Sie auf der Registerkarte **Verzweigung auswählen** auf **master**.
 
-    ![Auswählen der Masterverzweigung](./media/provision-infrastructure-using-azure-deployment-slots/choose-branch-master.png)
+    ![Auswählen des Branch](./media/provision-infrastructure-using-azure-deployment-slots/choose-branch-master.png)
 
 1. Klicken Sie auf der Registerkarte **Bereitstellungsoption** auf **OK**.
 
@@ -203,7 +203,7 @@ Nun haben Sie den Produktionsslot bereitgestellt. Führen Sie die obigen Schritt
 
 - Wählen Sie in Schritt 3 die Ressource **slotAppServiceSlotOne** aus.
 
-- Wählen Sie in Schritt 13 anstelle der Masterverzweigung die Arbeitsverzweigung aus.
+- Wählen Sie in Schritt 13 den Arbeitsbranch aus.
 
     ![Auswählen der Arbeitsverzweigung](./media/provision-infrastructure-using-azure-deployment-slots/choose-branch-working.png)
 

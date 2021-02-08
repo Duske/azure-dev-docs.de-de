@@ -4,12 +4,12 @@ description: Verwenden Sie die Microsoft Learn-Plattform, um Ihr Verständnis vo
 ms.topic: reference
 ms.date: 01/14/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 7fd0fd26b1b0133faf8cf21bd7b29afdbd37f5aa
-ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.openlocfilehash: 80c0a9d285c1701369f8c7518f42220662759d86
+ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98561676"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99224824"
 ---
 # <a name="learn-to-develop-with-azure-and-javascript"></a>Erlernen der Entwicklung mit Azure und JavaScript 
 
@@ -47,6 +47,10 @@ Die folgenden Microsoft Learn-Module vermitteln Ihnen die Verwendung von Azure m
 * [Erstellen und Veröffentlichen einer statischen Web-App mit Gatsby und Azure Static Web Apps](/learn/modules/create-deploy-static-webapp-gatsby-app-service/)
 * [Erstellen einer einfachen Website mit HTML, CSS und JavaScript](/learn/modules/build-simple-website/)
 
+### <a name="server-apis"></a>Server-APIs
+
+* [Erstellen eines HTTP-Knotenservers](/learn/modules/build-web-api-nodejs-express/)
+
 ### <a name="serverless-apis"></a>Serverlose APIs
 
 * [Erstellen serverloser APIs mit Azure Functions](/learn/modules/build-api-azure-functions/)
@@ -65,11 +69,7 @@ Die folgenden Microsoft Learn-Module vermitteln Ihnen die Verwendung von Azure m
 ### <a name="virtual-machines"></a>Virtual Machines
 * [Erstellen und Ausführen einer Webanwendung mit dem MEAN-Stapel auf einem virtuellen Azure-Computer unter Linux](/learn/modules/build-a-web-app-with-mean-on-a-linux-vm/)
 
-
-
-
 Suchen Sie nach [weiteren Learn-Ressourcen](/search/?category=Learn&terms=JavaScript).
-
 
 ## <a name="microsoft-learning-partners"></a>Microsoft Learning-Partner
 

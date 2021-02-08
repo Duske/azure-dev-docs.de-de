@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, Bash, CloudShell, dynamischer Bestand
 ms.topic: tutorial
 ms.date: 10/30/2020
 ms.custom: devx-track-ansible, devx-track-azurecli
-ms.openlocfilehash: dd9a6f2b76c6d653eba9542d3b5dfdda4cb75ba5
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: d5d3095384fb3f192f7e8cd74b2a49b41b47f239
+ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192352"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99224734"
 ---
 # <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>Tutorial: Konfigurieren von dynamischen Beständen Ihrer Azure-Ressourcen mit Ansible
 
@@ -133,16 +133,16 @@ Ab Ansible 2.8 wird ein [Azure-Plug-In für dynamische Bestände](https://githu
     ansible all -m ping -i ./myazure_rm.yml
     ```
 
-1. Bei der Ausführung des obigen Befehls tritt ggf. ein Fehler auf. Die Ursache für den Fehler ist, dass die Verbindungsherstellung mit dem Host nicht erfolgreich war. 
+1. Standardmäßig ist die Hostschlüsselüberprüfung aktiviert, was zu folgendem Fehler führen kann.
 
     ```output
     Failed to connect to the host via ssh: Host key verification failed.
     ```
-    
-    Fügen Sie der Ansible-Konfigurationsdatei die folgende Zeile hinzu, falls Sie den Fehler vom Typ „Host-Key Verification“ erhalten. Die Ansible-Konfigurationsdatei befindet sich unter `/etc/ansible/ansible.cfg` oder `~/.ansible.cfg`.
+
+    Deaktivieren Sie die Hostschlüsselüberprüfung, indem Sie die Umgebungsvariable `ANSIBLE_HOST_KEY_CHECKING` auf `False` festlegen.
 
     ```bash
-    host_key_checking = False
+    export ANSIBLE_HOST_KEY_CHECKING=False
     ```
 
 1. Beim Ausführen des Playbooks wird in etwa die folgende Ausgabe angezeigt:
