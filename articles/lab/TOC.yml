@@ -1,6 +1,10 @@
 - name: Labs für Entwickler
   href: index.yml
   items:
+    - name: QuickInfo
+      items:
+        - name: Python-Schnellstart mit QuickInfo
+          href: tool-tip-metric.md
     - name: Labs für das Tutorialformat
       items:
         - name: 'Python Flask: einzelne Seite'
