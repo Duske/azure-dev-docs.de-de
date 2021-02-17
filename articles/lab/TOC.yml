@@ -4,7 +4,7 @@
     - name: QuickInfo
       items:
         - name: Python-Schnellstart mit QuickInfo
-          href: tool-tip-metric.md
+          href: tool-tip-metrics.md
     - name: Labs für das Tutorialformat
       items:
         - name: 'Python Flask: einzelne Seite'
