@@ -1,15 +1,15 @@
 ---
 title: Azure-Entwicklungsablauf
 description: Eine Übersicht über den Cloudentwicklungszyklus in Azure, der die Bereitstellung, Codierung, Tests, Implementierung und Verwaltung umfasst.
-ms.date: 10/06/2020
+ms.date: 02/16/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 149bf0c56de95d2f1230e2bc527c64da780bd5ad
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: c2187f43da3159cc623e2ace671561ece2cf1758
+ms.sourcegitcommit: b882128a763f81dba83913bfff1e9cd1ec70818f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764769"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100642286"
 ---
 # <a name="the-azure-development-flow-provision-code-test-deploy-and-manage"></a>Der Azure-Entwicklungsablauf: Bereitstellung, Codierung, Tests, Implementierung und Verwaltung
 

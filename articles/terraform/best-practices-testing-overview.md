@@ -4,12 +4,13 @@ description: Hier erfahren Sie mehr über die verschiedenen Testoptionen, die Si
 ms.topic: overview
 ms.date: 07/31/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 6c782b2a6fed14698aede5a7dbfb6eae5ff9cf4a
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+adobe-target: true
+ms.openlocfilehash: ede7fdfc1dafedacfdc74f657fee0a4ae11feb85
+ms.sourcegitcommit: b380f6e637b47e6e3822b364136853e1d342d5cd
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401670"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100395325"
 ---
 # <a name="tutorial-terraform-testing-overview"></a>Tutorial: Übersicht über Terraform-Tests
 

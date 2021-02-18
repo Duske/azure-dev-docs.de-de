@@ -3,16 +3,18 @@ title: 'Tutorial: Bereitstellen über GitHub in Azure Kubernetes Service mit Jen
 description: Es wird beschrieben, wie Sie Jenkins für Continuous Integration (CI) über GitHub und Continuous Deployment (CD) in Azure Kubernetes Service (AKS) konfigurieren.
 keywords: Jenkins, Azure, DevOps, AKS, Azure Kubernetes Service, GitHub
 ms.topic: article
-ms.date: 10/29/2019
+ms.date: 02/05/2021
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 137f7cf050c9d31adc9e56a70fbb98e29342e142
-ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
+ms.openlocfilehash: b64037f6a6113208182fa6c9f28e53005928dbab
+ms.sourcegitcommit: bccbab4883e6b6b4926fc194c35ad948b11ccc3f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98699968"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99822753"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-kubernetes-service-using-jenkins"></a>Tutorial: Bereitstellen über GitHub in Azure Kubernetes Service mit Jenkins
+
+[!INCLUDE [jenkins-integration-with-azure.md](includes/jenkins-integration-with-azure.md)]
 
 In diesem Tutorial werden Continuous Integration (CI) und Continuous Deployment (CD) in Jenkins eingerichtet, um eine Beispiel-App aus GitHub in einem [Azure Kubernetes Service (AKS)](/azure/aks/intro-kubernetes)-Cluster bereitzustellen. Auf diese Weise führt Jenkins, wenn Sie Ihre App durch Pushen von Commits an GitHub aktualisieren, automatisch einen neuen Containerbuild aus, überträgt Container-Images an Azure Container Registry (ACR), und führt dann Ihre App in AKS aus. 
 

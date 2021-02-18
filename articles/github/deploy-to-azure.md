@@ -7,12 +7,12 @@ ms.topic: reference
 ms.service: azure
 ms.date: 11/19/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: 0d83e0d2b0e36fea0d54f176744a797352d11085
-ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
+ms.openlocfilehash: b77386d4fe688c67d448f3f0d5835e697f90313b
+ms.sourcegitcommit: 7287dff6bf4b30c2033924702c941bf520403e07
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96442147"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99589406"
 ---
 # <a name="deploy-apps-from-github-to-azure"></a>Bereitstellen von Apps aus GitHub in Azure
 
@@ -35,7 +35,7 @@ Die folgenden Artikel unterstützen Sie bei der Bereitstellung von Apps aus GitH
 
 ## <a name="azure-key-vault"></a>Azure-Schlüsseltresor
 
-- [Verwenden von Key Vault-Geheimnissen in GitHub Actions-Workflows](/azure/key-vault/secrets/quick-create-github-secret)
+- [Verwenden von Key Vault-Geheimnissen in GitHub Actions-Workflows](github-key-vault.md)
 
 ## <a name="azure-storage"></a>Azure Storage
 

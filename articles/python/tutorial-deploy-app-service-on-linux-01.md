@@ -4,12 +4,13 @@ description: Schritt 1 im Tutorial, Konfigurieren Ihrer Umgebung für App Servi
 ms.topic: conceptual
 ms.date: 11/20/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: bdbfd1ceaab01141bd32ec0c7d97309e2ce5e641
-ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
+adobe-target: true
+ms.openlocfilehash: f73f968849cdf6e9324074427f6156a706d65dc0
+ms.sourcegitcommit: b380f6e637b47e6e3822b364136853e1d342d5cd
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97636495"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100395345"
 ---
 # <a name="tutorial-deploy-python-apps-to-azure-app-service-on-linux-from-visual-studio-code"></a>Tutorial: Bereitstellen von Python-Apps in Azure App Service für Linux aus Visual Studio Code
 
