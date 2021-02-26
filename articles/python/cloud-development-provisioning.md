@@ -1,33 +1,33 @@
 ---
 title: Bereitstellen und Verwalten von und Zugreifen auf Ressourcen in Azure
 description: Hier finden Sie eine Übersicht über die Methoden zur Verwendung von Azure-Ressourcen. Dazu zählen das Azure-Portal, die Azure-Befehlszeilenschnittstelle und die Azure-Bibliotheken (SDK).
-ms.date: 10/06/2020
+ms.date: 02/16/2021
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 6ccbfb953cb28cceec08a70af4431e66e6e8b8ca
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 080b4360435d9bf295888e606b426986014a4307
+ms.sourcegitcommit: b882128a763f81dba83913bfff1e9cd1ec70818f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688867"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100642276"
 ---
 # <a name="provisioning-accessing-and-managing-resources-on-azure"></a>Bereitstellen und Verwalten von und Zugreifen auf Ressourcen in Azure
 
 [Vorheriger Artikel: Übersicht](cloud-development-overview.md)
 
-Wie im vorherigen Artikel dieser Reihe beschrieben, besteht ein wesentlicher Bestandteil der Entwicklung einer Cloudanwendung darin, die erforderlichen Ressourcen in Azure bereitzustellen, mit denen Sie dann Ihren Code und Ihre Daten bereitstellen können. Das bedeutet Folgendes: Die Entwicklung einer Cloudanwendung beginnt mit der Entwicklung des Systems, das im Grunde der Zielcloudcomputer ist, auf dem Sie Ihre Anwendung bereitstellen. (Informationen zu den Typen verfügbarer Ressourcen finden Sie im [Azure-Entwicklerhandbuch](/azure/guides/developer/azure-developer-guide).)
+Wie im vorherigen Artikel dieser Reihe beschrieben, besteht ein wesentlicher Bestandteil der Entwicklung einer Cloudanwendung darin, die erforderlichen Ressourcen in Azure bereitzustellen, mit denen Sie dann Ihren Code und Ihre Daten bereitstellen können. Das bedeutet Folgendes: Die Entwicklung einer Cloudanwendung beginnt mit der Entwicklung des Systems, das im Grunde der Zielcloudcomputer ist, auf dem Sie den Code und die Daten bereitstellen. (Informationen zu den Typen verfügbarer Ressourcen finden Sie im [Azure-Entwicklerhandbuch](/azure/guides/developer/azure-developer-guide).)
 
 Wie genau erfolgt diese Bereitstellung? Wie weisen Sie Azure an, Ressourcen für Ihre Anwendung zuzuordnen, und wie können Sie diese Ressourcen dann konfigurieren und anderweitig darauf zugreifen? Kurz gesagt: Wie kommunizieren Sie mit Azure, um all diese Ressourcen anzufordern und bereitzustellen?
 
 ## <a name="means-of-communicating-with-azure"></a>Mittel für die Kommunikation mit Azure
 
-Die Antwort ist einfach. Wie bei den meisten Betriebssystemen können Sie mit Azure über drei Optionen kommunizieren: eine Benutzeroberfläche, eine Befehlszeilenschnittstelle (CLI) und eine API.
+Wie bei den meisten Betriebssystemen können Sie mit Azure über drei Optionen kommunizieren: eine Benutzeroberfläche, eine Befehlszeilenschnittstelle (CLI) und eine API.
 
 ![Die verschiedenen Möglichkeiten der Kommunikation mit Azure zum Bereitstellen von Ressourcen](media/cloud-development/communication-with-azure.png)
 
 Sie können beliebige oder alle dieser sich ergänzenden Methoden verwenden, um beliebige Azure-Ressourcen zu erstellen, zu konfigurieren und zu verwalten, die Sie benötigen. Tatsächlich verwenden Sie in der Regel alle drei Verfahren im Verlauf eines Entwicklungsprojekts, und es lohnt sich, sich mit jeder dieser Methoden vertraut zu machen.
 
-Im Rahmen dieses Developer Centers liegt der Fokus auf der Verwendung der Befehlszeilenschnittstelle und des Python-Codes, von dem die Azure-Bibliotheken verwendet werden, da die Verwendung des Portals in der Dokumentation für die einzelnen Dienste ausführlich erläutert ist.
+Innerhalb dieses Developer Centers zeigen wir in erster Linie, wie Sie Ressourcen sowohl mit der Azure CLI als auch mit Python-Code bereitstellen, der die Azure-Bibliotheken verwendet. Die Verwendung des Portals wird in der Dokumentation für jeden einzelnen Dienst ausführlich erläutert.
 
 > [!NOTE]
 > Die Azure-Bibliotheken für Python werden manchmal auch als Azure SDK für Python bezeichnet. Abgesehen von den Bibliotheken, die Sie über den Python-Paket-Manager (pip) erhalten, sind allerdings keine weiteren SDK-Komponenten vorhanden.
@@ -42,15 +42,15 @@ Das [Azure-Portal](https://portal.azure.com) ist die vollständig anpassbare, br
 
 ## <a name="azure-cli"></a>Azure CLI
 
-Die [Azure CLI](/cli/azure/) ist die [Open-Source](https://github.com/Azure/azure-cli)-Befehlszeilenschnittstelle von Azure. Nachdem Sie sich bei der CLI angemeldet haben (mit dem Befehl `az login`), können Sie dieselben Aufgaben ausführen, die Sie auch über das Portal ausführen können.
+Die [Azure CLI](/cli/azure/) ist die [Open-Source](https://github.com/Azure/azure-cli)-Befehlszeilenschnittstelle von Azure. Nachdem Sie sich bei der Azure CLI angemeldet haben (mit dem Befehl `az login`), können Sie dieselben Aufgaben ausführen, die Sie auch über das Portal ausführen können.
   
 **Vorteile:** Einfache Automatisierung durch Skripts und die Verarbeitung von Ausgaben. Bietet Befehle auf höherer Ebene, die mehrere Ressourcen gemeinsam für häufige Aufgaben bereitstellen, z. B. für das Bereitstellen einer Web-App. Skripts können in der Quellcodeverwaltung verwaltet werden.
 
 **Nachteile:** Steilere Lernkurve als bei der Verwendung des Portals, und Befehle können zu Fehlern führen. Fehlermeldungen sind nicht immer hilfreich.
 
-Sie können auch [Azure PowerShell](/powershell/) anstelle der Azure CLI verwenden, obwohl die Befehle der Azure CLI im Linux-Stil Python-Entwicklern in der Regel vertrauter sind.
+Sie können auch das [Azure PowerShell](/powershell/)-Modul anstelle der Azure CLI verwenden, obwohl die Befehle der Azure CLI im Linux-Stil Python-Entwicklern in der Regel vertrauter sind.
 
-Anstatt der lokalen CLI oder PowerShell können Sie Azure Cloud Shell direkt über [https://shell.azure.com/](https://shell.azure.com/) verwenden. Die Cloud Shell ist praktisch, da Sie automatisch bei Azure authentifiziert wird, nachdem Sie geöffnet wurde, und die gleichen Funktionen wie das Azure-Portal aufweist. Cloud Shell ist außerdem mit zahlreichen verschiedenen Tools vorkonfiguriert, deren lokale Installation insbesondere dann unpraktisch wäre, wenn Sie nur ein oder zwei Befehle ausführen müssen.
+Anstatt der lokalen CLI oder von PowerShell können Sie dieselben Befehle in Azure Cloud Shell ([https://shell.azure.com/](https://shell.azure.com/)) verwenden. Die Cloud Shell ist praktisch, da Sie automatisch bei Azure authentifiziert wird, nachdem Sie geöffnet wurde, und die gleichen Funktionen wie das Azure-Portal aufweist. Cloud Shell ist außerdem mit zahlreichen verschiedenen Tools vorkonfiguriert, deren lokale Installation insbesondere dann unpraktisch wäre, wenn Sie nur ein oder zwei Befehle ausführen müssen.
 
 Da es sich bei Cloud Shell nicht um eine lokale Umgebung handelt, eignet sie sich eher für einzelne Vorgänge, wie Sie sie über das Portal ausführen würden, als für eine skriptbasierte Automatisierung. Dennoch können Sie in Cloud Shell Quellrepositorys (z. B. GitHub-Repositorys) klonen. Infolgedessen können Sie Automatisierungsskripts lokal entwickeln, in einem Repository speichern, das Repository in Cloud Shell klonen und dann dort ausführen.
 
@@ -74,17 +74,17 @@ Weitere Informationen finden Sie in Azure Architecture Center unter [Automatisch
 
 Sie können sich vorstellen, dass Sie im Ressourcenmodell von Azure im Laufe der Zeit viele verschiedene Ressourcen für zahlreiche Azure-Dienste für verschiedene Anwendungen bereitstellen. Es gibt drei Hierarchieebenen, die Sie verwenden können, um diese Ressourcen zu organisieren:
 
-1. **Abonnements** : Jedes Azure-Abonnement verfügt über ein eigenes Abrechnungskonto und stellt häufig ein bestimmtes Team oder eine Abteilung innerhalb einer Organisation dar. Im Allgemeinen stellen Sie alle benötigten Ressourcen für eine bestimmte Anwendung innerhalb desselben Abonnements bereit, sodass sie von Features wie der freigegebenen Authentifizierung profitieren kann. Da jedoch über öffentliche URLs und die erforderlichen Autorisierungstoken auf alle Ressourcen zugegriffen werden kann, ist es sicherlich möglich, Ressourcen über mehrere Abonnements zu verteilen.
+1. **Abonnements**: Jedes Azure-Abonnement verfügt über ein eigenes Abrechnungskonto und stellt häufig ein bestimmtes Team oder eine Abteilung innerhalb einer Organisation dar. Im Allgemeinen stellen Sie alle benötigten Ressourcen für eine bestimmte Anwendung innerhalb desselben Abonnements bereit, sodass sie von Features wie der freigegebenen Authentifizierung profitieren kann. Da jedoch über öffentliche URLs und die erforderlichen Autorisierungstoken auf alle Ressourcen zugegriffen werden kann, ist es sicherlich möglich, Ressourcen über mehrere Abonnements zu verteilen.
 
-1. **Ressourcengruppen** : Innerhalb eines Abonnements sind Ressourcengruppen Container für andere Ressourcen, die Sie dann als eine Gruppe verwalten können. (Aus diesem Grund bezieht sich eine Ressourcengruppe in der Regel auf ein bestimmtes Projekt.) Jedes Mal, wenn Sie eine Ressource bereitstellen, müssen Sie in der Tat die Gruppe angeben, zu der sie gehört. Der erste Schritt bei einem neuen Projekt besteht in der Regel darin, eine geeignete Ressourcengruppe zu erstellen. Wenn Sie die Ressourcengruppe löschen, heben Sie die Zuordnung aller enthaltenen Ressourcen auf, anstatt jede Ressource einzeln löschen zu müssen. Vertrauen Sie uns, wenn wir sagen, dass die Vernachlässigung der Organisation Ihrer Ressourcengruppen später zu vielen Schwierigkeiten führen kann, wenn Sie nicht mehr wissen, welche Ressource zu welchem Projekt gehört!
+1. **Ressourcengruppen**: Innerhalb eines Abonnements sind Ressourcengruppen Container für andere Ressourcen, die Sie dann als eine Gruppe verwalten können. (Aus diesem Grund bezieht sich eine Ressourcengruppe in der Regel auf ein bestimmtes Projekt.) Jedes Mal, wenn Sie eine Ressource bereitstellen, müssen Sie in der Tat die Gruppe angeben, zu der sie gehört. Der erste Schritt bei einem neuen Projekt besteht in der Regel darin, eine geeignete Ressourcengruppe zu erstellen. Wenn Sie die Ressourcengruppe löschen, heben Sie die Zuordnung aller enthaltenen Ressourcen auf, anstatt jede Ressource einzeln löschen zu müssen. Vertrauen Sie uns, wenn wir sagen, dass die Vernachlässigung der Organisation Ihrer Ressourcengruppen später zu vielen Schwierigkeiten führen kann, wenn Sie nicht mehr wissen, welche Ressource zu welchem Projekt gehört!
 
-1. **Benennen von Ressourcen** : innerhalb einer Ressourcengruppe können Sie dann die gewünschten Benennungsstrategien verwenden, um Gemeinsamkeiten oder Beziehungen zwischen Ressourcen auszudrücken. Da der Name häufig in der URL der Ressource verwendet wird, gibt es möglicherweise Einschränkungen hinsichtlich der Zeichen, die Sie verwenden können. (Einige Namen lassen z. B. nur Buchstaben und Ziffern zu, wohingegen in anderen Bindestriche und Unterstriche zulässig sind.)
+1. **Benennen von Ressourcen**: innerhalb einer Ressourcengruppe können Sie dann die gewünschten Benennungsstrategien verwenden, um Gemeinsamkeiten oder Beziehungen zwischen Ressourcen auszudrücken. Da der Name häufig in der URL der Ressource verwendet wird, gibt es möglicherweise Einschränkungen hinsichtlich der Zeichen, die Sie verwenden können. (Einige Namen lassen z. B. nur Buchstaben und Ziffern zu, wohingegen in anderen Bindestriche und Unterstriche zulässig sind.)
 
 Während der Arbeit mit Azure entwickeln Sie Ihre eigenen Präferenzen für die Organisation Ihrer Ressourcen und Ihre eigenen Konventionen für die Benennung von Abonnements, Ressourcengruppen und einzelnen Ressourcen.
 
 ### <a name="regions-and-geographies"></a>Regionen und geografische Regionen
 
-Ein wichtiges Merkmal einer Ressourcengruppe besteht darin, dass Sie immer einem bestimmten Azure- *Region* zugeordnet ist. Dies ist der Standort des jeweiligen Rechenzentrums. Alle Ressourcen in derselben Gruppe befinden sich gemeinsam in diesem Rechenzentrum und können so viel effizienter interagieren, als wenn sie sich in verschiedenen Regionen befinden würden. Entwickler wählen häufig Regionen aus, die ihren Kunden am nächsten liegen, und optimieren so die Reaktionsfähigkeit einer Anwendung. Azure bietet auch Features für die Georeplikation, um Kopien Ihrer Anwendung und Datenbanken in mehreren Regionen zu synchronisieren, sodass Sie eine globale Kundenbasis besser bedienen können.
+Ein wichtiges Merkmal einer Ressourcengruppe besteht darin, dass Sie immer einem bestimmten Azure-*Region* zugeordnet ist. Dies ist der Standort des jeweiligen Rechenzentrums. Alle Ressourcen in derselben Gruppe befinden sich gemeinsam in diesem Rechenzentrum und können so viel effizienter interagieren, als wenn sie sich in verschiedenen Regionen befinden würden. Entwickler wählen häufig Regionen aus, die ihren Kunden am nächsten liegen, und optimieren so die Reaktionsfähigkeit einer Anwendung. Azure bietet auch Features für die Georeplikation, um Kopien Ihrer Anwendung und Datenbanken in mehreren Regionen zu synchronisieren, sodass Sie eine globale Kundenbasis besser bedienen können.
 
 Aufgrund lokaler Gesetze und Vorschriften, die durch die *Geografie* bestimmt werden, in der Sie ein Abonnement erstellen, haben Sie möglicherweise nur Zugang zu bestimmten Regionen, und diese Regionen unterstützen möglicherweise nicht alle Azure-Dienste. Weitere Informationen finden Sie unter [Globale Azure-Infrastruktur](https://azure.microsoft.com/global-infrastructure/).
 

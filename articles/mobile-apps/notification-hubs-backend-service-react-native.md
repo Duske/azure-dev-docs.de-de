@@ -6,12 +6,12 @@ ms.service: mobile-services
 ms.topic: tutorial
 ms.date: 07/27/2020
 ms.author: alstrakh
-ms.openlocfilehash: b8846a2171c6f99a4796d288774c3b525093238a
-ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
+ms.openlocfilehash: ac6b1cc183cd06f8186a678e006602c57a54238e
+ms.sourcegitcommit: 54f976887d218aaabd94371e24809716da8cf86e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91493246"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99554338"
 ---
 # <a name="tutorial-send-push-notifications-to-react-native-apps-using-azure-notification-hubs-via-a-backend-service"></a>Tutorial: Senden von Pushbenachrichtigungen an React Native-Apps mit Azure Notification Hubs über einen Back-End-Dienst  
 
@@ -62,7 +62,7 @@ Für iOS benötigen Sie Folgendes:
 Sie können die Schritte in diesem Beispiel zu den Grundprinzipien ohne vorherige Erfahrung ausführen. Kenntnisse der folgenden Aspekte sind jedoch von Vorteil.
 
 * [Apple Developer-Portal](https://developer.apple.com)
-* [ASP.NET Core](/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1)
+* [ASP.NET Core](/aspnet/core/introduction-to-aspnet-core)
 * [Google Firebase-Konsole](https://console.firebase.google.com/u/0/)
 * [Microsoft Azure](https://portal.azure.com) und [Senden von Pushbenachrichtigungen an iOS-Apps mit Azure Notification Hubs](/azure/notification-hubs/ios-sdk-get-started)
 * [React Native](https://reactnative.dev/docs/getting-started)
@@ -118,7 +118,7 @@ Sie können jetzt das Senden von Benachrichtigungen über den Back-End-Dienst te
 ## <a name="related-links"></a>Verwandte Links
 
 * [Übersicht über Azure Notification Hubs](/azure/notification-hubs/notification-hubs-push-notification-overview)
-* [Installieren von Visual Studio für Mac](/visualstudio/mac/installation?view=vsmac-2019)
+* [Installieren von Visual Studio für Mac](/visualstudio/mac/installation)
 * [Herunterladen von Visual Studio Code](https://code.visualstudio.com/download)
 * [Einrichten der Entwicklungsumgebung](https://reactnative.dev/docs/environment-setup)
 * [Notification Hubs SDK für Back-End-Vorgänge](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)

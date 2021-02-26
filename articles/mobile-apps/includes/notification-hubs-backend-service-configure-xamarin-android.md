@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: faacb54f9e8a16cf4ef5b39aed0a3e42a4b3f255
-ms.sourcegitcommit: 84f64dec74b4b041b8830a4e7489e22f0e943440
+ms.openlocfilehash: f69c6287d0d4904c1c19ba7e9a115b85bc621185
+ms.sourcegitcommit: bccbab4883e6b6b4926fc194c35ad948b11ccc3f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97866123"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99974322"
 ---
 ### <a name="validate-package-name-and-permissions"></a>Überprüfen von Paketname und Berechtigungen
 
@@ -80,7 +80,7 @@ ms.locfileid: "97866123"
                 if (!NotificationsSupported)
                     throw new Exception(GetPlayServicesError());
 
-                if (string.IsNullOrWhitespace(Token))
+                if (string.IsNullOrWhiteSpace(Token))
                     throw new Exception("Unable to resolve token for FCM");
 
                 var installation = new DeviceInstallation
@@ -111,7 +111,7 @@ ms.locfileid: "97866123"
     ```
 
     > [!NOTE]
-    > Diese Klasse bietet eine eindeutige ID (unter Verwendung von [Secure.AndroidId](/dotnet/api/android.provider.settings.secure.androidid?view=xamarin-android-sdk-9)) als Teil der Nutzlast der Benachrichtigungshubregistrierung.
+    > Diese Klasse bietet eine eindeutige ID (unter Verwendung von [Secure.AndroidId](/dotnet/api/android.provider.settings.secure.androidid)) als Teil der Nutzlast der Benachrichtigungshubregistrierung.
 
 1. Fügen Sie dem Ordner **Dienste** mit dem Namen *PushNotificationFirebaseMessagingService.cs* eine weitere **leere Klasse** hinzu, und fügen Sie dann die folgende Implementierung hinzu.
 

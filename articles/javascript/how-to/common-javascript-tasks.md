@@ -4,18 +4,20 @@ description: Hier finden Sie ein Beispiel für Ihre aktuellen Aufgaben.
 ms.topic: reference
 ms.date: 01/20/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: cc5ca751b8d22612c63d26a46934eb5b4c057c69
-ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
+ms.openlocfilehash: 9da8ede8dfbf7ffc54fce9531f4b490ae9db1942
+ms.sourcegitcommit: 7287dff6bf4b30c2033924702c941bf520403e07
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99510998"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99589436"
 ---
 # <a name="top-tasks-for-javascript-developers"></a>Wichtigste Aufgaben für JavaScript-Entwickler
 
 Hier finden Sie ein Beispiel für Ihre aktuelle Aufgabe. Sollten Sie eine Aufgabe nicht finden, hinterlassen Sie Feedback, um Ihre Aufgabe anzufordern. 
 
 ## <a name="app-registration"></a>App-Registrierung
+
+[Dokumentation zur App-Registrierung](/azure/active-directory/develop/quickstart-register-app)
 
 |Aufgabe|using|
 |--|--|
@@ -56,6 +58,8 @@ Hier finden Sie ein Beispiel für Ihre aktuelle Aufgabe. Sollten Sie eine Aufgab
 
 ### <a name="static-web-apps"></a>Statische Web-Apps
 
+[Dienstdokumentation](/azure/static-web-apps/)
+
 |Aufgabe|using|
 |--|--|
 |Erstellen einer Angular-App|[Bash](../tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-02.md?tabs=angular)|
@@ -71,6 +75,8 @@ Hier finden Sie ein Beispiel für Ihre aktuelle Aufgabe. Sollten Sie eine Aufgab
 
 ### <a name="function-serverless-apps"></a>Funktions-App (serverlos)
 
+[Dienstdokumentation](/azure/azure-functions/)
+
 |Aufgabe|using|
 |--|--|
 |Lokales Erstellen einer Functions-App|[Visual Studio Code-Erweiterung](../tutorial/tutorial-vscode-serverless-node-create-local.md)|
@@ -81,6 +87,8 @@ Hier finden Sie ein Beispiel für Ihre aktuelle Aufgabe. Sollten Sie eine Aufgab
 |Entfernen einer Funktions-App-Ressource|[Visual Studio Code-Erweiterung](../tutorial/tutorial-vscode-serverless-node-remove-resource.md)|
 
 ### <a name="app-service---full-stack-server-only-or-client-only-apps"></a>App Service: Full-Stack-App, reine Server-App oder reine Client-App
+
+[Dienstdokumentation](/azure/app-service/)
 
 |Aufgabe|using|
 |--|--|
@@ -99,6 +107,8 @@ Hier finden Sie ein Beispiel für Ihre aktuelle Aufgabe. Sollten Sie eine Aufgab
 |Streamen von Remoteprotokollen|[Visual Studio Code-Erweiterung](../tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md?tabs=bash#7-stream-remote-service-logs-in-visual-studio-code)<br>[Azure-Befehlszeilenschnittstelle](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-05.md)|
 
 ## <a name="cognitive-services"></a>Cognitive Services
+
+[Dokumentation zu Dienstgruppen](/azure/cognitive-services/)
 
 |Aufgabe|using|
 |--|--|
@@ -128,12 +138,29 @@ Hier finden Sie ein Beispiel für Ihre aktuelle Aufgabe. Sollten Sie eine Aufgab
 
 ## <a name="databases"></a>Datenbanken
 
+### <a name="mariadb"></a>MariaDB
+
+[Dienstdokumentation](/azure/mariadb/)
+
+|Aufgabe|Verwenden|
+|--|--|
+|Erstellen einer MariaDB-Ressource|[Azure portal](https://ms.portal.azure.com/#create/Microsoft.MariaDBServer)<br>[Azure-Befehlszeilenschnittstelle](./with-azure-cli/create-mariadb.md#create-a-mariadb-resource-with-azure-cli)<br>[@azure/arm-mariadb](https://www.npmjs.com/package/@azure/arm-mariadb)|
+|Erstellen einer MariaDB-Datenbank für eine Ressource|[Azure CLI](./with-azure-cli/create-mariadb.md#create-a-mariadb-resource-with-azure-cli)|
+|Abrufen der Verbindungszeichenfolge|[Azure CLI](./with-azure-cli/create-mariadb.md#get-the-mariadb-connection-string-with-azure-cli)|
+|Verwenden und Anzeigen der Datenbank|_mysql_-Befehlszeilenschnittstelle von [Azure Cloud Shell](https://shell.azure.com/)<br>[MySQL Workbench](https://www.mysql.com/products/workbench/)<br>[Visual Studio Code-Erweiterung](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools-driver-mysql)<br>[npm mariadb](https://www.npmjs.com/package/mariadb)<br>[JavaScript](./with-database/use-mariadb.md#use-mariadb-sdk-to-connect-to-mariadb-on-azure)|
+
+### <a name="mongodb-on-cosmos-db"></a>MongoDB in Cosmos DB
+
+[Dienstdokumentation](/azure/cosmos-db/)
+
 |Aufgabe|using|
 |--|--|
 |Erstellen einer Cosmos DB MongoDB-Ressource|[Visual Studio Code-Erweiterung](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md)<br>[Azure-Befehlszeilenschnittstelle](./with-azure-cli/create-mongodb-cosmosdb.md#create-a-cosmos-db-resource-for-mongodb)|
 |Abrufen der CosmosDB-Verbindungszeichenfolge|[Visual Studio Code-Erweiterung](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md#get-cosmosdb-connection-string)<br>[Azure-Befehlszeilenschnittstelle](./with-azure-cli/create-mongodb-cosmosdb.md#get-the-mongodb-connection-string-for-your-resource)|
 |Anzeigen von Cosmos DB|[Cosmos DB-Explorer](https://cosmos.azure.com/)|
 |Verwenden der Mongoose-API für mongoDB in Cosmos DB|[JavaScript](./with-database/use-mongodb-as-cosmosdb.md#use-mongoose-sdk-to-connect-to-mongodb-on-azure)
+
+
 
 ## <a name="git"></a>Git
 
@@ -164,6 +191,8 @@ Hier finden Sie ein Beispiel für Ihre aktuelle Aufgabe. Sollten Sie eine Aufgab
 
 ## <a name="storage"></a>Storage
 
+[Dienstdokumentation](/azure/storage/)
+
 |Aufgabe|using|
 |--|--|
 |Erstellen von Ressourcen|[Visual Studio Code-Erweiterung](../tutorial/browser-file-upload-azure-storage-blob.md#3-create-storage-resource-with-visual-studio-extension)|
@@ -187,6 +216,8 @@ Hier finden Sie ein Beispiel für Ihre aktuelle Aufgabe. Sollten Sie eine Aufgab
 
 ## <a name="virtual-machines"></a>Virtuelle Computer
 
+[Dienstdokumentation](/azure/virtual-machines/)
+
 |Aufgabe|using|
 |--|--|
 |Herstellen einer SSH-Verbindung mit dem virtuellen Computer|[Bash](../tutorial/nodejs-virtual-machine-vm/connect-linux-virtual-machine-ssh.md#connect-with-ssh-and-change-web-app)|
@@ -199,6 +230,8 @@ Hier finden Sie ein Beispiel für Ihre aktuelle Aufgabe. Sollten Sie eine Aufgab
 
 
 ## <a name="visual-studio-code-develop-and-debug-javascript-apps"></a>Visual Studio Code: Entwickeln und Debuggen von JavaScript-Apps 
+
+[Tooldokumentation](https://code.visualstudio.com/docs)
 
 |Aufgabe|using|
 |--|--|

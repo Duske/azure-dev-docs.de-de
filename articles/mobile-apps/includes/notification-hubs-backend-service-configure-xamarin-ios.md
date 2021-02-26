@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: 4dba0dcf6fe960b80e445f865644997669ce9b36
-ms.sourcegitcommit: 84f64dec74b4b041b8830a4e7489e22f0e943440
+ms.openlocfilehash: 87509c0201407eb603f776e8b4994fc6f984cb6c
+ms.sourcegitcommit: bccbab4883e6b6b4926fc194c35ad948b11ccc3f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97866137"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99974239"
 ---
 ### <a name="configure-infoplist-and-entitlementsplist"></a>Konfigurieren von „Info.plist“ und „Entitlements.plist“
 
@@ -65,7 +65,7 @@ ms.locfileid: "97866137"
                 if (!NotificationsSupported)
                     throw new Exception(GetNotificationsSupportError());
 
-                if (string.IsNullOrWhitespace(Token))
+                if (string.IsNullOrWhiteSpace(Token))
                     throw new Exception("Unable to resolve token for APNS");
 
                 var installation = new DeviceInstallation
@@ -96,7 +96,7 @@ ms.locfileid: "97866137"
     ```
 
     > [!NOTE]
-    > Diese Klasse bietet eine eindeutige ID (unter Verwendung des Werts [UIDevice.IdentifierForVendor](/dotnet/api/uikit.uidevice.identifierforvendor?view=xamarin-ios-sdk-12)) und die Nutzlast der Benachrichtigungshubregistrierung.
+    > Diese Klasse bietet eine eindeutige ID (unter Verwendung des Werts [UIDevice.IdentifierForVendor](/dotnet/api/uikit.uidevice.identifierforvendor)) und die Nutzlast der Benachrichtigungshubregistrierung.
 
 1. Fügen Sie einen neuen Ordner mit dem Namen *Erweiterungen* zum Projekt **PushDemo.iOS** hinzu, und fügen Sie diesem Ordner dann eine **leere Klasse** namens *NSDataExtensions.cs* mit der folgenden Implementierung hinzu.
 

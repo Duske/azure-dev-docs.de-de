@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: 6fbc1036b06a318d81729691331adb6b868e1d5c
-ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
+ms.openlocfilehash: 0d7c65f9e114a81299b9b877733087ae42985909
+ms.sourcegitcommit: 54f976887d218aaabd94371e24809716da8cf86e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93406693"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99554292"
 ---
 ### <a name="create-a-web-project"></a>Erstellen eines Webprojekts
 
@@ -21,22 +21,22 @@ ms.locfileid: "93406693"
 
 1. Geben Sie *PushDemoApi* als **Projektnamen** ein, und wählen Sie dann **Erstellen** aus.
 
-1. Starten Sie den Debugvorgang ( **BEFEHL** + **EINGABE** ), um die vorlagenbasierte App zu testen.
+1. Starten Sie den Debugvorgang (**BEFEHL** + **EINGABE**), um die vorlagenbasierte App zu testen.
 
     > [!NOTE]
     > Die vorlagenbasierte App ist so konfiguriert, dass **WeatherForecastController-** als *launchUrl* verwendet wird. Dies wird unter **Eigenschaften** > **launchSettings.json** festgelegt.  
     >
     > Wenn die Meldung **Ungültiges Entwicklungszertifikat gefunden** angezeigt wird:
     >
-    > 1. Klicken Sie auf **Ja** , um zu bestätigen, dass das Tool „dotnet dev-certs https“ zum Korrigieren dieses Fehlers ausgeführt wird. Vom Tool „dotnet dev-certs https“ werden Sie dann aufgefordert, ein Kennwort für das Zertifikat und das Kennwort für Ihren Schlüsselbund einzugeben.
+    > 1. Klicken Sie auf **Ja**, um zu bestätigen, dass das Tool „dotnet dev-certs https“ zum Korrigieren dieses Fehlers ausgeführt wird. Vom Tool „dotnet dev-certs https“ werden Sie dann aufgefordert, ein Kennwort für das Zertifikat und das Kennwort für Ihren Schlüsselbund einzugeben.
     >
-    > 1. Klicken Sie auf **Ja** , wenn Sie aufgefordert werden, **das neue Zertifikat zu installieren und ihm zu vertrauen** , und geben Sie dann das Kennwort für Ihren Schlüsselbund ein.
+    > 1. Klicken Sie auf **Ja**, wenn Sie aufgefordert werden, **das neue Zertifikat zu installieren und ihm zu vertrauen**, und geben Sie dann das Kennwort für Ihren Schlüsselbund ein.
 
-1. Erweitern Sie den Ordner **Controller** , und löschen Sie dann **WeatherForecastController.cs**.
+1. Erweitern Sie den Ordner **Controller**, und löschen Sie dann **WeatherForecastController.cs**.
 
 1. Löschen Sie **WeatherForecast.cs**.
 
-1. Richten Sie mit dem [Geheimnis-Manager-Tool](/aspnet/core/security/app-secrets?view=aspnetcore-3.1&tabs=linux#secret-manager) lokale Konfigurationswerte ein. Indem Sie die Kopplung der geheimen Schlüssel mit der Lösung aufheben, wird sichergestellt, dass sie nicht in die Quellcodeverwaltung geraten. Öffnen Sie **Terminal** , wechseln Sie dann zum Verzeichnis der Projektdatei, und führen Sie die folgenden Befehle aus:
+1. Richten Sie mit dem [Geheimnis-Manager-Tool](/aspnet/core/security/app-secrets?tabs=linux#secret-manager) lokale Konfigurationswerte ein. Indem Sie die Kopplung der geheimen Schlüssel mit der Lösung aufheben, wird sichergestellt, dass sie nicht in die Quellcodeverwaltung geraten. Öffnen Sie **Terminal**, wechseln Sie dann zum Verzeichnis der Projektdatei, und führen Sie die folgenden Befehle aus:
 
     ```bash
     dotnet user-secrets init
@@ -46,10 +46,10 @@ ms.locfileid: "93406693"
 
     Ersetzen Sie die Platzhalterwerte durch den Namen ihres eigenen Benachrichtigungshubs und die Werte der Verbindungszeichenfolge. Diese haben Sie sich im Abschnitt [Erstellen eines Benachrichtigungshubs](#create-a-notification-hub) notiert. Andernfalls können Sie sie in [Azure](https://portal.azure.com) nachschlagen.
 
-    **NotificationsHub:Name** :  
+    **NotificationsHub:Name**:  
     Weitere Informationen finden Sie unter *Name* in der Zusammenfassung **Essentials** am Anfang der **Übersicht**.  
 
-    **NotificationHub:ConnectionString** :  
+    **NotificationHub:ConnectionString**:  
     Weitere Informationen finden Sie unter *DefaultFullSharedAccessSignature-* in **Zugriffsrichtlinien**
 
     > [!NOTE]
@@ -57,7 +57,7 @@ ms.locfileid: "93406693"
 
 ### <a name="authenticate-clients-using-an-api-key-optional"></a>Authentifizieren von Clients mit einem API-Schlüssel (optional)
 
-API-Schlüssel sind nicht so sicher wie Token, sind aber für die Zwecke dieses Tutorials ausreichend. Ein API-Schlüssel kann problemlos über die [ASP.NET-Middleware](/aspnet/core/fundamentals/middleware/?view=aspnetcore-3.1) konfiguriert werden.
+API-Schlüssel sind nicht so sicher wie Token, sind aber für die Zwecke dieses Tutorials ausreichend. Ein API-Schlüssel kann problemlos über die [ASP.NET-Middleware](/aspnet/core/fundamentals/middleware/) konfiguriert werden.
 
 1. Fügen Sie den **API-Schlüssel** zu den lokalen Konfigurationswerten hinzu.
 
@@ -68,9 +68,9 @@ API-Schlüssel sind nicht so sicher wie Token, sind aber für die Zwecke dieses 
     > [!NOTE]
     > Ersetzen Sie den Platzhalterwert durch ihren eigenen Wert, und notieren Sie ihn.
 
-1. **CONTROL** + **Klicken** Sie auf das Projekt **PushDemoApi** , wählen Sie **Neuer Ordner** aus dem Menü **Hinzufügen** aus, und klicken Sie dann auf **Hinzufügen**. Verwenden Sie dabei *Authentifizierung* als **Ordnernamen**.
+1. **CONTROL** + **Klicken** Sie auf das Projekt **PushDemoApi**, wählen Sie **Neuer Ordner** aus dem Menü **Hinzufügen** aus, und klicken Sie dann auf **Hinzufügen**. Verwenden Sie dabei *Authentifizierung* als **Ordnernamen**.
 
-1. **CONTROL** + **Klicken** Sie auf den Ordner **Authentication** , und wählen Sie dann **Neue Datei...** aus dem Menü **Hinzufügen** aus.
+1. **CONTROL** + **Klicken** Sie auf den Ordner **Authentication**, und wählen Sie dann **Neue Datei...** aus dem Menü **Hinzufügen** aus.
 
 1. Wählen Sie **Allgemein** > **Leere Klassen** aus, geben Sie *ApiKeyAuthOptions.cs* als **Namen** ein, und klicken Sie dann auf **Neu** unter Hinzufügung der folgenden Implementierung.
 
@@ -148,7 +148,7 @@ API-Schlüssel sind nicht so sicher wie Token, sind aber für die Zwecke dieses 
     ```
 
     > [!NOTE]
-    > Ein [Authentifizierungs-Handler](/aspnet/core/security/authentication/?view=aspnetcore-3.1#authentication-handler) ist ein Typ, der das Verhalten eines Schemas implementiert, in diesem Fall ein benutzerdefiniertes API-Schlüssel-Schema.
+    > Ein [Authentifizierungs-Handler](/aspnet/core/security/authentication/#authentication-handler) ist ein Typ, der das Verhalten eines Schemas implementiert, in diesem Fall ein benutzerdefiniertes API-Schlüssel-Schema.
 
 1. Fügen Sie dem Ordner **Authentication** mit dem Namen *ApiKeyAuthenticationBuilderExtensions.cs* eine weitere **leere Klasse** hinzu, und fügen Sie dann die folgende Implementierung hinzu.
 
@@ -176,7 +176,7 @@ API-Schlüssel sind nicht so sicher wie Token, sind aber für die Zwecke dieses 
     > [!NOTE]
     > Diese Erweiterungsmethode vereinfacht den Konfigurationscode der Middleware in **Startup.cs** damit Sie besser lesbar und allgemein leichter zu finden ist.
 
-1. Aktualisieren Sie in **Startup.cs** die Methode **ConfigureServices** , um die API-Schlüsselauthentifizierung unterhalb des Aufrufs der Methode **services.AddControllers**.
+1. Aktualisieren Sie in **Startup.cs** die Methode **ConfigureServices**, um die API-Schlüsselauthentifizierung unterhalb des Aufrufs der Methode **services.AddControllers**.
 
     ```csharp
     using PushDemoApi.Authentication;
@@ -195,7 +195,7 @@ API-Schlüssel sind nicht so sicher wie Token, sind aber für die Zwecke dieses 
     }
     ```
 
-1. Aktualisieren Sie, immer noch in **Startup.cs** , die Methode **Configure** , um die Erweiterungsmethoden **UseAuthentication** und **UseAuthorization** für das **IApplicationBuilder** -Objekt der App aufzurufen. Stellen Sie sicher, dass diese Methoden nach **UseRouting** und vor **app.UseEndpoints** aufgerufen werden.
+1. Aktualisieren Sie, immer noch in **Startup.cs**, die Methode **Configure**, um die Erweiterungsmethoden **UseAuthentication** und **UseAuthorization** für das **IApplicationBuilder**-Objekt der App aufzurufen. Stellen Sie sicher, dass diese Methoden nach **UseRouting** und vor **app.UseEndpoints** aufgerufen werden.
 
     ```csharp
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -221,23 +221,23 @@ API-Schlüssel sind nicht so sicher wie Token, sind aber für die Zwecke dieses 
     ```
 
     > [!NOTE]
-    > Durch Aufrufen von **UseAuthentication** wird die Middleware registriert, die die zuvor registrierten Authentifizierungsschemas (von **ConfigureServices** ) verwendet. Diese Methode muss vor jeglicher anderen Middleware aufgerufen werden, die von der Authentifizierung der Benutzer abhängig ist.
+    > Durch Aufrufen von **UseAuthentication** wird die Middleware registriert, die die zuvor registrierten Authentifizierungsschemas (von **ConfigureServices**) verwendet. Diese Methode muss vor jeglicher anderen Middleware aufgerufen werden, die von der Authentifizierung der Benutzer abhängig ist.
 
 ### <a name="add-dependencies-and-configure-services"></a>Hinzufügen von Abhängigkeiten und Konfigurieren von Diensten
 
-ASP.NET Core unterstützt das Softwareentwurfsmuster [Abhängigkeitsinjektion (Dependency Injection, DI)](/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.1). Mit dieser Technik kann eine [Umkehrung der Steuerung (Inversion of Control, IoC)](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion) zwischen Klassen und ihren Abhängigkeiten erreicht werden.  
+ASP.NET Core unterstützt das Softwareentwurfsmuster [Abhängigkeitsinjektion (Dependency Injection, DI)](/aspnet/core/fundamentals/dependency-injection). Mit dieser Technik kann eine [Umkehrung der Steuerung (Inversion of Control, IoC)](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion) zwischen Klassen und ihren Abhängigkeiten erreicht werden.  
 
 Die Verwendung des Benachrichtigungshubs und des [Notification Hubs SDK für Back-End-Vorgänge](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/) ist innerhalb eines Diensts gekapselt. Der Dienst wird durch eine geeignete Abstraktion registriert und verfügbar gemacht.
 
-1. **CONTROL** + **Klicken** Sie auf den Ordner **Abhängigkeiten** , und wählen Sie dann **NuGet-Pakete verwalten...** aus.
+1. **CONTROL** + **Klicken** Sie auf den Ordner **Abhängigkeiten**, und wählen Sie dann **NuGet-Pakete verwalten...** aus.
 
-1. Suchen Sie nach **Microsoft.Azure.NotificationHubs** , und stellen Sie sicher, dass diese Option aktiviert ist.
+1. Suchen Sie nach **Microsoft.Azure.NotificationHubs**, und stellen Sie sicher, dass diese Option aktiviert ist.
 
-1. Klicken Sie auf **Pakete hinzufügen** dann auf **Zustimmen** , wenn Sie aufgefordert werden, die Lizenzbedingungen zu akzeptieren.
+1. Klicken Sie auf **Pakete hinzufügen** dann auf **Zustimmen**, wenn Sie aufgefordert werden, die Lizenzbedingungen zu akzeptieren.
 
-1. **CONTROL** + **Klicken** Sie auf das Projekt **PushDemoApi** , wählen Sie **Neuer Ordner** aus dem Menü **Hinzufügen** aus, und klicken Sie dann auf **Hinzufügen**. Verwenden Sie dabei *Modelle* als **Ordnernamen**.
+1. **CONTROL** + **Klicken** Sie auf das Projekt **PushDemoApi**, wählen Sie **Neuer Ordner** aus dem Menü **Hinzufügen** aus, und klicken Sie dann auf **Hinzufügen**. Verwenden Sie dabei *Modelle* als **Ordnernamen**.
 
-1. **CONTROL** + **Klicken** Sie auf den Ordner **Modelle** , und wählen Sie dann **Neue Datei...** aus dem Menü **Hinzufügen** aus.
+1. **CONTROL** + **Klicken** Sie auf den Ordner **Modelle**, und wählen Sie dann **Neue Datei...** aus dem Menü **Hinzufügen** aus.
 
 1. Wählen Sie **Allgemein** > **Leere Klassen** aus, geben Sie *PushTemplates.cs* als **Namen** ein, und klicken Sie dann auf **Neu** unter Hinzufügung der folgenden Implementierung.
 
@@ -262,7 +262,7 @@ Die Verwendung des Benachrichtigungshubs und des [Notification Hubs SDK für Bac
     ```
 
     > [!NOTE]
-    > Diese Klasse enthält die tokenisierten Benachrichtigungsnutzlasten für die für dieses Szenario erforderlichen generischen und automatischen Benachrichtigungen. Die Nutzlasten werden außerhalb der [Installation](/dotnet/api/microsoft.azure.notificationhubs.installation?view=azure-dotnet) definiert, um Experimente zuzulassen, ohne vorhandene Installationen über den Dienst aktualisieren zu müssen. Die Verarbeitung von Änderungen an Installationen auf diese Weise ist nicht Gegenstand dieses Tutorials. Ziehen Sie für die Produktion [benutzerdefinierte Vorlagen](/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages) in Betracht.
+    > Diese Klasse enthält die tokenisierten Benachrichtigungsnutzlasten für die für dieses Szenario erforderlichen generischen und automatischen Benachrichtigungen. Die Nutzlasten werden außerhalb der [Installation](/dotnet/api/microsoft.azure.notificationhubs.installation) definiert, um Experimente zuzulassen, ohne vorhandene Installationen über den Dienst aktualisieren zu müssen. Die Verarbeitung von Änderungen an Installationen auf diese Weise ist nicht Gegenstand dieses Tutorials. Ziehen Sie für die Produktion [benutzerdefinierte Vorlagen](/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages) in Betracht.
 
 1. Fügen Sie dem Ordner **Modelle** mit dem Namen *DeviceInstallation.cs* eine weitere **leere Klasse** hinzu, und fügen Sie dann die folgende Implementierung hinzu.
 
@@ -515,7 +515,7 @@ Die Verwendung des Benachrichtigungshubs und des [Notification Hubs SDK für Bac
     > [!NOTE]
     > Der für **SendTemplateNotificationAsync** bereitgestellte Tagausdruck ist auf 20 Tags beschränkt. Er ist für die meisten Operatoren auf 6 begrenzt, aber der Ausdruck enthält in diesem Fall nur ORs (||). Wenn die Anforderung mehr als 20 Tags enthält, muss sie in mehrere Anforderungen aufgeteilt werden. Weitere Details finden Sie in der Dokumentation [Weiterleitung und Tagausdrücke](/previous-versions/azure/azure-services/dn530749(v=azure.100)?f=255&MSPPError=-2147217396).
 
-1. Aktualisieren Sie die Methode **ConfigureServices** in **Startup.cs** , um **NotificationHubsService** als Singleton-Implementierung von **INotificationService** hinzuzufügen.
+1. Aktualisieren Sie die Methode **ConfigureServices** in **Startup.cs**, um **NotificationHubsService** als Singleton-Implementierung von **INotificationService** hinzuzufügen.
 
     ```csharp
     
@@ -536,7 +536,7 @@ Die Verwendung des Benachrichtigungshubs und des [Notification Hubs SDK für Bac
 
 ### <a name="create-the-notifications-api"></a>Erstellen der Benachrichtigungen-API
 
-1. **CONTROL** + **Klicken** Sie auf den Ordner **Controller** , und wählen Sie dann **Neue Datei...** aus dem Menü **Hinzufügen** aus.
+1. **CONTROL** + **Klicken** Sie auf den Ordner **Controller**, und wählen Sie dann **Neue Datei...** aus dem Menü **Hinzufügen** aus.
 
 1. Wählen Sie **ASP.NET Core** > **Web-API-Controller-Klasse** aus, geben Sie *NotificationsController* als **Namen** ein, und klicken Sie dann auf **Neu**.
 
@@ -570,7 +570,7 @@ Die Verwendung des Benachrichtigungshubs und des [Notification Hubs SDK für Bac
     > [!NOTE]
     > Die Basisklasse **Controller** bietet Unterstützung für Ansichten, aber dies ist in diesem Fall nicht erforderlich, sodass stattdessen **ControllerBase** verwendet werden kann. Wenn Sie mit [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) arbeiten, können Sie diesen Schritt überspringen.
 
-1. Wenn Sie entschieden haben, die Schritte im Abschnitt [Authentifizieren von Clients mit einem API-Schlüssel](#authenticate-clients-using-an-api-key-optional) durchzuführen, sollten Sie **NotificationsController** auch mit dem **Authorize** -Attribut ergänzen.
+1. Wenn Sie entschieden haben, die Schritte im Abschnitt [Authentifizieren von Clients mit einem API-Schlüssel](#authenticate-clients-using-an-api-key-optional) durchzuführen, sollten Sie **NotificationsController** auch mit dem **Authorize**-Attribut ergänzen.
 
     ```cs
     [Authorize]
@@ -587,14 +587,14 @@ Die Verwendung des Benachrichtigungshubs und des [Notification Hubs SDK für Bac
     }
     ```
 
-1. Ändern Sie in **launchSettings.json** (im Ordner **Eigenschaften** ) die **launchUrl** von `weatherforecast` in *api/notifications* , damit sie mit der im **Route** -Attribut von **RegistrationsController** angegebenen URL übereinstimmt.
+1. Ändern Sie in **launchSettings.json** (im Ordner **Eigenschaften**) die **launchUrl** von `weatherforecast` in *api/notifications*, damit sie mit der im **Route**-Attribut von **RegistrationsController** angegebenen URL übereinstimmt.
 
-1. Starten Sie das Debugging ( **BEFEHL** + **EINGABE** ), um zu überprüfen, ob die App mit dem neuen **NotificationsController** funktioniert und den Status **401 – Nicht autorisiert** zurückgibt.
+1. Starten Sie das Debugging (**BEFEHL** + **EINGABE**), um zu überprüfen, ob die App mit dem neuen **NotificationsController** funktioniert und den Status **401 – Nicht autorisiert** zurückgibt.
 
     > [!NOTE]
     > Visual Studio startet die App möglicherweise nicht automatisch im Browser. Sie verwenden [Postman](https://www.postman.com/downloads), um die API von diesem Punkt an zu testen.
 
-1. Legen Sie auf einer neuen **[Postman](https://www.postman.com/downloads)** -Registerkarte die Anforderung auf **GET** fest. Geben Sie die folgende Adresse ein, und ersetzen Sie dabei den Platzhalter **&lt;ApplicationUrl>** durch die HTTPS- **ApplicationUrl** unter **Eigenschaften** > **launchSettings.json**.
+1. Legen Sie auf einer neuen **[Postman](https://www.postman.com/downloads)** -Registerkarte die Anforderung auf **GET** fest. Geben Sie die folgende Adresse ein, und ersetzen Sie dabei den Platzhalter **&lt;ApplicationUrl>** durch die HTTPS-**ApplicationUrl** unter **Eigenschaften** > **launchSettings.json**.
 
     ```bash
     <applicationUrl>/api/notifications
@@ -603,7 +603,7 @@ Die Verwendung des Benachrichtigungshubs und des [Notification Hubs SDK für Bac
     > [!NOTE]
     > Die **ApplicationUrl** muss für das Standardprofil „https://localhost:5001“ sein. Wenn Sie **IIS** verwenden (Standard in [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) unter Windows), sollten Sie stattdessen die **ApplicationUrl** verwenden, die im Element **iisSettings** angegeben wird. Sie erhalten eine Antwort vom Typ 404, wenn die Adresse falsch ist.
 
-1. Wenn Sie sich entschieden haben, die Schritte im Abschnitt [Authentifizieren von Clients mit einem API-Schlüssel](#authenticate-clients-using-an-api-key-optional) durchzuführen, stellen Sie sicher, dass die Anforderungsheader Ihren **apikey** -Wert enthalten.
+1. Wenn Sie sich entschieden haben, die Schritte im Abschnitt [Authentifizieren von Clients mit einem API-Schlüssel](#authenticate-clients-using-an-api-key-optional) durchzuführen, stellen Sie sicher, dass die Anforderungsheader Ihren **apikey**-Wert enthalten.
 
    | Schlüssel                            | Wert                          |
    | ------------------------------ | ------------------------------ |
@@ -612,7 +612,7 @@ Die Verwendung des Benachrichtigungshubs und des [Notification Hubs SDK für Bac
 1. Klicken Sie auf die Schaltfläche **Senden**.
 
     > [!NOTE]
-    > Sie sollten einen **200 OK** -Status mit einigen **JSON** -Inhalten erhalten.
+    > Sie sollten einen **200 OK**-Status mit einigen **JSON**-Inhalten erhalten.
     >
     > Wenn Sie eine Warnung der **SSL-Zertifikatüberprüfung** erhalten, können Sie die **[Postman](https://www.postman.com/downloads)** -Einstellung zum Anfordern der SSL-Zertifikatüberprüfung unter **Einstellungen** deaktivieren.
 
@@ -683,7 +683,7 @@ Sie erstellen jetzt eine [API-App](https://azure.microsoft.com/services/app-serv
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 
-1. Klicken Sie auf **Ressource erstellen** , suchen und wählen Sie **API-App** aus, und klicken Sie dann auf **Erstellen**.
+1. Klicken Sie auf **Ressource erstellen**, suchen und wählen Sie **API-App** aus, und klicken Sie dann auf **Erstellen**.
 
 1. Aktualisieren Sie die folgenden Felder, und klicken Sie auf **Erstellen**.
 
@@ -700,21 +700,21 @@ Sie erstellen jetzt eine [API-App](https://azure.microsoft.com/services/app-serv
     Erstellen Sie einen neuen **App Services-Plan**  
 
     > [!NOTE]
-    > Wechseln Sie von der Standardoption zu einem Plan, der **SSL** -Unterstützung umfasst. Andernfalls müssen Sie bei Verwendung der mobilen App die entsprechenden Schritte ausführen, um zu verhindern, dass **http** -Anforderungen blockiert werden.
+    > Wechseln Sie von der Standardoption zu einem Plan, der **SSL**-Unterstützung umfasst. Andernfalls müssen Sie bei Verwendung der mobilen App die entsprechenden Schritte ausführen, um zu verhindern, dass **http**-Anforderungen blockiert werden.
 
     **Application Insights:**  
     Behalten Sie die vorgeschlagene Option bei (eine neue Ressource wird unter diesem Namen erstellt), oder wählen Sie eine vorhandene Ressource aus.
 
 1. Sobald die **API-App** bereitgestellt wurde, navigieren Sie zu dieser Ressource.
 
-1. Notieren Sie sich die Eigenschaft **URL** in der Zusammenfassung **Essentials** oben in der **Übersicht**. Diese URL ist Ihr *Back-End-Endpunkt* , der später in diesem Tutorial verwendet wird.
+1. Notieren Sie sich die Eigenschaft **URL** in der Zusammenfassung **Essentials** oben in der **Übersicht**. Diese URL ist Ihr *Back-End-Endpunkt*, der später in diesem Tutorial verwendet wird.
 
     > [!NOTE]
     > In der URL wird der von Ihnen angegebene API-App-Name im Format `https://<app_name>.azurewebsites.net` verwendet.
 
-1. Wählen Sie die Option **Konfiguration** aus der Liste aus (unter **Einstellungen** ).  
+1. Wählen Sie die Option **Konfiguration** aus der Liste aus (unter **Einstellungen**).  
 
-1. Klicken Sie für jede der folgenden Einstellungen auf **Neue Anwendungseinstellung** , um den **Namen** und einen **Wert** einzugeben, und klicken Sie dann auf **OK**.
+1. Klicken Sie für jede der folgenden Einstellungen auf **Neue Anwendungseinstellung**, um den **Namen** und einen **Wert** einzugeben, und klicken Sie dann auf **OK**.
 
    | Name                               | Wert                          |
    | ---------------------------------- | ------------------------------ |
@@ -732,17 +732,17 @@ Sie erstellen jetzt eine [API-App](https://azure.microsoft.com/services/app-serv
 Als Nächstes wird die App der API-App bereitgestellt, damit sie für alle Geräte zur Verfügung steht.  
 
 >[!NOTE]
-> Die folgenden Schritte gelten speziell für [Visual Studio für Mac](https://visualstudio.microsoft.com/vs/mac/). Wenn Sie mit [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) unter Windows arbeiten, ist der Veröffentlichungsfluss anders. Weitere Informationen dazu finden Sie unter [Veröffentlichen in Azure App Service unter Windows](/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019#publish-to-azure-app-service-on-windows).
+> Die folgenden Schritte gelten speziell für [Visual Studio für Mac](https://visualstudio.microsoft.com/vs/mac/). Wenn Sie mit [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) unter Windows arbeiten, ist der Veröffentlichungsfluss anders. Weitere Informationen dazu finden Sie unter [Veröffentlichen in Azure App Service unter Windows](/visualstudio/deployment/quickstart-deploy-to-azure#publish-to-azure-app-service-on-windows).
 
-1. Ändern Sie die Konfiguration von **Debuggen** in **Release** , wenn Sie dies noch nicht getan haben.
+1. Ändern Sie die Konfiguration von **Debuggen** in **Release**, wenn Sie dies noch nicht getan haben.
 
-1. **CONTROL** + **Klicken** Sie auf das Projekt **PushDemoApi** , und wählen Sie dann **In Azure veröffentlichen...** aus dem Menü **Veröffentlichen** aus.
+1. **CONTROL** + **Klicken** Sie auf das Projekt **PushDemoApi**, und wählen Sie dann **In Azure veröffentlichen...** aus dem Menü **Veröffentlichen** aus.
 
 1. Befolgen Sie den Authentifizierungsflow, wenn Sie dazu aufgefordert werden. Verwenden Sie das Konto, das Sie im vorigen Abschnitt [Erstellen der API-App](#create-the-api-app) verwendet haben.
 
 1. Wählen Sie die zuvor erstellte **Azure App Service-API-App** aus der Liste als Ihr Veröffentlichungsziel aus, und klicken Sie dann auf **Veröffentlichen**.
 
-Nach Abschluss des Assistenten wird die App in Azure veröffentlicht und anschließend geöffnet. Notieren Sie sich die **URL** , wenn Sie dies noch nicht getan haben. Diese URL ist Ihr *Back-End-Endpunkt* , der später in diesem Tutorial verwendet wird.
+Nach Abschluss des Assistenten wird die App in Azure veröffentlicht und anschließend geöffnet. Notieren Sie sich die **URL**, wenn Sie dies noch nicht getan haben. Diese URL ist Ihr *Back-End-Endpunkt*, der später in diesem Tutorial verwendet wird.
 
 ### <a name="validating-the-published-api"></a>Überprüfen der veröffentlichten API
 
@@ -755,13 +755,13 @@ Nach Abschluss des Assistenten wird die App in Azure veröffentlicht und anschli
     > [!NOTE]
     > Die Basisadresse muss das Format folgende aufweisen: ``https://<app_name>.azurewebsites.net/``
 
-1. Wenn Sie sich entschieden haben, die Schritte im Abschnitt [Authentifizieren von Clients mit einem API-Schlüssel](#authenticate-clients-using-an-api-key-optional) durchzuführen, stellen Sie sicher, dass die Anforderungsheader Ihren **apikey** -Wert enthalten.
+1. Wenn Sie sich entschieden haben, die Schritte im Abschnitt [Authentifizieren von Clients mit einem API-Schlüssel](#authenticate-clients-using-an-api-key-optional) durchzuführen, stellen Sie sicher, dass die Anforderungsheader Ihren **apikey**-Wert enthalten.
 
    | Schlüssel                            | Wert                          |
    | ------------------------------ | ------------------------------ |
    | apikey                         | <your_api_key>                 |
 
-1. Wählen Sie die Option **raw** für den **Text** aus, wählen Sie dann **JSON** aus der Liste der Formatoptionen aus, und fügen Sie anschließend **JSON** -Platzhalterinhalt ein:
+1. Wählen Sie die Option **raw** für den **Text** aus, wählen Sie dann **JSON** aus der Liste der Formatoptionen aus, und fügen Sie anschließend **JSON**-Platzhalterinhalt ein:
 
     ```json
     {}

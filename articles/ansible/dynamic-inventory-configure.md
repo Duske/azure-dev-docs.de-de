@@ -5,14 +5,16 @@ keywords: Ansible, Azure, DevOps, Bash, CloudShell, dynamischer Bestand
 ms.topic: tutorial
 ms.date: 10/30/2020
 ms.custom: devx-track-ansible, devx-track-azurecli
-ms.openlocfilehash: d5d3095384fb3f192f7e8cd74b2a49b41b47f239
-ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
+ms.openlocfilehash: ff23b6d4d363e8b83e33414c6518560fa82b8ee0
+ms.sourcegitcommit: b380f6e637b47e6e3822b364136853e1d342d5cd
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99224734"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100395265"
 ---
 # <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>Tutorial: Konfigurieren von dynamischen Beständen Ihrer Azure-Ressourcen mit Ansible
+
+[!INCLUDE [ansible-28-note.md](includes/ansible-28-note.md)]
 
 Mit Ansible können Bestandsinformationen aus verschiedenen Quellen (einschließlich Cloudquellen wie Azure) in einen *dynamischen Bestand* abgerufen werden. 
 
@@ -68,53 +70,21 @@ Mit Ansible können Bestandsinformationen aus verschiedenen Quellen (einschließ
 
 Sie können [Ihre Azure-Ressourcen mithilfe von Tags nach benutzerdefinierten Kategorien organisieren](/azure/azure-resource-manager/resource-group-using-tags#azure-cli).
 
-### <a name="using-ansible-version--28"></a>Verwendung einer früheren Version als Ansible 2.8
-Geben Sie den folgenden Befehl vom Typ [az resource tag](/cli/azure/resource#az-resource-tag) ein, um den virtuellen Computer `ansible-inventory-test-vm1` mit dem Schlüssel `nginx` zu markieren:
-
-```azurecli
-az resource tag --tags nginx --id /subscriptions/<YourAzureSubscriptionID>/resourceGroups/ansible-inventory-test-rg/providers/Microsoft.Compute/virtualMachines/ansible-inventory-test-vm1
-```
-
-### <a name="using-ansible-version--28"></a>Verwendung von Ansible 2.8 oder einer älteren Version
 Geben Sie den folgenden Befehl vom Typ [az resource tag](/cli/azure/resource#az-resource-tag) ein, um den virtuellen Computer `ansible-inventory-test-vm1` mit dem Schlüssel `Ansible=nginx` zu markieren:
 
 ```azurecli
 az resource tag --tags Ansible=nginx --id /subscriptions/<YourAzureSubscriptionID>/resourceGroups/ansible-inventory-test-rg/providers/Microsoft.Compute/virtualMachines/ansible-inventory-test-vm1
 ```
 
+Ersetzen Sie `<YourAzureSubscriptionID>` durch die Abonnement-ID.
+
 ## <a name="generate-a-dynamic-inventory"></a>Generieren eines dynamischen Bestands
 
 Nachdem Sie Ihre virtuellen Computer definiert (und markiert) haben, können Sie den dynamischen Bestand generieren.
 
-### <a name="using-ansible-version--28"></a>Verwendung einer früheren Version als Ansible 2.8
+Von Ansible wird ein [Azure-Plug-In für dynamische Bestände](https://github.com/ansible/ansible/blob/stable-2.9/lib/ansible/plugins/inventory/azure_rm.py) bereitgestellt. In den folgenden Schritten wird die Nutzung des Plug-Ins beschrieben:
 
-Unter Ansible wird ein Python-Skript mit dem Namen [azure_rm.py](https://github.com/ansible-collections/community.general/blob/main/scripts/inventory/azure_rm.py) bereitgestellt, mit dem ein dynamischer Bestand Ihrer Azure-Ressourcen generiert wird. Die folgende Anleitung zeigt Schritt für Schritt, wie Sie unter Verwendung des Skripts `azure_rm.py` eine Verbindung mit Ihren beiden virtuellen Azure-Testcomputern herstellen:
-
-1. Rufen Sie mithilfe des GNU-Befehls `wget` das Skript `azure_rm.py` ab:
-
-    ```bash
-    wget https://raw.githubusercontent.com/ansible-collections/azure/dev/plugins/inventory/azure_rm.py
-    ```
-
-1. Ändern Sie mithilfe des Befehls `chmod` die Zugriffsberechtigungen für das Skript `azure_rm.py`. Im folgenden Befehl wird der Parameter `+x` verwendet, um die Ausführung der angegebenen Datei (`azure_rm.py`) zuzulassen:
-
-    ```bash
-    chmod +x azure_rm.py
-    ```
-
-1. Verwenden Sie den [ansible-Befehl](https://docs.ansible.com/ansible/2.4/ansible.html), um eine Verbindung mit Ihrer Ressourcengruppe herzustellen:
-
-    ```bash
-    ansible -i azure_rm.py ansible-inventory-test-rg -m ping
-    ```
-
-1. Nach der Verbindungsherstellung werden die Ergebnisse zur Erstellung der virtuellen Computer angezeigt.
-
-### <a name="ansible-version--28"></a>Ansible-Version >= 2.8
-
-Ab Ansible 2.8 wird ein [Azure-Plug-In für dynamische Bestände](https://github.com/ansible/ansible/blob/stable-2.9/lib/ansible/plugins/inventory/azure_rm.py) bereitgestellt. In den folgenden Schritten wird die Nutzung des Plug-Ins beschrieben:
-
-1. Für das Bestands-Plug-In ist eine Konfigurationsdatei erforderlich. Die Konfigurationsdatei muss auf `azure_rm` enden und als Erweiterung entweder `yml` oder `yaml` aufweisen. Speichern Sie das folgende Playbook für dieses Tutorialbeispiel als `myazure_rm.yml`:
+1. Der dynamische Bestand muss auf `azure_rm` enden und die Erweiterung `yml` oder `yaml` aufweisen, andernfalls wird von Ansible nicht das richtige Bestands-Plug-In erkannt. Speichern Sie das folgende Playbook für dieses Tutorialbeispiel als `myazure_rm.yml`:
 
     ```yml
         plugin: azure_rm
@@ -154,32 +124,6 @@ Ab Ansible 2.8 wird ein [Azure-Plug-In für dynamische Bestände](https://githu
 
 ## <a name="enable-the-vm-tag"></a>Aktivieren des VM-Tags
 
-### <a name="if-youre-using-ansible--28"></a>Bei Verwendung einer älteren Version als Ansible 2.8
-
-- Nachdem Sie ein Tag festgelegt haben, müssen Sie es „aktivieren“. Eine Möglichkeit zum Aktivieren eines Tags ist der Export des Tags in die Umgebungsvariable `AZURE_TAGS` mit dem Befehl `export`:
-
-    ```console
-    export AZURE_TAGS=nginx
-    ```
-    
-- Führen Sie den folgenden Befehl aus:
-
-    ```bash
-    ansible -i azure_rm.py ansible-inventory-test-rg -m ping
-    ```
-    
-    Nun wird nur noch ein einzelner virtueller Computer angezeigt (der Computer, dessen Tag dem Wert entspricht, der in die Umgebungsvariable `AZURE_TAGS` exportiert wurde):
-
-    ```output
-       ansible-inventory-test-vm1 | SUCCESS => {
-        "changed": false,
-        "failed": false,
-        "ping": "pong"
-    }
-    ```
-
-### <a name="if-youre-using-ansible---28"></a>Bei Verwendung von Ansible 2.8 oder einer höheren Version
-
 - Führen Sie den Befehl `ansible-inventory -i myazure_rm.yml --graph` aus, um die folgende Ausgabe zu erhalten:
 
     ```output
@@ -195,7 +139,6 @@ Ab Ansible 2.8 wird ein [Azure-Plug-In für dynamische Bestände](https://githu
     ```bash
     ansible -i ./myazure_rm.yml -m ping tag_Ansible_nginx
     ```
-
 
 ## <a name="set-up-nginx-on-the-tagged-vm"></a>Einrichten von Nginx auf dem markierten virtuellen Computer
 
@@ -228,14 +171,6 @@ Das Tag ermöglicht die schnelle und einfache Verwendung von Untergruppen virtue
 1. Speichern Sie die Datei, und beenden Sie den Editor.
 
 1. Führen Sie das Playbook mithilfe von [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) aus.
-
-   - Ansible < 2.8:
-
-     ```bash
-     ansible-playbook -i azure_rm.py nginx.yml
-     ```
-
-   - Ansible >= 2.8:
 
      ```bash
      ansible-playbook  -i ./myazure_rm.yml  nginx.yml --limit=tag_Ansible_nginx
@@ -307,5 +242,5 @@ Dieser Abschnitt beschreibt ein Verfahren, mit dem Sie sich vergewissern können
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-> [!div class="nextstepaction"] 
+> [!div class="nextstepaction"]
 > [Schnellstart: Erstellen eines virtuellen Linux-Computers in Azure mithilfe von Ansible](./vm-configure.md)

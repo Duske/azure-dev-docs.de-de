@@ -6,12 +6,12 @@ ms.service: mobile-services
 ms.topic: tutorial
 ms.date: 07/27/2020
 ms.author: miparker
-ms.openlocfilehash: 308e727f57ed086899d4fb5906235cb5a17bda16
-ms.sourcegitcommit: ced8331ba36b28e6e2eacd23a64b39ddc7ffe6ab
+ms.openlocfilehash: d42f44226169232c18ebdd8039f0cf9ceb1018fc
+ms.sourcegitcommit: 54f976887d218aaabd94371e24809716da8cf86e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92337182"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99554305"
 ---
 # <a name="tutorial-send-push-notifications-to-xamarinforms-apps-using-azure-notification-hubs-via-a-backend-service"></a>Tutorial: Senden von Pushbenachrichtigungen an Xamarin.Forms-Apps mit Azure Notification Hubs über einen Back-End-Dienst  
 
@@ -63,7 +63,7 @@ Für iOS benötigen Sie Folgendes:
 Sie können die Schritte in diesem Beispiel zu den Grundprinzipien ohne vorherige Erfahrung ausführen. Kenntnisse der folgenden Aspekte sind jedoch von Vorteil.
 
 * [Apple Developer-Portal](https://developer.apple.com)
-* [ASP.NET Core](/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1) und [Web-API](https://dotnet.microsoft.com/apps/aspnet/apis)
+* [ASP.NET Core](/aspnet/core/introduction-to-aspnet-core) und [Web-API](https://dotnet.microsoft.com/apps/aspnet/apis)
 * [Google Firebase-Konsole](https://console.firebase.google.com/u/0/)
 * [Microsoft Azure](https://portal.azure.com) und [Senden von Pushbenachrichtigungen an iOS-Apps mit Azure Notification Hubs](/azure/notification-hubs/ios-sdk-get-started)
 * [Xamarin](https://dotnet.microsoft.com/apps/xamarin) und [Xamarin.Forms](https://dotnet.microsoft.com/apps/xamarin/xamarin-forms)
@@ -120,7 +120,7 @@ Sie können jetzt das Senden von Benachrichtigungen über den Back-End-Dienst te
 ## <a name="related-links"></a>Verwandte Links
 
 * [Übersicht über Azure Notification Hubs](/azure/notification-hubs/notification-hubs-push-notification-overview)
-* [Installieren von Visual Studio für Mac](/visualstudio/mac/installation?view=vsmac-2019)
+* [Installieren von Visual Studio für Mac](/visualstudio/mac/installation)
 * [Installieren von Xamarin unter Windows](/xamarin/get-started/installation/windows)
 * [Notification Hubs SDK für Back-End-Vorgänge](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)
 * [Notification Hubs-SDK auf GitHub](https://github.com/Azure/azure-notificationhubs)

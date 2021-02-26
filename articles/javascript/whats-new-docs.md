@@ -2,13 +2,13 @@
 title: Neuerungen in der JavaScript-Dokumentation
 description: Neuerungen in der JavaScript-Dokumentation im Developer Center
 ms.topic: conceptual
-ms.date: 02/02/2021
-ms.openlocfilehash: 9bfb3b8b05861a50d82fc878b74e14ddd3402dae
-ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
+ms.date: 02/08/2021
+ms.openlocfilehash: 37d68d713c4b6ba51d35efb033f68fe2b2e60680
+ms.sourcegitcommit: 98a7e855206ff463c1d95f93c23dd665b26a0aa1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99510961"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100004712"
 ---
 # <a name="javascript-docs-whats-new"></a>JavaScript-Dokumentation: Neues
 
@@ -21,6 +21,9 @@ Hier finden Sie neue und aktualisierte Inhalte für JavaScript- und TypeScript-E
 |Name|Notizen|
 |---------------------------------------|--|
 |[Verwenden von MongoDB in Azure Cosmos DB](./how-to/with-database/use-mongodb-as-cosmosdb.md)|Um eine mongoDB-Datenbank in Azure zu erstellen, zu verwenden oder dorthin zu verschieben, benötigen Sie eine Cosmos DB-Ressource. Hier erfahren Sie, wie Sie die Ressource erstellen und Ihre Datenbank verwenden. |
+|[Verwenden von MariaDB in Azure](./how-to/with-database/use-mariadb.md)|Sie benötigen eine **Azure Database for MariaDB**-Ressource, um eine MariaDB-Datenbank in Azure zu erstellen, zu verschieben oder zu verwenden. Hier erfahren Sie, wie Sie die Ressource erstellen und Ihre Datenbank verwenden.|
+|[Verwenden von MySQL in Azure](./how-to/with-database/use-mysql-db.md)|Sie benötigen eine **Azure Database for MySQL**-Ressource, um eine MySQL-Datenbank in Azure zu erstellen, zu verschieben oder zu verwenden. Hier erfahren Sie, wie Sie die Ressource erstellen und Ihre Datenbank verwenden.|
+|[Verwenden von PostgreSQL in Azure](./how-to/with-database/use-postgresql-db.md)|Sie benötigen eine Ressource vom Typ **Azure Database for PostgreSQL-Server**, um eine PostgreSQL-Datenbank in Azure zu erstellen, zu verschieben oder zu verwenden. Hier erfahren Sie, wie Sie die Ressource erstellen und Ihre Datenbank verwenden.|
 
 ## <a name="2021-january"></a>Januar 2021
 

@@ -1,15 +1,15 @@
 ---
 title: 'Cloudentwicklung mit Azure: Was ist Azure?'
 description: Eine Übersicht über die Entwicklung von Cloudanwendungen in Microsoft Azure, beginnend mit der Beziehung zwischen Rechenzentren, Diensten und Ressourcen.
-ms.date: 10/06/2020
+ms.date: 02/16/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: d4bac0b041e1f2fddfcca113d39fea04e6610195
-ms.sourcegitcommit: 8eb1c379b2bbc2acdd82fc9d24d8ed948e5a6847
+ms.openlocfilehash: c6bfc9a9de48ab474b5bf99d5804a111ea10f62d
+ms.sourcegitcommit: b882128a763f81dba83913bfff1e9cd1ec70818f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98811117"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100642296"
 ---
 # <a name="cloud-development-on-azure"></a>Cloudentwicklung in Azure
 
@@ -17,17 +17,17 @@ Sie sind Python-Entwickler und bereit für die Entwicklung von Cloudanwendungen 
 
 ## <a name="what-is-azure-data-centers-services-and-resources"></a>Was ist Azure? Rechenzentren, Dienste und Ressourcen
 
-Der CEO von Microsoft, Satya Nadella, bezeichnet Azure häufig als „den Computer der Welt“. Ein Computer ist, wie Sie wissen, eine Sammlung von Hardware, die von einem Betriebssystem verwaltet wird und eine Plattform bietet, auf der Sie Software entwickeln können, mit der Sie die Rechenleistung des Systems für eine beliebige Anzahl von Aufgaben einsetzen können. (Aus diesem Grund verwenden wir das Wort „Anwendung“, um diese Software zu beschreiben.)
+Der CEO von Microsoft, Satya Nadella, bezeichnet Azure häufig als „den Computer der Welt“. Wie Sie wissen, ist ein Computer eine Sammlung von Hardware, die von einem Betriebssystem verwaltet wird und eine Plattform bietet, auf der Sie Software entwickeln können, mit der Sie die Rechenleistung des Systems für eine beliebige Anzahl von Aufgaben *einsetzen* können. (Aus diesem Grund verwenden wir das Wort „Anwendung“, um diese Software zu beschreiben.)
 
 Im Fall von Azure ist die Hardware des Computers nicht ein einzelner Rechner, sondern ein riesiger Pool von virtualisierten Servercomputern, die in [Dutzenden von riesigen Rechenzentren auf der ganzen Welt](https://azure.microsoft.com/global-infrastructure/regions/) untergebracht sind. Das „Betriebssystem“ von Azure besteht aus *Diensten*, die verschiedene Teile dieses Ressourcenpools dynamisch zuordnen und freigeben, wenn sie von Anwendungen benötigt werden. Mit diesen dynamischen Zuordnungen können Anwendungen schnell auf sich ändernde Bedingungen, z. B. die Kundennachfrage, reagieren.
 
-Jede Zuordnung &mdash; sei es Rechenleistung (CPU-Kerne und Arbeitsspeicher), Speicher, Datenbanken, Netzwerke usw. &mdash; wird als „*Ressource*“ bezeichnet. Und jeder diskreten Ressource wird dementsprechend ein eindeutiger *Objektbezeichner* (eine GUID) und eine eindeutige URL zugewiesen.
+Jede Zuordnung wird als *Ressource* bezeichnet, und jeder Ressource wird sowohl eine eindeutige *Objekt-ID* (eine GUID) als auch eine eindeutige URL zugewiesen. Zu den Ressourcentypen zählen virtuelle Computer (CPU-Kerne und Arbeitsspeicher), Speicher, Datenbanken, virtuelle Netzwerke, Containerregistrierungen, Containerorchestratoren, Webhosts, KI- und Analysemodule usw.
 
 ![Ebenen von Azure, vom Rechenzentrum bis zu Azure-Diensten zum Zuordnen von Ressourcen](media/cloud-development/azure-layers.png)
 
-Ressourcen sind die Bausteine einer Cloudanwendung. Der Cloudentwicklungsprozess beginnt daher mit der Erstellung der entsprechenden Umgebung, in der Sie die verschiedenen Teile der Anwendung bereitstellen können. Vereinfacht ausgedrückt, können Sie keinen Code und keine Daten in Azure bereitstellen, bevor Sie nicht eine geeignete Zielressource zugewiesen und konfiguriert (also *bereitgestellt*) haben, z. B. einen virtuellen Computer, eine Datenbank, ein Speicherkonto, eine Containerregistrierung, einen Containerorchestrator, einen Webhost, ein virtuelles Netzwerk, KI- und Analyse-Engines usw.
+Ressourcen sind die Bausteine einer Cloudanwendung. Der Cloudentwicklungsprozess beginnt daher mit der Erstellung der entsprechenden Umgebung, in der Sie die verschiedenen Teile der Anwendung bereitstellen können. Einfach ausgedrückt: Sie können keinen Code oder keine Daten in Azure bereitstellen, bis Sie die entsprechenden Zielressourcen zugeordnet und konfiguriert – d. h. *bereitgestellt* – haben.
 
-Der Prozess der Erstellung des Umfelds für Ihre Anwendung umfasst also die Identifizierung der relevanten Dienste und Ressourcentypen, die beteiligt sind, und die anschließende Bereitstellung dieser Ressourcen (ab diesem Zeitpunkt beginnen Sie, diese bei Azure zu mieten). Der Bereitstellungsprozess ist im Wesentlichen die Art und Weise, wie Sie das Computingsystem erstellen, in dem Sie Ihre Anwendung bereitstellen.
+Der Prozess zum Erstellen der Umgebung für Ihre Anwendung umfasst also die Identifizierung der relevanten Dienste und Ressourcentypen, die beteiligt sind, und die anschließende Bereitstellung dieser Ressourcen. Der Bereitstellungsprozess ist im Wesentlichen die Art und Weise, wie Sie das Computingsystem erstellen, in dem Sie Ihre Anwendung bereitstellen. Die Bereitstellung ist auch der Zeitpunkt, ab dem Sie beginnen, diese Ressourcen bei Azure zu mieten.
 
 Ihnen stehen Hunderte verschiedener Arten von Ressourcen zur Verfügung, von grundlegenden „Infrastrukturressourcen“ wie virtuellen Computern, bei denen Sie die volle Kontrolle und Verantwortung für die von Ihnen bereitgestellte Software behalten, bis hin zu übergeordneten „Plattformdiensten“, die eine stärker verwaltete Umgebung bieten, in der Sie sich nur um Daten und Anwendungscode kümmern.
 

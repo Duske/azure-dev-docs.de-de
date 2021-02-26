@@ -6,12 +6,12 @@ ms.date: 02/02/2021
 ms.topic: conceptual
 ms.custom: devx-track-java
 ms.author: savaity
-ms.openlocfilehash: 2dc2085ac71167cefd8fed5475dc9744cf520fea
-ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
+ms.openlocfilehash: e5ead01c22fdb80e7c5fc49c3a980add883eb6d9
+ms.sourcegitcommit: b380f6e637b47e6e3822b364136853e1d342d5cd
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99528457"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100395215"
 ---
 # <a name="configure-tracing-in-the-azure-sdk-for-java"></a>Konfigurieren von Ablaufverfolgung im Azure SDK für Java
 
@@ -85,7 +85,7 @@ Beispielsweise führt eine App-Konfigurationsclientanforderung zum Festlegen der
 
 ### <a name="configure-tracing-exports"></a>Konfigurieren von Ablaufverfolgungsexporten
 
-Anwendungen, die Ablaufverfolgungsinformationen verwenden möchten, müssen Ablaufverfolgungen in einen verteilten Ablaufverfolgungsspeicher exportieren (z. B. in [Zipkin](https://zipkin.io/), [Jaeger](https://www.jaegertracing.io/) oder [Azure Monitor](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/monitor/microsoft-opentelemetry-exporter-azuremonitor#azure-monitor-opentelemetry-exporter-client-library-for-java)). Im folgenden Beispiel wird der Export von Ablaufverfolgungsinformationen mithilfe von Jaeger-spezifischen APIs in einen verteilten Jaeger-Ablaufverfolgungsspeicher konfiguriert, der auf dem localhost-Port 14250 ausgeführt wird:
+Anwendungen, die Ablaufverfolgungsinformationen verwenden möchten, müssen Ablaufverfolgungen in einen verteilten Ablaufverfolgungsspeicher exportieren (z. B. in [Zipkin](https://zipkin.io/), [Jaeger](https://www.jaegertracing.io/) oder [Azure Monitor](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/monitor/azure-monitor-opentelemetry-exporter#azure-monitor-opentelemetry-exporter-client-library-for-java)). Im folgenden Beispiel wird der Export von Ablaufverfolgungsinformationen mithilfe von Jaeger-spezifischen APIs in einen verteilten Jaeger-Ablaufverfolgungsspeicher konfiguriert, der auf dem localhost-Port 14250 ausgeführt wird:
 
 ```java
 ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 14250).usePlaintext().build();

@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, Container Instances, Build-Agent
 ms.topic: article
 ms.date: 01/08/2021
 ms.custom: devx-track-jenkins,devx-track-azurecli
-ms.openlocfilehash: 7633d88897d76f4ed75fa1d7d6c5b0c620db4919
-ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.openlocfilehash: 6a7578818eb1f59fa2ce2bd46003f799045fc154
+ms.sourcegitcommit: b380f6e637b47e6e3822b364136853e1d342d5cd
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98561596"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100395379"
 ---
 # <a name="tutorial-use-azure-container-instances-as-a-jenkins-build-agent"></a>Tutorial: Verwenden von Azure Container Instances als Jenkins-Build-Agent
 
@@ -63,7 +63,7 @@ Weitere Informationen zu Azure Container Instances finden Sie unter [Azure Conta
 
 1. Geben Sie einen Wert für **Remote root directory** (Remotestammverzeichnis)ein. Beispiel: `/home/jenkins/work`
 
-1. Geben Sie optional eine Bezeichnung ein. Bezeichnungen werden verwendet, um mehrere Agents in einer logischen Gruppe zusammenzufassen. Ein Beispiel für eine Bezeichnung wäre `linux` zum Gruppieren Ihrer Linux-Agents.
+1. Hinzufügen einer <abbr title="Bezeichnungen werden verwendet, um mehrere Agents in einer logischen Gruppe zusammenzufassen. Ein Beispiel für eine Bezeichnung wäre `linux` zum Gruppieren Ihrer Linux-Agents.">**Label**</abbr> mit dem Wert `linux`.
 
 1. Legen Sie **Launch method** (Startmethode) auf **Launch agent by connecting to the master** (Agent durch Verbindungsherstellung mit dem Master starten) fest.
 
@@ -97,9 +97,14 @@ Weitere Informationen zu Azure Container Instances finden Sie unter [Azure Conta
       --command-line "jenkins-agent -url http://jenkinsserver:port <JENKINS_SECRET> <AGENT_NAME>"
     ```
 
-    Nach dem Start des Containers wird von diesem automatisch eine Verbindung mit dem Jenkins-Controllerserver hergestellt.
+    Ersetzen Sie `http://jenkinsserver:port`, `<JENKINS_SECRET>` und `<AGENT_NAME>` durch die Informationen für Ihre Jenkins-Controller und -Agents. Nach dem Start des Containers wird von diesem automatisch eine Verbindung mit dem Jenkins-Controllerserver hergestellt.
+
+1. Kehren Sie zurück zum Jenkins-Dashboard, und überprüfen Sie den Agent-Status.
 
     ![Erfolgreich gestarteter Agent](./media/azure-container-instances-as-jenkins-build-agent/agent-start.png)
+
+    > [!NOTE]
+    > Jenkins-Agents stellen über den Port `5000` eine Verbindung mit dem Controller her. Stellen Sie sicher, dass an diesem Port eingehender Datenverkehr für den Jenkins-Controller zugelassen wird.
 
 ## <a name="create-a-build-job"></a>Erstellen eines Buildauftrags
 
@@ -109,35 +114,31 @@ Nun wird ein Jenkins-Buildauftrag erstellt, um Jenkins-Builds auf einer Azure-Co
 
    ![Das Feld für den Namen des Buildauftrags und die Liste der Projekttypen](./media/azure-container-instances-as-jenkins-build-agent/jenkins-new-job.png)
 
-2. Vergewissern Sie sich, dass unter **General** (Allgemein) die Option **Restrict where this project can be run** (Ausführungsort dieses Projekts beschränken) aktiviert ist. Geben Sie als Bezeichnungsausdruck **linux** ein. Mit dieser Konfiguration wird sichergestellt, dass dieser Buildauftrag in der ACI-Cloud ausgeführt wird.
+1. Vergewissern Sie sich, dass unter **General** (Allgemein) die Option **Restrict where this project can be run** (Ausführungsort dieses Projekts beschränken) aktiviert ist. Geben Sie als Bezeichnungsausdruck **linux** ein. Mit dieser Konfiguration wird sichergestellt, dass dieser Buildauftrag in der ACI-Cloud ausgeführt wird.
 
    ![Die Registerkarte „Allgemein“ mit Konfigurationsdetails](./media/azure-container-instances-as-jenkins-build-agent/jenkins-job-01.png)
 
-3. Klicken Sie unter **Build** auf **Buildschritt hinzufügen**, und klicken Sie auf **Execute Shell** (Shell ausführen). Geben Sie den Befehl `echo "aci-demo"` ein.
+1. Klicken Sie unter **Build** auf **Buildschritt hinzufügen**, und klicken Sie auf **Execute Shell** (Shell ausführen). Geben Sie den Befehl `echo "aci-demo"` ein.
 
    ![Die Registerkarte „Build“ mit der Auswahl für den Buildschritt](./media/azure-container-instances-as-jenkins-build-agent/jenkins-job-02.png)
 
-5. Wählen Sie **Speichern** aus.
+1. Wählen Sie **Speichern** aus.
 
 ## <a name="run-the-build-job"></a>Ausführen des Buildauftrags
 
-Starten Sie einen Build manuell, um den Buildauftrag zu testen und sich mit Azure Container Instances als Buildplattform vertraut zu machen.
+Starten Sie einen Build manuell, um den Buildauftrag zu testen und sich mit Azure Container Instances vertraut zu machen.
 
-1. Klicken Sie auf **Build Now** (Jetzt erstellen), um einen Buildauftrag zu starten. Es dauert einige Minuten, bis der Auftrag gestartet wird. Eine Status ähnlich der folgenden Abbildung wird angezeigt:
+1. Klicken Sie auf **Build Now** (Jetzt erstellen), um einen Buildauftrag zu starten. Nach dem Starten des Auftrags wird ein Status ähnlich der folgenden Abbildung angezeigt:
 
    ![Informationen mit dem Auftragsstatus „Buildverlauf“](./media/azure-container-instances-as-jenkins-build-agent/jenkins-job-status.png)
 
-2. Öffnen Sie während der Auftragsausführung das Azure-Portal, und sehen Sie sich die Jenkins-Ressourcengruppe an. Sie sollten sehen, dass eine Containerinstanz erstellt wurde. Der Jenkins-Auftrag wird in dieser Instanz ausgeführt.
+1. Klicken Sie unter **Buildverlauf** auf **#1**.
 
-   ![Containerinstanz in der Ressourcengruppe](./media/azure-container-instances-as-jenkins-build-agent/jenkins-aci.png)
+    ![„Konsolenausgabe“ zum Anzeigen der Buildausgabe über die Konsole](./media/azure-container-instances-as-jenkins-build-agent/build-history.png)
 
-3. Da Jenkins mehr Aufträge als die konfigurierte Anzahl von Jenkins-Executors (Standard: 2) ausführt, werden mehrere Containerinstanzen erstellt.
+1. Wählen Sie **Konsolenausgabe** aus, um die Ausgabe der Builds anzuzeigen.
 
-   ![Neu erstellte Containerinstanzen](./media/azure-container-instances-as-jenkins-build-agent/jenkins-aci-multi.png)
-
-4. Nach Abschluss aller Buildaufträge, werden die Containerinstanzen entfernt.
-
-   ![Ressourcengruppe mit entfernten Containerinstanzen](./media/azure-container-instances-as-jenkins-build-agent/jenkins-aci-none.png)
+    ![„Konsolenausgabe“ zum Anzeigen der Buildausgabe über die Konsole](./media/azure-container-instances-as-jenkins-build-agent/build-console-output.png)
 
 ## <a name="next-steps"></a>Nächste Schritte
 
