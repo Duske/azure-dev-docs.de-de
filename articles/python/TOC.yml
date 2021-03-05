@@ -50,6 +50,8 @@
           href: tutorial-python-postgresql-app-portal.md
         - name: Verwenden der Azure-Befehlszeilenschnittstelle
           href: /azure/app-service/tutorial-python-postgresql-app
+    - name: Statische Websites
+      href: how-to-create-static-sites.md
     - name: Einrichten von CI/CD
       href: /azure/devops/pipelines/languages/python-webapp
     - name: Konfigurieren des Linux-Hosts

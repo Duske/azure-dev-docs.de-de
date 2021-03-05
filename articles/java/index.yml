@@ -7,12 +7,12 @@ metadata:
   description: Beginnen Sie mit der Entwicklung von Apps für die Cloud mit diesen Tutorials und Tools für Java-Entwickler.
   ms.topic: hub-page
   ms.date: 04/08/2020
-  ms.openlocfilehash: badee30def237b49cb9e46730335e730090fb66b
-  ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
+  ms.openlocfilehash: 7c3130d9bb7820f8ddb150fa314292b9e5688811
+  ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
   ms.translationtype: HT
   ms.contentlocale: de-DE
-  ms.lasthandoff: 02/03/2021
-  ms.locfileid: "99511088"
+  ms.lasthandoff: 03/04/2021
+  ms.locfileid: "102118347"
 conceptualContent:
   items:
   - title: 'Azure für Java: Schnellstartanleitungen'
@@ -117,7 +117,7 @@ conceptualContent:
     links:
     - text: Erstellen einer Azure Function
       itemType: quickstart
-      url: /azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-java
+      url: /azure/azure-functions/create-first-function-vs-code-java
     - text: Erstellen einer Spring Cloud-Funktion
       itemType: tutorial
       url: ./spring-framework/getting-started-with-spring-cloud-function-in-azure.md
