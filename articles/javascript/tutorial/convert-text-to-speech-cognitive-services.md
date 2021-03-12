@@ -4,12 +4,12 @@ description: Verwenden Sie Cognitive Services Speech für die Text-zu-Sprache-Ko
 ms.topic: tutorial
 ms.date: 01/20/2021
 ms.custom: languages:JavaScript, devx-track-javascript
-ms.openlocfilehash: 911d38854856f2add28958454f7ce020c1cf2a31
-ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
+ms.openlocfilehash: 028871f55a7be2e38191efef37a65ad41ab9c3dc
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98760069"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102117884"
 ---
 # <a name="expressjs-app-converts-text-to-speech-with-cognitive-services-speech"></a>Text-zu-Sprache-Konvertierung durch Express.js-App mit Cognitive Services Speech
 
@@ -90,11 +90,11 @@ npm install microsoft-cognitiveservices-speech-sdk
     :::code language="javascript" source="~/../js-e2e-express-server-cognitive-services/text-to-speech/src/azure-cognitiveservices-speech.js" highlight="3,21,32" :::
 
     * Parameter: Mit der Datei werden die Abhängigkeiten für die Nutzung des SDK, der Streams, der Puffer und des Dateisystems (fs) gepullt. Für die Funktion `textToSpeech` werden vier Argumente verwendet. Wenn ein Dateiname mit einem lokalen Pfad gesendet wird, wird der Text in eine Audiodatei konvertiert. Wenn kein Dateiname gesendet wird, wird ein In-Memory-Audiostream erstellt. 
-    * Speech SDK-Methode: Mit der Speech SDK-Methode [synthesizer.speakTextAsync](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechsynthesizer#speakTextAsync_string___e__SpeechSynthesisResult_____void___e__string_____void__AudioOutputStream___PushAudioOutputStreamCallback___PathLike_) werden basierend auf der empfangenen Konfiguration unterschiedliche Typen zurückgegeben. 
+    * Speech SDK-Methode: Mit der Speech SDK-Methode [synthesizer.speakTextAsync](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechsynthesizer#speakTextAsync_string___e__SpeechSynthesisResult_____void___e__string_____void__AudioOutputStream___PushAudioOutputStreamCallback___PathLike_) werden basierend auf der empfangenen Konfiguration unterschiedliche Typen zurückgegeben. 
         Das von der Methode zurückgegebene Ergebnis hängt davon ab, was damit erreicht werden soll:
         * Datei erstellen 
         * Erstellen eines In-Memory-Datenstroms als Array mit Puffern
-    * Audioformat: Das ausgewählte Audioformat ist MP3. Es gibt aber auch [andere Formate](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/speechsynthesisoutputformat?preserve-view=true&view=azure-node-latest) und andere [Methoden für die Audiokonfiguration](https://docs.microsoft.com/javascript/api/microsoft-cognitiveservices-speech-sdk/audioconfig?preserve-view=true&view=azure-node-latest#methods). 
+    * Audioformat: Das ausgewählte Audioformat ist MP3. Es gibt aber auch [andere Formate](/javascript/api/microsoft-cognitiveservices-speech-sdk/speechsynthesisoutputformat?preserve-view=true&view=azure-node-latest) und andere [Methoden für die Audiokonfiguration](/javascript/api/microsoft-cognitiveservices-speech-sdk/audioconfig?preserve-view=true&view=azure-node-latest#methods). 
 
     Mit der lokalen Methode `textToSpeech` wird die SDK-Rückruffunktion umschlossen und in eine Zusage konvertiert. 
 

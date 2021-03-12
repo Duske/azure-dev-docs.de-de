@@ -6,12 +6,12 @@ ms.date: 02/02/2021
 ms.topic: conceptual
 ms.custom: devx-track-java
 ms.author: srnagar
-ms.openlocfilehash: ca59b7dc9f861dd833788c88c18ce8b14a016e70
-ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
+ms.openlocfilehash: 785bb65a1a6f55314246d4c1410891717f8bbd6f
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99528489"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118158"
 ---
 # <a name="log-with-the-azure-sdk-for-java-and-logback"></a>Protokollieren mit dem Azure SDK für Java und Logback
 
@@ -123,4 +123,4 @@ logging.config=classpath:logback.xml
 
 In diesem Artikel wurde die Konfiguration der Logback-Protokollierung behandelt und erläutert, wie das Azure SDK für Java für Protokollierung verwendet wird. Da das Azure SDK für Java mit allen SLF4J-Protokollierungsframeworks funktioniert, sollten Sie das [SLF4J-Benutzerhandbuch](http://www.slf4j.org/manual.html) zu Rate ziehen, um weitere Informationen zu erhalten. Wenn Sie Logback verwenden, finden Sie auch zahlreiche Konfigurationsanleitungen auf der zugehörigen Website. Weitere Informationen finden Sie unter [Logback-Konfiguration](http://logback.qos.ch/manual/configuration.html) in der Logback-Dokumentation.
 
-Nachdem Sie die Protokollierung verstanden haben, können Sie sich die Integrationen von Azure in Frameworks wie [Spring](/azure/developer/java/spring-framework/spring-boot-starters-for-azure) und [MicroProfile](/azure/developer/java/eclipse-microprofile/) ansehen.
+Nachdem Sie die Protokollierung verstanden haben, können Sie sich die Integrationen von Azure in Frameworks wie [Spring](../spring-framework/spring-boot-starters-for-azure.md) und [MicroProfile](../eclipse-microprofile/index.yml) ansehen.

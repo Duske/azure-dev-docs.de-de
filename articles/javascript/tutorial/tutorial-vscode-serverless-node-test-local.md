@@ -2,14 +2,14 @@
 title: Lokale Ausführung der Azure Functions-Anwendung in Visual Studio Code
 description: Führen Sie das Azure Functions-Projekt lokal aus, um es vor der Bereitstellung in Azure zu testen. Legen Sie direkt vor der Antwortrückgabe durch die serverlose Funktion einen Haltepunkt fest.
 ms.topic: tutorial
-ms.date: 09/23/2019
+ms.date: 03/02/2021
 ms.custom: devx-track-js, contperf-fy21q2
-ms.openlocfilehash: f345e27074c2070c2f8d8939ed09f8b4301a1966
-ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
+ms.openlocfilehash: e16daa0f9c3db2edf2335c3f35277b1b95fcfef8
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97522338"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102117824"
 ---
 # <a name="3-test-the-function-locally"></a>3. Lokales Testen der Funktion
 
@@ -38,10 +38,6 @@ Beim Erstellen der Funktions-App wurde dem Projekt von der Azure Functions-Erwe
     ![An einem Breakpoint angehaltene Ausführung in VS Code](../media/functions-extension/debugging-breakpoint.png)
 
     Weitere Informationen zu Breakpoints und zum Debuggen in VS Code finden Sie unter [Debuggen](https://code.visualstudio.com/docs/editor/debugging).
-
-> [!Note]
->
-> Wenn bei diesem Vorgang ein Ausführungsrichtlinienfehler auftritt, deinstallieren Sie `azure-functions-core-tools@3` mit npm, und installieren Sie anschließend das Paket im Terminal mit erhöhten Rechten.
 
 > [!div class="nextstepaction"]
 > [Ich habe die Funktions-App lokal ausgeführt.](tutorial-vscode-serverless-node-deploy-hosting.md) [Es ist ein Problem aufgetreten.](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azurefunctions&step=run-app)

@@ -6,12 +6,12 @@ ms.date: 02/02/2021
 ms.topic: conceptual
 ms.custom: devx-track-java
 ms.author: srnagar
-ms.openlocfilehash: 537c030b81913c660b873ac028a7bed90c464b67
-ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
+ms.openlocfilehash: 0de76274b7f33f724c339eb0137a89d74f3e8678
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99528493"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118472"
 ---
 # <a name="log-with-the-azure-sdk-for-java-and-log4j"></a>Protokollieren mit dem Azure SDK für Java und Log4j
 
@@ -85,4 +85,4 @@ Sie können eine XML-Datei namens *log4j2.xml* in das Verzeichnis */src/main/res
 
 In diesem Artikel wurde die Konfiguration der Log4j behandelt und erläutert, wie das Azure SDK für Java für Protokollierung verwendet wird. Da das Azure SDK für Java mit allen SLF4J-Protokollierungsframeworks funktioniert, sollten Sie das [SLF4J-Benutzerhandbuch](http://www.slf4j.org/manual.html) zu Rate ziehen, um weitere Informationen zu erhalten. Wenn Sie Log4j verwenden, finden Sie auch zahlreiche Konfigurationsanleitungen auf der zugehörigen Website. Weitere Informationen finden Sie unter [Willkommen bei Log4j 2!](https://logging.apache.org/log4j/2.x/manual/index.html)
 
-Nachdem Sie die Protokollierung verstanden haben, können Sie sich die Integrationen von Azure in Frameworks wie [Spring](/azure/developer/java/spring-framework/spring-boot-starters-for-azure) und [MicroProfile](/azure/developer/java/eclipse-microprofile/) ansehen.
+Nachdem Sie die Protokollierung verstanden haben, können Sie sich die Integrationen von Azure in Frameworks wie [Spring](../spring-framework/spring-boot-starters-for-azure.md) und [MicroProfile](../eclipse-microprofile/index.yml) ansehen.

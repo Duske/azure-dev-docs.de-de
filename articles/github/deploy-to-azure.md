@@ -5,14 +5,14 @@ author: N-Usha
 ms.author: ushan
 ms.topic: reference
 ms.service: azure
-ms.date: 11/19/2020
+ms.date: 02/17/2021
 ms.custom: github-actions-azure
-ms.openlocfilehash: b77386d4fe688c67d448f3f0d5835e697f90313b
-ms.sourcegitcommit: 7287dff6bf4b30c2033924702c941bf520403e07
+ms.openlocfilehash: f40b5c8993673c00086d753652e976e6cbbfb92e
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99589406"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118198"
 ---
 # <a name="deploy-apps-from-github-to-azure"></a>Bereitstellen von Apps aus GitHub in Azure
 
@@ -42,6 +42,7 @@ Die folgenden Artikel unterstützen Sie bei der Bereitstellung von Apps aus GitH
 - [Einrichten eines GitHub Actions-Workflows zum Bereitstellen einer statischen Website in Azure Storage](/azure/storage/blobs/storage-blobs-static-site-github-actions)
 
 ## <a name="azure-container-instances"></a>Azure Container Instances
+
 - [Konfigurieren einer GitHub Actions-Aktion zum Erstellen einer Containerinstanz](/azure/container-instances/container-instances-github-action)
 
 ## <a name="azure-kubernetes-service"></a>Azure Kubernetes Service
@@ -58,4 +59,9 @@ Die folgenden Artikel unterstützen Sie bei der Bereitstellung von Apps aus GitH
 - [Bereitstellen von Azure Resource Manager-Vorlagen mithilfe von GitHub Actions](/azure/azure-resource-manager/templates/deploy-github-actions)
 
 ## <a name="azure-machine-learning"></a>Azure Machine Learning
+
 - [Verwenden von GitHub Actions mit Azure Machine Learning](/azure/machine-learning/how-to-github-actions-machine-learning)
+
+## <a name="azure-stack"></a>Azure Stack
+
+- [Verwenden der Azure-Anmeldeaktion mit Azure CLI und PowerShell auf Azure Stack Hub](/azure-stack/user/ci-cd-github-action-login-cli)

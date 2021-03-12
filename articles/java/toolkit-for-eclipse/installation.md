@@ -8,12 +8,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: be90cbf867cfbbb475e1a80655d2ef925069b90a
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.openlocfilehash: 57dbe81eb0ce2b8b7c8766934b765dd0f057e51b
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010210"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118315"
 ---
 # <a name="installing-the-azure-toolkit-for-eclipse"></a>Installieren des Azure-Toolkits für Eclipse
 
@@ -68,9 +68,9 @@ Sie können das Azure-Toolkit für Eclipse direkt über das Menü *Hilfe* als ne
 
 1. Klicken Sie auf das Menü **Hilfe** und dann auf **Neue Software installieren**.
 
-   :::image type="content" source="media/installation/eclipse-install-software-button.png" alt-text="Marketplace-Fenster: Menü „Hilfe“"::: 
+   :::image type="content" source="media/installation/eclipse-install-software-button.png" alt-text="Installieren neuer Software: Menü „Hilfe“"::: 
 
-1. Geben Sie im Dialogfeld **Verfügbare Software** im Textfeld **Arbeiten mit** den Text `http://dl.microsoft.com/eclipse/` ein.
+1. Geben Sie im Dialogfeld **Verfügbare Software** im Textfeld **Arbeiten mit** den Text `http://azuredownloads.blob.core.windows.net/eclipse/` ein.
 
 1. Aktivieren Sie im Fenster **Name** die Option **Azure Toolkit for Java**, und deaktivieren Sie **Contact all update sites during install to find required software** (Während der Installation alle Updatesites kontaktieren, um erforderliche Software zu finden). Der Bildschirm sieht dann etwa wie folgt aus:
 
