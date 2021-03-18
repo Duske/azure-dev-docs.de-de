@@ -4,12 +4,12 @@ description: 'Teil 1 des Azure CLI-Tutorials: Einführung und Voraussetzungen'
 ms.topic: tutorial
 ms.date: 09/24/2019
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 0acd3fd910055615ce148ecdee594240df42a558
-ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.openlocfilehash: 87dfa69c31eabffe12cd579127bfdf8b74a333e7
+ms.sourcegitcommit: 3536f174735cd3bb7da7e4b266fbf43349a22b67
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98561606"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103193479"
 ---
 # <a name="deploy-to-azure-app-service-using-the-azure-cli"></a>Bereitstellen in Azure App Service mit der Azure-Befehlszeilenschnittstelle
 
@@ -18,7 +18,7 @@ In diesem Tutorial stellen Sie eine Node.js-Anwendung mithilfe der von allen Bet
 ## <a name="prerequisites"></a>Voraussetzungen
 
 - Ein [Azure-Abonnement](#azure-subscription).
-- [Node.js und npm 6.x oder höher](https://nodejs.org/en/download), Node.js-Paket-Manager
+- [Node.js](https://nodejs.org/en/download), der Node.js-Paket-Manager
 - [Git](https://git-scm.com/downloads) (danach sollte der Befehl `git --version` eine Versionsnummer anzeigen)
 [!INCLUDE [Azure CLI](../../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
