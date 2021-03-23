@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 17a5c98c06832b00b36216561571c45a4da06092
-ms.sourcegitcommit: c5db60fbc1f0fd37397f79d88882108bed68f5e1
+ms.openlocfilehash: 995d1e180aa986746627ccf41d48b58c68c39ab7
+ms.sourcegitcommit: b81900555dad4d6a36c0b9424d9ca92f25e9081d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104719706"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "104803410"
 ---
 | Name | Paket | Docs | `Source` |
 | ---- | ------- | ---- | ------ |
@@ -142,8 +142,6 @@ ms.locfileid: "104719706"
 | Core: XML | npm [1.0.0-beta.1](https://www.npmjs.com/package/@azure/core-xml/v/1.0.0-beta.1) | [docs](/javascript/api/overview/azure/core-xml-readme/) | GitHub [1.0.0-beta.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-xml_1.0.0-beta.1/sdk/core/core-xml/) |
 | Core-REST-Pipeline | npm [1.0.0](https://www.npmjs.com/package/@azure/core-rest-pipeline/v/1.0.0) |  | GitHub [1.0.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-rest-pipeline_1.0.0/sdk/core/core-rest-pipeline/) |
 | Cosmos DB | npm [3.10.3](https://www.npmjs.com/package/@azure/cosmos/v/3.10.3) | [docs](/javascript/api/overview/azure/cosmos-readme/) | GitHub [3.10.3](https://github.com/Azure/azure-sdk-for-js/tree/@azure/cosmos_3.10.3/sdk/cosmosdb/cosmos/) |
-| Cosmos DB: Sprachdienst | npm [0.0.5](https://www.npmjs.com/package/@azure/cosmos-language-service/v/0.0.5) |  | GitHub [0.0.5](https://github.com/Azure/cosmos-sql-language-service) |
-| Cosmos DB: Signierung | npm [1.0.2](https://www.npmjs.com/package/@azure/cosmos-sign/v/1.0.2) |  | GitHub [1.0.2](https://github.com/Azure/cosmos-sign/tree/v1.0.2) |
 | Benutzerdefinierte Bildersuche | npm [2.0.1](https://www.npmjs.com/package/@azure/cognitiveservices-customimagesearch/v/2.0.1) |  | GitHub [2.0.1](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-customimagesearch) |
 | Benutzerdefinierte Suche | npm [3.0.1](https://www.npmjs.com/package/@azure/cognitiveservices-customsearch/v/3.0.1) |  | GitHub [3.0.1](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-customsearch) |
 | Custom Vision-Vorhersage | npm [5.1.2](https://www.npmjs.com/package/@azure/cognitiveservices-customvision-prediction/v/5.1.2) |  | GitHub [5.1.2](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-customvision-prediction) |
@@ -241,7 +239,7 @@ ms.locfileid: "104719706"
 | Data Lake Storage | npm [3.1.2-preview](https://www.npmjs.com/package/azure-arm-datalake-store/v/3.1.2-preview) |  |  |
 | Ressourcenverwaltung: Advisor | npm [2.0.0](https://www.npmjs.com/package/@azure/arm-advisor/v/2.0.0) | [docs](/javascript/api/overview/azure/advisor) | GitHub [2.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/advisor/arm-advisor) |
 | Ressourcenverwaltung: Analysis Services | npm [2.3.2](https://www.npmjs.com/package/@azure/arm-analysisservices/v/2.3.2) | [docs](/javascript/api/overview/azure/analysis-services) | GitHub [2.3.2](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/analysisservices/arm-analysisservices) |
-| Ressourcenverwaltung: API Management | npm [6.0.0](https://www.npmjs.com/package/@azure/arm-apimanagement/v/6.0.0) |  | GitHub [6.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/apimanagement/arm-apimanagement) |
+| Ressourcenverwaltung: API Management | npm [7.0.0](https://www.npmjs.com/package/@azure/arm-apimanagement/v/7.0.0) |  | GitHub [7.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/apimanagement/arm-apimanagement) |
 | Ressourcenverwaltung: App Configuration | npm [1.3.0](https://www.npmjs.com/package/@azure/arm-appconfiguration/v/1.3.0) |  | GitHub [1.3.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/appconfiguration/arm-appconfiguration) |
 | Ressourcenverwaltung: App-Plattform | npm [1.2.0](https://www.npmjs.com/package/@azure/arm-appplatform/v/1.2.0) |  |  |
 | Ressourcenverwaltung: App Service | npm [7.0.0](https://www.npmjs.com/package/@azure/arm-appservice/v/7.0.0) | [docs](/javascript/api/overview/azure/appservice) | GitHub [7.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/appservice/arm-appservice) |
@@ -343,7 +341,7 @@ ms.locfileid: "104719706"
 | Ressourcenverwaltung: SignalR | npm [3.0.0](https://www.npmjs.com/package/@azure/arm-signalr/v/3.0.0) |  | GitHub [3.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/signalr/arm-signalr) |
 | Ressourcenverwaltung: SQL | npm [7.0.2](https://www.npmjs.com/package/@azure/arm-sql/v/7.0.2) | [docs](/javascript/api/overview/azure/sql) | GitHub [7.0.2](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/sql/arm-sql) |
 | Ressourcenverwaltung: Virtueller SQL-Computer | npm [4.0.0](https://www.npmjs.com/package/@azure/arm-sqlvirtualmachine/v/4.0.0) |  | GitHub [4.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/sqlvirtualmachine/arm-sqlvirtualmachine) |
-| Ressourcenverwaltung: Storage | npm [15.2.0](https://www.npmjs.com/package/@azure/arm-storage/v/15.2.0) |  | GitHub [15.2.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/arm-storage) |
+| Ressourcenverwaltung: Storage | npm [15.3.0](https://www.npmjs.com/package/@azure/arm-storage/v/15.3.0) |  | GitHub [15.3.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/arm-storage) |
 | Ressourcenverwaltung: Speicher (Cache) | npm [4.0.0](https://www.npmjs.com/package/@azure/arm-storagecache/v/4.0.0) |  | GitHub [4.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storagecache/arm-storagecache) |
 | Ressourcenverwaltung: Speicher (Import/Export) | npm [1.2.0](https://www.npmjs.com/package/@azure/arm-storageimportexport/v/1.2.0) |  | GitHub [1.2.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storageimportexport/arm-storageimportexport) |
 | Ressourcenverwaltung: Speicher (Synchronisierung) | npm [8.0.0](https://www.npmjs.com/package/@azure/arm-storagesync/v/8.0.0) |  | GitHub [8.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storagesync/arm-storagesync) |
