@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 6dd45d9d8a46a703263c513192335fabc4054d56
-ms.sourcegitcommit: c5db60fbc1f0fd37397f79d88882108bed68f5e1
+ms.openlocfilehash: 065e9e0f20d20d77dfccf00ece97047fb7a31376
+ms.sourcegitcommit: 52d6b56a38cb7e9c5394afbf3d990e7838a983a5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/19/2021
-ms.locfileid: "104719788"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104987932"
 ---
 | Name | Paket | Docs | `Source` |
 | ---- | ------- | ---- | ------ |
@@ -13,7 +13,7 @@ ms.locfileid: "104719788"
 | Azure-Sicherheitsnachweis | npm [1.0.0-beta.2](https://www.npmjs.com/package/@azure/attestation/v/1.0.0-beta.2) | [docs](/javascript/api/overview/azure/attestation-readme/) | GitHub [1.0.0-beta.2](https://github.com/Azure/azure-sdk-for-js/tree/@azure/attestation_1.0.0-beta.2/sdk/attestation/attestation/) |
 | Cognitive Search | npm [11.1.0](https://www.npmjs.com/package/@azure/search-documents/v/11.1.0) | [docs](/javascript/api/overview/azure/search-documents-readme/) | GitHub [11.1.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/search-documents_11.1.0/sdk/search/search-documents/) |
 | Communication: Chat | npm [1.0.0-beta.5](https://www.npmjs.com/package/@azure/communication-chat/v/1.0.0-beta.5) | [docs](/javascript/api/overview/azure/communication-chat-readme/) | GitHub [1.0.0-beta.5](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-chat_1.0.0-beta.5/sdk/communication/communication-chat/) |
-| Communication: Allgemein | npm [1.0.0-beta.6](https://www.npmjs.com/package/@azure/communication-common/v/1.0.0-beta.6) | [docs](/javascript/api/overview/azure/communication-common-readme/) | GitHub [1.0.0-beta.6](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-common_1.0.0-beta.6/sdk/communication/communication-common/) |
+| Communication: Allgemein | npm [1.0.0](https://www.npmjs.com/package/@azure/communication-common/v/1.0.0) | [docs](/javascript/api/overview/azure/communication-common-readme/) | GitHub [1.0.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-common_1.0.0/sdk/communication/communication-common/) |
 | Kommunikationsidentität | npm [1.0.0-beta.5](https://www.npmjs.com/package/@azure/communication-identity/v/1.0.0-beta.5) | [docs](/javascript/api/overview/azure/communication-identity-readme/) | GitHub [1.0.0-beta.5](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-identity_1.0.0-beta.5/sdk/communication/communication-identity/) |
 | Telefonnummern für die Kommunikation | npm [1.0.0-beta.4](https://www.npmjs.com/package/@azure/communication-phone-numbers/v/1.0.0-beta.4) |  | GitHub [1.0.0-beta.4](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-phone-numbers_1.0.0-beta.4/sdk/communication/communication-phone-numbers/) |
 | Communication: SMS | npm [1.0.0-beta.4](https://www.npmjs.com/package/@azure/communication-sms/v/1.0.0-beta.4) | [docs](/javascript/api/overview/azure/communication-sms-readme/) | GitHub [1.0.0-beta.4](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-sms_1.0.0-beta.4/sdk/communication/communication-sms/) |
@@ -26,7 +26,7 @@ ms.locfileid: "104719788"
 | Core: LRO | npm [1.0.3](https://www.npmjs.com/package/@azure/core-lro/v/1.0.3) | [docs](/javascript/api/overview/azure/core-lro-readme/) | GitHub [1.0.3](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-lro_1.0.3/sdk/core/core-lro/) |
 | Core: Ablaufverfolgung | npm [1.0.0-preview.10](https://www.npmjs.com/package/@azure/core-tracing/v/1.0.0-preview.10) | [docs](/javascript/api/overview/azure/core-tracing-readme/) | GitHub [1.0.0-preview.10](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-tracing_1.0.0-preview.10/sdk/core/core-tracing/) |
 | Core: XML | npm [1.0.0-beta.1](https://www.npmjs.com/package/@azure/core-xml/v/1.0.0-beta.1) | [docs](/javascript/api/overview/azure/core-xml-readme/) | GitHub [1.0.0-beta.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-xml_1.0.0-beta.1/sdk/core/core-xml/) |
-| Core-REST-Pipeline | npm [1.0.0](https://www.npmjs.com/package/@azure/core-rest-pipeline/v/1.0.0) |  | GitHub [1.0.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-rest-pipeline_1.0.0/sdk/core/core-rest-pipeline/) |
+| Core-REST-Pipeline | npm [1.0.1](https://www.npmjs.com/package/@azure/core-rest-pipeline/v/1.0.1) |  | GitHub [1.0.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-rest-pipeline_1.0.1/sdk/core/core-rest-pipeline/) |
 | Cosmos DB | npm [3.10.3](https://www.npmjs.com/package/@azure/cosmos/v/3.10.3) | [docs](/javascript/api/overview/azure/cosmos-readme/) | GitHub [3.10.3](https://github.com/Azure/azure-sdk-for-js/tree/@azure/cosmos_3.10.3/sdk/cosmosdb/cosmos/) |
 | Digital Twins: Core | npm [1.0.3](https://www.npmjs.com/package/@azure/digital-twins-core/v/1.0.3) | [docs](/javascript/api/overview/azure/digital-twins-core-readme/) | GitHub [1.0.3](https://github.com/Azure/azure-sdk-for-js/tree/@azure/digital-twins-core_1.0.3/sdk/digitaltwins/digital-twins-core/) |
 | Event Grid | npm [4.0.0](https://www.npmjs.com/package/@azure/eventgrid/v/4.0.0) | [docs](/javascript/api/overview/azure/eventgrid-readme/) | GitHub [4.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventgrid/eventgrid) |
