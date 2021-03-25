@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 995d1e180aa986746627ccf41d48b58c68c39ab7
-ms.sourcegitcommit: b81900555dad4d6a36c0b9424d9ca92f25e9081d
+ms.openlocfilehash: 1871239404cd8df41a9f9c397dd05355f0d5f6fd
+ms.sourcegitcommit: 52d6b56a38cb7e9c5394afbf3d990e7838a983a5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "104803410"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104988349"
 ---
 | Name | Paket | Docs | `Source` |
 | ---- | ------- | ---- | ------ |
@@ -13,7 +13,7 @@ ms.locfileid: "104803410"
 | Azure-Sicherheitsnachweis | npm [1.0.0-beta.2](https://www.npmjs.com/package/@azure/attestation/v/1.0.0-beta.2) | [docs](/javascript/api/overview/azure/attestation-readme/) | GitHub [1.0.0-beta.2](https://github.com/Azure/azure-sdk-for-js/tree/@azure/attestation_1.0.0-beta.2/sdk/attestation/attestation/) |
 | Cognitive Search | npm [11.1.0](https://www.npmjs.com/package/@azure/search-documents/v/11.1.0) | [docs](/javascript/api/overview/azure/search-documents-readme/) | GitHub [11.1.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/search-documents_11.1.0/sdk/search/search-documents/) |
 | Communication: Chat | npm [1.0.0-beta.5](https://www.npmjs.com/package/@azure/communication-chat/v/1.0.0-beta.5) | [docs](/javascript/api/overview/azure/communication-chat-readme/) | GitHub [1.0.0-beta.5](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-chat_1.0.0-beta.5/sdk/communication/communication-chat/) |
-| Communication: Allgemein | npm [1.0.0-beta.6](https://www.npmjs.com/package/@azure/communication-common/v/1.0.0-beta.6) | [docs](/javascript/api/overview/azure/communication-common-readme/) | GitHub [1.0.0-beta.6](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-common_1.0.0-beta.6/sdk/communication/communication-common/) |
+| Communication: Allgemein | npm [1.0.0](https://www.npmjs.com/package/@azure/communication-common/v/1.0.0) | [docs](/javascript/api/overview/azure/communication-common-readme/) | GitHub [1.0.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-common_1.0.0/sdk/communication/communication-common/) |
 | Kommunikationsidentität | npm [1.0.0-beta.5](https://www.npmjs.com/package/@azure/communication-identity/v/1.0.0-beta.5) | [docs](/javascript/api/overview/azure/communication-identity-readme/) | GitHub [1.0.0-beta.5](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-identity_1.0.0-beta.5/sdk/communication/communication-identity/) |
 | Telefonnummern für die Kommunikation | npm [1.0.0-beta.4](https://www.npmjs.com/package/@azure/communication-phone-numbers/v/1.0.0-beta.4) |  | GitHub [1.0.0-beta.4](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-phone-numbers_1.0.0-beta.4/sdk/communication/communication-phone-numbers/) |
 | Communication: SMS | npm [1.0.0-beta.4](https://www.npmjs.com/package/@azure/communication-sms/v/1.0.0-beta.4) | [docs](/javascript/api/overview/azure/communication-sms-readme/) | GitHub [1.0.0-beta.4](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-sms_1.0.0-beta.4/sdk/communication/communication-sms/) |
@@ -26,7 +26,7 @@ ms.locfileid: "104803410"
 | Core: LRO | npm [1.0.3](https://www.npmjs.com/package/@azure/core-lro/v/1.0.3) | [docs](/javascript/api/overview/azure/core-lro-readme/) | GitHub [1.0.3](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-lro_1.0.3/sdk/core/core-lro/) |
 | Core: Ablaufverfolgung | npm [1.0.0-preview.10](https://www.npmjs.com/package/@azure/core-tracing/v/1.0.0-preview.10) | [docs](/javascript/api/overview/azure/core-tracing-readme/) | GitHub [1.0.0-preview.10](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-tracing_1.0.0-preview.10/sdk/core/core-tracing/) |
 | Core: XML | npm [1.0.0-beta.1](https://www.npmjs.com/package/@azure/core-xml/v/1.0.0-beta.1) | [docs](/javascript/api/overview/azure/core-xml-readme/) | GitHub [1.0.0-beta.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-xml_1.0.0-beta.1/sdk/core/core-xml/) |
-| Core-REST-Pipeline | npm [1.0.0](https://www.npmjs.com/package/@azure/core-rest-pipeline/v/1.0.0) |  | GitHub [1.0.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-rest-pipeline_1.0.0/sdk/core/core-rest-pipeline/) |
+| Core-REST-Pipeline | npm [1.0.1](https://www.npmjs.com/package/@azure/core-rest-pipeline/v/1.0.1) |  | GitHub [1.0.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-rest-pipeline_1.0.1/sdk/core/core-rest-pipeline/) |
 | Cosmos DB | npm [3.10.3](https://www.npmjs.com/package/@azure/cosmos/v/3.10.3) | [docs](/javascript/api/overview/azure/cosmos-readme/) | GitHub [3.10.3](https://github.com/Azure/azure-sdk-for-js/tree/@azure/cosmos_3.10.3/sdk/cosmosdb/cosmos/) |
 | Digital Twins: Core | npm [1.0.3](https://www.npmjs.com/package/@azure/digital-twins-core/v/1.0.3) | [docs](/javascript/api/overview/azure/digital-twins-core-readme/) | GitHub [1.0.3](https://github.com/Azure/azure-sdk-for-js/tree/@azure/digital-twins-core_1.0.3/sdk/digitaltwins/digital-twins-core/) |
 | Event Grid | npm [4.0.0](https://www.npmjs.com/package/@azure/eventgrid/v/4.0.0) | [docs](/javascript/api/overview/azure/eventgrid-readme/) | GitHub [4.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventgrid/eventgrid) |
@@ -57,7 +57,7 @@ ms.locfileid: "104803410"
 | @autorest/codemodel | npm [4.14.7](https://www.npmjs.com/package/@autorest/codemodel/v/4.14.7) |  |  |
 | @autorest/common | npm [1.1.1](https://www.npmjs.com/package/@autorest/common/v/1.1.1) |  |  |
 | @autorest/configuration | npm [1.2.0](https://www.npmjs.com/package/@autorest/configuration/v/1.2.0) |  |  |
-| @autorest/csharp | npm [3.0.0-beta.20210317.1](https://www.npmjs.com/package/@autorest/csharp/v/3.0.0-beta.20210317.1) |  |  |
+| @autorest/csharp | npm [3.0.0-beta.20210319.1](https://www.npmjs.com/package/@autorest/csharp/v/3.0.0-beta.20210319.1) |  |  |
 | @autorest/csharp-v3 | npm [3.0.0-beta.20201217.1](https://www.npmjs.com/package/@autorest/csharp-v3/v/3.0.0-beta.20201217.1) |  |  |
 | @autorest/extension-base | npm [3.2.1](https://www.npmjs.com/package/@autorest/extension-base/v/3.2.1) |  |  |
 | @autorest/schemas | npm [1.1.0](https://www.npmjs.com/package/@autorest/schemas/v/1.1.0) |  |  |
@@ -89,7 +89,8 @@ ms.locfileid: "104803410"
 | @azure/core-crypto | npm [1.0.0-alpha.20210122.1](https://www.npmjs.com/package/@azure/core-crypto/v/1.0.0-alpha.20210122.1) |  |  |
 | @azure/iot-device-update | npm [1.0.0-beta.1](https://www.npmjs.com/package/@azure/iot-device-update/v/1.0.0-beta.1) |  |  |
 | @azure/quantum-jobs | npm [1.0.0-beta.1](https://www.npmjs.com/package/@azure/quantum-jobs/v/1.0.0-beta.1) |  |  |
-| @azure/static-web-apps-cli | npm [0.2.0](https://www.npmjs.com/package/@azure/static-web-apps-cli/v/0.2.0) |  |  |
+| @azure/static-web-apps-cli | npm [0.2.1](https://www.npmjs.com/package/@azure/static-web-apps-cli/v/0.2.1) |  |  |
+| adl-vscode | npm [0.4.0](https://www.npmjs.com/package/adl-vscode/v/0.4.0) |  |  |
 | AMQP: Allgemein | npm [1.0.0-preview.17](https://www.npmjs.com/package/@azure/amqp-common/v/1.0.0-preview.17) |  | GitHub [1.0.0-preview.17](https://github.com/Azure/azure-sdk-for-js/tree/@azure/amqp-common_1.0.0-preview.17/sdk/core/amqp-common/) |
 | Anomalieerkennung | npm [3.0.0-beta.2](https://www.npmjs.com/package/@azure/ai-anomaly-detector/v/3.0.0-beta.2) | [docs](/javascript/api/overview/azure/ai-anomaly-detector-readme/) | GitHub [3.0.0-beta.2](https://github.com/Azure/azure-sdk-for-js/tree/@azure/ai-anomaly-detector_3.0.0-beta.2/sdk/anomalydetector/ai-anomaly-detector/) |
 | Anomalieerkennung | npm [2.1.0](https://www.npmjs.com/package/@azure/cognitiveservices-anomalydetector/v/2.1.0) |  | GitHub [2.1.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-anomalydetector) |
@@ -97,7 +98,7 @@ ms.locfileid: "104803410"
 | Application Insights: Abfrage | npm [1.1.0](https://www.npmjs.com/package/@azure/applicationinsights-query/v/1.1.0) |  | GitHub [1.1.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/applicationinsights/applicationinsights-query) |
 | AutoRest | npm [3.1.3](https://www.npmjs.com/package/autorest/v/3.1.3) |  |  |
 | AutoRest: AZ | npm [1.7.2](https://www.npmjs.com/package/@autorest/az/v/1.7.2) |  | GitHub [1.7.2](https://github.com/Azure/autorest.az/tree/1.4.0) |
-| AutoRest: Azure-Ressourcenschema | npm [3.0.92](https://www.npmjs.com/package/@autorest/azureresourceschema/v/3.0.92) |  | GitHub [3.0.92](https://github.com/Azure/autorest.azureresourceschema) |
+| AutoRest: Azure-Ressourcenschema | npm [3.0.98](https://www.npmjs.com/package/@autorest/azureresourceschema/v/3.0.98) |  | GitHub [3.0.98](https://github.com/Azure/autorest.azureresourceschema) |
 | AutoRest: CLI | npm [0.1.889](https://www.npmjs.com/package/@autorest/cli/v/0.1.889) |  | GitHub [0.1.889](https://github.com/Azure/autorest.cli) |
 | AutoRest: CLI (allgemein) | npm [0.6.1](https://www.npmjs.com/package/@autorest/clicommon/v/0.6.1) |  | GitHub [0.6.1](https://github.com/Azure/autorest.clicommon/tree/0.4.12) |
 | AutoRest: Codemodell | npm [3.0.137](https://www.npmjs.com/package/@azure/autorest.codemodel-v3/v/3.0.137) |  |  |
@@ -109,7 +110,7 @@ ms.locfileid: "104803410"
 | AutoRest: Functions (TypeScript) | npm [0.0.1-preview](https://www.npmjs.com/package/@autorest/azure-functions-typescript/v/0.0.1-preview) |  |  |
 | AutoRest: Go | npm [4.0.0-preview.14](https://www.npmjs.com/package/@autorest/go/v/4.0.0-preview.14) |  |  |
 | AutoRest: Modellierer 4 | npm [4.18.0](https://www.npmjs.com/package/@autorest/modelerfour/v/4.18.0) |  | GitHub [4.18.0](https://github.com/Azure/autorest.modelerfour) |
-| AutoRest: PowerShell | npm [3.0.423](https://www.npmjs.com/package/@autorest/powershell/v/3.0.423) |  | GitHub [3.0.423](https://github.com/Azure/autorest.powershell) |
+| AutoRest: PowerShell | npm [3.0.424](https://www.npmjs.com/package/@autorest/powershell/v/3.0.424) |  | GitHub [3.0.424](https://github.com/Azure/autorest.powershell) |
 | AutoRest: Python | npm [5.6.4](https://www.npmjs.com/package/@autorest/python/v/5.6.4) |  | GitHub [5.6.4](https://github.com/Azure/autorest.python/tree/v5.1.0-preview.7) |
 | AutoRest: Remodelierer | npm [2.1.27](https://www.npmjs.com/package/@autorest/remodeler/v/2.1.27) |  | GitHub [2.1.27](https://github.com/Azure/autorest.remodeler) |
 | AutoRest: Test | npm [0.1.76](https://www.npmjs.com/package/@autorest/test/v/0.1.76) |  | GitHub [0.1.76](https://github.com/Azure/autorest.test) |
@@ -121,7 +122,7 @@ ms.locfileid: "104803410"
 | Cognitive Search | npm [11.1.0](https://www.npmjs.com/package/@azure/search-documents/v/11.1.0) | [docs](/javascript/api/overview/azure/search-documents-readme/) | GitHub [11.1.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/search-documents_11.1.0/sdk/search/search-documents/) |
 | Kommunikation: Anrufe | npm [1.0.0-beta.9](https://www.npmjs.com/package/@azure/communication-calling/v/1.0.0-beta.9) |  |  |
 | Communication: Chat | npm [1.0.0-beta.5](https://www.npmjs.com/package/@azure/communication-chat/v/1.0.0-beta.5) | [docs](/javascript/api/overview/azure/communication-chat-readme/) | GitHub [1.0.0-beta.5](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-chat_1.0.0-beta.5/sdk/communication/communication-chat/) |
-| Communication: Allgemein | npm [1.0.0-beta.6](https://www.npmjs.com/package/@azure/communication-common/v/1.0.0-beta.6) | [docs](/javascript/api/overview/azure/communication-common-readme/) | GitHub [1.0.0-beta.6](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-common_1.0.0-beta.6/sdk/communication/communication-common/) |
+| Communication: Allgemein | npm [1.0.0](https://www.npmjs.com/package/@azure/communication-common/v/1.0.0) | [docs](/javascript/api/overview/azure/communication-common-readme/) | GitHub [1.0.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-common_1.0.0/sdk/communication/communication-common/) |
 | Kommunikationsidentität | npm [1.0.0-beta.5](https://www.npmjs.com/package/@azure/communication-identity/v/1.0.0-beta.5) | [docs](/javascript/api/overview/azure/communication-identity-readme/) | GitHub [1.0.0-beta.5](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-identity_1.0.0-beta.5/sdk/communication/communication-identity/) |
 | Telefonnummern für die Kommunikation | npm [1.0.0-beta.4](https://www.npmjs.com/package/@azure/communication-phone-numbers/v/1.0.0-beta.4) |  | GitHub [1.0.0-beta.4](https://github.com/Azure/azure-sdk-for-js/tree/@azure/communication-phone-numbers_1.0.0-beta.4/sdk/communication/communication-phone-numbers/) |
 | Communication: Signalisierung | npm [1.0.0-beta.3](https://www.npmjs.com/package/@azure/communication-signaling/v/1.0.0-beta.3) |  |  |
@@ -140,7 +141,7 @@ ms.locfileid: "104803410"
 | Core: Seitenverwaltung | npm [1.1.3](https://www.npmjs.com/package/@azure/core-paging/v/1.1.3) | [docs](/javascript/api/overview/azure/core-paging-readme/) | GitHub [1.1.3](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-paging_1.1.3/sdk/core/core-paging/) |
 | Core: Ablaufverfolgung | npm [1.0.0-preview.10](https://www.npmjs.com/package/@azure/core-tracing/v/1.0.0-preview.10) | [docs](/javascript/api/overview/azure/core-tracing-readme/) | GitHub [1.0.0-preview.10](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-tracing_1.0.0-preview.10/sdk/core/core-tracing/) |
 | Core: XML | npm [1.0.0-beta.1](https://www.npmjs.com/package/@azure/core-xml/v/1.0.0-beta.1) | [docs](/javascript/api/overview/azure/core-xml-readme/) | GitHub [1.0.0-beta.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-xml_1.0.0-beta.1/sdk/core/core-xml/) |
-| Core-REST-Pipeline | npm [1.0.0](https://www.npmjs.com/package/@azure/core-rest-pipeline/v/1.0.0) |  | GitHub [1.0.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-rest-pipeline_1.0.0/sdk/core/core-rest-pipeline/) |
+| Core-REST-Pipeline | npm [1.0.1](https://www.npmjs.com/package/@azure/core-rest-pipeline/v/1.0.1) |  | GitHub [1.0.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-rest-pipeline_1.0.1/sdk/core/core-rest-pipeline/) |
 | Cosmos DB | npm [3.10.3](https://www.npmjs.com/package/@azure/cosmos/v/3.10.3) | [docs](/javascript/api/overview/azure/cosmos-readme/) | GitHub [3.10.3](https://github.com/Azure/azure-sdk-for-js/tree/@azure/cosmos_3.10.3/sdk/cosmosdb/cosmos/) |
 | Benutzerdefinierte Bildersuche | npm [2.0.1](https://www.npmjs.com/package/@azure/cognitiveservices-customimagesearch/v/2.0.1) |  | GitHub [2.0.1](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-customimagesearch) |
 | Benutzerdefinierte Suche | npm [3.0.1](https://www.npmjs.com/package/@azure/cognitiveservices-customsearch/v/3.0.1) |  | GitHub [3.0.1](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-customsearch) |
@@ -158,7 +159,7 @@ ms.locfileid: "104803410"
 | Formularerkennung | npm [3.0.0](https://www.npmjs.com/package/@azure/ai-form-recognizer/v/3.0.0)<br>npm [3.1.0-beta.2](https://www.npmjs.com/package/@azure/ai-form-recognizer/v/3.1.0-beta.2) | [docs](/javascript/api/overview/azure/ai-form-recognizer-readme/) | GitHub [3.0.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/ai-form-recognizer_3.0.0/sdk/formrecognizer/ai-form-recognizer/)<br>GitHub [3.1.0-beta.2](https://github.com/Azure/azure-sdk-for-js/tree/@azure/ai-form-recognizer_3.1.0-beta.2/sdk/formrecognizer/ai-form-recognizer/) |
 | Formularerkennung | npm [2.0.1](https://www.npmjs.com/package/@azure/cognitiveservices-formrecognizer/v/2.0.1) |  | GitHub [2.0.1](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-formrecognizer) |
 | Git REST API SDK | npm [0.3.3](https://www.npmjs.com/package/git-rest-api-sdk/v/0.3.3) |  | GitHub [0.3.3](https://github.com/azure/git-rest-api) |
-| Graph | npm [5.0.1](https://www.npmjs.com/package/@azure/graph/v/5.0.1) |  | GitHub [5.0.1](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/graphrbac/graph) |
+| Graph | npm [5.0.2](https://www.npmjs.com/package/@azure/graph/v/5.0.2) |  | GitHub [5.0.2](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/graphrbac/graph) |
 | Identity | npm [1.2.4](https://www.npmjs.com/package/@azure/identity/v/1.2.4) | [docs](/javascript/api/overview/azure/identity-readme/) | GitHub [1.2.4](https://github.com/Azure/azure-sdk-for-js/tree/@azure/identity_1.2.4/sdk/identity/identity/) |
 | Bildersuche | npm [3.0.1](https://www.npmjs.com/package/@azure/cognitiveservices-imagesearch/v/3.0.1) |  | GitHub [3.0.1](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-imagesearch) |
 | IoT: AMQP (Basis) | npm [2.4.7](https://www.npmjs.com/package/azure-iot-amqp-base/v/2.4.7) |  | GitHub [2.4.7](https://github.com/Azure/azure-iot-sdk-node) |
@@ -197,7 +198,7 @@ ms.locfileid: "104803410"
 | News-Suche | npm [3.0.1](https://www.npmjs.com/package/@azure/cognitiveservices-newssearch/v/3.0.1) |  | GitHub [3.0.1](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-newssearch) |
 | ng deploy | npm [0.2.3](https://www.npmjs.com/package/@azure/ng-deploy/v/0.2.3) |  | GitHub [0.2.3](https://github.com/Azure/ng-deploy-azure) |
 | Node-RED-Knoten für Azure IoT Hub | npm [0.5.3](https://www.npmjs.com/package/node-red-contrib-azureiothubnode/v/0.5.3) |  |  |
-| oad | npm [0.8.7](https://www.npmjs.com/package/@azure/oad/v/0.8.7) |  | GitHub [0.8.7](https://github.com/Azure/openapi-diff) |
+| oad | npm [0.8.8](https://www.npmjs.com/package/@azure/oad/v/0.8.8) |  | GitHub [0.8.8](https://github.com/Azure/openapi-diff) |
 | OpenAPI-Markdown | npm [0.9.2](https://www.npmjs.com/package/@azure/openapi-markdown/v/0.9.2) |  | GitHub [0.9.2](https://github.com/Azure/openapi-markdown) |
 | Personalisierung | npm [2.0.1](https://www.npmjs.com/package/@azure/cognitiveservices-personalizer/v/2.0.1) |  | GitHub [2.0.1](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-personalizer) |
 | Pipelineergebnis veröffentlichen | npm [0.1.2](https://www.npmjs.com/package/@azure/publish-pipeline-result/v/0.1.2) |  |  |
@@ -258,10 +259,11 @@ ms.locfileid: "104803410"
 | Ressourcenverwaltung: Handel | npm [2.1.1](https://www.npmjs.com/package/@azure/arm-commerce/v/2.1.1) | [docs](/javascript/api/overview/azure/commerce) | GitHub [2.1.1](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/commerce/arm-commerce) |
 | Ressourcenverwaltung: Pläne mit Mindestverbrauch | npm [1.2.0](https://www.npmjs.com/package/@azure/arm-commitmentplans/v/1.2.0) |  | GitHub [1.2.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/machinelearning/arm-commitmentplans) |
 | Ressourcenverwaltung: Kommunikation | npm [1.0.0](https://www.npmjs.com/package/@azure/arm-communication/v/1.0.0) |  |  |
+| Ressourcenverwaltung: Compute | npm [16.0.0](https://www.npmjs.com/package/@azure/arm-compute/v/16.0.0) | [docs](/javascript/api/overview/azure/virtualmachines) | GitHub [16.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/compute/arm-compute) |
 | Ressourcenverwaltung: Verbrauch | npm [6.3.0](https://www.npmjs.com/package/@azure/arm-consumption/v/6.3.0) |  | GitHub [6.3.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/consumption/arm-consumption) |
 | Ressourcenverwaltung: Container Instances | npm [6.1.0](https://www.npmjs.com/package/@azure/arm-containerinstance/v/6.1.0) |  | GitHub [6.1.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/containerinstance/arm-containerinstance) |
 | Ressourcenverwaltung: Container Registry | npm [8.0.0](https://www.npmjs.com/package/@azure/arm-containerregistry/v/8.0.0) | [docs](/javascript/api/overview/azure/container-registry) | GitHub [8.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/containerregistry/arm-containerregistry) |
-| Ressourcenverwaltung: Containerdienst | npm [13.0.0](https://www.npmjs.com/package/@azure/arm-containerservice/v/13.0.0) | [docs](/javascript/api/overview/azure/container-service) | GitHub [13.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/containerservice/arm-containerservice) |
+| Ressourcenverwaltung: Containerdienst | npm [13.1.0](https://www.npmjs.com/package/@azure/arm-containerservice/v/13.1.0) | [docs](/javascript/api/overview/azure/container-service) | GitHub [13.1.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/containerservice/arm-containerservice) |
 | Ressourcenverwaltung: Content Delivery Network | npm [5.2.0](https://www.npmjs.com/package/@azure/arm-cdn/v/5.2.0) | [docs](/javascript/api/overview/azure/cdn) | GitHub [5.2.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cdn/arm-cdn) |
 | Ressourcenverwaltung: Cosmos DB | npm [12.0.0](https://www.npmjs.com/package/@azure/arm-cosmosdb/v/12.0.0) | [docs](/javascript/api/overview/azure/cosmos-db) | GitHub [12.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cosmosdb/arm-cosmosdb) |
 | Ressourcenverwaltung: Customer Insights | npm [3.1.0](https://www.npmjs.com/package/@azure/arm-customerinsights/v/3.1.0) |  | GitHub [3.1.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/customer-insights/arm-customerinsights) |
@@ -278,7 +280,7 @@ ms.locfileid: "104803410"
 | Ressourcenverwaltung: DNS | npm [4.0.0](https://www.npmjs.com/package/@azure/arm-dns/v/4.0.0) | [docs](/javascript/api/overview/azure/dns) | GitHub [4.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/dns/arm-dns) |
 | Ressourcenverwaltung: Domänendienste | npm [3.1.0](https://www.npmjs.com/package/@azure/arm-domainservices/v/3.1.0) |  | GitHub [3.1.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/domainservices/arm-domainservices) |
 | Ressourcenverwaltung: Edge-Gateway | npm [2.0.1](https://www.npmjs.com/package/@azure/arm-edgegateway/v/2.0.1) |  | GitHub [2.0.1](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/edgegateway/arm-edgegateway) |
-| Ressourcenverwaltung: Event Grid | npm [9.0.0](https://www.npmjs.com/package/@azure/arm-eventgrid/v/9.0.0) | [docs](/javascript/api/overview/azure/eventgrid) | GitHub [9.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventgrid/arm-eventgrid) |
+| Ressourcenverwaltung: Event Grid | npm [10.0.0](https://www.npmjs.com/package/@azure/arm-eventgrid/v/10.0.0) | [docs](/javascript/api/overview/azure/eventgrid) | GitHub [10.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventgrid/arm-eventgrid) |
 | Ressourcenverwaltung: Event Hubs | npm [3.2.0](https://www.npmjs.com/package/@azure/arm-eventhub/v/3.2.0) | [docs](/javascript/api/overview/azure/event-hub) | GitHub [3.2.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventhub/arm-eventhub) |
 | Ressourcenverwaltung: Features | npm [1.0.3](https://www.npmjs.com/package/@azure/arm-features/v/1.0.3) |  | GitHub [1.0.3](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/features/arm-features) |
 | Ressourcenverwaltung: Front Door | npm [4.0.0](https://www.npmjs.com/package/@azure/arm-frontdoor/v/4.0.0) |  | GitHub [4.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/frontdoor/arm-frontdoor) |
@@ -312,7 +314,7 @@ ms.locfileid: "104803410"
 | Ressourcenverwaltung: Monitor | npm [6.0.0](https://www.npmjs.com/package/@azure/arm-monitor/v/6.0.0) | [docs](/javascript/api/overview/azure/monitor) | GitHub [6.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/monitor/arm-monitor) |
 | Ressourcenverwaltung: MySQL | npm [3.3.0](https://www.npmjs.com/package/@azure/arm-mysql/v/3.3.0) | [docs](/javascript/api/overview/azure/mysql) | GitHub [3.3.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/mysql/arm-mysql) |
 | Ressourcenverwaltung: NetApp | npm [12.3.0](https://www.npmjs.com/package/@azure/arm-netapp/v/12.3.0) |  | GitHub [12.3.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/netapp/arm-netapp) |
-| Ressourcenverwaltung: Netzwerk | npm [23.2.0](https://www.npmjs.com/package/@azure/arm-network/v/23.2.0) | [docs](/javascript/api/overview/azure/virtual-network) | GitHub [23.2.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/network/arm-network) |
+| Ressourcenverwaltung: Netzwerk | npm [23.3.0](https://www.npmjs.com/package/@azure/arm-network/v/23.3.0) | [docs](/javascript/api/overview/azure/virtual-network) | GitHub [23.3.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/network/arm-network) |
 | Ressourcenverwaltung: Notification Hubs | npm [1.2.0](https://www.npmjs.com/package/@azure/arm-notificationhubs/v/1.2.0) | [docs](/javascript/api/overview/azure/notification-hubs) | GitHub [1.2.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/notificationhubs/arm-notificationhubs) |
 | Ressourcenverwaltung: Operational Insights | npm [6.0.0](https://www.npmjs.com/package/@azure/arm-operationalinsights/v/6.0.0) | [docs](/javascript/api/overview/azure/operational-insights) | GitHub [6.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/operationalinsights/arm-operationalinsights) |
 | Ressourcenverwaltung: Vorgänge | npm [2.1.0](https://www.npmjs.com/package/@azure/arm-operations/v/2.1.0) |  | GitHub [2.1.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/operationsmanagement/arm-operations) |
@@ -353,7 +355,6 @@ ms.locfileid: "104803410"
 | Ressourcenverwaltung: Synapse | npm [5.0.0](https://www.npmjs.com/package/@azure/arm-synapse/v/5.0.0) |  | GitHub [5.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/synapse/arm-synapse) |
 | Ressourcenverwaltung: Time Series Insights | npm [1.2.1](https://www.npmjs.com/package/@azure/arm-timeseriesinsights/v/1.2.1) |  | GitHub [1.2.1](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/timeseriesinsights/arm-timeseriesinsights) |
 | Ressourcenverwaltung: Traffic Manager | npm [5.0.0](https://www.npmjs.com/package/@azure/arm-trafficmanager/v/5.0.0) | [docs](/javascript/api/overview/azure/traffic-manager) | GitHub [5.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/trafficmanager/arm-trafficmanager) |
-| Ressourcenverwaltung: Virtual Machines | npm [16.0.0](https://www.npmjs.com/package/@azure/arm-compute/v/16.0.0) | [docs](/javascript/api/overview/azure/virtualmachines) | GitHub [16.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/compute/arm-compute) |
 | Ressourcenverwaltung: Visual Studio | npm [2.2.0](https://www.npmjs.com/package/@azure/arm-visualstudio/v/2.2.0) |  | GitHub [2.2.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/visualstudio/arm-visualstudio) |
 | Ressourcenverwaltung: VMware (CloudSimple) | npm [1.0.0](https://www.npmjs.com/package/@azure/arm-vmwarecloudsimple/v/1.0.0) |  | GitHub [1.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/vmwarecloudsimple/arm-vmwarecloudsimple) |
 | Ressourcenverwaltung: Webdienste | npm [0.1.1](https://www.npmjs.com/package/@azure/arm-webservices/v/0.1.1) |  | GitHub [0.1.1](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/machinelearning/arm-webservices) |
