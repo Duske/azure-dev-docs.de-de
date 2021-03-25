@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e5a2b74cfca6a702b23209f83cd1d356ba899a76
-ms.sourcegitcommit: 52d6b56a38cb7e9c5394afbf3d990e7838a983a5
+ms.openlocfilehash: aa68cf5c55e7d23328964560f05f37ce659a2327
+ms.sourcegitcommit: 8204c16acc19b72f47d22f0254e377b0153bd7d5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104988063"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105104784"
 ---
 | Name | Paket | Docs | `Source` |
 | ---- | ------- | ---- | ------ |
@@ -14,7 +14,7 @@ ms.locfileid: "104988063"
 | Cognitive Search | pypi [11.1.0](https://pypi.org/project/azure-search-documents/11.1.0) | [docs](/python/api/overview/azure/search-documents-readme/) | GitHub [11.1.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-search-documents_11.1.0/sdk/search/azure-search-documents/) |
 | Communication: Chat | pypi [1.0.0b5](https://pypi.org/project/azure-communication-chat/1.0.0b5) | [docs](/python/api/overview/azure/communication-chat-readme/) | GitHub [1.0.0b5](https://github.com/Azure/azure-sdk-for-python/tree/azure-communication-chat_1.0.0b5/sdk/communication/azure-communication-chat/) |
 | Kommunikationsidentität | pypi [1.0.0b5](https://pypi.org/project/azure-communication-identity/1.0.0b5) | [docs](/python/api/overview/azure/communication-identity-readme/) | GitHub [1.0.0b5](https://github.com/Azure/azure-sdk-for-python/tree/azure-communication-identity_1.0.0b5/sdk/communication/azure-communication-identity/) |
-| Telefonnummern für die Kommunikation | pypi [1.0.0b4](https://pypi.org/project/azure-communication-phonenumbers/1.0.0b4) |  | GitHub [1.0.0b4](https://github.com/Azure/azure-sdk-for-python/tree/azure-communication-phonenumbers_1.0.0b4/sdk/communication/azure-communication-phonenumbers/) |
+| Telefonnummern für die Kommunikation | pypi [1.0.0b4](https://pypi.org/project/azure-communication-phonenumbers/1.0.0b4) | [docs](/python/api/overview/azure/communication-phonenumbers-readme/) | GitHub [1.0.0b4](https://github.com/Azure/azure-sdk-for-python/tree/azure-communication-phonenumbers_1.0.0b4/sdk/communication/azure-communication-phonenumbers/) |
 | Communication: SMS | pypi [1.0.0b6](https://pypi.org/project/azure-communication-sms/1.0.0b6) | [docs](/python/api/overview/azure/communication-sms-readme/) | GitHub [1.0.0b6](https://github.com/Azure/azure-sdk-for-python/tree/azure-communication-sms_1.0.0b6/sdk/communication/azure-communication-sms/) |
 | Kernspeicher | pypi [1.12.0](https://pypi.org/project/azure-core/1.12.0)<br>pypi [1.13.0b1](https://pypi.org/project/azure-core/1.13.0b1) | [docs](/python/api/overview/azure/core-readme/) | GitHub [1.12.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-core_1.12.0/sdk/core/azure-core/)<br>GitHub [1.13.0b1](https://github.com/Azure/azure-sdk-for-python/tree/azure-core_1.13.0b1/sdk/core/azure-core/) |
 | Cosmos DB | pypi [4.2.0](https://pypi.org/project/azure-cosmos/4.2.0) | [docs](/python/api/overview/azure/cosmos-readme/) | GitHub [4.2.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-cosmos_4.2.0/sdk/cosmos/azure-cosmos/) |
@@ -176,7 +176,7 @@ ms.locfileid: "104988063"
 | Communication: Chat | pypi [1.0.0b5](https://pypi.org/project/azure-communication-chat/1.0.0b5) | [docs](/python/api/overview/azure/communication-chat-readme/) | GitHub [1.0.0b5](https://github.com/Azure/azure-sdk-for-python/tree/azure-communication-chat_1.0.0b5/sdk/communication/azure-communication-chat/) |
 | Kommunikationsidentität | pypi [1.0.0b5](https://pypi.org/project/azure-communication-identity/1.0.0b5) | [docs](/python/api/overview/azure/communication-identity-readme/) | GitHub [1.0.0b5](https://github.com/Azure/azure-sdk-for-python/tree/azure-communication-identity_1.0.0b5/sdk/communication/azure-communication-identity/) |
 | Kommunikation (Namespacepaket) | pypi [0.0.0b1](https://pypi.org/project/azure-communication-nspkg/0.0.0b1) | [docs](/python/api/overview/azure/communication-nspkg-readme/) |  |
-| Telefonnummern für die Kommunikation | pypi [1.0.0b4](https://pypi.org/project/azure-communication-phonenumbers/1.0.0b4) |  | GitHub [1.0.0b4](https://github.com/Azure/azure-sdk-for-python/tree/azure-communication-phonenumbers_1.0.0b4/sdk/communication/azure-communication-phonenumbers/) |
+| Telefonnummern für die Kommunikation | pypi [1.0.0b4](https://pypi.org/project/azure-communication-phonenumbers/1.0.0b4) | [docs](/python/api/overview/azure/communication-phonenumbers-readme/) | GitHub [1.0.0b4](https://github.com/Azure/azure-sdk-for-python/tree/azure-communication-phonenumbers_1.0.0b4/sdk/communication/azure-communication-phonenumbers/) |
 | Communication: SMS | pypi [1.0.0b6](https://pypi.org/project/azure-communication-sms/1.0.0b6) | [docs](/python/api/overview/azure/communication-sms-readme/) | GitHub [1.0.0b6](https://github.com/Azure/azure-sdk-for-python/tree/azure-communication-sms_1.0.0b6/sdk/communication/azure-communication-sms/) |
 | Maschinelles Sehen | pypi [0.7.0](https://pypi.org/project/azure-cognitiveservices-vision-computervision/0.7.0) | [docs](/python/api/overview/azure/cognitiveservices-vision-computervision-readme/) | GitHub [0.7.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-cognitiveservices-vision-computervision_0.7.0/sdk/cognitiveservices/azure-cognitiveservices-vision-computervision/) |
 | Content Moderator | pypi [1.0.0](https://pypi.org/project/azure-cognitiveservices-vision-contentmoderator/1.0.0) |  | GitHub [1.0.0](https://github.com/Azure/azure-sdk-for-python/tree/azure-cognitiveservices-vision-contentmoderator_1.0.0/azure-cognitiveservices-vision-contentmoderator/) |

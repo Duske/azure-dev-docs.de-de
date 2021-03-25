@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 1871239404cd8df41a9f9c397dd05355f0d5f6fd
-ms.sourcegitcommit: 52d6b56a38cb7e9c5394afbf3d990e7838a983a5
+ms.openlocfilehash: e2822966a72e084cfa2318b9b1cedc25aec3cba5
+ms.sourcegitcommit: 8204c16acc19b72f47d22f0254e377b0153bd7d5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104988349"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105104997"
 ---
 | Name | Paket | Docs | `Source` |
 | ---- | ------- | ---- | ------ |
@@ -41,6 +41,7 @@ ms.locfileid: "104988349"
 | Key Vault: Schlüssel | npm [4.1.0](https://www.npmjs.com/package/@azure/keyvault-keys/v/4.1.0)<br>npm [4.2.0-beta.4](https://www.npmjs.com/package/@azure/keyvault-keys/v/4.2.0-beta.4) | [docs](/javascript/api/overview/azure/keyvault-keys-readme/) | GitHub [4.1.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/keyvault-keys_4.1.0/sdk/keyvault/keyvault-keys/)<br>GitHub [4.2.0-beta.4](https://github.com/Azure/azure-sdk-for-js/tree/@azure/keyvault-keys_4.2.0-beta.4/sdk/keyvault/keyvault-keys/) |
 | Key Vault: Geheimnisse | npm [4.1.0](https://www.npmjs.com/package/@azure/keyvault-secrets/v/4.1.0)<br>npm [4.2.0-beta.3](https://www.npmjs.com/package/@azure/keyvault-secrets/v/4.2.0-beta.3) | [docs](/javascript/api/overview/azure/keyvault-secrets-readme/) | GitHub [4.1.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/keyvault-secrets_4.1.0/sdk/keyvault/keyvault-secrets/)<br>GitHub [4.2.0-beta.3](https://github.com/Azure/azure-sdk-for-js/tree/@azure/keyvault-secrets_4.2.0-beta.3/sdk/keyvault/keyvault-secrets/) |
 | Metrics Advisor | npm [1.0.0-beta.3](https://www.npmjs.com/package/@azure/ai-metrics-advisor/v/1.0.0-beta.3) | [docs](/javascript/api/overview/azure/ai-metrics-advisor-readme/) | GitHub [1.0.0-beta.3](https://github.com/Azure/azure-sdk-for-js/tree/@azure/ai-metrics-advisor_1.0.0-beta.3/sdk/metricsadvisor/ai-metrics-advisor/) |
+| Monitor Exporter für OpenTelemetry | npm [1.0.0-beta.2](https://www.npmjs.com/package/@azure/opentelemetry-exporter-azure-monitor/v/1.0.0-beta.2) | [docs](/java/api/overview/azure/opentelemetry-exporters-azuremonitor-readme) | GitHub [1.0.0-beta.2](https://github.com/Azure/azure-sdk-for-js/tree/@azure/opentelemetry-exporter-azure-monitor_1.0.0-beta.2/sdk/monitor/opentelemetry-exporter-azure-monitor/) |
 | Service Bus | npm [7.0.3](https://www.npmjs.com/package/@azure/service-bus/v/7.0.3) | [docs](/javascript/api/overview/azure/service-bus-readme/) | GitHub [7.0.3](https://github.com/Azure/azure-sdk-for-js/tree/@azure/service-bus_7.0.3/sdk/servicebus/service-bus/) |
 | Storage: Blobs | npm [12.5.0](https://www.npmjs.com/package/@azure/storage-blob/v/12.5.0) | [docs](/javascript/api/overview/azure/storage-blob-readme/) | GitHub [12.5.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/storage-blob_12.5.0/sdk/storage/storage-blob/) |
 | Storage: ChangeFeed für Blobs | npm [12.0.0-preview.2](https://www.npmjs.com/package/@azure/storage-blob-changefeed/v/12.0.0-preview.2) | [docs](/javascript/api/overview/azure/storage-blob-changefeed-readme/) | GitHub [12.0.0-preview.2](https://github.com/Azure/azure-sdk-for-js/tree/@azure/storage-blob-changefeed_12.0.0-preview.2/sdk/storage/storage-blob-changefeed/) |
@@ -90,6 +91,7 @@ ms.locfileid: "104988349"
 | @azure/iot-device-update | npm [1.0.0-beta.1](https://www.npmjs.com/package/@azure/iot-device-update/v/1.0.0-beta.1) |  |  |
 | @azure/quantum-jobs | npm [1.0.0-beta.1](https://www.npmjs.com/package/@azure/quantum-jobs/v/1.0.0-beta.1) |  |  |
 | @azure/static-web-apps-cli | npm [0.2.1](https://www.npmjs.com/package/@azure/static-web-apps-cli/v/0.2.1) |  |  |
+| @azure-tools/jsonschema | npm [1.0.0](https://www.npmjs.com/package/@azure-tools/jsonschema/v/1.0.0) |  |  |
 | adl-vscode | npm [0.4.0](https://www.npmjs.com/package/adl-vscode/v/0.4.0) |  |  |
 | AMQP: Allgemein | npm [1.0.0-preview.17](https://www.npmjs.com/package/@azure/amqp-common/v/1.0.0-preview.17) |  | GitHub [1.0.0-preview.17](https://github.com/Azure/azure-sdk-for-js/tree/@azure/amqp-common_1.0.0-preview.17/sdk/core/amqp-common/) |
 | Anomalieerkennung | npm [3.0.0-beta.2](https://www.npmjs.com/package/@azure/ai-anomaly-detector/v/3.0.0-beta.2) | [docs](/javascript/api/overview/azure/ai-anomaly-detector-readme/) | GitHub [3.0.0-beta.2](https://github.com/Azure/azure-sdk-for-js/tree/@azure/ai-anomaly-detector_3.0.0-beta.2/sdk/anomalydetector/ai-anomaly-detector/) |
@@ -190,6 +192,7 @@ ms.locfileid: "104988349"
 | LUIS-Runtime | npm [5.0.0](https://www.npmjs.com/package/@azure/cognitiveservices-luis-runtime/v/5.0.0) |  | GitHub [5.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/cognitiveservices-luis-runtime) |
 | Metrics Advisor | npm [1.0.0-beta.3](https://www.npmjs.com/package/@azure/ai-metrics-advisor/v/1.0.0-beta.3) | [docs](/javascript/api/overview/azure/ai-metrics-advisor-readme/) | GitHub [1.0.0-beta.3](https://github.com/Azure/azure-sdk-for-js/tree/@azure/ai-metrics-advisor_1.0.0-beta.3/sdk/metricsadvisor/ai-metrics-advisor/) |
 | Monitor Exporter für OpenTelemetry | npm [1.0.0-beta.3](https://www.npmjs.com/package/@azure/monitor-opentelemetry-exporter/v/1.0.0-beta.3) | [docs](/javascript/api/overview/azure/monitor-opentelemetry-exporter-readme/) | GitHub [1.0.0-beta.3](https://github.com/microsoft/opentelemetry-azure-monitor-js/tree/1.0.0-preview.4/packages/azure-opentelemetry-exporter) |
+| Monitor Exporter für OpenTelemetry | npm [1.0.0-beta.2](https://www.npmjs.com/package/@azure/opentelemetry-exporter-azure-monitor/v/1.0.0-beta.2) | [docs](/java/api/overview/azure/opentelemetry-exporters-azuremonitor-readme) | GitHub [1.0.0-beta.2](https://github.com/Azure/azure-sdk-for-js/tree/@azure/opentelemetry-exporter-azure-monitor_1.0.0-beta.2/sdk/monitor/opentelemetry-exporter-azure-monitor/) |
 | msrest: Azure-Umgebung | npm [2.0.0](https://www.npmjs.com/package/@azure/ms-rest-azure-env/v/2.0.0) |  | GitHub [2.0.0](https://github.com/Azure/ms-rest-azure-env) |
 | msrest: Azure JS | npm [2.1.0](https://www.npmjs.com/package/@azure/ms-rest-azure-js/v/2.1.0) |  | GitHub [2.1.0](https://github.com/Azure/ms-rest-azure-js) |
 | msrest: Browserauthentifizierung | npm [1.0.2](https://www.npmjs.com/package/@azure/ms-rest-browserauth/v/1.0.2) |  | GitHub [1.0.2](https://github.com/Azure/ms-rest-browserauth) |
