@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: b2391977f193b75f50def754a1bbc8e4023696bc
-ms.sourcegitcommit: 52d6b56a38cb7e9c5394afbf3d990e7838a983a5
+ms.openlocfilehash: 02f385b06b846a33c42ddc96b888f1529db6d637
+ms.sourcegitcommit: 8204c16acc19b72f47d22f0254e377b0153bd7d5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104988232"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "105105284"
 ---
 | Name | Paket | Docs | `Source` |
 | ---- | ------- | ---- | ------ |
@@ -27,7 +27,7 @@ ms.locfileid: "104988232"
 | Core Serializer Apache Jackson | Maven [1.0.0-beta.1](https://search.maven.org/artifact/com.azure/azure-core-serializer-avro-jackson/1.0.0-beta.1/jar/) | [docs](/java/api/overview/azure/core-serializer-avro-jackson-readme/) | GitHub [1.0.0-beta.1](https://github.com/Azure/azure-sdk-for-java/tree/azure-core-serializer-avro-jackson_1.0.0-beta.1/sdk/core/azure-core-serializer-avro-jackson/) |
 | Core Serializer GSON JSON | Maven [1.1.0](https://search.maven.org/artifact/com.azure/azure-core-serializer-json-gson/1.1.0/jar/) | [docs](/java/api/overview/azure/core-serializer-json-gson-readme/) | GitHub [1.1.0](https://github.com/Azure/azure-sdk-for-java/tree/azure-core-serializer-json-gson_1.1.0/sdk/core/azure-core-serializer-json-gson/) |
 | Core Serializer Jackson JSON | Maven [1.2.1](https://search.maven.org/artifact/com.azure/azure-core-serializer-json-jackson/1.2.1/jar/) | [docs](/java/api/overview/azure/core-serializer-json-jackson-readme/) | GitHub [1.2.1](https://github.com/Azure/azure-sdk-for-java/tree/azure-core-serializer-json-jackson_1.2.1/sdk/core/azure-core-serializer-json-jackson/) |
-| Cosmos DB | Maven [4.13.0](https://search.maven.org/artifact/com.azure/azure-cosmos/4.13.0/jar/) | [docs](/java/api/overview/azure/cosmos-readme/) | GitHub [4.13.0](https://github.com/Azure/azure-sdk-for-java/tree/azure-cosmos_4.13.0/sdk/cosmos/azure-cosmos/) |
+| Cosmos DB | Maven [4.13.1](https://search.maven.org/artifact/com.azure/azure-cosmos/4.13.1/jar/) | [docs](/java/api/overview/azure/cosmos-readme/) | GitHub [4.13.1](https://github.com/Azure/azure-sdk-for-java/tree/azure-cosmos_4.13.1/sdk/cosmos/azure-cosmos/) |
 | Digital Twins: Core | Maven [1.0.3](https://search.maven.org/artifact/com.azure/azure-digitaltwins-core/1.0.3/jar/) | [docs](/java/api/overview/azure/digitaltwins-core-readme/) | GitHub [1.0.3](https://github.com/Azure/azure-sdk-for-java/tree/azure-digitaltwins-core_1.0.3/sdk/digitaltwins/azure-digitaltwins-core/) |
 | Event Grid | Maven [4.0.0](https://search.maven.org/artifact/com.azure/azure-messaging-eventgrid/4.0.0/jar/) | [docs](/java/api/overview/azure/messaging-eventgrid-readme/) | GitHub [4.0.0](https://github.com/Azure/azure-sdk-for-java/tree/azure-messaging-eventgrid_4.0.0/sdk/eventgrid/azure-messaging-eventgrid/) |
 | Event Hubs | Maven [5.6.0](https://search.maven.org/artifact/com.azure/azure-messaging-eventhubs/5.6.0/jar/) | [docs](/java/api/overview/azure/messaging-eventhubs-readme/) | GitHub [5.6.0](https://github.com/Azure/azure-sdk-for-java/tree/azure-messaging-eventhubs_5.6.0/sdk/eventhubs/azure-messaging-eventhubs/) |
