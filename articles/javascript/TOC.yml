@@ -143,10 +143,20 @@
           href: concepts/identity-authentication-users.md
     - name: Anleitungen
       items:
-        - name: Konfigurieren Ihrer App
-          href: how-to/configure-web-app-settings.md
-        - name: Aufgaben für JavaScript-Entwickler
+        - name: Azure-Aufgaben für JavaScript-Entwickler
           href: how-to/common-javascript-tasks.md
+        - name: Mit Web-Apps
+          items:
+            - name: Erstellen einer Web-App mit einem sicheren Domänennamen
+              href: how-to/add-custom-domain-to-web-app.md
+            - name: Konfigurieren der Web-App
+              href: how-to/configure-web-app-settings.md
+            - name: Schreiben von serverlosem Code
+              href: how-to/develop-serverless-apps.md
+            - name: Erstellen einer statischen Web-App
+              href: how-to/create-static-web-app.md
+            - name: Bereitstellen einer Web-App
+              href: how-to/deploy-web-app.md
         - name: Mit Visual Studio Code
           items:
             - name: Installieren und Debuggen eines lokalen Projekts
@@ -195,16 +205,10 @@
               href: how-to/with-database/use-postgresql-db.md
             - name: "SQL-API in Cosmos\_DB"
               href: how-to/with-database/use-sql-api-as-cosmos-db.md
-        - name: Bereitstellen einer Web-App
-          href: how-to/deploy-web-app.md
         - name: Bereitstellen von Containern
           href: how-to/deploy-containers.md
         - name: Integrieren in Datenbanken
           href: how-to/integrate-database.md
-        - name: Schreiben von serverlosem Code
-          href: how-to/develop-serverless-apps.md
-        - name: Erstellen einer statischen Website (JAMstack)
-          href: how-to/create-static-site.md
         - name: Protokollierung und Metriken
           href: how-to/node-sdk-logging.md
         - name: Automatisieren mit der Azure CLI

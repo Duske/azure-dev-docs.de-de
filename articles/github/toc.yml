@@ -18,6 +18,8 @@
           href: github-key-vault.md
         - name: Verwalten von Azure Policy
           href: manage-azure-policy.md
+        - name: Erstellen benutzerdefinierter VM-Images
+          href: build-vm-image.md
     - name: Azure DevOps und GitHub
       href: integrate-azure-devops.md
     - name: Visual Studio und Visual Studio Code
