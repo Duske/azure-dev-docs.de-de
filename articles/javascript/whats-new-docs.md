@@ -3,16 +3,25 @@ title: Neuerungen in der JavaScript-Dokumentation
 description: Neuerungen in der JavaScript-Dokumentation im Developer Center
 ms.topic: conceptual
 ms.date: 02/17/2021
-ms.openlocfilehash: b51630af0808255b3c8cbcb54319a59c00263af9
-ms.sourcegitcommit: 7991f748720673d2dc50baaa8658348ff6cc1044
+ms.openlocfilehash: 3d091e8b734dbdf1ceeaca25617dbd0b9eb2ea5d
+ms.sourcegitcommit: 3536f174735cd3bb7da7e4b266fbf43349a22b67
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "102604121"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103193452"
 ---
 # <a name="javascript-docs-whats-new"></a>JavaScript-Dokumentation: Neues
 
 Hier finden Sie neue und aktualisierte Inhalte für JavaScript- und TypeScript-Entwickler.
+
+## <a name="2021-march"></a>März 2021
+
+### <a name="whats-updated"></a>Aktualisierungen
+
+|Name|Notizen|
+|---------------------------------------|--|
+|[Installieren und Verwalten von Node.js für die Azure-Entwicklung](./core/install-nodejs-develop-azure-sdk-project.md)|
+
 
 ## <a name="2021-february"></a>Februar 2021
 
