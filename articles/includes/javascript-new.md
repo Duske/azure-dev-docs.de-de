@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 065e9e0f20d20d77dfccf00ece97047fb7a31376
-ms.sourcegitcommit: 52d6b56a38cb7e9c5394afbf3d990e7838a983a5
+ms.openlocfilehash: 8bff781fc77e0475eb043a43615cf3345f57583c
+ms.sourcegitcommit: 9185fa67bd290135f611dad5d5495f169b7e1699
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104987932"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "105582327"
 ---
 | Name | Paket | Docs | `Source` |
 | ---- | ------- | ---- | ------ |
@@ -27,9 +27,9 @@ ms.locfileid: "104987932"
 | Core: Ablaufverfolgung | npm [1.0.0-preview.10](https://www.npmjs.com/package/@azure/core-tracing/v/1.0.0-preview.10) | [docs](/javascript/api/overview/azure/core-tracing-readme/) | GitHub [1.0.0-preview.10](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-tracing_1.0.0-preview.10/sdk/core/core-tracing/) |
 | Core: XML | npm [1.0.0-beta.1](https://www.npmjs.com/package/@azure/core-xml/v/1.0.0-beta.1) | [docs](/javascript/api/overview/azure/core-xml-readme/) | GitHub [1.0.0-beta.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-xml_1.0.0-beta.1/sdk/core/core-xml/) |
 | Core-REST-Pipeline | npm [1.0.1](https://www.npmjs.com/package/@azure/core-rest-pipeline/v/1.0.1) |  | GitHub [1.0.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/core-rest-pipeline_1.0.1/sdk/core/core-rest-pipeline/) |
-| Cosmos DB | npm [3.10.3](https://www.npmjs.com/package/@azure/cosmos/v/3.10.3) | [docs](/javascript/api/overview/azure/cosmos-readme/) | GitHub [3.10.3](https://github.com/Azure/azure-sdk-for-js/tree/@azure/cosmos_3.10.3/sdk/cosmosdb/cosmos/) |
+| Cosmos DB | npm [3.10.4](https://www.npmjs.com/package/@azure/cosmos/v/3.10.4) | [docs](/javascript/api/overview/azure/cosmos-readme/) | GitHub [3.10.4](https://github.com/Azure/azure-sdk-for-js/tree/@azure/cosmos_3.10.4/sdk/cosmosdb/cosmos/) |
 | Digital Twins: Core | npm [1.0.3](https://www.npmjs.com/package/@azure/digital-twins-core/v/1.0.3) | [docs](/javascript/api/overview/azure/digital-twins-core-readme/) | GitHub [1.0.3](https://github.com/Azure/azure-sdk-for-js/tree/@azure/digital-twins-core_1.0.3/sdk/digitaltwins/digital-twins-core/) |
-| Event Grid | npm [4.0.0](https://www.npmjs.com/package/@azure/eventgrid/v/4.0.0) | [docs](/javascript/api/overview/azure/eventgrid-readme/) | GitHub [4.0.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventgrid/eventgrid) |
+| Event Grid | npm [4.1.0](https://www.npmjs.com/package/@azure/eventgrid/v/4.1.0) | [docs](/javascript/api/overview/azure/eventgrid-readme/) | GitHub [4.1.0](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventgrid/eventgrid) |
 | Event Hubs | npm [5.4.0](https://www.npmjs.com/package/@azure/event-hubs/v/5.4.0)<br>npm [5.5.0-beta.1](https://www.npmjs.com/package/@azure/event-hubs/v/5.5.0-beta.1) | [docs](/javascript/api/overview/azure/event-hubs-readme/) | GitHub [5.4.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/event-hubs_5.4.0/sdk/eventhub/event-hubs/)<br>GitHub [5.5.0-beta.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/event-hubs_5.5.0-beta.1/sdk/eventhub/event-hubs/) |
 | Event Hubs: Azure Blob Storage-Prüfpunktspeicher | npm [1.0.1](https://www.npmjs.com/package/@azure/eventhubs-checkpointstore-blob/v/1.0.1) | [docs](/javascript/api/overview/azure/eventhubs-checkpointstore-blob-readme/) | GitHub [1.0.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/eventhubs-checkpointstore-blob_1.0.1/sdk/eventhub/eventhubs-checkpointstore-blob/) |
 | Event Hubs: Schemaregistrierung | npm [1.0.0-beta.1](https://www.npmjs.com/package/@azure/schema-registry/v/1.0.0-beta.1) | [docs](/javascript/api/overview/azure/schema-registry-readme/) | GitHub [1.0.0-beta.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/schema-registry_1.0.0-beta.1/sdk/schemaregistry/schema-registry/) |

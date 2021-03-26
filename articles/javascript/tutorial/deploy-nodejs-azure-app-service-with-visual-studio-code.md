@@ -1,19 +1,19 @@
 ---
-title: Bereitstellen von Node.js-Apps in Azure App Service in Visual Studio Code
-description: Stellen Sie mithilfe der App Service-Erweiterung für Visual Studio Code eine Express.js-/Node.js-Anwendung in Azure App Service bereit.
+title: Bereitstellen einer Node.js-/Express.js-App in App Service aus Visual Studio Code
+description: Stellen Sie mit der App Service-Erweiterung für Visual Studio Code eine Express.js-/Node.js-Webanwendung in Azure App Service bereit.
 ms.topic: tutorial
 ms.date: 01/20/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 8f6ab806262bee9684cc2c37d05aa1f21695c806
-ms.sourcegitcommit: 681ea211dc8e1809dd299b5cd64eebd974c073d7
+ms.openlocfilehash: 10b3462abcb466cf4e4ec57909f36e08dd50d77c
+ms.sourcegitcommit: 3536f174735cd3bb7da7e4b266fbf43349a22b67
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98658776"
+ms.lasthandoff: 03/12/2021
+ms.locfileid: "103193549"
 ---
-# <a name="deploy-nodejs-to-azure-app-service-using-visual-studio-code"></a>Bereitstellen von Node.js in Azure App Service mithilfe von Visual Studio Code
+# <a name="deploy-nodejs-expressjs-to-azure-app-service-using-visual-studio-code"></a>Bereitstellen einer Node.js-/Express.js-App in Azure App Service mit Visual Studio Code
 
-Stellen Sie eine Node.js-Anwendung mithilfe der [App Service-Erweiterung](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) für Visual Studio Code in Azure App Service (unter Linux oder Windows) bereit.
+Stellen Sie eine Node.js-/Express.js-Anwendung mit der [App Service-Erweiterung](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) für Visual Studio Code in Azure App Service (unter Linux oder Windows) bereit.
 
 Stellen Sie Ihre Node.js-App mithilfe von Git und der Azure App Service-Erweiterung in Azure bereit. So erreichen Sie dieses Ziel:
 
@@ -22,12 +22,6 @@ Stellen Sie Ihre Node.js-App mithilfe von Git und der Azure App Service-Erweiter
 * Erstellen Sie eine Web-App-Ressource zum Hosten der App.
 * Stellen Sie die App in der Ressource bereit.
 * Zeigen Sie die Remoteprotokolle lokal an.
-
-## <a name="walkthrough-video"></a>Video mit exemplarischer Vorgehensweise
-
-Dieses Video enthält eine umfassende exemplarische Vorgehensweise für den Inhalt dieses Artikels.
-
-> [!VIDEO https://channel9.msdn.com/Shows/Docs-Azure/Deploy-to-Azure-App-Service-using-Visual-Studio-Code/player]
 
 ## <a name="1-set-up-your-development-environment"></a>1. Einrichten der Entwicklungsumgebung
 
