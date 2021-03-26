@@ -5,14 +5,14 @@ author: N-Usha
 ms.author: ushan
 ms.topic: reference
 ms.service: azure
-ms.date: 11/17/2020
+ms.date: 02/17/2021
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: 6310254e450c7e0fc648459ddad2c08b1bba555b
-ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
+ms.openlocfilehash: 136e11c6059ab8c25af85212f0f0f96b88652a56
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98759520"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118238"
 ---
 # <a name="use-github-actions-to-connect-to-azure"></a>Verwenden von GitHub Actions zum Herstellen einer Verbindung mit Azure
 
@@ -21,9 +21,9 @@ Informieren Sie sich über die Verwendung der [Azure-Anmeldung](https://github.c
 Für die Verwendung von Azure PowerShell oder der Azure CLI in einem GitHub Actions-Workflow müssen Sie sich zuerst mit der Aktion [Azure-Anmeldung](https://github.com/marketplace/actions/azure-login) anmelden.
 Mit der Aktion „Azure-Anmeldung“ können Sie Befehle in einem Workflow im Kontext eines [Azure AD-Dienstprinzipals](/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object) ausführen.
 
-Nachdem Sie die Anmeldeaktion eingerichtet haben, können Sie die Azure CLI oder Azure PowerShell verwenden.
+Standardmäßig meldet sich die Aktion über die Azure CLI an und richtet die Ausführungsumgebung für GitHub-Aktionen für die Azure CLI ein. Azure PowerShell kann mithilfe der Eigenschaft `enable-AzPSSession` der Azure-Anmeldeaktion genutzt werden. Dadurch wird die Ausführungsumgebung für GitHub-Aktionen mit dem Azure PowerShell-Modul eingerichtet.
 
-Standardmäßig meldet sich die Aktion bei der Azure CLI an und richtet die Ausführungsumgebung für GitHub-Aktionen für die Azure CLI ein. Azure PowerShell kann mithilfe der Eigenschaft `enable-AzPSSession` der Azure-Anmeldeaktion genutzt werden. Dadurch wird die Ausführungsumgebung für GitHub-Aktionen mit dem Azure PowerShell-Modul eingerichtet.
+Sie können die Azure-Anmeldung verwenden, um eine Verbindung mit öffentlichen oder unabhängigen (Sovereign) Clouds herzustellen, z. B. Azure Government und Azure Stack Hub.
 
 ## <a name="create-a-service-principal-and-add-it-to-github-secret"></a>Erstellen eines Dienstprinzipals und Hinzufügen zum GitHub-Geheimnis
 
@@ -42,14 +42,20 @@ In diesem Beispiel erstellen Sie ein Geheimnis mit dem Namen `AZURE_CREDENTIALS`
         --identifier-uris http://localhost/$appName
     ```
 
-1. [Erstellen Sie im Azure-Portal für Ihre App einen neuen Dienstprinzipal](/cli/azure/create-an-azure-service-principal-azure-cli). 
+1. Öffnen Sie [Azure Cloud Shell](/azure/cloud-shell/overview) im Azure-Portal oder lokal die [Azure CLI](/cli/azure/install-azure-cli).
+
+    > [!NOTE]
+    > Bei Verwendung von Azure Stack Hub müssen Sie Ihren SQL Management-Endpunkt auf `not supported` festlegen.
+    > `az cloud update -n {environmentName} --endpoint-sql-management https://notsupported`
+
+1. [Erstellen Sie im Azure-Portal für Ihre App einen neuen Dienstprinzipal](/cli/azure/create-an-azure-service-principal-azure-cli). Dem Dienstprinzipal muss die Rolle „Mitwirkender“ zugewiesen werden.
 
     ```azurecli-interactive
         az ad sp create-for-rbac --name "myApp" --role contributor \
                                     --scopes /subscriptions/{subscription-id}/resourceGroups/{resource-group} \
                                     --sdk-auth
     ```
-
+    
 1. Kopieren Sie das JSON-Objekt für Ihren Dienstprinzipal.
 
     ```json
@@ -151,6 +157,25 @@ build-and-deploy:
         inlineScript: |
             az account show
             az storage -h
+```
+
+## <a name="connect-to-azure-government-and-azure-stack-hub-clouds"></a>Herstellen einer Verbindung mit Azure Government- und Azure Stack Hub-Clouds
+
+Legen Sie für die Anmeldung bei einer Azure Government-Cloud die optionale Parameterumgebung mit den unterstützten Cloudnamen `AzureUSGovernment` oder `AzureChinaCloud` fest. Wenn dieser Parameter nicht angegeben ist, wird der Standardwert `AzureCloud` verwendet und eine Verbindung mit der öffentlichen Azure-Cloud hergestellt.
+
+```yaml
+   - name: Login to Azure US Gov Cloud with CLI
+     uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_US_GOV_CREDENTIALS }}
+          environment: 'AzureUSGovernment'
+          enable-AzPSSession: false
+   - name: Login to Azure US Gov Cloud with Az Powershell
+      uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_US_GOV_CREDENTIALS }}
+          environment: 'AzureUSGovernment'
+          enable-AzPSSession: true
 ```
 
 ## <a name="connect-with-other-azure-services"></a>Herstellen einer Verbindung mit anderen Azure-Diensten

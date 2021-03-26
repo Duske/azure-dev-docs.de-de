@@ -4,12 +4,12 @@ description: Verwenden Sie die Ressourcenverwaltungsbibliothek im Azure SDK für
 ms.date: 01/28/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: c44698fb7fee0e7f736c51fbf11f664b8642e946
-ms.sourcegitcommit: 3843092e47691fbd32452c93d51f894a0cab31db
+ms.openlocfilehash: ed5ada8332635b6d84a25dcfa70064ae3c9128b1
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99069097"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102117814"
 ---
 # <a name="example-use-the-azure-libraries-to-list-resource-groups-and-resources"></a>Beispiel: Verwenden der Azure-Bibliotheken zum Auflisten von Ressourcengruppen und Ressourcen
 
@@ -37,11 +37,15 @@ azure-mgmt-resource>=1.15.0
 azure-identity>=1.5.0
 ```
 
+Achten Sie darauf, dass Sie diese Versionen der Bibliotheken verwenden. Die Verwendung von älteren Versionen führt zu Fehlern, z. B. vom Typ „'AzureCliCredential'-Objekt hat kein Attribut 'signed_session'“.
+
 Installieren Sie in einem Terminal oder einer Eingabeaufforderung bei aktivierter virtueller Umgebung die Voraussetzungen:
 
 ```cmd
 pip install -r requirements.txt
 ```
+
+
 
 ## <a name="3-write-code-to-work-with-resource-groups"></a>3: Schreiben von Code für die Verwendung von Ressourcengruppen
 

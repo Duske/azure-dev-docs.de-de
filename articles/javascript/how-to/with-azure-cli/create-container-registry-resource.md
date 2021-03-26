@@ -4,12 +4,12 @@ description: Eine Containerregistrierung eignet sich ideal für Containerimages,
 ms.topic: how-to
 ms.date: 01/28/2021
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: d60ea6d907a628d9b68c4c44ae72c1adca65ba29
-ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
+ms.openlocfilehash: c4f02f04203b467cf166e07be16d5884c9a4e8d4
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99230141"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118532"
 ---
 # <a name="create-and-use-container-registry"></a>Erstellen und Verwenden einer Containerregistrierung
 
@@ -86,4 +86,4 @@ Fügen Sie am Anfang der Option `--docker-registry-server-url` das Präfix `http
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-* [Erstellen einer CosmosDB-Ressource für mongoDB](create-mongodb-cosmosdb.md)
+* [Erstellen und Verwenden von MongoDB in Azure mit Cosmos DB](create-mongodb-cosmosdb.md)

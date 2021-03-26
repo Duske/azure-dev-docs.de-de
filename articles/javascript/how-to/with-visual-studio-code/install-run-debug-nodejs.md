@@ -4,12 +4,12 @@ description: Hier erfahren Sie die Schritte zum Entwickeln und Debuggen Ihres Ja
 ms.topic: how-to
 ms.date: 01/28/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 4a0aa42a51d76a8d4aaa9ae703e0ff3aa8b15fc0
-ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
+ms.openlocfilehash: b61bfaf9cc6b57a8a481e56841b584550e9a9b99
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99230131"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118228"
 ---
 # <a name="how-to-develop-and-debug-nodejs-with-visual-studio-code"></a>Entwickeln und Debuggen von Node.js mit Visual Studio Code
 
@@ -24,7 +24,7 @@ Hier erfahren Sie die Schritte zum Entwickeln und Debuggen Ihres JavaScript Node
 
     Wenn Sie nicht über eine mongoDB-Datenbank verfügen, können Sie folgende Aktionen ausführen:
     * Auswählen diese lokale Projekt in einer Konfiguration mit mehreren Containern auszuführen, von denen einer der Container eine mongoDB-Datenbank ist. Installieren der [Docker](https://www.docker.com/)- und [Remotecontainer](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)-Erweiterung, um eine Konfiguration mit mehreren Containern abzurufen, wobei in einem der Container eine lokale mongoDB-Datenbank ausgeführt wird. 
-    * Auswählen, eine [Azure CosmosDB](/azure/cosmos-db/)-Ressource zu erstellen, um eine mongoDB-Datenbank zu hosten. Weitere Informationen finden Sie in diesem [Tutorial](../../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md#create-a-cosmosdb-database-resource-for-mongodb).
+    * Wählen Sie die Erstellung einer [Azure Cosmos DB](/azure/cosmos-db/)-Ressource für eine MongoDB-Datenbank aus. Weitere Informationen finden Sie in diesem [Tutorial](../../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md#create-a-cosmos-db-database-resource-for-mongodb).
 
 ## <a name="clone-sample-project-to-local-computer"></a>Klonen eines Beispielprojekts auf den lokalen Computer
 

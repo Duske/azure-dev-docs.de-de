@@ -2,14 +2,14 @@
 title: 'Tutorial: Erstellen einer hybriden Hub-and-Spoke-Netzwerktopologie in Azure mit Terraform'
 description: Es wird beschrieben, wie Sie eine vollständige Referenzarchitektur für ein Hybridnetzwerk in Azure mit Terraform erstellen.
 ms.topic: tutorial
-ms.date: 10/26/2019
+ms.date: 03/08/2021
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 5a9c4541d0dc04413e088587791488133fe61ff9
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: 13c5d1a12ad0e2cf03c84c34c97ffac0a5d575bd
+ms.sourcegitcommit: 7991f748720673d2dc50baaa8658348ff6cc1044
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401490"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102604151"
 ---
 # <a name="tutorial-create-a-hub-and-spoke-hybrid-network-topology-in-azure-using-terraform"></a>Tutorial: Erstellen einer hybriden Hub-and-Spoke-Netzwerktopologie in Azure mit Terraform
 
@@ -31,7 +31,7 @@ Dieses Tutorial enthält die folgenden Aufgaben:
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-- **Installieren und konfigurieren Sie Terraform**: Um VMs und anderen Infrastrukturen in Azure bereitzustellen, müssen Sie [Terraform installieren und konfigurieren](get-started-cloud-shell.md).
+- **Installieren und Konfigurieren von Terraform**: [Installieren und konfigurieren Sie Terraform](get-started-cloud-shell.md), um VMs und andere Infrastrukturkomponenten in Azure bereitzustellen.
 
 ## <a name="hub-and-spoke-topology-architecture"></a>Architektur für Hub-Spoke-Topologie
 
@@ -113,8 +113,16 @@ Erstellen Sie die Terraform-Konfigurationsdatei, die den Azure-Anbieter deklarie
 1. Fügen Sie den folgenden Code in den Editor ein:
 
     ```hcl
+    terraform {
+      required_providers {
+          azurerm = {
+            source  = "hashicorp/azurerm"
+            version = "~>2.0"
+          }
+      }
+    }
     provider "azurerm" {
-        version = "~>1.22"
+      features {}
     }
     ```
 
@@ -135,7 +143,7 @@ Erstellen Sie die Terraform-Konfigurationsdatei für allgemeine Variablen, die i
     ```hcl
     variable "location" {
       description = "Location of the network"
-      default     = "centralus"
+      default     = "eastus"
     }
     
     variable "username" {
@@ -153,6 +161,8 @@ Erstellen Sie die Terraform-Konfigurationsdatei für allgemeine Variablen, die i
       default     = "Standard_DS1_v2"
     }
     ```
+
+    **Hinweis**: In diesem Tutorial wird der Einfachheit halber in der Variablendatei ein hartcodiertes Kennwort verwendet. Für eine reale App ist es eher ratsam, ein Paar mit einem öffentlichen und einem privaten SSH-Schlüssel zu verwenden. Weitere Informationen zu SSH-Schlüsseln und Azure finden Sie unter [Verwenden von SSH-Schlüsseln mit Windows in Azure](/azure/virtual-machines/linux/ssh-from-windows).
 
 1. Speichern Sie die Datei, und beenden Sie den Editor.
 

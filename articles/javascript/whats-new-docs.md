@@ -2,13 +2,13 @@
 title: Neuerungen in der JavaScript-Dokumentation
 description: Neuerungen in der JavaScript-Dokumentation im Developer Center
 ms.topic: conceptual
-ms.date: 02/08/2021
-ms.openlocfilehash: 37d68d713c4b6ba51d35efb033f68fe2b2e60680
-ms.sourcegitcommit: 98a7e855206ff463c1d95f93c23dd665b26a0aa1
+ms.date: 02/17/2021
+ms.openlocfilehash: b51630af0808255b3c8cbcb54319a59c00263af9
+ms.sourcegitcommit: 7991f748720673d2dc50baaa8658348ff6cc1044
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100004712"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102604121"
 ---
 # <a name="javascript-docs-whats-new"></a>JavaScript-Dokumentation: Neues
 
@@ -20,10 +20,36 @@ Hier finden Sie neue und aktualisierte Inhalte für JavaScript- und TypeScript-E
 
 |Name|Notizen|
 |---------------------------------------|--|
+|[Gewusst wie: Verwenden von Cassandra in Azure Cosmos DB](./how-to/with-database/use-cassandra-as-cosmos-db.md)|Sie benötigen eine Cosmos DB-Ressource, um Ihre Cassandra-Datenbank zu erstellen, zu nutzen oder nach Azure zu verschieben. Hier erfahren Sie, wie Sie die Ressource erstellen und Ihre Datenbank verwenden. |
 |[Verwenden von MongoDB in Azure Cosmos DB](./how-to/with-database/use-mongodb-as-cosmosdb.md)|Um eine mongoDB-Datenbank in Azure zu erstellen, zu verwenden oder dorthin zu verschieben, benötigen Sie eine Cosmos DB-Ressource. Hier erfahren Sie, wie Sie die Ressource erstellen und Ihre Datenbank verwenden. |
 |[Verwenden von MariaDB in Azure](./how-to/with-database/use-mariadb.md)|Sie benötigen eine **Azure Database for MariaDB**-Ressource, um eine MariaDB-Datenbank in Azure zu erstellen, zu verschieben oder zu verwenden. Hier erfahren Sie, wie Sie die Ressource erstellen und Ihre Datenbank verwenden.|
 |[Verwenden von MySQL in Azure](./how-to/with-database/use-mysql-db.md)|Sie benötigen eine **Azure Database for MySQL**-Ressource, um eine MySQL-Datenbank in Azure zu erstellen, zu verschieben oder zu verwenden. Hier erfahren Sie, wie Sie die Ressource erstellen und Ihre Datenbank verwenden.|
 |[Verwenden von PostgreSQL in Azure](./how-to/with-database/use-postgresql-db.md)|Sie benötigen eine Ressource vom Typ **Azure Database for PostgreSQL-Server**, um eine PostgreSQL-Datenbank in Azure zu erstellen, zu verschieben oder zu verwenden. Hier erfahren Sie, wie Sie die Ressource erstellen und Ihre Datenbank verwenden.|
+|[Entwickeln einer JavaScript-Anwendung mit Azure Cache for Redis](.//how-to/with-database/use-azure-cache-for-redis-db.md)|Sie benötigen eine Azure Cache for Redis-Ressource, um eine Redis-Datenbank zu erstellen, zu verwenden oder nach Azure zu verschieben. Hier erfahren Sie, wie Sie die Ressource erstellen und Ihre Datenbank verwenden.|
+|[Entwickeln einer JavaScript-Anwendung für Cosmos DB mit der SQL-API](.//how-to/with-database/use-sql-api-as-cosmos-db.md)|Verwenden Sie eine Cosmos DB-Ressource für die Erstellung oder Verwendung von Cosmos DB mit der SQL-API. Es wird beschrieben, wie Sie die Cosmos-Ressource erstellen und Ihre Datenbank verwenden.|
+
+### <a name="whats-updated"></a>Aktualisierungen
+
+|Name|Notizen|
+|---------------------------------------|--|
+|[Wichtigste Aufgaben für JavaScript-Entwickler](/azure/azure-monitor/app/api-custom-events-metrics)|
+
+
+
+### <a name="top-10-documents-by-page-view-for-javascript-developers"></a><a name="top-10"></a>Top 10 der Dokumente für JavaScript-Entwickler (nach Seitenaufrufen)
+
+|#|Name|
+|---------------------------------------|--|
+|1|[Application Insights-API für benutzerdefinierte Ereignisse und Metriken](how-to/common-javascript-tasks.md)|
+|2|[Hosten von statischen Websites in Azure Storage](/azure/storage/blobs/storage-blob-static-website)|
+|3|[Erstellen, Testen und Bereitstellen von JavaScript- und Node.js-Apps – Azure Pipelines](/azure/devops/pipelines/ecosystems/javascript?view=azure-devops&tabs=code)|
+|4|[Überwachen von Azure Functions](/azure/azure-functions/functions-monitoring)|
+|5|[Erste Schritte mit der Spracherkennung](/azure/cognitive-services/speech-service/get-started-speech-to-text?tabs=script%2Cbrowser%2Cwindowsinstall&pivots=programming-language-javascript)|
+|6|[Aufrufen einer ASP.NET Core-Web-API mit JavaScript](/aspnet/core/tutorials/web-api-javascript?view=aspnetcore-5.0)|
+|7|[ASP.NET Core SignalR JavaScript client (JavaScript-Client in SignalR für ASP.NET Core)](/aspnet/core/signalr/javascript-client?view=aspnetcore-5.0)|
+|8|[JavaScript-Entwicklerhandbuch für Azure Functions](/azure/azure-functions/functions-reference-node?tabs=v2)|
+|9|[Tutorial: Anmelden von Benutzern und Aufrufen der Microsoft Graph-API aus einer Angular-SPA (Single-Page-Webanwendung)](/azure/active-directory/develop/tutorial-v2-angular)|
+|10|[Application Insights für Webseiten](/azure/azure-monitor/app/javascript)|
 
 ## <a name="2021-january"></a>Januar 2021
 

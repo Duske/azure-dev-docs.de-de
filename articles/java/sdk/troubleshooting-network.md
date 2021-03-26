@@ -6,12 +6,12 @@ ms.date: 02/02/2021
 ms.topic: conceptual
 ms.custom: devx-track-java
 ms.author: alzimmer
-ms.openlocfilehash: 63852f253a648e473ba91ac361bc5d9d0629b8f1
-ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
+ms.openlocfilehash: 868f15d7f8e0791ea190b77a6679f88c59d363e4
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99528456"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118208"
 ---
 # <a name="troubleshoot-networking-issues"></a>Behandlung von Netzwerkproblemen
 
@@ -49,16 +49,22 @@ In den folgenden Prozeduren wird beschrieben, wie Sie die Java Runtime Environme
 
 **Windows**
 
-1. Exportieren Sie das Zertifikat von Fiddler.
+1. Exportieren Sie das Zertifikat von Fiddler. Normalerweise wird das Zertifikat auf den Desktop exportiert.
 1. Suchen Sie „keytool“ von JRE (in der Regel `jre\bin`).
 1. Suchen Sie „cacert“ von JRE (in der Regel `jre\lib\security`).
-1. Öffnen Sie eine Eingabeaufforderung, und führen Sie den folgenden Befehl aus, um das Zertifikat zu importieren:
+1. Öffnen Sie eine PowerShell-Sitzung im Administratormodus, und führen Sie den folgenden Befehl aus, um das Zertifikat zu importieren:
 
    ```cmd
-   keytool.exe -import -file <location of Fiddler certificate> -keystore <location of cacert> -alias Fiddler
+   keytool.exe -import -trustcacerts -file <location of Fiddler certificate> -keystore <location of cacert> -alias Fiddler
    ```
 
-1. Geben Sie ein Kennwort ein.
+   Beim folgenden Befehl werden beispielsweise einige gängige Werte verwendet:
+
+   ```cmd
+   keytool.exe -import -trustcacerts -file "C:\Users\username\Desktop\FiddlerRootCertificate.crt" -keystore "C:\Program Files\AdoptOpenJDK\jdk-8.0.275.1-hotspot\jre\lib\security\cacerts" -alias Fiddler
+   ```
+
+1. Geben Sie ein Kennwort ein. Das Standardkennwort lautet „changeit“ und gilt, falls Sie noch kein eigenes Kennwort festgelegt haben. Weitere Informationen finden Sie in der Oracle-Dokumentation im Artikel zum [Verwenden von Zertifikaten und von SSL](https://docs.oracle.com/cd/E19830-01/819-4712/ablqw/index.html).
 1. Vertrauen Sie dem Zertifikat.
 
 ## <a name="wireshark"></a>WireShark

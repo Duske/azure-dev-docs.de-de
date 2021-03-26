@@ -7,12 +7,12 @@ ms.author: seal
 ms.date: 10/13/2019
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: c1b8baa716fbe24efbf635bc5f8a17833590137a
-ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
+ms.openlocfilehash: 6c87add44d1573d0df91432c934b3fdc3eba0a17
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96442137"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118562"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-service-bus-jms"></a>Verwenden von Spring Boot-Starters für Azure Service Bus JMS
 
@@ -61,13 +61,12 @@ Die folgenden Voraussetzungen müssen für diesen Artikel erfüllt sein:
 
     ```xml
     <dependency>
-        <groupId>com.microsoft.azure</groupId>
-        <artifactId>azure-servicebus-jms-spring-boot-starter</artifactId>
-        <version>2.3.5</version>
+        <groupId>com.azure.spring</groupId>
+        <artifactId>azure-spring-boot-starter-servicebus-jms</artifactId>
+        <version>3.1.0</version>
     </dependency>
     ```
 
-    ![Fügen Sie den Abhängigkeitsabschnitt zur Datei „pom.xml“ hinzu.](media/configure-spring-boot-starter-java-app-with-azure-service-bus/add-dependency-section-new.png)
 
 1. Speichern und schließen Sie die Datei *pom.xml*.
 
@@ -92,6 +91,7 @@ In diesem Abschnitt erfahren Sie, wie Sie Ihre App so konfigurieren, dass sie en
     ```yml
     spring.jms.servicebus.connection-string=<ServiceBusNamespaceConnectionString>
     spring.jms.servicebus.idle-timeout=<IdleTimeout>
+    spring.jms.servicebus.pricing-tier=<ServiceBusPricingTier> 
     ```
 
     **Feldbeschreibungen**
@@ -100,6 +100,7 @@ In diesem Abschnitt erfahren Sie, wie Sie Ihre App so konfigurieren, dass sie en
     |-------------------------------------------|-------------------------------------------------------------------------------------------------|
     | `spring.jms.servicebus.connection-string` | Geben Sie die Verbindungszeichenfolge an, die Sie im Service Bus-Namespace vom Azure-Portal erhalten haben. |
     | `spring.jms.servicebus.idle-timeout`      | Legen Sie das Leerlauftimeout in Millisekunden fest. Für dieses Tutorial wird der Wert 1.800.000 empfohlen.   |
+    | `spring.jms.servicebus.pricing-tie`       | Geben Sie den Tarif für Ihre Service Bus-Instanz an. Die unterstützten Werte lauten *premium*, *standard* und *basic*. |
 
 1. Speichern und schließen Sie die Datei *application.properties*.
 
@@ -121,6 +122,7 @@ In diesem Abschnitt erfahren Sie, wie Sie Ihre App so konfigurieren, dass sie en
     spring.jms.servicebus.connection-string=<ServiceBusNamespaceConnectionString>
     spring.jms.servicebus.topic-client-id=<ServiceBusSubscriptionID>
     spring.jms.servicebus.idle-timeout=<IdleTimeout>
+    spring.jms.servicebus.pricing-tier=<ServiceBusPricingTier> 
     ```
 
     **Feldbeschreibungen**
@@ -130,6 +132,7 @@ In diesem Abschnitt erfahren Sie, wie Sie Ihre App so konfigurieren, dass sie en
     | `spring.jms.servicebus.connection-string` | Geben Sie die Verbindungszeichenfolge an, die Sie im Service Bus-Namespace vom Azure-Portal erhalten haben.   |
     | `spring.jms.servicebus.topic-client-id`   | Geben Sie die JMS-Client-ID an. Dies ist Ihre Service Bus-Abonnement-ID im Azure-Portal.                | 
     | `spring.jms.servicebus.idle-timeout`      | Legen Sie das Leerlauftimeout in Millisekunden fest. Für dieses Tutorial wird der Wert 1.800.000 empfohlen.     |
+    | `spring.jms.servicebus.pricing-tie`       | Geben Sie den Tarif für Ihre Service Bus-Instanz an. Die unterstützten Werte lauten *premium*, *standard* und *basic*. |
 
 1. Speichern und schließen Sie die Datei *application.properties*.
 
@@ -316,6 +319,55 @@ In diesem Abschnitt erstellen Sie die notwendigen Java-Klassen, um Nachrichten a
     ```
 
 1. Speichern und schließen Sie die Datei *TopicReceiveController.java*.
+
+## <a name="optional-service-bus-functionality"></a>Optionale Service Bus-Funktionalität
+
+Sie können ein angepasstes `MessageConverter`-Bean verwenden, um die Konvertierung für Java-Objekte und JMS-Nachrichten durchzuführen.
+
+### <a name="set-the-content-type-of-messages"></a>Festlegen des Inhaltstyps von Nachrichten
+
+Im folgenden Codebeispiel wird der Inhaltstyp `BytesMessage` auf `application/json` festgelegt. Weitere Informationen finden Sie unter [Nachrichten, Nutzlasten und Serialisierung](/azure/service-bus-messaging/service-bus-messages-payloads).
+
+```java
+package com.wingtiptoys.servicebus;
+
+import com.fasterxml.jackson.databind.ObjectWriter;
+import org.apache.qpid.jms.message.JmsBytesMessage;
+import org.apache.qpid.jms.provider.amqp.message.AmqpJmsMessageFacade;
+import org.apache.qpid.proton.amqp.Symbol;
+import org.springframework.jms.support.converter.MappingJackson2MessageConverter;
+import org.springframework.jms.support.converter.MessageType;
+import org.springframework.stereotype.Component;
+
+import javax.jms.BytesMessage;
+import javax.jms.JMSException;
+import javax.jms.Session;
+import java.io.IOException;
+
+@Component
+public class CustomMessageConverter extends MappingJackson2MessageConverter {
+
+    private static final String TYPE_ID_PROPERTY = "_type";
+    private static final Symbol CONTENT_TYPE = Symbol.valueOf("application/json");
+
+    public CustomMessageConverter() {
+        this.setTargetType(MessageType.BYTES);
+        this.setTypeIdPropertyName(TYPE_ID_PROPERTY);
+    }
+
+    @Override
+    protected BytesMessage mapToBytesMessage(Object object, Session session, ObjectWriter objectWriter)
+        throws JMSException, IOException {
+        final BytesMessage bytesMessage = super.mapToBytesMessage(object, session, objectWriter);
+        JmsBytesMessage jmsBytesMessage = (JmsBytesMessage) bytesMessage;
+        AmqpJmsMessageFacade facade = (AmqpJmsMessageFacade) jmsBytesMessage.getFacade();
+        facade.setContentType(CONTENT_TYPE);
+        return jmsBytesMessage;
+    }
+}
+```
+
+Weitere Informationen zu `MessageConverter` finden Sie im offiziellen [Spring JMS-Leitfaden](https://spring.io/guides/gs/messaging-jms/).
 
 ## <a name="build-and-test-your-application"></a>Erstellen und Testen der Anwendung
 

@@ -2,14 +2,14 @@
 title: 'Tutorial: Überprüfen eines Hub-and-Spoke-Netzwerks in Azure mit Terraform'
 description: Es wird beschrieben, wie Sie eine Hub-Spoke-Netzwerktopologie überprüfen, bei der alle virtuellen Netzwerke miteinander verbunden sind.
 ms.topic: tutorial
-ms.date: 10/26/2019
+ms.date: 03/08/2021
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 684bca6b62847718f34ce799d0c1371b25fdd532
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: 71d764da80888326be9625a9e90c1aba164b6f55
+ms.sourcegitcommit: 7991f748720673d2dc50baaa8658348ff6cc1044
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401500"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102604141"
 ---
 # <a name="tutorial-validate-a-hub-and-spoke-network-in-azure-using-terraform"></a>Tutorial: Überprüfen eines Hub-and-Spoke-Netzwerks in Azure mit Terraform
 
@@ -54,7 +54,7 @@ Dieses Tutorial enthält die folgenden Aufgaben:
     cd hub-spoke
     ```
 
-1. Führen Sie den Befehl `ls` aus, um zu überprüfen, ob die in den vorherigen Tutorials erstellten Konfigurationsdateien vom Typ `.tf` aufgeführt sind:
+1. Listen Sie die Dateien im Arbeitsverzeichnis auf, um zu überprüfen, ob die in den vorherigen Tutorials erstellten Konfigurationsdateien (`.tf`) aufgeführt sind. (Im Screenshot sind andere Dateien dargestellt, die bei Ihnen erst vorhanden sind, nachdem Sie in den nächsten Schritten Terraform initialisiert haben.)
 
     ![Terraform-Demokonfigurationsdateien](./media/hub-and-spoke-tutorial-series/hub-spoke-config-files.png)
 
@@ -94,13 +94,15 @@ In diesem Abschnitt wird beschrieben, wie Sie die Konnektivität zwischen der si
 
 1. Wählen Sie auf der Registerkarte **onprem-vnet-rg** den virtuellen Computer **onprem-vm** aus.
 
-1. Wählen Sie **Verbinden**.
+1. Notieren Sie sich den Wert unter **Öffentliche IP-Adresse**.
 
-1. Kopieren Sie den **SSH**-Befehl neben dem Text **Mit lokalem VM-Konto anmelden** in die Zwischenablage.
+1. Wechseln Sie zurück zur Befehlszeile, und führen Sie `ssh` aus, um eine Verbindung mit der simulierten lokalen Umgebung herzustellen. Verwenden Sie das in der Datei `variables.tf` angegebene Kennwort.
 
-1. Führen Sie in einer Linux-Eingabeaufforderung `ssh` zum Herstellen der Verbindung mit der simulierten lokalen Umgebung aus. Verwenden Sie das in der Parameterdatei `on-prem.tf` angegebene Kennwort.
+   ```bash
+   ssh testadmin@<onprem_vm_ip_address>
+   ```
 
-1. Führen Sie den Befehl `ping` aus, um die Konnektivität mit dem virtuellen Jumpbox-Computer im Hub-VNET zu testen:
+1. Führen Sie nach dem Herstellen einer Verbindung mit dem virtuellen Computer **onprem-vm** den Befehl `ping` aus, um die Konnektivität mit dem virtuellen Jumpbox-Computer im Hub-VNET zu testen:
 
    ```bash
    ping 10.0.0.68

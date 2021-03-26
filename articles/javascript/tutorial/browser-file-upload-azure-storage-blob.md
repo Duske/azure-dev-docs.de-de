@@ -1,15 +1,15 @@
 ---
-title: 'Hochladen eines Images in Blob Storage mit VSCode: App Service/CosmosDB'
+title: 'Hochladen eines Images in Blob Storage mit VS Code: App Service/Cosmos DB'
 description: Verwenden Sie eine React- oder TypeScript-App, um eine Datei in Azure Storage-Blobs hochzuladen. Dieses Tutorial konzentriert sich auf die Verwendung von lokalen und Remoteumgebungen mit Visual Studio Code-Erweiterungen.
 ms.topic: tutorial
 ms.date: 12/17/2020
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript, azure-sdk-storage-blob-typescript-version-12.2.1
-ms.openlocfilehash: 19fc63272ff579ca0bb04802b04a7d44e9114ba4
-ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
+ms.openlocfilehash: 116ca6d03703e96631441a5e130d948065c5c5f1
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98759568"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102118542"
 ---
 # <a name="upload-an-image-to-an-azure-storage-blob"></a>Hochladen eines Images in ein Azure Storage-Blob
 

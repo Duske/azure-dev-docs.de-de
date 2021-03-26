@@ -5,12 +5,12 @@ author: edburns
 ms.author: edburns
 ms.topic: tutorial
 ms.date: 08/10/2020
-ms.openlocfilehash: f97d9d57b85550c1e28f58fb24a27a4da4205266
-ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
+ms.openlocfilehash: 58a36de1e52415fc563b294215818b1860cd7ba2
+ms.sourcegitcommit: b0a119a624e9cb6b76d968951543a414bd08eaa0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99224724"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "102220379"
 ---
 # <a name="end-user-authorization-and-authentication-for-migrating-java-apps-on-weblogic-server-to-azure"></a>Autorisierung und Authentifizierung von Endbenutzern für die Migration von Java-Apps in WebLogic Server zu Azure
 
@@ -172,7 +172,7 @@ Wenn Sie eine der in [Oracle WebLogic Server: Azure-Anwendungen](/azure/virtual-
 | `wlsLDAPGroupBaseDN` und `wlsLDAPUserBaseDN` | Benutzerbasis-DN und Gruppenbasis-DN | Im Rahmen dieses Tutorials werden für beide Eigenschaften die gleichen Werte verwendet (der Teil von **wlsLDAPPrincipal** nach dem ersten Komma).|
 | `wlsLDAPPrincipalPassword` | Kennwort für Prinzipal | Dieser Wert ist das Kennwort für den Benutzer, der der Gruppe **AAD DC Administrators** (AAD-DC-Administratoren) hinzugefügt wurde. |
 | `wlsLDAPProviderName` | Anbietername | Für diesen Wert kann der Standardwert beibehalten werden.  Er wird als Name des Authentifizierungsanbieters in WLS verwendet. |
-| `wlsLDAPSSLCertificate` | Trust-Keystore für die SSL-Konfiguration | Bei diesem Wert handelt es sich um die Datei mit der Erweiterung *.cer*, die Sie nach Abschluss des Schritts [Exportieren eines Zertifikats für Clientcomputer](/azure/active-directory-domain-services/tutorial-configure-ldaps#export-a-certificate-for-client-computers) gespeichert haben.
+| `wlsLDAPSSLCertificate` | Öffentlicher Schlüssel für LDAPS-Verbindung von Azure AD DS | Bei diesem Wert handelt es sich um die Datei mit der Erweiterung *.cer*, die Sie nach Abschluss des Schritts [Exportieren eines Zertifikats für Clientcomputer](/azure/active-directory-domain-services/tutorial-configure-ldaps#export-a-certificate-for-client-computers) gespeichert haben.
 
 ### <a name="integrating-azure-ad-ds-ldap-with-wls"></a>Integrieren von Azure AD DS-LDAP in WLS
 

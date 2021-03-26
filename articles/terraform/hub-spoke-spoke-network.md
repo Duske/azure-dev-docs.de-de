@@ -2,14 +2,14 @@
 title: 'Tutorial: Erstellen eines Spoke-Netzwerks in Azure mit Terraform'
 description: Es wird beschrieben, wie Sie zwei virtuelle Spoke-Netzwerke (VNETs) implementieren, die in einer Hub-Spoke-Topologie mit einem Hub verbunden sind.
 ms.topic: tutorial
-ms.date: 10/26/2019
+ms.date: 03/08/2021
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 265c410d8fc8bdb51803406cc8003e6e349014d9
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: 15f5c14af653354b7c741bc5fcf1a1d4c443e83c
+ms.sourcegitcommit: 7991f748720673d2dc50baaa8658348ff6cc1044
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401480"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102604021"
 ---
 # <a name="tutorial-create-a-spoke-network-in-azure-using-terraform"></a>Tutorial: Erstellen eines Spoke-Netzwerks in Azure mit Terraform
 
@@ -63,7 +63,7 @@ In diesem Abschnitt werden die zwei Spoke-Skripts erstellt. Jedes Skript definie
 
     ```hcl
     locals {
-      spoke1-location       = "CentralUS"
+      spoke1-location       = "eastus"
       spoke1-resource-group = "spoke1-vnet-rg"
       prefix-spoke1         = "spoke1"
     }
@@ -88,14 +88,14 @@ In diesem Abschnitt werden die zwei Spoke-Skripts erstellt. Jedes Skript definie
       name                 = "mgmt"
       resource_group_name  = azurerm_resource_group.spoke1-vnet-rg.name
       virtual_network_name = azurerm_virtual_network.spoke1-vnet.name
-      address_prefix       = "10.1.0.64/27"
+      address_prefixes     = ["10.1.0.64/27"]
     }
 
     resource "azurerm_subnet" "spoke1-workload" {
       name                 = "workload"
       resource_group_name  = azurerm_resource_group.spoke1-vnet-rg.name
       virtual_network_name = azurerm_virtual_network.spoke1-vnet.name
-      address_prefix       = "10.1.1.0/24"
+      address_prefixes     = ["10.1.1.0/24"]
     }
 
     resource "azurerm_virtual_network_peering" "spoke1-hub-peer" {
@@ -185,7 +185,7 @@ In diesem Abschnitt werden die zwei Spoke-Skripts erstellt. Jedes Skript definie
     
     ```hcl
     locals {
-      spoke2-location       = "CentralUS"
+      spoke2-location       = "eastus"
       spoke2-resource-group = "spoke2-vnet-rg"
       prefix-spoke2         = "spoke2"
     }
@@ -210,14 +210,14 @@ In diesem Abschnitt werden die zwei Spoke-Skripts erstellt. Jedes Skript definie
       name                 = "mgmt"
       resource_group_name  = azurerm_resource_group.spoke2-vnet-rg.name
       virtual_network_name = azurerm_virtual_network.spoke2-vnet.name
-      address_prefix       = "10.2.0.64/27"
+      address_prefixes     = ["10.2.0.64/27"]
     }
 
     resource "azurerm_subnet" "spoke2-workload" {
       name                 = "workload"
       resource_group_name  = azurerm_resource_group.spoke2-vnet-rg.name
       virtual_network_name = azurerm_virtual_network.spoke2-vnet.name
-      address_prefix       = "10.2.1.0/24"
+      address_prefixes     = ["10.2.1.0/24"]
     }
 
     resource "azurerm_virtual_network_peering" "spoke2-hub-peer" {
@@ -306,4 +306,4 @@ In diesem Abschnitt werden die zwei Spoke-Skripts erstellt. Jedes Skript definie
 ## <a name="next-steps"></a>Nächste Schritte
 
 > [!div class="nextstepaction"] 
-> [Validieren eines Hub-Spoke-Netzwerks mit Terraform in Azure](./hub-spoke-validation.md)
+> [Überprüfen eines Hub-Spoke-Netzwerks mit Terraform in Azure](./hub-spoke-validation.md)

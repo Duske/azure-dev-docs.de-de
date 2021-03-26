@@ -4,12 +4,12 @@ description: Hier erfahren Sie, wie Sie die Anmeldeinformationsobjekte abrufen, 
 ms.date: 01/19/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 19a69cf0379dd290893724db6527ebd30b5bab63
-ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
+ms.openlocfilehash: 9a33dc8c98655f78e7e433081655d96137d9d8d8
+ms.sourcegitcommit: 576c878c338d286060010646b96f3ad0fdbcb814
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98759469"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "102117844"
 ---
 # <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>Authentifizieren und Autorisieren von Python-Apps in Azure
 
@@ -165,11 +165,11 @@ print(list(sub_list))
 
 Wenn die Bibliothek nicht aktualisiert wurde, wird für Code mit `DefaultAzureCredential` ein Fehler mit dem Hinweis zurückgegeben, dass das Objekt über kein Attribut vom Typ „signed-session“ verfügt, wie im nächsten Abschnitt beschrieben.
 
-### <a name="defaultazurecredential-object-has-no-attribute-signed-session"></a>„Das DefaultAzureCredential-Objekt hat kein Attribut 'signed-session'.“
+### <a name="credential-object-has-no-attribute-signed_session"></a>„Credential“-Objekt hat kein Attribut „signed-session“
 
-Wenn Sie versuchen, `DefaultAzureCredential` mit einer Bibliothek zu verwenden, die nicht für die Verwendung von azure.core aktualisiert wurde, tritt bei Aufrufen durch ein Clientobjekt der eher vage folgende Fehler auf: „Das DefaultAzureCredential-Objekt hat kein Attribut 'signed_session'.“ Ein solcher Fehler tritt beispielsweise auf, wenn Sie den Code im vorherigen Abschnitt mit einer azure-mgmt-resource-Bibliothek mit einer niedrigeren Version als Version 15 verwenden.
+Wenn Sie versuchen, `DefaultAzureCredential` (oder `AzureCliCredential` und andere Anmeldeinformationsobjekte aus „azure.identity“) mit einer Bibliothek zu verwenden, die nicht für die Verwendung von „azure.core“ aktualisiert wurde, tritt bei Aufrufen durch ein Clientobjekt der eher vage folgende Fehler auf: „Das 'DefaultAzureCredential'-Objekt hat kein Attribut 'signed_session'.“ Ein solcher Fehler tritt beispielsweise auf, wenn Sie den Code im vorherigen Abschnitt mit einer azure-mgmt-resource-Bibliothek mit einer niedrigeren Version als Version 15 verwenden.
 
-Dieser Fehler tritt auf, weil azure.core-fremde Versionen von SDK-Verwaltungsbibliotheken davon ausgehen, dass das Anmeldeinformationsobjekt eine `signed_session`-Eigenschaft enthält, die `DefaultAzureCredential` fehlt.
+Dieser Fehler tritt auf, weil für Nicht-azure.core-Versionen der SDK-Verwaltungsbibliotheken angenommen wird, dass das Anmeldeinformationsobjekt die Eigenschaft `signed_session` enthält, die in `DefaultAzureCredential` und anderen Anmeldeinformationsobjekten von „azure.identity“ nicht vorhanden ist.
 
 Wenn die Verwaltungsbibliothek, die Sie verwenden möchten, noch nicht aktualisiert wurde, können Sie die folgenden alternativen Methoden verwenden:
 

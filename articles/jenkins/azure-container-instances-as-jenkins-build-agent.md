@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, Container Instances, Build-Agent
 ms.topic: article
 ms.date: 01/08/2021
 ms.custom: devx-track-jenkins,devx-track-azurecli
-ms.openlocfilehash: 6a7578818eb1f59fa2ce2bd46003f799045fc154
-ms.sourcegitcommit: b380f6e637b47e6e3822b364136853e1d342d5cd
+ms.openlocfilehash: cc0e38dbad8056f8c511f2c76713891d842dddb8
+ms.sourcegitcommit: 737d95fe31e9db55c2d42a93f194a3f3e4bd3c7d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100395379"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "102622308"
 ---
 # <a name="tutorial-use-azure-container-instances-as-a-jenkins-build-agent"></a>Tutorial: Verwenden von Azure Container Instances als Jenkins-Build-Agent
 
@@ -134,11 +134,11 @@ Starten Sie einen Build manuell, um den Buildauftrag zu testen und sich mit Azur
 
 1. Klicken Sie unter **Buildverlauf** auf **#1**.
 
-    ![„Konsolenausgabe“ zum Anzeigen der Buildausgabe über die Konsole](./media/azure-container-instances-as-jenkins-build-agent/build-history.png)
+    ![Konsolenausgabe: Anzeigen der Buildausgabe der Konsole unter „Buildverlauf“](./media/azure-container-instances-as-jenkins-build-agent/build-history.png)
 
 1. Wählen Sie **Konsolenausgabe** aus, um die Ausgabe der Builds anzuzeigen.
 
-    ![„Konsolenausgabe“ zum Anzeigen der Buildausgabe über die Konsole](./media/azure-container-instances-as-jenkins-build-agent/build-console-output.png)
+    ![Konsolenausgabe: Anzeigen der Buildausgabe über die Konsole](./media/azure-container-instances-as-jenkins-build-agent/build-console-output.png)
 
 ## <a name="next-steps"></a>Nächste Schritte
 
