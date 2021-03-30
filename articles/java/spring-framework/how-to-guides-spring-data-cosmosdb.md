@@ -66,6 +66,16 @@ Sie können Entitäten definieren, indem Sie die Anmerkung `@Container` hinzufü
 
 Der Sammlungsname ist standardmäßig der Klassenname der Benutzerdomänenklasse. Fügen Sie zum Anpassen der Domänenklasse die Anmerkung `@Container(containerName="myCustomCollectionName")` hinzu. Das Feld `containerName` unterstützt darüber hinaus [SpEL-Ausdrücke](https://docs.spring.io/spring/docs/3.0.x/reference/expressions.html) (Spring Expression Language, Spring-Ausdruckssprache), sodass Sie Sammlungsnamen programmgesteuert über Konfigurationseigenschaften angeben können. Sie können beispielsweise Ausdrücke wie `containerName = "${dynamic.container.name}"` und `containerName = "#{@someBean.getContainerName()}"` verwenden.
 
+Um die SpEL-Ausdrücke verwenden zu können, fügen Sie bitte die Anmerkung `@DependsOn("expressionResolver")` der `Spring Application`-Klasse hinzu, wie im folgenden Beispiel zu sehen:
+
+```java
+@SpringBootApplication
+@DependsOn("expressionResolver")
+public class SampleApplication {
+
+}
+```
+
 Ihnen stehen zwei Vorgehensweisen zur Auswahl, um ein Feld in einer Domänenklasse dem `id`-Feld eines Azure Cosmos DB-Dokuments zuzuordnen:
 
 - Kommentieren Sie das Feld mit `@Id`.
