@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: aca7d53c82532cc45df2f91d3d5d4d7055f4aa33
-ms.sourcegitcommit: 9185fa67bd290135f611dad5d5495f169b7e1699
+ms.openlocfilehash: 87166cb434e2873f7e83d82d547bf8638c7436ba
+ms.sourcegitcommit: eed0511f8a51e07db0c0a5eaa15113ebf95ae23a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105582428"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105630238"
 ---
 | Name | Paket | Docs | `Source` |
 | ---- | ------- | ---- | ------ |
@@ -29,7 +29,7 @@ ms.locfileid: "105582428"
 | Core Serializer Jackson JSON | Maven [1.2.1](https://search.maven.org/artifact/com.azure/azure-core-serializer-json-jackson/1.2.1/jar/) | [docs](/java/api/overview/azure/core-serializer-json-jackson-readme/) | GitHub [1.2.1](https://github.com/Azure/azure-sdk-for-java/tree/azure-core-serializer-json-jackson_1.2.1/sdk/core/azure-core-serializer-json-jackson/) |
 | Cosmos DB | Maven [4.13.1](https://search.maven.org/artifact/com.azure/azure-cosmos/4.13.1/jar/) | [docs](/java/api/overview/azure/cosmos-readme/) | GitHub [4.13.1](https://github.com/Azure/azure-sdk-for-java/tree/azure-cosmos_4.13.1/sdk/cosmos/azure-cosmos/) |
 | Digital Twins: Core | Maven [1.0.3](https://search.maven.org/artifact/com.azure/azure-digitaltwins-core/1.0.3/jar/) | [docs](/java/api/overview/azure/digitaltwins-core-readme/) | GitHub [1.0.3](https://github.com/Azure/azure-sdk-for-java/tree/azure-digitaltwins-core_1.0.3/sdk/digitaltwins/azure-digitaltwins-core/) |
-| Event Grid | Maven [4.0.0](https://search.maven.org/artifact/com.azure/azure-messaging-eventgrid/4.0.0/jar/) | [docs](/java/api/overview/azure/messaging-eventgrid-readme/) | GitHub [4.0.0](https://github.com/Azure/azure-sdk-for-java/tree/azure-messaging-eventgrid_4.0.0/sdk/eventgrid/azure-messaging-eventgrid/) |
+| Event Grid | Maven [4.1.0](https://search.maven.org/artifact/com.azure/azure-messaging-eventgrid/4.1.0/jar/) | [docs](/java/api/overview/azure/messaging-eventgrid-readme/) | GitHub [4.1.0](https://github.com/Azure/azure-sdk-for-java/tree/azure-messaging-eventgrid_4.1.0/sdk/eventgrid/azure-messaging-eventgrid/) |
 | Event Hubs | Maven [5.6.0](https://search.maven.org/artifact/com.azure/azure-messaging-eventhubs/5.6.0/jar/) | [docs](/java/api/overview/azure/messaging-eventhubs-readme/) | GitHub [5.6.0](https://github.com/Azure/azure-sdk-for-java/tree/azure-messaging-eventhubs_5.6.0/sdk/eventhubs/azure-messaging-eventhubs/) |
 | Event Hubs: Azure Blob Storage-Prüfpunktspeicher | Maven [1.5.1](https://search.maven.org/artifact/com.azure/azure-messaging-eventhubs-checkpointstore-blob/1.5.1/jar/) | [docs](/java/api/overview/azure/messaging-eventhubs-checkpointstore-blob-readme/) | GitHub [1.5.1](https://github.com/Azure/azure-sdk-for-java/tree/azure-messaging-eventhubs-checkpointstore-blob_1.5.1/sdk/eventhubs/azure-messaging-eventhubs-checkpointstore-blob/) |
 | Event Hubs: Schemaregistrierung | Maven [1.0.0-beta.4](https://search.maven.org/artifact/com.azure/azure-data-schemaregistry/1.0.0-beta.4/jar/) | [docs](/java/api/overview/azure/data-schemaregistry-readme/) | GitHub [1.0.0-beta.4](https://github.com/Azure/azure-sdk-for-java/tree/azure-data-schemaregistry_1.0.0-beta.4/sdk/schemaregistry/azure-data-schemaregistry/) |
@@ -273,7 +273,7 @@ ms.locfileid: "105582428"
 | Tools für elastische Datenbanken | Maven [1.0.0](https://search.maven.org/artifact/com.microsoft.azure/azure-elasticdb-tools/1.0.0/jar/) |  |  |
 | Entitätssuche | Maven [1.0.2](https://search.maven.org/artifact/com.microsoft.azure.cognitiveservices/azure-cognitiveservices-entitysearch/1.0.2/jar/) |  | GitHub [1.0.2](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cognitiveservices/ms-azure-cs-entitysearch) |
 | Event Grid | Maven [1.4.0-beta.1](https://search.maven.org/artifact/com.microsoft.azure/azure-eventgrid/1.4.0-beta.1/jar/) |  | GitHub [1.4.0-beta.1](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/eventgrid/microsoft-azure-eventgrid) |
-| Event Grid | Maven [4.0.0](https://search.maven.org/artifact/com.azure/azure-messaging-eventgrid/4.0.0/jar/) | [docs](/java/api/overview/azure/messaging-eventgrid-readme/) | GitHub [4.0.0](https://github.com/Azure/azure-sdk-for-java/tree/azure-messaging-eventgrid_4.0.0/sdk/eventgrid/azure-messaging-eventgrid/) |
+| Event Grid | Maven [4.1.0](https://search.maven.org/artifact/com.azure/azure-messaging-eventgrid/4.1.0/jar/) | [docs](/java/api/overview/azure/messaging-eventgrid-readme/) | GitHub [4.1.0](https://github.com/Azure/azure-sdk-for-java/tree/azure-messaging-eventgrid_4.1.0/sdk/eventgrid/azure-messaging-eventgrid/) |
 | Event Hubs | Maven [3.2.2](https://search.maven.org/artifact/com.microsoft.azure/azure-eventhubs/3.2.2/jar/) |  | GitHub [3.2.2](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/eventhubs/microsoft-azure-eventhubs) |
 | Event Hubs | Maven [5.6.0](https://search.maven.org/artifact/com.azure/azure-messaging-eventhubs/5.6.0/jar/) | [docs](/java/api/overview/azure/messaging-eventhubs-readme/) | GitHub [5.6.0](https://github.com/Azure/azure-sdk-for-java/tree/azure-messaging-eventhubs_5.6.0/sdk/eventhubs/azure-messaging-eventhubs/) |
 | Event Hubs: Azure Blob Storage-Prüfpunktspeicher | Maven [1.5.1](https://search.maven.org/artifact/com.azure/azure-messaging-eventhubs-checkpointstore-blob/1.5.1/jar/) | [docs](/java/api/overview/azure/messaging-eventhubs-checkpointstore-blob-readme/) | GitHub [1.5.1](https://github.com/Azure/azure-sdk-for-java/tree/azure-messaging-eventhubs-checkpointstore-blob_1.5.1/sdk/eventhubs/azure-messaging-eventhubs-checkpointstore-blob/) |
@@ -371,7 +371,7 @@ ms.locfileid: "105582428"
 | Spring Cloud-Maven-Plug-In | Maven [1.4.0](https://search.maven.org/artifact/com.microsoft.azure/azure-spring-cloud-maven-plugin/1.4.0/jar/) |  |  |
 | Spring Data Azure CosmosDB DocumentDB | Maven [0.1.1](https://search.maven.org/artifact/com.microsoft.azure/spring-data-azure-cosmosdb-documentdb/0.1.1/jar/) |  |  |
 | Spring Data Azure DocumentDB | Maven [0.1.7](https://search.maven.org/artifact/com.microsoft.azure/spring-data-azure-documentdb/0.1.7/jar/) |  |  |
-| Spring Data Cosmos | Maven [3.5.0](https://search.maven.org/artifact/com.azure/azure-spring-data-cosmos/3.5.0/jar/) | [docs](/java/api/overview/azure/spring-data-cosmos-readme/) | GitHub [3.5.0](https://github.com/Azure/azure-sdk-for-java/tree/azure-spring-data-cosmos_3.5.0/sdk/cosmos/azure-spring-data-cosmos/) |
+| Spring Data Cosmos | Maven [3.5.1](https://search.maven.org/artifact/com.azure/azure-spring-data-cosmos/3.5.1/jar/) | [docs](/java/api/overview/azure/spring-data-cosmos-readme/) | GitHub [3.5.1](https://github.com/Azure/azure-sdk-for-java/tree/azure-spring-data-cosmos_3.5.1/sdk/cosmos/azure-spring-data-cosmos/) |
 | Spring Data Cosmos Core | Maven [3.0.0-beta.1](https://search.maven.org/artifact/com.azure/azure-spring-data-cosmos-core/3.0.0-beta.1/jar/) |  |  |
 | Spring Data CosmosDB | Maven [3.0.0.M1](https://search.maven.org/artifact/com.microsoft.azure/spring-data-cosmosdb/3.0.0.M1/jar/) |  |  |
 | Spring Data DocumentDB | Maven [2.0.3](https://search.maven.org/artifact/com.microsoft.azure/spring-data-documentdb/2.0.3/jar/) |  |  |

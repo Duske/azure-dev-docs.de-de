@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 8bff781fc77e0475eb043a43615cf3345f57583c
-ms.sourcegitcommit: 9185fa67bd290135f611dad5d5495f169b7e1699
+ms.openlocfilehash: b4258e7f00d1d33c98f225bf92b2235794fc5fef
+ms.sourcegitcommit: eed0511f8a51e07db0c0a5eaa15113ebf95ae23a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2021
-ms.locfileid: "105582327"
+ms.lasthandoff: 03/26/2021
+ms.locfileid: "105630260"
 ---
 | Name | Paket | Docs | `Source` |
 | ---- | ------- | ---- | ------ |
@@ -35,7 +35,7 @@ ms.locfileid: "105582327"
 | Event Hubs: Schemaregistrierung | npm [1.0.0-beta.1](https://www.npmjs.com/package/@azure/schema-registry/v/1.0.0-beta.1) | [docs](/javascript/api/overview/azure/schema-registry-readme/) | GitHub [1.0.0-beta.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/schema-registry_1.0.0-beta.1/sdk/schemaregistry/schema-registry/) |
 | Event Hubs: Schemaregistrierung (Avro) | npm [1.0.0-beta.1](https://www.npmjs.com/package/@azure/schema-registry-avro/v/1.0.0-beta.1) | [docs](/javascript/api/overview/azure/schema-registry-avro-readme/) | GitHub [1.0.0-beta.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/schema-registry-avro_1.0.0-beta.1/sdk/schemaregistry/schema-registry-avro/) |
 | Formularerkennung | npm [3.0.0](https://www.npmjs.com/package/@azure/ai-form-recognizer/v/3.0.0)<br>npm [3.1.0-beta.2](https://www.npmjs.com/package/@azure/ai-form-recognizer/v/3.1.0-beta.2) | [docs](/javascript/api/overview/azure/ai-form-recognizer-readme/) | GitHub [3.0.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/ai-form-recognizer_3.0.0/sdk/formrecognizer/ai-form-recognizer/)<br>GitHub [3.1.0-beta.2](https://github.com/Azure/azure-sdk-for-js/tree/@azure/ai-form-recognizer_3.1.0-beta.2/sdk/formrecognizer/ai-form-recognizer/) |
-| Identity | npm [1.2.4](https://www.npmjs.com/package/@azure/identity/v/1.2.4) | [docs](/javascript/api/overview/azure/identity-readme/) | GitHub [1.2.4](https://github.com/Azure/azure-sdk-for-js/tree/@azure/identity_1.2.4/sdk/identity/identity/) |
+| Identity | npm [1.2.4](https://www.npmjs.com/package/@azure/identity/v/1.2.4)<br>npm [2.0.0-beta.1](https://www.npmjs.com/package/@azure/identity/v/2.0.0-beta.1) | [docs](/javascript/api/overview/azure/identity-readme/) | GitHub [1.2.4](https://github.com/Azure/azure-sdk-for-js/tree/@azure/identity_1.2.4/sdk/identity/identity/)<br>GitHub [2.0.0-beta.1](https://github.com/Azure/azure-sdk-for-js/tree/@azure/identity_2.0.0-beta.1/sdk/identity/identity/) |
 | Key Vault: Verwaltung | npm [4.0.0-beta.2](https://www.npmjs.com/package/@azure/keyvault-admin/v/4.0.0-beta.2) | [docs](/javascript/api/overview/azure/keyvault-admin-readme/) | GitHub [4.0.0-beta.2](https://github.com/Azure/azure-sdk-for-js/tree/@azure/keyvault-admin_4.0.0-beta.2/sdk/keyvault/keyvault-admin/) |
 | Key Vault: Zertifikate | npm [4.1.0](https://www.npmjs.com/package/@azure/keyvault-certificates/v/4.1.0)<br>npm [4.2.0-beta.2](https://www.npmjs.com/package/@azure/keyvault-certificates/v/4.2.0-beta.2) | [docs](/javascript/api/overview/azure/keyvault-certificates-readme/) | GitHub [4.1.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/keyvault-certificates_4.1.0/sdk/keyvault/keyvault-certificates/)<br>GitHub [4.2.0-beta.2](https://github.com/Azure/azure-sdk-for-js/tree/@azure/keyvault-certificates_4.2.0-beta.2/sdk/keyvault/keyvault-certificates/) |
 | Key Vault: Schlüssel | npm [4.1.0](https://www.npmjs.com/package/@azure/keyvault-keys/v/4.1.0)<br>npm [4.2.0-beta.4](https://www.npmjs.com/package/@azure/keyvault-keys/v/4.2.0-beta.4) | [docs](/javascript/api/overview/azure/keyvault-keys-readme/) | GitHub [4.1.0](https://github.com/Azure/azure-sdk-for-js/tree/@azure/keyvault-keys_4.1.0/sdk/keyvault/keyvault-keys/)<br>GitHub [4.2.0-beta.4](https://github.com/Azure/azure-sdk-for-js/tree/@azure/keyvault-keys_4.2.0-beta.4/sdk/keyvault/keyvault-keys/) |
